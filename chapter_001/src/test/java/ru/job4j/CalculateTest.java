@@ -7,11 +7,11 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
-* Test.
+* Package for calculate task.
 *
-* @author Petr Arsentev (mailto:parsentev@yandex.ru)
-* @version $Id$
-* @since 0.1
+* @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+* @version 1
+* @since 17.05.2017
 */
 public class CalculateTest {
 /**
@@ -22,7 +22,7 @@ public class CalculateTest {
 	              ByteArrayOutputStream out = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(out));
 		Calculate.main(null);
-		assertThat(out.toString(), is(String.format("Hello world%s",System.getProperty("line.separator")
+		assertThat(out.toString(),is(String.format("Hello world%s",System.getProperty("line.separator")
 	)
 	)
 	);
