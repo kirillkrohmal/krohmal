@@ -1,20 +1,19 @@
 package ru.job4j;
 
 /**
-* Package for calculate task.
-*
-* @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
-* @version 1
-* @since 17.05.2017
+*Class Calculate.
+*@author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+*@since 17.05.2017
 */
 
 public class Calculate {
-       /**
-	   * Start app
-		*/
-	   public static void main(String[] args){
+       /** @since 17.05.2017
+	   * Метод main для класса Calculate
+	   */
+	   /** @param arg */
+	    public static void main(String[] arg) {
 	         System.out.println("Hello world");
-        } 
+        }
 }
 
 

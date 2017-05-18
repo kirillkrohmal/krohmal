@@ -6,12 +6,10 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-/**
-* Package for calculate task.
-*
-* @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
-* @version 1
-* @since 17.05.2017
+/** @since 17.05.2017
+*Class CalculatorTest 17.05.2017
+*@author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+*@since 17.05.2017
 */
 public class CalculateTest {
 /**
@@ -22,9 +20,6 @@ public class CalculateTest {
 	              ByteArrayOutputStream out = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(out));
 		Calculate.main(null);
-		assertThat(out.toString(),is(String.format("Hello world%s",System.getProperty("line.separator")
-	)
-	)
-	);
-	}
-	}
+		assertThat(out.toString(), is(String.format("Hello world%s", System.getProperty("line.separator"))));
+    }
+  }
