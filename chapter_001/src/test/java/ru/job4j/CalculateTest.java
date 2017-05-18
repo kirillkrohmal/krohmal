@@ -7,7 +7,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /** @since 17.05.2017
-*Class CalculatorTest 17.05.2017
+*Class CalculatorTest
 *@author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
 *@since 17.05.2017
 */
