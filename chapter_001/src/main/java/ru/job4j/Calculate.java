@@ -7,10 +7,10 @@ package ru.job4j;
 */
 
 public class Calculate {
-       /** @since 17.05.2017
+      	  /** @since 17.05.2017
 	   * Метод main для класса Calculate
-	   */
-	   /** @param arg */
+	   * @param arg аргументы командной строки.
+ 	   */
 	    public static void main(String[] arg) {
 	         System.out.println("Hello world");
         }
