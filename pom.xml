@@ -1,12 +1,11 @@
 <project>
-      <modelVersion>4.0.0</modelVersion>
- 	          <groupId>ru.job4j</groupId>
-		 <artifactId>junior</artifactId>
-		<packaging>pom</packaging>
-		<version>2.0</version>
-		<name>junior</name>
-		<url>http://job4j.ru/</url>
-
+<modelVersion>4.0.0</modelVersion>
+<groupId>ru.job4j.calculator</groupId>
+<artifactId>Calculator</artifactId>
+<packaging>pom</packaging>
+<version>2.0</version>
+<name>Calculator</name>
+<url>http://job4j.ru/</url>
 
 		<build>
 <plugins>
@@ -14,22 +13,6 @@
 <groupId>org.apache.maven.plugins</groupId>
 <artifactId>maven-checkstyle-plugin</artifactId>
 <version>2.17</version>
-<executions>
-<execution>
-<id>validate</id>
-<phase>validate</phase>
-<configuration>
-<configLocation>checkstyle.xml</configLocation>
-<encoding>UTF-8</encoding>
-<consoleOutput>true</consoleOutput>
-<failsOnError>true</failsOnError>
-<includeTestSourceDirectory>true</includeTestSourceDirectory>
-</configuration>
-<goals>
-<goal>check</goal>
-</goals>
-</execution>
-</executions>
 </plugin>
 </plugins>
 </build> 
