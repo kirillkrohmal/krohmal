@@ -16,9 +16,9 @@ public class MaxTest {
 */
 @Test
 public void whenFirstMoreThenSecond() {
-	Max max1 = new Max();//assign
-	int expected = 2;//assign
-	int result = max1.max(1, 2);//act
-	assertThat(result, is(expected)); //assert
+	Max max1 = new Max();
+	int expected = 2;
+	int result = max1.max(1, 2);
+	assertThat(result, is(expected));
 	}
 }
