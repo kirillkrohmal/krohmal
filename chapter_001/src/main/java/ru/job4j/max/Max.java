@@ -9,7 +9,7 @@ public class Max {
 	   * Метод max для класса Max
 	   * @param first первый аргумент.
 	   * @param second второй аргумент.
-	   * @param third второй аргумент.
+	   * @param third третий аргумент.
 	   * @return max
  	   */
 	public int max(int first, int second, int third) {
@@ -20,7 +20,7 @@ public class Max {
 	 /** @since 23.05.2017
 	   * Метод max для класса Max
 	   * @param first первый аргумент.
-	   * @param second второй аргумент.
+	   * @param second третий аргумент.
 	   * @return result
  	   */
 	public int max(int first, int second) {
