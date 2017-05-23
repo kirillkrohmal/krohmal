@@ -1,7 +1,7 @@
 package ru.job4j.condition;
 
 import org.junit.Test;
-
+import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 /** @since 23.05.2017
@@ -22,8 +22,8 @@ public class TriangleTest {
 		Point c = new Point(4, 2);
 		Triangle triangle = new Triangle(a, b, c);
 		//act
-		double result = triangle.area();
+		double result = triangle.area(-3, 0, 0.3);
 		//assert
-		assertThat(result, is(expected));
+		assertThat(result, is(expected, 0.01));
 	}
 }
