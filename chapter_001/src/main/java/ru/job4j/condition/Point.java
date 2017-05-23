@@ -14,33 +14,33 @@ public class Point {
  	   */
 	private int y;
 		/** @since 22.05.2017
-	   * Конструктор Point для класса Point
-	   * @param x аргумент.
-	   * @param y аргумент.
+	   * РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Point РґР»СЏ РєР»Р°СЃСЃР° Point
+	   * @param x Р°СЂРіСѓРјРµРЅС‚.
+	   * @param y Р°СЂРіСѓРјРµРЅС‚.
  	   */
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 		/** @since 22.05.2017
-	   * Метод getX() для класса Point
+	   * РњРµС‚РѕРґ getX() РґР»СЏ РєР»Р°СЃСЃР° Point
 	   * @return x.
  	   */
 	public int getX() {
 		return this.x;
 	}
 		/** @since 22.05.2017
-	   * Метод getY() для класса Point
+	   * РњРµС‚РѕРґ getY() РґР»СЏ РєР»Р°СЃСЃР° Point
 	   * @return y.
  	   */
 	public int getY() {
 		return this.y;
 	}
 	 /** @since 22.05.2017
-	   * Метод is для класса Point
-	   * @param a аргумент.
-	   * @param b аргумент.
-	   * @return a и b.
+	   * РњРµС‚РѕРґ is РґР»СЏ РєР»Р°СЃСЃР° Point
+	   * @param a Р°СЂРіСѓРјРµРЅС‚.
+	   * @param b Р°СЂРіСѓРјРµРЅС‚.
+	   * @return a Рё b.
  	   */
 	public boolean is(int a, int b) {
 		return this.x == a * x + b;
