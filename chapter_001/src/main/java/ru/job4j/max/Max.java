@@ -13,9 +13,8 @@ public class Max {
 	   * @return max
  	   */
 	public int max(int first, int second, int third) {
-		 int currentMax = this.max(first, second);
-		 int currentMax2 = this.max(third, currentMax);
-		 return currentMax2;
+		return this.max(first, this.max(third, second));
+	
 	}
 	 /** @since 23.05.2017
 	   * Метод max для класса Max

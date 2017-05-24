@@ -15,14 +15,14 @@ public class TriangleTest {
 	@Test
 	public void whenTriangleSet() {
 		//assign
-		double expected = 9.92;
-		Point a = new Point(1, 2);
-		Point b = new Point(2, 4);
-		Point c = new Point(4, 2);
+		double expected = 2D;
+		Point a = new Point(0, 0);
+		Point b = new Point(0, 2);
+		Point c = new Point(2, 0);
 		Triangle triangle = new Triangle(a, b, c);
 		//act
 		double result = triangle.area();
 		//assert
-		assertThat(result, closeTo(expected, 0.01D));
+		assertThat(result, closeTo(expected, 0.1D));
 	}
 }
