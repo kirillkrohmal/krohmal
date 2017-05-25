@@ -1,7 +1,7 @@
 package ru.job4j.loop;
 
 /**
-*Class Counter.
+*Class Counter возвращет сумму четных чисел от 1 до 10.
 *@author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
 *@since 23.05.2017
 */
