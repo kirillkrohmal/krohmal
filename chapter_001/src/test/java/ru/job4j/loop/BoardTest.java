@@ -24,8 +24,6 @@ public class BoardTest {
         //assert
         assertThat(result, is(expected));
 	}
-  
-
     @Test
     public void whenPaintBoardWithWidthFiveAndHeightFourThenStringWithFiveColsAndFourRows() {
         //assign
@@ -36,7 +34,6 @@ public class BoardTest {
 		String expected = String.format("x x x%s x x %sx x x%s x x %s", line, line, line, line, line);
 		//assert
 		assertThat(result, is(expected));
-		//напишите здесь тест, проверяющий формирование доски 5 на 4.
     }
 }
 
