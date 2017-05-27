@@ -18,7 +18,7 @@ public class PaintTest {
     public void whenPiramidWithHeightThreeThenStringWithThreeRows() {
 		Paint paint = new Paint();
 		String result = paint.piramid(3);
-		String expectsd = String.format(" ^ %s^^^ ^^^^^", System.getProperty("line.separator"));
+		String expected = String.format(" ^ %s^^^ ^^^^^", System.getProperty("line.separator"));
 		assertThat(result, is(expected));
     }
 }	
