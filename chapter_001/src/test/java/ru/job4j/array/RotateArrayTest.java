@@ -1,12 +1,13 @@
 package ru.job4j.array;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class RotateArrayTest {
-/*    @Test
+    @Test
     public void whenRotateTwoRowTwoColArrayThenRotatedArray() {
         RotateArray rotateArray = new RotateArray();
 		int[][] array = 
@@ -17,20 +18,15 @@ public class RotateArrayTest {
 		int[][] result = rotateArray.rotate(array);
 		int[][] expected = 
 						{
-							{3, 1},
-							{4, 2}
+							{1, 3},
+							{2, 4}
 						};
-						    1, 4, 7
-							2, 5, 8
-							3, 6, 9
-							
-							{7, 4, 1},
-							{8, 5, 2},
-							{9, 6, 3}
+						  
 		assertThat(result, is(expected));
     }
-*/
-    @Test
+
+    
+	@Test
     public void whenRotateThreeRowThreeColArrayThenRotatedArray() {
         RotateArray rotateArray = new RotateArray();
 		int[][] array = 
