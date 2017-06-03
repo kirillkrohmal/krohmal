@@ -38,9 +38,9 @@ public class RotateArrayTest {
 		int[][] result = rotateArray.rotate(array);
 		int[][] expected = 
 						{	
-							{1, 4, 7},
-							{2, 5, 8},
-							{3, 6, 9}
+							{7, 4, 1},
+							{8, 5, 2},
+							{9, 6, 3}
 						};
 		assertThat(result, is(expected));
   
