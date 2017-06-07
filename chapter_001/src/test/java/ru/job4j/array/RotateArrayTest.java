@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 import org.junit.Test;
-import org.junit.Ignore;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,7 +25,7 @@ public class RotateArrayTest {
 		assertThat(result, is(expected));
     }
 
-	@Ignore
+	
 	@Test
     public void whenRotateThreeRowThreeColArrayThenRotatedArray() {
         RotateArray rotateArray = new RotateArray();
