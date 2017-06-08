@@ -1,6 +1,12 @@
 package ru.job4j.loop;
 
 
+/**
+*Class Paint.
+*@author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+*@since 20.05.2017
+*/
+
 public class Paint {
 	public String piramid(int h) {
 		StringBuilder builder = new StringBuilder();
