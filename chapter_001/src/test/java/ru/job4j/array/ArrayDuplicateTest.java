@@ -10,9 +10,9 @@ public class ArrayDuplicateTest {
     @Test
     public void whenRemoveDuplicatesThenArrayWithoutDuplicate() {
         ArrayDuplicate arrayDuplicate = new ArrayDuplicate();
-		String[] array = new String[]{"Привет", "Мир", "Привет", "Супер", "Мир"};
-		String[] result= arrayDuplicate.remove(array);
-		String[] expected = new String[]{"Привет", "Мир", "Супер"};
-		assertThat(result, arrayContainingInAnyOrder(expected));
+        String[] array = new String[]{"Привет", "Мир", "Привет", "Супер", "Мир"};
+        String[] result = arrayDuplicate.remove(array);
+        String[] expected = new String[]{"Привет", "Мир", "Супер"};
+        assertThat(result, arrayContainingInAnyOrder(expected));
     }
 }
