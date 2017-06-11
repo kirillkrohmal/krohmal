@@ -2,24 +2,27 @@ package ru.job4j.Profession;
 
 
 public class Teacher extends Profession {
+    public Teacher(String name, int diplom, int experience) {
+        super(name, diplom, experience);
+    }
 
-	public Teacher(String name, int diplom, int experience) {
-		super(name, diplom, experience);
-	}
+    public TextBook teach(Teacher teacher, Children children, TextBook textBook) {
+        System.out.println("Учитель " + teacher.name + " учит " + textBook + " " + children.name);
+        return textBook;
+    }
 
-	public void teach(Teacher teacher, Children children) {
-		System.out.println("Учитель " + teacher.name  + " учит " + children.name);
-	}
-	
-	public void write(Teacher teacher, Children children) {
-		System.out.println("Учитель " + teacher.name  + " пишет для " + children.name);
-	}
-	
-	public void read(Teacher teacher, Children children) {
-		System.out.println("Учитель " + teacher.name  + " читает для " + children.name);
-	}
-	
-	public void scream(Teacher teacher, Children children) {
-		System.out.println("Учитель " + teacher.name  + " кричит на " + children.name);
-	}
+    public Book write(Teacher teacher, Children children, Book book) {
+        System.out.println("Учитель " + teacher.name + " пишет в " + book + " " + children.name);
+        return book;
+    }
+
+    public TextBook read(Teacher teacher, Children children, TextBook textBook) {
+        System.out.println("Учитель " + teacher.name + " читает в " + textBook + " " + children.name);
+        return textBook;
+    }
+
+    public Book scream(Teacher teacher, Children children, Book book) {
+        System.out.println("Учитель " + teacher.name + " кричит слова из " + book + " " + children.name);
+        return book;
+    }
 }
