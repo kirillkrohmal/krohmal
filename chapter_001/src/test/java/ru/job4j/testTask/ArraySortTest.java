@@ -10,9 +10,9 @@ public class ArraySortTest {
     @Test
     public void whenSortArrayAndAddThat() {
 		ArraySort arrayTest = new ArraySort();
-	/*	int[] array = {1, 2, 5, 12};
-        boolean result = arrayTest.sort(array);
-        boolean expected = true;
-        assertThat(result, is(expected));*/
+		int[] array = new int[]{1, 5, 2, 12};
+        int[] result = arrayTest.sort(array);
+        int[] expected = new int[]{1, 2, 5, 12};
+        assertThat(result, is(expected));
 	}
 }
