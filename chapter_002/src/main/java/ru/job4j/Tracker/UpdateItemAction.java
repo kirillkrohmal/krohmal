@@ -3,8 +3,5 @@ package ru.job4j.Tracker;
 /**
  * Created by Comp on 12.06.2017.
  */
-public interface StarUI {
-    public default void init() {
-
-    }
+public interface UpdateItemAction extends Action{
 }

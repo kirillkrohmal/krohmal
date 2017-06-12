@@ -4,12 +4,12 @@ package ru.job4j.Tracker;
  * Created by Comp on 12.06.2017.
  */
 public class Item {
-    public String key;
-    public String id;
-    public String name;
-    public String desc;
-    public String[] comments;
-    public long created;
+    private String key;
+    private String id;
+    private String name;
+    private String desc;
+    private String[] comments;
+    private long created;
 
     public Item(String key, String id, String name, String desc, String[] comments, long created) {
         this.key = key;
@@ -42,5 +42,29 @@ public class Item {
 
     public long getCreated() {
         return created;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public void setComments(String[] comments) {
+        this.comments = comments;
+    }
+
+    public void setCreated(long created) {
+        this.created = created;
     }
 }

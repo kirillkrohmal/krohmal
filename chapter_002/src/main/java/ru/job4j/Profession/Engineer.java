@@ -7,26 +7,22 @@ public class Engineer extends Profession {
     }
 
     public Building design(Engineer engineer, Customer customer, Building building) {
-        String s = String.format("Инженер " + engineer.name + " конструирует здание " + building + " для " + customer.name);
-        System.out.println(s);
+        String.format("Инженер " + engineer.name + " конструирует здание " + building + " для " + customer.name);
         return building;
     }
 
     public Drawing draw(Engineer engineer, Customer customer, Drawing drawing) {
-        String s = String.format("Инженер " + engineer.name + " рисует " + drawing + " для " + customer.name);
-        System.out.println(s);
+        String.format("Инженер " + engineer.name + " рисует " + drawing + " для " + customer.name);
         return drawing;
     }
 
     public Drawing think(Engineer engineer, Customer customer, Drawing drawing) {
-        String s = String.format("Инженер " + engineer.name + " формулирует " + drawing + " для " + customer.name);
-        System.out.println(s);
+        String.format("Инженер " + engineer.name + " формулирует " + drawing + " для " + customer.name);
         return drawing;
     }
 
     public Building manage(Engineer engineer, Customer customer, Building building) {
-        String s = String.format("Инженер " + engineer.name + " распоряжается строительством " + building + " для " + customer.name);
-        System.out.println(s);
+        String.format("Инженер " + engineer.name + " распоряжается строительством " + building + " для " + customer.name);
         return building;
     }
 }
