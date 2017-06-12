@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 public class Task {
-    public boolean contains(String origin, String sub) {
+    public boolean contains(String sub, String origin) {
         boolean result = false;
 
         char[] subString = sub.toCharArray();
@@ -14,14 +14,14 @@ public class Task {
         int y2 = 0;
 
         for (int i = 0; i < subString.length; i++) {
-            for (int j = i - 1; j < subString.length; j++) {
-                if (originString[y1] == subString[y2]) {
-                    y1++;
-                    return true;
-                } else {
-                    y2++;
-                    return false;
-                }
+            if (originString[y1] == subString[y2] && originString.length < subString.length) {
+                result = true;//originString[y1] = originString[i];
+                y1++;
+            } else if (originString[y1] == subString[y2] && originString.length <= subString.length) {
+                result = true;
+                y2++;
+            } else if (originString[y1] != subString[y2] && originString.length > subString.length) {
+                result = false;
             }
         }
         return result;
