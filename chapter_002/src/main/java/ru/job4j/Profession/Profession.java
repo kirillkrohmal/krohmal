@@ -1,6 +1,8 @@
 package ru.job4j.Profession;
 
 
+import javax.print.Doc;
+
 public class Profession {
     public String name;
     public int diplom;

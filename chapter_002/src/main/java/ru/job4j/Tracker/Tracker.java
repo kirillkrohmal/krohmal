@@ -16,22 +16,36 @@ public class Tracker extends Item{
     public Item add(Item[] item) {
 
         if (size <= STORAGE_SIZE - 1) {
-            System.out.println(getName() + " " + getDesc() + " " + getCreated() + " " + getComment());
+            String.format("Введите id заявки: " + getId());
+            String.format(getName() + " " + getDesc() + " " + getCreated() + " " + getComment());
 
         }
         if (size == STORAGE_SIZE - 1) {
-            System.out.println("объем полон");
+            String.format("Вводить заявки больше нельзя! Объем полон");
         }
+
+
         size++;
         return item[size];
     }
 
-    public void delete(Item item) {
-        for (int i = 0; i < STORAGE_SIZE; i++) {
+    public void delete(Item items) {
+
+        //String.format("Введите id: " + item.getId());
+        for (int i = 0; i < size; i++) {
 
         }
+
+
+
+       /* System.arraycopy();
+        }
+        */
         
-        
+    }
+
+    public void update(Item item) {
+
     }
 
     public Item[] findAll() {
@@ -40,12 +54,24 @@ public class Tracker extends Item{
     }
 
     public Item[] findByName(String key) {
-
-        return new Item[0];
+        for (int i = 0; i < size; i++) {
+            if (item[i].getName().equals(key)) {
+                String.format("" + item);
+            }
+        }
+        return null;
     }
 
     public Item findById(String id) {
 
+        for (int i = 0; i < size; i++) {
+            if (item[i].getId().equals(id) ) {
+                String.format("" + item);
+            }
+        }
+
         return null;
     }
+
+
 }
