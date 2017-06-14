@@ -21,27 +21,27 @@ public class Item {
     }
 
     public String getKey() {
-        return key;
+        return this.key;
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getDesc() {
-        return desc;
+        return this.desc;
     }
 
     public String[] getComment() {
-        return comments;
+        return this.comments;
     }
 
     public long getCreated() {
-        return created;
+        return this.created;
     }
 
     public void setKey(String key) {

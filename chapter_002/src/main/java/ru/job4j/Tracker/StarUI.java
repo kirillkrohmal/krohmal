@@ -5,6 +5,8 @@ package ru.job4j.Tracker;
  */
 public interface StarUI {
     public default void init() {
+        while(true) {
 
+        }
     }
 }

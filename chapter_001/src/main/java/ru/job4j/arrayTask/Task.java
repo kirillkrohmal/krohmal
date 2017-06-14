@@ -13,20 +13,23 @@ public class Task {
         int y1 = 0;
         int y2 = 0;
 
-        for (int i = 0; i < subString.length; i++) {
-            if (originString[y1] == subString[y2] && originString.length < subString.length) {
-                result = true;//originString[y1] = originString[i];
-                y1++;
-            } else if (originString[y1] == subString[y2] && originString.length <= subString.length) {
-                result = true;
-                y2++;
-            } else if (originString[y1] != subString[y2] && originString.length > subString.length) {
-                result = false;
+        int uniq = originString.length;
+
+        for (int i = 0; i < originString.length; i++) {
+            result = false;
+            for (int j = 0; j < subString.length; j++) {
+                if (originString[i + j] == subString[j] && originString[uniq - 1] > 0) {
+                    uniq--;
+                    result = true;
+                } else {//опред количество букв равняется другим в др слове
+                    result = false;
+                }
             }
         }
         return result;
     }
-}	
+}
+
 
 
 

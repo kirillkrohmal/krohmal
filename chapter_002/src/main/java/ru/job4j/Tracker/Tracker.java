@@ -13,36 +13,42 @@ public class Tracker extends Item{
         super(key, id, name, desc, comment, created);
     }
 
-    public Item add(Item[] item) {
+    public Item add(Item item) {
 
         if (size <= STORAGE_SIZE - 1) {
-            String.format("Введите id заявки: " + getId());
+            String.format("" + getId());
             String.format(getName() + " " + getDesc() + " " + getCreated() + " " + getComment());
 
         }
         if (size == STORAGE_SIZE - 1) {
             String.format("Вводить заявки больше нельзя! Объем полон");
         }
-
-
         size++;
-        return item[size];
+        return item;
+    }
+    
+    public int getIndex (String id) {
+        for (int i = 0; i < size; i++) {
+            if (item[i].getId().equals(id)) {
+                return i;
+            }
+        }
+        return size;
     }
 
-    public void delete(Item items) {
+    public void delete(String id) {
 
-        //String.format("Введите id: " + item.getId());
+        String.format("Введите id: ");
+
+
         for (int i = 0; i < size; i++) {
 
+
         }
-
-
-
-       /* System.arraycopy();
-        }
-        */
-        
     }
+
+
+
 
     public void update(Item item) {
 
@@ -54,21 +60,13 @@ public class Tracker extends Item{
     }
 
     public Item[] findByName(String key) {
-        for (int i = 0; i < size; i++) {
-            if (item[i].getName().equals(key)) {
-                String.format("" + item);
-            }
-        }
+
         return null;
     }
 
-    public Item findById(String id) {
+    protected Item findById(String id) {
 
-        for (int i = 0; i < size; i++) {
-            if (item[i].getId().equals(id) ) {
-                String.format("" + item);
-            }
-        }
+        int index = getIndex(id);
 
         return null;
     }

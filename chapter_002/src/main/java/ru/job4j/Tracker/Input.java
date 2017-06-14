@@ -5,11 +5,17 @@ package ru.job4j.Tracker;
  */
 public class Input implements StarUI{
 
+    String[] question = {"Выберите пункт меню", "вызвать описание", "вызвать ", "вызвать "};
+
     public String ask(String question) {
 
+        String.format(question);
         return question;
     }
 
+    String[] date = {"печатаю ", "печатаю", "печатаю ", "печатаю "};
+
+    //ПЕЧАТАЕТ НА КОНСОЛЬ
     public void print(String date) {
 
     }

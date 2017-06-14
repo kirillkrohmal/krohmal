@@ -6,6 +6,7 @@ package ru.job4j.Tracker;
 public class MenuTracker implements StarUI{
     Action[] actions = new Action[]{};
 
+    //возвращает Action
     public Action select (int index) {
 
         return null;
