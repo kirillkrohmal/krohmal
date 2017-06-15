@@ -8,15 +8,15 @@ public class Item {
     private String id;
     private String name;
     private String desc;
-    private String[] comments;
+
     private long created;
 
-    public Item(String key, String id, String name, String desc, String[] comments, long created) {
+    public Item(String key, String id, String name, String desc, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
         this.desc = desc;
-        this.comments = comments;
+
         this.created = created;
     }
 
@@ -36,9 +36,9 @@ public class Item {
         return this.desc;
     }
 
-    public String[] getComment() {
+   /* public String[] getComment() {
         return this.comments;
-    }
+    }*/
 
     public long getCreated() {
         return this.created;
@@ -59,10 +59,10 @@ public class Item {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
+/*
     public void setComments(String[] comments) {
         this.comments = comments;
-    }
+    }*/
 
     public void setCreated(long created) {
         this.created = created;

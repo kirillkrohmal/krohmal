@@ -1,75 +1,86 @@
 package ru.job4j.Tracker;
 
+import java.util.Random;
+
 /**
  * Created by Comp on 12.06.2017.
  */
-public class Tracker extends Item{
+public class Tracker {
     private final int STORAGE_SIZE = 100;
-    Item[] item = new Item[STORAGE_SIZE];
+    Item[] items = new Item[STORAGE_SIZE];
     private int size = 0;
+    private static final Random random = new Random();
 
-
+/*
     public Tracker(String key, String id, String name, String desc, String[] comment, long created) {
         super(key, id, name, desc, comment, created);
     }
+*/
 
     public Item add(Item item) {
-
-        if (size <= STORAGE_SIZE - 1) {
-            String.format("" + getId());
-            String.format(getName() + " " + getDesc() + " " + getCreated() + " " + getComment());
-
-        }
         if (size == STORAGE_SIZE - 1) {
             String.format("Вводить заявки больше нельзя! Объем полон");
         }
-        size++;
+        item.setId(this.generateId());
+        items[size++] = item;
         return item;
     }
-    
-    public int getIndex (String id) {
+
+    String generateId() {
+        return String.valueOf(System.currentTimeMillis() + random.nextInt());
+    }
+
+   /* public int getIndex(String id) {
         for (int i = 0; i < size; i++) {
-            if (item[i].getId().equals(id)) {
+            if (items[i].getId().equals(id)) {
                 return i;
             }
         }
         return size;
-    }
+    }*/
 
     public void delete(String id) {
-
-        String.format("Введите id: ");
-
-
         for (int i = 0; i < size; i++) {
-
-
+            if (items[i].getId().equals(id)){
+                items[i] = null;
+            }
         }
     }
-
-
-
 
     public void update(Item item) {
 
     }
 
     public Item[] findAll() {
+        Item[] result = new Item[size];
 
-        return new Item[0];
+        for (int i = 0; i < size; i++) {
+            result[i] = this.items[i];
+        }
+        return result;
     }
 
-    public Item[] findByName(String key) {
-
-        return null;
+    public Item findByName(String key) {
+        Item result = null;
+        for (Item item : items) {
+            if (item.getKey().equals(key) && items != null) {
+                result = item;
+                break;
+            }
+        }
+        return result;
     }
 
     protected Item findById(String id) {
 
-        int index = getIndex(id);
+        Item result = null;
 
-        return null;
+        for (Item item : items) {
+            if (item.getId().equals(id) && items != null) {
+                result = item;
+                break;
+            }
+        }
+        return result;
     }
-
-
 }
