@@ -11,11 +11,11 @@ public class Tracker {
     private int size = 0;
     private static final Random random = new Random();
 
-/*
-    public Tracker(String key, String id, String name, String desc, String[] comment, long created) {
-        super(key, id, name, desc, comment, created);
-    }
-*/
+
+   /* public Tracker(String key, String id, String name, String desc, String[] comment, long created) {
+        super(key, id, name, desc, created);
+    }*/
+
 
     public Item add(Item item) {
         if (size == STORAGE_SIZE - 1) {
@@ -30,25 +30,26 @@ public class Tracker {
         return String.valueOf(System.currentTimeMillis() + random.nextInt());
     }
 
-   /* public int getIndex(String id) {
-        for (int i = 0; i < size; i++) {
-            if (items[i].getId().equals(id)) {
-                return i;
-            }
-        }
-        return size;
-    }*/
-
     public void delete(String id) {
-        for (int i = 0; i < size; i++) {
-            if (items[i].getId().equals(id)){
-                items[i] = null;
+        for (Item item : items) {
+            if (item.getId().equals(id) && items != null) {
+                item = null;
+                return;
             }
+            //System.arraycopy();
         }
     }
 
-    public void update(Item item) {
 
+    public void update(Item item) {
+        Item result = null;
+
+        for (int i = 0; i < size; i++) {
+            if (items[i].getId().equals(item)) {
+                result = items[i];
+                item = result;
+            }
+        }
     }
 
     public Item[] findAll() {
@@ -71,8 +72,7 @@ public class Tracker {
         return result;
     }
 
-    protected Item findById(String id) {
-
+    public Item findById(String id) {
         Item result = null;
 
         for (Item item : items) {

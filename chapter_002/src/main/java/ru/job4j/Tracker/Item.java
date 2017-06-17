@@ -8,7 +8,6 @@ public class Item {
     private String id;
     private String name;
     private String desc;
-
     private long created;
 
     public Item(String key, String id, String name, String desc, long created) {
@@ -16,7 +15,6 @@ public class Item {
         this.id = id;
         this.name = name;
         this.desc = desc;
-
         this.created = created;
     }
 
