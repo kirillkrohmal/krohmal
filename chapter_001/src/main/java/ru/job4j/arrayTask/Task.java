@@ -14,8 +14,12 @@ public class Task {
             result = true;
             for (int j = 0; j < subString.length; j++) {
 
-                if (originString[i + j] == subString[j]) {
+                if (originString[i + j] != subString[i + j]) {
                     result = false;
+                    break;
+                }
+                if (originString[i + j] == subString[i + j]) {
+                    result = true;
                     break;
                 }
 
