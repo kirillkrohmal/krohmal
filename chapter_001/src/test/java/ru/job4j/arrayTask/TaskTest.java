@@ -36,5 +36,15 @@ public class TaskTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
+
+    @Test
+    public void whenSubIsEqualsOrigin3() {
+        Task task = new Task();
+        String sub = "стиховедческий";
+        String origin = "стих";
+        boolean result = task.contains(sub, origin);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
 }
 
