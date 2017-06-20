@@ -8,13 +8,19 @@ import java.util.Scanner;
 public class StartUI {
     private static int num;
     private Input input;
+    private Tracker tracker;
 
-    public StartUI(Input input) {
+    public StartUI(Input input, Tracker tracker) {
         this.input = input;
+        this.tracker = tracker;
     }
-
+   /*
+    test1
+    1
+    test1
+    this test Tracker1
+    16/06/2017*/
     public void init() {
-
         String[] init = new String[]{
                 this.input.ask("0. Add new Item"),
                 this.input.ask("1. Show all items"),
@@ -29,12 +35,18 @@ public class StartUI {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
 
+
+
         switch (num) {
             case 0:
                 System.out.println("Введите имя пользователя и описание заявки: ");
-                String a = scanner.nextLine();
-                Tracker tracker = new Tracker();
-                tracker.add();
+                String key = scanner.nextLine();
+                String id = scanner.nextLine();
+                String name = scanner.nextLine();
+                String comments = scanner.nextLine();
+                Long creat = System.currentTimeMillis();
+                Item item = new Item(key, id, name, comments, creat);
+                tracker.add(item);
                 break;
             case 1:
                 System.out.println("Показать все заявки: ");
@@ -54,6 +66,10 @@ public class StartUI {
             case 6:
                 System.out.println("Выйти из программы: ");
                 String k = scanner.nextLine();
+
+                if (k.equals("y")) {
+
+                }
         }
     }
 
