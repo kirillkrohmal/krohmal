@@ -15,15 +15,13 @@ public class StubInput implements Input {
 
     private Scanner scanner = new Scanner(System.in);
 
+    public StubInput(Item[] items) {
+        Tracker tracker = new Tracker();
+        //tracker.add(new StubInput(items));
+    }
+
     @Override
     public String ask(String question) {
-
-        for (int i = 0; i < position; i++) {
-            /*if () {
-                answers[i] = ;
-            }*/
-        }
-
         return answers[position++];
     }
 }

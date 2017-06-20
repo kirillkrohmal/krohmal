@@ -21,7 +21,7 @@ public class StartUI {
         String exit = consoleInput.ask("6. Exit Program");
 
 
-        StubInput stubInput = new StubInput(new String[]{"", ""});
+        StubInput stubInput = new StubInput(new Item[]{});
         Tracker tracker = new Tracker();
         //tracker.add(new Task(name, "Name"));
 
@@ -30,7 +30,10 @@ public class StartUI {
     public static void main(String[] args) {
        Input inputStub = new StubInput(new String[]{"Create Stub task "});
        Input inputCons = new ConsoleInput();
+       Tracker tracker = new Tracker();
+       //inputCons.ask(tracker.add())
        new StartUI(inputCons).init();
        new StartUI(inputStub).init();
+       new StartUI(new StubInput(new String[]{"Create Stub task "})).init();
     }
 }
