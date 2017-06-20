@@ -1,9 +1,12 @@
 package ru.job4j.Tracker;
 
+import java.util.Scanner;
+
 /**
  * Created by Comp on 12.06.2017.
  */
 public class StartUI {
+    private static int num;
     private Input input;
 
     public StartUI(Input input) {
@@ -11,29 +14,52 @@ public class StartUI {
     }
 
     public void init() {
-        ConsoleInput consoleInput = new ConsoleInput();
-        String add = consoleInput.ask("0. Add new Item");
-        String show = consoleInput.ask("1. Show all items");
-        String edit = consoleInput.ask("2. Edit item");
-        String delete = consoleInput.ask("3. Delete item");
-        String findId = consoleInput.ask("4. Find item by Id");
-        String findName = consoleInput.ask("5. Find items by name");
-        String exit = consoleInput.ask("6. Exit Program");
 
+        String[] init = new String[]{
+                this.input.ask("0. Add new Item"),
+                this.input.ask("1. Show all items"),
+                this.input.ask("2. Edit item"),
+                this.input.ask("3. Delete item"),
+                this.input.ask("4. Find item by Id"),
+                this.input.ask("5. Find items by name"),
+                this.input.ask("6. Exit Program"),
 
-        StubInput stubInput = new StubInput(new Item[]{});
-        Tracker tracker = new Tracker();
-        //tracker.add(new Task(name, "Name"));
+        };
+        System.out.println("Select: ");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
 
+        switch (num) {
+            case 0:
+                System.out.println("Введите имя пользователя и описание заявки: ");
+                String a = scanner.nextLine();
+                Tracker tracker = new Tracker();
+                tracker.add();
+                break;
+            case 1:
+                System.out.println("Показать все заявки: ");
+                String b = scanner.nextLine();
+            case 2:
+                System.out.println("Введите id пользователя: ");
+                String c = scanner.nextLine();
+            case 3:
+                System.out.println("Введите id пользователя: ");
+                String d = scanner.nextLine();
+            case 4:
+                System.out.println("Введите id пользователя: ");
+                String e = scanner.nextLine();
+            case 5:
+                System.out.println("Введите имя пользователя: ");
+                String g = scanner.nextLine();
+            case 6:
+                System.out.println("Выйти из программы: ");
+                String k = scanner.nextLine();
+        }
     }
 
     public static void main(String[] args) {
-       Input inputStub = new StubInput(new String[]{"Create Stub task "});
-       Input inputCons = new ConsoleInput();
-       Tracker tracker = new Tracker();
-       //inputCons.ask(tracker.add())
-       new StartUI(inputCons).init();
-       new StartUI(inputStub).init();
-       new StartUI(new StubInput(new String[]{"Create Stub task "})).init();
+        Input inputCons = new ConsoleInput();
+        //inputCons.ask(tracker.add())
+        new StartUI(inputCons).init();
     }
 }
