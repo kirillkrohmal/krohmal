@@ -11,13 +11,6 @@ public class Tracker {
     private int size = 0;
     private static final Random random = new Random();
 
-
-
-   /* public Tracker(String key, String id, String name, String desc, String[] comment, long created) {
-        super(key, id, name, desc, created);
-    }*/
-
-
     public Item add(Item item) {
         if (size == STORAGE_SIZE - 1) {
             String.format("Вводить заявки больше нельзя! Объем полон");
@@ -40,7 +33,6 @@ public class Tracker {
             //System.arraycopy();
         }
     }
-
 
     public void update(Item item) {
         Item result = null;
@@ -84,6 +76,4 @@ public class Tracker {
         }
         return result;
     }
-
-
 }

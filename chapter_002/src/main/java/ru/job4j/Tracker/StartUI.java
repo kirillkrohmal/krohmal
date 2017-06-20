@@ -22,19 +22,19 @@ public class StartUI {
     16/06/2017*/
     public void init() {
         String[] init = new String[]{
-                this.input.ask("0. Add new Item"),
-                this.input.ask("1. Show all items"),
-                this.input.ask("2. Edit item"),
-                this.input.ask("3. Delete item"),
-                this.input.ask("4. Find item by Id"),
-                this.input.ask("5. Find items by name"),
-                this.input.ask("6. Exit Program"),
+                this.input.ask("0. Add new Item;"),
+                this.input.ask("1. Show all items;"),
+                this.input.ask("2. Edit item;"),
+                this.input.ask("3. Delete item;"),
+                this.input.ask("4. Find item by Id;"),
+                this.input.ask("5. Find items by name;"),
+                this.input.ask("6. Exit Program."),
 
         };
         System.out.println("Select: ");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        
+
         switch (num) {
             case 0:
                 System.out.println("Введите имя пользователя и описание заявки: ");
@@ -48,9 +48,17 @@ public class StartUI {
                 break;
             case 1:
                 System.out.println("Показать все заявки: ");
+                tracker.findAll();
                 String b = scanner.nextLine();
             case 2:
                 System.out.println("Введите id пользователя: ");
+                /*String key1 = scanner.nextLine();
+                String id1 = scanner.nextLine();
+                String name1 = scanner.nextLine();
+                String comments1 = scanner.nextLine();
+                Long creat1 = System.currentTimeMillis();
+                Item item1 = new Item(key1, id1, name1, comments1, creat1);
+                tracker.findById(item1);*/
                 String c = scanner.nextLine();
             case 3:
                 System.out.println("Введите id пользователя: ");
@@ -72,8 +80,13 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Tracker tracker = new Tracker();
         Input inputCons = new ConsoleInput();
         //inputCons.ask(tracker.add())
-        new StartUI(inputCons).init();
+        new StartUI(inputCons, tracker).init();
+
+        /*for (Input input : inputCons.ask()) {
+            System.out.println();
+        }*/
     }
 }
