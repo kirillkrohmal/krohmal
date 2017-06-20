@@ -34,9 +34,7 @@ public class StartUI {
         System.out.println("Select: ");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-
-
-
+        
         switch (num) {
             case 0:
                 System.out.println("Введите имя пользователя и описание заявки: ");
