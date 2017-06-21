@@ -30,7 +30,7 @@ public class TrackerTest {
         assertThat(tracker.findByName("test3"), is(item));
 
     }
- /*
+
     @Test
     public void whenAddNewItemThenTrackerHasSameItem3() {
         Tracker tracker = new Tracker();
@@ -39,13 +39,11 @@ public class TrackerTest {
         assertThat(tracker.update(), is(item));
     }
 
-
     @Test
     public void whenAddNewItemThenTrackerHasSameItem4() {
         Tracker tracker = new Tracker();
         Item item = new Item("test5","5", "test5", " this test Tracker5", 16/06/2017 );
         tracker.add(item);
         assertThat(tracker.delete("test5"), is(item));
-
-    }*/
+    }
 }

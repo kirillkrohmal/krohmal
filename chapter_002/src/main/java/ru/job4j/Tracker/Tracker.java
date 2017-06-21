@@ -13,7 +13,7 @@ public class Tracker {
 
     public Item add(Item item) {
         if (size == STORAGE_SIZE - 1) {
-            String.format("Вводить заявки больше нельзя! Объем полон");
+            System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
         item.setId(this.generateId());
         items[size++] = item;

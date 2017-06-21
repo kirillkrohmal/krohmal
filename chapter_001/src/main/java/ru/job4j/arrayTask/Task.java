@@ -1,6 +1,5 @@
 package ru.job4j.arrayTask;
 
-import java.util.Arrays;
 
 
 public class Task {
