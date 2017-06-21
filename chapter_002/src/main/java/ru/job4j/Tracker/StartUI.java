@@ -14,6 +14,13 @@ public class StartUI {
         this.input = input;
         this.tracker = tracker;
     }
+
+    /*public void printAll() {
+        Item[] inputs = tracker.findAll();
+        for (int i = 0; i < ; i++) {
+
+        }
+    }*/
    /*
     test1
     1
@@ -29,7 +36,6 @@ public class StartUI {
                 this.input.ask("4. Find item by Id;"),
                 this.input.ask("5. Find items by name;"),
                 this.input.ask("6. Exit Program."),
-
         };
         System.out.println("Select: ");
         Scanner scanner = new Scanner(System.in);
@@ -38,8 +44,8 @@ public class StartUI {
         switch (num) {
             case 0:
                 System.out.println("Введите имя пользователя и описание заявки: ");
-                String key = scanner.nextLine();
                 String id = scanner.nextLine();
+                String key = scanner.nextLine();
                 String name = scanner.nextLine();
                 String comments = scanner.nextLine();
                 Long creat = System.currentTimeMillis();
@@ -49,32 +55,34 @@ public class StartUI {
             case 1:
                 System.out.println("Показать все заявки: ");
                 tracker.findAll();
-                String b = scanner.nextLine();
+                break;
             case 2:
                 System.out.println("Введите id пользователя: ");
-                /*String key1 = scanner.nextLine();
-                String id1 = scanner.nextLine();
-                String name1 = scanner.nextLine();
-                String comments1 = scanner.nextLine();
-                Long creat1 = System.currentTimeMillis();
-                Item item1 = new Item(key1, id1, name1, comments1, creat1);
-                tracker.findById(item1);*/
+                //tracker.update();
                 String c = scanner.nextLine();
             case 3:
                 System.out.println("Введите id пользователя: ");
-                String d = scanner.nextLine();
+                String id1 = scanner.nextLine();
+                tracker.delete(id1);
+                //String d = scanner.nextLine();
             case 4:
                 System.out.println("Введите id пользователя: ");
-                String e = scanner.nextLine();
+                String id2 = scanner.nextLine();
+                tracker.findById(id2);
+                //String e = scanner.nextLine();
             case 5:
                 System.out.println("Введите имя пользователя: ");
-                String g = scanner.nextLine();
+                String name1 = scanner.nextLine();
+                tracker.findByName(name1);
+                //String g = scanner.nextLine();
             case 6:
+                Scanner scanner1 = new Scanner(System.in);
                 System.out.println("Выйти из программы: ");
-                String k = scanner.nextLine();
-
-                if (k.equals("y")) {
-
+                if (scanner1.equals("y")) {
+                    break;
+                }
+                else {
+                    return;
                 }
         }
     }
