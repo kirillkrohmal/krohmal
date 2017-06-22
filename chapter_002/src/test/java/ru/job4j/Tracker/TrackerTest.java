@@ -9,7 +9,7 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test1", "1", "test1", " this test Tracker1", 16062016);
+        Item item = new Item("test1", "1", "test1", " this test Tracker1", 2005-03-27);
         tracker.add(item);
         assertThat(tracker.findAll()[0], is(item));
     }
@@ -17,15 +17,15 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem1() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test2", "2", "test2", " this test Tracker2", 16062016);
-        tracker.findAll();
-        assertThat(tracker.findById("3"), is(item));
+        Item item = new Item("test2", "2", "test2", " this test Tracker2", 2005-03-27);
+        tracker.add(item);
+        assertThat(tracker.findById("2"), is(item));
     }
 
     @Test
     public void whenAddNewItemThenTrackerHasSameItem2() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test3", "3", "test3", " this test Tracker3", 16062016);
+        Item item = new Item("test3", "3", "test3", " this test Tracker3", 2005-03-27);
         tracker.add(item);
         assertThat(tracker.findByName("test3"), is(item));
     }
@@ -33,8 +33,8 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem3() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test4", "4", "test4", " this test Tracker4", 16 / 06 / 2017);
-        Item item1 = new Item("test94", "8", "test8", " this test Tracker8", 16 / 06 / 2017);
+        Item item = new Item("test4", "4", "test4", " this test Tracker4", 2005-03-27);
+        Item item1 = new Item("test94", "8", "test8", " this test Tracker8", 2005-03-27);
         tracker.update(item1);
         assertThat(tracker.findById("4"), is(item));
     }
@@ -42,7 +42,7 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem4() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test5", "5", "test5", " this test Tracker5", 16 / 06 / 2017);
+        Item item = new Item("test5", "5", "test5", " this test Tracker5", 2005-03-27);
         tracker.delete("5");
         assertThat(tracker.findById("5"), is(item));
     }
