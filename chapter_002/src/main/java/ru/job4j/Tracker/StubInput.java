@@ -13,15 +13,13 @@ public class StubInput implements Input {
         this.answers = answers;
     }
 
-    private Scanner scanner = new Scanner(System.in);
+   /* public StubInput() {
+        Item[] items = new Item[]{};
 
-   /* public StubInput(Item[] items) {
-        Item[] items1 = new Item[]{};
-        items1[0] = new Item("1", );
 
         //tracker.add(new StubInput(items));
-    }*/
-
+    }
+    */
     @Override
     public String ask(String question) {
         return answers[position++];
