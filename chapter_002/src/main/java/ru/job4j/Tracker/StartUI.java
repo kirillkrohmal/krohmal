@@ -22,7 +22,7 @@ public class StartUI {
         }
     }*/
 
-    public void init() {
+    public int init() {
         System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
@@ -78,16 +78,17 @@ public class StartUI {
                 tracker.findByName(name2);
                 //String g = scanner.nextLine();
             case 6:
-                Scanner scanner5 = new Scanner(System.in);
                 System.out.println("Выйти из программы: ");
-                if (scanner5.equals("y")) {
+                Scanner scanner5 = new Scanner(System.in);
+                String name3 = scanner5.nextLine();
+                if (name3.equals("y")) {
                     break;
                 } else {
-                    return;
+                    return init();
                 }
         }
+        return 0;
     }
-
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Input inputCons = new ConsoleInput();
