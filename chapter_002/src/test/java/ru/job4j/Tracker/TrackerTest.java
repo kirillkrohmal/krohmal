@@ -35,8 +35,9 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("test4", "4", "test4", " this test Tracker4", 2005-03-27);
         Item item1 = new Item("test94", "8", "test8", " this test Tracker8", 2005-03-27);
+        tracker.add(item);
         tracker.update(item1);
-        assertThat(tracker.findById("4"), is(item));
+        assertThat(tracker.findById("4"), is(item1));
     }
 
     @Test
