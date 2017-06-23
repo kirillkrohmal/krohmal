@@ -16,7 +16,7 @@ public class ShapeTest {
     public void whenPaintNewFigureThenHasOtherFigures() {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(stream));
-        //Triangle.pic("triangle");
+        Triangle.pic("triangle");
         assertThat(stream.toString(), is(String.format("xxxx%sxxx %sxx  %sx    ", System.getProperty("line.separator"))));
     }
 
@@ -25,7 +25,6 @@ public class ShapeTest {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(stream));
         Square.pic("square");
-        assertThat(stream.toString(), is(String.format("xxxx%sxxx %sxx  %sx    ", System.getProperty("line.separator"))));
-
+        assertThat(stream.toString(), is(String.format("xxxx%sxxxx%sxxxx%sxxxx%sxxxx", System.getProperty("line.separator"))));
     }
 }
