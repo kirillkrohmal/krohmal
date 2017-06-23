@@ -35,7 +35,7 @@ public class StartUI {
 
         switch (num) {
             case 0:
-                System.out.println("Введите имя");
+                System.out.println("Введите key, id, имя, описание: ");
                 Scanner scanner = new Scanner(System.in);
                 String id = scanner.nextLine();
                 String key = scanner.nextLine();
@@ -78,7 +78,7 @@ public class StartUI {
                 tracker.findByName(name2);
                 //String g = scanner.nextLine();
             case 6:
-                System.out.println("Выйти из программы: ");
+                System.out.println("Выйти из программы?(y или n): ");
                 Scanner scanner5 = new Scanner(System.in);
                 String name3 = scanner5.nextLine();
                 if (name3.equals("y")) {
