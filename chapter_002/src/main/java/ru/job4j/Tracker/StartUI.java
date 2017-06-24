@@ -22,8 +22,18 @@ public class StartUI {
         }
     }*/
 
-    public int init() {
-        System.out.println("0. Add new Item;");
+    public void init() {
+        Tracker tracker = new Tracker();
+        MenuTracker menuTracker = new MenuTracker(this.input, tracker);
+        menuTracker.fillActions();
+        do {
+            menuTracker.show();
+            int key = Integer.parseInt(input.ask("Select"));
+            menuTracker.select(key);
+        }
+        while (!"y".equals(this.input.ask("Exit? y")));
+
+        /*System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
         System.out.println("3. Delete item;");
@@ -42,7 +52,7 @@ public class StartUI {
                 String name = scanner.nextLine();
                 String comments = scanner.nextLine();
                 Long creat = System.currentTimeMillis();
-                Item item = new Item(key, id, name, comments, creat);
+                Item item = new Item(key, id, name, comments);
                 tracker.add(item);
                 break;
             case 1:
@@ -56,7 +66,7 @@ public class StartUI {
                 String name1 = scanner1.nextLine();
                 String comments1 = scanner1.nextLine();
                 Long creat1 = System.currentTimeMillis();
-                Item item1 = new Item(key1, id1, name1, comments1, creat1);
+                Item item1 = new Item(key1, id1, name1, comments1);
                 tracker.update(item1);
                 String c = scanner1.nextLine();
             case 3:
@@ -87,7 +97,7 @@ public class StartUI {
                     return init();
                 }
         }
-        return 0;
+        return 0;*/
     }
     public static void main(String[] args) {
         Tracker tracker = new Tracker();

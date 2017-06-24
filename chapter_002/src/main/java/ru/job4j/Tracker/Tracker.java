@@ -21,16 +21,27 @@ public class Tracker {
     }
 
     String generateId() {
-        return String.valueOf(System.currentTimeMillis() + random.nextInt());
+        return String.valueOf(new Random().nextInt(items.length) + 1);
+        //return String.valueOf(System.currentTimeMillis() + random.nextInt());
     }
 
     public void delete(String id) {
         for (Item item : items) {
-            if (item.getId().equals(id) && items != null) {
+            if (item.getId().equals(id) && item != null) {
                 item = null;
                 return;
             }
             //System.arraycopy();
+        }
+    }
+
+    public void edit (Item freshItem) {
+        for (int i = 0; i != items.length;++i) {
+            Item item = items[i];
+            if (item.getId().equals(freshItem.getId()) && item != null) {
+                items[i] = freshItem;
+                break;
+            }
         }
     }
 
