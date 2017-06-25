@@ -23,8 +23,9 @@ public class ShapeTest {
                 return triangle.pic("triangle");
             }
         };
+        final String line = System.getProperty("line.separator");
         //Triangle.pic("triangle");
-        assertThat(stream.toString(), is(String.format("xxxx%sxxx%sxx%sx", System.getProperty("line.separator"))));
+        assertThat(stream.toString(), is(String.format("xxxx%sxxx%s xx%s  x    ", line, line, line)));
     }
 
     @Test
@@ -32,13 +33,10 @@ public class ShapeTest {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(stream));
         Square square = new Square();
-        Shape shape = new Shape() {
-            @Override
-            public String pic(String figure) {
-                return square.pic("square");
-            }
-        };
+        Paint paint = new Paint(square);
+        paint.draw("square");
+        final String line = System.getProperty("line.separator");
         //Square.pic("square");
-        assertThat(stream.toString(), is(String.format("xxxx%sxxxx%sxxxx%sxxxx%sxxxx", System.getProperty("line.separator"))));
+        assertThat(stream.toString(), is(String.format("xxxx%sxxxx%sxxxx%sxxxx%sxxxx", line, line, line, line )));
     }
 }

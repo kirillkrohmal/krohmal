@@ -21,8 +21,8 @@ public class Tracker {
     }
 
     String generateId() {
-        return String.valueOf(new Random().nextInt(items.length) + 1);
-        //return String.valueOf(System.currentTimeMillis() + random.nextInt());
+        //return String.valueOf(new Random().nextInt(items.length) + 1);
+        return String.valueOf(System.currentTimeMillis() + random.nextInt());
     }
 
     public void delete(String id) {
@@ -31,7 +31,6 @@ public class Tracker {
                 item = null;
                 return;
             }
-            //System.arraycopy();
         }
     }
 

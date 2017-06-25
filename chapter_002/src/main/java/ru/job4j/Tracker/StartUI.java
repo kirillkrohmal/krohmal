@@ -15,15 +15,8 @@ public class StartUI {
         this.tracker = tracker;
     }
 
-    /*public void printAll() {
-        Item[] inputs = tracker.findAll();
-        for (int i = 0; i < ; i++) {
-
-        }
-    }*/
-
     public void init() {
-        Tracker tracker = new Tracker();
+        /*Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
@@ -31,9 +24,9 @@ public class StartUI {
             int key = Integer.parseInt(input.ask("Select"));
             menuTracker.select(key);
         }
-        while (!"y".equals(this.input.ask("Exit? y")));
+        while (!"y".equals(this.input.ask("Exit? y")));*/
 
-        /*System.out.println("0. Add new Item;");
+        System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
         System.out.println("3. Delete item;");
@@ -42,63 +35,38 @@ public class StartUI {
         System.out.println("6. Exit Program.");
 
         num = Integer.valueOf(this.input.ask("Select: "));
+        String key = input.ask("Please enter task's key: ");
+        String id = input.ask("Please enter task's id: ");
+        String name = input.ask("Please enter task's name: ");
+        String desc = input.ask("Please enter task's desc: ");
+        long creat = System.currentTimeMillis();
+
+        Task task = new Task(key, id, name, desc, creat);
 
         switch (num) {
             case 0:
-                System.out.println("Введите key, id, имя, описание: ");
-                Scanner scanner = new Scanner(System.in);
-                String id = scanner.nextLine();
-                String key = scanner.nextLine();
-                String name = scanner.nextLine();
-                String comments = scanner.nextLine();
-                Long creat = System.currentTimeMillis();
-                Item item = new Item(key, id, name, comments);
-                tracker.add(item);
+                tracker.add(task);
                 break;
             case 1:
                 tracker.findAll();
                 break;
             case 2:
-                System.out.println("Введите id пользователя: ");
-                Scanner scanner1 = new Scanner(System.in);
-                String id1 = scanner1.nextLine();
-                String key1 = scanner1.nextLine();
-                String name1 = scanner1.nextLine();
-                String comments1 = scanner1.nextLine();
-                Long creat1 = System.currentTimeMillis();
-                Item item1 = new Item(key1, id1, name1, comments1);
-                tracker.update(item1);
-                String c = scanner1.nextLine();
+                tracker.update(task);
+                break;
             case 3:
-                System.out.println("Введите id пользователя: ");
-                Scanner scanner2 = new Scanner(System.in);
-                String id2 = scanner2.nextLine();
-                tracker.delete(id2);
-                //String d = scanner.nextLine();
+                tracker.delete(id);
+                break;
             case 4:
-                System.out.println("Введите id пользователя: ");
-                Scanner scanner3 = new Scanner(System.in);
-                String id3 = scanner3.nextLine();
-                tracker.findById(id3);
-                //String e = scanner.nextLine();
+                tracker.findById(id);
+                break;
             case 5:
-                System.out.println("Введите имя пользователя: ");
-                Scanner scanner4 = new Scanner(System.in);
-                String name2 = scanner4.nextLine();
-                tracker.findByName(name2);
-                //String g = scanner.nextLine();
+                tracker.findByName(name);
+                break;
             case 6:
-                System.out.println("Выйти из программы?(y или n): ");
-                Scanner scanner5 = new Scanner(System.in);
-                String name3 = scanner5.nextLine();
-                if (name3.equals("y")) {
-                    break;
-                } else {
-                    return init();
-                }
+                break;
         }
-        return 0;*/
     }
+
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Input inputCons = new ConsoleInput();

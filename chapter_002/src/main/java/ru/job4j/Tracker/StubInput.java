@@ -13,13 +13,6 @@ public class StubInput implements Input {
         this.answers = answers;
     }
 
-   /* public StubInput() {
-        Item[] items = new Item[]{};
-
-
-        //tracker.add(new StubInput(items));
-    }
-    */
     @Override
     public String ask(String question) {
         return answers[position++];

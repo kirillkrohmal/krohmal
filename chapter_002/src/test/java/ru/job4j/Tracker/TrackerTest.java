@@ -9,7 +9,7 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test1", "1");
+        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
         tracker.add(item);
         assertThat(tracker.findAll()[0], is(item));
     }
@@ -17,24 +17,24 @@ public class TrackerTest {
     @Test
     public void whenFindByIdNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test2", "2");
+        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
         tracker.add(item);
-        assertThat(tracker.findById("2"), is(item));
+        assertThat(tracker.findById("1"), is(item));
     }
 
     @Test
     public void whenFindByNameNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test3", "3");
+        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
         tracker.add(item);
-        assertThat(tracker.findByName("test3"), is(item));
+        assertThat(tracker.findByName("1"), is(item));
     }
 
     @Test
     public void whenUpdateNewItemThenTrackerHasOtherItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test4", "4");
-        Item item1 = new Item("test94", "8");
+        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
+        Item item1 = new Item("1", "1", "test1", "1", 16-06-2015);
         tracker.add(item);
         tracker.update(item1);
         assertThat(tracker.findById("4"), is(item1));
@@ -43,7 +43,7 @@ public class TrackerTest {
     @Test
     public void whenDeleteNewItemThenTrackerHasNullItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test5", "5");
+        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
         tracker.delete("5");
         assertThat(tracker.findById("5"), is(item));
     }

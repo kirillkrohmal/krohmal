@@ -20,9 +20,10 @@ class EditItem implements UserAction {
     public void execute(Input input, Tracker tracker) {
         String id = input.ask("Please enter task's id: ");
         String desc = input.ask("Please enter task's desc: ");
-        //long creat = input.ask("Please enter task's desc: ");
+        String key = input.ask("Please enter task's key: ");
+        long creat = System.currentTimeMillis();
         String name = input.ask("Please enter task's name: ");
-        Task task = new Task(name, desc);
+        Task task = new Task(key, id, name, desc, creat);
         task.setId(id);
         tracker.update(task);
     }
@@ -44,6 +45,10 @@ public class MenuTracker {
         this.userAction[1] = new MenuTracker.ShowItem();
         this.userAction[2] = new EditItem();
 
+        /*this.userAction[3] = new DeleteItem();
+        this.userAction[4] = new EditItem();
+        this.userAction[5] = new EditItem();*/
+
         //how to fill it
     }
 
@@ -64,7 +69,30 @@ public class MenuTracker {
         }
     }
 
-    private class AddItem implements UserAction {
+    private class DeleteItem implements UserAction {
+
+        @Override
+        public int key() {
+            return 3;
+        }
+
+        @Override
+        public String info() {
+            return String.format("%s. %s", this.key(), "Delete Item.");
+        }
+
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            String id = input.ask("Please enter task's id: ");
+            String desc = input.ask("Please enter task's desc: ");
+            String key = input.ask("Please enter task's key: ");
+            long creat = System.currentTimeMillis();
+            String name = input.ask("Please enter task's name: ");
+            //tracker.delete(new Task(name, desc));
+        }
+    }
+
+        private class AddItem implements UserAction {
         public AddItem(Input input, Tracker tracker) {
         }
 
@@ -80,11 +108,12 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            String name = input.ask("Please enter task's name: ");
+            String id = input.ask("Please enter task's id: ");
             String desc = input.ask("Please enter task's desc: ");
-            //long creat = input.ask("Please enter task's desc: ");
-            tracker.add(new Task(name, desc));
-
+            String key = input.ask("Please enter task's key: ");
+            long creat = System.currentTimeMillis();
+            String name = input.ask("Please enter task's name: ");
+            tracker.add(new Task(key, id, name, desc, creat));
         }
     }
 

@@ -10,7 +10,7 @@ public class Item {
     private String desc;
     private long created;
 
-    public Item(String key, String id) {
+    public Item(String key, String id, String name, String desc, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
