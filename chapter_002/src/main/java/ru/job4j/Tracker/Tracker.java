@@ -44,7 +44,7 @@ public class Tracker {
             }
         }*/
     }
-/*
+
     public void edit (Item freshItem) {
         for (int i = 0; i != items.length;++i) {
             Item item = items[i];
@@ -53,7 +53,7 @@ public class Tracker {
                 break;
             }
         }
-    }*/
+    }
 
     public void update(Item freshItem) {
         Item result = null;
