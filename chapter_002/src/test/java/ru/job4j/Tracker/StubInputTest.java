@@ -58,9 +58,11 @@ public class StubInputTest {
     @Test
     public void whenUserUpdateItemThenTrackerHasAnotherItem() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
+        Item item = new Item("key004", "9", "test name4", "desc4", 16-06-2016);
+        tracker.add(item);
+        //item.setId("1");
         Input input = new StubInput(new String[]{
-                "0", "key004", "4", "test name4", "desc4", "6",
-                "2", "key006", "7", "test name6", "desc6", "6"
+                "2", "key006", "9", "test name4", "desc4", "6",
         });
         new StartUI(input, tracker).init();
         assertThat(tracker.findAll()[0].getName(), is("test name6"));

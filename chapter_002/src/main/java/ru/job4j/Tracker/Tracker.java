@@ -64,9 +64,9 @@ public class Tracker {
                 break;
             }
         }
-
-       /* for (int i = 0; i < size; i++) {
-            if (items[i].getId().equals(item)) {
+/*
+        for (int i = 0; i < size; i++) {
+            if (item.getId().equals(item.getId())) {
                 result = items[i];
                 item = result;
             }

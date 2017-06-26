@@ -40,7 +40,7 @@ public class TrackerTest {
         tracker.add(item);
         item1.setId(item.getId());
         tracker.update(item1);
-        assertThat(tracker.findById(item.getId()), is(item1));
+        assertThat(tracker.findAll()[0], is(item1));
     }
 
     @Test
