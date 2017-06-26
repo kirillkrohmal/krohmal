@@ -17,7 +17,7 @@ public class TrackerTest {
     @Test
     public void whenFindByIdNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("1", "1496510874953", "test1", "1", 16-06-2015);
+        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
         Item[] test = {item};
         tracker.add(item);
         assertThat(tracker.findById(item.getId()), is(test));
