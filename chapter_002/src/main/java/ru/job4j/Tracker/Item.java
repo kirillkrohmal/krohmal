@@ -65,4 +65,15 @@ public class Item {
     public void setCreated(long created) {
         this.created = created;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "key='" + key + '\'' +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                ", created=" + created +
+                '}';
+    }
 }

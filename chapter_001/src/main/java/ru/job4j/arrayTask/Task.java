@@ -1,9 +1,9 @@
 package ru.job4j.arrayTask;
 
 
-
 public class Task {
     public boolean contains(String sub, String origin) {
+
         boolean result = false;
 
         char[] subString = sub.toCharArray();
@@ -28,6 +28,8 @@ public class Task {
         return result;
     }
 }
+
+
 
 
 

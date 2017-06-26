@@ -1,5 +1,6 @@
 package ru.job4j.arrayTask;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -21,7 +22,7 @@ public class TaskTest {
     public void whenSubIsEqualsOrigin1() {
         Task task = new Task();
         String sub = "стиховедческий";
-        String origin = "ст1";
+        String origin = "ст";
         boolean result = task.contains(sub, origin);
         boolean expected = false;
         assertThat(result, is(expected));
@@ -41,7 +42,7 @@ public class TaskTest {
     public void whenSubIsEqualsOrigin3() {
         Task task = new Task();
         String sub = "стиховедческий";
-        String origin = "стиховедчески";
+        String origin = "ховедчески";
         boolean result = task.contains(sub, origin);
         boolean expected = true;
         assertThat(result, is(expected));

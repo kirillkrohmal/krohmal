@@ -1,5 +1,7 @@
 package ru.job4j.Tracker;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -26,14 +28,23 @@ public class Tracker {
     }
 
     public void delete(String id) {
-        for (Item item : items) {
-            if (item.getId().equals(id) && item != null) {
-                item = null;
+
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null && items[i].getId().equals(id)){
+                items[i] = null;
+                size--;
                 return;
             }
         }
-    }
 
+       /*for (Item item : items) {
+            if (item.getId().equals(id) && item != null) {
+                item = null;
+                break;
+            }
+        }*/
+    }
+/*
     public void edit (Item freshItem) {
         for (int i = 0; i != items.length;++i) {
             Item item = items[i];
@@ -42,17 +53,24 @@ public class Tracker {
                 break;
             }
         }
-    }
+    }*/
 
-    public void update(Item item) {
+    public void update(Item freshItem) {
         Item result = null;
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < items.length; i++) {
+            if(items[i] != null && items[i].getId().equals(freshItem.getId())) {
+                items[i] = freshItem;
+                break;
+            }
+        }
+
+       /* for (int i = 0; i < size; i++) {
             if (items[i].getId().equals(item)) {
                 result = items[i];
                 item = result;
             }
-        }
+        }*/
     }
 
     public Item[] findAll() {
@@ -64,10 +82,11 @@ public class Tracker {
         return result;
     }
 
-    public Item findByName(String key) {
+    public Item findByName(String name) {
         Item result = null;
+
         for (Item item : items) {
-            if (item.getKey().equals(key) && items != null) {
+            if (item.getName().equals(name) && items != null) {
                 result = item;
                 break;
             }
@@ -78,7 +97,7 @@ public class Tracker {
     public Item findById(String id) {
         Item result = null;
         for (Item item : items) {
-            if (item.getId().equals(id) && items != null) {
+            if (item.getId().equals(id)) {
                 result = item;
                 break;
             }

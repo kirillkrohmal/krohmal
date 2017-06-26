@@ -22,31 +22,41 @@ public class StubInputTest {
     public void whenUserFindByIdItemThenTrackerHasItemWithName() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
         Input input = new StubInput(new String[]{"0", "key002", "2", "test name2", "desc2", "6"});
+        Input input1 = new StubInput(new String[]{"4", "key002", "2", "test name2", "desc2", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById("2"), is("test name2"));
+        new StartUI(input1, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("test name2"));
     }
 
     @Test
     public void whenUserDeleteItemThenTrackerHasNullItem() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-        Input input = new StubInput(new String[]{"0", "key003", "3", "test name3", "desc3", "6"});
+        Input input = new StubInput(new String[]{"0", "key002", "2", "test name2", "desc2", "6"});
+        Input input2 = new StubInput(new String[]{"0", "key003", "3", "test name3", "desc3", "6"});
+        Input input1 = new StubInput(new String[]{"3", "key003", "3", "test name3", "desc3", "6"});
         new StartUI(input, tracker).init();
-        tracker.delete("3"), is();
+        new StartUI(input2, tracker).init();
+        new StartUI(input1, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("test name2"));
     }
 
     @Test
     public void whenUserUpdateItemThenTrackerHasAnotherItem() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
         Input input = new StubInput(new String[]{"0", "key004", "4", "test name4", "desc4", "6"});
+        Input input1 = new StubInput(new String[]{"2", "key006", "6", "test name6", "desc6", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.update(), is());
+        new StartUI(input1, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("test name6"));
     }
 
     @Test
     public void whenUserFindByNameItemThenTrackerHasItemWithName() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
         Input input = new StubInput(new String[]{"0", "key005", "5", "test name5", "desc5", "6"});
+        Input input1 = new StubInput(new String[]{"5", "key005", "5", "test name5", "desc5", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findByName("key005"), is(""));
+        new StartUI(input1, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("test name5"));
     }
 }

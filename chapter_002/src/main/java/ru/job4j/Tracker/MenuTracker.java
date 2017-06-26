@@ -29,7 +29,6 @@ class EditItem implements UserAction {
     }
 }
 
-
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
