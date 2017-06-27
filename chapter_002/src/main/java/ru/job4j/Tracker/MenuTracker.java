@@ -43,9 +43,10 @@ public class MenuTracker {
         this.userAction[0] = this.new AddItem(this.input, this.tracker);
         this.userAction[1] = new MenuTracker.ShowItem();
         this.userAction[2] = new EditItem();
+        this.userAction[3] = new DeleteItem();
+        this.userAction[4] = new FindItemById();
+        /*;
 
-        /*this.userAction[3] = new DeleteItem();
-        this.userAction[4] = new EditItem();
         this.userAction[5] = new EditItem();*/
 
         //how to fill it
@@ -87,11 +88,36 @@ public class MenuTracker {
             String key = input.ask("Please enter task's key: ");
             long creat = System.currentTimeMillis();
             String name = input.ask("Please enter task's name: ");
-            //tracker.delete(new Task(name, desc));
+            Task task = new Task(key, id, name, desc, creat);
+            tracker.delete(String.valueOf(new Task(key, id, name, desc, creat)));
+        }
+    }
+
+    private class FindItemById implements UserAction {
+
+        @Override
+        public int key() {
+            return 4;
+        }
+
+        @Override
+        public String info() {
+            return String.format("%s. %s", this.key(), "Find Item.");
+        }
+
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            String id = input.ask("Please enter task's id: ");
+            String desc = input.ask("Please enter task's desc: ");
+            String key = input.ask("Please enter task's key: ");
+            long creat = System.currentTimeMillis();
+            String name = input.ask("Please enter task's name: ");
+            tracker.findById(String.valueOf(new Task(key, id, name, desc, creat)));
         }
     }
 
         private class AddItem implements UserAction {
+
         public AddItem(Input input, Tracker tracker) {
         }
 

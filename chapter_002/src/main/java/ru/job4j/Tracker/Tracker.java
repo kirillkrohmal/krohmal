@@ -32,7 +32,7 @@ public class Tracker {
         for (int i = 0; i < items.length; i++) {
             if (items[i] != null && items[i].getId().equals(id)){
                 items[i] = null;
-                size--;
+                //size--;
                 return;
             }
         }

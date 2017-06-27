@@ -9,7 +9,7 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
+        Item item = new Item("1", "1", "test1", "1", 2017);
         tracker.add(item);
         assertThat(tracker.findAll()[0], is(item));
     }
@@ -17,7 +17,7 @@ public class TrackerTest {
     @Test
     public void whenFindByIdNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
+        Item item = new Item("1", "1", "test1", "1", 2017);
         Item[] test = {item};
         tracker.add(item);
         assertThat(tracker.findById(item.getId()), is(test));
@@ -26,7 +26,7 @@ public class TrackerTest {
     @Test
     public void whenFindByNameNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("name1", "1", "test1", "1", 16-06-2015);
+        Item item = new Item("name1", "1", "test1", "1", 2017);
         Item[] test = {item};
         tracker.add(item);
         assertThat(tracker.findByName("test1"), is(test));
@@ -35,8 +35,8 @@ public class TrackerTest {
     @Test
     public void whenUpdateNewItemThenTrackerHasOtherItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
-        Item item1 = new Item("2", "2", "test2", "2", 16-06-2015);
+        Item item = new Item("1", "1", "test1", "1", 2017);
+        Item item1 = new Item("2", "2", "test2", "2", 2017);
         tracker.add(item);
         item1.setId(item.getId());
         tracker.update(item1);
@@ -46,8 +46,8 @@ public class TrackerTest {
     @Test
     public void whenDeleteNewItemThenTrackerHasNullItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("1", "1", "test1", "1", 16-06-2015);
-        Item item1 = new Item("2", "2", "test2", "2", 16-06-2015);
+        Item item = new Item("1", "1", "test1", "1", 2017);
+        Item item1 = new Item("2", "2", "test2", "2", 2017);
         Item[] test = {item};
 
         tracker.add(item);

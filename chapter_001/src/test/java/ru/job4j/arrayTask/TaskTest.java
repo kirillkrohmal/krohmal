@@ -21,7 +21,7 @@ public class TaskTest {
     public void whenSubIsEqualsOrigin1() {
         Task task = new Task();
         String sub = "стиховедческий";
-        String origin = "ихо";
+        String origin = "иховед";
         boolean result = task.contains(sub, origin);
         boolean expected = true;
         assertThat(result, is(expected));
