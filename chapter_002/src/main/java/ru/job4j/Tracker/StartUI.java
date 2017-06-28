@@ -9,10 +9,12 @@ public class StartUI {
     private static int num;
     private Input input;
     private Tracker tracker;
+    private MenuTracker menuTracker;
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
+        //this.menuTracker = menuTracker;
     }
 
     public void init() {
@@ -21,7 +23,7 @@ public class StartUI {
         menuTracker.fillActions();
         do {
             menuTracker.show();
-            int key = Integer.parseInt(input.ask("Select"));
+            int key = Integer.parseInt(input.ask("Select: "));
             menuTracker.select(key);
         }
         while (!"y".equals(this.input.ask("Exit? y")));*/
@@ -69,7 +71,11 @@ public class StartUI {
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        Input inputCons = new ConsoleInput();
-        new StartUI(inputCons, tracker).init();
+        Input input = new ConsoleInput();
+        //MenuTracker menuTracker = new MenuTracker(input,tracker);
+        //Input inputCons = new ConsoleInput();
+        new MenuTracker(input,tracker).init();
+
+
     }
 }

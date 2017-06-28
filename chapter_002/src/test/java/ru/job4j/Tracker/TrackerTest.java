@@ -18,18 +18,18 @@ public class TrackerTest {
     public void whenFindByIdNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("1", "1", "test1", "1", 2017);
-        Item[] test = {item};
         tracker.add(item);
-        assertThat(tracker.findById(item.getId()), is(test));
+        Item result = tracker.findById(item.getId());
+        assertThat(result, is(item));
     }
 
     @Test
     public void whenFindByNameNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("name1", "1", "test1", "1", 2017);
-        Item[] test = {item};
         tracker.add(item);
-        assertThat(tracker.findByName("test1"), is(test));
+        Item result = tracker.findByName(item.getName());
+        assertThat(result, is(item));
     }
 
     @Test

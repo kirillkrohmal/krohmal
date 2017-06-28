@@ -1,5 +1,7 @@
 package ru.job4j.Tracker;
 
+import java.util.Arrays;
+
 /**
  * Created by Comp on 12.06.2017.
  */
@@ -7,6 +9,7 @@ public class Item {
     private String key;
     private String id;
     private String name;
+    private String[] comments;
     private String desc;
     private long created;
 
@@ -34,9 +37,9 @@ public class Item {
         return this.desc;
     }
 
-   /* public String[] getComment() {
+    public String[] getComment() {
         return this.comments;
-    }*/
+    }
 
     public long getCreated() {
         return this.created;
@@ -57,14 +60,15 @@ public class Item {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-/*
+
     public void setComments(String[] comments) {
         this.comments = comments;
-    }*/
+    }
 
     public void setCreated(long created) {
         this.created = created;
     }
+
 
     @Override
     public String toString() {
@@ -72,6 +76,7 @@ public class Item {
                 "key='" + key + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", comments=" + Arrays.toString(comments) +
                 ", desc='" + desc + '\'' +
                 ", created=" + created +
                 '}';
