@@ -4,9 +4,9 @@ package ru.job4j.Shape;
  * Created by Comp on 22.06.2017.
  */
 public class Square implements Shape {
-    @Override
-    public String pic(String figure) {
 
+    @Override
+    public String pic(Shape figure) {
         StringBuilder builder = new StringBuilder();
         String line = System.getProperty("line.separator");
 
@@ -24,3 +24,4 @@ public class Square implements Shape {
         return builder.toString();
     }
 }
+

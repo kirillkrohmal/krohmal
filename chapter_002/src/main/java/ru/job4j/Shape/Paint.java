@@ -7,13 +7,13 @@ public class Paint {
     /**
      * Метод draw должен печатать псевдокартинку на консоль.
      */
-    private Shape shape;
+    private Shape figure;
 
-    public Paint(Shape shape) {
-        this.shape = shape;
+    public Paint(Shape figure) {
+        this.figure = figure;
     }
 
-    public String draw(String figure) {
-        return shape.pic(figure);
+    public String draw(Shape figure) {
+        return figure.pic(figure);
     }
 }

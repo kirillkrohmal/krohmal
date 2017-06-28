@@ -14,30 +14,19 @@ import static org.junit.Assert.assertThat;
 public class ShapeTest {
     @Test
     public void whenPaintNewFigureThenHasOtherFigures() {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(stream));
-        Triangle triangle = new Triangle();
-        Paint paint = new Paint(triangle);
-        Shape shape = new Shape() {
-            @Override
-            public String pic(String figure) {
-                return paint.draw(figure);
-            }
-        };
+        Shape figure = new Triangle();
+        Paint paint = new Paint(figure);
+        String result = paint.draw(figure);
         final String line = System.getProperty("line.separator");
-        //Triangle.pic("triangle");
-        assertThat(stream.toString(), is(String.format("xxxx%sxxx%s xx%s  x    ", line, line, line)));
+        assertThat(result, is(String.format("xxxx%sxxx%sxx%sx%s%s", line, line, line, line, line)));
     }
 
     @Test
     public void whenPaintNewFigureThenHasOtherFigures2() {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(stream));
-        Square square = new Square();
-        Paint paint = new Paint(square);
-        paint.draw("square");
+        Shape figure = new Square();
+        Paint paint = new Paint(figure);
+        String result = paint.draw(figure);
         final String line = System.getProperty("line.separator");
-        //Square.pic("square");
-        assertThat(stream.toString(), is(String.format("xxxx%sxxxx%sxxxx%sxxxx%sxxxx", line, line, line, line )));
+        assertThat(result, is(String.format("xxxxx%sxxxxx%sxxxxx%sxxxxx%sxxxxx%s", line, line, line, line, line)));
     }
 }
