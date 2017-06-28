@@ -13,7 +13,7 @@ class EditItem implements UserAction {
 
     @Override
     public String info() {
-        return String.format("%s. %s", this.key(), "Edit Item.");
+        return String.format("%s. %s", this.key(), "Edit item.");
     }
 
     @Override
@@ -38,7 +38,7 @@ class DeleteItem implements UserAction {
 
     @Override
     public String info() {
-        return String.format("%s. %s", this.key(), "Delete Item.");
+        return String.format("%s. %s", this.key(), "Delete item.");
     }
 
     @Override
@@ -49,7 +49,7 @@ class DeleteItem implements UserAction {
         long creat = System.currentTimeMillis();
         String name = input.ask("Please enter task's name: ");
         Task task = new Task(key, id, name, desc, creat);
-        tracker.delete(String.valueOf(new Task(key, id, name, desc, creat)));
+        tracker.delete(String.valueOf(task));
     }
 }
 
@@ -62,7 +62,7 @@ class FindItemByName implements UserAction {
 
     @Override
     public String info() {
-        return String.format("%s. %s", this.key(), "Find ByName Item.");
+        return String.format("%s. %s", this.key(), "Find items by name.");
     }
 
     @Override
@@ -73,14 +73,15 @@ class FindItemByName implements UserAction {
         long creat = System.currentTimeMillis();
         String name = input.ask("Please enter task's name: ");
         Task task = new Task(key, id, name, desc, creat);
-        tracker.findByName(String.valueOf(new Task(key, id, name, desc, creat)));
+        task.setName(name);
+        tracker.findByName(String.valueOf(task));
     }
 }
 
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] userAction = new UserAction[20];
+    private UserAction[] userAction = new UserAction[7];
 
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
@@ -137,7 +138,7 @@ public class MenuTracker {
 
         @Override
         public String info() {
-            return String.format("%s. %s", this.key(), "Find Item.");
+            return String.format("%s. %s", this.key(), "Find item by Id.");
         }
 
         @Override
@@ -147,7 +148,9 @@ public class MenuTracker {
             String key = input.ask("Please enter task's key: ");
             long creat = System.currentTimeMillis();
             String name = input.ask("Please enter task's name: ");
-            tracker.findById(String.valueOf(new Task(key, id, name, desc, creat)));
+            Task task = new Task(key, id, name, desc, creat);
+            task.setId(id);
+            tracker.findById(String.valueOf(task));
         }
     }
 
