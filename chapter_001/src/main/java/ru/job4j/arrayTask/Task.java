@@ -9,26 +9,30 @@ public class Task {
         char[] subString = sub.toCharArray();
         char[] originString = origin.toCharArray();
 
+
+
         for (int i = 0; i < originString.length; i++) {
             for (int j = 0; j < subString.length; j++) {
-                if (originString[i + j] == subString[i + j]) {
-                    //result = subCount > 0;
+
+
+                if (originString[i] == subString[i + j]) {
                     result = true;
                     break;
                 }
 
-                if (originString[i + j] != subString[i + j]) {
-                    //result = subCount > 0;
+                if (originString[i] != subString[i + j]) {
                     result = false;
                     break;
                 }
+                if (result) break;
             }
-            if (result) break;
+
         }
         return result;
     }
-
 }
+
+
 
 
 

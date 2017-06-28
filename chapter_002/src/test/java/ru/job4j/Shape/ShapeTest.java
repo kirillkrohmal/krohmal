@@ -17,10 +17,11 @@ public class ShapeTest {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(stream));
         Triangle triangle = new Triangle();
+        Paint paint = new Paint(triangle);
         Shape shape = new Shape() {
             @Override
             public String pic(String figure) {
-                return triangle.pic("triangle");
+                return paint.draw(figure);
             }
         };
         final String line = System.getProperty("line.separator");
