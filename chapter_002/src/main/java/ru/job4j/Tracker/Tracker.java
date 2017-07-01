@@ -28,9 +28,10 @@ public class Tracker {
     }
 
     public void delete(String id) {
+        Item result = null;
 
         for (int i = 0; i < items.length; i++) {
-            if (items[i] != null && items[i].getId().equals(id)){
+            if (items[i] != null && items[i].getId().equals(id)) {
                 items[i] = null;
                 size--;
                 return;
@@ -45,8 +46,8 @@ public class Tracker {
         }*/
     }
 
-    public void edit (Item freshItem) {
-        for (int i = 0; i != items.length;++i) {
+    public void edit(Item freshItem) {
+        for (int i = 0; i != items.length; ++i) {
             Item item = items[i];
             if (item.getId().equals(freshItem.getId()) && item != null) {
                 items[i] = freshItem;
@@ -59,7 +60,7 @@ public class Tracker {
         Item result = null;
 
         for (int i = 0; i < items.length; i++) {
-            if(items[i] != null && items[i].getId().equals(freshItem.getId())) {
+            if (items[i] != null && items[i].getId().equals(freshItem.getId())) {
                 items[i] = freshItem;
                 break;
             }

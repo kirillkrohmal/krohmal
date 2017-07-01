@@ -12,12 +12,24 @@ import static org.junit.Assert.assertThat;
  */
 public class StubInputTest {
     @Test
-    public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
+    public void whenUserFindAllItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
         Item item = new Item("key001", "1", "test name1", "desc1", 2017);
         tracker.add(item);
         Input input = new StubInput(new String[]{
                 "1", "key001", "1", "test name1", "desc1", "6"
+        });
+        new StartUI(input, tracker).init();
+        assertThat(tracker.findAll()[0].getName(), is("test name1"));
+    }
+
+    @Test
+    public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
+        Tracker tracker = new Tracker();//key, id, name, desc, creat
+        //Item item = new Item("key001", "1", "test name1", "desc1", 2017);
+        //tracker.add(item);
+        Input input = new StubInput(new String[]{
+                "0", "key001", "1", "test name1", "desc1", "6"
         });
         new StartUI(input, tracker).init();
         assertThat(tracker.findAll()[0].getName(), is("test name1"));

@@ -1,7 +1,5 @@
 package ru.job4j.Tracker;
 
-import java.util.Arrays;
-
 /**
  * Created by Comp on 12.06.2017.
  */
@@ -19,6 +17,7 @@ public class Item {
         this.name = name;
         this.desc = desc;
         this.created = created;
+        this.comments = comments;
     }
 
     public String getKey() {
@@ -70,15 +69,4 @@ public class Item {
     }
 
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "key='" + key + '\'' +
-                ", id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", comments=" + Arrays.toString(comments) +
-                ", desc='" + desc + '\'' +
-                ", created=" + created +
-                '}';
-    }
 }

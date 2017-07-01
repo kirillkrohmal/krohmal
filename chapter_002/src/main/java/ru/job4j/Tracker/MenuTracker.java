@@ -21,6 +21,7 @@ class EditItem implements UserAction {
         String id = input.ask("Please enter task's id: ");
         String desc = input.ask("Please enter task's desc: ");
         String key = input.ask("Please enter task's key: ");
+        //String[] comments = input.ask("Please enter task's key: ");
         long creat = System.currentTimeMillis();
         String name = input.ask("Please enter task's name: ");
         Task task = new Task(key, id, name, desc, creat);
@@ -93,13 +94,13 @@ public class MenuTracker {
         this.userAction[2] = new MenuTracker.ShowItem();
         this.userAction[3] = new EditItem();
         this.userAction[4] = new DeleteItem();
-        this.userAction[5] = new FindItemById();
+        this.userAction[5] = new MenuTracker.FindItemById();
         this.userAction[6] = new FindItemByName();
         //this.userAction[7] = new UserAction();
 
     }
 
-    public void init() {
+   /* public void init() {
         Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
@@ -110,7 +111,7 @@ public class MenuTracker {
         }
         while (!"y".equals(this.input.ask("Exit? y")));
     }
-
+*/
 
     /*  public static void test () {
           MenuTracker tr = new MenuTracker()
