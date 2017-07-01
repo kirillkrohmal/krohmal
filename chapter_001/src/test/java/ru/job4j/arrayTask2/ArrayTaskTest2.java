@@ -13,7 +13,7 @@ public class ArrayTaskTest2 {
     @Test
     public void whenSubIsEqualsOrigin() {
         ArrayTask2 task = new ArrayTask2();
-        String[] sub = {"стиховедческий", "стих", "стиховед"};
+        String[] sub = {"стиховедческий, стих, стиховед"};
         String[] origin = {"стих"};
         boolean result = task.contains(sub, origin);
         boolean expected = true;

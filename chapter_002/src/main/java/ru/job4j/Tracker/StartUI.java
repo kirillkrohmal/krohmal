@@ -22,12 +22,29 @@ public class StartUI {
     public void init() {
         Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
+        /*UserAction deleteAction = new UserAction() {
+            @Override
+            public int key() {
+                return 3;
+            }
 
+            @Override
+            public String info() {
+                return "Delete";
+            }
+
+            @Override
+            public void execute(Input input, Tracker tracker) {
+
+            }
+        };
+        menuTracker.addAction(deleteAction);*/
         menuTracker.fillActions();
         do {
             menuTracker.show();
             //int key = Integer.parseInt(input.ask("Select: "));
             menuTracker.select(input.ask("Select: ", range));
+
         }
         while (!"y".equals(this.input.ask("Exit? y")));
 
@@ -78,5 +95,6 @@ public class StartUI {
         //MenuTracker menuTracker = new MenuTracker(input,tracker);
         //Input inputCons = new ConsoleInput();
         new StartUI(input,tracker).init();
+
     }
 }
