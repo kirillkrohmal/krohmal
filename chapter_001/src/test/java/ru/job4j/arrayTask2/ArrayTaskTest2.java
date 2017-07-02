@@ -46,4 +46,56 @@ public class ArrayTaskTest2 {
         boolean expected = true;
         assertThat(result, is(expected));
     }
+
+    @Test
+    public void whenSubIsEqualsOrigin3() {
+        ArrayTask2 task = new ArrayTask2();
+        String sub1 = "стиховедческий";
+        String sub2 = "cn";
+        String sub3 = "cn";
+        String[] sub = {sub1, sub2, sub3};
+        String[] origin = {"cn"};
+        boolean result = task.contains(sub, origin);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenSubIsEqualsOrigin4() {
+        ArrayTask2 task = new ArrayTask2();
+        String sub1 = "стиховедческий";
+        String sub2 = "стишки";
+        String sub3 = "стишок";
+        String[] sub = {sub1, sub2, sub3};
+        String[] origin = {"стишок"};
+        boolean result = task.contains(sub, origin);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenSubIsEqualsOrigin5() {
+        ArrayTask2 task = new ArrayTask2();
+        String sub1 = "стиховедческий";
+        String sub2 = "стишки";
+        String sub3 = "стишок";
+        String[] sub = {sub1, sub2, sub3};
+        String[] origin = {"стишок1"};
+        boolean result = task.contains(sub, origin);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenSubIsEqualsOrigin6() {
+        ArrayTask2 task = new ArrayTask2();
+        String sub1 = "000";
+        String sub2 = "01";
+        String sub3 = "002";
+        String[] sub = {sub1, sub2, sub3};
+        String[] origin = {"001"};
+        boolean result = task.contains(sub, origin);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
 }
