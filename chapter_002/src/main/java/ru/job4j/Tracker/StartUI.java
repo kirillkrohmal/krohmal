@@ -20,9 +20,9 @@ public class StartUI {
     }
 
     public void init() {
-        Tracker tracker = new Tracker();
+       /* Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
-        /*UserAction deleteAction = new UserAction() {
+        *//*UserAction deleteAction = new UserAction() {
             @Override
             public int key() {
                 return 3;
@@ -38,7 +38,7 @@ public class StartUI {
 
             }
         };
-        menuTracker.addAction(deleteAction);*/
+        menuTracker.addAction(deleteAction);*//*
         menuTracker.fillActions();
         do {
             menuTracker.show();
@@ -46,7 +46,7 @@ public class StartUI {
             menuTracker.select(input.ask("Select: ", range));
 
         }
-        while (!"y".equals(this.input.ask("Exit? y")));
+        while (!"y".equals(this.input.ask("Exit? y")));*/
 
         System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
@@ -92,7 +92,6 @@ public class StartUI {
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Input input = new ValidateInput();
-        //MenuTracker menuTracker = new MenuTracker(input,tracker);
         //Input inputCons = new ConsoleInput();
         new StartUI(input,tracker).init();
 

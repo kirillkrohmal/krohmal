@@ -10,17 +10,9 @@ public class ArrayTask2 {
 
         boolean result = false;
 
-
-
-        int subString = sub.length;
-        int originString = origin.length;
-
-        /*char[] subString = sub.toCharArray();
-        char[] originString = origin.toCharArray();*/
-
         for (int i = 0; i < origin.length; i++) {
             for (int j = 0; j < sub.length; j++) {
-                if (origin[i + j] == sub[i + j]) {
+                if (origin[i] == sub[i + j]) {
                     result = true;
                     break;
                 }
@@ -29,7 +21,6 @@ public class ArrayTask2 {
                     break;
             }
         }
-
         return result;
     }
 }
