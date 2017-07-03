@@ -4,6 +4,50 @@ package ru.job4j.Tracker;
  * Created by Comp on 12.06.2017.
  */
 
+
+class FindItemByName extends BaseAction {
+
+    @Override
+    public int key() {
+        return 6;
+    }
+
+    @Override
+    public String name() {
+        return "Find items by name.";
+    }
+
+    @Override
+    public void execute(Input input, Tracker tracker) {
+        String id = input.ask("Please enter task's id: ");
+        String name = input.ask("Please enter task's name: ");
+        Task task = new Task(id, name);
+        tracker.findByName(task.getName());
+        System.out.println(String.format("%s", task));
+    }
+}
+
+class FindItemById extends BaseAction {
+
+    @Override
+    public int key() {
+        return 5;
+    }
+
+    @Override
+    public String name() {
+        return "Find item by Id.";
+    }
+
+    @Override
+    public void execute(Input input, Tracker tracker) {
+        String id = input.ask("Please enter task's id: ");
+        Task task = new Task(id);
+        tracker.findById(task.getId());
+        System.out.println(String.format("%s", task));
+    }
+}
+
 class EditItem extends BaseAction {
 
     @Override
@@ -21,7 +65,6 @@ class EditItem extends BaseAction {
         String id = input.ask("Please enter task's id: ");
         String desc = input.ask("Please enter task's desc: ");
         String key = input.ask("Please enter task's key: ");
-        //String[] comments = input.ask("Please enter task's key: ");
         long creat = System.currentTimeMillis();
         String name = input.ask("Please enter task's name: ");
         Task task = new Task(key, id, name, desc, creat);
@@ -45,45 +88,37 @@ class DeleteItem extends BaseAction {
     @Override
     public void execute(Input input, Tracker tracker) {
         String id = input.ask("Please enter task's id: ");
-        String desc = input.ask("Please enter task's desc: ");
-        String key = input.ask("Please enter task's key: ");
-        long creat = System.currentTimeMillis();
-        String name = input.ask("Please enter task's name: ");
-        Task task = new Task(key, id, name, desc, creat);
-        tracker.delete(String.valueOf(task));
+        Task task = new Task(id);
+        tracker.delete(task.getId());
     }
 }
 
-class FindItemByName extends BaseAction {
+
+/*class Exit extends BaseAction {
 
     @Override
     public int key() {
-        return 6;
+        return 7;
     }
 
     @Override
     public String name() {
-        return "Find items by name.";
+        return "Exit Program";
     }
 
     @Override
     public void execute(Input input, Tracker tracker) {
-        String id = input.ask("Please enter task's id: ");
-        String desc = input.ask("Please enter task's desc: ");
-        String key = input.ask("Please enter task's key: ");
-        long creat = System.currentTimeMillis();
-        String name = input.ask("Please enter task's name: ");
-        Task task = new Task(key, id, name, desc, creat);
-        task.setName(name);
-        tracker.findByName(String.valueOf(task));
+        System.out.println(String.format("Введите: y/n"));
+        tracker.exit();
     }
-}
+}*/
 
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
     private UserAction[] userAction = new UserAction[7];
-    private int position = 0;
+
+    private int position = 1;
 
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
@@ -95,27 +130,15 @@ public class MenuTracker {
         this.userAction[position++] = new MenuTracker.ShowItem();
         this.userAction[position++] = new EditItem();
         this.userAction[position++] = new DeleteItem();
-        this.userAction[position++] = new MenuTracker.FindItemById();
+        this.userAction[position++] = new FindItemById();
         this.userAction[position++] = new FindItemByName();
-        //this.userAction[7] = new UserAction();
+        //this.userAction[position++] = new Exit();
 
     }
 
     public void addAction(UserAction action) {
         this.userAction[position++] = action;
     }
-   /* public void init() {
-        Tracker tracker = new Tracker();
-        MenuTracker menuTracker = new MenuTracker(this.input, tracker);
-        menuTracker.fillActions();
-        do {
-            menuTracker.show();
-            int key = Integer.parseInt(input.ask("Select: "));
-            menuTracker.select(key);
-        }
-        while (!"y".equals(this.input.ask("Exit? y")));
-    }
-*/
 
     /*  public static void test () {
           MenuTracker tr = new MenuTracker()
@@ -134,31 +157,7 @@ public class MenuTracker {
         }
     }
 
-    private class FindItemById extends BaseAction {
 
-        @Override
-        public int key() {
-            return 5;
-        }
-
-        @Override
-        public String name() {
-            return "Find item by Id.";
-        }
-
-
-        @Override
-        public void execute(Input input, Tracker tracker) {
-            String id = input.ask("Please enter task's id: ");
-            String desc = input.ask("Please enter task's desc: ");
-            String key = input.ask("Please enter task's key: ");
-            long creat = System.currentTimeMillis();
-            String name = input.ask("Please enter task's name: ");
-            Task task = new Task(key, id, name, desc, creat);
-            task.setId(id);
-            tracker.findById(String.valueOf(task));
-        }
-    }
 
     private class AddItem extends BaseAction {
 
@@ -202,7 +201,7 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             for (Item item : tracker.findAll()) {
                 System.out.println(
-                        String.format("%s. %s", item.getId(), item.getName())
+                        String.format("%s. %s. %s. %s. %s", item.getId(), item.getName(), item.getKey(), item.getDesc(), item.getCreated())
                 );
             }
         }

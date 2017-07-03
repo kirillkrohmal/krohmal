@@ -18,7 +18,6 @@ public class ConsoleInput implements Input {
         int key = Integer.parseInt(this.ask(question));
         boolean exist = false;
 
-
         for (int value : range) {
             if (value == key) {
                 exist = true;
