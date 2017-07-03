@@ -20,7 +20,7 @@ public class StartUI {
     }
 
     public void init() {
-        Tracker tracker = new Tracker();
+        /*Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
@@ -30,8 +30,8 @@ public class StartUI {
 
         }
         while (!"y".equals(this.input.ask("Exit? y")));
-
-        /*System.out.println("0. Add new Item;");
+*/
+        System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
         System.out.println("3. Delete item;");
@@ -68,16 +68,16 @@ public class StartUI {
                 tracker.findByName(name);
                 break;
             case 6:
-                break;*/
+                break;
         }
-    
+    }
+
 
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Input input = new ValidateInput();
-        //Input input = new StubInput();
-        //Input inputCons = new ConsoleInput();
+        //Input input = new StubInput(new String[]{});
         new StartUI(input,tracker).init();
     }
 }

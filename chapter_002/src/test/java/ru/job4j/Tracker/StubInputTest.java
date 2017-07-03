@@ -55,12 +55,12 @@ public class StubInputTest {
         tracker.add(item);
         Item item2 = new Item("key004", "4", "test name4", "desc4", 2017);
         tracker.add(item2);
-        Item[] items = {item2};
+        Item[] items = {null};
         Input input = new StubInput(new String[]{
                 "3", "key003", item.getId(), "test name3", "desc3", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item2.getId()), is(items));
+        assertThat(tracker.findAll(), is(items));
     }
 
     @Test
