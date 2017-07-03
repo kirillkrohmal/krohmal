@@ -20,6 +20,16 @@ public class Item {
         this.comments = comments;
     }
 
+    public Item(String id) {
+        this.id = id;
+    }
+
+    public Item(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+
     public String getKey() {
         return this.key;
     }
@@ -67,6 +77,4 @@ public class Item {
     public void setCreated(long created) {
         this.created = created;
     }
-
-
 }

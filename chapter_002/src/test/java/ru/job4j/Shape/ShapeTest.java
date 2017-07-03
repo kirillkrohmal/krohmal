@@ -14,12 +14,21 @@ import static org.junit.Assert.assertThat;
 public class ShapeTest {
     @Test
     public void whenPaintNewFigureThenHasOtherFigures() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(baos));
         Shape figure = new Triangle();
         Paint paint = new Paint(figure);
         String result = paint.draw(figure);
         final String line = System.getProperty("line.separator");
         assertThat(result, is(String.format("xxxx%sxxx%sxx%sx%s%s", line, line, line, line, line)));
-    }
+    }/* @Test
+    public void whenPaintNewFigureThenHasOtherFigures() {
+        Shape figure = new Triangle();
+        Paint paint = new Paint(figure);
+        String result = paint.draw(figure);
+        final String line = System.getProperty("line.separator");
+        assertThat(result, is(String.format("xxxx%sxxx%sxx%sx%s%s", line, line, line, line, line)));
+    }*/
 
     @Test
     public void whenPaintNewFigureThenHasOtherFigures2() {

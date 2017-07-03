@@ -1,8 +1,10 @@
 package ru.job4j.Tracker;
 
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by Comp on 12.06.2017.
@@ -37,6 +39,19 @@ public class Tracker {
                 return;
             }
         }
+    }
+
+    /*public void exit() {
+
+
+        //boolean result = false;
+        for (int i = 0; i < items.length; i++) {
+
+        }
+
+        System.exit(0);
+    }*/
+
 
        /*for (Item item : items) {
             if (item.getId().equals(id) && item != null) {
@@ -44,7 +59,7 @@ public class Tracker {
                 break;
             }
         }*/
-    }
+
 
     public void edit(Item freshItem) {
         for (int i = 0; i != items.length; ++i) {

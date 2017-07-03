@@ -98,4 +98,28 @@ public class ArrayTaskTest2 {
         boolean expected = false;
         assertThat(result, is(expected));
     }
+
+    @Test
+    public void whenSubIsEqualsOrigin7() {
+        ArrayTask2 task = new ArrayTask2();
+        String sub1 = "abc";
+        String sub2 = "ac";
+        String[] sub = {sub1};
+        String[] origin = {sub2};
+        boolean result = task.contains(sub, origin);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenSubIsEqualsOrigin8() {
+        ArrayTask2 task = new ArrayTask2();
+        String sub1 = "abc";
+        String sub2 = "ac";
+        String[] sub = {sub1, sub2};
+        String[] origin = {"ac"};
+        boolean result = task.contains(sub, origin);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
 }

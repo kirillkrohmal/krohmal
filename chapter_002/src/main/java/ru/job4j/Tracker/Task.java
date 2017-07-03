@@ -8,6 +8,14 @@ public class Task extends Item {
         super(key, id, name, desc, created);
     }
 
+    public Task(String id) {
+        super(id);
+    }
+
+    public Task(String name, String id) {
+        super(name, id);
+    }
+
     public String calculatePrice() {
         return "100";
     }
