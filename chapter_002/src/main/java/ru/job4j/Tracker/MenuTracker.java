@@ -4,6 +4,49 @@ package ru.job4j.Tracker;
  * Created by Comp on 12.06.2017.
  */
 
+public class MenuTracker {
+    private Input input;
+    private Tracker tracker;
+    private UserAction[] userAction = new UserAction[7];
+
+    private int position = 1;
+
+    public MenuTracker(Input input, Tracker tracker) {
+        this.input = input;
+        this.tracker = tracker;
+    }
+
+    public void fillActions() {
+        this.userAction[position++] = this.new AddItem(this.input, this.tracker);
+        this.userAction[position++] = new MenuTracker.ShowItem();
+        this.userAction[position++] = new EditItem();
+        this.userAction[position++] = new DeleteItem();
+        this.userAction[position++] = new FindItemById();
+        this.userAction[position++] = new FindItemByName();
+        //this.userAction[position++] = new Exit();
+
+    }
+
+    public void addAction(UserAction action) {
+        this.userAction[position++] = action;
+    }
+
+    /*  public static void test () {
+          MenuTracker tr = new MenuTracker()
+          AddItem addItem = tr.new AddItem();
+      }
+  */
+    public void select(int key) {
+        this.userAction[key].execute(this.input, tracker);
+    }
+
+    public void show() {
+        for (UserAction action : userAction) {
+            if (action != null) {
+                System.out.println(action.info());
+            }
+        }
+    }
 
 class FindItemByName extends BaseAction {
 
@@ -112,52 +155,6 @@ class DeleteItem extends BaseAction {
         tracker.exit();
     }
 }*/
-
-public class MenuTracker {
-    private Input input;
-    private Tracker tracker;
-    private UserAction[] userAction = new UserAction[7];
-
-    private int position = 1;
-
-    public MenuTracker(Input input, Tracker tracker) {
-        this.input = input;
-        this.tracker = tracker;
-    }
-
-    public void fillActions() {
-        this.userAction[position++] = this.new AddItem(this.input, this.tracker);
-        this.userAction[position++] = new MenuTracker.ShowItem();
-        this.userAction[position++] = new EditItem();
-        this.userAction[position++] = new DeleteItem();
-        this.userAction[position++] = new FindItemById();
-        this.userAction[position++] = new FindItemByName();
-        //this.userAction[position++] = new Exit();
-
-    }
-
-    public void addAction(UserAction action) {
-        this.userAction[position++] = action;
-    }
-
-    /*  public static void test () {
-          MenuTracker tr = new MenuTracker()
-          AddItem addItem = tr.new AddItem();
-      }
-  */
-    public void select(int key) {
-        this.userAction[key].execute(this.input, tracker);
-    }
-
-    public void show() {
-        for (UserAction action : userAction) {
-            if (action != null) {
-                System.out.println(action.info());
-            }
-        }
-    }
-
-
 
     private class AddItem extends BaseAction {
 

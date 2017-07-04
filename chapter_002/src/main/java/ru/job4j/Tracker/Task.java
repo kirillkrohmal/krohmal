@@ -16,7 +16,4 @@ public class Task extends Item {
         super(name, id);
     }
 
-    public String calculatePrice() {
-        return "100";
-    }
 }

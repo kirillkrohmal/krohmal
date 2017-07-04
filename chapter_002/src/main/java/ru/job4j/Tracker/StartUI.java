@@ -10,9 +10,10 @@ public class StartUI {
     private Input input = new ValidateInput();
     private Tracker tracker;
     private MenuTracker menuTracker = new MenuTracker(input, tracker);
-    private int range[] = {1, 2, 3, 4, 5, 6};
-    private UserAction[] userAction = new UserAction[7];
+    private int position = 1;
+    private int range[] = {position++, position++, position++, position++, position++, position++};
 
+    private UserAction[] userAction = new UserAction[7];
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
@@ -20,7 +21,7 @@ public class StartUI {
     }
 
     public void init() {
-        /*Tracker tracker = new Tracker();
+        Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
@@ -30,7 +31,7 @@ public class StartUI {
 
         }
         while (!"y".equals(this.input.ask("Exit? y")));
-*/
+/*
         System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
@@ -69,10 +70,8 @@ public class StartUI {
                 break;
             case 6:
                 break;
-        }
+        }*/
     }
-
-
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
