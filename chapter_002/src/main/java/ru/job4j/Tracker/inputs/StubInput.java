@@ -1,13 +1,13 @@
-package ru.job4j.Tracker;
+package ru.job4j.Tracker.inputs;
 
-import java.util.Scanner;
+import ru.job4j.Tracker.inputs.Input;
 
 /**
  * Created by Comp on 18.06.2017.
  */
 public class StubInput implements Input {
     private String[] answers;
-    private int position = 0;
+    private int position = 1;
 
     public StubInput(String[] answers) {
         this.answers = answers;

@@ -1,4 +1,7 @@
-package ru.job4j.Tracker;
+package ru.job4j.Tracker.action;
+
+import ru.job4j.Tracker.Tracker;
+import ru.job4j.Tracker.inputs.Input;
 
 /**
  * Created by Comp on 22.06.2017.

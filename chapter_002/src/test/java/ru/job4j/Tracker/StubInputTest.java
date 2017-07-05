@@ -2,6 +2,8 @@ package ru.job4j.Tracker;
 
 
 import org.junit.Test;
+import ru.job4j.Tracker.inputs.Input;
+import ru.job4j.Tracker.inputs.StubInput;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNull;

@@ -1,10 +1,8 @@
-package ru.job4j.Tracker;
+package ru.job4j.Tracker.validator;
 
 
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import ru.job4j.Tracker.exception.MenuOutException;
+import ru.job4j.Tracker.inputs.ConsoleInput;
 
 /**
  * Created by Comp on 28.06.2017.
