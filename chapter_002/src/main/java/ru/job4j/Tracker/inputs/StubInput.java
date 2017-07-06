@@ -7,7 +7,7 @@ import ru.job4j.Tracker.inputs.Input;
  */
 public class StubInput implements Input {
     private String[] answers;
-    private int position = 1;
+    private int position = 0;
 
     public StubInput(String[] answers) {
         this.answers = answers;
@@ -18,7 +18,7 @@ public class StubInput implements Input {
         return answers[position++];
     }
 
-    @Override
+   @Override
     public int ask(String question, int[] range) {
         throw new UnsupportedOperationException("UnsupportedException");
     }

@@ -3,7 +3,7 @@ package ru.job4j.TestTask.Exception;
 /**
  * Created by Comp on 03.07.2017.
  */
-public class OccupiedWayException extends Exception {
+public class OccupiedWayException extends RuntimeException {
     public OccupiedWayException() {
     }
 

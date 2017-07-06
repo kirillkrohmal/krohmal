@@ -3,8 +3,16 @@ package ru.job4j.TestTask;
 /**
  * Created by Comp on 03.07.2017.
  */
-public class Cell {
+public class Cell implements ChessBoard{
+
+
+    public Cell() {
+        ChessFigure cell = new ChessFigure(3,1);
+    }
+
     public String paint(int higth) {
+
+        Cell[] cell = new Cell[]{};
 
         StringBuilder builder = new StringBuilder();
         String line = System.getProperty("line.separator");

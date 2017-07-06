@@ -2,6 +2,7 @@ package ru.job4j.Tracker;
 
 import ru.job4j.Tracker.action.UserAction;
 import ru.job4j.Tracker.inputs.Input;
+import ru.job4j.Tracker.inputs.StubInput;
 import ru.job4j.Tracker.validator.ValidateInput;
 
 /**
@@ -23,17 +24,17 @@ public class StartUI {
     }
 
     public void init() {
-        Tracker tracker = new Tracker();
+       /* Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
             menuTracker.show();
-            //int key = Integer.parseInt(input.ask("Select: "));
-            menuTracker.select(input.ask("Select: ", range));
+            int key = Integer.parseInt(input.ask("Select: "));
+            //menuTracker.select(input.ask("Select: ", range));
 
         }
-        while (!"y".equals(this.input.ask("Exit? y")));
-/*
+        while (!"y".equals(this.input.ask("Exit? y")));*/
+
         System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
@@ -72,13 +73,13 @@ public class StartUI {
                 break;
             case 6:
                 break;
-        }*/
+        }
     }
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        Input input = new ValidateInput();
-        //Input input = new StubInput(new String[]{});
-        new StartUI(input,tracker).init();
+        //Input input = new ValidateInput();
+        Input input = new StubInput(new String[]{});
+        new StartUI(input, tracker).init();
     }
 }

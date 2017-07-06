@@ -119,7 +119,23 @@ public class ArrayTaskTest2 {
         String[] sub = {sub1, sub2};
         String[] origin = {"ac"};
         boolean result = task.contains(sub, origin);
-        boolean expected = true;
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"a", "b"}, new String[] {"a", "c"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo2() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"a", "b"}, new String[] {"b", "c"});
+        boolean expected = false;
         assertThat(result, is(expected));
     }
 }

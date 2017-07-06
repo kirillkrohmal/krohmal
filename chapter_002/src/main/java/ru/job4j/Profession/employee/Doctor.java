@@ -1,6 +1,7 @@
 package ru.job4j.Profession.employee;
 
 
+import ru.job4j.Profession.Book;
 import ru.job4j.Profession.person.Pacient;
 import ru.job4j.Profession.Profession;
 import ru.job4j.Profession.Table;
@@ -30,4 +31,6 @@ public class Doctor extends Profession {
         System.out.println(String.format("Доктор %s выпивает %s со своим пациентом %s на столе %s", doctor.name, pacient.name, wine.name, table.name));
         return wine;
     }
+
+
 }

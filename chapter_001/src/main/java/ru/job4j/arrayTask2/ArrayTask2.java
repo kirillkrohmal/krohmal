@@ -14,13 +14,16 @@ public class ArrayTask2 {
             for (int j = 0; j < sub.length; j++) {
                 if (origin[i] == sub[i + j]) {
                     result = true;
-                    break;
+                    if (origin[i] != sub[i + j]) {
+                        result = false;
+                        break;
+                    }
                 }
-
-                if(result)
+                if (result)
                     break;
             }
-        }
-        return result;
+
+        } return result;
     }
 }
+
