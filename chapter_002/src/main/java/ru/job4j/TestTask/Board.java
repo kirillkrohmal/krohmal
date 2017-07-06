@@ -15,6 +15,16 @@ public class Board extends Figure {
         super(position);
     }
 
+    @Override
+    public boolean isFigureMove() {
+        return false;
+    }
+
+    @Override
+    public boolean isFigureOnTheSameCell() {
+        return false;
+    }
+
     /**
      * Метод должен должен проверить
      * Что в заданной ячейки есть фигура. если нет. то выкинуть исключение
