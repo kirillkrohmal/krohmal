@@ -47,7 +47,6 @@ public class StubInputTest {
         assertThat(tracker.findById(item.getId()).getName(), is("test name2"));
     }
 
-
     @Test
     public void whenUserDeleteItemThenTrackerHasItems() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
@@ -65,9 +64,9 @@ public class StubInputTest {
         tracker.add(item6);
         Item item7 = new Item("key009", "9", "test name9", "desc9", 2017);
         tracker.add(item7);
-        Item[] items = {item, item2, item3, item4, item5, item7};
+        Item[] items = {item, item2, item3, item7, item5, item6 };
         Input input = new StubInput(new String[]{
-                "3", "key006", item6.getId(), "test name6", "desc6", "6"
+                "3", "key006", item4.getId(), "test name6", "desc6", "6"
         });
         new StartUI(input, tracker).init();
         assertThat(tracker.findAll(), is(items));
@@ -88,6 +87,23 @@ public class StubInputTest {
         });
         new StartUI(input, tracker).init();
         assertThat(tracker.findAll(), is(items));
+    }
+
+     @Test
+    public void whenUserDeleteItemThenTrackerHasItems3() {
+        Tracker tracker = new Tracker();//key, id, name, desc, creat
+        Item item = new Item("key003", "3", "test name3", "desc3", 2017);
+        tracker.add(item);
+        Item item2 = new Item("key004", "4", "test name4", "desc4", 2017);
+        tracker.add(item2);
+        Item item7 = new Item("key009", "9", "test name9", "desc9", 2017);
+        tracker.add(item7);
+        //Item[] items = {item2};
+        Input input = new StubInput(new String[]{
+                "3", "key003", item.getId(), "test name3", "desc3", "6"
+        });
+        new StartUI(input, tracker).init();
+        assertThat(tracker.findById(item2.getId()), is(item2));
     }
 
     @Test

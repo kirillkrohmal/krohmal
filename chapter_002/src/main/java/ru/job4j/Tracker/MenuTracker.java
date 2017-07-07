@@ -52,93 +52,93 @@ public class MenuTracker {
         }
     }
 
-class FindItemByName extends BaseAction {
+    class FindItemByName extends BaseAction {
 
-    @Override
-    public int key() {
-        return 6;
+        @Override
+        public int key() {
+            return 6;
+        }
+
+        @Override
+        public String name() {
+            return "Find items by name.";
+        }
+
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            String id = input.ask("Please enter task's id: ");
+            String name = input.ask("Please enter task's name: ");
+            Task task = new Task(id, name);
+            tracker.findByName(task.getName());
+            System.out.println(String.format("%s", task));
+        }
     }
 
-    @Override
-    public String name() {
-        return "Find items by name.";
+    class FindItemById extends BaseAction {
+
+        @Override
+        public int key() {
+            return 5;
+        }
+
+        @Override
+        public String name() {
+            return "Find item by Id.";
+        }
+
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            String id = input.ask("Please enter task's id: ");
+            Task task = new Task(id);
+            tracker.findById(task.getId());
+            System.out.println(String.format("%s", task));
+        }
     }
 
-    @Override
-    public void execute(Input input, Tracker tracker) {
-        String id = input.ask("Please enter task's id: ");
-        String name = input.ask("Please enter task's name: ");
-        Task task = new Task(id, name);
-        tracker.findByName(task.getName());
-        System.out.println(String.format("%s", task));
-    }
-}
+    class EditItem extends BaseAction {
 
-class FindItemById extends BaseAction {
+        @Override
+        public int key() {
+            return 3;
+        }
 
-    @Override
-    public int key() {
-        return 5;
-    }
+        @Override
+        public String name() {
+            return "Edit item.";
+        }
 
-    @Override
-    public String name() {
-        return "Find item by Id.";
-    }
-
-    @Override
-    public void execute(Input input, Tracker tracker) {
-        String id = input.ask("Please enter task's id: ");
-        Task task = new Task(id);
-        tracker.findById(task.getId());
-        System.out.println(String.format("%s", task));
-    }
-}
-
-class EditItem extends BaseAction {
-
-    @Override
-    public int key() {
-        return 3;
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            String id = input.ask("Please enter task's id: ");
+            String desc = input.ask("Please enter task's desc: ");
+            String key = input.ask("Please enter task's key: ");
+            long creat = System.currentTimeMillis();
+            String name = input.ask("Please enter task's name: ");
+            Task task = new Task(key, id, name, desc, creat);
+            task.setId(id);
+            tracker.update(task);
+        }
     }
 
-    @Override
-    public String name() {
-        return "Edit item.";
-    }
+    class DeleteItem extends BaseAction {
 
-    @Override
-    public void execute(Input input, Tracker tracker) {
-        String id = input.ask("Please enter task's id: ");
-        String desc = input.ask("Please enter task's desc: ");
-        String key = input.ask("Please enter task's key: ");
-        long creat = System.currentTimeMillis();
-        String name = input.ask("Please enter task's name: ");
-        Task task = new Task(key, id, name, desc, creat);
-        task.setId(id);
-        tracker.update(task);
-    }
-}
+        @Override
+        public int key() {
+            return 4;
+        }
 
-class DeleteItem extends BaseAction {
+        @Override
+        public String name() {
+            return "Delete item.";
+        }
 
-    @Override
-    public int key() {
-        return 4;
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            String id = input.ask("Please enter task's id: ");
+            Task task = new Task(id);
+            tracker.delete(task.getId());
+        }
     }
-
-    @Override
-    public String name() {
-        return "Delete item.";
-    }
-
-    @Override
-    public void execute(Input input, Tracker tracker) {
-        String id = input.ask("Please enter task's id: ");
-        Task task = new Task(id);
-        tracker.delete(task.getId());
-    }
-}
 
 
 /*class Exit extends BaseAction {
@@ -161,7 +161,6 @@ class DeleteItem extends BaseAction {
 }*/
 
     private class AddItem extends BaseAction {
-
         public AddItem(Input input, Tracker tracker) {
         }
 

@@ -24,13 +24,13 @@ public class StartUI {
     }
 
     public void init() {
-       /* Tracker tracker = new Tracker();
+/*        Tracker tracker = new Tracker();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
             menuTracker.show();
-            int key = Integer.parseInt(input.ask("Select: "));
-            //menuTracker.select(input.ask("Select: ", range));
+            //int key = Integer.parseInt(input.ask("Select: "));
+            menuTracker.select(input.ask("Select: ", range));
 
         }
         while (!"y".equals(this.input.ask("Exit? y")));*/
