@@ -11,119 +11,6 @@ import static org.junit.Assert.assertThat;
  */
 public class ArrayTaskTest2 {
     @Test
-    public void whenSubIsEqualsOrigin() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "стиховедческий";
-        String sub2 = "стих";
-        String sub3 = "стиховед";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"стих"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = true;
-        assertThat(result, is(expected));
-    }
-    @Test
-    public void whenSubIsEqualsOrigin1() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "стихи";
-        String sub2 = "стихотворение";
-        String sub3 = "стиховед";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"стих"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = false;
-        assertThat(result, is(expected));
-    }
-    @Test
-    public void whenSubIsEqualsOrigin2() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "стиховедческий";
-        String sub2 = "стишки";
-        String sub3 = "стишок";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"стишок"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = true;
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenSubIsEqualsOrigin3() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "стиховедческий";
-        String sub2 = "cn";
-        String sub3 = "cn";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"cn"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = true;
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenSubIsEqualsOrigin4() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "стиховедческий";
-        String sub2 = "стишки";
-        String sub3 = "стишок";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"стишок"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = true;
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenSubIsEqualsOrigin5() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "стиховедческий";
-        String sub2 = "стишки";
-        String sub3 = "стишок";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"стишок1"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = false;
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenSubIsEqualsOrigin6() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "000";
-        String sub2 = "01";
-        String sub3 = "002";
-        String[] sub = {sub1, sub2, sub3};
-        String[] origin = {"001"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = false;
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenSubIsEqualsOrigin7() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "abc";
-        String sub2 = "ac";
-        String[] sub = {sub1};
-        String[] origin = {sub2};
-        boolean result = task.contains(sub, origin);
-        boolean expected = false;
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenSubIsEqualsOrigin8() {
-        ArrayTask2 task = new ArrayTask2();
-        String sub1 = "abc";
-        String sub2 = "ac";
-        String[] sub = {sub1, sub2};
-        String[] origin = {"ac"};
-        boolean result = task.contains(sub, origin);
-        boolean expected = false;
-        assertThat(result, is(expected));
-    }
-
-    @Test
     public void whenTwo() {
         ArrayTask2 task = new ArrayTask2();
         boolean result = task.contains(new String[] {"a", "b"}, new String[] {"a", "c"});
@@ -136,6 +23,54 @@ public class ArrayTaskTest2 {
         ArrayTask2 task = new ArrayTask2();
         boolean result = task.contains(new String[] {"a", "b"}, new String[] {"b", "c"});
         boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo3() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"abc"}, new String[] {"ac"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo4() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"000"}, new String[] {"001"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo5() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"стишок"}, new String[] {"стишок1"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo6() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"стих"}, new String[] {"стих"});
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo7() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"cn"}, new String[] {"cn"});
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenTwo8() {
+        ArrayTask2 task = new ArrayTask2();
+        boolean result = task.contains(new String[] {"стишок"}, new String[] {"стишок"});
+        boolean expected = true;
         assertThat(result, is(expected));
     }
 }
