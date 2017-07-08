@@ -12,6 +12,10 @@ public class ChessFigure {
         this.y = y;
     }
 
+    public ChessFigure(Cell position) {
+    }
+
+
     public int getX() {
         return x;
     }

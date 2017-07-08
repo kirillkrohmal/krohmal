@@ -43,52 +43,17 @@ public class Tracker {
         }
     }
 
-    /*public void exit() {
-
-
-        //boolean result = false;
-        for (int i = 0; i < items.length; i++) {
-
-        }
-
+    public void exit() {
         System.exit(0);
-    }*/
-
-
-       /*for (Item item : items) {
-            if (item.getId().equals(id) && item != null) {
-                item = null;
-                break;
-            }
-        }*/
-
-
-    public void edit(Item freshItem) {
-        for (int i = 0; i != items.length; ++i) {
-            Item item = items[i];
-            if (item.getId().equals(freshItem.getId()) && item != null) {
-                items[i] = freshItem;
-                break;
-            }
-        }
     }
 
     public void update(Item freshItem) {
-        Item result = null;
-
         for (int i = 0; i < items.length; i++) {
             if (items[i] != null && items[i].getId().equals(freshItem.getId())) {
                 items[i] = freshItem;
                 break;
             }
         }
-/*
-        for (int i = 0; i < size; i++) {
-            if (item.getId().equals(item.getId())) {
-                result = items[i];
-                item = result;
-            }
-        }*/
     }
 
     public Item[] findAll() {

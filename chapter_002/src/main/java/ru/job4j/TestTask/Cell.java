@@ -3,14 +3,27 @@ package ru.job4j.TestTask;
 /**
  * Created by Comp on 03.07.2017.
  */
-public class Cell implements ChessBoard{
+public class Cell {
 
+    private Cell source;
+    private Cell dist;
+
+    int[][] cells = new int[][]{
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+    };
 
     public Cell() {
         ChessFigure cell = new ChessFigure(3,1);
     }
 
-    public String paint(int higth) {
+    /*public String paint(int higth) {
 
         Cell[] cell = new Cell[]{};
 
@@ -26,5 +39,5 @@ public class Cell implements ChessBoard{
             }
         }
         return builder.toString();
-    }
+    }*/
 }

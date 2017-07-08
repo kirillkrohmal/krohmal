@@ -11,7 +11,7 @@ import ru.job4j.Tracker.inputs.Input;
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] userAction = new UserAction[7];
+    private UserAction[] userAction = new UserAction[8];
 
     private int position = 1;
 
@@ -27,8 +27,7 @@ public class MenuTracker {
         this.userAction[position++] = new DeleteItem();
         this.userAction[position++] = new FindItemById();
         this.userAction[position++] = new FindItemByName();
-        //this.userAction[position++] = new Exit();
-
+        this.userAction[position++] = new Exit();
     }
 
     public void addAction(UserAction action) {
@@ -52,7 +51,7 @@ public class MenuTracker {
         }
     }
 
-    class FindItemByName extends BaseAction {
+    private class FindItemByName extends BaseAction {
 
         @Override
         public int key() {
@@ -74,7 +73,7 @@ public class MenuTracker {
         }
     }
 
-    class FindItemById extends BaseAction {
+    private class FindItemById extends BaseAction {
 
         @Override
         public int key() {
@@ -95,7 +94,7 @@ public class MenuTracker {
         }
     }
 
-    class EditItem extends BaseAction {
+    private class EditItem extends BaseAction {
 
         @Override
         public int key() {
@@ -120,8 +119,7 @@ public class MenuTracker {
         }
     }
 
-    class DeleteItem extends BaseAction {
-
+    private class DeleteItem extends BaseAction {
         @Override
         public int key() {
             return 4;
@@ -136,29 +134,27 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             String id = input.ask("Please enter task's id: ");
             Task task = new Task(id);
-            tracker.delete(task.getId());
+            tracker.delete(id);
         }
     }
 
+    private class Exit extends BaseAction {
 
-/*class Exit extends BaseAction {
+        @Override
+        public int key() {
+            return 7;
+        }
 
-    @Override
-    public int key() {
-        return 7;
+        @Override
+        public String name() {
+            return "Exit Program";
+        }
+
+        @Override
+        public void execute(Input input, Tracker tracker) {
+            tracker.exit();
+        }
     }
-
-    @Override
-    public String name() {
-        return "Exit Program";
-    }
-
-    @Override
-    public void execute(Input input, Tracker tracker) {
-        System.out.println(String.format("Введите: y/n"));
-        tracker.exit();
-    }
-}*/
 
     private class AddItem extends BaseAction {
         public AddItem(Input input, Tracker tracker) {

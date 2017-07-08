@@ -15,15 +15,6 @@ public class Board extends Figure {
         super(position);
     }
 
-    @Override
-    public boolean isFigureMove() {
-        return false;
-    }
-
-    @Override
-    public boolean isFigureOnTheSameCell() {
-        return false;
-    }
 
     /**
      * Метод должен должен проверить

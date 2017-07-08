@@ -24,10 +24,4 @@ public abstract class Figure {
         return new Cell[0];
     }
 
-
-    public abstract boolean isFigureMove();
-
-    public abstract boolean isFigureOnTheSameCell();
-
-
 }

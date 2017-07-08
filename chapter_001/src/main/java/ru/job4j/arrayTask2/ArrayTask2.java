@@ -1,7 +1,7 @@
 package ru.job4j.arrayTask2;
 
 /**
-* есть массив строк. и есть другая строка. надо написать метод,
+ * есть массив строк. и есть другая строка. надо написать метод,
  * которые определяет есть ли в этом массиве это строка.
  */
 
@@ -13,7 +13,6 @@ public class ArrayTask2 {
             for (int j = 0; j < sub.length; j++) {
                 if (origin[i].equals(sub[i + j])) {
                     result = true;
-
                 }
                 if (!origin[i].equals(sub[i + j])) {
                     result = false;
@@ -22,8 +21,8 @@ public class ArrayTask2 {
                 if (result)
                     break;
             }
-
-        } return result;
+        }
+        return result;
     }
 }
 
