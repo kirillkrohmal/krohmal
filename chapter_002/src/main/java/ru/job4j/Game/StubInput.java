@@ -4,15 +4,16 @@ package ru.job4j.Game;
  * Created by Comp on 08.07.2017.
  */
 public class StubInput implements Validate {
+    String[] answers;
+    int position;
 
-    @Override
-    public String ask(String question) {
-        return null;
+    public StubInput(String[] answers) {
+        this.answers = answers;
     }
 
     @Override
-    public int key() {
-        return 0;
+    public String ask(String question) {
+        return answers[position++];
     }
 
     @Override

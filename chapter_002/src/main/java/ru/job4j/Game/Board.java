@@ -8,6 +8,7 @@ public class Board {
     private Cell[][] cells;
     private int width;
     private int hight;
+    Player player;
 
     public Board(Cell[][] cells, int width, int hight) {
         this.cells = new Cell[width][hight];
@@ -21,7 +22,7 @@ public class Board {
     }
 
 
-    public Board(Cell[] cells, Player player) {
+    public Board(Cell[][] cells, Player player) {
         for (int i = 0; i < player.getX(); i++) {
             for (int j = 0; j < player.getY(); j++) {
                 System.out.println(String.format("%s", i, j));
@@ -35,6 +36,22 @@ public class Board {
                 cells[i][j] = new Cell();
             }
         }
+    }
+
+    public void left() {
+        player.x--;
+    }
+
+    public void right() {
+        player.x--;
+    }
+
+    public void up() {
+        player.x--;
+    }
+
+    public void down() {
+        player.x--;
     }
 
 

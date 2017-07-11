@@ -2,12 +2,18 @@ package ru.job4j.Game;
 
 import ru.job4j.TestTask.ChessFigure;
 
+import java.util.Random;
+
 /**
  * Created by Comp on 07.07.2017.
  */
 public abstract class Player {
     int x;
     int y;
+
+    int getRandomCell() {
+        return Integer.valueOf((char)(System.currentTimeMillis() + getRandomCell()));
+    }
 
     public Player(int x, int y) {
         this.x = x;
@@ -56,29 +62,8 @@ public abstract class Player {
         return result;
     }
 
-    public void left() {
-        x--;
 
 
-    }
-
-    public void right() {
-        x--;
-
-
-    }
-
-    public void up() {
-        x--;
-
-
-    }
-
-    public void down() {
-        x--;
-
-
-    }
 
 
     public static void main(String[] args) {

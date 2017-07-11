@@ -6,15 +6,24 @@ package ru.job4j.TestTask;
 public class ChessFigure {
     int x;
     int y;
+    Figure position;
 
-    public ChessFigure(int x, int y) {
+    public ChessFigure(int x, int y, Figure position) {
         this.x = x;
         this.y = y;
+        this.position = position;
     }
 
     public ChessFigure(Cell position) {
     }
 
+    public Figure getPosition() {
+        return position;
+    }
+
+    public void setPosition(Figure position) {
+        this.position = position;
+    }
 
     public int getX() {
         return x;
@@ -48,13 +57,15 @@ public class ChessFigure {
         ChessFigure that = (ChessFigure) o;
 
         if (x != that.x) return false;
-        return y == that.y;
+        if (y != that.y) return false;
+        return position != null ? position.equals(that.position) : that.position == null;
     }
 
     @Override
     public int hashCode() {
         int result = x;
         result = 31 * result + y;
+        result = 31 * result + (position != null ? position.hashCode() : 0);
         return result;
     }
 }

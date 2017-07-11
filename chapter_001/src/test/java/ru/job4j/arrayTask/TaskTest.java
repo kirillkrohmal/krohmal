@@ -33,7 +33,7 @@ public class TaskTest {
         String sub = "стиховедческий";
         String origin = "стишок";
         boolean result = task.contains(sub, origin);
-        boolean expected = false;
+        boolean expected = true;
         assertThat(result, is(expected));
     }
 
@@ -43,7 +43,7 @@ public class TaskTest {
         String sub = "стиховедческий";
         String origin = "хо";
         boolean result = task.contains(sub, origin);
-        boolean expected = true;
+        boolean expected = false;
         assertThat(result, is(expected));
     }
 
@@ -51,7 +51,7 @@ public class TaskTest {
     public void whenSubIsEqualsOrigin4() {
         Task task = new Task();
         String sub = "стиховедческий";
-        String origin = "стих1111";
+        String origin = "горец";
         boolean result = task.contains(sub, origin);
         boolean expected = false;
         assertThat(result, is(expected));
@@ -63,10 +63,8 @@ public class TaskTest {
         String sub = "стиховедческий";
         String origin = "и";
         boolean result = task.contains(sub, origin);
-        boolean expected = true;
+        boolean expected = false;
         assertThat(result, is(expected));
     }
-
-
 }
 

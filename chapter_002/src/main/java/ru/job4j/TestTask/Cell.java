@@ -1,13 +1,11 @@
 package ru.job4j.TestTask;
 
+import java.util.Arrays;
+
 /**
  * Created by Comp on 03.07.2017.
  */
 public class Cell {
-
-    private Cell source;
-    private Cell dist;
-
     int[][] cells = new int[][]{
             {0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0},
@@ -19,25 +17,70 @@ public class Cell {
             {0, 0, 0, 0, 0, 0, 0, 0},
     };
 
-    public Cell() {
-        ChessFigure cell = new ChessFigure(3,1);
+    int width;
+    int height;
+
+    public Cell(int[][] cells, int width, int height) {
+        this.cells = cells;
+        this.width = width;
+        this.height = height;
     }
 
-    /*public String paint(int higth) {
+    public Cell(Cell dist) {
 
-        Cell[] cell = new Cell[]{};
+    }
 
-        StringBuilder builder = new StringBuilder();
-        String line = System.getProperty("line.separator");
+    public int[][] getCells() {
+        return cells;
+    }
 
-        int width = 2 - higth/2;
+    public void setCells(int[][] cells) {
+        this.cells = cells;
+    }
 
+    public int getWidth() {
+        return width;
+    }
 
-        for (int i = 0; i <= higth; i++) {
-            for (int j = 0; j <= width; j++) {
+    public void setWidth(int width) {
+        this.width = width;
+    }
 
-            }
-        }
-        return builder.toString();
-    }*/
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cell cell = (Cell) o;
+
+        if (width != cell.width) return false;
+        if (height != cell.height) return false;
+        return Arrays.deepEquals(cells, cell.cells);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.deepHashCode(cells);
+        result = 31 * result + width;
+        result = 31 * result + height;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "cells=" + Arrays.toString(cells) +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
+    }
 }
+

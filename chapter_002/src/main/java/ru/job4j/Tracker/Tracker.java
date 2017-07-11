@@ -34,6 +34,8 @@ public class Tracker {
 
         for (int i = 0; i < items.length; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
+                //System.arraycopy(items[size], 0, items[size - 1], i - 1, items.length);
+                //
                 items[i] = null;
                 items[i] = items[size - 1];
                 items[size - 1] = null;

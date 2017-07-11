@@ -5,9 +5,13 @@ import ru.job4j.TestTask.Exception.ImpossibleMoveException;
 /**
  * Created by Comp on 06.07.2017.
  */
-public class Bishop implements ChessBoard {
-    public Bishop(Cell position) {
+public class Bishop extends Figure {
 
+    private int startPosition;
+    private int Position;
+
+    public Bishop(Cell position) {
+        super(position);
     }
 
     public Cell[][] upAndRigth (Cell[][] cell) {
@@ -46,13 +50,6 @@ public class Bishop implements ChessBoard {
         return new Cell[0][];
     }
 
-    @Override
-    public boolean isFigureMove() {
-        return false;
-    }
 
-    @Override
-    public boolean isFigureOnTheSameCell() {
-        return false;
-    }
+
 }

@@ -21,8 +21,6 @@ public class ValidateInput extends ConsoleInput {
                 System.out.println("Необходимо ввести корректное значение");
             } catch (NullPointerException npe) {
                 System.out.println("Необходимо ввести корректное значение");
-            } catch (Exception e) {
-                System.out.println("Необходимо ввести корректное значение");
             }
         }
         while (invalid);
