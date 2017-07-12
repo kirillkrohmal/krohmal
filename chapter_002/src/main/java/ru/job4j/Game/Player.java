@@ -10,6 +10,7 @@ import java.util.Random;
 public abstract class Player {
     int x;
     int y;
+    public Board game;
 
     int getRandomCell() {
         return Integer.valueOf((char)(System.currentTimeMillis() + getRandomCell()));
@@ -60,13 +61,5 @@ public abstract class Player {
         int result = x;
         result = 31 * result + y;
         return result;
-    }
-
-
-
-
-
-    public static void main(String[] args) {
-
     }
 }

@@ -5,7 +5,7 @@ package ru.job4j.Game;
  * Класс Board описывает поле клеток Игры крестики-нолики
  */
 public class Board {
-    private Cell[][] cells;
+    private static Cell[][] cells;
     private int width;
     private int hight;
     Player player;
@@ -18,7 +18,7 @@ public class Board {
 
     //Метод print печатает на консоль итоговую матрицу
     public void print() {
-
+        System.out.println(Board.cells);
     }
 
 
@@ -38,26 +38,50 @@ public class Board {
         }
     }
 
+    void move() {
+        player.game.left();
+        player.game.right();
+        player.game.left();
+        player.game.right();
+
+    }
+
+
     public void left() {
+       /* for (int i = 0; i < field(cells.); i++) {
+
+        }*/
         player.x--;
     }
 
     public void right() {
-        player.x--;
+        player.x++;
     }
 
     public void up() {
-        player.x--;
+        player.y--;
     }
 
     public void down() {
-        player.x--;
+        player.y++;
     }
 
-
     public boolean isTrueOrFalse() {
-
-
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells.length; j++) {
+                if (cells[i][j] == null && player.getY() > 0 && player.getX() > 0) {
+                    move();
+                    return true;
+                } else {
+                    break;
+                }
+            }
+        }
         return false;
+    }
+
+    public static void main(String[] args) {
+        Board board = new Board(cells, 3, 3);
+        board.print();
     }
 }
