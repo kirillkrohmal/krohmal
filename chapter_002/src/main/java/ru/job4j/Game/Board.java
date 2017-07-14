@@ -1,6 +1,8 @@
 package ru.job4j.Game;
 
 
+import java.util.Arrays;
+
 /**
  * Класс Board описывает поле клеток Игры крестики-нолики
  */
@@ -16,18 +18,22 @@ public class Board {
         this.width = width;
     }
 
+    public Board(Cell[][] field, Player player) {
+        for (int i = 0; i < player.getX(); i++) {
+            for (int j = 0; j < player.getY(); j++) {
+                System.out.println(String.format("%s, %s", i, j));
+            }
+        }
+    }
+
+    public Board() {
+        move();
+        print();
+    }
+
     //Метод print печатает на консоль итоговую матрицу
     public void print() {
         System.out.println(Board.cells);
-    }
-
-
-    public Board(Cell[][] cells, Player player) {
-        for (int i = 0; i < player.getX(); i++) {
-            for (int j = 0; j < player.getY(); j++) {
-                System.out.println(String.format("%s", i, j));
-            }
-        }
     }
 
     public void field(Cell[][] cells) {
@@ -43,26 +49,25 @@ public class Board {
         player.game.right();
         player.game.left();
         player.game.right();
-
     }
-
 
     public void left() {
-       /* for (int i = 0; i < field(cells.); i++) {
-
-        }*/
-        player.x--;
-    }
-
-    public void right() {
+        player.y--;
         player.x++;
     }
 
+    public void right() {
+        player.x--;
+        player.y++;
+    }
+
     public void up() {
+        player.x--;
         player.y--;
     }
 
     public void down() {
+        player.x++;
         player.y++;
     }
 
@@ -82,6 +87,9 @@ public class Board {
 
     public static void main(String[] args) {
         Board board = new Board(cells, 3, 3);
-        board.print();
+        System.out.println(String.format("%s", board));
+        System.out.println(String.format("%s", board.player));
+        System.out.println(Arrays.deepToString(Board.cells));
+
     }
 }

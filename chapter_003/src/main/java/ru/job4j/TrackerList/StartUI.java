@@ -1,9 +1,8 @@
-package ru.job4j.Tracker;
+package ru.job4j.TrackerList;
 
-import ru.job4j.Tracker.action.UserAction;
-import ru.job4j.Tracker.inputs.Input;
-import ru.job4j.Tracker.inputs.StubInput;
-import ru.job4j.Tracker.validator.ValidateInput;
+import ru.job4j.TrackerList.action.UserAction;
+import ru.job4j.TrackerList.inputs.Input;
+import ru.job4j.TrackerList.validator.ValidateInput;
 
 /**
  * Created by Comp on 12.06.2017.

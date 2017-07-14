@@ -8,6 +8,8 @@ import ru.job4j.TestTask.Exception.ImpossibleMoveException;
 public abstract class Figure {
     public static Board figure;
     final Cell position;
+    ChessFigure chessFigure;
+
 
     public Figure(Cell position) {
         this.position = position;
@@ -16,9 +18,8 @@ public abstract class Figure {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         try {
-            return (Figure)super.clone();
-        }
-        catch (CloneNotSupportedException e) {
+            return (Figure) super.clone();
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         return clone();
