@@ -4,9 +4,9 @@ package ru.job4j.TestTask;
  * Created by Comp on 06.07.2017.
  */
 public class ChessFigure {
-    int x;
-    int y;
-    Figure position;
+    private int x;
+    private int y;
+    private Figure position;
 
     public ChessFigure(int x, int y, Figure position) {
         this.x = x;

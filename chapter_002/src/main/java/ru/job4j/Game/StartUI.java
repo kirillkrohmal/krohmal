@@ -7,7 +7,10 @@ import java.util.Arrays;
  */
 public class StartUI {
     Player player;
+    Board board;
     StartUI game;
+    int position = 0;
+
     private static Cell[][] cells;
     private Validate input = new StubInput(new String[]{});
 
@@ -20,7 +23,18 @@ public class StartUI {
     }
 
     public void print() {
-        System.out.println(StartUI.cells);
+
+        Cell[][] print = new Cell[board.width][board.hight];
+
+        for (int i = 0; i < board.hight; i++) {
+            for (int j = 0; j < board.width; j++) {
+                print[i][j] = cells[i][j];
+            }
+        }
+       /* player.setX(player.getRandomCell());
+        player.setY(player.getRandomCell());
+        cells[position++] = new Cell[]{};*/
+        //System.out.println(StartUI.cells);
     }
 
     void move() {
@@ -45,17 +59,20 @@ public class StartUI {
     }
 
     public void init() {
-        move();
+        //board.field(new Cell[][]{});
+        //move();
+        //isTrueOrFalse();
         print();
+
     }
 
     public static void main(String[] args) {
-        Board board = new Board(cells, 3, 3);
-        System.out.println(String.format("%s", board));
+        Board board = new Board(cells, 5, 5);
+        //System.out.println(String.format("%s", board));
         //System.out.println(String.format("%s", st.player));
         //System.out.println(Arrays.deepToString(Board.cells));
-        Validate validate = new StubInput(new String[3]);
-        Player player = new Player(2, 3);
+        Validate validate = new StubInput(new String[6]);
+        Player player = new Player(1, 6);
         new StartUI(board, player).init();
     }
 }

@@ -7,8 +7,8 @@ import ru.job4j.TestTask.Exception.ImpossibleMoveException;
  */
 public abstract class Figure {
     public static Board figure;
-    final Cell position;
-    ChessFigure chessFigure;
+    private final Cell position;
+    private ChessFigure chessFigure;
 
 
     public Figure(Cell position) {

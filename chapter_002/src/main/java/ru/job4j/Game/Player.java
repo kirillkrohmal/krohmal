@@ -12,9 +12,10 @@ public class Player {
     int y;
     public Board game;
     Player player;
+    private static final Random random = new Random();
 
     int getRandomCell() {
-        return Integer.valueOf((char)(System.currentTimeMillis() + getRandomCell()));
+        return random.nextInt();
     }
 
     public Player(int x, int y) {

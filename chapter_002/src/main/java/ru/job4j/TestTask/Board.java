@@ -8,8 +8,8 @@ import ru.job4j.TestTask.Exception.OccupiedWayException;
  * Created by Comp on 03.07.2017.
  */
 public class Board extends Figure {
-    Figure[] figures;
-    Cell[][] cells = new Cell[][]{};
+    private Figure[] figures;
+    private Cell[][] cells = new Cell[][]{};
     private int width;
     private int hight;
 
@@ -19,6 +19,14 @@ public class Board extends Figure {
         this.cells = cells;
         this.width = width;
         this.hight = hight;
+    }
+
+    public void field(Cell[][] cells) {
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells.length; j++) {
+                cells[i][j] = new Cell(new int[][]{},8, 8);
+            }
+        }
     }
 
     public Figure[] getFigures() {

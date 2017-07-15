@@ -8,8 +8,8 @@ import java.util.Arrays;
  */
 public class Board {
     private static Cell[][] cells;
-    private int width;
-    private int hight;
+    public int hight;
+    public int width;
 
     public Board(Cell[][] cells, int width, int hight) {
         this.cells = new Cell[width][hight];

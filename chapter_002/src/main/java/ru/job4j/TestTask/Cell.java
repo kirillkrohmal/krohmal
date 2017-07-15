@@ -17,8 +17,8 @@ public class Cell {
             {0, 0, 0, 0, 0, 0, 0, 0},
     };
 
-    int width;
-    int height;
+    public int width;
+    public int height;
 
     public Cell(int[][] cells, int width, int height) {
         this.cells = cells;
