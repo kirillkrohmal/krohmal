@@ -5,7 +5,7 @@ package ru.job4j.Game;
  */
 public class StubInput implements Validate {
     String[] answers;
-    int position;
+    int move;
 
     public StubInput(String[] answers) {
         this.answers = answers;
@@ -13,12 +13,12 @@ public class StubInput implements Validate {
 
     @Override
     public String ask(String question) {
-        return answers[position++];
+        return answers[move++];
     }
 
     @Override
-    public void print(Cell cell, Board board) {
-
+    public void print(String question, int[] range) {
+        throw new UnsupportedOperationException("Неверная комбинация");
     }
 
     @Override

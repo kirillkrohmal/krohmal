@@ -5,7 +5,7 @@ package ru.job4j.Game;
  */
 public interface Validate {
     String ask(String question);
-    void print(Cell cell, Board board);
+    void print(String question, int[] range);
 
     public abstract boolean isFigureMove();
     public abstract boolean isFigureOnTheSameCell();

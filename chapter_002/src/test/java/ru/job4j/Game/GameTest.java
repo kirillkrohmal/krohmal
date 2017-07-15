@@ -16,7 +16,7 @@ public class GameTest {
         Board board = new Board(cells, 5, 3);
         boolean result = true;
         boolean expected = true;
-        board.print();
+        //board.print();
         assertThat(result, is(expected));
     }
 
@@ -26,7 +26,7 @@ public class GameTest {
         Board board = new Board(cells, 5, 3);
         boolean result = false;
         boolean expected = false;
-        board.print();
+        //board.print();
         assertThat(result, is(expected));
     }
 }

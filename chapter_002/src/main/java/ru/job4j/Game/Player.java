@@ -7,10 +7,11 @@ import java.util.Random;
 /**
  * Created by Comp on 07.07.2017.
  */
-public abstract class Player {
+public class Player {
     int x;
     int y;
     public Board game;
+    Player player;
 
     int getRandomCell() {
         return Integer.valueOf((char)(System.currentTimeMillis() + getRandomCell()));
@@ -61,5 +62,25 @@ public abstract class Player {
         int result = x;
         result = 31 * result + y;
         return result;
+    }
+
+    public void left() {
+        player.y--;
+        player.x++;
+    }
+
+    public void right() {
+        player.x--;
+        player.y++;
+    }
+
+    public void up() {
+        player.x--;
+        player.y--;
+    }
+
+    public void down() {
+        player.x++;
+        player.y++;
     }
 }
