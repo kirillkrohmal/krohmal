@@ -28,7 +28,7 @@ public class CollectionSortTest {
         CollectionSort sort = new CollectionSort();
         Collection<String> collection = new ArrayList<>();
         long result = sort.add(collection, 10000000);
-        String expected = "fdf";
+        String expected = "5489L";
         assertThat(result, is(expected));
     }
 
@@ -55,7 +55,7 @@ public class CollectionSortTest {
         CollectionSort sort = new CollectionSort();
         Collection<String> collection = new ArrayList<>();
         long result = sort.delete(collection, 10000000);
-        String expected = "fdf";
+        String expected = "5489L";
         assertThat(result, is(expected));
     }
 

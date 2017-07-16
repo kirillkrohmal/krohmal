@@ -1,7 +1,7 @@
-package ru.job4j.ConvertListTest2;
-
+package ru.job4j.ListMapTest;
 
 import org.junit.Test;
+import ru.job4j.ListMap.ListMap;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,10 +14,11 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Comp on 13.07.2017.
  */
-public class ConvertListTest2 {
+public class ListMapTest {
     @Test
-    public void whenCollectionSortAddAndHaveOtherTime() {
-        ConvertListTest2 convertListTest2 = new ConvertListTest2();
-
+    public void whenConvertListToMap() {
+        ListMap listMap = new ListMap();
+        //UserConvert userConvert = new UserConvert()
     }
 }
+

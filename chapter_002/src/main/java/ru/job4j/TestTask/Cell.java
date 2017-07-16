@@ -1,41 +1,23 @@
 package ru.job4j.TestTask;
 
+import ru.job4j.TestTask.figures.Bishop;
+
 import java.util.Arrays;
 
 /**
  * Created by Comp on 03.07.2017.
  */
 public class Cell {
-    int[][] cells = new int[][]{
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-    };
+    int index = 8;
+    String number = null;
+    Cell[][] cells = new Cell[][]{};
 
     public int width;
     public int height;
 
-    public Cell(int[][] cells, int width, int height) {
-        this.cells = cells;
+    public Cell(int width, int height) {
         this.width = width;
         this.height = height;
-    }
-
-    public Cell(Cell dist) {
-
-    }
-
-    public int[][] getCells() {
-        return cells;
-    }
-
-    public void setCells(int[][] cells) {
-        this.cells = cells;
     }
 
     public int getWidth() {
@@ -63,12 +45,12 @@ public class Cell {
 
         if (width != cell.width) return false;
         if (height != cell.height) return false;
-        return Arrays.deepEquals(cells, cell.cells);
+        return Arrays.equals(cells, cell.cells);
     }
 
     @Override
     public int hashCode() {
-        int result = Arrays.deepHashCode(cells);
+        int result = Arrays.hashCode(cells);
         result = 31 * result + width;
         result = 31 * result + height;
         return result;
@@ -77,7 +59,9 @@ public class Cell {
     @Override
     public String toString() {
         return "Cell{" +
-                "cells=" + Arrays.toString(cells) +
+                "index=" + index +
+                ", number=" + number +
+                ", cells=" + Arrays.toString(cells) +
                 ", width=" + width +
                 ", height=" + height +
                 '}';

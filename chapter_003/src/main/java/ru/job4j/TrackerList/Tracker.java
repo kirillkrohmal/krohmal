@@ -1,5 +1,7 @@
 package ru.job4j.TrackerList;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Random;
  */
 public class Tracker {
     private final int STORAGE_SIZE = 100;
-    Item[] items = new Item[STORAGE_SIZE];
+    ArrayList<Item> items = new ArrayList<>(STORAGE_SIZE);
     private int size = 0;
     private static final Random random = new Random();
 
@@ -15,26 +17,26 @@ public class Tracker {
         if (size == STORAGE_SIZE - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
+
         item.setId(this.generateId());
-        items[size++] = item;
+        items.set(size++, item);
         return item;
     }
 
     String generateId() {
-        //return String.valueOf(new Random().nextInt(items.length) + 1);
+        //return String.valueOf(new Random().nextInt(items.size()) + 100);
         return String.valueOf(System.currentTimeMillis() + random.nextInt());
     }
 
     public void delete(String id) {
         Item result = null;
 
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null && items[i].getId().equals(id)) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i) != null && items.get(i).getId().equals(id)) {
                 //System.arraycopy(items[size], 0, items[size - 1], i - 1, items.length);
-                //
-                items[i] = null;
-                items[i] = items[size - 1];
-                items[size - 1] = null;
+                items.set(i, null);
+                items.set(i, items.get(size - 1));
+                items.set(size - 1, null);
                 size--;
                 return;
             }
@@ -46,19 +48,19 @@ public class Tracker {
     }
 
     public void update(Item freshItem) {
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null && items[i].getId().equals(freshItem.getId())) {
-                items[i] = freshItem;
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i) != null && items.get(i).getId().equals(freshItem.getId())) {
+                items.set(i, freshItem);
                 break;
             }
         }
     }
 
-    public Item[] findAll() {
-        Item[] result = new Item[size];
+    public List<Item> findAll() {
+        List<Item> result = new ArrayList<Item>(size);
 
         for (int i = 0; i < size; i++) {
-            result[i] = this.items[i];
+            result.set(i, this.items.get(i));
         }
         return result;
     }

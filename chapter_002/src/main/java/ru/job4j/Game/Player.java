@@ -14,14 +14,15 @@ public class Player {
     Player player;
     private static final Random random = new Random();
 
+    public Player(int x, int y, char[] cell) {
+        this.x = x;
+        this.y = y;
+    }
+
     int getRandomCell() {
         return random.nextInt();
     }
 
-    public Player(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
 
     public int getX() {
         return x;
@@ -65,23 +66,28 @@ public class Player {
         return result;
     }
 
-    public void left() {
+    public int left() {
         player.y--;
         player.x++;
+        return 0;
     }
 
-    public void right() {
+    public int right() {
         player.x--;
         player.y++;
+        return 0;
     }
 
-    public void up() {
+    public int up() {
         player.x--;
         player.y--;
+        return 0;
     }
 
-    public void down() {
+    public int down() {
         player.x++;
         player.y++;
+        return 0;
+
     }
 }

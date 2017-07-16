@@ -11,7 +11,7 @@ public class Board {
     public int hight;
     public int width;
 
-    public Board(Cell[][] cells, int width, int hight) {
+    public Board(Cell cells, int width, int hight) {
         this.cells = new Cell[width][hight];
         this.hight = hight;
         this.width = width;

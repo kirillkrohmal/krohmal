@@ -3,45 +3,38 @@ package ru.job4j.TestTask;
 import ru.job4j.TestTask.Exception.FigureNotFoundException;
 import ru.job4j.TestTask.Exception.ImpossibleMoveException;
 import ru.job4j.TestTask.Exception.OccupiedWayException;
+import ru.job4j.TestTask.figures.Bishop;
 
 /**
  * Created by Comp on 03.07.2017.
  */
-public class Board extends Figure {
-    private Figure[] figures;
-    private Cell[][] cells = new Cell[][]{};
+public class Board {
+    private Figure figures;
+    private ChessFigure chessFigures;
+    private MoveChess moveChess;
+    public Bishop[][] cells = new Bishop[][]{};
     private int width;
     private int hight;
+    private StartUI startUI;
 
-    public Board(Cell position, Figure[] figures, Cell[][] cells, int width, int hight) {
-        super(position);
-        this.figures = figures;
-        this.cells = cells;
+    public Board(int width, int hight) {
         this.width = width;
         this.hight = hight;
     }
 
-    public void field(Cell[][] cells) {
-        for (int i = 0; i < cells.length; i++) {
-            for (int j = 0; j < cells.length; j++) {
-                cells[i][j] = new Cell(new int[][]{},8, 8);
-            }
-        }
-    }
-
-    public Figure[] getFigures() {
+    public Figure getFigures() {
         return figures;
     }
 
-    public void setFigures(Figure[] figures) {
+    public void setFigures(Figure figures) {
         this.figures = figures;
     }
 
-    public Cell[][] getCells() {
+    public Bishop[][] getCells() {
         return cells;
     }
 
-    public void setCells(Cell[][] cells) {
+    public void setCells(Bishop[][] cells) {
         this.cells = cells;
     }
 
@@ -61,19 +54,39 @@ public class Board extends Figure {
         this.hight = hight;
     }
 
+    int findFigure(Cell source) {
+        int count = 0;
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells.length; j++) {
+                if (cells[i].equals(source)) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     public boolean isCurrentPositionAvailable(Cell source) {
-        Board board = Figure.figure;
+
+        boolean check = false;
 
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells.length; j++) {
-                if (source == null) {
+                if (cells[i].equals(source)) {
                     return true;
                 } else {
                     return false;
                 }
             }
+            if (check) {
+                System.out.println(String.format("Фигура есть? : %s", check));
+            }
         }
-        return false;
+        return check;
+    }
+
+    public Cell getElement(Cell[][] cells, int index, char number) {
+        return cells[index][number];
     }
 
     /**
@@ -84,18 +97,18 @@ public class Board extends Figure {
      * Если все отлично. Записать в ячейку новое новое положение Figure figure.clone(Cell dist)
      */
     boolean move(Cell source, Cell dist) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
-        for (int i = 0; i < figures.length; i++) {
-            if (cells[i].equals(source.cells[i])) {
-                throw new ImpossibleMoveException("Невозможно пойти. Ячейка занята!");
-            } else {
-                if (width > cells.length || hight > cells.length) {
-                    return false;
-                }
-                else {
-                    try {
-                        figure.clone();
-                    } catch (CloneNotSupportedException e) {
-                        e.printStackTrace();
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells.length; j++) {
+                if (cells[i].equals(source.cells[i])) {
+                    throw new ImpossibleMoveException("Невозможно пойти. Ячейка занята!");
+                } else {
+                    if (width > cells.length || hight > cells.length) {
+                        return false;
+                    } else {
+                       /* isCurrentPositionAvailable(new Cell(3, 5));
+                        figures[i].way(cells[4]);//dist = new Bishop(figures.clone());
+                        startUI.moveFigure();
+                        figures.clone();*/
                     }
                 }
             }

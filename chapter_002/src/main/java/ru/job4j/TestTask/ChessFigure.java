@@ -1,21 +1,19 @@
 package ru.job4j.TestTask;
 
+import ru.job4j.TestTask.figures.Bishop;
+
 /**
  * Created by Comp on 06.07.2017.
  */
-public class ChessFigure {
+public class ChessFigure extends Figure {
     private int x;
     private int y;
     private Figure position;
 
-    public ChessFigure(int x, int y, Figure position) {
-        this.x = x;
-        this.y = y;
-        this.position = position;
+    protected ChessFigure(Cell position) {
+        super(position);
     }
 
-    public ChessFigure(Cell position) {
-    }
 
     public Figure getPosition() {
         return position;

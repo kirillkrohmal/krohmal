@@ -1,5 +1,6 @@
 package ru.job4j.TrackerList.inputs;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,12 +15,12 @@ public class ConsoleInput implements Input {
     }
 
     @Override
-    public int ask(String question, int[] range) {
-        int key = Integer.parseInt(this.ask(question));
+    public int ask(String question, ArrayList<int[]> range) {
+        int key = Integer.parseInt(String.valueOf(this.ask(question, range)));
         boolean exist = false;
 
-        for (int value : range) {
-            if (value == key) {
+        for (int[] value : range) {
+            if (value.equals(key)) {
                 exist = true;
                 break;
             }

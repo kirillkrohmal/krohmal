@@ -1,5 +1,8 @@
 package ru.job4j.TrackerList.inputs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Comp on 18.06.2017.
  */
@@ -16,8 +19,8 @@ public class StubInput implements Input {
         return answers[position++];
     }
 
-   @Override
-    public int ask(String question, int[] range) {
+    @Override
+    public int ask(String question, ArrayList<int[]> range) {
         throw new UnsupportedOperationException("UnsupportedException");
     }
 }

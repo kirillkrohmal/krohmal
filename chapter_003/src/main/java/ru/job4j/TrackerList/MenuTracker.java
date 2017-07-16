@@ -4,6 +4,9 @@ import ru.job4j.TrackerList.action.BaseAction;
 import ru.job4j.TrackerList.action.UserAction;
 import ru.job4j.TrackerList.inputs.Input;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Comp on 12.06.2017.
  */
@@ -11,9 +14,9 @@ import ru.job4j.TrackerList.inputs.Input;
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] userAction = new UserAction[8];
+    List<UserAction> userAction = new ArrayList<>(9);
 
-    private int position = 1;
+    private int position = 0;
 
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
@@ -21,17 +24,17 @@ public class MenuTracker {
     }
 
     public void fillActions() {
-        this.userAction[position++] = this.new AddItem(this.input, this.tracker);
-        this.userAction[position++] = new ShowItem();
-        this.userAction[position++] = new EditItem();
-        this.userAction[position++] = new DeleteItem();
-        this.userAction[position++] = new FindItemById();
-        this.userAction[position++] = new FindItemByName();
-        this.userAction[position++] = new Exit();
+        this.userAction.set(position++, new AddItem(input, tracker));
+        this.userAction.set(position++, new ShowItem());
+        this.userAction.set(position++, new EditItem());
+        this.userAction.set(position++, new DeleteItem());
+        this.userAction.set(position++, new FindItemById());
+        this.userAction.set(position++, new FindItemByName());
+        this.userAction.set(position++, new Exit());
     }
 
     public void addAction(UserAction action) {
-        this.userAction[position++] = action;
+        this.userAction.add(position++, action);
     }
 
     /*  public static void test () {
@@ -40,7 +43,7 @@ public class MenuTracker {
       }
   */
     public void select(int key) {
-        this.userAction[key].execute(this.input, tracker);
+        this.userAction.get(key).execute(this.input, tracker);
     }
 
     public void show() {
@@ -139,7 +142,6 @@ public class MenuTracker {
     }
 
     private class Exit extends BaseAction {
-
         @Override
         public int key() {
             return 7;

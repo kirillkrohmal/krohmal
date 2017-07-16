@@ -13,7 +13,7 @@ public class ArrayDuplicate {
                     uniq--;
                 }
             }
-        }
+    }
         return Arrays.copyOf(array, uniq);
     }
 }

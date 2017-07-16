@@ -2,57 +2,67 @@ package ru.job4j.TestTask;
 
 
 import ru.job4j.TestTask.Exception.ImpossibleMoveException;
+import ru.job4j.TestTask.figures.Bishop;
+
+import java.util.Arrays;
 
 /**
  * Created by Comp on 15.07.2017.
  */
 public class StartUI {
+    private static Figure figure;
     private ChessFigure player;
     private StartUI game;
     private Bishop bishop;
-    private static Cell cells;
-    //private Validate input = new StubInput(new String[]{});
+    private Cell cells;
+    private Board position;
 
-    public StartUI(Board board, ChessFigure player) {
-        for (int i = 0; i < player.getX(); i++) {
-            for (int j = 0; j < player.getY(); j++) {
-                System.out.println(String.format("%s, %s", i, j));
-            }
-        }
+    public StartUI(Board board, Figure figure) {
+        this.position = board;
+        this.figure = figure;
     }
 
     public void print() {
-        System.out.println(StartUI.cells);
+        System.out.println(cells);
+        System.out.println(position.move(new Cell(4, 3), new Cell(1, 3)));
     }
 
-    void move() {
-        bishop.upAndRigth(new Cell[][]{});
-        bishop.upAndLeft(new Cell[][]{});
-        bishop.downAndLeft(new Cell[][]{});
-        bishop.downAndRigth(new Cell[][]{});
+    void moveFigure() {
+       /* if (chessFigures.getPosition()) {
+            figures.downAndLeft(new Cell[4][3]);
+        }
+        if (chessFigures.getPosition()) {
+            figures.downAndRigth(new Cell[3][2]);
+        }
+        if (chessFigures.getPosition()) {
+            figures.upAndLeft(new Cell[1][4]);
+        }
+        if (chessFigures.getPosition()) {
+            figures.upAndRigth(new Cell[3][5]);
+        }*/
+        if (position.equals(MoveChess.LEFT)) {
+            bishop.upAndLeft(new Cell[][]{});
+        } else if (position.equals(MoveChess.RIGHT)) {
+            bishop.upAndRigth(new Cell[][]{});
+        } else if (position.equals(MoveChess.UP)) {
+            bishop.downAndLeft(new Cell[][]{});
+        } else if (position.equals(MoveChess.DOWN)) {
+            bishop.downAndRigth(new Cell[][]{});
+        }
     }
 
     public void init() {
-        move();
+        //position.move();
+        position.move(new Cell(4, 3), new Cell(1, 3));
         print();
     }
 
     public static void main(String[] args) {
-        Board board = new Board(cells, new Figure[4], new Cell[][]{}, 5, 5);
+        Board board = new Board(8, 8);
         //System.out.println(String.format("%s", board));
         //System.out.println(String.format("%s", st.player));
-        //System.out.println(Arrays.deepToString(Board.cells));
-        ChessFigure player = new ChessFigure(8, 6, new Figure(new Cell(new int[2][2], 7, 6)) {
-            @Override
-            protected Object clone() throws CloneNotSupportedException {
-                return super.clone();
-            }
-
-            @Override
-            Cell[] way(Cell dist) throws ImpossibleMoveException {
-                return super.way(dist);
-            }
-        });
-        new StartUI(board, player).init();
+        //System.out.println(Arrays.deepToString(Board));
+        Figure figure = new Bishop(new Cell(7, 7), new ChessFigure(new Cell(8, 6)));
+        new StartUI(board, figure).init();
     }
 }

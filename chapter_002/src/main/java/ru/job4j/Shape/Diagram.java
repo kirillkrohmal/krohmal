@@ -10,7 +10,5 @@ public class Diagram {
         String result = paint.draw(figure);
         //final String line = System.getProperty("line.separator");
         System.out.println(String.format(result));
-       /*
-        ;*/
     }
 }

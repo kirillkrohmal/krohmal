@@ -1,20 +1,27 @@
 package ru.job4j.TrackerList;
 
 import ru.job4j.TrackerList.action.UserAction;
+import ru.job4j.TrackerList.inputs.ConsoleInput;
 import ru.job4j.TrackerList.inputs.Input;
 import ru.job4j.TrackerList.validator.ValidateInput;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Created by Comp on 12.06.2017.
+ * Измените код трекера (классы Tracker и MenuTracker) из 2-го модуля так, чтобы в
+ * программе везде вместо массивов использовались ArrayLists.
+ * После изменения убедитесь, что работают все тесты и внесите в них изменения при необходимости.
  */
 public class StartUI {
     private static int num;
     private Input input = new ValidateInput();
     private Tracker tracker;
-    private int position = 1;
-    private int range[] = {position++, position++, position++, position++, position++, position++, position++};
+    private int position = 0;
 
-    private UserAction[] userAction = new UserAction[7];
+    private ArrayList<int[]> range = new ArrayList<int[]>(position++);
+
+    private List<UserAction> userAction = new ArrayList<UserAction>(9);
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;

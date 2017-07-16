@@ -5,6 +5,7 @@ package ru.job4j.TestTask;
  */
 
 import org.junit.Test;
+import ru.job4j.TestTask.figures.Bishop;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,11 +14,13 @@ import static org.junit.Assert.assertThat;
 public class TaskTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
-        //Board board = new Board();
-
-
-        /* Item item = new Item("1", "1", "test1", "1", 2017);
-        tracker.add(item);
-        assertThat(tracker.findAll()[0], is(item));*/
+        Board board = new Board(0, 7);
+        Cell source = new Cell(0, 7);
+        Cell destination = new Cell(7, 0);
+        Bishop bishop = new Bishop(source);
+        board.cells[0][7] = bishop;
+        board.move(source, destination);
+        assertThat(board.cells[7][0] instanceof Bishop, is(true));
     }
 }
+
