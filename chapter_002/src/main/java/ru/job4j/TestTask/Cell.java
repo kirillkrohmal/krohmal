@@ -9,8 +9,7 @@ import java.util.Arrays;
  */
 public class Cell {
     int index = 8;
-    String number = null;
-    Cell[][] cells = new Cell[][]{};
+    private Figure[] figures;
 
     public int width;
     public int height;
@@ -43,28 +42,20 @@ public class Cell {
 
         Cell cell = (Cell) o;
 
+        if (index != cell.index) return false;
         if (width != cell.width) return false;
         if (height != cell.height) return false;
-        return Arrays.equals(cells, cell.cells);
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(figures, cell.figures);
     }
 
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(cells);
+        int result = index;
+        result = 31 * result + Arrays.hashCode(figures);
         result = 31 * result + width;
         result = 31 * result + height;
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Cell{" +
-                "index=" + index +
-                ", number=" + number +
-                ", cells=" + Arrays.toString(cells) +
-                ", width=" + width +
-                ", height=" + height +
-                '}';
     }
 }
 

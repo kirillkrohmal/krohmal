@@ -3,6 +3,7 @@ package ru.job4j.ConvertList;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -15,31 +16,31 @@ import java.util.List;
  * двумерный массив {{1, 2, 3} {4, 5, 6} {7, 0 ,0}}
  */
 public class ConvertList {
-    public ConvertList(int[][] array) {
 
-    }
 
     public List<Integer> toList(int[][] array) {
         List<Integer> toList = new ArrayList<>();
-        //toList.addAll(Arrays.asList(new ConvertList(array)))
-        //array = ;
+        //toList.addAll(new ConvertList(array))
 
 
-        //toList = Arrays.<int[][]>asList(array);
+        for (Integer integer : toList) {
+            toList.set(1, integer);
+        }
 
         System.out.println(toList);
 
-        return null;
+        return toList;
+    }
+
+    public int[][] toArray (List<Integer> list, int rows) {
+
+
+        return new int[0][];
     }
 
     public static void main(String[] args) {
-        //ConvertList convertList = new ConvertList();
-        //convertList.toList(new int[2][2]);
+        ConvertList convertList = new ConvertList();
+
+        System.out.println(convertList.toList(new int[5][6]));
     }
-
-    private ConvertList toList(int i) {
-
-        return null;
-    }
-
 }

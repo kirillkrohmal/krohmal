@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
  */
 public class ShapeTest {
 
-     @Test
+    @Test
     public void whenPaintNewFigureThenHasOtherFigures() {
         Shape figure = new Triangle();
         Paint paint = new Paint(figure);

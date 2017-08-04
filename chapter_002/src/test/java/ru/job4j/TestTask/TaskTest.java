@@ -10,17 +10,19 @@ import ru.job4j.TestTask.figures.Bishop;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-
 public class TaskTest {
     @Test
-    public void whenAddNewItemThenTrackerHasSameItem() {
-        Board board = new Board(0, 7);
+    public void whenAddNewFigureAndThenYourChoice() {
+        Board board = new Board(new Figure[1]);
         Cell source = new Cell(0, 7);
         Cell destination = new Cell(7, 0);
         Bishop bishop = new Bishop(source);
-        board.cells[0][7] = bishop;
+        board.cells[2][7] = bishop;
         board.move(source, destination);
         assertThat(board.cells[7][0] instanceof Bishop, is(true));
     }
 }
+
+
+
 

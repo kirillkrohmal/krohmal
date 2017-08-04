@@ -20,46 +20,6 @@ public abstract class Figure {
         this.chessFigure = chessFigure;
     }
 
-    public Cell[][] upAndRigth (Cell[][] cell) {
-        for (int i = 0; i < cell.length; i++) {
-            for (int j = 0; j < cell.length; j++) {
-                cell = new Cell[][]{};
-                System.out.println(String.format("%s", cell));
-            }
-        }
-        return new Cell[][]{};
-    }
-
-    public Cell[][] upAndLeft (Cell[][] cell) {
-        for (int i = 0; i < cell.length; i++) {
-            for (int j = 0; j < cell.length; j++) {
-                cell = new Cell[][]{};
-                System.out.println(String.format("%s", cell));
-            }
-        }
-        return new Cell[][]{};
-    }
-
-    public Cell[][] downAndLeft (Cell[][] cell) {
-        for (int i = 0; i < cell.length; i++) {
-            for (int j = 0; j < cell.length; j++) {
-                cell = new Cell[][]{};
-                System.out.println(String.format("%s", cell));
-            }
-        }
-        return new Cell[][]{};
-    }
-
-    public Cell[][] downAndRigth (Cell[][] cell) {
-        for (int i = 0; i < cell.length; i++) {
-            for (int j = 0; j < cell.length; j++) {
-                cell = new Cell[][]{};
-                System.out.println(String.format("%s", cell));
-            }
-        }
-        return new Cell[][]{};
-    }
-
     public Cell cells() {
         cells[0][0] = Castle.figure;
         cells[0][2] = Bishop.figure;
@@ -68,10 +28,6 @@ public abstract class Figure {
 
         return cells();
     }
-
-   /* public Figure(Cell position) {
-        this.position = position;
-    }*/
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
@@ -104,6 +60,7 @@ public abstract class Figure {
         }
         return new Cell[position.getHeight()][position.getWidth()];
     }
+
 }
 
 

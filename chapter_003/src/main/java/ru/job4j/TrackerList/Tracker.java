@@ -18,7 +18,7 @@ public class Tracker {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
 
-        item.setId(this.generateId());
+        //item.setId(generateId());
         items.set(size++, item);
         return item;
     }
@@ -28,7 +28,7 @@ public class Tracker {
         return String.valueOf(System.currentTimeMillis() + random.nextInt());
     }
 
-    public void delete(String id) {
+    public void delete(ArrayList<String> id) {
         Item result = null;
 
         for (int i = 0; i < items.size(); i++) {
@@ -65,7 +65,7 @@ public class Tracker {
         return result;
     }
 
-    public Item findByName(String name) {
+    public Item findByName(ArrayList<String> name) {
         Item result = null;
 
         for (Item item : items) {
@@ -77,7 +77,7 @@ public class Tracker {
         return result;
     }
 
-    public Item findById(String id) {
+    public Item findById(ArrayList<String> id) {
         Item result = null;
         for (Item item : items) {
             if (item.getId().equals(id) && items != null) {

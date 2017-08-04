@@ -41,24 +41,25 @@ public class StartUI {
             figures.upAndRigth(new Cell[3][5]);
         }*/
         if (position.equals(MoveChess.LEFT)) {
-            bishop.upAndLeft(new Cell[][]{});
+            bishop.upAndLeft(new Cell[][]{}, 6, 5);
         } else if (position.equals(MoveChess.RIGHT)) {
-            bishop.upAndRigth(new Cell[][]{});
+            bishop.upAndRigth(new Cell[][]{}, 5, 1);
         } else if (position.equals(MoveChess.UP)) {
-            bishop.downAndLeft(new Cell[][]{});
+            bishop.downAndLeft(new Cell[][]{}, 3, 6);
         } else if (position.equals(MoveChess.DOWN)) {
-            bishop.downAndRigth(new Cell[][]{});
+            bishop.downAndRigth(new Cell[][]{}, 7, 3);
         }
     }
 
     public void init() {
         //position.move();
         position.move(new Cell(4, 3), new Cell(1, 3));
+
         print();
     }
 
     public static void main(String[] args) {
-        Board board = new Board(8, 8);
+        Board board = new Board(new Bishop[]{});
         //System.out.println(String.format("%s", board));
         //System.out.println(String.format("%s", st.player));
         //System.out.println(Arrays.deepToString(Board));

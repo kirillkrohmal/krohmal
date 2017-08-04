@@ -9,49 +9,14 @@ import ru.job4j.TestTask.figures.Bishop;
  * Created by Comp on 03.07.2017.
  */
 public class Board {
-    private Figure figures;
-    private ChessFigure chessFigures;
-    private MoveChess moveChess;
-    public Bishop[][] cells = new Bishop[][]{};
-    private int width;
-    private int hight;
-    private StartUI startUI;
+    private Figure[] figures;
+    private int width = 8;
+    private int hight = 8;
+    public Bishop[][] cells;
 
-    public Board(int width, int hight) {
-        this.width = width;
-        this.hight = hight;
-    }
 
-    public Figure getFigures() {
-        return figures;
-    }
-
-    public void setFigures(Figure figures) {
+    public Board(Figure[] figures) {
         this.figures = figures;
-    }
-
-    public Bishop[][] getCells() {
-        return cells;
-    }
-
-    public void setCells(Bishop[][] cells) {
-        this.cells = cells;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHight() {
-        return hight;
-    }
-
-    public void setHight(int hight) {
-        this.hight = hight;
     }
 
     int findFigure(Cell source) {
@@ -99,16 +64,15 @@ public class Board {
     boolean move(Cell source, Cell dist) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells.length; j++) {
-                if (cells[i].equals(source.cells[i])) {
+                if (cells[i].equals(figures)) {
                     throw new ImpossibleMoveException("Невозможно пойти. Ячейка занята!");
                 } else {
                     if (width > cells.length || hight > cells.length) {
                         return false;
                     } else {
-                       /* isCurrentPositionAvailable(new Cell(3, 5));
-                        figures[i].way(cells[4]);//dist = new Bishop(figures.clone());
-                        startUI.moveFigure();
-                        figures.clone();*/
+                        isCurrentPositionAvailable(new Cell(3, 5));
+                        //startUI.moveFigure();
+                        figures.clone();
                     }
                 }
             }

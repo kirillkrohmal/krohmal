@@ -5,6 +5,5 @@ package ru.job4j.TestTask.board;
  */
 public interface ChessBoard {
     boolean isFigureMove();
-
     boolean isFigureOnTheSameCell();
 }

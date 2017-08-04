@@ -1,14 +1,13 @@
 package ru.job4j.TrackerList.inputs;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Comp on 18.06.2017.
  */
 public class StubInput implements Input {
     private String[] answers;
-    private int position = 0;
+    private int position = 1;
 
     public StubInput(String[] answers) {
         this.answers = answers;
