@@ -13,11 +13,11 @@ import java.util.List;
  * двумерный массив {{1, 2, 3} {4, 5, 6} {7, 0 ,0}}
  */
 public class ConvertList {
-    public List<int[]> toList(int[][] array) {
-        List<int[]> toList = new ArrayList(array.length);
+    public List<Integer> toList(int[][] array) {
+        List<Integer> toList = new ArrayList(array.length);
 
         for (int i = 0; i < array.length; i++) {
-            toList.add(array[i]);
+
         }
 
         return (toList);
@@ -27,15 +27,15 @@ public class ConvertList {
 
 
         for (int i = 0; i < list.size(); i++) {
-            toList(new int[][]{}) ;
+
         }
 
-        return new int[0][];
+        return new int[1][2];
     }
 
     public static void main(String[] args) {
         ConvertList convertList = new ConvertList();
 
-        System.out.println(convertList.toList(new int[5][6]));
+
     }
 }
