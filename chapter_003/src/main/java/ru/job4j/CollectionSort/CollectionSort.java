@@ -17,10 +17,6 @@ import java.util.*;
  */
 
 public class CollectionSort {
-    List<String> list = new LinkedList<>();
-    List<String> list2 = new ArrayList<>();
-    Set<String> list3 = new TreeSet<>();
-
     public long add(Collection<String> collection, int amount) {
         long t = System.currentTimeMillis();
         System.out.println("Начальное время " + t);
@@ -51,10 +47,5 @@ public class CollectionSort {
         System.out.println("Конечное время " + e);
 
         return e;
-    }
-
-
-    public static void main(String[] args) {
-        CollectionSort sort = new CollectionSort();
     }
 }
