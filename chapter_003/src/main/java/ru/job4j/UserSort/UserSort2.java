@@ -1,6 +1,8 @@
 package ru.job4j.UserSort;
 
 
+import javafx.beans.binding.ListBinding;
+
 import java.util.*;
 import java.util.List;
 
@@ -13,7 +15,7 @@ import java.util.List;
  * проверка по имени, потом по возрасту.
  */
 public class UserSort2 {
-    public class User implements Comparator<User> {
+    public static class User implements Comparator<User> {
         private final String name;
         private final int age;
 
@@ -58,7 +60,7 @@ public class UserSort2 {
         }
     }
 
-    public class SortUser {
+    public static class SortUser {
         public Set<User> sort(List<User> list) {
             TreeSet<User> sort = new TreeSet<>();
             sort.addAll(Arrays.asList(
@@ -70,32 +72,9 @@ public class UserSort2 {
             return sort;
         }
 
-        public List<User> sortNameLength(List<User> list) {
+        public List<User> sortNameLength() {
 
-            list = new ArrayList<>();
-            list.addAll(Arrays.asList(
-                    new User("Геннадий", 25),
-                    new User("Денис", 35),
-                    new User("Хулио", 18)
-            ));
-
-            new Comparator<User>() {
-                @Override
-                public int compare(User o1, User o2) {
-                    return o1.name.compareTo(o2.name);
-                }
-
-                @Override
-                public boolean equals(Object obj) {
-                    return false;
-                }
-            };
-
-            return null;
-        }
-
-        public List<User> sortByAllFields(List<User> list) {
-            list = new ArrayList<>();
+            List<User> list = new ArrayList<>();
             list.addAll(Arrays.asList(
                     new User("Геннадий", 25),
                     new User("Денис", 35),
@@ -116,13 +95,36 @@ public class UserSort2 {
 
             return list;
         }
+
+        public List<User> sortByAllFields() {
+            List<User> list = new ArrayList<>();
+            list.addAll(Arrays.asList(
+                    new User("Геннадий", 25),
+                    new User("Денис", 35),
+                    new User("Хулио", 18)
+            ));
+
+            new Comparator<User>() {
+                @Override
+                public int compare(User o1, User o2) {
+                    return o1.name.compareTo(o2.name);
+                }
+
+                @Override
+                public boolean equals(Object obj) {
+                    return false;
+                }
+            };
+            System.out.println(list);
+
+            return list;
+        }
     }
 
-
     public static void main(String[] args) {
-        //User userSort = new User("asda", 5);
-        //User userSort2 = new User("as", 52);
-        //SortUser sort = new SortUser();
-        //sort.sort();
+        User userSort = new User("asda", 5);
+        User userSort2 = new User("as", 52);
+        SortUser sort = new SortUser();
+        sort.sortByAllFields();
     }
 }
