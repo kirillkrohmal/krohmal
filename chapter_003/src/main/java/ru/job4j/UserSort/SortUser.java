@@ -16,7 +16,8 @@ public class SortUser {
                 new User("Hulio", 18)
         ));
         System.out.println(String.format("%s", sort));
-        return sort;
+        //return Integer.compare()
+        return null;
     }
 
     public static void main(String[] args) {

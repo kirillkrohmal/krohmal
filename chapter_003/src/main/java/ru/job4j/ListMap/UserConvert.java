@@ -11,7 +11,6 @@ public class UserConvert {
             users.put(i.getId(), i);
         }
 
-        System.out.println();
         return users;
     }
 }

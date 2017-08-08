@@ -41,7 +41,7 @@ public class CollectionSort {
             collection.remove(String.valueOf(i));
         }
         long t2 = System.currentTimeMillis();
-        System.out.println("Время после добавления элементов " + t2);
+        System.out.println("Время после удаления элементов " + t2);
 
         long e = t2 - t;
         System.out.println("Конечное время " + e);

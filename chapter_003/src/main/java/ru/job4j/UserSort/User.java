@@ -56,13 +56,12 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        User user = (User) o;
+       /* User user = (User) o;
 
         int result = age - user.age;
         if (result != 0) {
             return (int) result / Math.abs(result);
-        }
-
-        return 0;
+        }*/
+        return Integer.compare(age, o.age);
     }
 }
