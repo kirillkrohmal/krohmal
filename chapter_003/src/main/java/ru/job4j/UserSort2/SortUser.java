@@ -12,14 +12,11 @@ public class SortUser {
         return list;
     }
 
-   /* public List<User> sortByAllFields() {
-        List<User> list = new ArrayList<>();
-        list.addAll(Arrays.asList(
-                new User("Геннадий", 25),
-                new User("Денис", 35),
-                new User("Хулио", 18)
-        ));
+    public List<User> sortByAllFields(List<User> list) {
+        Collections.sort(list, new SolutionComparator());
+        return list;
 
+        /*
         new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {
@@ -31,9 +28,7 @@ public class SortUser {
                 return false;
             }
         };
-        System.out.println(list);
-
-        return list;
-    }*/
+        System.out.println(list);*/
+    }
 
 }

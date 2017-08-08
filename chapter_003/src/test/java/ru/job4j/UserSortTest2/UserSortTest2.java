@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
  */
 public class UserSortTest2 {
     @Test
-    public void whenSortLengthNewUser() {
+    public void whenSortLengthUser() {
         SortUser sort = new SortUser();
         List<User> list = new ArrayList<>();
         list = Arrays.asList(
@@ -25,9 +25,32 @@ public class UserSortTest2 {
                 new User("Хулио", 18));
         List<User> result = sort.sortNameLength(list);
         List<User> expected = Arrays.asList(
+                new User("Ден", 35),
                 new User("Хулио", 18),
-                new User("Геннадий", 25),
-                new User("Денис", 35));
+                new User("Геннадий", 25));
         assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenSortAgeUser() {
+        SortUser sort = new SortUser();
+        List<User> list = new ArrayList<>();
+        list = Arrays.asList(
+                new User("Геннадий", 25),
+                new User("Ден", 35),
+                new User("Хулио", 18));
+        List<User> result = sort.sortByAllFields(list);
+        List<User> expected = Arrays.asList(
+                new User("Ден", 35),
+                new User("Хулио", 18),
+                new User("Геннадий", 25));
+        assertThat(result, is(expected));
+/*
+        List<User> list = new ArrayList<>();
+        list.addAll(Arrays.asList(
+                new User("Геннадий", 25),
+                new User("Денис", 35),
+                new User("Хулио", 18)
+        ));*/
     }
 }
