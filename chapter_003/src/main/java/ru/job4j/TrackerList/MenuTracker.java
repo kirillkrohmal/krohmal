@@ -16,7 +16,7 @@ public class MenuTracker {
     private Tracker tracker;
     List<UserAction> userAction = new ArrayList<>(9);
 
-    private int position = 1;
+    private int position = 0;
 
     public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
@@ -24,13 +24,13 @@ public class MenuTracker {
     }
 
     public void fillActions() {
-        this.userAction.set(position++, new AddItem(input, tracker));
-        this.userAction.set(position++, new ShowItem());
-        this.userAction.set(position++, new EditItem());
-        this.userAction.set(position++, new DeleteItem());
-        this.userAction.set(position++, new FindItemById());
-        this.userAction.set(position++, new FindItemByName());
-        this.userAction.set(position++, new Exit());
+        this.userAction.set(1, new AddItem(input, tracker));
+        this.userAction.set(2, new ShowItem());
+        this.userAction.set(3, new EditItem());
+        this.userAction.set(4, new DeleteItem());
+        this.userAction.set(5, new FindItemById());
+        this.userAction.set(6, new FindItemByName());
+        this.userAction.set(7, new Exit());
     }
 
     public void addAction(UserAction action) {
@@ -90,7 +90,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            ArrayList<String> id = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
             Task task = new Task(id);
             tracker.findById(task.getId());
             System.out.println(String.format("%s", task));
@@ -111,13 +111,13 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            ArrayList<String> id = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
             ArrayList<String> desc = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's desc: ")));
             ArrayList<String> key = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's key: ")));
             long creat = System.currentTimeMillis();
             ArrayList<String> name = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's name: ")));
             Task task = new Task(key, id, name, desc, creat);
-            task.setId(id);
+            task.setId(String.valueOf(id));
             tracker.update(task);
         }
     }
@@ -135,7 +135,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            ArrayList<String> id = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
             Task task = new Task(id);
             tracker.delete(id);
         }
@@ -174,7 +174,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            ArrayList<String> id = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
             ArrayList<String> desc = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's desc: ")));
             ArrayList<String> key = new ArrayList<String>(Integer.parseInt(input.ask("Please enter task's key: ")));
             long creat = System.currentTimeMillis();

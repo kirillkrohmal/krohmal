@@ -18,17 +18,17 @@ public class Tracker {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
 
-        //item.setId(generateId());
+        item.setId(generateId());
         items.set(size++, item);
         return item;
     }
 
     String generateId() {
-        //return String.valueOf(new Random().nextInt(items.size()) + 100);
-        return String.valueOf(System.currentTimeMillis() + random.nextInt());
+        return String.valueOf(new Random().nextInt(items.size()) + 100);
+        //return String.valueOf(System.currentTimeMillis() + random.nextInt());
     }
 
-    public void delete(ArrayList<String> id) {
+    public void delete(String id) {
         Item result = null;
 
         for (int i = 0; i < items.size(); i++) {
@@ -77,7 +77,7 @@ public class Tracker {
         return result;
     }
 
-    public Item findById(ArrayList<String> id) {
+    public Item findById(String id) {
         Item result = null;
         for (Item item : items) {
             if (item.getId().equals(id) && items != null) {

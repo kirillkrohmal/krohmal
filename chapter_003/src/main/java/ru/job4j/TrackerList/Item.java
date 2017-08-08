@@ -7,12 +7,12 @@ import java.util.ArrayList;
  */
 public class Item {
     private ArrayList<String> key;
-    private ArrayList<String> id;
+    private String id;
     private ArrayList<String> name;
     private ArrayList<String> desc;
     private long created;
 
-    public Item(ArrayList<String> key, ArrayList<String> id, ArrayList<String> name, ArrayList<String[]> comments, ArrayList<String> desc, long created) {
+    public Item(ArrayList<String> key, String id, ArrayList<String> name, ArrayList<String[]> comments, ArrayList<String> desc, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
@@ -26,11 +26,11 @@ public class Item {
         this.name = this.name;
     }
 
-    public Item(ArrayList<String> id) {
+    public Item(String id) {
         this.id = id;
     }
 
-    public Item(ArrayList<String> key, ArrayList<String> id, ArrayList<String> name, ArrayList<String> desc, long created) {
+    public Item(ArrayList<String> key, String id, ArrayList<String> name, ArrayList<String> desc, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
@@ -47,11 +47,11 @@ public class Item {
         this.key = key;
     }
 
-    public ArrayList<String> getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ArrayList<String> id) {
+    public void setId(String id) {
         this.id = id;
     }
 
