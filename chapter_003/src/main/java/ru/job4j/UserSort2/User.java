@@ -10,8 +10,8 @@ package ru.job4j.UserSort2;
  * проверка по имени, потом по возрасту.
  */
 public class User {
-    private final String name;
-    private final int age;
+    String name;
+    int age;
 
     public User(String name, int age) {
         this.name = name;
@@ -55,6 +55,7 @@ public class User {
     public int length() {
         return name.length();
     }
+
 }
 
 
