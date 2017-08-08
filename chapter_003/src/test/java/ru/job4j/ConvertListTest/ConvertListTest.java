@@ -2,12 +2,9 @@ package ru.job4j.ConvertListTest;
 
 
 import org.junit.Test;
-import ru.job4j.CollectionSort.CollectionSort;
+import ru.job4j.ConvertList.ConvertList;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.TreeSet;
+import java.util.*;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -17,7 +14,14 @@ import static org.junit.Assert.assertThat;
  */
 public class ConvertListTest {
     @Test
-    public void whenCollectionSortAddAndHaveOtherTime() {
-
+    public void whenListConvertToArrays() {
+        ConvertList list = new ConvertList();
+        int[][] array = {
+                {4, 3, 4, 5},
+                {4, 1, 2, 8}
+        };
+        List<Integer> result = list.toList(array);
+        List<Integer> expected = new ArrayList<>();
+        assertThat(result, is(expected));
     }
 }
