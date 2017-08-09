@@ -10,7 +10,6 @@ public class UserConvert {
         for (User i : list) {
             users.put(i.getId(), i);
         }
-
         return users;
     }
 }
