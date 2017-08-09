@@ -16,18 +16,13 @@ import java.util.List;
 public class ConvertList {
     private List<Integer> toList;
 
-    public List<Integer> toList() {
-        int[][] array1 = {
-                {5, 5},
-                {4, 5},
-                {5, 6}
-        };
+    public List<Integer> toList(int[][] array1) {
         for (int i = 0; i < array1.length; i++) {
             for (int j = 0; j < array1[i].length; j++) {
                 toList.add(i, j);
             }
         }
-        System.out.println(array1);
+        System.out.println(toList);
         return toList;
     }
 
@@ -53,6 +48,11 @@ public class ConvertList {
     public static void main(String[] args) {
         ConvertList convertList = new ConvertList();
         //convertList.toArray();
-        convertList.toList();
+        int[][] array = {
+                {5, 5},
+                {4, 5},
+                {5, 6}
+        };
+        convertList.toList(array);
     }
 }

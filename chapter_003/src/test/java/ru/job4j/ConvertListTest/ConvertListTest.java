@@ -20,8 +20,9 @@ public class ConvertListTest {
                 {4, 3, 4, 5},
                 {4, 1, 2, 8}
         };
-        //List<Integer> result = list.toList(array);
+        List<Integer> result = list.toList(array);
+
         List<Integer> expected = new ArrayList<>();
-        //assertThat(result, is(expected));
+        assertThat(result, is(expected));
     }
 }
