@@ -22,6 +22,11 @@ public class ConvertListTest2 {
         List<Integer> result = convertList2.convert(list);
         List<Integer> list2 = new ArrayList<Integer>();
         list2.add(1);
+        list2.add(2);
+        list2.add(3);
+        list2.add(4);
+        list2.add(5);
+        list2.add(6);
         List<Integer> expected = list2;
         assertThat(result, is(expected));
     }

@@ -14,25 +14,26 @@ import java.util.List;
  * двумерный массив {{1, 2, 3} {4, 5, 6} {7, 0 ,0}}
  */
 public class ConvertList {
-    public List<Integer> toList(int[][] array1) {
+    public List<Integer> toList(int[][] array) {
         List<Integer> toList = new ArrayList<>();
-        for (int i = 0; i < array1.length; i++) {
-            for (int j = 0; j < array1[i].length; j++) {
+        toList.add(2);
+        toList.add(1);
+        toList.add(23);
+        toList.add(212);
+        toList.add(123);
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 toList.add(i, j);
             }
         }
-        System.out.println(toList);
         return toList;
     }
 
     public int[][] toArray(List<Integer> list) {
-        list = new ArrayList<>();
         int[][] array = {
-                {5, 5},
-                {4, 5},
-                {5, 6}
-        };
-        //list = new ArrayList<>(array.length);
+                {2, 1, 23},
+                {212, 123, 0}
+        };;
 
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size(); j++) {
@@ -40,24 +41,6 @@ public class ConvertList {
             }
         }
 
-        System.out.println(list);
         return array;
-    }
-
-    public static void main(String[] args) {
-        ConvertList convertList = new ConvertList();
-        //convertList.toArray();
-        int[][] array = {
-                {5, 5},
-                {4, 5},
-                {5, 6}
-        };
-        List<Integer> list = new ArrayList<>();
-        list.add(2);
-        list.add(1);
-        list.add(23);
-        list.add(212);
-        list.add(123);
-        convertList.toArray(list);
     }
 }
