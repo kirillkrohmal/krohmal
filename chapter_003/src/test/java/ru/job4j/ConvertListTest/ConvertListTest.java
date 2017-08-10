@@ -21,6 +21,18 @@ public class ConvertListTest {
                 {4, 1, 2, 8}
         };
         List<Integer> result = list.toList(array);
+        List<Integer> expected = new ArrayList<>();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenListConvertToArrays2() {
+        ConvertList list = new ConvertList();
+        int[][] array = {
+                {4, 3, 4, 5},
+                {4, 1, 2, 8}
+        };
+        List<Integer> result = list.toList(array);
 
         List<Integer> expected = new ArrayList<>();
         assertThat(result, is(expected));

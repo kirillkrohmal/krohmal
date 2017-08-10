@@ -18,8 +18,7 @@ public class UserSortTest2 {
     @Test
     public void whenSortLengthUser() {
         SortUser sort = new SortUser();
-        List<User> list = new ArrayList<>();
-        list = Arrays.asList(
+        List<User> list = Arrays.asList(
                 new User("Геннадий", 25),
                 new User("Ден", 35),
                 new User("Хулио", 18));
@@ -34,8 +33,7 @@ public class UserSortTest2 {
     @Test
     public void whenSortAgeUser() {
         SortUser sort = new SortUser();
-        List<User> list = new ArrayList<>();
-        list = Arrays.asList(
+        List<User> list = Arrays.asList(
                 new User("Геннадий", 25),
                 new User("Хулио", 18),
                 new User("Ден", 35));
@@ -50,8 +48,7 @@ public class UserSortTest2 {
     @Test
     public void whenSortAgeUser2() {
         SortUser sort = new SortUser();
-        List<User> list = new ArrayList<>();
-        list = Arrays.asList(
+        List<User> list = Arrays.asList(
                 new User("Гена", 18),
                 new User("Хулио", 25),
                 new User("Дениска", 35));

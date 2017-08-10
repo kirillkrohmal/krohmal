@@ -14,9 +14,8 @@ import java.util.List;
  * двумерный массив {{1, 2, 3} {4, 5, 6} {7, 0 ,0}}
  */
 public class ConvertList {
-    private List<Integer> toList;
-
     public List<Integer> toList(int[][] array1) {
+        List<Integer> toList = new ArrayList<>();
         for (int i = 0; i < array1.length; i++) {
             for (int j = 0; j < array1[i].length; j++) {
                 toList.add(i, j);
@@ -26,8 +25,8 @@ public class ConvertList {
         return toList;
     }
 
-    public int[][] toArray() {
-        List<Integer> list = new ArrayList<>();
+    public int[][] toArray(List<Integer> list) {
+        list = new ArrayList<>();
         int[][] array = {
                 {5, 5},
                 {4, 5},
@@ -53,6 +52,12 @@ public class ConvertList {
                 {4, 5},
                 {5, 6}
         };
-        convertList.toList(array);
+        List<Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(1);
+        list.add(23);
+        list.add(212);
+        list.add(123);
+        convertList.toArray(list);
     }
 }
