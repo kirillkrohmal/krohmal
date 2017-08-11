@@ -4,13 +4,11 @@ package ru.job4j.TrackerList.validator;
 import ru.job4j.TrackerList.exception.MenuOutException;
 import ru.job4j.TrackerList.inputs.ConsoleInput;
 
-import java.util.ArrayList;
-
 /**
  * Created by Comp on 28.06.2017.
  */
 public class ValidateInput extends ConsoleInput {
-    public int ask(String question, ArrayList<int[]> range) {
+    public int ask(String question, int[] range) {
         boolean invalid = true;
 
         int value = -1;

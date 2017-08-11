@@ -19,7 +19,7 @@ public class Tracker {
         }
 
         item.setId(generateId());
-        items.set(size++, item);
+        items.add(size++, item);
         return item;
     }
 
@@ -60,12 +60,12 @@ public class Tracker {
         List<Item> result = new ArrayList<Item>(size);
 
         for (int i = 0; i < size; i++) {
-            result.set(i, this.items.get(i));
+            result.add(i, this.items.get(i));
         }
         return result;
     }
 
-    public Item findByName(ArrayList<String> name) {
+    public Item findByName(String name) {
         Item result = null;
 
         for (Item item : items) {

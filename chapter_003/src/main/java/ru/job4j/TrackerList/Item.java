@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * Created by Comp on 12.06.2017.
  */
 public class Item {
-    private ArrayList<String> key;
+    private String key;
     private String id;
-    private ArrayList<String> name;
-    private ArrayList<String> desc;
+    private String name;
+    private String desc;
     private long created;
 
-    public Item(ArrayList<String> key, String id, ArrayList<String> name, ArrayList<String[]> comments, ArrayList<String> desc, long created) {
+    public Item(String key, String id, String name, String[] comments, String desc, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
@@ -20,8 +20,7 @@ public class Item {
         this.created = created;
     }
 
-
-    public Item(ArrayList<String> id, ArrayList<String> name) {
+    public Item(String id, String name) {
         this.id = this.id;
         this.name = this.name;
     }
@@ -30,7 +29,7 @@ public class Item {
         this.id = id;
     }
 
-    public Item(ArrayList<String> key, String id, ArrayList<String> name, ArrayList<String> desc, long created) {
+    public Item(String key, String id, String name, String desc, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
@@ -38,12 +37,11 @@ public class Item {
         this.created = created;
     }
 
-
-    public ArrayList<String> getKey() {
+    public String getKey() {
         return key;
     }
 
-    public void setKey(ArrayList<String> key) {
+    public void setKey(String key) {
         this.key = key;
     }
 
@@ -55,19 +53,19 @@ public class Item {
         this.id = id;
     }
 
-    public ArrayList<String> getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(ArrayList<String> name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public ArrayList<String> getDesc() {
+    public String getDesc() {
         return desc;
     }
 
-    public void setDesc(ArrayList<String> desc) {
+    public void setDesc(String desc) {
         this.desc = desc;
     }
 
