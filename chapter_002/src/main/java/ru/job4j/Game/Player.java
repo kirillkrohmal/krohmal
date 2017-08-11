@@ -1,7 +1,5 @@
 package ru.job4j.Game;
 
-import ru.job4j.TestTask.ChessFigure;
-
 import java.util.Random;
 
 /**

@@ -10,13 +10,24 @@ import ru.job4j.TestTask.figures.Bishop;
  */
 public class Board {
     private Figure[] figures;
-    private int width = 8;
-    private int hight = 8;
+    private int width;
+    private int height;
     public Bishop[][] cells;
+    public char[][] printIt;
 
+    public Board(int width, int height, char[][] printIt) {
+        this.width = width;
+        this.height = height;
+        this.printIt = new char[width][height];
+    }
 
-    public Board(Figure[] figures) {
-        this.figures = figures;
+    public void print () {
+        System.out.println();
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                System.out.println(printIt[i][j]);
+            }
+        }
     }
 
     int findFigure(Cell source) {
@@ -67,7 +78,7 @@ public class Board {
                 if (cells[i].equals(figures)) {
                     throw new ImpossibleMoveException("Невозможно пойти. Ячейка занята!");
                 } else {
-                    if (width > cells.length || hight > cells.length) {
+                    if (width > cells.length || height > cells.length) {
                         return false;
                     } else {
                         isCurrentPositionAvailable(new Cell(3, 5));

@@ -11,7 +11,6 @@ import java.util.Arrays;
  */
 public class StartUI {
     private static Figure figure;
-    private ChessFigure player;
     private StartUI game;
     private Bishop bishop;
     private Cell cells;
@@ -53,17 +52,18 @@ public class StartUI {
 
     public void init() {
         //position.move();
-        position.move(new Cell(4, 3), new Cell(1, 3));
+        position.print();
+        //position.move(new Cell(4, 3), new Cell(1, 3));
 
-        print();
+        //print();
     }
 
     public static void main(String[] args) {
-        Board board = new Board(new Bishop[]{});
+        Board board = new Board(8,8, new char[][]{});
         //System.out.println(String.format("%s", board));
         //System.out.println(String.format("%s", st.player));
         //System.out.println(Arrays.deepToString(Board));
-        Figure figure = new Bishop(new Cell(7, 7), new ChessFigure(new Cell(8, 6)));
+        Figure figure = new Bishop(5, 6, new Cell(4, 4), 8, 8);
         new StartUI(board, figure).init();
     }
 }

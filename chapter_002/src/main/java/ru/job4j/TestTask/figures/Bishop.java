@@ -1,8 +1,6 @@
 package ru.job4j.TestTask.figures;
 
 import ru.job4j.TestTask.Cell;
-import ru.job4j.TestTask.ChessFigure;
-import ru.job4j.TestTask.Exception.ImpossibleMoveException;
 import ru.job4j.TestTask.Figure;
 
 /**
@@ -10,17 +8,11 @@ import ru.job4j.TestTask.Figure;
  */
 public class Bishop extends Figure {
     private int startPosition;
-    private int position;
 
-    public Bishop(Cell position, ChessFigure chessFigure) {
-        super(position);
+    public Bishop(int x, int y, Cell position, int height, int width) {
+        super(x, y, position, height, width);
     }
 
-
-
-    public Bishop(Cell source) {
-        super(source);
-    }
 
     @Override
     public Cell cells() {
@@ -35,7 +27,8 @@ public class Bishop extends Figure {
                 }
             }
         }
-        return position;
+
+        return x;
     }
 
     public int upAndLeft (Cell[][] cell, int x, int y) {
@@ -46,7 +39,7 @@ public class Bishop extends Figure {
                 }
             }
         }
-        return position;
+        return y;
     }
 
     public int downAndLeft (Cell[][] cell, int x, int y) {
@@ -57,7 +50,7 @@ public class Bishop extends Figure {
                 }
             }
         }
-        return position;
+        return x;
     }
 
     public int downAndRigth (Cell[][] cell, int x, int y) {
@@ -68,6 +61,6 @@ public class Bishop extends Figure {
                 }
             }
         }
-        return position;
+        return y;
     }
 }
