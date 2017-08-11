@@ -24,34 +24,42 @@ public class Account {
     private int value;
     private String requisites;
 
-    public Map<User, List<Account>> listOfBankRequisites(List<Account> accounts) {
-
-        return null;
+    public Account(int value, String requisites) {
+        this.value = value;
+        this.requisites = requisites;
     }
 
-    public void addUser(User user) {
-
+    public int getValue() {
+        return value;
     }
 
-    public void deleteUser(User user) {
-
+    public void setValue(int value) {
+        this.value = value;
     }
 
-    public void addAccountToUser(User user, Account account) {
-
+    public String getRequisites() {
+        return requisites;
     }
 
-    public void deleteAccountFromUser(User user, Account account) {
-
+    public void setRequisites(String requisites) {
+        this.requisites = requisites;
     }
 
-    public List<Account> getUserAccounts(User user) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        return null;
+        Account account = (Account) o;
+
+        if (value != account.value) return false;
+        return requisites != null ? requisites.equals(account.requisites) : account.requisites == null;
     }
 
-    public boolean transferMoney (User srcUser, Account srcAccount, User dstUser, Account dstAccount, double amount) {
-
-        return false;
+    @Override
+    public int hashCode() {
+        int result = value;
+        result = 31 * result + (requisites != null ? requisites.hashCode() : 0);
+        return result;
     }
 }
