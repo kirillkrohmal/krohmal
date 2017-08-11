@@ -18,7 +18,7 @@ public class ConvertListTest {
         ConvertList list = new ConvertList();
         int[][] array = {
                 {2, 1, 23, 212},
-                {123}
+                {123, 0, 0, 0}
         };
         List<Integer> result = list.toList(array);
         List<Integer> list2 = new ArrayList<>();

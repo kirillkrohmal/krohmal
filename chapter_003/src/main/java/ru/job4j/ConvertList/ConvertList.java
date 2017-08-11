@@ -16,11 +16,6 @@ import java.util.List;
 public class ConvertList {
     public List<Integer> toList(int[][] array) {
         List<Integer> toList = new ArrayList<>();
-        toList.add(2);
-        toList.add(1);
-        toList.add(23);
-        toList.add(212);
-        toList.add(123);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 toList.add(i, j);
