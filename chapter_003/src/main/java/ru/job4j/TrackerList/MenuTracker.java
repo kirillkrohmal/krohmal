@@ -25,12 +25,12 @@ public class MenuTracker {
 
     public void fillActions() {
         this.userAction.add(position++, new AddItem(input, tracker));
-        this.userAction.add(position++, new ShowItem());
-        this.userAction.add(position++, new EditItem());
-        this.userAction.add(position++, new DeleteItem());
-        this.userAction.add(position++, new FindItemById());
-        this.userAction.add(position++, new FindItemByName());
-        this.userAction.add(position++, new Exit());
+        this.userAction.add(position++, new ShowItem(input, tracker));
+        this.userAction.add(position++, new EditItem(input, tracker));
+        this.userAction.add(position++, new DeleteItem(input, tracker));
+        this.userAction.add(position++, new FindItemById(input, tracker));
+        this.userAction.add(position++, new FindItemByName(input, tracker));
+        this.userAction.add(position++, new Exit(input, tracker));
     }
 
     public void addAction(UserAction action) {
@@ -56,6 +56,10 @@ public class MenuTracker {
 
     private class FindItemByName extends BaseAction {
 
+        public FindItemByName(Input input, Tracker tracker) {
+            super(input, tracker);
+        }
+
         @Override
         public int key() {
             return 6;
@@ -78,6 +82,10 @@ public class MenuTracker {
 
     private class FindItemById extends BaseAction {
 
+        public FindItemById(Input input, Tracker tracker) {
+            super(input, tracker);
+        }
+
         @Override
         public int key() {
             return 5;
@@ -90,7 +98,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = input.ask("Please enter task's id: ");
             Task task = new Task(id, id);
             tracker.findById(task.getId());
             System.out.println(String.format("%s", task));
@@ -98,6 +106,10 @@ public class MenuTracker {
     }
 
     private class EditItem extends BaseAction {
+
+        public EditItem(Input input, Tracker tracker) {
+            super(input, tracker);
+        }
 
         @Override
         public int key() {
@@ -111,7 +123,7 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = input.ask("Please enter task's id: ");
             String desc = input.ask("Please enter task's desc: ");
             String key = input.ask("Please enter task's key: ");
             long creat = System.currentTimeMillis();
@@ -123,6 +135,10 @@ public class MenuTracker {
     }
 
     private class DeleteItem extends BaseAction {
+        public DeleteItem(Input input, Tracker tracker) {
+            super(input, tracker);
+        }
+
         @Override
         public int key() {
             return 4;
@@ -135,13 +151,17 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            String id = String.valueOf(Integer.parseInt(input.ask("Please enter task's id: ")));
+            String id = input.ask("Please enter task's id: ");
             Task task = new Task(id, id);
             tracker.delete(id);
         }
     }
 
     private class Exit extends BaseAction {
+        public Exit(Input input, Tracker tracker) {
+            super(input, tracker);
+        }
+
         @Override
         public int key() {
             return 7;
@@ -159,7 +179,9 @@ public class MenuTracker {
     }
 
     private class AddItem extends BaseAction {
+
         public AddItem(Input input, Tracker tracker) {
+            super(input, tracker);
         }
 
         @Override
@@ -184,6 +206,10 @@ public class MenuTracker {
     }
 
     private static class ShowItem extends BaseAction {
+        public ShowItem(Input input, Tracker tracker) {
+            super(input, tracker);
+        }
+
         @Override
         public int key() {
             return 2;

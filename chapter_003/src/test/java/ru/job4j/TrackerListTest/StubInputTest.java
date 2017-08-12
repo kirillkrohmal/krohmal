@@ -18,13 +18,13 @@ public class StubInputTest {
     @Test
     public void whenUserFindAllItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-       /* Item item = new Item("key001", "1", "test name1", "desc1", 2017);
+        Item item = new Item("key001", "1", "test name1", "desc1", 2017);
         tracker.add(item);
         Input input = new StubInput(new String[]{
                 "1", "key001", "1", "test name1", "desc1", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll().get(0).getName(), is("test name1"));*/
+        assertThat(tracker.findAll().get(0).getName(), is("test name1"));
     }
 
     @Test
@@ -40,19 +40,19 @@ public class StubInputTest {
     @Test
     public void whenUserFindByIdItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-       /* Item item = new Item("key002", "2", "test name2", "desc2", 2017);
+        Item item = new Item("key002", "2", "test name2", "desc2", 2017);
         tracker.add(item);
         Input input = new StubInput(new String[]{
                 "4", "key002", item.getId(), "test name2", "desc2", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item.getId()).getName(), is("test name2"));*/
+        assertThat(tracker.findById(item.getId()).getName(), is("test name2"));
     }
 
     @Test
     public void whenUserDeleteItemThenTrackerHasItems() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-      /*  Item item = new Item("key003", "3", "test name3", "desc3", 2017);
+        Item item = new Item("key003", "3", "test name3", "desc3", 2017);
         tracker.add(item);
         Item item2 = new Item("key004", "4", "test name4", "desc4", 2017);
         tracker.add(item2);
@@ -71,13 +71,13 @@ public class StubInputTest {
                 "3", "key006", item4.getId(), "test name6", "desc6", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll(), is(items));*/
+        assertThat(tracker.findAll(), is(items));
     }
 
     @Test
     public void whenUserDeleteItemThenTrackerHasItems2() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-        /*Item item = new Item("key003", "3", "test name3", "desc3", 2017);
+        Item item = new Item("key003", "3", "test name3", "desc3", 2017);
         tracker.add(item);
         Item item2 = new Item("key004", "4", "test name4", "desc4", 2017);
         tracker.add(item2);
@@ -88,13 +88,13 @@ public class StubInputTest {
                 "3", "key004", item2.getId(), "test name4", "desc4", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll(), is(items));*/
+        assertThat(tracker.findAll(), is(items));
     }
 
      @Test
     public void whenUserDeleteItemThenTrackerHasItems3() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-       /* Item item = new Item("key003", "3", "test name3", "desc3", 2017);
+        Item item = new Item("key003", "3", "test name3", "desc3", 2017);
         tracker.add(item);
         Item item2 = new Item("key004", "4", "test name4", "desc4", 2017);
         tracker.add(item2);
@@ -105,30 +105,30 @@ public class StubInputTest {
                 "3", "key003", item.getId(), "test name3", "desc3", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item2.getId()), is(item2));*/
+        assertThat(tracker.findById(item2.getId()), is(item2));
     }
 
     @Test
     public void whenUserUpdateItemThenTrackerHasAnotherItem() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-       /* Item item = new Item("key004", "9", "test name4", "desc4", 2017);
+        Item item = new Item("key004", "9", "test name4", "desc4", 2017);
         tracker.add(item);
         Input input = new StubInput(new String[]{
                 "2", "key006", item.getId(), "test name6", "desc6", "6",
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll().get(0).getName(), is("test name6"));*/
+        assertThat(tracker.findAll().get(0).getName(), is("test name6"));
     }
 
     @Test
     public void whenUserFindByNameItemThenTrackerHasItemWithName() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
-        /*Item item = new Item("key004", "9", "test name4", "desc4", 2017);
+        Item item = new Item("key004", "9", "test name4", "desc4", 2017);
         tracker.add(item);
         Input input = new StubInput(new String[]{
                 "5", "key004", item.getId(), "test name4", "desc4", "6"
         });
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item.getId()).getName(), is("test name4"));*/
+        assertThat(tracker.findById(item.getId()).getName(), is("test name4"));
     }
 }

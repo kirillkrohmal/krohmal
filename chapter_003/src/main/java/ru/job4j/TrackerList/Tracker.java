@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class Tracker {
     private final int STORAGE_SIZE = 100;
-    ArrayList<Item> items = new ArrayList<>(STORAGE_SIZE);
+    List<Item> items = new ArrayList<>(STORAGE_SIZE);
     private int size = 0;
     private static final Random random = new Random();
 
@@ -18,7 +18,7 @@ public class Tracker {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
 
-        item.setId(generateId());
+        //item.setId(generateId());
         items.add(size++, item);
         return item;
     }
@@ -60,7 +60,7 @@ public class Tracker {
         List<Item> result = new ArrayList<Item>(size);
 
         for (int i = 0; i < size; i++) {
-            result.add(i, this.items.get(i));
+            result.set(i, this.items.get(i));
         }
         return result;
     }
