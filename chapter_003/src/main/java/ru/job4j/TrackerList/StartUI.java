@@ -19,7 +19,9 @@ public class StartUI {
     private Tracker tracker;
     private int position = 1;
 
-    int[] range = {position++, position++, position++, position++, position++, position++, position++};
+    int[] range = {
+            position++, position++, position++, position++, position++, position++, position++
+    };
 
     private List<UserAction> userAction = new ArrayList<UserAction>(9);
 
@@ -83,7 +85,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        Input input = new ValidateInput();
+        Input input = new ConsoleInput();
         //Input input = new StubInput(new String[]{});
         new StartUI(input, tracker).init();
     }

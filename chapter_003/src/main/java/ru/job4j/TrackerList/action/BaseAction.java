@@ -8,6 +8,7 @@ import ru.job4j.TrackerList.inputs.Input;
  */
 public abstract class BaseAction implements UserAction {
     public BaseAction(Input input, Tracker tracker) {
+
     }
 
     public abstract int key();

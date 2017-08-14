@@ -19,13 +19,20 @@ import java.util.List;
 public class ConvertList {
     public static List<Integer> convert(List<int[]> list) {
         List<Integer> integerList = new ArrayList<Integer>();
-        list = new ArrayList();
+
+        for (int[] integer : list) {
+            for (int value : integer) {
+                integerList.add(value);
+            }
+        }
+        return integerList;
+/*
         for (int[] integer : list) {
             integerList = new ArrayList(integer.length);
             for (int i = 0; i < integer.length; i++) {
                 integerList.add(Integer.valueOf(integer[i]));
             }
-        }
-        return integerList;
+        }*/
+
     }
 }

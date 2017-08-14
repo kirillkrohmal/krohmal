@@ -113,7 +113,8 @@ public class MenuTracker {
             String key = input.ask("Please enter task's key: ");
             long creat = System.currentTimeMillis();
             String name = input.ask("Please enter task's name: ");
-            Task task = new Task(key, id, name, desc, creat);
+            String[] comments = new String[]{input.ask("Please enter task's comments: ")};
+            Task task = new Task(key, id, name, desc, comments, creat);
             task.setId(id);
             tracker.update(task);
         }
@@ -177,7 +178,8 @@ public class MenuTracker {
             String key = input.ask("Please enter task's key: ");
             long creat = System.currentTimeMillis();
             String name = input.ask("Please enter task's name: ");
-            tracker.add(new Task(key, id, name, desc, creat));
+            String[] comments = new String[]{input.ask("Please enter task's comments: ")};
+            tracker.add(new Task(key, id, name, desc, comments, creat));
         }
     }
 
@@ -197,7 +199,7 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker) {
             for (Item item : tracker.findAll()) {
                 System.out.println(
-                        String.format("%s. %s. %s. %s. %s", item.getId(), item.getName(), item.getKey(), item.getDesc(), item.getCreated())
+                        String.format("%s. %s. %s. %s. %s. %s", item.getId(), item.getName(), item.getKey(), item.getDesc(), item.getComment(), item.getCreated())
                 );
             }
         }

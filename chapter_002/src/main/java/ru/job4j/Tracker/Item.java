@@ -14,7 +14,7 @@ public class Item {
     private String desc;
     private long created;
 
-    public Item(String key, String id, String name, String desc, long created) {
+    public Item(String key, String id, String name, String desc, String[] comments, long created) {
         this.key = key;
         this.id = id;
         this.name = name;
@@ -23,11 +23,12 @@ public class Item {
         this.comments = comments;
     }
 
+
     public Item(String id) {
         this.id = id;
     }
 
-    public Item(String id, String name) {
+    public Item(String name, String id) {
         this.id = id;
         this.name = name;
     }

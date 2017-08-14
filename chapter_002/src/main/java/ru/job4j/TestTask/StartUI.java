@@ -51,18 +51,12 @@ public class StartUI {
     }
 
     public void init() {
-        //position.move();
+        //position.move(new Cell(6, 7), new Cell(3, 1));
         position.print();
-        //position.move(new Cell(4, 3), new Cell(1, 3));
-
-        //print();
     }
 
     public static void main(String[] args) {
         Board board = new Board(8,8, new char[][]{});
-        //System.out.println(String.format("%s", board));
-        //System.out.println(String.format("%s", st.player));
-        //System.out.println(Arrays.deepToString(Board));
         Figure figure = new Bishop(5, 6, new Cell(4, 4), 8, 8);
         new StartUI(board, figure).init();
     }
