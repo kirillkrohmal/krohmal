@@ -12,13 +12,14 @@ public class Tracker {
     List<Item> items = new ArrayList<>(STORAGE_SIZE);
     private int size = 0;
     private static final Random random = new Random();
+    private int position = 1;
 
     public Item add(Item item) {
         if (size == STORAGE_SIZE - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
 
-        //item.setId(generateId());
+        item.setId(generateId());
         items.add(size++, item);
         return item;
     }

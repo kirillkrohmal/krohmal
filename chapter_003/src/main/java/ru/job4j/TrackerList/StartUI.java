@@ -20,7 +20,7 @@ public class StartUI {
     private int position = 1;
 
     int[] range = {
-            position++, position++, position++, position++, position++, position++, position++
+            position + 8
     };
 
     private List<UserAction> userAction = new ArrayList<UserAction>(9);
@@ -35,6 +35,7 @@ public class StartUI {
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
+            menuTracker.addAction();
             menuTracker.show();
             //int key = Integer.parseInt(input.ask("Select: "));
             menuTracker.select(input.ask("Select: ", range));

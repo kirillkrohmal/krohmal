@@ -23,6 +23,15 @@ public class MenuTracker {
         this.tracker = tracker;
     }
 
+    public void addAction() {
+        userAction.add(null);
+
+        /*this.userAction.add(position++, action);
+        for (int i = 0; i < this.position; i++) {
+            this.userAction.add(null);
+        }*/
+    }
+
     public void fillActions() {
         this.userAction.add(position++, new AddItem(input, tracker));
         this.userAction.add(position++, new ShowItem(input, tracker));
@@ -33,15 +42,6 @@ public class MenuTracker {
         this.userAction.add(position++, new Exit(input, tracker));
     }
 
-    public void addAction(UserAction action) {
-        this.userAction.add(position++, action);
-    }
-
-    /*  public static void test () {
-          MenuTracker tr = new MenuTracker()
-          AddItem addItem = tr.new AddItem();
-      }
-  */
     public void select(int key) {
         this.userAction.get(key).execute(this.input, tracker);
     }
