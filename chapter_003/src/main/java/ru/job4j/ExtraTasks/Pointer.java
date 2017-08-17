@@ -5,56 +5,21 @@ package ru.job4j.ExtraTasks;
  * объект точка должен иметь методы double Point#distanceTo(Point point) -
  * метод должен вычислять расстояние между двумя точками.
  */
+
 public class Pointer {
-
-    double distanceTo(Point point) {
-
-        return 0;
+    public double PointdistanceTo(Point point) {
+        return Math.sqrt((Math.pow(point.y - this.y, 2)) + (Math.pow(point.x - this.x, 2)));
     }
-}
 
-class Point {
-    public int x;
-    public int y;
+    double x;
+    double y;
 
-    public Point(int x, int y) {
+    public Pointer(double x, double y) {
         this.x = x;
         this.y = y;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Point point = (Point) o;
-
-        if (x != point.x) return false;
-        return y == point.y;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
 }
+
+
 
 

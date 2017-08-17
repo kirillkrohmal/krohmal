@@ -7,4 +7,5 @@ package ru.job4j.ExtraTasks;
  * Если выражение не корректное выбросить исключение java.lang.IllegalStateException
  */
 public class Expression {
+
 }
