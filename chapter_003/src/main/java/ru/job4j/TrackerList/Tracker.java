@@ -1,5 +1,7 @@
 package ru.job4j.TrackerList;
 
+import ru.job4j.TrackerList.action.UserAction;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -13,14 +15,14 @@ public class Tracker {
     private int size = 0;
     private static final Random random = new Random();
     private int position = 1;
+    List<UserAction> userAction = new ArrayList<>(9);
 
     public Item add(Item item) {
         if (size == STORAGE_SIZE - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
-
         item.setId(generateId());
-        items.add(size++, item);
+        items.set(size++, item);
         return item;
     }
 

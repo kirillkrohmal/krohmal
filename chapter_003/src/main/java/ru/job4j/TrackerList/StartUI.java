@@ -3,6 +3,7 @@ package ru.job4j.TrackerList;
 import ru.job4j.TrackerList.action.UserAction;
 import ru.job4j.TrackerList.inputs.ConsoleInput;
 import ru.job4j.TrackerList.inputs.Input;
+import ru.job4j.TrackerList.inputs.StubInput;
 import ru.job4j.TrackerList.validator.ValidateInput;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class StartUI {
     private int position = 1;
 
     int[] range = {
-            position + 8
+            1, 2, 3, 4, 5, 6, 7, 8, 9
     };
 
     private List<UserAction> userAction = new ArrayList<UserAction>(9);
@@ -35,7 +36,7 @@ public class StartUI {
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillActions();
         do {
-            menuTracker.addAction();
+            //menuTracker.addAction();
             menuTracker.show();
             //int key = Integer.parseInt(input.ask("Select: "));
             menuTracker.select(input.ask("Select: ", range));
@@ -86,7 +87,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
         //Input input = new StubInput(new String[]{});
         new StartUI(input, tracker).init();
     }

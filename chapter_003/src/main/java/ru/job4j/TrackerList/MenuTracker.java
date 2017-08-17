@@ -24,15 +24,12 @@ public class MenuTracker {
     }
 
     public void addAction() {
-        userAction.add(null);
-
-        /*this.userAction.add(position++, action);
-        for (int i = 0; i < this.position; i++) {
-            this.userAction.add(null);
-        }*/
+        //userAction.add(position++, action);
+        this.userAction.add(null);
     }
 
     public void fillActions() {
+        this.userAction.add(null);
         this.userAction.add(position++, new AddItem(input, tracker));
         this.userAction.add(position++, new ShowItem(input, tracker));
         this.userAction.add(position++, new EditItem(input, tracker));
