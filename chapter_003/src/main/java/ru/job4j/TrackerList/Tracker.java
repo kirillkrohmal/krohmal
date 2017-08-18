@@ -21,8 +21,8 @@ public class Tracker {
         if (size == STORAGE_SIZE - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
-        item.setId(generateId());
-        items.set(size++, item);
+        //item.setId(generateId());
+        items.add(size++, item);
         return item;
     }
 
@@ -53,7 +53,7 @@ public class Tracker {
     public void update(Item freshItem) {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i) != null && items.get(i).getId().equals(freshItem.getId())) {
-                items.set(i, freshItem);
+                items.add(i, freshItem);
                 break;
             }
         }
@@ -63,7 +63,7 @@ public class Tracker {
         List<Item> result = new ArrayList<Item>(size);
 
         for (int i = 0; i < size; i++) {
-            result.set(i, this.items.get(i));
+            result.add(i, this.items.get(i));
         }
         return result;
     }

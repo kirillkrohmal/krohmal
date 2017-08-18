@@ -21,7 +21,7 @@ public class StartUI {
     private int position = 1;
 
     int[] range = {
-            1, 2, 3, 4, 5, 6, 7, 8, 9
+            position++, position++, position++, position++, position++, position++, position++, position++
     };
 
     private List<UserAction> userAction = new ArrayList<UserAction>(9);

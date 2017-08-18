@@ -15,7 +15,7 @@ public class ConsoleInput implements Input {
 
     @Override
     public int ask(String question, int[] range) {
-        int key = Integer.parseInt(String.valueOf(this.ask(question, range)));
+        int key = Integer.parseInt(String.valueOf(this.ask(question)));
         boolean exist = false;
 
         for (int value : range) {
