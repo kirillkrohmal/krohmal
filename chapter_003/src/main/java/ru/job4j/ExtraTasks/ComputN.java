@@ -6,5 +6,8 @@ package ru.job4j.ExtraTasks;
 public class ComputN {
     int[] N = new int[]{};
 
+    public int[] compute() {
 
+        return new int[0];
+    }
 }

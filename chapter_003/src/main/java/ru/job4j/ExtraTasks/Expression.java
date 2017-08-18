@@ -8,4 +8,43 @@ package ru.job4j.ExtraTasks;
  */
 public class Expression {
 
+
+    double result;
+
+    public double getResult() {
+        return this.result;
+    }
+
+    public void plus(double x, double y) {
+        this.result = x + y;
+    }
+
+    public void minus(double x, double y) {
+        this.result = x - y;
+    }
+
+    public void multiple(double x, double y) {
+        this.result = x * y;
+    }
+
+    public void exp(double x) {
+        this.result = Math.exp(x);
+    }
+
+    public void divide(double x, double y) {
+        if (y == 0) {
+            throw new IllegalStateException("Введите число не равное 0");
+        } else {
+            this.result = x / y;
+        }
+    }
+
+    public void ask(String question, int[] range ) {
+        for (int value : range) {
+
+        }
+    }
+
 }
+
+

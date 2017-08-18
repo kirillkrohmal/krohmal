@@ -24,6 +24,10 @@ public class Calc {
         this.result = x * y;
     }
 
+    public void exp (double x) {
+        this.result = Math.exp(x);
+    }
+
     public void divide (double x, double y) {
         if (y == 0) {
             throw new IllegalStateException("Введите число не равное 0");

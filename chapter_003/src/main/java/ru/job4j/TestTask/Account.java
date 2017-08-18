@@ -8,9 +8,9 @@ import java.util.Map;
  * Необходимо создать класс User с полями name, passport.
  * Добавить методы eqauls() hashCode()
  * Необходимо создать класс Account с полями value (кол-во денег), requisites (реквизиты счёта) - это банковский счёт.
- * Реализовать коллекцию Map <User, List<Account>>, обозначающую что у каждого пользователя может быть список банковских счетов.
- * Необходимо реализовать возможность перечислять деньги, как с одного счёта User на другой счёт того же User, так и на счёт другого User.
- * В программе должны быть методы:
+ * Реализовать коллекцию Map <User, List<Account>>, обозначающую что у каждого пользователя может быть
+ * список банковских счетов. Необходимо реализовать возможность перечислять деньги, как с одного счёта
+ * User на другой счёт того же User, так и на счёт другого User. В программе должны быть методы:
  * public void addUser(User user) {} - добавление пользователя.
  * public void deleteUser(User user) {} - удаление пользователя.
  * public void addAccountToUser(User user, Account account) {} - добавить счёт пользователю.
@@ -28,6 +28,12 @@ public class Account {
         this.value = value;
         this.requisites = requisites;
     }
+
+    public Map <User, List<Account>> userMoney() {
+
+        return null;
+    }
+
 
     public int getValue() {
         return value;

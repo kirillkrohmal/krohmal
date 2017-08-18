@@ -10,14 +10,14 @@ public class RectTriangle extends Triangle{
         super(a, b, c);
     }
 
-    boolean exists() {
+    public boolean exists() {
         double AB = mathSqrt(a, b);
         double BC = mathSqrt(b, c);
         double CA = mathSqrt(c, a);
         if ((AB + BC) == CA || (BC + CA) == AB || (CA + AB) == BC) {
             return true;
         } else {
-            throw new IllegalStateException("Введены некорректные координаты точек");
+            return false;
         }
     }
 

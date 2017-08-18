@@ -10,7 +10,7 @@ public class IsoscTriangle extends Triangle{
         super(a, b, c);
     }
 
-    boolean exists() {
+    public boolean exists() {
         double AB = mathSqrt(a, b);
         double BC = mathSqrt(b, c);
         double CA = mathSqrt(c, a);

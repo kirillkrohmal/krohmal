@@ -5,30 +5,40 @@ package ru.job4j.ExtraTasks;
  * проверяет существует ли квадрат или нет.
  */
 public class Square {
-    Point a;
+    private Point a;
+    private Point b;
+    private Point c;
+    private Point d;
 
-    public Square(Point a) {
+    public Square(Point a, Point b, Point c, Point d) {
         this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
     }
 
-    boolean exists() {
-       /* double AB = mathSqrt(a, b);
-        double BC = mathSqrt(b, c);
-        double CA = mathSqrt(c, a);
-        if ((AB + BC) < CA || (BC + CA) < AB || (CA + AB) < BC) {
-            throw new IllegalStateException("Введены некорректные координаты точек");
-        } else {
+    public boolean exists() {
+        double AB = S(a, b);
+        double BC = S(b, c);
+        double CD = S(c, d);
+        double DA = S(d, a);
+        if ((AB == BC || BC == CD || CD == DA || DA == AB)) {
+            return false;
+        }  else{
             return true;
-        }*/
-        return false;
+        }
     }
 
-    public double mathSqrt (Point a, Point b) {
-        return (this.a.getX() + this.a.getY()) * Math.sqrt(2);
+    public double S (Point a, Point b) {
+        return ((Math.pow(this.b.getX() - this.a.getX(), 2)) + (Math.pow(this.b.getY() - this.a.getY(), 2)));
     }
 
     public double area() {
-
-        return 0;
+        double AB = S(a, b);
+        double BC = S(b, c);
+        double CD = S(c, d);
+        double DA = S(d, a);
+        double p = (AB + BC + CD + DA) / 2;
+        return Math.pow(p, 2);
     }
 }
