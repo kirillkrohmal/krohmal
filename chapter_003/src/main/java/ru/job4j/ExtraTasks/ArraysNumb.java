@@ -13,14 +13,14 @@ public class ArraysNumb {
 
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
-                if (array[j] == unit && unit == array[i + j]) {
+                if (array[j] == unit && unit == array[i]) {
                     count++;
                     if (count > 1) {
                         sequence = true;
                         break;
                     }
                 }
-                if (array[j] != unit && unit != array[i + j]) {
+                if (array[j] != unit && unit != array[i]) {
                     sequence = false;
                     break;
                 }

@@ -1,5 +1,6 @@
 package ru.job4j.TestTask;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,12 +30,6 @@ public class Account {
         this.requisites = requisites;
     }
 
-    public Map <User, List<Account>> userMoney() {
-
-        return null;
-    }
-
-
     public int getValue() {
         return value;
     }
@@ -49,6 +44,14 @@ public class Account {
 
     public void setRequisites(String requisites) {
         this.requisites = requisites;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "value=" + value +
+                ", requisites='" + requisites + '\'' +
+                '}';
     }
 
     @Override

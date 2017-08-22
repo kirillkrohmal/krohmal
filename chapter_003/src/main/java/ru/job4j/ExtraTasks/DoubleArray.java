@@ -6,4 +6,13 @@ package ru.job4j.ExtraTasks;
  * которые соприкасаются друг с другом. Диагональное соприкосновение не учитывать.
  */
 public class DoubleArray {
+    public int[][] nullCount (int[][] nulls) {
+
+        for (int i = 0; i < nulls.length; i++) {
+            for (int j = 0; j < nulls.length; j++) {
+                
+            }
+        }
+        return new int[0][];
+    }
 }

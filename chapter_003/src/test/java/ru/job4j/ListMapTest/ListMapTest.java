@@ -22,11 +22,11 @@ public class ListMapTest {
                 new User(2, "Vanya", "Moscow"),
                 new User(3, "Irina", "Volgograd"),
                 new User(4, "Madina", "Voroneg")));
-        HashMap<Integer, User> expected = listMap.process(Arrays.asList(
+        List<User> expected = Arrays.asList(
                 new User(1, "Victor", "Moscow"),
                 new User(2, "Vanya", "Moscow"),
                 new User(3, "Irina", "Volgograd"),
-                new User(4, "Madina", "Voroneg")));
+                new User(4, "Madina", "Voroneg"));
         assertThat(result, is(expected));
     }
 }

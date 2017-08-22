@@ -1,7 +1,6 @@
 package ru.job4j.StudentSort;
 
 import ru.job4j.StudentSort.Student;
-import ru.job4j.UserSort.UserSort;
 
 import java.util.ArrayList;
 import java.util.Comparator;
