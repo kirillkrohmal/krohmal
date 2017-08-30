@@ -1,0 +1,21 @@
+package ru.job4j.TestTask2;
+
+import java.util.Comparator;
+
+/**
+ * Created by Comp on 30.08.2017.
+ */
+public class PrimaryCodeComparator implements Comparator<FirmsCode> {
+    @Override
+    public int compare(FirmsCode o1, FirmsCode o2) {
+        if(o1.primaryKey.hashCode() > o2.primaryKey.hashCode()) {
+            return 1;
+        }
+        else if(o1.primaryKey.hashCode() < o2.primaryKey.hashCode()) {
+            return -1;
+        }
+        return 0;
+        //int compare = o1.code.equals(o2.code);
+        //return compare != 0 ? compare : Integer.compare(o1.code, o2.code);
+    }
+}

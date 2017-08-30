@@ -16,5 +16,4 @@ public class SortUser {
         Collections.sort(list, new SolutionComparator());
         return list;
     }
-
 }
