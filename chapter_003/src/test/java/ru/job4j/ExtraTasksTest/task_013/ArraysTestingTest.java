@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class ArraysTestingTest {
     @Test
     public void whenAddArraySequenceAndHaveOtherUnits() {
-        int[] array = {0, 1, 1};
+        int[] array = {0, 1, 2};
         ArraysTesting arraysTesting = new ArraysTesting();
         boolean result = arraysTesting.countingNum(array);
         boolean expected = false;

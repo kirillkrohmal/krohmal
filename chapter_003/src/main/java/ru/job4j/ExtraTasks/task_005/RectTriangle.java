@@ -14,10 +14,10 @@ public class RectTriangle extends Triangle {
     }
 
     public boolean exists() {
-        double AB = mathSqrt(a, b);
-        double BC = mathSqrt(b, c);
-        double CA = mathSqrt(c, a);
-        if ((AB + BC) == CA || (BC + CA) == AB || (CA + AB) == BC) {
+        double ab = mathSqrt(a, b);
+        double bc = mathSqrt(b, c);
+        double ca = mathSqrt(c, a);
+        if ((ab + bc) == ca || (bc + ca) == ab || (ca + ab) == bc) {
             return true;
         } else {
             return false;
@@ -29,10 +29,10 @@ public class RectTriangle extends Triangle {
     }
 
     public double area() {
-        double AB = mathSqrt(a, b);
-        double BC = mathSqrt(b, c);
-        double CA = mathSqrt(c, a);
-        double p = (AB + BC + CA) / 2;
-        return Math.sqrt(p * ((p - AB) * (p - BC) * (p - CA)));
+        double ab = mathSqrt(a, b);
+        double bc = mathSqrt(b, c);
+        double ca = mathSqrt(c, a);
+        double p = (ab + bc + ca) / 2;
+        return Math.sqrt(p * ((p - ab) * (p - bc) * (p - ca)));
     }
 }

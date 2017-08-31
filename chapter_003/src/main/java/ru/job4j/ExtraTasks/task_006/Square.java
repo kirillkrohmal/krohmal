@@ -20,11 +20,11 @@ public class Square {
     }
 
     public boolean exists() {
-        double AB = S(a, b);
-        double BC = S(b, c);
-        double CD = S(c, d);
-        double DA = S(d, a);
-        if ((AB == BC || BC == CD || CD == DA || DA == AB)) {
+        double ab = S(a, b);
+        double bc = S(b, c);
+        double cd = S(c, d);
+        double da = S(d, a);
+        if ((ab == bc || bc == cd || cd == da || da == ab)) {
             return false;
         }  else{
             return true;
@@ -36,11 +36,11 @@ public class Square {
     }
 
     public double area() {
-        double AB = S(a, b);
-        double BC = S(b, c);
-        double CD = S(c, d);
-        double DA = S(d, a);
-        double p = (AB + BC + CD + DA) / 2;
+        double ab = S(a, b);
+        double bc = S(b, c);
+        double cd = S(c, d);
+        double da = S(d, a);
+        double p = (ab + bc + cd + da) / 2;
         return Math.pow(p, 2);
     }
 }

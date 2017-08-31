@@ -17,7 +17,7 @@ public class TicTacChoiceTest {
                 {0, 2, 0},
                 {0, 0, 2}
         };
-        TicTacChoice tacChoice = new TicTacChoice(board);
+        TicTacChoice tacChoice = new TicTacChoice();
         boolean result = tacChoice.whoWin();
         boolean expected = true;
         assertThat(result, is(expected));
@@ -31,7 +31,7 @@ public class TicTacChoiceTest {
                 {2, 0, 2}
 
         };
-        TicTacChoice tacChoice = new TicTacChoice(board);
+        TicTacChoice tacChoice = new TicTacChoice();
         boolean result = tacChoice.whoWin();
         boolean expected = true;
         assertThat(result, is(expected));
@@ -44,7 +44,7 @@ public class TicTacChoiceTest {
                 {2, 2, 0},
                 {0, 0, 2}
         };
-        TicTacChoice tacChoice = new TicTacChoice(board);
+        TicTacChoice tacChoice = new TicTacChoice();
         boolean result = tacChoice.whoWin();
         boolean expected = false;
         assertThat(result, is(expected));
@@ -57,7 +57,7 @@ public class TicTacChoiceTest {
                 {0, 0, 0},
                 {0, 0, 2}
         };
-        TicTacChoice tacChoice = new TicTacChoice(board);
+        TicTacChoice tacChoice = new TicTacChoice();
         boolean result = tacChoice.whoWin();
         boolean expected = true;
         assertThat(result, is(expected));
@@ -70,7 +70,7 @@ public class TicTacChoiceTest {
                 {2, 0, 2},
                 {0, 0, 2}
         };
-        TicTacChoice tacChoice = new TicTacChoice(board);
+        TicTacChoice tacChoice = new TicTacChoice();
         boolean result = tacChoice.whoWin();
         boolean expected = true;
         assertThat(result, is(expected));

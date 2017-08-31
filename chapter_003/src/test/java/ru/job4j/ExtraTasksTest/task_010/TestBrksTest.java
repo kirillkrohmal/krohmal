@@ -13,36 +13,56 @@ import static org.junit.Assert.assertThat;
 public class TestBrksTest {
     @Test
     public void whenBraketsHavePairInOneSentence() {
-        String brkts = "()";
         TestBrks testBrks = new TestBrks();
-        boolean result = testBrks.braketsChoice(brkts);
+        boolean result = testBrks.braketsChoice(new String[]{"(",")","(","(",")","(","(","(",")",")",")",")"}, new String[]{"("}, new String[]{")"});
         boolean expected = true;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenBraketsNotHavePairInOneSentence() {
-        String brkts = "()(()((())))";
         TestBrks testBrks = new TestBrks();
-        boolean result = testBrks.braketsChoice(brkts);
-        boolean expected = true;
+        boolean result = testBrks.braketsChoice(new String[]{"(",")","(","(","(",")",")",")",")"}, new String[]{"("}, new String[]{")"});
+        boolean expected = false;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenBraketsHavePairInOneSentence2() {
-        String brkts = "()(()((())))";
         TestBrks testBrks = new TestBrks();
-        boolean result = testBrks.braketsChoice(brkts);
+        boolean result = testBrks.braketsChoice(new String[]{"(",")","(",")"}, new String[]{"("}, new String[]{")"});
         boolean expected = true;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenBraketsHavePairInOneSentence3() {
-        String brkts = "()(()((())))";
         TestBrks testBrks = new TestBrks();
-        boolean result = testBrks.braketsChoice(brkts);
+        boolean result = testBrks.braketsChoice(new String[]{"(",")",")",")",")"}, new String[]{"("}, new String[]{")"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenBraketsNotHavePairInOneSentence4() {
+        TestBrks testBrks = new TestBrks();
+        boolean result = testBrks.braketsChoice(new String[]{")",")"}, new String[]{"("}, new String[]{")"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenBraketsHavePairInOneSentence5() {
+        TestBrks testBrks = new TestBrks();
+        boolean result = testBrks.braketsChoice(new String[]{"(",")",")",")"}, new String[]{"("}, new String[]{")"});
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenBraketsHavePairInOneSentence6() {
+        TestBrks testBrks = new TestBrks();
+        boolean result = testBrks.braketsChoice(new String[]{"(",")"}, new String[]{"("}, new String[]{")"});
         boolean expected = true;
         assertThat(result, is(expected));
     }

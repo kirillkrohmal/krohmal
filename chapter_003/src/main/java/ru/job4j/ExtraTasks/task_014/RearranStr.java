@@ -9,13 +9,13 @@ public class RearranStr {
         char temp = 0;
         int index = 0;
         char[] f = sentence.toCharArray();
-        int indexLast = f.length - 1;
+        int indexFirst = f.length;
 
-        for (int i = 0; i < f.length; i++) {
-            for (int j = 0; j < indexLast; j++) {
-                temp = f[index];
-                f[index] = f[indexLast];
-                f[indexLast] = temp;
+        for (int i = 0; i < indexFirst; i++) {
+            for (int j = 0; j < indexFirst ; j++) {
+                temp = f[indexFirst / 2];
+                f[indexFirst / 2] = f[indexFirst - i - 1];
+                f[indexFirst - i - 1] = temp;
             }
         }
 

@@ -14,10 +14,10 @@ public class IsoscTriangle extends Triangle {
     }
 
     public boolean exists() {
-        double AB = mathSqrt(a, b);
-        double BC = mathSqrt(b, c);
-        double CA = mathSqrt(c, a);
-        if ((AB == BC) || (BC == CA) || (CA == AB)) {
+        double ab = mathSqrt(a, b);
+        double bc = mathSqrt(b, c);
+        double ca = mathSqrt(c, a);
+        if ((ab == bc) || (bc == ca) || (ca == ab)) {
             return true;
         } else {
             throw new IllegalStateException("Введены некорректные координаты точек");
@@ -29,10 +29,10 @@ public class IsoscTriangle extends Triangle {
     }
 
     public double area() {
-        double AB = mathSqrt(a, b);
-        double BC = mathSqrt(b, c);
-        double CA = mathSqrt(c, a);
-        double p = (AB + BC + CA) / 2;
-        return Math.sqrt(p * ((p - AB) * (p - BC) * (p - CA)));
+        double ab = mathSqrt(a, b);
+        double bc = mathSqrt(b, c);
+        double ca = mathSqrt(c, a);
+        double p = (ab + bc + ca) / 2;
+        return Math.sqrt(p * ((p - ab) * (p - bc) * (p - ca)));
     }
 }

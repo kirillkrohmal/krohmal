@@ -7,7 +7,7 @@ public class TicTacChoice {
     private int count = 0;
     private int counter = 3;
 
-    public TicTacChoice(int[][] board) {
+    public void TicTacChoice(int[][] board) {
 
         for (int i = 0; i < counter - count; i++) {
             for (int j = 0; j < board.length; j++) {

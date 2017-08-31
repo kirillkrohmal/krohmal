@@ -14,36 +14,48 @@ public class CountChrTest {
     public void whenCountCharAndHaveUniqChars() {
         char[] array = {'c', 's', 'd'};
         CountChr countChr = new CountChr();
-        boolean result = countChr.countIt(array);
-        boolean expected = true;
-        assertThat(result, is(expected));
+        int expected = 1;
+        assertThat(countChr.countIt(array, 'c'), is(expected));
     }
 
     @Test
     public void whenCountCharAndHaveUniqChars2() {
         char[] array = {'q', 'c', 'z'};
         CountChr countChr = new CountChr();
-        boolean result = countChr.countIt(array);
-        boolean expected = true;
-        assertThat(result, is(expected));
+        int expected = 1;
+        assertThat(countChr.countIt(array, 'c'), is(expected));
     }
 
     @Test
     public void whenCountCharAndHaveUniqChars3() {
         char[] array = {'t', 'j', 'k'};
         CountChr countChr = new CountChr();
-        boolean result = countChr.countIt(array);
-        boolean expected = true;
-        assertThat(result, is(expected));
+        int expected = 0;
+        assertThat(countChr.countIt(array, 'c'), is(expected));
     }
 
     @Test
     public void whenCountCharAndHaveUniqChars4() {
-        char[] array = {'c', 'z', 'z'};
+        char[] array = {'c', 'c', 'c', 'c', 'c', 'c'};
         CountChr countChr = new CountChr();
-        boolean result = countChr.countIt(array);
-        boolean expected = false;
-        assertThat(result, is(expected));
+        int expected = 6;
+        assertThat(countChr.countIt(array, 'c'), is(expected));
+    }
+
+    @Test
+    public void whenCountCharAndHaveUniqChars5() {
+        char[] array = {'d', 'c', 'z', 'c', 'c', 'c'};
+        CountChr countChr = new CountChr();
+        int expected = 4;
+        assertThat(countChr.countIt(array, 'c'), is(expected));
+    }
+
+    @Test
+    public void whenCountCharAndHaveUniqChars6() {
+        char[] array = {'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'a', 'c', 'c', 'c', 'c', 'c', 'c'};
+        CountChr countChr = new CountChr();
+        int expected = 17;
+        assertThat(countChr.countIt(array, 'c'), is(expected));
     }
 }
 
