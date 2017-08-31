@@ -7,13 +7,21 @@ import java.util.*;
  */
 public class TestTask2 {
     public Map<String, Integer> codeArray(FirmsCode code) {
-        //FirmsCode firmsCode = new FirmsCode();
         FirmsContainer<FirmsCode> codes = new FirmsContainer<>(new FirmsCode("K1", "SK1", "SSK1"));
         ListIterator<FirmsCode> litr = codes.listIterator();
 
-        while (litr.hasNext()) {
+        codes.sort(Comparator.comparing(FirmsCode::getPrimaryKey)
+                .reversed()
+                .thenComparing(Comparator.comparing(FirmsCode::getSecondaryKey)
+                        .reversed().thenComparing(Comparator.comparing(FirmsCode::getTertiaryKey).reversed())));
+
+
+
+        /*while (litr.hasNext()) {
             System.out.println(litr.next().getCompleteName());
         }
+*/
+        codes.forEach(System.out::println);
 
         return null;
     }
