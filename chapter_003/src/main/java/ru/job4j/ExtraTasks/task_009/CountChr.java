@@ -6,16 +6,15 @@ package ru.job4j.ExtraTasks.task_009;
  * чтобы он возвращал количество букв c в массиве array.
  */
 public class CountChr {
-   public int countIt(char[] array, char c) {
-       int uniq = array.length;
-       int count = 0;
+    public int countIt(char[] array, char c) {
+        int uniq = array.length;
+        int count = 0;
 
-       //for (int i = 0; i < uniq + 1; i++) {
-           for (int j = 0; j < uniq; j++) {
-               if (c == array[j]) {
-                   count++;
-               }
-           }
+        for (int j = 0; j < uniq; j++) {
+            if (c == array[j]) {
+                count++;
+            }
+        }
         return count;
     }
 }

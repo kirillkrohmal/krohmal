@@ -12,11 +12,11 @@ import static org.junit.Assert.assertThat;
 public class CycleShiftTest {
     @Test
     public void whenAddArrayAndHaveCycleShift() {
-        int[] n = {1, 2, 3};
+        int[] n = {1, 2, 3, 4, 5};
         int shift = 2;
         CycleShift cycleShift = new CycleShift();
         int[] result = cycleShift.circularShift(n, shift);
-        int[] expected = new int[]{2, 1, 3};
+        int[] expected = new int[]{4, 5, 1, 2, 3};
         assertThat(result, is(expected));
     }
 

@@ -6,20 +6,16 @@ package ru.job4j.ExtraTasks.task_014;
  */
 public class RearranStr {
     public String reverse(String sentence) {
-        char temp = 0;
-        int index = 0;
-        char[] f = sentence.toCharArray();
-        int indexFirst = f.length;
+        StringBuilder builder = new StringBuilder();
 
-        for (int i = 0; i < indexFirst; i++) {
-            for (int j = 0; j < indexFirst ; j++) {
-                temp = f[indexFirst / 2];
-                f[indexFirst / 2] = f[indexFirst - i - 1];
-                f[indexFirst - i - 1] = temp;
-            }
+        String str = "";
+        String[] sentFinish = sentence.split(" ");
+
+        for (int i = sentFinish.length - 1; i >= 0; i--) {
+            str = str + sentFinish[i] + " ";
         }
 
-        return sentence;
+        return str;
     }
 }
 

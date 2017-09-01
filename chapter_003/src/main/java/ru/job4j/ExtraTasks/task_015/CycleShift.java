@@ -8,11 +8,13 @@ import java.util.ArrayList;
  */
 public class CycleShift {
     public int[] circularShift (int[] n, int shift) {
-        for (int i = 0; i < shift / 2; i++) {
-            for (int j = n.length - 1; j > 0; j--) {
-                int temp = n[i];
-                n[i] = n[j - 1];
-                n[j - 1] = temp;
+
+        shift = shift % n.length;
+        for (int i = 0; i < shift; i++) {
+            int temp = n[0];
+            for (int j = 1; j < n.length; j++) {
+                n[j - 1] = n[j];
+                n[n.length - 1] = temp;
             }
         }
         return n;

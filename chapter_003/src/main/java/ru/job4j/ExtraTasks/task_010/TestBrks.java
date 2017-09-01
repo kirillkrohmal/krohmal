@@ -8,9 +8,6 @@ package ru.job4j.ExtraTasks.task_010;
 public class TestBrks {
     public boolean braketsChoice(String[] brakets, String[] brkts, String[] brkts2) {
         boolean isChoice = false;
-        //char[] brkts3 = brakets.toCharArray();
-        //char[] brktsL =
-        //char[] brktsLe = brkts2.toCharArray();
         int uniq = brakets.length;
         int count = 0;
         int count2 = 0;
@@ -35,8 +32,4 @@ public class TestBrks {
         }
         return isChoice;
     }
-   /* public boolean sort () {
-
-        return cou
-    }*/
 }

@@ -36,12 +36,6 @@ public class Expression {
             this.result = x / y;
         }
     }
-
-    public void ask(String question, int[] range ) {
-        for (int value : range) {
-
-        }
-    }
 }
 
 

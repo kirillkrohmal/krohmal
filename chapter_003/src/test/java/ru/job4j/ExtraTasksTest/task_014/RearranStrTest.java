@@ -11,31 +11,28 @@ import static org.junit.Assert.assertThat;
 public class RearranStrTest {
     @Test
     public void whenWriteSentenceAndHaveReverse() {
-        String sentence = "программируй и зарабатывай";
-        String senReverse = "зарабатывай и программируй";
+        String sentence = "программируй и зарабатывай ";
+        String expected = "зарабатывай и программируй";
         RearranStr rearranStr = new RearranStr();
         String result = rearranStr.reverse(sentence);
-        String expected = senReverse;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenWriteSentenceAndHaveReverse2() {
-        String sentence = "программируй и зарабатывай";
-        String senReverse = "зарабатывай и программируй";
+        String sentence = "Он может программировать и зарабатывать";
+        String expected = "зарабатывать и программировать может Он ";
         RearranStr rearranStr = new RearranStr();
         String result = rearranStr.reverse(sentence);
-        String expected = senReverse;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenWriteSentenceAndHaveReverse3() {
-        String sentence = "программируй и зарабатывай";
-        String senReverse = "зарабатывай и программируй";
+        String sentence = "программируй";
+        String expected = "программируй ";
         RearranStr rearranStr = new RearranStr();
         String result = rearranStr.reverse(sentence);
-        String expected = senReverse;
         assertThat(result, is(expected));
     }
 
