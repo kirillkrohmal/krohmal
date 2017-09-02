@@ -16,7 +16,7 @@ public class CycleShiftTest {
         int shift = 2;
         CycleShift cycleShift = new CycleShift();
         int[] result = cycleShift.circularShift(n, shift);
-        int[] expected = new int[]{4, 5, 1, 2, 3};
+        int[] expected = new int[]{3, 4, 5, 1, 2};
         assertThat(result, is(expected));
     }
 
@@ -32,21 +32,21 @@ public class CycleShiftTest {
 
     @Test
     public void whenAddArrayAndHaveCycleShift3() {
-        int[] n = {1, 2, 3};
-        int shift = 2;
+        int[] n = {3, 3, 4, 5, 1, 4, 5, 2, 1, 2};
+        int shift = 4;
         CycleShift cycleShift = new CycleShift();
         int[] result = cycleShift.circularShift(n, shift);
-        int[] expected = new int[]{1, 2, 3};
+        int[] expected = new int[]{1, 4, 5, 2, 1, 2, 3, 3, 4, 5};
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenAddArrayAndHaveCycleShift4() {
-        int[] n = {1, 2, 3};
-        int shift = 2;
+        int[] n = {1, 2, 3, 3, 4, 5, 1, 4, 5, 2, 1, 2, 3};
+        int shift = 5;
         CycleShift cycleShift = new CycleShift();
         int[] result = cycleShift.circularShift(n, shift);
-        int[] expected = new int[]{1, 2, 3};
+        int[] expected = new int[]{5, 1, 4, 5, 2, 1, 2, 3, 1, 2, 3, 3, 4};
         assertThat(result, is(expected));
     }
 }

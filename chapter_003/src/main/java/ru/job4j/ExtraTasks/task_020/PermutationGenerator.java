@@ -6,26 +6,28 @@ import java.util.ArrayList;
  * Задан одномерный массив. Нужно найти все возможные варианты перестановок этого массива.
  */
 public class PermutationGenerator {
-    public ArrayList<Integer> permute(int[] num) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        permute(num);
+    public ArrayList<int[]> permute(int[] num) {
+        ArrayList<int[]> result = new ArrayList<>();
+        permute(num, 0, result);
         return result;
     }
 
-    private void permute(int[] a, int start, int result) {
-        for (int j = 0; j < a.length - 1; j++) {
-            swap(a, start + 1, result - 1);
-            permute(a, start, result);
-            swap(a, start - 1, result + 1);
+    public void permute(int[] a, int start, ArrayList<int[]> result) {
+        if (start >= a.length) {
+            result.add(a.clone());
+        } else {
+            for (int j = 0; j < a.length - 1; j++) {
+                swap(a, start, j);
+                permute(a, start + 1, result);
+                swap(a, start, j);
+            }
         }
     }
 
-    public int[] swap(int[] a, int b, int c) {
+    public void swap(int[] a, int b, int c) {
         int temp = a[b];
-        a[b] = a[c - 1];
-        a[c - 1] = temp;
-
-        return a;
+        a[b] = a[c];
+        a[c] = temp;
     }
 }
 

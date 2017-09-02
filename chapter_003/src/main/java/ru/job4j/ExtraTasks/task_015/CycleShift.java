@@ -14,7 +14,7 @@ public class CycleShift {
             int temp = n[0];
             for (int j = 1; j < n.length; j++) {
                 n[j - 1] = n[j];
-                n[n.length - 1] = temp;
+                n[j] = temp;
             }
         }
         return n;

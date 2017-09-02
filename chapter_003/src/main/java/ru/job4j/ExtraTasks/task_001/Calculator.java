@@ -1,11 +1,39 @@
 package ru.job4j.ExtraTasks.task_001;
 
+
 /**
  * Реализовать программу калькулятор. Калькулятор должен выполнять операции: сложение, вычитание, умножение, деление, возведение
  * в степень. При выполнении деления ввести проверку на 0.
  * Если второй аргумент 0 нужно выкинуть исключение java.lang.IllegalStateException
  */
-public class Calc {
+public class Calculator {
+
+    //private static final Logger log = getLogger(Calculator.class);
+
+    /*public double getResult() {
+        throw new UnsupportedOperationException();
+    }
+
+    public void add(double first, double second) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void substract(double first, double second) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void multiple(double first, double second) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void div(double first, double second) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void expand(double first, double second) {
+        throw new UnsupportedOperationException();
+    }
+*/
     double result;
 
     public double getResult() {

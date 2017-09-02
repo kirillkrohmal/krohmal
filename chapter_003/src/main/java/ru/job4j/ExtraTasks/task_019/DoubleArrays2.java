@@ -5,10 +5,30 @@ package ru.job4j.ExtraTasks.task_019;
  * Двигаться можно только по единицам и только по вертикали или горизонтали.
  */
 public class DoubleArrays2 {
-    public int[][] nullCount2 (int[][] nulls) {
+    private int count;
+
+    public int[][] nullCount2(int[][] nulls) {
 
         for (int i = 0; i < nulls.length; i++) {
             for (int j = 0; j < nulls.length; j++) {
+                if (nulls[i][0] == nulls[i][j]) {
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
+                if (nulls[i] == nulls[j]) {
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
+                if (nulls[j][i] == nulls[0][i]) {
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
 
             }
         }

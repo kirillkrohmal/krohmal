@@ -1,7 +1,7 @@
 package ru.job4j.ExtraTasksTest.task_017;
 
 import org.junit.Test;
-import ru.job4j.ExtraTasks.task_018.DoubleArray;
+import ru.job4j.ExtraTasks.task_017.MoneyATM;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -11,62 +11,42 @@ import static org.junit.Assert.assertThat;
  */
 public class MoneyATMTest {
     @Test
-    public void whenScanningDoubleArrayAndHaveBiggestArray() {
-        int[][] array = {
-                {0, 1, 1},
-                {0, 1, 1},
-                {0, 1, 1}
-        };
-        DoubleArray doubleArray = new DoubleArray();
-        int[][] result = doubleArray.nullCount(array);
-        int[][] expected = {
-                {0, 1, 1},
-        };
+    public void whenExchangeBigMoneyToSmallMoneyAndHaveChange() {
+        int money = 101;
+        int denM = 1;
+        MoneyATM moneyATM = new MoneyATM();
+        int[] result = moneyATM.exchangeMoney(money, denM);
+        int expected = 1;
         assertThat(result, is(expected));
     }
 
     @Test
-    public void whenScanningDoubleArrayAndHaveBiggestArray2() {
-        int[][] array = {
-                {0, 1, 1},
-                {0, 1, 1},
-                {0, 1, 1}
-        };
-        DoubleArray doubleArray = new DoubleArray();
-        int[][] result = doubleArray.nullCount(array);
-        int[][] expected = {
-                {0, 1, 1},
-        };
+    public void whenExchangeBigMoneyToSmallMoneyAndHaveChange2() {
+        int money = 101;
+        int denM = 1;
+        MoneyATM moneyATM = new MoneyATM();
+        int[] result = moneyATM.exchangeMoney(money, denM);
+        int expected = 1;
         assertThat(result, is(expected));
     }
 
     @Test
-    public void whenScanningDoubleArrayAndHaveBiggestArray3() {
-        int[][] array = {
-                {0, 1, 1},
-                {0, 1, 1},
-                {0, 1, 1}
-        };
-        DoubleArray doubleArray = new DoubleArray();
-        int[][] result = doubleArray.nullCount(array);
-        int[][] expected = {
-                {0, 1, 1},
-        };
+    public void whenExchangeBigMoneyToSmallMoneyAndHaveChange3() {
+        int money = 101;
+        int denM = 1;
+        MoneyATM moneyATM = new MoneyATM();
+        int[] result = moneyATM.exchangeMoney(money, denM);
+        int expected = 1;
         assertThat(result, is(expected));
     }
 
     @Test
-    public void whenScanningDoubleArrayAndHaveBiggestArray4() {
-        int[][] array = {
-                {0, 1, 1},
-                {0, 1, 1},
-                {0, 1, 1}
-        };
-        DoubleArray doubleArray = new DoubleArray();
-        int[][] result = doubleArray.nullCount(array);
-        int[][] expected = {
-                {0, 1, 1},
-        };
+    public void whenExchangeBigMoneyToSmallMoneyAndHaveChange4() {
+        int money = 101;
+        int denM = 1;
+        MoneyATM moneyATM = new MoneyATM();
+        int[] result = moneyATM.exchangeMoney(money, denM);
+        int expected = 1;
         assertThat(result, is(expected));
     }
 }

@@ -6,10 +6,10 @@ import java.util.Collection;
 /**
  * Created by Comp on 31.08.2017.
  */
-public class FirmsContainer<T> extends ArrayList<T> {
-    ArrayList<T> arrayList;
+public class FirmsContainer {
+    ArrayList<String> arrayList;
 
-    public FirmsContainer(FirmsCode code) {
-
+    public FirmsContainer(ArrayList<String> arrayList) {
+        this.arrayList = arrayList;
     }
 }

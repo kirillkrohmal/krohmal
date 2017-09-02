@@ -11,7 +11,6 @@ public class DoubleArray {
     int count1 = 0;
     int count2 = 0;
 
-
     public int[][] nullCount(int[][] nulls) {
 
         for (int i = 0; i < nulls.length; i++) {
@@ -26,7 +25,9 @@ public class DoubleArray {
             }
         }
         if (count1 > count2) {
-
+            return new int[][]{};
+        } else if(count1 < count2) {
+            return new int[][]{};
         }
 
 
