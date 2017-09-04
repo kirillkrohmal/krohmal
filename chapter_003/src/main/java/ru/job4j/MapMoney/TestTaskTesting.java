@@ -17,7 +17,7 @@ public class TestTaskTesting {
         User srcUser = new User("Adele", "1809 585123");
         Account srcAccount = new Account(1500000, "1 233 215454");
         Operation operation  = new Operation();
-        operation.getUserAccounts(srcUser);
+        operation.getUserAccounts("6");
         //assertThat(operation.findAllAccount(), is(srcAccount));
     }
 }

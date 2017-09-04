@@ -8,7 +8,6 @@ import java.util.Comparator;
 public class SolutionCodeComparator implements Comparator<FirmsCode> {
 
     PrimaryCodeComparator primaryCodeComparator = new PrimaryCodeComparator();
-    SecondaryCodeComparator secondaryCodeComparator = new SecondaryCodeComparator();
     private int result;
 
     @Override
@@ -21,7 +20,6 @@ public class SolutionCodeComparator implements Comparator<FirmsCode> {
     }
 
     private int compare2(FirmsCode o1, FirmsCode o2) {
-        secondaryCodeComparator.compare(o1, o2);
         return result;
     }
 }

@@ -8,8 +8,19 @@ import ru.job4j.ExtraTasks.task_003.Triangle;
  * Дополнить поведение метода boolean exists() - true, если треугольник равносторонний.
  * Остальное поведение оставить прежним.
  */
-public class RectTriangle extends Triangle {
-    public RectTriangle(Point a, Point b, Point c) {
+public class RightTriangle extends Triangle {
+
+    //private static final Logger log = getLogger(RightTriangle.class);
+
+    public RightTriangle(Point first, Point second, Point third) {
+        super(first, second, third);
+    }
+
+    @Override
+    public boolean exists() {
+        return super.exists();
+    }
+    /*public RightTriangle(Point a, Point b, Point c) {
         super(a, b, c);
     }
 
@@ -34,5 +45,5 @@ public class RectTriangle extends Triangle {
         double ca = mathSqrt(c, a);
         double p = (ab + bc + ca) / 2;
         return Math.sqrt(p * ((p - ab) * (p - bc) * (p - ca)));
-    }
+    }*/
 }

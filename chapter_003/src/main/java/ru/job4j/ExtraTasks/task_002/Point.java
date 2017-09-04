@@ -1,27 +1,33 @@
 package ru.job4j.ExtraTasks.task_002;
 
+
+/**
+ * Реализовать класс точку, описывающую точку в системе координат x, y - Point(x, y).
+ * объект точка должен иметь методы double Point#distanceTo(Point point) -
+ * метод должен вычислять расстояние между двумя точками.
+ */
 public class Point {
-    double x;
-    double y;
+    //private static final Logger log = getLogger(Point.class);
 
-    public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
+    private final int x;
+    private final int y;
 
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
+    public int getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public Point(final int x, final int y) {
+        this.x = x;
         this.y = y;
+    }
+
+    public double distanceTo(final Point point) {
+        return Math.sqrt((Math.pow(point.y - this.y, 2)) + (Math.pow(point.x - this.x, 2)));
+
+        //throw new UnsupportedOperationException();
     }
 }

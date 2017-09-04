@@ -9,8 +9,10 @@ import ru.job4j.ExtraTasks.task_002.Point;
  */
 
 public class Pointer {
+
     public double PointdistanceTo(Point point) {
-        return Math.sqrt((Math.pow(point.y - this.y, 2)) + (Math.pow(point.x - this.x, 2)));
+       // return Math.sqrt((Math.pow(point.y - this.y, 2)) + (Math.pow(point.x - this.x, 2)));
+        return 0;
     }
 
     double x;

@@ -2,7 +2,7 @@ package ru.job4j.ExtraTasksTest.task_005;
 
 import org.junit.Test;
 import ru.job4j.ExtraTasks.task_002.Point;
-import ru.job4j.ExtraTasks.task_005.RectTriangle;
+import ru.job4j.ExtraTasks.task_005.RightTriangle;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -17,7 +17,7 @@ public class RectTriangleTest {
         Point a = new Point(11, 13);
         Point b = new Point(1, 25);
         Point c = new Point(4, 0);
-        RectTriangle rectTriangle = new RectTriangle(a, b, c);
+        RightTriangle rectTriangle = new RightTriangle(a, b, c);
         //act
         boolean result = rectTriangle.exists();
         //assert
@@ -30,7 +30,7 @@ public class RectTriangleTest {
         Point a = new Point(4, 0);
         Point b = new Point(213, 111);
         Point c = new Point(2, 1);
-        RectTriangle rectTriangle = new RectTriangle(a, b, c);
+        RightTriangle rectTriangle = new RightTriangle(a, b, c);
         //act
         boolean result = rectTriangle.exists();
         //assert
@@ -43,7 +43,7 @@ public class RectTriangleTest {
         Point a = new Point(32, 31);
         Point b = new Point(1, 2);
         Point c = new Point(2, 32);
-        RectTriangle rectTriangle = new RectTriangle(a, b, c);
+        RightTriangle rectTriangle = new RightTriangle(a, b, c);
         //act
         boolean result = rectTriangle.exists();
         //assert
@@ -56,7 +56,7 @@ public class RectTriangleTest {
         Point a = new Point(43, 43);
         Point b = new Point(14, 143);
         Point c = new Point(2, 0);
-        RectTriangle rectTriangle = new RectTriangle(a, b, c);
+        RightTriangle rectTriangle = new RightTriangle(a, b, c);
         //act
         boolean result = rectTriangle.exists();
         //assert

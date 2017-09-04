@@ -8,8 +8,20 @@ import ru.job4j.ExtraTasks.task_003.Triangle;
  * Дополнить поведение метода boolean exists() - true, если треугольник равнобедренный.
  * Остальное поведение оставить прежним.
  */
-public class IsoscTriangle extends Triangle {
-    public IsoscTriangle(Point a, Point b, Point c) {
+public class IsoscelesTriangle extends Triangle {
+
+    //private static final Logger log = getLogger(IsoscelesTriangle.class);
+
+    public IsoscelesTriangle(Point first, Point second, Point third) {
+        super(first, second, third);
+    }
+
+    @Override
+    public boolean exists() {
+        return super.exists();
+    }
+
+   /* public IsoscelesTriangle(Point a, Point b, Point c) {
         super(a, b, c);
     }
 
@@ -34,5 +46,5 @@ public class IsoscTriangle extends Triangle {
         double ca = mathSqrt(c, a);
         double p = (ab + bc + ca) / 2;
         return Math.sqrt(p * ((p - ab) * (p - bc) * (p - ca)));
-    }
+    }*/
 }
