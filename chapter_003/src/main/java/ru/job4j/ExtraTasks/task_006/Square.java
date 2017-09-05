@@ -22,26 +22,15 @@ public class Square {
         this.fourth = fourth;
     }
 
-    public boolean exists() {
-        throw new UnsupportedOperationException();
-    }
-   /* private Point a;
-    private Point b;
-    private Point c;
-    private Point d;
-
-    public Square(Point a, Point b, Point c, Point d) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-        this.d = d;
+    public double S (Point first, Point b) {
+        return ((Math.pow(this.second.getX() - this.first.getX(), 2)) + (Math.pow(this.second.getY() - this.first.getY(), 2)));
     }
 
     public boolean exists() {
-        double ab = S(a, b);
-        double bc = S(b, c);
-        double cd = S(c, d);
-        double da = S(d, a);
+        double ab = S(first, second);
+        double bc = S(second, third);
+        double cd = S(third, fourth);
+        double da = S(fourth, first);
         if ((ab == bc || bc == cd || cd == da || da == ab)) {
             return false;
         }  else{
@@ -49,16 +38,13 @@ public class Square {
         }
     }
 
-    public double S (Point a, Point b) {
-        return ((Math.pow(this.b.getX() - this.a.getX(), 2)) + (Math.pow(this.b.getY() - this.a.getY(), 2)));
-    }
 
     public double area() {
-        double ab = S(a, b);
-        double bc = S(b, c);
-        double cd = S(c, d);
-        double da = S(d, a);
+        double ab = S(first, second);
+        double bc = S(second, third);
+        double cd = S(third, fourth);
+        double da = S(fourth, first);
         double p = (ab + bc + cd + da) / 2;
         return Math.pow(p, 2);
-    }*/
+    }
 }

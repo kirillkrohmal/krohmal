@@ -14,24 +14,19 @@ public class Operation {
     Map<User, List<Account>> mapMoney = new HashMap<>();
     //double balance = 10000;
 
-
-    //Scanner scanner = new Scanner(System.in);
-    //int index = Integer.parseInt(scanner.nextLine());
-
-
-
-   /* public void addUser(String passport) {
-        if (size == STORAGE_USER - 1) {
-            System.out.println(String.format("Объем %s полон", user));
+    public void addUser(String passport) {
+        for (int i = 0; i < passport.length(); i++) {
+            mapMoney.get(i);
         }
         //userArrayList.add(size++, user);
-    }*/
+    }
 
     public void deleteUser(String passport) {
         for (int i = 0; i < mapMoney.size(); i++) {
             if (mapMoney.get(i) != null && mapMoney.get(i).equals(passport)) {
+                mapMoney.remove(i, passport);
                 //mapMoney.put(i);
-               // mapMoney.get(i, mapMoney.get(mapMoney.size() - 1));
+                //mapMoney.get(i, mapMoney.get());
                 //mapMoney.set(size - 1, null);
                 //size--;
             }
@@ -42,10 +37,14 @@ public class Operation {
         /*for (Account account1 : accountListList) {
             userListList.removeIf(p -> p.getName() == account1.getRequisites());
         }*/
+
+
         for (int i = 0; i < mapMoney.size(); i++) {
 
             if (mapMoney.get(i) != null && mapMoney.get(i).equals(passport)) {
                 mapMoney.get(i);
+
+                //mapMoney.get(i);
                 //mapMoney.get(i, mapMoney.get(i));
                 //mapMoney.get(size - 1, null);
                 //size--;

@@ -6,9 +6,15 @@ import java.util.*;
  * Created by Comp on 30.08.2017.
  */
 public class TestTask2 {
-    public Map<String, Integer> codeArray(FirmsCode code) {/*
-        FirmsContainer<FirmsCode> codes = new FirmsContainer<>(new FirmsCode("K1", "SK1", "SSK1"));
-        ListIterator<FirmsCode> litr = codes.listIterator();
+    public List<FirmsCode> codeArray() {
+
+        List<FirmsCode> codes = new ArrayList<FirmsCode>();
+        codes.add(new FirmsCode("K1", "K1\\SK1", "K1\\SK1\\SSK1"));
+        codes.add(new FirmsCode("K2", "K2\\SK1", "K2\\SK1\\SSK2"));
+        codes.add(new FirmsCode("K3", "K3\\SK1", "K3\\SK1\\SSK2"));
+
+        //Collections.sort(codes, new PrimaryCodeComparator());
+        Collections.sort(codes, new SolutionCodeComparator());
 
         codes.sort(Comparator.comparing(FirmsCode::getPrimaryKey)
                 .reversed()
@@ -16,14 +22,9 @@ public class TestTask2 {
                         .reversed().thenComparing(Comparator.comparing(FirmsCode::getTertiaryKey).reversed())));
 
 
-
-        *//*while (litr.hasNext()) {
-            System.out.println(litr.next().getCompleteName());
-        }
-*//*
         codes.forEach(System.out::println);
-*/
-        return null;
+
+        return codes;
     }
 }
 

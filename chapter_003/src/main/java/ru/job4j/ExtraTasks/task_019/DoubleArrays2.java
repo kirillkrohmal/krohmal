@@ -8,7 +8,6 @@ public class DoubleArrays2 {
     private int count;
 
     public int[][] nullCount2(int[][] nulls) {
-
         for (int i = 0; i < nulls.length; i++) {
             for (int j = 0; j < nulls.length; j++) {
                 if (nulls[i][0] == nulls[i][j]) {

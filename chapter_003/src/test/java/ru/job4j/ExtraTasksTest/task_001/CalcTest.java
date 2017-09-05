@@ -1,7 +1,7 @@
 package ru.job4j.ExtraTasksTest.task_001;
 
 import org.junit.Test;
-import ru.job4j.ExtraTasks.task_001.Calc;
+import ru.job4j.ExtraTasks.task_001.Calculator;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class CalcTest {
     @Test
     public void whenAddOnePlusOneThenTwo() {
-        Calc calc = new Calc();
+        Calculator calc = new Calculator();
         calc.plus(1, 1);
         double result = calc.getResult();
         double expected = 2D;
@@ -21,7 +21,7 @@ public class CalcTest {
 
     @Test
     public void whenSubstructTwoSubstructOneThenOne() {
-        Calc calc = new Calc();
+        Calculator calc = new Calculator();
         calc.minus(2D, 1D);
         double result = calc.getResult();
         double expected = 1D;
@@ -30,7 +30,7 @@ public class CalcTest {
 
     @Test
     public void whenDivTwoDivOneThenTwo() {
-        Calc calc = new Calc();
+        Calculator calc = new Calculator();
         calc.divide(2D, 1D);
         double result = calc.getResult();
         double expected = 2D;
@@ -39,7 +39,7 @@ public class CalcTest {
 
     @Test
     public void whenDivTwoDivOneThenTwo2() {
-        Calc calc = new Calc();
+        Calculator calc = new Calculator();
         calc.divide(2D, 0);
         double result = calc.getResult();
         IllegalStateException expected = new IllegalStateException("Введите число не равное 0");
@@ -48,7 +48,7 @@ public class CalcTest {
 
     @Test
     public void whenMultipleTwoMultipleOneThenTwo() {
-        Calc calc = new Calc();
+        Calculator calc = new Calculator();
         calc.multiple(2D, 1D);
         double result = calc.getResult();
         double expected = 2D;

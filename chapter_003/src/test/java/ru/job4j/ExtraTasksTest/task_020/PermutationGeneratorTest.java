@@ -5,7 +5,9 @@ import ru.job4j.ExtraTasks.task_020.PermutationGenerator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import static java.util.Arrays.asList;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
@@ -50,6 +52,7 @@ public class PermutationGeneratorTest {
         //int[] result = permutationGenerator.swap(a, b, c);
         int[] expected = {2, 1, 3};
         //assertThat(result, is(expected));
+
     }
 
     @Test
