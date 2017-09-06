@@ -22,8 +22,6 @@ public class MapMoneyClass {
     public static void main(String[] args) {
         Map<User, List<Account>> mapMoney = new HashMap<>();
 
-        List<Account> accountListList = new ArrayList<>();
-
         for (Map.Entry<User, List<Account>> listEntry: mapMoney.entrySet()) {
             User id = listEntry.getKey();
             List<Account> account = listEntry.getValue();

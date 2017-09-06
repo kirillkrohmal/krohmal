@@ -5,6 +5,7 @@ import ru.job4j.TrackerList.action.UserAction;
 import ru.job4j.TrackerList.inputs.Input;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public class MenuTracker {
     private Input input;
     private Tracker tracker;
     List<UserAction> userAction = new ArrayList<>(9);
+    static HashMap operators = new HashMap();
 
     private int position = 1;
 

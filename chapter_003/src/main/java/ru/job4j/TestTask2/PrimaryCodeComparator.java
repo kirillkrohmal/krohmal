@@ -15,7 +15,5 @@ public class PrimaryCodeComparator implements Comparator<FirmsCode> {
             return -1;
         }
         return 0;
-        //int compare = o1.code.equals(o2.code);
-        //return compare != 0 ? compare : Integer.compare(o1.code, o2.code);
     }
 }

@@ -25,10 +25,10 @@ public class TestTask2Testing {
         assertThat(result, is(expected));
     }
 
-  /*  @Test
+    @Test
     public void whenGetFirmsCodeAndSortingIt2() {
         TestTask2 testTask2 = new TestTask2();
-        Map<String, Integer> result = testTask2.codeArray(new FirmsCode("K1", "SK1", "SSK1"));
+        List<FirmsCode> result = testTask2.codeArray2();
         String[] expected = new String[]{};
         assertThat(result, is(expected));
     }
@@ -36,7 +36,7 @@ public class TestTask2Testing {
     @Test
     public void whenGetFirmsCodeAndSortingIt3() {
         TestTask2 testTask2 = new TestTask2();
-        Map<String, Integer> result = testTask2.codeArray(new FirmsCode("K1", "SK1", "SSK1"));
+        List<FirmsCode> result = testTask2.codeArray();
         String[] expected = new String[]{};
         assertThat(result, is(expected));
     }
@@ -44,7 +44,7 @@ public class TestTask2Testing {
     @Test
     public void whenGetFirmsCodeAndSortingIt4() {
         TestTask2 testTask2 = new TestTask2();
-        Map<String, Integer> result = testTask2.codeArray(new FirmsCode("K1", "SK1", "SSK1"));
+        List<FirmsCode> result = testTask2.codeArray();
         String[] expected = new String[]{};
         assertThat(result, is(expected));
     }
@@ -52,17 +52,17 @@ public class TestTask2Testing {
     @Test
     public void whenGetFirmsCodeAndSortingIt5() {
         TestTask2 testTask2 = new TestTask2();
-        Map<String, Integer> result = testTask2.codeArray(new FirmsCode("K1", "SK1", "SSK1"));
+        List<FirmsCode> result = testTask2.codeArray2();
         String[] expected = new String[]{};
         assertThat(result, is(expected));
     }
     @Test
     public void whenGetFirmsCodeAndSortingIt6() {
         TestTask2 testTask2 = new TestTask2();
-        Map<String, Integer> result = testTask2.codeArray(new FirmsCode("K1", "SK1", "SSK1"));
+        List<FirmsCode> result = testTask2.codeArray2();
         String[] expected = new String[]{};
         assertThat(result, is(expected));
-    }*/
+    }
 }
 
 

@@ -21,7 +21,6 @@ public class Tracker {
         if (size == STORAGE_SIZE - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
-        //item.setId(generateId());
         items.add(size++, item);
         return item;
     }

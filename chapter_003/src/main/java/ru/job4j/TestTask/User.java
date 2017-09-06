@@ -5,7 +5,7 @@ package ru.job4j.TestTask;
  */
 public class User {
     String name;
-    private String passport;
+    String passport;
 
     public User(String name, String passport) {
         this.name = name;
