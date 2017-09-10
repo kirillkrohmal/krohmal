@@ -21,7 +21,10 @@ public class TestTask2Testing {
     public void whenGetFirmsCodeAndSortingIt() {
         TestTask2 testTask2 = new TestTask2();
         List<FirmsCode> result = testTask2.codeArray();
-        String[] expected = new String[]{};
+        String[] expected = new String[]{
+                "FirmsCode{primaryKey='K3', secondaryKey='K3\\SK1', tertiaryKey='K3\\SK1\\SSK2'}",
+                "FirmsCode{primaryKey='K2', secondaryKey='K2\\SK1', tertiaryKey='K2\\SK1\\SSK2'}",
+                "FirmsCode{primaryKey='K1', secondaryKey='K1\\SK1', tertiaryKey='K1\\SK1\\SSK1'}"};
         assertThat(result, is(expected));
     }
 
@@ -29,7 +32,10 @@ public class TestTask2Testing {
     public void whenGetFirmsCodeAndSortingIt2() {
         TestTask2 testTask2 = new TestTask2();
         List<FirmsCode> result = testTask2.codeArray2();
-        String[] expected = new String[]{};
+        String[] expected = new String[]{
+                "FirmsCode{primaryKey='K1', secondaryKey='K1\\SK1', tertiaryKey='K1\\SK1\\SSK1'}\n" +
+                "FirmsCode{primaryKey='K2', secondaryKey='K2\\SK1', tertiaryKey='K2\\SK1\\SSK2'}\n" +
+                "FirmsCode{primaryKey='K3', secondaryKey='K3\\SK1', tertiaryKey='K3\\SK1\\SSK2'}"};
         assertThat(result, is(expected));
     }
 
@@ -37,7 +43,10 @@ public class TestTask2Testing {
     public void whenGetFirmsCodeAndSortingIt3() {
         TestTask2 testTask2 = new TestTask2();
         List<FirmsCode> result = testTask2.codeArray();
-        String[] expected = new String[]{};
+        String[] expected = new String[]{
+                "FirmsCode{primaryKey='K1', secondaryKey='K1\\SK1', tertiaryKey='K1\\SK1\\SSK1'}\n" +
+                "FirmsCode{primaryKey='K2', secondaryKey='K2\\SK1', tertiaryKey='K2\\SK1\\SSK2'}\n" +
+                "FirmsCode{primaryKey='K3', secondaryKey='K3\\SK1', tertiaryKey='K3\\SK1\\SSK2'}"};
         assertThat(result, is(expected));
     }
 
@@ -45,7 +54,10 @@ public class TestTask2Testing {
     public void whenGetFirmsCodeAndSortingIt4() {
         TestTask2 testTask2 = new TestTask2();
         List<FirmsCode> result = testTask2.codeArray();
-        String[] expected = new String[]{};
+        String[] expected = new String[]{
+                "FirmsCode{primaryKey='K1', secondaryKey='K1\\SK1', tertiaryKey='K1\\SK1\\SSK1'}\n" +
+                "FirmsCode{primaryKey='K2', secondaryKey='K2\\SK1', tertiaryKey='K2\\SK1\\SSK2'}\n" +
+                "FirmsCode{primaryKey='K3', secondaryKey='K3\\SK1', tertiaryKey='K3\\SK1\\SSK2'}"};
         assertThat(result, is(expected));
     }
 
@@ -53,14 +65,20 @@ public class TestTask2Testing {
     public void whenGetFirmsCodeAndSortingIt5() {
         TestTask2 testTask2 = new TestTask2();
         List<FirmsCode> result = testTask2.codeArray2();
-        String[] expected = new String[]{};
+        String[] expected = new String[]{
+                "FirmsCode{primaryKey='K3', secondaryKey='K3\\SK1', tertiaryKey='K3\\SK1\\SSK2'}",
+                "FirmsCode{primaryKey='K2', secondaryKey='K2\\SK1', tertiaryKey='K2\\SK1\\SSK2'}",
+                "FirmsCode{primaryKey='K1', secondaryKey='K1\\SK1', tertiaryKey='K1\\SK1\\SSK1'}"};
         assertThat(result, is(expected));
     }
     @Test
     public void whenGetFirmsCodeAndSortingIt6() {
         TestTask2 testTask2 = new TestTask2();
         List<FirmsCode> result = testTask2.codeArray2();
-        String[] expected = new String[]{};
+        String[] expected = new String[]{
+                "FirmsCode{primaryKey='K3', secondaryKey='K3\\SK1', tertiaryKey='K3\\SK1\\SSK2'}",
+                "FirmsCode{primaryKey='K2', secondaryKey='K2\\SK1', tertiaryKey='K2\\SK1\\SSK2'}",
+                "FirmsCode{primaryKey='K1', secondaryKey='K1\\SK1', tertiaryKey='K1\\SK1\\SSK1'}"};
         assertThat(result, is(expected));
     }
 }
