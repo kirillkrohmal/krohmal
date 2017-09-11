@@ -1,5 +1,8 @@
 package ru.job4j.TestTask2;
 
+import ru.job4j.TestTask2.comparators.PrimaryCodeComparator;
+import ru.job4j.TestTask2.comparators.SolutionCodeComparator;
+
 import java.util.*;
 
 /**
@@ -7,7 +10,7 @@ import java.util.*;
  */
 public class TestTask2 {
     public List<FirmsCode> codeArray() {
-        List<FirmsCode> codes = new ArrayList<FirmsCode>();
+        List<FirmsCode> codes = new ArrayList();
         codes.add(new FirmsCode("K1", "K1\\SK1", "K1\\SK1\\SSK1"));
         codes.add(new FirmsCode("K2", "K2\\SK1", "K2\\SK1\\SSK2"));
         codes.add(new FirmsCode("K3", "K3\\SK1", "K3\\SK1\\SSK2"));
@@ -19,7 +22,7 @@ public class TestTask2 {
     }
 
     public List<FirmsCode> codeArray2() {
-        List<FirmsCode> codes = new ArrayList<FirmsCode>();
+        List<FirmsCode> codes = new ArrayList<>();
         codes.add(new FirmsCode("K1", "K1\\SK1", "K1\\SK1\\SSK1"));
         codes.add(new FirmsCode("K2", "K2\\SK1", "K2\\SK1\\SSK2"));
         codes.add(new FirmsCode("K3", "K3\\SK1", "K3\\SK1\\SSK2"));

@@ -12,41 +12,55 @@ import static org.junit.Assert.assertThat;
 public class ArraysChoiceTest {
     @Test
     public void whenAddArraySequenceAndHaveOtherUnits() {
-        int[] array = {1, 0, 0};
-        int unit = 1;
-        ArraysChoice arrayChoice = new ArraysChoice();
-        boolean result = arrayChoice.arraySequence(array, unit);
+        int[] array = {0, 1, 0, 1, 0};
+        ArraysChoice arrayChoice = new ArraysChoice(array);
+        boolean result = arrayChoice.containsOneSequence();
         boolean expected = false;
         assertThat(result, is(expected));
     }
 
     @Test
-    public void whenAddArraySequenceAndHaveSameUnits() {
+    public void whenAddArraySequenceAndHaveOtherUnits5() {
         int[] array = {1, 1, 1, 1, 1};
-        int unit = 1;
-        ArraysChoice arrayChoice = new ArraysChoice();
-        boolean result = arrayChoice.arraySequence(array, unit);
+        ArraysChoice arrayChoice = new ArraysChoice(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenAddArraySequenceAndHaveOtherUnits6() {
+        int[] array = {1, 1, 1, 1, 1, 1, 1};
+        ArraysChoice arrayChoice = new ArraysChoice(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenAddArraySequenceAndHaveSameUnits() {
+        int[] array = {0, 1, 1, 1, 0};
+        ArraysChoice arrayChoice = new ArraysChoice(array);
+        boolean result = arrayChoice.containsOneSequence();
         boolean expected = true;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenAddArraySequenceAndHaveOtherUnits2() {
-        int[] array = {0, 0, 0};
-        int unit = 1;
-        ArraysChoice arrayChoice = new ArraysChoice();
-        boolean result = arrayChoice.arraySequence(array, unit);
+        int[] array = {0, 1, 0, 1, 0, 0, 1, 0, 1, 0};
+        ArraysChoice arrayChoice = new ArraysChoice(array);
+        boolean result = arrayChoice.containsOneSequence();
         boolean expected = false;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenAddArraySequenceAndHaveSameUnits2() {
-        int[] array = {0, 1, 1};
-        int unit = 1;
-        ArraysChoice arrayChoice = new ArraysChoice();
-        boolean result = arrayChoice.arraySequence(array, unit);
-        boolean expected = false;
+        int[] array = {0, 1, 1, 1, 1, 0, 1, 1, 1, 0};
+        ArraysChoice arrayChoice = new ArraysChoice(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
         assertThat(result, is(expected));
     }
 }

@@ -24,7 +24,7 @@ public class StudentSortTest {
         students.add(new Student(25, 82, "Mark Rose"));
         students.add(new Student(22, 90, "Jane Doe"));
         students.add(new Student(25, 90, "Jane Dane"));
-        assertEquals("Jane Doe,Jane Dane,David Goodman,Mark Rose",
+        assertEquals("Jane Doe, Jane Dane, David Goodman, Mark Rose",
                 StudentSort.sort(students));
     }
 }

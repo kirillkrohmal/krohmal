@@ -21,10 +21,11 @@ public class TestTaskTesting {
         String srcAccount = "1 233 215454";
         String dstAccount = "1 431 214312";
         Account dstAccount2 = new Account(550000,"1 431 214312");
+        Account srcAccount2 = new Account(500000,"1 233 215454");
         Operation operation  = new Operation();
         operation.transferMoney(srcUser, srcAccount, dstUser, dstAccount, 50000);
-        boolean expected = true;
-        assertThat(operation.transferMoney(srcUser, srcAccount, dstUser, dstAccount, 50000), is(dstAccount2));
+        boolean result = false;
+        assertThat(operation.transferMoney(srcUser, srcAccount, dstUser, dstAccount, 50000), is(result));
     }
 
     @Test
@@ -48,38 +49,51 @@ public class TestTaskTesting {
 
     @Test
     public void whenAddNewAccountToUserAndHasSomeNewAccount() {
+        Operation operation  = new Operation();
         String passport = "1809 585123";
         String requisites = "1 233 215454";
-        Operation operation  = new Operation();
-        operation.addAccountToUser(passport, requisites);
+        User srcUser = new User("Adele", "1809 585123");
         Account srcAccount = new Account(1500000, "1 233 215454");
-        Account dstAccount = new Account(1520000, "1 223 214554");
-        assertThat(operation.findAllAccount(srcAccount.getRequisites()), is(dstAccount));
+        operation.addUser(srcUser);
+        operation.addAccountToUser(passport, srcAccount);
+        assertThat(operation.findAccountByRequisites(requisites), is(srcAccount));
     }
 
     @Test
     public void whenDeleteAccountFromUserAndHasSomeNewChange() {
         User srcUser = new User("Adele", "1809 585123");
-        User dstUser = new User("Kim", "17 04 151223");
+        User dstUser = new User("Kim", "1812 523423");
         Account srcAccount = new Account(1500000, "1 233 215454");
         Account dstAccount = new Account(500000,"1 431 214312");
         String passport = "1809 585123";
+        String passport2 = "1812 523423";
         String requisites = "1 233 215454";
-        String passport2 = "1819 585213";
-        String requisites2 = "1 133 213454";
+        String requisites2 = "1 431 214312";
         Operation operation  = new Operation();
-        //operation.addAccountToUser(passport, requisites);
-        //operation.addAccountToUser(passport2, requisites2);
-        operation.deleteAccountFromUser(passport2, requisites2);
-        assertThat(operation.findAllAccount(requisites), is(dstAccount));
+        operation.addUser(srcUser);
+        operation.addUser(dstUser);
+        operation.addAccountToUser(passport, srcAccount);
+        operation.addAccountToUser(passport2, dstAccount);
+        operation.deleteAccountFromUser(passport2, dstAccount);
+        assertThat(operation.findAccountByRequisites(requisites), is(srcAccount));
     }
+
     @Test
     public void whenGetUserAccountsFromAccountsAndHasSomeAccounts() {
+        User srcUser = new User("Adele", "1809 585123");
         Account srcAccount = new Account(1500000, "1 233 215454");
+        User dstUser = new User("Kim", "1812 523423");
+        Account dstAccount = new Account(500000,"1 431 214312");
+        String passport = "1809 585123";
+        String passport2 = "1812 523423";
         String requisites = "1 233 215454";
+        String requisites2 = "1 431 214312";
         Operation operation = new Operation();
-        operation.getUserAccounts(requisites);
-        assertThat(operation.findAllAccount(srcAccount.getRequisites()), is(srcAccount));
+        operation.addUser(srcUser);
+        operation.addUser(dstUser);
+        operation.addAccountToUser(passport, srcAccount);
+        operation.addAccountToUser(passport2, dstAccount);
+        assertThat(operation.findAccountByRequisites(requisites), is(srcAccount));
     }
 }
 

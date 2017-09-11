@@ -27,15 +27,6 @@ public class MapMoneyClass {
             List<Account> account = listEntry.getValue();
             System.out.println("Id= " + id + "Account= " + account);
         }
-
-        /*for (int i = 0; i < size; i++) {
-            if (accountListList.size() != 0 && accountListList.get(i).equals(user)) {
-                System.out.println(accountListList);
-                //accountArrayList.set(i, accountListList.get());
-            }
-            //accountListList.add(i, accountArrayList.get(i));
-        }*/
-
     }
 }
 

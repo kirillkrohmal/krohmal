@@ -17,54 +17,34 @@ import static org.junit.Assert.*;
  * Created by Comp on 20.08.2017.
  */
 public class PermutationGeneratorTest {
-
-
-    private Object exp;
-
     @Test
-    public void whenAddArraySequenceAndHaveOtherUnits() {
-        int[] a = {1, 2, 3};
-        int start = 1;
-        ArrayList<int[]> result = new ArrayList<>();
-        PermutationGenerator permutationGenerator = new PermutationGenerator();
-        //result = permutationGenerator.permute(a, start, result);
-        //assertThat(result, contains(exp));
-        //assertEquals(permutationGenerator.permute(a, start, result), );
+    public void simple() {
+        PermutationGenerator combine = new PermutationGenerator(new int[] {1, 2});
+        List<List<Integer>> result = combine.generate();
+        assertThat(result, is(
+                asList(
+                        asList(1, 2),
+                        asList(2, 1)
+                )
+                )
+        );
     }
 
     @Test
-    public void whenAddArraySequenceAndHaveSameUnits() {
-        int[] a = {1, 3, 2};
-        int b = 1;
-        int c = 2;
-        PermutationGenerator permutationGenerator = new PermutationGenerator();
-        //int[] result = permutationGenerator.swap(a, b, c);
-        int[] expected = {2, 1, 3};
-        //assertThat(result, is(expected));
-    }
-
-    @Test
-    public void whenAddArraySequenceAndHaveOtherUnits2() {
-        int[] a = {2, 3, 1};
-        int b = 1;
-        int c = 2;
-        PermutationGenerator permutationGenerator = new PermutationGenerator();
-        //int[] result = permutationGenerator.swap(a, b, c);
-        int[] expected = {2, 1, 3};
-        //assertThat(result, is(expected));
-
-    }
-
-    @Test
-    public void whenAddArraySequenceAndHaveSameUnits2() {
-        int[] a = {3, 2, 1};
-        int b = 1;
-        int c = 2;
-        PermutationGenerator permutationGenerator = new PermutationGenerator();
-        //int[] result = permutationGenerator.swap(a, b, c);
-        int[] expected = {2, 1, 3};
-        //assertThat(result, is(expected));
+    public void three() {
+        PermutationGenerator combine = new PermutationGenerator(new int[] {1, 2, 3});
+        List<List<Integer>> result = combine.generate();
+        assertThat(result, is(
+                asList(
+                        asList(1, 2, 3),
+                        asList(1, 3, 2),
+                        asList(2, 1, 3),
+                        asList(3, 2, 1)
+                )
+                )
+        );
     }
 }
+
 
 

@@ -1,4 +1,6 @@
-package ru.job4j.TestTask2;
+package ru.job4j.TestTask2.comparators;
+
+import ru.job4j.TestTask2.FirmsCode;
 
 import java.util.Comparator;
 

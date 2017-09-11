@@ -7,7 +7,7 @@ import java.util.List;
  * Created by Comp on 30.08.2017.
  */
 public class FirmsCode {
-    String primaryKey;
+    public String primaryKey;
     String secondaryKey;
     String tertiaryKey;
 

@@ -1,7 +1,5 @@
 package ru.job4j.UserSort;
 
-
-
 import java.util.*;
 
 /**
@@ -16,8 +14,7 @@ public class SortUser {
                 new User("Hulio", 18)
         ));
         System.out.println(String.format("%s", sort));
-        //return Integer.compare()
-        return null;
+        return sort;
     }
 
     public static void main(String[] args) {

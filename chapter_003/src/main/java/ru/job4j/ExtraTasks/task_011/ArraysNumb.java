@@ -6,24 +6,25 @@ package ru.job4j.ExtraTasks.task_011;
  * Бежим по массиву, сравниваем числа с 1. Если не равно то return false.
  */
 public class ArraysNumb {
+    private final int[] values;
     private int count = 0;
 
-    public boolean arraySequence(int[] array, int unit) {
+    public ArraysNumb(final int[] values) {
+        this.values = values;
+    }
+
+    public boolean containsOnlyOne() {
         boolean sequence = false;
-        int length = array.length;
+        int length = values.length;
+        int unit = 1;
 
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
-                if (array[j] == unit && unit == array[i]) {
-                    count++;
-                    if (count > 1) {
-                        sequence = true;
-                        break;
-                    }
-                }
-                if (array[j] != unit && unit != array[i]) {
-                    sequence = false;
-                    break;
+                if (values[j] == unit) {
+                    sequence = true;
+                    continue;
+                } else if (values[i + j] != unit) {
+                    return false;
                 }
             }
             if (sequence) break;
@@ -31,3 +32,4 @@ public class ArraysNumb {
         return sequence;
     }
 }
+

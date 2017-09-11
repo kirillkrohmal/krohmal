@@ -11,43 +11,43 @@ import static org.junit.Assert.assertThat;
  */
 public class ArraysNumbTest {
     @Test
-    public void whenAddArraySequenceAndHaveOtherUnits() {
-        int[] array = {0, 1};
-        int unit = 1;
-        ArraysNumb arraysNumb = new ArraysNumb();
-        boolean result = arraysNumb.arraySequence(array, unit);
-        boolean expected = false;
-        assertThat(result, is(expected));
+    public void onlyOne() {
+        ArraysNumb array = new ArraysNumb(new int[] {1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(true));
     }
 
     @Test
-    public void whenAddArraySequenceAndHaveSameUnits() {
-        int[] array = {1, 1};
-        int unit = 1;
-        ArraysNumb arraysNumb = new ArraysNumb();
-        boolean result = arraysNumb.arraySequence(array, unit);
-        boolean expected = true;
-        assertThat(result, is(expected));
+    public void notOnlyOne() {
+        ArraysNumb array = new ArraysNumb(new int[] {1, 1, 0});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(false));
     }
 
     @Test
-    public void whenAddArraySequenceAndHaveOtherUnits2() {
-        int[] array = {0, 0};
-        int unit = 1;
-        ArraysNumb arraysNumb = new ArraysNumb();
-        boolean result = arraysNumb.arraySequence(array, unit);
-        boolean expected = false;
-        assertThat(result, is(expected));
+    public void OnlyOne() {
+        ArraysNumb array = new ArraysNumb(new int[] {1, 1, 1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(true));
     }
 
     @Test
-    public void whenAddArraySequenceAndHaveSameUnits2() {
-        int[] array = {1, 0};
-        int unit = 1;
-        ArraysNumb arraysNumb = new ArraysNumb();
-        boolean result = arraysNumb.arraySequence(array, unit);
-        boolean expected = false;
-        assertThat(result, is(expected));
+    public void OnlyOne2() {
+        ArraysNumb array = new ArraysNumb(new int[] {1, 1, 1, 1, 1, 1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(true));
+    }
+    @Test
+    public void notOnlyOne2() {
+        ArraysNumb array = new ArraysNumb(new int[] {0, 1, 1, 1, 1, 0});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(false));
+    }
+    @Test
+    public void notOnlyOne3() {
+        ArraysNumb array = new ArraysNumb(new int[] {1, 1, 0, 1, 1, 1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(false));
     }
 }
 

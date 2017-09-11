@@ -26,13 +26,5 @@ public class ConvertList {
             }
         }
         return integerList;
-/*
-        for (int[] integer : list) {
-            integerList = new ArrayList(integer.length);
-            for (int i = 0; i < integer.length; i++) {
-                integerList.add(Integer.valueOf(integer[i]));
-            }
-        }*/
-
     }
 }

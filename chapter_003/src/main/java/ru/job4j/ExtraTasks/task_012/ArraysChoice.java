@@ -9,29 +9,34 @@ import java.util.ArrayList;
  * Если счетчик = 3 return true. Если счетчик ниразу не достиг значения 3 то false.
  */
 public class  ArraysChoice {
-    private int count = 0;
-    public int one = 1;
+    private final int[] values;
 
-    public boolean arraySequence(int[] array, int unit) {
+    public ArraysChoice(final int[] values) {
+        this.values = values;
+    }
+
+    public boolean containsOneSequence() {
+        int count = 0;
+        int one = 1;
+
         boolean sequence = false;
-        int length = array.length;
+        int length = values.length;
 
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
-                if (one == array[i]) {
+                if (one == values[j]) {
                     count++;
                     if (count >= 3) {
                         sequence = true;
                         break;
                     }
                 }
-                if (unit != array[i]) {
-                    sequence = false;
-                    if (count < 3) {
+                if (one != values[i + j]) {
+                    count++;
+                    if (count < 2) {
                         sequence = false;
                         break;
                     }
-
                 }
             }
             if (sequence) break;
