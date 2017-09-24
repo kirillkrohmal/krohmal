@@ -1,4 +1,4 @@
 package ru.job4j.StoreGeneric;
 
-public interface RoleStore {
+public class RoleStore {
 }

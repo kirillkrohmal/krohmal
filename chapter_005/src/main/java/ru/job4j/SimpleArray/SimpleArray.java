@@ -18,37 +18,22 @@ public class SimpleArray<T, K> {
 
 
     public Object add(T value) {
-        if (value.equals(value)) {
-            object[index] = value;
-        }
-
+        object[index] = value;
         return object;
     }
 
     public Object update(T value) {
-        if (value.equals(value)) {
-            object[index] = value;
-        }
-
-        return null;
+        object[index] = value;
+        return object;
     }
 
     public Object delete(T value) {
-        if (value.equals(value)) {
-            object[index] = null;
-        }
-
+        object[index] = null;
         return object;
     }
 
     public Object get(int index) {
-
-        T result = null;
-
-        if (object.equals(index)) {
-            result = (T) object;
-        }
-
-        return result;
+        return object[index];
     }
 }
+

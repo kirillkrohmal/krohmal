@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class ConvertIterator {
     public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
         return new Iterator<Integer>() {
-
+            Object[] container;
             int value = 0;
 
             @Override

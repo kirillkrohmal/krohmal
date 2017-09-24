@@ -1,15 +1,15 @@
-package ru.job4j.IteratorNum2Test;
+package ru.job4j.Iterator2;
 
 import java.util.Iterator;
 
 /**
- * Created by Comp on 21.09.2017.
+ * Created by Comp on 25.09.2017.
  */
-public class IteratorNum2 implements Iterator {
-    int count = 0;
-    private int[][] value;
+public class Iterator2 implements Iterator {
+    int count;
+    private int[] value;
 
-    public IteratorNum2(int[][] value) {
+    public Iterator2(int[] value) {
         this.value = value;
     }
 
@@ -23,4 +23,3 @@ public class IteratorNum2 implements Iterator {
         return value[count++];
     }
 }
-

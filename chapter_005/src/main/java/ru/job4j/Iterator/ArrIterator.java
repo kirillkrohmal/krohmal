@@ -1,4 +1,4 @@
-package ru.job4j.IteratorTest;
+package ru.job4j.Iterator;
 
 
 import java.util.Iterator;
@@ -16,7 +16,6 @@ import java.util.Iterator;
 public class ArrIterator implements Iterator {
     int count = 0;
     private int[][] value;
-    int[] nextValue = {};
 
     public ArrIterator(int[][] value) {
         this.value = value;
@@ -24,15 +23,12 @@ public class ArrIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return value.length > count;
+        return value.length > count ;
     }
 
     @Override
     public Object next() {
-        while (hasNext() != false) {
-            //nextValue[value] =
-        }
-        return value[count++];
+        return value[count++].length;
     }
 }
 

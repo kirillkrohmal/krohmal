@@ -7,29 +7,40 @@ import java.util.Iterator;
  */
 public class IteratorNum implements Iterator {
     int count = 0;
-    private int[][] value;
+    int size = 0;
+    private int[] value;
 
-    public IteratorNum(int[][] value) {
+    public IteratorNum(int[] value) {
         this.value = value;
     }
 
     @Override
     public boolean hasNext() {
+        for (int i = 0; i < value.length; i++) {
+            /*if (value[size] % 2 != 0) {
+                return true;
+                //value[size] = 0;
+            }*/
 
-        return value.length > count;
+            if (value[size] % 2 != 0) {
+                return false;
+            } else {
+                return true;
+            }
+            //return value.length > count;
+        }
+        return false;
     }
 
     @Override
     public Object next() {
-        for (int i = 0; i < value.length; i++) {
-            for (int j = 0; j < value.length; j++) {
-                value[i][j] = value[i][j];
-            }
+        while (hasNext() == true) {
+            count++;
         }
-        return value[count++];
+        return value[count];
     }
-
-
 }
+
+
 
 

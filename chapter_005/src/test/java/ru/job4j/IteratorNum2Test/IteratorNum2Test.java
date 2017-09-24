@@ -1,7 +1,7 @@
 package ru.job4j.IteratorNum2Test;
 
 import org.junit.Test;
-import ru.job4j.IteratorTest.ArrIterator;
+import ru.job4j.Iterator.ArrIterator;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -26,10 +26,7 @@ public class IteratorNum2Test {
         int[] expected = {1, 2, 3, 4};
         arrIterator.next();
         arrIterator.hasNext();
-
-
-        Object result = arrIterator.next();
-        assertThat(result, is(expected));
-
+        Object result = arrIterator.hasNext();
+        assertThat(result, is(true));
     }
 }

@@ -18,8 +18,35 @@ public class SimpleArrayTest {
     public void iteratorTest() {
         SimpleArray simpleArray = new SimpleArray();
         List<Object> value = new ArrayList<>();
+        value.add(5);
         Object result = simpleArray.add(value);
         Object expected = value;
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void iteratorTest2() {
+        SimpleArray simpleArray = new SimpleArray();
+        List<Object> value = new ArrayList<>();
+        Object result = simpleArray.update(value);
+        Object expected = value;
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void iteratorTest3() {
+        SimpleArray simpleArray = new SimpleArray();
+        List<Object> value = new ArrayList<>();
+        value.add(5);
+        Object result = simpleArray.delete(value);
+        Object expected = null;
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void iteratorTest4() {
+        SimpleArray simpleArray = new SimpleArray();
+        Object[] index2 = {10};
+        int index = 0;
+        Object result = simpleArray.get(index);
+        Object expected = index2;
         assertThat(result, is(expected));
     }
 }

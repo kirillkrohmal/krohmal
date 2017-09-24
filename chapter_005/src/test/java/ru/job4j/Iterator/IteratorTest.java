@@ -1,9 +1,6 @@
-package ru.job4j.IteratorTest;
+package ru.job4j.Iterator;
 
 import org.junit.Test;
-
-import java.util.Iterator;
-import java.util.function.Consumer;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -18,12 +15,13 @@ public class IteratorTest {
                 {1, 2},
                 {3, 4}
         };
+        int[][] expected = {
+                {1, 2, 3, 4}
+        };
 
         ArrIterator arrIterator = new ArrIterator(value);
-        int[] expected = {1, 2, 3, 4};
         arrIterator.next();
-        arrIterator.hasNext();
-        Object result = arrIterator.next();
-        assertThat(result, is(expected));
+        boolean result = arrIterator.hasNext();
+        assertThat(result, is(true));
     }
 }
