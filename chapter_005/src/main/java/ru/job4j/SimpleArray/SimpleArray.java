@@ -16,9 +16,8 @@ public class SimpleArray<T, K> {
     ArrayList<T> objects;
     //Map<K, T> mapper = new HashMap<>();
 
-
     public Object add(T value) {
-        object[index] = value;
+        object[index++] = value;
         return object;
     }
 
@@ -32,8 +31,8 @@ public class SimpleArray<T, K> {
         return object;
     }
 
-    public Object get(int index) {
-        return object[index];
+    public T get(int index) {
+        return (T) object[index];
     }
 }
 

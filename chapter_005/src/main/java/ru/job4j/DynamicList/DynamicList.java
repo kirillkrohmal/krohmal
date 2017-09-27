@@ -1,10 +1,12 @@
 package ru.job4j.DynamicList;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class DynamicList<E> implements Iterable<E>{
 
     Object[] container;
+    ArrayList list;
 
     void add(E value) {
 
