@@ -3,18 +3,19 @@ package ru.job4j.DynamicList;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class DynamicList<E> implements Iterable<E>{
+public class DynamicList<E> implements Iterable<E> {
 
     Object[] container;
     ArrayList list;
+    int size = 0;
 
-    void add(E value) {
-
+    public void add(E value) {
+        //list.add(value);
+        container[size++] = value;
     }
 
-    E get(int index) {
-
-        return null;
+    public E get(int index) {
+        return (E) container[index];
     }
 
     @Override

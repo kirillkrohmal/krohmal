@@ -7,28 +7,27 @@ import java.util.Map;
 /**
  * Created by Comp on 22.09.2017.
  */
-public class SimpleArray<T, K> {
+public class SimpleArray<T> {
     /*
      * Доделать контейнер SimpleArray<T> добавить методы add, update, delete, get(int index);
      */
     Object[] object = {10};
     int index = 0;
     ArrayList<T> objects;
-    //Map<K, T> mapper = new HashMap<>();
 
-    public Object add(T value) {
+    public T add(T value) {
         object[index++] = value;
-        return object;
+        return (T) object;
     }
 
-    public Object update(T value) {
+    public T update(T value) {
         object[index] = value;
-        return object;
+        return (T) object;
     }
 
-    public Object delete(T value) {
+    public T delete(T value) {
         object[index] = null;
-        return object;
+        return (T) object;
     }
 
     public T get(int index) {
