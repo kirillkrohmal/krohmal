@@ -2,10 +2,9 @@ package ru.job4j.StoreGeneric;
 
 import java.util.ArrayList;
 
-public class UserStore<T> {
+public class UserStore<T> extends AbstractStore{
     User[] user = new User[]{};
     int index = 0;
-    ArrayList<T> objects;
 
     public T add(T model) {
         user[index++] = (User) model;

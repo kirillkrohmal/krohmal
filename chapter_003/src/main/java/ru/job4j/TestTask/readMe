@@ -27,5 +27,6 @@ public List<Accounts> getUserAccounts (User user) {} - получить спис
 public boolean transferMoney (User srcUser, Account srcAccount, User dstUser, Account dstAccount, double amount) -
 метод для перечисления денег с одного счёта на другой счёт:
 если счёт не найден или не хватает денег на счёте srcAccount (с которого переводят) должен вернуть false.
+Тебе надо найти пользователя и реквизиты через методы find.
 
 

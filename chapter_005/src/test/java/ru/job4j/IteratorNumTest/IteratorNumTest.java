@@ -17,7 +17,7 @@ public class IteratorNumTest {
         IteratorNum iteratorNum = new IteratorNum(value);
         int[] expected = {4, 2};
         iteratorNum.next();
-        iteratorNum.next();
+        //iteratorNum.next();
         iteratorNum.hasNext();
         boolean result = iteratorNum.hasNext();
         assertThat(result, is(true));

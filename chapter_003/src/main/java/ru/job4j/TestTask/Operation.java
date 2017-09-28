@@ -65,8 +65,6 @@ public class Operation {
         return result;
     }
 
-
-
     /*
     public List<Account> getUserAccounts(Account account) {
 
@@ -82,14 +80,27 @@ public class Operation {
         return list;
     }*/
 
-//метод для перечисления денег с одного счёта на другой счёт если счёт не найден или не хватает денег на счёте
-//srcAccount (с которого переводят) должен вернуть false.
 
+    /**
+     * метод для перечисления денег с одного счёта на другой счёт если счёт не найден или не хватает денег на счёте
+     * srcAccount (с которого переводят) должен вернуть false.
+     * надо найти пользователя и реквизиты через методы find.
+     */
     public boolean transferMoney(String srcPassport, String srcRequisites, String dstPassport, String dstRequisites, double amount) {
         double count;
         boolean result = false;
-        Map<List<Account>, Double> money = new HashMap<>();
+        //Map<List<Account>, Double> money = new HashMap<>();
 
+        List<Account> accounts = mapMoney.get(findByPassport(srcRequisites));
+        User user = findByPassport(srcPassport);
+
+        List<Account> accounts2 = mapMoney.get(findByPassport(dstRequisites));
+        User user2 = findByPassport(dstPassport);
+
+        accounts.get((int) amount);
+
+
+/*
         for (List<Account> list : mapMoney.values()) {
             for (Account account : list) {
                 count = account.getValue();
@@ -111,7 +122,7 @@ public class Operation {
                     }
                 }
             }
-        }
+        }*/
         return result;
     }
 }
