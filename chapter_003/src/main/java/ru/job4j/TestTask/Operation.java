@@ -22,7 +22,6 @@ public class Operation {
         accounts.add(account);
     }
 
-
     public void deleteAccountFromUser(String passport, Account account) {
         List<Account> accounts = mapMoney.get(findByPassport(passport));
         accounts.remove(account);
@@ -99,8 +98,6 @@ public class Operation {
 
         accounts.get((int) amount);
 
-
-/*
         for (List<Account> list : mapMoney.values()) {
             for (Account account : list) {
                 count = account.getValue();
@@ -108,11 +105,12 @@ public class Operation {
                     list.add(account);
 
                 }
-                money.put(list, amount);
+                accounts.get(1000);
+                accounts2.get(-1000);
                 double value = amount - count;
 
-                for (List<Account> accountList : money.keySet()) {
-                    for (Account account1 : accountList) {
+                for (List<Account> list2 : mapMoney.values()) {
+                    for (Account account1 : list2) {
                         double keeper = value + account1.getValue();
                         if (keeper > 0) {
                             return true;
@@ -122,7 +120,7 @@ public class Operation {
                     }
                 }
             }
-        }*/
+        }
         return result;
     }
 }
