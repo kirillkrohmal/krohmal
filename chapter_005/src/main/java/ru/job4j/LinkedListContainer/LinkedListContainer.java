@@ -1,6 +1,5 @@
-package ru.job4j.LinkedListContainerTest;
+package ru.job4j.LinkedListContainer;
 
-import ru.job4j.Node.Node;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -9,32 +8,31 @@ import java.util.LinkedList;
  */
 public class LinkedListContainer<E> implements Iterable<E> {
 
-    //E[] item;
-    Node<E> prev;
-    Node<E> value;
+    //public Node<E> item;
     Node<E> next;
-    LinkedList linkedList;
+    Node<E> prev;
+    E item;
+    Node head;
 
-    public LinkedListContainer(Node<E> prev, Node<E> value, Node<E> next) {
+
+    public LinkedListContainer(Node<E> prev, E element, Node<E> next) {
         this.prev = prev;
-        this.value = value;
+        this.item = element;
         this.next = next;
     }
 
-    public LinkedListContainer(E[] item) {
-    }
-
     public void add(E value) {
+        head = new Node<E>(value, next);
         value = (E) prev;
-        value = (E) next;
+        prev = (Node) next;
     }
 
     public E get(int index) {
-        return (E) value;
+        return (E) head;
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return (Iterator<E>) new LinkedListContainer<E>(prev, item, next);
     }
 }

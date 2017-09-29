@@ -1,8 +1,7 @@
-package ru.job4j.LinkedListContainerTest;
+package ru.job4j.LinkedListContainer;
 
 
 import org.junit.Test;
-import ru.job4j.IteratorNum.IteratorNum;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -18,9 +17,9 @@ public class LinkedListContainerTest<E> {
     @Test
     public void iteratorTest() {
         E[] item = null;
-        LinkedListContainer listContainer = new LinkedListContainer(item);
+        //LinkedListContainer listContainer = new LinkedListContainer();
         E[] expected = null;
-        listContainer.add(item);
+        //listContainer.add(item);
         //result = listContainer.add(item);
         assertThat(result, is(expected));
     }

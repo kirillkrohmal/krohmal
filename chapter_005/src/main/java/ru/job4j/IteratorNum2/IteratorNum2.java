@@ -17,14 +17,12 @@ public class IteratorNum2 implements Iterator {
     @Override
     public boolean hasNext() {
         for (int i = 2; i < value.length; i++) {
-            for (int j = 2; j < i; j++) {
-                if (i == j) {
+                if (i == value[i]) {
                     return true;
-                } else if (i % j == 0) {
+                } else if (i % value[i] == 0) {
                     return false;
                 }
             }
-        }
         return false;
     }
 
