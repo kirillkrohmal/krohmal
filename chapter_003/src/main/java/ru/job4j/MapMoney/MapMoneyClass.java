@@ -1,17 +1,11 @@
 package ru.job4j.MapMoney;
 
-import org.testng.annotations.Test;
 import ru.job4j.TestTask.Account;
-import ru.job4j.TestTask.Operation;
 import ru.job4j.TestTask.User;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
-import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
 
 
 /**

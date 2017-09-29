@@ -13,13 +13,38 @@ public class ConvertIterator {
 
             @Override
             public boolean hasNext() {
-                return false;
+                Object temp = it.hasNext();
+                while (!temp.equals(0)) {
+                    return true;
+                }
+                if (selectIterator().equals(it)) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
 
             @Override
             public Integer next() {
+                if (hasNext() == true) {
+                    value++;
+                }
+                return (Integer) container[value];
+            }
+            /*
+             * selectIterator(), в котором бы осуществлялся выбор следующего итератора по условию.
+             */
+            public Iterator<Iterator<Integer>> selectIterator() {
+                while (it.hasNext()) {
+                    if (it.equals(it.next())) {
 
-                return null;
+                    } else {
+
+                    }
+                }
+
+
+                return (Iterator<Iterator<Integer>>) container[value];
             }
         };
     }

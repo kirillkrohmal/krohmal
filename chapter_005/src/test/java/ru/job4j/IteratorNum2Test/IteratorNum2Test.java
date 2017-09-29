@@ -1,15 +1,10 @@
 package ru.job4j.IteratorNum2Test;
 
 import org.junit.Test;
-import ru.job4j.Iterator.ArrIterator;
 import ru.job4j.IteratorNum2.IteratorNum2;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-/**
- * Created by Comp on 21.09.2017.
- */
-
 
 /**
  * Created by Comp on 21.09.2017.
