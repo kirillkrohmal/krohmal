@@ -90,14 +90,13 @@ public class Operation {
         boolean result = false;
         //Map<List<Account>, Double> money = new HashMap<>();
 
-        List<Account> accounts = (List<Account>) findByPassport(srcRequisites);
+        List<Account> accounts = (List<Account>) findAccountByRequisites(srcRequisites);
         User user = findByPassport(srcPassport);
 
 
-        List<Account> accounts2 = mapMoney.get(findByPassport(dstRequisites));
+        List<Account> accounts2 = (List<Account>) findAccountByRequisites(dstRequisites);
         User user2 = findByPassport(dstPassport);
 
-        //accounts.get((int) amount);
 
         for (List<Account> list : mapMoney.values()) {
             for (Account account : list) {

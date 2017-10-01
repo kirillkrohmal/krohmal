@@ -13,21 +13,29 @@ public class LinkedListContainer<E> implements Iterable<E> {
     Node<E> prev;
     E item;
     Node head;
+    int size;
 
 
-    public LinkedListContainer(Node<E> prev, E element, Node<E> next) {
-        this.prev = prev;
+    public LinkedListContainer(E element) {
         this.item = element;
-        this.next = next;
+        this.next = null;
+    }
+
+    public LinkedListContainer() {
+        this.head = null;
+        this.prev = null;
+        this.size = 0;
     }
 
     public void add(E value) {
         E node = (E) new Node<E>(value);
-        if (this.next == next) {
-            this.prev = (Node) node;
+        if (this.next != null && this.head != null) {
+            this.head = (Node) node;
             next = prev;
-
+        } else {
+            this.prev = (Node<E>) node;
         }
+        this.size++;
     }
 
     public E get(int index) {
@@ -36,6 +44,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return (Iterator<E>) new LinkedListContainer<E>(prev, item, next);
+        return (Iterator<E>) new LinkedListContainer<E>();
     }
 }

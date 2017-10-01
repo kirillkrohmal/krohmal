@@ -13,12 +13,12 @@ import static org.junit.Assert.assertThat;
 public class IteratorNum2Test {
     @Test
     public void iteratorTest() {
-        int[] value = {1, 2, 3, 4};
+        int[] value = {1, 2, 3, 4, 5, 6, 7};
         IteratorNum2 iteratorNum2 = new IteratorNum2(value);
         int[] expected = {2, 3};
-        iteratorNum2.next();
-        iteratorNum2.hasNext();
-        Object result = iteratorNum2.hasNext();
-        assertThat(result, is(true));
+        //iteratorNum2.next();
+        //iteratorNum2.hasNext();
+        Object result = iteratorNum2.next();
+        assertThat(result, is(expected));
     }
 }

@@ -12,15 +12,28 @@ import static org.junit.Assert.assertThat;
 
 public class LinkedListContainerTest<E> {
 
+
     private String result;
 
     @Test
     public void iteratorTest() {
         E[] item = null;
-        //LinkedListContainer listContainer = new LinkedListContainer();
+        LinkedListContainer listContainer = new LinkedListContainer();
         E[] expected = null;
-        //listContainer.add(item);
+        listContainer.add(item);
         //result = listContainer.add(item);
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void iteratorTest2() {
+        E item = null;
+        LinkedListContainer listContainer = new LinkedListContainer();
+        E[] expected = null;
+        listContainer.add(item);
+        int index = 9;
+        //result = listContainer.add(item);
+        listContainer.get(index);
         assertThat(result, is(expected));
     }
 }
