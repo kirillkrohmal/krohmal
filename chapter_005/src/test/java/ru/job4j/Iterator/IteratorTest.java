@@ -20,8 +20,23 @@ public class IteratorTest {
         };
 
         ArrIterator arrIterator = new ArrIterator(value);
-        arrIterator.next();
-        boolean result = arrIterator.hasNext();
-        assertThat(result, is(true));
+        //arrIterator.next();
+        Object result = arrIterator.next();
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void iteratorTest2() {
+        int[][] value = {
+                {155}
+        };
+        int[][] expected = {
+                {155}
+        };
+
+        ArrIterator arrIterator = new ArrIterator(value);
+        //arrIterator.next();
+        //arrIterator.hasNext();
+        Object result = arrIterator.next();
+        assertThat(result, is(expected));
     }
 }

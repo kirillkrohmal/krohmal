@@ -6,21 +6,20 @@ import java.util.Iterator;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleSet<E> implements Iterator<E> {
-    int[] value = {};
-    void add(E e) {
-        for(int i = 0; i < value.length; i++) {
-            //int num = Integer.parseInt(i);
-            //value.add(num);
-        }
-    }
+    Object[] value;
+    int size;
 
-    @Override
-    public boolean hasNext() {
-        return false;
+    public void add(E e) {
+        value[size] = e;
     }
 
     @Override
     public E next() {
-        return null;
+        return (E) value[size++];
+    }
+
+    @Override
+    public boolean hasNext() {
+        return value.length > size;
     }
 }

@@ -22,9 +22,12 @@ public class LinkedListContainer<E> implements Iterable<E> {
     }
 
     public void add(E value) {
-        head = new Node<E>(value, next);
-        value = (E) prev;
-        prev = (Node) next;
+        E node = (E) new Node<E>(value);
+        if (this.next == next) {
+            this.prev = (Node) node;
+            next = prev;
+
+        }
     }
 
     public E get(int index) {

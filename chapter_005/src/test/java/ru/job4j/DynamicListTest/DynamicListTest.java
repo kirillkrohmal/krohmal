@@ -21,6 +21,7 @@ public class DynamicListTest<E> {
     @Test
     public void iteratorTest() {
         DynamicList dynamicList = new DynamicList();
+        int i = 9;
         E value = null;
         int index = 0;
         dynamicList.add(value);

@@ -16,10 +16,10 @@ public class IteratorNumTest {
         int[] value = {4, 2, 1, 1};
         IteratorNum iteratorNum = new IteratorNum(value);
         int[] expected = {4, 2};
-        iteratorNum.next();
         //iteratorNum.next();
-        iteratorNum.hasNext();
-        boolean result = iteratorNum.hasNext();
+        //iteratorNum.next();
+        //iteratorNum.hasNext();
+        Object result = iteratorNum.next();
         assertThat(result, is(true));
     }
 }

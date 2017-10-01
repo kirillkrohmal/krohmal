@@ -22,12 +22,12 @@ public class ArrIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return value.length > count ;
+        return value[0][0] > count && value[1][1] < count && value[0][1] > count && value[1][1] < count;
     }
 
     @Override
     public Object next() {
-        return value[count++].length;
+        return value[count++];
     }
 }
 
