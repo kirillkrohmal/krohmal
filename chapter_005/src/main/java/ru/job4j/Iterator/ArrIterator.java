@@ -15,6 +15,7 @@ import java.util.Iterator;
 public class ArrIterator implements Iterator {
     int count = 0;
     private int[][] value;
+    private int row, column;
 
     public ArrIterator(int[][] value) {
         this.value = value;
@@ -22,12 +23,12 @@ public class ArrIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return value[0][0] > count && value[1][1] < count && value[0][1] > count && value[1][1] < count;
+        return value.length > value[row][column];
     }
 
     @Override
     public Object next() {
-        return value[count++];
+        return value[row++][column++];
     }
 }
 

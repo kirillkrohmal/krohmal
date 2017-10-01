@@ -7,14 +7,11 @@ import java.util.LinkedList;
  * Created by Comp on 24.09.2017.
  */
 public class LinkedListContainer<E> implements Iterable<E> {
-
-    //public Node<E> item;
     Node<E> next;
     Node<E> prev;
     E item;
     Node head;
     int size;
-
 
     public LinkedListContainer(E element) {
         this.item = element;
@@ -39,6 +36,11 @@ public class LinkedListContainer<E> implements Iterable<E> {
     }
 
     public E get(int index) {
+        if (prev.equals(index)) {
+            return (E) prev;
+        } else if (next.equals(index)) {
+            return (E) next;
+        }
         return (E) head;
     }
 

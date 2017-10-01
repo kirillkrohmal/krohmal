@@ -16,27 +16,23 @@ import static org.junit.Assert.assertThat;
  */
 
 public class DynamicListTest<E> {
-    private String result;
-
     @Test
     public void iteratorTest() {
         DynamicList dynamicList = new DynamicList();
-        int i = 9;
-        E value = null;
-        int index = 0;
+        Object value = 7;
+        int index = 7;
+        Object expected = index;
         dynamicList.add(value);
-        int expected = index;
-        assertThat(result, is(expected));
+        assertThat(dynamicList.get(index), is(expected));
     }
 
     @Test
     public void iteratorTest2() {
         DynamicList dynamicList = new DynamicList();
-        E value = null;
-        int index = 0;
+        Object value = 7;
+        int index = 7;
+        Object expected = index;
         dynamicList.add(value);
-        int expected = index;
-        dynamicList.get(index);
-        assertThat(result, is(expected));
+        assertThat(dynamicList.get(index), is(expected));
     }
 }

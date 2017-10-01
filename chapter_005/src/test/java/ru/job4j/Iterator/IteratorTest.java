@@ -20,7 +20,8 @@ public class IteratorTest {
         };
 
         ArrIterator arrIterator = new ArrIterator(value);
-        //arrIterator.next();
+        arrIterator.next();
+        arrIterator.hasNext();
         Object result = arrIterator.next();
         assertThat(result, is(expected));
     }
