@@ -16,7 +16,8 @@ public class IteratorTest {
                 {3, 4}
         };
         int[][] expected = {
-                {1, 2, 3, 4}
+                {1, 2},
+                {3, 4}
         };
 
         ArrIterator arrIterator = new ArrIterator(value);
@@ -35,8 +36,6 @@ public class IteratorTest {
         };
 
         ArrIterator arrIterator = new ArrIterator(value);
-        //arrIterator.next();
-        //arrIterator.hasNext();
         Object result = arrIterator.next();
         assertThat(result, is(expected));
     }

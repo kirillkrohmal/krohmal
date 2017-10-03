@@ -11,9 +11,10 @@ import java.util.Iterator;
  * };
  * <p>
  * метод next = должен вернуть последовательно 1, 2, 3, 4
+ * метод next должен последовательно проходить по каждому массиву и возвращать его элементы,
+ * в текущей же реализации он просто проходится по диагонали и возвращает лишь часть значений.
  */
 public class ArrIterator implements Iterator {
-    int count = 0;
     private int[][] value;
     private int row, column;
 
@@ -28,7 +29,12 @@ public class ArrIterator implements Iterator {
 
     @Override
     public Object next() {
-        return value[row++][column++];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                return value[i][j];
+            }
+        }
+        return value;
     }
 }
 

@@ -9,6 +9,8 @@ import java.util.LinkedList;
 public class LinkedListContainer<E> implements Iterable<E> {
     Node<E> next;
     Node<E> prev;
+    Node<E> fstNode;
+    Node<E> lastNode;
     E item;
     Node head;
     int size;
@@ -17,7 +19,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
         this.item = element;
         this.next = null;
     }
-
     public LinkedListContainer() {
         this.head = null;
         this.prev = null;
@@ -25,6 +26,11 @@ public class LinkedListContainer<E> implements Iterable<E> {
     }
 
     public void add(E value) {
+        /*prev = lastNode;
+        prev.setCurrentElement(value);
+        lastNode = new Node<E>(null, prev, null);
+        prev.setNextElement(lastNode);
+        this.size++;*/
         E node = (E) new Node<E>(value);
         if (this.next != null && this.head != null) {
             this.head = (Node) node;
@@ -34,12 +40,15 @@ public class LinkedListContainer<E> implements Iterable<E> {
         }
         this.size++;
     }
-
+    /*
+     * для реализации метода get - можете например в цикле for отсчитывать количество
+     * пройденных элементов и когда он станет равен переданному параметру возвратить указанный узел.
+     */
     public E get(int index) {
-        if (prev.equals(index)) {
-            return (E) prev;
-        } else if (next.equals(index)) {
-            return (E) next;
+        for (int i = 0; i < index; i++) {
+            if (prev.equals(index)) {
+                return (E) prev;
+            }
         }
         return (E) head;
     }
