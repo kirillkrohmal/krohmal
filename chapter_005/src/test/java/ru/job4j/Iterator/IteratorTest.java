@@ -26,6 +26,7 @@ public class IteratorTest {
         Object result = arrIterator.next();
         assertThat(result, is(expected));
     }
+
     @Test
     public void iteratorTest2() {
         int[][] value = {
@@ -36,6 +37,22 @@ public class IteratorTest {
         };
 
         ArrIterator arrIterator = new ArrIterator(value);
+        Object result = arrIterator.next();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void iteratorTest3() {
+        int[][] value = {
+                {1, 2},
+        };
+        int[][] expected = {
+                {1, 2},
+        };
+
+        ArrIterator arrIterator = new ArrIterator(value);
+        arrIterator.next();
+        arrIterator.next();
         Object result = arrIterator.next();
         assertThat(result, is(expected));
     }

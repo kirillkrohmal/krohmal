@@ -2,7 +2,7 @@ package ru.job4j.StoreGeneric;
 
 import java.util.ArrayList;
 
-public class RoleStore<T> extends AbstractStore {
+public class RoleStore<T> implements Store {
     Base[] base = null;
     int index = 0;
 

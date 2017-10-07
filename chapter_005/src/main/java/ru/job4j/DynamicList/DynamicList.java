@@ -1,12 +1,12 @@
 package ru.job4j.DynamicList;
 
 import java.util.Iterator;
+
 /**
  * Created by Comp on 03.10.2017.
  */
-public class DynamicList<E> implements Iterable<E> {
-    Object[] storage = {1000};
-    Object[] container = storage;
+public class DynamicList<E> implements Iterable {
+    E[] container = (E[]) new Object[1000];
     int size = 0;
 
     /*
@@ -17,24 +17,35 @@ public class DynamicList<E> implements Iterable<E> {
      * 4) реализация итератора не верна, почему вы массив приводит к типу Iterator?
      */
     public void add(E value) {
-        try {
-            if (container.length != size - 1) {
-                container[size++] = value;
-            }
-        } catch (ArrayIndexOutOfBoundsException e){
-            e.printStackTrace();
+        if (size < container.length) {
+            container[size++] = value;
+        } else {
+            throw new ArrayIndexOutOfBoundsException();
         }
     }
 
     public E get(int index) {
-        if (container[size].equals(index)) {
-            return (E) container[index];
+        if (container.length == index) {
+            return container[index];
         }
-        return (E) container[index];
+        return container[index];
     }
 
+    class ArrayIterator implements Iterator<E> {
+
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public E next() {
+            return null;
+        }
+    }
     @Override
-    public Iterator iterator() {
-        return (Iterator) new DynamicList();
+    public Iterator<E> iterator() {
+
+        return new ArrayIterator();
     }
 }
