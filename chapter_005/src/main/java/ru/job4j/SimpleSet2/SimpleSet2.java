@@ -9,6 +9,8 @@ import java.util.Set;
  */
 public class SimpleSet2<E> implements Iterator<E> {
     Set<E> value = new LinkedHashSet<>();
+    Node<E> head;
+    Node<E> tail;
     int size = 0;
     /*
      * Реализовать коллекцию SimpleSet.
@@ -17,9 +19,15 @@ public class SimpleSet2<E> implements Iterator<E> {
      * Set - внутри для хранения данных использует связный список.
      */
     public void add(E e) {
-        for (E e1 : value) {
-            value = (Set<E>) e1;
+        final Node<E> node = new Node<E>(e);
+        if (this.head == e) {
+            this.head = node;
+        } else if (this.head != e) {
+            while (node.nextElement != null) {
+                this.head = node.getNextElement();
+            }
         }
+        this.size++;
     }
 
     @Override
@@ -33,5 +41,27 @@ public class SimpleSet2<E> implements Iterator<E> {
             value.add(e);
         }
         return (E) value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SimpleSet2<?> that = (SimpleSet2<?>) o;
+
+        if (size != that.size) return false;
+        if (value != null ? !value.equals(that.value) : that.value != null) return false;
+        if (head != null ? !head.equals(that.head) : that.head != null) return false;
+        return tail != null ? tail.equals(that.tail) : that.tail == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = value != null ? value.hashCode() : 0;
+        result = 31 * result + (head != null ? head.hashCode() : 0);
+        result = 31 * result + (tail != null ? tail.hashCode() : 0);
+        result = 31 * result + size;
+        return result;
     }
 }

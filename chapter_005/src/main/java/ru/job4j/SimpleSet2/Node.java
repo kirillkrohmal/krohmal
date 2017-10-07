@@ -1,4 +1,4 @@
-package ru.job4j.LinkedListContainer;
+package ru.job4j.SimpleSet2;
 
 /**
  * Created by Comp on 29.09.2017.

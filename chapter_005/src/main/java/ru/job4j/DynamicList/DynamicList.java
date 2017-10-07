@@ -15,9 +15,12 @@ public class DynamicList<E> implements Iterable {
      * 2) почему в методе add нет проверки выхода за границы массива и обработки этой ситуации?
      * 3) в методе get не проверяется индекс
      * 4) реализация итератора не верна, почему вы массив приводит к типу Iterator?
+     * тебе надо если размер закончился, то надо пересоздать массив с большой длинной.
      */
     public void add(E value) {
         if (size < container.length) {
+            container[size++] = value;
+        } else if(container.length > size){
             container[size++] = value;
         } else {
             throw new ArrayIndexOutOfBoundsException();
@@ -32,20 +35,18 @@ public class DynamicList<E> implements Iterable {
     }
 
     class ArrayIterator implements Iterator<E> {
-
         @Override
         public boolean hasNext() {
-            return false;
+            return container.length > size;
         }
 
         @Override
         public E next() {
-            return null;
+            return container[size++];
         }
     }
     @Override
     public Iterator<E> iterator() {
-
         return new ArrayIterator();
     }
 }

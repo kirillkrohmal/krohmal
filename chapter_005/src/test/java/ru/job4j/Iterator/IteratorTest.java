@@ -16,8 +16,7 @@ public class IteratorTest {
                 {3, 4}
         };
         int[][] expected = {
-                {1, 2},
-                {3, 4}
+                {1, 2, 3, 4}
         };
 
         ArrIterator arrIterator = new ArrIterator(value);

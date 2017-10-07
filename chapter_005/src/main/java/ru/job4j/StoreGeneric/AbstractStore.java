@@ -24,7 +24,7 @@ public class AbstractStore<T> implements Store {
 
     @Override
     public boolean delete(String id) {
-        if (base.equals(id)) {
+        if (base[index] == id) {
             base[index] = null;
             return true;
         }
