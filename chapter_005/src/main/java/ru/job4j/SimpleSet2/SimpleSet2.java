@@ -37,10 +37,7 @@ public class SimpleSet2<E> implements Iterator<E> {
 
     @Override
     public E next() {
-        for (E e : value) {
-            value.add(e);
-        }
-        return (E) value;
+        return (E) head.getNextElement();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package ru.job4j.DynamicList;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -8,6 +9,7 @@ import java.util.Iterator;
 public class DynamicList<E> implements Iterable {
     E[] container = (E[]) new Object[1000];
     int size = 0;
+    int count = 0;
 
     /*
      * код не верный:
@@ -18,33 +20,42 @@ public class DynamicList<E> implements Iterable {
      * тебе надо если размер закончился, то надо пересоздать массив с большой длинной.
      */
     public void add(E value) {
-        if (size < container.length) {
+        if (container.length > size) {
             container[size++] = value;
-        } else if(container.length > size){
-            container[size++] = value;
-        } else {
-            throw new ArrayIndexOutOfBoundsException();
+        } else if (container.length == size) {
+            //копировать элементы из первого массива и использовать эти элементы в новом массиве;
+            Arrays.copyOf(container, size++);
         }
     }
 
     public E get(int index) {
-        if (container.length == index) {
-            return container[index];
-        }
-        return container[index];
+        return container[size];
     }
 
     class ArrayIterator implements Iterator<E> {
         @Override
         public boolean hasNext() {
-            return container.length > size;
+            boolean isPresent = false;
+            for (int i = 0; i < count; i++) {
+                if (count < size) {
+                    isPresent = true;
+                } else if (count > size) {
+                    isPresent = false;
+                }
+            }
+            return isPresent;
         }
 
         @Override
         public E next() {
-            return container[size++];
+            Object index = null;
+            while (hasNext() == true) {
+                index = container[size];
+            }
+            return (E) index;
         }
     }
+
     @Override
     public Iterator<E> iterator() {
         return new ArrayIterator();

@@ -8,8 +8,12 @@ import java.util.NoSuchElementException;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleSet<E> implements Iterator<E> {
-    Object[] value = null;
+    Object[] value;
     int size = 0;
+
+    public SimpleSet() {
+        this.value = new Object[1000];
+    }
 
     /**
      * в коде есть ошибки:
@@ -22,10 +26,18 @@ public class SimpleSet<E> implements Iterator<E> {
      * тебе надо проверить. что в массиве нет такого элемента.
      */
     public void add(E e) {
-        if (value.length < size) {
-            value[size++] = e;
-        } else {
-            throw new ArrayIndexOutOfBoundsException();
+        boolean isPresent = false;
+        {
+            for (int i = 0; i < size; i++) {
+                if (value[i].equals(e)) {
+                    isPresent = true;
+                }
+            }
+            if (!isPresent) {
+                if (size < value.length) {
+                    value[size++] = e;
+                }
+            }
         }
     }
 

@@ -11,6 +11,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
     int size = 0;
     Node node;
 
+
     public LinkedListContainer() {
         this.head = null;
         this.size = 0;
@@ -21,12 +22,13 @@ public class LinkedListContainer<E> implements Iterable<E> {
         final Node<E> node = new Node<E>(value);
         if (this.head == null) {
             this.head = node;
-            //this.tail = new Node<E>(value);
-            //node.nextElement = null;
+            node.nextElement = null;
         } else if (this.head != null) {
-            while (node.nextElement != null) {
-                this.head = node.getNextElement();
+            Node<E> pointer = head;
+            while (pointer.getNextElement() != null) {
+                pointer = pointer.nextElement;
             }
+            pointer.setNextElement(node);
         }
         this.size++;
     }

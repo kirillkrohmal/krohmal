@@ -6,8 +6,7 @@ import java.util.Iterator;
  * Создать итератор четные числа
  */
 public class IteratorNum implements Iterator {
-    int count = 0;
-    int size = 0;
+    private int index = 0;
     private int[] value;
 
     public IteratorNum(final int[] value) {
@@ -16,22 +15,24 @@ public class IteratorNum implements Iterator {
 
     @Override
     public boolean hasNext() {
-        for (int i = 0; i < value.length; i++) {
-            if (value[size] % 2 != 0) {
-                return false;
-            } else {
-                return true;
+        boolean isPresent = false;
+        for (int i = index; i < value.length; i++) {
+            if (value[i] % 2 == 0) {
+                index = i;
+                isPresent = true;
+                break;
             }
         }
-        return false;
+        return isPresent;
     }
 
     @Override
     public Object next() {
-        while (hasNext() == true) {
-            count++;
+        Object o = null;
+        if (hasNext() == true) {
+            o = value[index++];
         }
-        return value[count];
+        return o;
     }
 }
 

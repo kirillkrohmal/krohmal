@@ -2,7 +2,7 @@ package ru.job4j.Iterator;
 
 import java.util.Iterator;
 
-/**
+/*
  * Необходимо создать интератор для двухмерного массива.
  * <p>
  * int[][] value = {
@@ -18,24 +18,36 @@ import java.util.Iterator;
 public class ArrIterator implements Iterator {
     private int[][] value;
     private int row, column;
+    private int count1, count2;
+
 
     public ArrIterator(int[][] value) {
         this.value = value;
     }
 
+    /**
+     * Находишь первое значение в масиве 0 0 и возращаем его потом второе 0 1
+     * берем raw проходя column(0 1 2 пока не закончатся) возвращаем значение передвигаем указатель до тех полр пока не дойдем до конца
+     * пока не закончатся элементы каждый раз сбрасываем элементы raw
+     * заводим значения для инкремента
+     */
     @Override
     public boolean hasNext() {
-        return value.length > value[row][column];
+
+        if (value.length > row) {
+            count1++;
+            row++;
+        } else if (value.length > column) {
+            count2++;
+        }
+
+        return false;
     }
 
     @Override
     public Object next() {
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < column; j++) {
-                value[i] = new int[]{i};
-                value[j] = new int[]{j};
-            }
-        }
+
+
         return value;
     }
 }

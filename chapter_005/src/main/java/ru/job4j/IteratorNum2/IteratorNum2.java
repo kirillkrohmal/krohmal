@@ -6,8 +6,8 @@ import java.util.Iterator;
  * Created by Comp on 21.09.2017.
  */
 public class IteratorNum2 implements Iterator {
-    int count = 2;
-    int size = 0;
+    private int count = 0;
+    private int size = 0;
     private int[] value;
 
     public IteratorNum2(final int[] value) {
@@ -16,22 +16,24 @@ public class IteratorNum2 implements Iterator {
 
     @Override
     public boolean hasNext() {
-        for (int i = 2; i < value.length; i++) {
-                if (i == value[i]) {
-                    return true;
-                } else if (i % value[i] == 0) {
-                    return false;
-                }
+        boolean isPresent = false;
+        for (int i = 0; i < value.length; i++) {
+            if (value[i] == i / i) {
+                isPresent = true;
+            } else if (i % value[i] == 0) {
+                return false;
             }
+        }
         return false;
     }
 
     @Override
     public Object next() {
+        Object o = null;
         while (hasNext() == true) {
-            count++;
+            o = value[count++];
         }
-        return value[count];
+        return o;
     }
 }
 

@@ -26,7 +26,10 @@ public class SimpleArray<T> {
     }
 
     public T delete(T value) {
-        object[index] = null;
+        if (value.equals(object)) {
+            object[index] = null;
+        }
+
         return (T) object;
     }
 

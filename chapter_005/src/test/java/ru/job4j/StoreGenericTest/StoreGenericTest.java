@@ -14,7 +14,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class StoreGenericTest {
-    @Test
+    /*@Test
     public void iteratorTest() {
         AbstractStore abstractStore = new AbstractStore();
         Base base = new Base(){};
@@ -42,6 +42,6 @@ public class StoreGenericTest {
         Object result = abstractStore.delete(id);
         Object expected = null;
         assertThat(result, is(expected));
-    }
+    }*/
 }
 

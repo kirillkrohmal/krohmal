@@ -6,28 +6,30 @@ import java.util.*;
  * Created by Comp on 03.10.2017.
  */
 class Tree<E extends Comparable<E>> implements SimpleTree<E> {
-    class Node<E> {
-        List<Node<E>> childen;
-        E value;
-    }
+
+    Node<E> node;
     /*
      * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
      * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
      * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
      */
+
     @Override
     public boolean add(E parent, E child) {
 
-        TreeMap<E, E> treeMap = new TreeMap(new Comparator() {
-            @Override
-            public int compare(Object node, Object o2) {
-                return compare(node, parent);
-            }
-        });
+        node = new Node<E>(child);
+        if (node.getValue().equals(parent) && compare(node, parent) == 0) {
+            parent = (E) node.childen;
+            return true;
+        }
 
         return false;
     }
 
+    private int compare(Node node, E parent) {
+
+        return 0;
+    }
 
     /*
      * Добавить метод boolean isBinary().
@@ -38,11 +40,20 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return false;
     }
 
+    class ArrIterator implements Iterator<E> {
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
 
-
+        @Override
+        public E next() {
+            return null;
+        }
+    }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new ArrIterator();
     }
 }
