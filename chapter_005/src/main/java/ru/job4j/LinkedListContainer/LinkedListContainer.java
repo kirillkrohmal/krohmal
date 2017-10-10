@@ -11,14 +11,14 @@ public class LinkedListContainer<E> implements Iterable<E> {
     int size = 0;
     Node node;
 
-
     public LinkedListContainer() {
         this.head = null;
         this.size = 0;
     }
-
+    /*
+     * Created by Comp on 24.09.2017.
+     */
     public void add(E value) {
-
         final Node<E> node = new Node<E>(value);
         if (this.head == null) {
             this.head = node;
@@ -38,8 +38,10 @@ public class LinkedListContainer<E> implements Iterable<E> {
      * пройденных элементов и когда он станет равен переданному параметру возвратить указанный узел.
     */
     public E get(int index) {
-        if (index > 0 && index < size) {
-            return (E) node.value;
+        for (int i = 0; i < size; i++) {
+            if (index > 0 && index < size) {
+                return (E) node.value;
+            }
         }
 
         return (E) node;

@@ -27,33 +27,41 @@ public class SimpleSet<E> implements Iterator<E> {
      */
     public void add(E e) {
         boolean isPresent = false;
-        {
-            for (int i = 0; i < size; i++) {
-                if (value[i].equals(e)) {
-                    isPresent = true;
-                }
+
+        for (int i = 0; i < size; i++) {
+            if (value[i].equals(e)) {
+                isPresent = true;
             }
-            if (!isPresent) {
-                if (size < value.length) {
-                    value[size++] = e;
-                }
+        }
+        if (!isPresent) {
+            if (size < value.length) {
+                value[size++] = e;
             }
         }
     }
 
     @Override
     public boolean hasNext() {
-        return value.length > size;
+        Object object = value[size];
+        Object o = new Object();
+        boolean isPresent = false;
+
+        for (int i = 0; i < size; i++) {
+            if (value[i].equals(object)) {
+                o = value[i];
+                isPresent = true;
+            }
+        }
+        return isPresent;
     }
 
     @Override
     public E next() {
-        try {
-            return (E) value[size++];
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
+        E o = (E) new Object();
+        if (hasNext() == true) {
+            o = (E) value[size++];
         }
-        return (E) value;
+        return o;
     }
 
     @Override

@@ -7,15 +7,14 @@ import java.util.List;
  */
 public class Node<E> {
     List<Node<E>> childen;
+    List<Node<E>> parent;
+
     E value;
 
-    public Node(List<Node<E>> childen, E value) {
+    public Node(List<Node<E>> childen, List<Node<E>> parent, E value) {
         this.childen = childen;
+        this.parent = parent;
         this.value = value;
-    }
-
-    public Node(E child) {
-
     }
 
     public List<Node<E>> getChilden() {
@@ -24,6 +23,14 @@ public class Node<E> {
 
     public void setChilden(List<Node<E>> childen) {
         this.childen = childen;
+    }
+
+    public List<Node<E>> getParent() {
+        return parent;
+    }
+
+    public void setParent(List<Node<E>> parent) {
+        this.parent = parent;
     }
 
     public E getValue() {
