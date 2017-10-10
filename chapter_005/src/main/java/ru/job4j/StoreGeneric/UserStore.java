@@ -2,25 +2,30 @@ package ru.job4j.StoreGeneric;
 
 import java.util.ArrayList;
 
-public class UserStore<T> implements Store {
-    T[] user = (T[]) new Object[100];
+public class UserStore<T> extends AbstractStore {
+    Base[] userT = new User[100];
     int index = 0;
 
     @Override
     public Base add(Base model) {
-        user[index++] = (T) model;
-        return null;
+        userT[index++] = model;
+        return userT[index];
     }
 
     @Override
     public Base update(Base model) {
-        user[index] = (T) model;
-        return null;
+        userT[index] = model;
+        return userT[index];
     }
 
     @Override
     public boolean delete(String id) {
-        user[index] = null;
+        User user = null;
+
+        if (user.getId().equals(id)) {
+            userT[index] = null;
+            return true;
+        }
         return false;
     }
 }
