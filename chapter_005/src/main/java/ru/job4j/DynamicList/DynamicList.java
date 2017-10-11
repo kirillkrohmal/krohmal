@@ -24,47 +24,45 @@ public class DynamicList<E> implements Iterable {
             container[size++] = value;
         } else if (container.length == size) {
             //копировать элементы из первого массива и использовать эти элементы в новом массиве;
-            Arrays.copyOf(container, (Integer) container[size++]);
+            container = Arrays.copyOf(container, container.length * 2);
         }
     }
 
     public E get(int index) {
         E s = (E) new Object();
-        for (int i = 0; i < container.length; i++) {
-            if (container[i].equals(index)) {
-                s = container[size];
-            }
+
+        if (index >= 0 && index < size) {
+            s = container[index];
         }
         return s;
     }
 
-        class ArrayIterator implements Iterator<E> {
-            @Override
-            public boolean hasNext() {
-                boolean isPresent = false;
-                for (int i = 0; i < count; i++) {
-                    count++;
-                    if (i < size) {
-                        isPresent = true;
-                    } else if (i > size) {
-                        isPresent = false;
-                    }
+    class ArrayIterator implements Iterator<E> {
+        @Override
+        public boolean hasNext() {
+
+            boolean isPresent = false;
+            for (int i = count; i < size; i++) {
+                if (i < size) {
+                    isPresent = true;
                 }
-                return isPresent;
             }
 
-            @Override
-            public E next() {
-                Object index = null;
-                if (hasNext() == true) {
-                    index = container[size++];
-                }
-                return (E) index;
-            }
+            return isPresent;
         }
 
         @Override
-        public Iterator<E> iterator () {
-            return new ArrayIterator();
+        public E next() {
+            Object index = null;
+            if (hasNext() == true) {
+                index = container[size++];
+            }
+            return (E) index;
         }
     }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new ArrayIterator();
+    }
+}

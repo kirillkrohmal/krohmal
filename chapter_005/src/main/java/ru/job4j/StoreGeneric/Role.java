@@ -9,22 +9,6 @@ public class Role extends Base {
         this.hour = hour;
     }
 
-    public String getWork() {
-        return work;
-    }
-
-    public void setWork(String work) {
-        this.work = work;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

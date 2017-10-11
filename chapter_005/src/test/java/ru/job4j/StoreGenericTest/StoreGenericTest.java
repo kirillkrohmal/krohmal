@@ -2,10 +2,7 @@ package ru.job4j.StoreGenericTest;
 
 import org.junit.Test;
 import ru.job4j.SimpleArray.SimpleArray;
-import ru.job4j.StoreGeneric.AbstractStore;
-import ru.job4j.StoreGeneric.Base;
-import ru.job4j.StoreGeneric.RoleStore;
-import ru.job4j.StoreGeneric.UserStore;
+import ru.job4j.StoreGeneric.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +13,10 @@ import static org.junit.Assert.assertThat;
 public class StoreGenericTest {
     @Test
     public void iteratorTest() {
-        AbstractStore abstractStore = new RoleStore();
-        Base base = new Base(){};
-        base.setId("2");
-        Object result = abstractStore.add(base);
-        Object expected = new Object();
+        AbstractStore<Base> abstractStore = new RoleStore<>();
+        Base base = new Role("r", 3);
+        Base result = abstractStore.add(base);
+        Base expected = base;
         assertThat(result, is(expected));
     }
     @Test

@@ -27,8 +27,10 @@ public class SimpleArrayTest {
     public void iteratorTest2() {
         SimpleArray simpleArray = new SimpleArray();
         List<Object> value = new ArrayList<>();
-        Object result = simpleArray.update(value);
-        Object expected = value;
+        List<Object> value1 = new ArrayList<>();
+        simpleArray.add(value);
+        Object result = simpleArray.update(value1);
+        Object expected = value1;
         assertThat(result, is(expected));
     }
     @Test

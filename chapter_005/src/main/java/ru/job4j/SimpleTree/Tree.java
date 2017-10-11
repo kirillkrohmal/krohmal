@@ -17,7 +17,7 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     @Override
     public boolean add(E parent, E child) {
 
-        node = new Node<E>(child);
+        //node = new Node<E>(child);
         if (node.getValue().equals(parent) && compare(node, parent) == 0) {
             parent = (E) node.childen;
             return true;

@@ -16,10 +16,13 @@ import java.util.Iterator;
  * метод next должен при каждом вызове последовательно возвращать по одному значению за раз, не более, т.е. 1,2,3 и т.д.
  */
 public class ArrIterator implements Iterator {
-    private int[][] value;
-    private int row, column;
-    private int count1, count2;
-
+    private int[][] value = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+    };
+    private int row, column = 0;
+    private int count1, count2 = 0;
 
     public ArrIterator(int[][] value) {
         this.value = value;
@@ -33,9 +36,8 @@ public class ArrIterator implements Iterator {
      */
     @Override
     public boolean hasNext() {
-
-        if (value.length > row) {
-            count1++;
+        if (value.length > value[0].length) {
+            //value[count1++] = ;
             row++;
         } else if (value.length > column) {
             count2++;
