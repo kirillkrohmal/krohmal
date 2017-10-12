@@ -39,22 +39,28 @@ public class LinkedListContainer<E> implements Iterable<E> {
     */
     public E get(int index) {
         for (int i = 0; i < size; i++) {
-            if (index > 0 && index < size) {
+            if (index >= 0 && index < size) {
                 return (E) node.value;
             }
         }
-
         return (E) node;
     }
 
     class ArrIterator implements Iterator<E> {
         @Override
         public boolean hasNext() {
+            Object e = null;
+
+            e = node.nextElement;
+
             return false;
         }
 
         @Override
         public E next() {
+            if (hasNext() == true) {
+
+            }
             return null;
         }
     }

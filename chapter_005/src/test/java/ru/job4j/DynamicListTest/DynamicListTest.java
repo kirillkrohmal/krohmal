@@ -21,7 +21,7 @@ public class DynamicListTest<E> {
         DynamicList dynamicList = new DynamicList();
         Object value = 7;
         int index = 7;
-        Object expected = index;
+        Object expected = new Object();
         dynamicList.add(value);
         assertThat(dynamicList.get(index), is(expected));
     }

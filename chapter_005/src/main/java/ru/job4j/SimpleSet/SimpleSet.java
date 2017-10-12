@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleSet<E> implements Iterator<E> {
-    Object[] value;
+    Object[] value= null;
     int size = 0;
 
     public SimpleSet() {

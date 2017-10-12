@@ -8,6 +8,8 @@ import java.util.*;
 class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
     Node<E> node;
+    List<Node<E>> childen;
+    List<Node<E>> parent;
     /*
      * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
      * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
@@ -19,7 +21,7 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
         //node = new Node<E>(child);
         if (node.getValue().equals(parent) && compare(node, parent) == 0) {
-            parent = (E) node.childen;
+            parent = (E) childen;
             return true;
         }
 

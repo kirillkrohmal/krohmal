@@ -5,7 +5,7 @@ package ru.job4j.StoreGeneric;
  * Created by Comp on 24.09.2017.
  */
 public abstract class AbstractStore<T extends Base> implements Store<T> {
-    Object[] baseT = new Object[100];
+    Base[] baseT = new Base[100];
     int index = 0;
 
     @Override
@@ -16,18 +16,28 @@ public abstract class AbstractStore<T extends Base> implements Store<T> {
 
     @Override
     public T update(T model) {
-
-        baseT[index] = model;
+        T base = null;
+        //получить идентфик объекта который сохраняю если он совпадает на его место записать
+        for (int i = 0; i < baseT.length; i++) {
+            if (baseT[i].getId().equals(model.getId())) {
+                baseT[index] = model;
+                break;
+            }
+        }
         return (T) baseT[index];
     }
 
     @Override
     public boolean delete(String id) {
         T base = null;
-        if (base.getId().equals(id)) {
-            baseT[index] = null;
-            return true;
+
+        for (int i = 0; i < baseT.length; i++) {
+            if (baseT[i].getId().equals(id)) {
+                baseT[index] = null;
+                return true;
+            }
         }
+
         return false;
     }
 }

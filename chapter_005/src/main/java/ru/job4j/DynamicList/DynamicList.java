@@ -30,7 +30,6 @@ public class DynamicList<E> implements Iterable {
 
     public E get(int index) {
         E s = (E) new Object();
-
         if (index >= 0 && index < size) {
             s = container[index];
         }
@@ -40,7 +39,6 @@ public class DynamicList<E> implements Iterable {
     class ArrayIterator implements Iterator<E> {
         @Override
         public boolean hasNext() {
-
             boolean isPresent = false;
             for (int i = count; i < size; i++) {
                 if (i < size) {
@@ -55,7 +53,7 @@ public class DynamicList<E> implements Iterable {
         public E next() {
             Object index = null;
             if (hasNext() == true) {
-                index = container[size++];
+                index = container[count++];
             }
             return (E) index;
         }

@@ -14,7 +14,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest() {
         AbstractStore<Base> abstractStore = new RoleStore<>();
-        Base base = new Role("r", 3);
+        Base base = new Role("врач", 3);
         Base result = abstractStore.add(base);
         Base expected = base;
         assertThat(result, is(expected));
@@ -22,51 +22,54 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest2() {
         AbstractStore abstractStore = new RoleStore();
-        Base base = new Base(){};
-        base.setId("2");
+        Base base = new Role("врач", 3);
+        Base base2 = new Role("дантист", 5);
         abstractStore.add(base);
-        Object result = abstractStore.update(base);
-        Object expected = new Object();
+        abstractStore.add(base2);
+        Base result = abstractStore.update(base2);
+        Base expected = base2;
         assertThat(result, is(expected));
     }
     @Test
     public void iteratorTest3() {
         AbstractStore abstractStore = new RoleStore();
-        Base base = null;
+        Base base = new Role("врач", 3);
+        Base base2 = new Role("дантист", 5);
         abstractStore.add(base);
-        String id = "121214";
-        Object result = abstractStore.delete(id);
-        Object expected = new Object();
+        abstractStore.add(base2);
+        boolean result = abstractStore.delete("1");
+        Base expected = base2;
         assertThat(result, is(expected));
     }
 
     @Test
     public void iteratorTest4() {
-        AbstractStore abstractStore = new UserStore();
-        Base base = new Base(){};
-        base.setId("2");
-        Object result = abstractStore.add(base);
-        Object expected = new Object();
+        AbstractStore<Base> abstractStore = new UserStore();
+        Base base = new User("Иван", 30);
+        Base result = abstractStore.add(base);
+        Base expected = base;
         assertThat(result, is(expected));
     }
     @Test
     public void iteratorTest5() {
-        AbstractStore abstractStore = new UserStore();
-        Base base = new Base(){};
-        base.setId("2");
+        AbstractStore<Base> abstractStore = new UserStore();
+        Base base = new User("Иван", 30);
+        Base base2 = new User("Федр", 34);
         abstractStore.add(base);
-        Object result = abstractStore.update(base);
-        Object expected = new Object();
+        abstractStore.add(base2);
+        Base result = abstractStore.update(base2);
+        Base expected = base2;
         assertThat(result, is(expected));
     }
     @Test
     public void iteratorTest6() {
-        AbstractStore abstractStore = new UserStore();
-        Base base = null;
+        AbstractStore<Base> abstractStore = new UserStore();
+        Base base = new User("Иван", 30);
+        Base base2 = new User("Федр", 34);
         abstractStore.add(base);
-        String id = "121214";
-        Object result = abstractStore.delete(id);
-        Object expected = new Object();
+        abstractStore.add(base2);
+        boolean result = abstractStore.delete("Иван");
+        boolean expected = true;
         assertThat(result, is(expected));
     }
 }
