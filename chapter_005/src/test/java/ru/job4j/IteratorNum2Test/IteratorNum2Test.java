@@ -34,5 +34,4 @@ public class IteratorNum2Test {
         assertThat(iteratorNum2.next(), is(7));
         assertThat(iteratorNum2.hasNext(), is(false));
     }
-
 }

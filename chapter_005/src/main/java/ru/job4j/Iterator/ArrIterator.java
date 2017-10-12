@@ -30,27 +30,49 @@ public class ArrIterator implements Iterator {
 
     /**
      * Находишь первое значение в масиве 0 0 и возращаем его потом второе 0 1
-     * берем raw проходя column(0 1 2 пока не закончатся) возвращаем значение передвигаем указатель до тех полр пока не дойдем до конца
+     * берем raw проходя column(0 1 2 пока не закончатся) возвращаем значение передвигаем указатель до тех
+     * полр пока не дойдем до конца
      * пока не закончатся элементы каждый раз сбрасываем элементы raw
      * заводим значения для инкремента
      */
     @Override
     public boolean hasNext() {
+        boolean isPresent = false;
         if (value.length > value[0].length) {
-            //value[count1++] = ;
+            count1++;
             row++;
-        } else if (value.length > column) {
+            isPresent = true;
+           /* if (value.length > value[row].length) {
+                column++;
+            }*/
+        } else if (value.length < value[0].length) {
             count2++;
+            column++;
+            isPresent = false;
         }
-
-        return false;
+        return isPresent;
     }
 
     @Override
     public Object next() {
-
-
+        if (hasNext() == true) {
+            return value[row][column];
+        }
         return value;
+    }
+
+    public static void main(String[] args) {
+        int[][] value = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+        for (int row = 0; row < value.length; row++) {
+            for (int column = 0; column < value[row].length; column++)
+                System.out.print(value[row][column] + " ");
+            System.out.println();
+        }
     }
 }
 

@@ -1,6 +1,7 @@
 package ru.job4j.Iterator;
 
 import org.junit.Test;
+import ru.job4j.IteratorNum2.IteratorNum2;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -54,5 +55,22 @@ public class IteratorTest {
         arrIterator.next();
         Object result = arrIterator.next();
         assertThat(result, is(expected));
+    }
+
+    @Test
+    public void iteratoTest3 () {
+        ArrIterator arrIterator = new ArrIterator(new int[][]{
+                {1, 2},
+                {3, 4}
+        });
+        assertThat(arrIterator.hasNext(), is(true));
+        assertThat(arrIterator.next(), is(1));
+        assertThat(arrIterator.hasNext(), is(true));
+        assertThat(arrIterator.next(), is(2));
+        assertThat(arrIterator.hasNext(), is(true));
+        assertThat(arrIterator.next(), is(3));
+        assertThat(arrIterator.hasNext(), is(true));
+        assertThat(arrIterator.next(), is(4));
+        assertThat(arrIterator.hasNext(), is(false));
     }
 }
