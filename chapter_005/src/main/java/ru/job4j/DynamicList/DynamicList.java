@@ -45,7 +45,6 @@ public class DynamicList<E> implements Iterable {
                     isPresent = true;
                 }
             }
-
             return isPresent;
         }
 

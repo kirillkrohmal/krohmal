@@ -2,6 +2,7 @@ package ru.job4j.SimpleSet2;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 /**
@@ -12,6 +13,8 @@ public class SimpleSet2<E> implements Iterator<E> {
     Node<E> head;
     Node<E> tail;
     int size = 0;
+    Node<E> e = head;
+
     /*
      * Реализовать коллекцию SimpleSet.
      * Коллекция должна обеспечивать void add(E e) и реализовывать Iterator<E>.
@@ -32,12 +35,21 @@ public class SimpleSet2<E> implements Iterator<E> {
 
     @Override
     public boolean hasNext() {
-        return value.size() > size;
+        if (e != null) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public E next() {
-        return (E) head.getNextElement();
+        E element;
+        if (hasNext() == true) {
+            element = e.value;
+            e = e.getNextElement();
+        } else throw new NoSuchElementException();
+
+        return element;
     }
 
     @Override

@@ -17,7 +17,7 @@ public class SimpleArray<T> {
 
     public T add(T value) {
         object[index++] = value;
-        return (T) object;
+        return (T) object[index - 1];
     }
 
     public T update(T value) {
@@ -34,7 +34,7 @@ public class SimpleArray<T> {
     }
 
     public T get(int index) {
-        return (T) object[index];
+        return (T) object[index - 1];
     }
 }
 

@@ -40,12 +40,13 @@ public class LinkedListContainer<E> implements Iterable<E> {
     */
     public E get(int index) {
         E node = null;
+
         for (int i = 0; i < size; i++) {
             if (index >= 0 && index < size) {
-                //return  node.value;
+                node = (E) head.nextElement;
             }
         }
-        return (E) node;
+        return node;
     }
 
     class ArrIterator implements Iterator<E> {

@@ -18,10 +18,8 @@ public class IteratorNum2 implements Iterator {
     public boolean hasNext() {
         boolean isPresent = false;
         for (int i = 0; i < value.length; i++) {
-            if (value[i] == i / i) {
+            if (value[i] % 2 == 0) {
                 isPresent = true;
-            } else if (i % value[i] == 0) {
-                return false;
             }
         }
         return false;
@@ -29,7 +27,7 @@ public class IteratorNum2 implements Iterator {
 
     @Override
     public Object next() {
-        Object o = null;
+        Object o = new Object();
         while (hasNext() == true) {
             o = value[count++];
         }

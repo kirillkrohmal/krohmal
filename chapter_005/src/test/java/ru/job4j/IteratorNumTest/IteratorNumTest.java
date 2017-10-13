@@ -12,15 +12,6 @@ import static org.junit.Assert.assertThat;
 
 public class IteratorNumTest {
     @Test
-    public void iteratorTest() {
-        int[] value = {4, 2, 1, 1};
-        IteratorNum iteratorNum = new IteratorNum(value);
-        int[] expected = {4, 2};
-        iteratorNum.next();
-        int result = (Integer)iteratorNum.next();
-        assertThat(result, is(expected));
-    }
-    @Test
     public void iteratoTest3 () {
         IteratorNum iteratorNum = new IteratorNum(new int[]{4, 2, 1, 1});
         assertThat(iteratorNum.hasNext(), is(true));
@@ -28,16 +19,5 @@ public class IteratorNumTest {
         assertThat(iteratorNum.hasNext(), is(true));
         assertThat(iteratorNum.next(), is(2));
         assertThat(iteratorNum.hasNext(), is(false));
-    }
-
-
-    @Test
-    public void iteratorTest2() {
-        int[] value = {4, 2, 1, 1};
-        IteratorNum iteratorNum = new IteratorNum(value);
-        int[] expected = {4, 2};
-        iteratorNum.next();
-        int result = (Integer)iteratorNum.next();
-        assertThat(result, is(expected));
     }
 }

@@ -6,7 +6,6 @@ import java.util.*;
  * Created by Comp on 03.10.2017.
  */
 class Tree<E extends Comparable<E>> implements SimpleTree<E> {
-
     Node<E> node;
     List<Node<E>> childen;
     List<Node<E>> parent;
@@ -20,17 +19,12 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     public boolean add(E parent, E child) {
 
         //node = new Node<E>(child);
-        if (node.getValue().equals(parent) && compare(node, parent) == 0) {
+        if (node.getValue().equals(parent) && parent.compareTo(child) == 0) {
             parent = (E) childen;
             return true;
         }
 
         return false;
-    }
-
-    private int compare(Node node, E parent) {
-
-        return 0;
     }
 
     /*
@@ -43,13 +37,22 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     class ArrIterator implements Iterator<E> {
+        List<Node<E>> e = childen;
+
         @Override
         public boolean hasNext() {
+            if (e != null) {
+                return true;
+            }
             return false;
         }
 
         @Override
         public E next() {
+            E element = null;
+            if (hasNext() == true) {
+                //element = node.value(e)
+            }
             return null;
         }
     }

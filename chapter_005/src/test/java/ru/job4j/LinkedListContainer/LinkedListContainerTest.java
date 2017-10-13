@@ -15,10 +15,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class LinkedListContainerTest<E> {
-
-    private String result;
     LinkedListContainer<Integer> container;
-
 
     @Before
     public void iteratorTest5() {
@@ -34,7 +31,6 @@ public class LinkedListContainerTest<E> {
 
     @Test
     public void iteratorTest6() {
-
         Iterator<Integer> iterator = container.iterator();
         assertThat(iterator.hasNext(), is(true) );
         assertThat(iterator.next(), is(1) );
@@ -49,6 +45,5 @@ public class LinkedListContainerTest<E> {
         assertThat(iterator.hasNext(), is(true) );
         assertThat(iterator.next(), is(6) );
         assertThat(iterator.hasNext(), is( false) );
-
     }
 }
