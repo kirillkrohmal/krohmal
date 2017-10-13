@@ -1,7 +1,11 @@
 package ru.job4j.LinkedListContainer;
 
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Iterator;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,25 +17,38 @@ import static org.junit.Assert.assertThat;
 public class LinkedListContainerTest<E> {
 
     private String result;
+    LinkedListContainer<Integer> container;
 
-   @Test
-    public void iteratorTest() {
-        Object item = 5;
-        int index = 5;
-        LinkedListContainer listContainer = new LinkedListContainer();
-        listContainer.add(item);
-        Object expected = 5;
-        assertThat(listContainer.get(index), is(expected));
+
+    @Before
+    public void iteratorTest5() {
+        container = new LinkedListContainer();
+
+        container.add(1);
+        container.add(2);
+        container.add(3);
+        container.add(4);
+        container.add(5);
+        container.add(6);
     }
 
     @Test
-    public void iteratorTest2() {
-        Object item = 5;
-        int index = 5;
-        LinkedListContainer listContainer = new LinkedListContainer();
-        listContainer.add(item);
-        Object expected = 5;
-        listContainer.get(index);
-        assertThat(listContainer.get(index), is(expected));
+    public void iteratorTest6() {
+
+        Iterator<Integer> iterator = container.iterator();
+        assertThat(iterator.hasNext(), is(true) );
+        assertThat(iterator.next(), is(1) );
+        assertThat(iterator.hasNext(), is(true) );
+        assertThat(iterator.next(), is(2) );
+        assertThat(iterator.hasNext(), is(true) );
+        assertThat(iterator.next(), is(3) );
+        assertThat(iterator.hasNext(), is(true) );
+        assertThat(iterator.next(), is(4) );
+        assertThat(iterator.hasNext(), is(true) );
+        assertThat(iterator.next(), is(5) );
+        assertThat(iterator.hasNext(), is(true) );
+        assertThat(iterator.next(), is(6) );
+        assertThat(iterator.hasNext(), is( false) );
+
     }
 }

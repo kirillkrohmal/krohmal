@@ -1,6 +1,7 @@
 package ru.job4j.Iterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /*
  * Необходимо создать интератор для двухмерного массива.
@@ -16,13 +17,8 @@ import java.util.Iterator;
  * метод next должен при каждом вызове последовательно возвращать по одному значению за раз, не более, т.е. 1,2,3 и т.д.
  */
 public class ArrIterator implements Iterator {
-    private int[][] value = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-    };
-    private int row, column = 0;
-    private int count1, count2 = 0;
+    private int[][] value = new int[3][3];
+    private int row = 0, column = 0;
 
     public ArrIterator(int[][] value) {
         this.value = value;
@@ -38,41 +34,39 @@ public class ArrIterator implements Iterator {
     @Override
     public boolean hasNext() {
         boolean isPresent = false;
-        if (value.length > value[0].length) {
-            count1++;
-            row++;
+        if (value.length > row && column < value[0].length) {
             isPresent = true;
-           /* if (value.length > value[row].length) {
-                column++;
-            }*/
-        } else if (value.length < value[0].length) {
-            count2++;
-            column++;
-            isPresent = false;
         }
         return isPresent;
     }
 
     @Override
     public Object next() {
+        int nextValue = 0;
         if (hasNext() == true) {
-            return value[row][column];
+            if (isAnyElementsInCurrentRow()) {
+                nextValue = value[row][column++];
+            }
+            if (isEndElementsInCurrentRow()) {
+                switchElement();
+            }
+        } else {
+            throw new NoSuchElementException();
         }
-        return value;
+        return nextValue;
     }
 
-    public static void main(String[] args) {
-        int[][] value = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
+    private boolean isAnyElementsInCurrentRow () {
+        return column < value[row].length;
+    }
 
-        for (int row = 0; row < value.length; row++) {
-            for (int column = 0; column < value[row].length; column++)
-                System.out.print(value[row][column] + " ");
-            System.out.println();
-        }
+    private boolean isEndElementsInCurrentRow () {
+        return column == value[row].length;
+    }
+
+    void switchElement () {
+        row++;
+        column = 0;
     }
 }
 

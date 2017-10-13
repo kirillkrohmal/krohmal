@@ -1,6 +1,7 @@
 package ru.job4j.LinkedListContainer;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Comp on 24.09.2017.
@@ -38,30 +39,34 @@ public class LinkedListContainer<E> implements Iterable<E> {
      * пройденных элементов и когда он станет равен переданному параметру возвратить указанный узел.
     */
     public E get(int index) {
+        E node = null;
         for (int i = 0; i < size; i++) {
             if (index >= 0 && index < size) {
-                return (E) node.value;
+                //return  node.value;
             }
         }
         return (E) node;
     }
 
     class ArrIterator implements Iterator<E> {
+        Node<E> e = head;
+
         @Override
         public boolean hasNext() {
-            Object e = null;
-
-            e = node.nextElement;
-
+            if (e != null) {
+                return true;
+            }
             return false;
         }
 
         @Override
         public E next() {
+            E element = null;
             if (hasNext() == true) {
-
-            }
-            return null;
+                element = e.value;
+                e = e.nextElement;
+            } else throw new NoSuchElementException();
+            return element;
         }
     }
 
