@@ -7,15 +7,20 @@ import java.util.Stack;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleStack<T> {
-
     Stack<T> ts = new Stack<>();
+    T head;
+    T tail;
+    Node node;
+    int top = 0;
     /**
      * Pushes an item onto the top of this stack. This has exactly
-     * the same effect as:
-     * <blockquote><pre>
-     * addElement(item)</pre></blockquote>
+     * the same effect as: addElement(item)
      */
     public T push() {
+        top = ts.size() - 1;
+        if (top != 0) {
+            ts.addElement(tail);
+        }
 
         return null;
     }

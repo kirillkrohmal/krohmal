@@ -49,11 +49,12 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
         @Override
         public E next() {
-            E element = null;
+            Node<E> element = null;
             if (hasNext() == true) {
-                //element = node.value(e)
+
+                element = node.nextElement;
             }
-            return null;
+            return (E) element;
         }
     }
 

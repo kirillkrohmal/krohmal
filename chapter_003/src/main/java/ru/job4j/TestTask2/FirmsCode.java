@@ -1,7 +1,5 @@
 package ru.job4j.TestTask2;
 
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Comp on 30.08.2017.

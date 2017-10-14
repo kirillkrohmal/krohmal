@@ -16,9 +16,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
         this.head = null;
         this.size = 0;
     }
-    /*
-     * Created by Comp on 24.09.2017.
-     */
+
     public void add(E value) {
         final Node<E> node = new Node<E>(value);
         if (this.head == null) {
