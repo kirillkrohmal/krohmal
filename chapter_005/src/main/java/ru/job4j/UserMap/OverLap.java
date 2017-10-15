@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class OverLap {
     User user1 = new User("Fedor", 2, new Calendar());
-    User user2 = new User("Andru", 7, new Calendar());;
+    User user2 = new User("Fedor", 2, new Calendar());;
     HashMap<User, Object> userObjectMap = new HashMap<>();
 
     public Map<User, Object> map() {

@@ -20,7 +20,7 @@ public class UserMapTest {
         Map<User, Object> result = overLap.map();
         String[] expected =
                 {
-                        "User{name='Fedor', children=2, birthday=ru.job4j.UserMap.Calendar@deb6432} java.lang.Object@694f9431\n" + "User{name='Fed', children=77, birthday=ru.job4j.UserMap.Calendar@28ba21f3} java.lang.Object@f2a0b8e"
+                        "User{name='Fedor', children=2, birthday=ru.job4j.UserMap.Calendar@deb6432} java.lang.Object@694f9431\n" + "User{name='Fedor', children=2, birthday=ru.job4j.UserMap.Calendar@deb6432} java.lang.Object@694f9431"
                 };
         assertThat(result, is(expected));
     }
