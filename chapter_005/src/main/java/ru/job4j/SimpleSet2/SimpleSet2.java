@@ -23,7 +23,7 @@ public class SimpleSet2<E> implements Iterator<E> {
      */
     public void add(E e) {
         final Node<E> node = new Node<E>(e);
-        if (this.head == e) {
+        if (this.head == e && head.nextElement != head.prevElement) {
             this.head = node;
         } else if (this.head != e) {
             while (node.nextElement != null) {

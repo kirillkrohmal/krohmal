@@ -33,6 +33,9 @@ public class SimpleStack<T> {
      * @throws  EmptyStackException  if this stack is empty.
      */
     public void pop(T value) {
-
+        top = ts.size() - 1;
+        if (top != 0) {
+            ts.remove(tail);
+        }
     }
 }

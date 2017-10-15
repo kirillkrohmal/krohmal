@@ -22,7 +22,7 @@ public class IteratorNum2 implements Iterator {
                 isPresent = true;
             }
         }
-        return false;
+        return isPresent;
     }
 
     @Override

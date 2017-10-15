@@ -5,11 +5,12 @@ package ru.job4j.SimpleSet2;
  */
 public class Node<E> {
     Node<E> nextElement;
+    Node<E> prevElement;
     E value;
 
-    public Node(Node<E> nextElement, E value) {
+    public Node(Node<E> nextElement, Node<E> prevElement) {
         this.nextElement = nextElement;
-        this.value = value;
+        this.prevElement = prevElement;
     }
 
     public Node<E> getNextElement() {
@@ -20,7 +21,23 @@ public class Node<E> {
         this.nextElement = nextElement;
     }
 
+    public Node<E> getPrevElement() {
+        return prevElement;
+    }
+
+    public void setPrevElement(Node<E> prevElement) {
+        this.prevElement = prevElement;
+    }
+
+    public E getValue() {
+        return value;
+    }
+
+    public void setValue(E value) {
+        this.value = value;
+    }
+
     public Node(E value) {
-        this(null, value);
+        this.value = value;
     }
 }
