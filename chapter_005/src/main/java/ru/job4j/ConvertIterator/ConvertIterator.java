@@ -27,7 +27,7 @@ public class ConvertIterator {
             @Override
             public Integer next() {
                 if (hasNext() == true) {
-                    value++;
+                    return (Integer) container[value++];
                 }
                 return (Integer) container[value];
             }
@@ -35,12 +35,8 @@ public class ConvertIterator {
              * selectIterator(), в котором бы осуществлялся выбор следующего итератора по условию.
              */
             public Iterator<Iterator<Integer>> selectIterator() {
-                while (it.hasNext()) {
-                    if (it.equals(it.next())) {
-
-                    } else {
-
-                    }
+                if (hasNext() == true) {
+                    return (Iterator<Iterator<Integer>>) container[value++];
                 }
 
 

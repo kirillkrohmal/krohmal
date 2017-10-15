@@ -33,6 +33,11 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
      * метод должен циклически пройти по всем элементам дерева.
      */
     public boolean isBinary() {
+        for (int i = 0; i < childen.size(); i++) {
+            if (i <= 2) {
+                return true;
+            }
+        }
         return false;
     }
 

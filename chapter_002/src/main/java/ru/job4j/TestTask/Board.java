@@ -25,8 +25,9 @@ public class Board {
         System.out.println();
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                System.out.println(printIt[i][j]);
+                System.out.print(printIt[i][j]);
             }
+            System.out.println();
         }
     }
 
