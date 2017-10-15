@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by Comp on 03.10.2017.
  */
-class Tree<E extends Comparable<E>> implements SimpleTree<E> {
+public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     Node<E> node;
     List<Node<E>> childen;
     List<Node<E>> parent;
@@ -33,6 +33,8 @@ class Tree<E extends Comparable<E>> implements SimpleTree<E> {
      * метод должен циклически пройти по всем элементам дерева.
      */
     public boolean isBinary() {
+        List<Node<E>> r = childen;
+
         for (int i = 0; i < childen.size(); i++) {
             if (i <= 2) {
                 return true;
