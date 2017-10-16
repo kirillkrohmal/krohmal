@@ -21,15 +21,9 @@ public class User {
 
         User user = (User) o;
 
-        return name != null ? name.equals(user.name) : user.name == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = result * 31;
-
-        return result;
+        if (children != user.children) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        return birthday != null ? birthday.equals(user.birthday) : user.birthday == null;
     }
 
     @Override

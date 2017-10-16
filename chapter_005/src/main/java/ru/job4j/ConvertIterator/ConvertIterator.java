@@ -10,14 +10,12 @@ public class ConvertIterator {
         return new Iterator<Integer>() {
             Object[] container;
             int value = 0;
+            Object temp = it;
 
             @Override
             public boolean hasNext() {
-                Object temp = it.hasNext();
-                while (!temp.equals(0)) {
-                    return true;
-                }
-                if (selectIterator().equals(it)) {
+
+                if (selectIterator() != null) {
                     return true;
                 } else {
                     return false;
@@ -27,16 +25,22 @@ public class ConvertIterator {
             @Override
             public Integer next() {
                 if (hasNext() == true) {
-                    return (Integer) container[value++];
+
                 }
                 return (Integer) container[value];
             }
             /*
              * selectIterator(), в котором бы осуществлялся выбор следующего итератора по условию.
+             * У тебя метод next должен возвращать значения из тех итераторов, которые ему были переданы.
+             * Если в первом итераторе больше нет чисел, то переключиться на второй и возвращать его числа и т.д.
+             * пока не закончатся итераторы. Метод hasNext должен проверять есть ли у текущего итератора следующий элемент,
+             * если есть возвращать true, если нет, то проверить есть ли следующий итератор и переключиться на него и проверять
+             * есть ли числа у него и т.д., если чисел больше нет или итераторов больше нет, то возвратить false.
+             * Текущая реализация полностью не верная, более того она падает с NPE.
              */
             public Iterator<Iterator<Integer>> selectIterator() {
                 if (hasNext() == true) {
-                    return (Iterator<Iterator<Integer>>) container[value++];
+                    //return Iterator();
                 }
 
 
