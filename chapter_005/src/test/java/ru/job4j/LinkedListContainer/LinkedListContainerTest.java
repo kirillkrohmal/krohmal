@@ -28,18 +28,6 @@ public class LinkedListContainerTest<E> {
         assertThat(container.get(index), is(expected));
     }
 
-    @Test
-    public void iteratorTest2() {
-        container = new LinkedListContainer();
-        Integer value = new Integer(6);
-        Integer value2 = new Integer(6);
-        int index = 0;
-        Object expected = new Object();
-        container.add(value);
-        container.add(value2);
-        assertThat(container.get(index), is(expected));
-    }
-
     @Before
     public void iteratorTest5() {
         container = new LinkedListContainer();

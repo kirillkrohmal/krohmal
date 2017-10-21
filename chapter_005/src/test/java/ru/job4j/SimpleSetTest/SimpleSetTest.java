@@ -11,18 +11,18 @@ import static org.junit.Assert.assertThat;
 
 public class SimpleSetTest<E> {
     SimpleSet simpleSet;
+
     @Test
     public void iteratorTest() {
-        SimpleSet simpleSet = new SimpleSet();
-        simpleSet.next();
-        simpleSet.next();
-        boolean result = simpleSet.hasNext();
-        Object expected = null;
-        assertThat(result, is(true));
+        simpleSet = new SimpleSet();
+        Integer value = new Integer(4);
+        E expected = (E) value;
+        simpleSet.add(value);
+        assertThat(value, is(expected));
     }
 
     @Before
-    public void iteratorTest2() {
+    public void iteratorTest3() {
         simpleSet = new SimpleSet();
 
         simpleSet.add(1);
@@ -36,7 +36,7 @@ public class SimpleSetTest<E> {
     }
 
     @Test
-    public void iteratorTest3() {
+    public void iteratorTest4() {
         Iterator<Integer> iterator = simpleSet;
         assertThat(iterator.hasNext(), is(true));
         assertThat(iterator.next(), is(1));

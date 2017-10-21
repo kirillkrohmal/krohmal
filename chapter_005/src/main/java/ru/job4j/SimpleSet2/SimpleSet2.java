@@ -25,6 +25,7 @@ public class SimpleSet2<E> implements Iterator<E> {
         final Node<E> node = new Node<E>(e);
         if (this.head == e && head.nextElement != head.prevElement) {
             this.head = node;
+            value.add(head.value);
         } else if (this.head != e) {
             while (node.nextElement != null) {
                 this.head = node.getNextElement();

@@ -66,7 +66,7 @@ public class SimpleSet<E> implements Iterator<E> {
         E[] elem = null;
         if (hasNext() == true) {
             if (size < value.length) {
-                elem[size++] = e;
+                return e;
             }
         } else throw new NoSuchElementException();
         return (E) elem;
