@@ -11,11 +11,23 @@ public class Node<E> {
     Node right;
     Node<E> parent;
     Node<E> child;
-    Node<E> child2;
-    Node<E> child3;
-    Node<E> child4;
-    Node<E> child5;
-    Node<E> child6;
+    List<Node<E>> childen;
+
+    public Node(Node<E> child) {
+        this.child = child;
+    }
+
+    void addChildren () {
+        Node<E> node = new Node<>(child);
+        childen.add(node);
+    }
+
+    public Node(Node left, Node right, Node<E> parent, Node<E> child) {
+        this.left = left;
+        this.right = right;
+        this.parent = parent;
+        this.child = child;
+    }
 
     public Node getLeft() {
         return left;
@@ -47,57 +59,5 @@ public class Node<E> {
 
     public void setChild(Node<E> child) {
         this.child = child;
-    }
-
-    public Node<E> getChild2() {
-        return child2;
-    }
-
-    public void setChild2(Node<E> child2) {
-        this.child2 = child2;
-    }
-
-    public Node<E> getChild3() {
-        return child3;
-    }
-
-    public void setChild3(Node<E> child3) {
-        this.child3 = child3;
-    }
-
-    public Node<E> getChild4() {
-        return child4;
-    }
-
-    public void setChild4(Node<E> child4) {
-        this.child4 = child4;
-    }
-
-    public Node<E> getChild5() {
-        return child5;
-    }
-
-    public void setChild5(Node<E> child5) {
-        this.child5 = child5;
-    }
-
-    public Node<E> getChild6() {
-        return child6;
-    }
-
-    public void setChild6(Node<E> child6) {
-        this.child6 = child6;
-    }
-
-    public Node(Node left, Node right, Node<E> parent, Node<E> child, Node<E> child2, Node<E> child3, Node<E> child4, Node<E> child5, Node<E> child6) {
-        this.left = left;
-        this.right = right;
-        this.parent = parent;
-        this.child = child;
-        this.child2 = child2;
-        this.child3 = child3;
-        this.child4 = child4;
-        this.child5 = child5;
-        this.child6 = child6;
     }
 }

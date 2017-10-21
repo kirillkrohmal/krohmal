@@ -10,6 +10,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     Node<E> node;
     List<Node<E>> childen;
     List<Node<E>> parent;
+    Tree<String> tree;
+
     /*
      * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
      * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
