@@ -18,9 +18,10 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
     @Override
     public boolean add(E parent, E child) {
-
-        //node = new Node<E>(child);
-
+        E pointer = child;
+        if (pointer.equals(child)) {
+            childen.add((Node<E>) child);
+        }
 
         return false;
     }

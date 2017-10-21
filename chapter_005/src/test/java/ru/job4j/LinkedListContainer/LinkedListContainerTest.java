@@ -4,6 +4,7 @@ package ru.job4j.LinkedListContainer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ru.job4j.DynamicList.DynamicList;
 
 import java.util.Iterator;
 
@@ -16,6 +17,28 @@ import static org.junit.Assert.assertThat;
 
 public class LinkedListContainerTest<E> {
     LinkedListContainer<Integer> container;
+
+    @Test
+    public void iteratorTest() {
+        container = new LinkedListContainer();
+        Integer value = new Integer(4);
+        int index = 7;
+        Object expected = new Object();
+        container.add(value);
+        assertThat(container.get(index), is(expected));
+    }
+
+    @Test
+    public void iteratorTest2() {
+        container = new LinkedListContainer();
+        Integer value = new Integer(6);
+        Integer value2 = new Integer(6);
+        int index = 0;
+        Object expected = new Object();
+        container.add(value);
+        container.add(value2);
+        assertThat(container.get(index), is(expected));
+    }
 
     @Before
     public void iteratorTest5() {

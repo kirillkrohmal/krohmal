@@ -10,16 +10,21 @@ public class ConvertIterator {
         return new Iterator<Integer>() {
             Object[] container;
             int value = 0;
-            Object temp = it;
+            Iterator<Integer> it;
+            Iterator<Iterator<Integer>> it2;
 
             @Override
             public boolean hasNext() {
 
-                if (selectIterator() != null) {
+                if (it != null) {
+                    it.next();
                     return true;
-                } else {
-                    return false;
                 }
+                if (it == null) {
+                    it2.next();
+                    return true;
+                }
+                return false;
             }
 
             @Override
@@ -27,7 +32,8 @@ public class ConvertIterator {
                 if (hasNext() == true) {
 
                 }
-                return (Integer) container[value];
+
+                return null;
             }
             /*
              * selectIterator(), в котором бы осуществлялся выбор следующего итератора по условию.

@@ -9,7 +9,6 @@ import java.nio.CharBuffer;
  * Created by Comp on 06.10.2017.
  */
 public class CountSpace implements Runnable{
-
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String text) {
@@ -27,7 +26,6 @@ public class CountSpace implements Runnable{
         return null;
     }
 
-
     public static void main(String[] args) {
         new Thread(new CountSpace("Создали новый объект класса Thread, передали ему в конструкторе объект printer, чей метод run() нужно будет исполнить.")).start();
     }
@@ -42,5 +40,15 @@ public class CountSpace implements Runnable{
             e.printStackTrace();
         }
     }
+
+    public void sentence(String s) {
+
+    }
+
+    public void sentence2(String s2) {
+
+    }
+
+
 }
 
