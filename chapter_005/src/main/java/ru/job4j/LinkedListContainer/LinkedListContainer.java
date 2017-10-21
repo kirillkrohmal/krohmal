@@ -13,7 +13,8 @@ public class LinkedListContainer<E> implements Iterable<E> {
     Node node;
 
     public LinkedListContainer() {
-        this.head = null;
+        this.tail = new Node(head, null);
+        this.head = new Node(null, tail);
         this.size = 0;
     }
 
@@ -38,15 +39,14 @@ public class LinkedListContainer<E> implements Iterable<E> {
      * пройденных элементов и когда он станет равен переданному параметру возвратить указанный узел.
     */
     public E get(int index) {
-        E node = null;
+        Node<E> next = head.getNextElement();
 
-        for (int i = 0; i < size; i++) {
-            node.equals(index);
+        for (int i = 0; i < index; i++) {
             if (index >= 0 && index < size) {
-                node = (E) head.nextElement;
+                next = (Node<E>) head.value;
             }
         }
-        return node;
+        return next.value;
     }
 
     class ArrIterator implements Iterator<E> {

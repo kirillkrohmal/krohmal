@@ -8,9 +8,10 @@ public class Node<E> {
     E value;
 
     public Node(Node<E> nextElement, E value) {
-        this.nextElement = nextElement;
         this.value = value;
+        this.nextElement = nextElement;
     }
+
 
     public Node<E> getNextElement() {
         return nextElement;
