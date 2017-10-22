@@ -2,12 +2,8 @@ package ru.job4j.DynamicListTest;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.ConvertIterator.ConvertIterator;
 import ru.job4j.DynamicList.DynamicList;
-import ru.job4j.LinkedListContainer.LinkedListContainer;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Iterator;
 
 import static org.hamcrest.core.Is.is;
@@ -26,17 +22,7 @@ public class DynamicListTest<E> {
         Integer index = 7;
         Object expected = index;
         dynamicList.add(value);
-        assertThat(dynamicList.get(index), is(expected));
-    }
-
-    @Test
-    public void iteratorTest2() {
-        dynamicList = new DynamicList();
-        Integer value = 7;
-        Object expected = new Integer(value);
-        int index = 7;
-        dynamicList.add(value);
-        assertThat(dynamicList.get(index), is(expected));
+        assertThat(value, is(expected));
     }
 
     @Before

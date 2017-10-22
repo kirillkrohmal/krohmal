@@ -15,7 +15,6 @@ public class ConvertIterator {
 
             @Override
             public boolean hasNext() {
-
                 if (it != null) {
                     it.next();
                     return true;

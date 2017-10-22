@@ -11,6 +11,7 @@ public class SimpleQueue<T> {
     Node<T> head;
     Node<T> tail;
     Node node;
+    int size = 0;
 
     /**
      * Retrieves and removes the head of this queue,
@@ -19,15 +20,17 @@ public class SimpleQueue<T> {
      * @return the head of this queue, or {@code null} if this queue is empty
      */
     public T poll() {
-        if (head.nextElement != null) {
-            head = new Node(head.getNextElement());
-            return (T) this.node;
+        if (size == 0) {
+            return null;
         }
-        if (this.head != null) {
-            ts.remove(node);
-        }
+        T obj = head.value;
+        head = head.getNextElement();
 
-        return (T) node;
+        if (head == null) {
+            tail = null;
+        }
+        size--;
+        return obj;
     }
 
     /**
@@ -36,13 +39,15 @@ public class SimpleQueue<T> {
      *
      * @return the head of this queue, or {@code null} if this queue is empty
      */
-    public void peek(T value) {
-        if (value == null) {
-            node = head.getNextElement();
-            if (value != null) {
-                head = new Node(head.getNextElement());
-            }
+    public void push(T value) {
+        Node<T> node = new Node<T>(value);
+        if (head == null) {
+            head = node;
+        } else {
+            tail.setNextElement(node);
         }
+        tail = node;
+        size++;
     }
 }
 

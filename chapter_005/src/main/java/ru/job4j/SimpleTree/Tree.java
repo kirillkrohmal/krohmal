@@ -6,7 +6,6 @@ import java.util.*;
  * Created by Comp on 03.10.2017.
  */
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
-
     Node<E> node;
     List<Node<E>> childen;
     List<Node<E>> parent;
@@ -17,7 +16,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
      * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
      * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
      */
-
     @Override
     public boolean add(E parent, E child) {
         E pointer = child;
@@ -59,7 +57,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         public E next() {
             Node<E> element = null;
             if (hasNext() == true) {
-
                 element = node.child;
             }
             return (E) element;
