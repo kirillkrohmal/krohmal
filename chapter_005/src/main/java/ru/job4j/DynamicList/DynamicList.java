@@ -6,24 +6,14 @@ import java.util.Iterator;
 /**
  * Created by Comp on 03.10.2017.
  */
-public class DynamicList<E> implements Iterable {
+public class DynamicList<E> implements Iterable<E> {
     E[] container = (E[]) new Object[1000];
     int size = 0;
-    int count = 0;
 
-    /*
-     * код не верный:
-     * 1) где инициализация поля container?
-     * 2) почему в методе add нет проверки выхода за границы массива и обработки этой ситуации?
-     * 3) в методе get не проверяется индекс
-     * 4) реализация итератора не верна, почему вы массив приводит к типу Iterator?
-     * тебе надо если размер закончился, то надо пересоздать массив с большой длинной.
-     */
     public void add(E value) {
         if (container.length > size) {
             container[size++] = value;
         } else if (container.length == size) {
-            //копировать элементы из первого массива и использовать эти элементы в новом массиве;
             container = Arrays.copyOf(container, container.length * 2);
         }
     }
@@ -37,13 +27,14 @@ public class DynamicList<E> implements Iterable {
     }
 
     class ArrayIterator implements Iterator<E> {
+        int count = 0;
+
         @Override
         public boolean hasNext() {
             boolean isPresent = false;
-            for (int i = count; i < size; i++) {
-                if (i < size) {
-                    isPresent = true;
-                }
+
+            if (count < size) {
+                isPresent = true;
             }
             return isPresent;
         }

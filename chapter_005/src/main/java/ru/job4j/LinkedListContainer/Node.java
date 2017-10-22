@@ -12,7 +12,6 @@ public class Node<E> {
         this.nextElement = nextElement;
     }
 
-
     public Node<E> getNextElement() {
         return nextElement;
     }

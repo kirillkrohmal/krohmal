@@ -22,9 +22,9 @@ public class DynamicListTest<E> {
     @Test
     public void iteratorTest() {
         dynamicList = new DynamicList();
-        Object value = 7;
-        int index = 7;
-        Object expected = new Object();
+        Integer value = 7;
+        Integer index = 7;
+        Object expected = index;
         dynamicList.add(value);
         assertThat(dynamicList.get(index), is(expected));
     }

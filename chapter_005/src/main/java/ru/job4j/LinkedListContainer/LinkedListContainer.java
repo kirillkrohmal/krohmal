@@ -7,22 +7,51 @@ import java.util.NoSuchElementException;
  * Created by Comp on 24.09.2017.
  */
 public class LinkedListContainer<E> implements Iterable<E> {
-    Node<E> head;
-    Node<E> tail;
-    int size = 0;
-    Node node;
+    private Node<E> head;
+    private Node<E> tail;
+    private int size = 0;
+    private Node node;
 
     public LinkedListContainer() {
-        this.tail = new Node(head, null);
-        this.head = new Node(null, tail);
         this.size = 0;
+    }
+
+    public Node<E> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<E> head) {
+        this.head = head;
+    }
+
+    public Node<E> getTail() {
+        return tail;
+    }
+
+    public void setTail(Node<E> tail) {
+        this.tail = tail;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public Node getNode() {
+        return node;
+    }
+
+    public void setNode(Node node) {
+        this.node = node;
     }
 
     public void add(E value) {
         final Node<E> node = new Node<E>(value);
         if (this.head == null) {
             this.head = node;
-            node.nextElement = null;
         } else if (this.head != null) {
             Node<E> pointer = head;
             while (pointer.getNextElement() != null) {
@@ -40,10 +69,9 @@ public class LinkedListContainer<E> implements Iterable<E> {
     */
     public E get(int index) {
         Node<E> next = head.getNextElement();
+        if (index >= 0 && index < size) {
+            for (int i = 0; i < size; i++) {
 
-        for (int i = 0; i < index; i++) {
-            if (index >= 0 && index < size) {
-                next = (Node<E>) head.value;
             }
         }
         return next.value;
