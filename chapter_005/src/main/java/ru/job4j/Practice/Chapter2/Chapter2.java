@@ -1,4 +1,4 @@
-package ru.job4j.Practice;
+package ru.job4j.Practice.Chapter2;
 
 /**
  * Created by Comp on 19.10.2017.

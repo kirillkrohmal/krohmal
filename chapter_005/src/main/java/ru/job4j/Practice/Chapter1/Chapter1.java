@@ -1,4 +1,4 @@
-package ru.job4j.Practice;
+package ru.job4j.Practice.Chapter1;
 
 import java.util.ArrayList;
 import java.util.Collections;
