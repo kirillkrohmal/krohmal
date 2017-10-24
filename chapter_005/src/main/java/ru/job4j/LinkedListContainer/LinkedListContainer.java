@@ -63,12 +63,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
         this.size++;
     }
 
-    private void check(int index) {
-        if (index < 0 || size < index) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-    }
-
     private Node<E> node(int index) {
         Node<E> tmp = head;
 
@@ -83,6 +77,11 @@ public class LinkedListContainer<E> implements Iterable<E> {
     /*
      * для реализации метода get - можете например в цикле for отсчитывать количество
      * пройденных элементов и когда он станет равен переданному параметру возвратить указанный узел.
+     * Метод get реализован не верно. Нужно проходить по узлам, сейчас же просты ты получаешь следующий
+     * элемент head'а и все. Вот это приведение типов тоже не верно E object = (E) pointer;
+     *
+     * Нужно проходить по узлам, сейчас же просты ты получаешь следующий элемент head'а и все.
+     * Вот это приведение типов тоже не верно E object = (E) pointer;
     */
     public E get(int index) {
         if (index < 0 || index > size || size == 0) {
@@ -91,13 +90,14 @@ public class LinkedListContainer<E> implements Iterable<E> {
         Object pointer = head;
         int p = 0;
 
-        if (p < index) {
+        for (int i = 0; i < size; i++) {
             pointer = head.getNextElement();
+
             p++;
         }
-        E object = (E) pointer;
+
         //check(index);
-        return object;
+        return null;
     }
 
     class ArrIterator implements Iterator<E> {

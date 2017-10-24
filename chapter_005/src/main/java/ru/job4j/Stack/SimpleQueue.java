@@ -7,10 +7,8 @@ import java.util.Queue;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleQueue<T> {
-    Queue<T> ts = new ArrayDeque<>();
     Node<T> head;
     Node<T> tail;
-    Node node;
     int size = 0;
 
     /**

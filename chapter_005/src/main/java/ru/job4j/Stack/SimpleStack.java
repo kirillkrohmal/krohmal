@@ -8,18 +8,21 @@ import java.util.Stack;
  */
 public class SimpleStack<T> {
     Stack<T> ts = new Stack<>();
-    T head;
-    T tail;
+    Node<T> head;
+    Node<T> tail;
     Node node;
     int top = 0;
+    int size = 0;
+
     /**
      * Pushes an item onto the top of this stack. This has exactly
      * the same effect as: addElement(item)
      */
     public T push() {
-        top = ts.size() - 1;
+        T obj = head.value;
+        top = size - 1;
         if (top != 0) {
-            ts.addElement(tail);
+            node.setNextElement(head);
         }
 
         return null;
@@ -34,6 +37,7 @@ public class SimpleStack<T> {
      */
     public void pop(T value) {
         top = ts.size() - 1;
+        ts.addElement(value);
         if (top != 0) {
             ts.remove(tail);
         }

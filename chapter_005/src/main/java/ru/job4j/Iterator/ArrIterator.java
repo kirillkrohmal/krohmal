@@ -44,24 +44,16 @@ public class ArrIterator implements Iterator {
     public Object next() {
         int nextValue = 0;
         if (hasNext() == true) {
-            if (isAnyElementsInCurrentRow()) {
+            if (column < value[row].length) {
                 nextValue = value[row][column++];
             }
-            if (isEndElementsInCurrentRow()) {
+            if (column == value[row].length) {
                 switchElement();
             }
         } else {
             throw new NoSuchElementException();
         }
         return nextValue;
-    }
-
-    private boolean isAnyElementsInCurrentRow () {
-        return column < value[row].length;
-    }
-
-    private boolean isEndElementsInCurrentRow () {
-        return column == value[row].length;
     }
 
     void switchElement () {

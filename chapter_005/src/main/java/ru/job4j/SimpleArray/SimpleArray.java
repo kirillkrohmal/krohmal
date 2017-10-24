@@ -21,7 +21,6 @@ public class SimpleArray<T> {
     }
 
     public T update(T value) {
-
         object[index] = value;
         return (T) object;
     }

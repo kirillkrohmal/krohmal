@@ -69,7 +69,6 @@ public class Node<T> {
             third.next = four.next;
             four.next = first;
         }
-
         return hasCycle;
     }
 }

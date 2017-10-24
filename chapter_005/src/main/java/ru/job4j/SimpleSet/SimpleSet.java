@@ -8,12 +8,17 @@ import java.util.NoSuchElementException;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleSet<E> implements Iterator<E> {
-    Object[] value = null;
+    Object[] value;
     int size = 0;
     E e = null;
 
     public SimpleSet() {
         this.value = new Object[1000];
+    }
+
+    public SimpleSet(Object[] value, int size) {
+        this.value = value;
+        this.size = size;
     }
 
     /*
@@ -44,9 +49,8 @@ public class SimpleSet<E> implements Iterator<E> {
     @Override
     public boolean hasNext() {
         boolean isPresent = false;
-        e = (E) value[size++];
 
-        if (e != null) {
+        if (value.length > size) {
             isPresent = true;
         }
 
@@ -57,19 +61,22 @@ public class SimpleSet<E> implements Iterator<E> {
      * в методе next E o = (E) new Object(); - это лишнее
      * метод next должен возвращать следующий элемент, либо кидать NoSuchElementException
      * o = (E) value[size++]; - это неправильно. Ведь size указывает сколько элементов добавлено.
-     * 1) Почему в методе hasNext e = (E) value[size] ? Ты же должен проверять есть ли элементы, а что делает эта строка?
-     * 2) Зачем в методе next elem[size++] = e; У тебя же elem это массив, причем не инициализированный, а ты еще
-     * присваиваешь ему значение. 3) return (E) elem - как массив можно приводить к типу элемента?
+     * 1) Почему в методе hasNext e = (E) value[size] ? Ты же должен проверять есть ли элементы, а что делает эта
+     * строка? 2) Зачем в методе next elem[size++] = e; У тебя же elem это массив, причем не инициализированный, а
+     * ты еще присваиваешь ему значение. 3) return (E) elem - как массив можно приводить к типу элемента?
      */
     @Override
     public E next() {
-        E[] elem = null;
+        Object[] elem = (E[]) value[size];
         if (hasNext() == true) {
-            if (size < value.length) {
-                return e;
+            for (int i = 0; i < size; i++) {
+                if (value[i].equals(value.length)) {
+                    value[size++] = elem;
+                }
+
             }
         } else throw new NoSuchElementException();
-        return (E) elem;
+        return (E) value[size];
     }
 
     @Override
