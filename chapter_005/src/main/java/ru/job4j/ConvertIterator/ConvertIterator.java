@@ -28,9 +28,14 @@ public class ConvertIterator {
 
             @Override
             public Integer next() {
-                if (hasNext() == true) {
 
-                }
+                if (hasNext() == true) {
+                   /* for (Object o1 : container) {
+                        for (container : it) {
+
+                        }
+                    }
+                */}
 
                 return null;
             }
