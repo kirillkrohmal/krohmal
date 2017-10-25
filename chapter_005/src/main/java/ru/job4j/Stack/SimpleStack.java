@@ -22,10 +22,10 @@ public class SimpleStack<T> {
         T obj = head.value;
         top = size - 1;
         if (top != 0) {
-            node.setNextElement(head);
+            head.setNextElement(node);
         }
-
-        return null;
+        size++;
+        return obj;
     }
     /**
      * Removes the object at the top of this stack and returns that
@@ -41,5 +41,6 @@ public class SimpleStack<T> {
         if (top != 0) {
             ts.remove(tail);
         }
+        size--;
     }
 }

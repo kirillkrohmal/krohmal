@@ -21,16 +21,7 @@ public class SimpleSet<E> implements Iterator<E> {
         this.size = size;
     }
 
-    /*
-     * в коде есть ошибки:
-     * 1) необходимо инициализировать поле value
-     * 2) в методе add поле size не инкрементируется, в итоге элемент всегда будет вставляться по индексу 0 +
-     * нужна проверка выхода за границы массива
-     * 3) также метод add должен проверять нет ли таких элементов, потому что set не допускает дубликатов
-     * 4) методы hasNext должен проверять есть ли элементы в сетке
-     * 5) метод next должен возвращать следующий элемент, либо кидать NoSuchElementException
-     * тебе надо проверить. что в массиве нет такого элемента.
-     */
+
     public void add(E e) {
         boolean isPresent = false;
 
@@ -53,18 +44,10 @@ public class SimpleSet<E> implements Iterator<E> {
         if (value.length > size) {
             isPresent = true;
         }
-
         return isPresent;
     }
 
-     /*
-     * в методе next E o = (E) new Object(); - это лишнее
-     * метод next должен возвращать следующий элемент, либо кидать NoSuchElementException
-     * o = (E) value[size++]; - это неправильно. Ведь size указывает сколько элементов добавлено.
-     * 1) Почему в методе hasNext e = (E) value[size] ? Ты же должен проверять есть ли элементы, а что делает эта
-     * строка? 2) Зачем в методе next elem[size++] = e; У тебя же elem это массив, причем не инициализированный, а
-     * ты еще присваиваешь ему значение. 3) return (E) elem - как массив можно приводить к типу элемента?
-     */
+
     @Override
     public E next() {
         Object[] elem = (E[]) value[size];
@@ -73,7 +56,6 @@ public class SimpleSet<E> implements Iterator<E> {
                 if (value[i].equals(value.length)) {
                     value[size++] = elem;
                 }
-
             }
         } else throw new NoSuchElementException();
         return (E) value[size];

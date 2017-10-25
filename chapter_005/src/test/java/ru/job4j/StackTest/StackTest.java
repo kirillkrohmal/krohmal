@@ -17,19 +17,23 @@ import static org.junit.Assert.assertThat;
 public class StackTest {
     SimpleQueue simpleQueue;
     SimpleStack simpleStack;
+    private Class<? extends Object> expected;
 
     @Test
     public void iteratorTest() {
         simpleQueue = new SimpleQueue();
-        simpleQueue.poll();
-        //assertThat(container.get(index), is(expected));
+        Object expected = null;
+        assertThat(simpleQueue.poll(), is(expected));
     }
 
     @Test
     public void iteratorTest2() {
-        Object value = null;
+        Object value = new Integer(7);
         simpleQueue = new SimpleQueue();
         simpleQueue.push(value);
+        Object expected = value;
+        assertThat(value, is(expected));
+
     }
 
     @Test
@@ -37,13 +41,15 @@ public class StackTest {
         Object value = null;
         simpleStack = new SimpleStack();
         simpleStack.pop(value);
-        //assertThat(container.get(index), is(expected));
+        Object expected = null;
+        assertThat(value, is(expected));
     }
 
     @Test
     public void iteratorTest4() {
         Object value = null;
         simpleStack = new SimpleStack();
-        simpleStack.push();
+        Object expected = value;
+        assertThat(simpleStack.push(), is(expected));
     }
 }

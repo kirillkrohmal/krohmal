@@ -2,10 +2,7 @@ package ru.job4j.Iterator2Test;
 
 import org.junit.Test;
 import ru.job4j.Iterator2.Iterator2;
-import ru.job4j.IteratorNum.IteratorNum;
 
-import java.util.Iterator;
-import java.util.function.Consumer;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

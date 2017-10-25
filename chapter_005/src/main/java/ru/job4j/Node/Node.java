@@ -19,38 +19,6 @@ public class Node<T> {
         this.four = four;
     }
 
-    public Node getFirst() {
-        return first;
-    }
-
-    public void setFirst(Node first) {
-        this.first = first;
-    }
-
-    public Node getTwo() {
-        return two;
-    }
-
-    public void setTwo(Node two) {
-        this.two = two;
-    }
-
-    public Node getThird() {
-        return third;
-    }
-
-    public void setThird(Node third) {
-        this.third = third;
-    }
-
-    public Node getFour() {
-        return four;
-    }
-
-    public void setFour(Node four) {
-        this.four = four;
-    }
-
     public Node(T i) {
         this.value = i;
     }
@@ -62,7 +30,10 @@ public class Node<T> {
 
         boolean hasCycle = value == first && first == two && two == third && third == four;
 
-        if (first.next != null) {
+
+        if (hasCycle == true) {
+            return hasCycle;
+        } else {
             first = first.next;
             first.next = two.next;
             two.next = third.next;

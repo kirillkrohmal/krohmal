@@ -16,38 +16,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
         this.size = 0;
     }
 
-    public Node<E> getHead() {
-        return head;
-    }
-
-    public void setHead(Node<E> head) {
-        this.head = head;
-    }
-
-    public Node<E> getTail() {
-        return tail;
-    }
-
-    public void setTail(Node<E> tail) {
-        this.tail = tail;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public Node getNode() {
-        return node;
-    }
-
-    public void setNode(Node node) {
-        this.node = node;
-    }
-
     public void add(E value) {
         final Node<E> node = new Node<E>(value);
         if (this.head == null) {
@@ -84,20 +52,22 @@ public class LinkedListContainer<E> implements Iterable<E> {
      * Вот это приведение типов тоже не верно E object = (E) pointer;
     */
     public E get(int index) {
-        if (index < 0 || index > size || size == 0) {
+        if (index < 0) {
             return null;
         }
-        Object pointer = head;
-        int p = 0;
+        Node<E> pointer = head;
 
         for (int i = 0; i < size; i++) {
-            pointer = head.getNextElement();
+            if (head.value.equals(index)) {
+                pointer = (Node<E>) head.value;
+            } else {
+                pointer = pointer.nextElement;
 
-            p++;
+            }
+            head = pointer;
         }
 
-        //check(index);
-        return null;
+        return head.value;
     }
 
     class ArrIterator implements Iterator<E> {

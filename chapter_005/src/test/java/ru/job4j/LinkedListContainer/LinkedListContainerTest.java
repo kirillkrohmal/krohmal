@@ -19,7 +19,7 @@ public class LinkedListContainerTest<E> {
     public void iteratorTest() {
         container = new LinkedListContainer();
         Integer value = new Integer(4);
-        int index = 7;
+        int index = 1;
         Object expected = new Object();
         container.add(value);
 

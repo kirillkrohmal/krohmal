@@ -1,0 +1,27 @@
+1. Создать класс - структуру данных для хранение пользователей UserStorage.
+2. В заголовке класса обозначить аннотацию @ThreadSafe из библиотеки
+
+<dependency>
+    <groupId>net.jcip</groupId>
+    <artifactId>jcip-annotations</artifactId>
+    <version>1.0</version>
+</dependency>
+
+3. Хранилище должно иметь методы add, update, delete.
+
+4. И особый метод transfer(int fromId, int toId, int amount);
+
+5. Структура данных должна быть потокобезопастная;
+
+6. В структуре User Должны быть поля id. int amount.
+
+amount - это счет пользователя.
+
+Пример. использования.
+
+UserStore stoge = new UserStore();
+
+stoge.add(new User(1, 100));
+stoge.add(new User(2, 200));
+
+stoge.transfer(1, 2, 50);
