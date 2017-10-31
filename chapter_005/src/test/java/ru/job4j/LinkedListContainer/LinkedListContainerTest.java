@@ -20,7 +20,7 @@ public class LinkedListContainerTest<E> {
         container = new LinkedListContainer();
         Integer value = new Integer(4);
         int index = 1;
-        Object expected = new Object();
+        Object expected = container;
         container.add(value);
 
         assertThat(container.get(index), is(expected));
