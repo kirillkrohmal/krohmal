@@ -9,13 +9,14 @@ import java.util.NoSuchElementException;
 public class ConvertIterator {
     public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
         return new Iterator<Integer>() {
-            Iterator<Integer> iterator2;
-            Iterator<Iterator<Integer>> iterator;
+
+            Iterator<Iterator<Integer>> iterator = it;
+            Iterator<Iterator<Integer>> iterator2 = iterator;
 
             @Override
             public boolean hasNext() {
                 boolean isPresent = false;
-                if (iterator.next() != null) {
+                if (iterator2.next() == null && iterator.hasNext()) {
                     isPresent = true;
                 }
                 return isPresent;
@@ -24,9 +25,10 @@ public class ConvertIterator {
             @Override
             public Integer next() {
                 if (hasNext() == true) {
-                    return iterator2.next();
+                    iterator.hasNext();
                 } else throw new NoSuchElementException();
 
+                return null;
             }
         };
     }

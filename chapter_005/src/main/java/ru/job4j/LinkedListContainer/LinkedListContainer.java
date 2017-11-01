@@ -3,13 +3,13 @@ package ru.job4j.LinkedListContainer;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import net.jcip.annotations.ThreadSafe;
+
 
 /**
  * Created by Comp on 24.09.2017.
  */
-@ThreadSafe
-public class LinkedListContainer<E> implements Runnable {
+
+public class LinkedListContainer<E> implements Iterable<E> {
     private Node<E> head;
     private Node<E> tail;
     private int size = 0;
@@ -61,8 +61,8 @@ public class LinkedListContainer<E> implements Runnable {
     }
 
     @Override
-    public void run() {
-
+    public Iterator<E> iterator() {
+        return new ArrIterator();
     }
 
     class ArrIterator implements Iterator<E> {
