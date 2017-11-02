@@ -1,4 +1,6 @@
-package ru.job4j.DynamicListThread;
+package ru.job4j.DynamicListThread.DynamicListThread;
+
+import net.jcip.annotations.ThreadSafe;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -6,11 +8,12 @@ import java.util.Iterator;
 /**
  * Created by Comp on 03.10.2017.
  */
+@ThreadSafe
 public class DynamicListThread<E> implements Runnable {
     E[] container = (E[]) new Object[1000];
     int size = 0;
 
-    public void add(E value) {
+    public  void add(E value) {
         if (container.length > size) {
             container[size++] = value;
         } else if (container.length == size) {

@@ -19,7 +19,7 @@ public class FilterSql {
         String dbUrl = "jdbc:postgresql://localhost:5432/java_a_from_z";
         String user = "postgres";
         String password = "";
-        //Class.forName("sun.jdbc.postgresql.JdbcOdbcDriver");
+        Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
         // Загружаем драйвер (регистрирует себя)
         Connection c = null;
 

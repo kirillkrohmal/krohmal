@@ -1,24 +1,57 @@
 package ru.job4j.UserStorage;
 
+import net.jcip.annotations.ThreadSafe;
+
 /**
  * Created by Comp on 29.10.2017.
  */
+@ThreadSafe
 public class UserStorage {
+    public static final int STORAGE = 1000;
+    User[] storage = new User[STORAGE];
+    Integer[] sum = new Integer[]{};
+    User user;
 
+    public int size = 0;
 
-    User add(User user) {
+    final Object lock = new Object();
 
-        return user;
+    public  void add(User user) {
+        synchronized(this.lock) {
+            if (size == STORAGE - 1) {
+                System.out.println(String.format("Недостаточно места"));
+            }
+            storage[size++] = user;
+        }
     }
-    void update() {
+    public User update(User user) {
+        synchronized(this.lock) {
+            for (int i = 0; i < storage.length; i++) {
+                if (storage[i] != null) {
+
+                }
+            }
+
+        }
+        return null;
+    }
+
+    public void delete(int id) {
+        synchronized(this.lock) {
+            for (int i = 0; i < storage.length; i++) {
+                if (storage[i] != null && storage[i].getId() == id) {
+                    storage[i] = null;
+                }
+            }
+        }
 
     }
 
-    void delete() {
-
-    }
-
-    void transfer(int fromId, int toId, int amount) {
-
+    public boolean transfer(int fromId, int toId, int amount) {
+        synchronized(this.lock) {
+            sum[fromId] =- amount;
+            sum[toId] += amount;
+        }
+        return false;
     }
 }

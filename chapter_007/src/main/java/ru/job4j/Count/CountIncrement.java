@@ -8,9 +8,8 @@ import net.jcip.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class CountIncrement implements Runnable {
-    @GuardedBy("lock")
-    Count count = new Count();
-    Count2 count2 = new Count2();
+    @GuardedBy("this") private Count count = new Count();
+    @GuardedBy("this") private Count2 count2 = new Count2();
 
     private Object lock = new Object();
 
