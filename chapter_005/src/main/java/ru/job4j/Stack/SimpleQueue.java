@@ -39,7 +39,7 @@ public class SimpleQueue<T> {
      */
     public void push(T value) {
         Node<T> node = new Node<T>(value);
-        if (head == null) {
+        if (node.value == null) {
             head = node;
         } else {
             tail.setNextElement(node);

@@ -33,7 +33,6 @@ public class StackTest {
         simpleQueue.push(value);
         Object expected = value;
         assertThat(value, is(expected));
-
     }
 
     @Test

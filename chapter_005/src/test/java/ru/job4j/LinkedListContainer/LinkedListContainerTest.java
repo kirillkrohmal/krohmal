@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,7 +14,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class LinkedListContainerTest<E> {
-    LinkedListContainer<Integer> container;
+    LinkedListContainer<String> container;
 
     @Test
     public void iteratorTest() {
@@ -21,11 +22,20 @@ public class LinkedListContainerTest<E> {
         Integer value = new Integer(4);
         int index = 1;
         Object expected = container;
-        container.add(value);
+        //container.add(value);
 
         assertThat(container.get(index), is(expected));
     }
 
+    @Test
+    public void iteratorTest2() {
+        container = new LinkedListContainer<>();
+        String expected = "Hello";
+        container.add(expected);
+        String actual = container.get(0);
+        assertThat(actual, is(expected));
+    }
+/*
     @Before
     public void iteratorTest5() {
         container = new LinkedListContainer();
@@ -53,6 +63,6 @@ public class LinkedListContainerTest<E> {
         assertThat(iterator.next(), is(5) );
         assertThat(iterator.hasNext(), is(true) );
         assertThat(iterator.next(), is(6) );
-        assertThat(iterator.hasNext(), is( false) );
-    }
+        assertThat(iterator.hasNext(), is( false) );*/
 }
+

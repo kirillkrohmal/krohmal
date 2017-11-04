@@ -1,7 +1,6 @@
 package ru.job4j.NodeTest;
 
 import org.junit.Test;
-import ru.job4j.LinkedListContainer.LinkedListContainer;
 import ru.job4j.Node.Node;
 
 import static org.hamcrest.core.Is.is;
@@ -17,7 +16,10 @@ public class NodeTest {
     public void iteratorTest() {
         node = new Node(1);
         Node first = new Node(1);
-        //Node two = new Node(1);
+        Node two = new Node(2);
+        Node third = new Node(3);
+        Node four = new Node(4);
+
         boolean result = node.hasCycle(first);
         assertThat(result, is(true));
     }

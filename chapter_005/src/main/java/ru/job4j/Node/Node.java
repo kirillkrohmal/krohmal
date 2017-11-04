@@ -1,16 +1,20 @@
 package ru.job4j.Node;
 
+import java.util.LinkedList;
+
 /**
  * Created by Comp on 24.09.2017.
  */
 public class Node<T> {
     T value;
     Node<T> next;
+    Node head;
+    LinkedList linkedList = new LinkedList();
 
-    Node first = new Node(1);
-    Node two = new Node(2);
-    Node third = new Node(3);
-    Node four = new Node(4);
+    Node first;
+    Node two;
+    Node third;
+    Node four;
 
     public Node(Node first, Node two, Node third, Node four) {
         this.first = first;
@@ -24,21 +28,17 @@ public class Node<T> {
     }
 
     public boolean hasCycle(Node first) {
-        if (first == null) {
+        if (next == null) {
             return false;
         }
 
-        boolean hasCycle = value == first && first == two && two == third && third == four;
+        boolean hasCycle = value == first.next && first == two.next && two == third.next && third == four.first;
 
-
+        while (first.two.third != null)
         if (hasCycle == true) {
             return hasCycle;
         } else {
-            first = first.next;
-            first.next = two.next;
-            two.next = third.next;
-            third.next = four.next;
-            four.next = first;
+            hasCycle = false;
         }
         return hasCycle;
     }

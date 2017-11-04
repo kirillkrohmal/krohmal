@@ -1,14 +1,16 @@
 package ru.job4j.SearchTree;
 
 
-import ru.job4j.Node.Node;
+import ru.job4j.SearchTree.*;
 
 /**
  * Created by Comp on 23.10.2017.
  */
 public class SearchTree<E> {
-    Node left;
-    Node right;
+    Node<E> left;
+    Node<E> right;
+
+    int size;
 
     void add(E e) {
 
