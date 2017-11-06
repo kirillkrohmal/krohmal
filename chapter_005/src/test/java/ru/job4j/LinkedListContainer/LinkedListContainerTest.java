@@ -50,7 +50,7 @@ public class LinkedListContainerTest<E> {
 
     @Test
     public void iteratorTest6() {
-        Iterator<Integer> iterator = container.iterator();
+        CrudServlet<Integer> iterator = container.iterator();
         assertThat(iterator.hasNext(), is(true) );
         assertThat(iterator.next(), is(1) );
         assertThat(iterator.hasNext(), is(true) );

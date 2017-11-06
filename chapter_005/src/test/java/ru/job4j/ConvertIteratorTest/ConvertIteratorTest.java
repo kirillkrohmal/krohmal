@@ -127,11 +127,11 @@ public class ConvertIteratorTest {
 /*
     @Test
     public void iteratorTest() {
-        Iterator<Iterator<Integer>> it = Arrays.asList(
+        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
                 Collections.singletonList(1).iterator(),
                 Collections.singletonList(2).iterator()
         ).iterator();
-        Iterator<Integer> convert = new ConvertIterator().convert(it);
+        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
         convert.next();
         int result = convert.next();
         assertThat(result, is(2));
@@ -139,7 +139,7 @@ public class ConvertIteratorTest {
 
     @Test
     public void iteratorTest2() {
-        Iterator<Iterator<Integer>> it = Arrays.asList(
+        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
                 Collections.singletonList(1).iterator(),
                 Collections.singletonList(2).iterator(),
                 Collections.singletonList(3).iterator(),
@@ -149,7 +149,7 @@ public class ConvertIteratorTest {
                 Collections.singletonList(7).iterator(),
                 Collections.singletonList(8).iterator()
         ).iterator();
-        Iterator<Integer> convert = new ConvertIterator().convert(it);
+        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
         convert.next();
         int result = convert.next();
         assertThat(result, is(8));
@@ -157,13 +157,13 @@ public class ConvertIteratorTest {
 
     @Test
     public void iteratorTest6() {
-        Iterator<Iterator<Integer>> it = Arrays.asList(
+        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
                 Collections.singletonList(1).iterator(),
                 Collections.singletonList(2).iterator(),
                 Collections.singletonList(3).iterator(),
                 Collections.singletonList(4).iterator()
         ).iterator();
-        Iterator<Integer> convert = new ConvertIterator().convert(it);
+        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
         convert.next();
         int result = convert.next();
         assertThat(result, is(4));
@@ -171,12 +171,12 @@ public class ConvertIteratorTest {
 
     @Test
     public void iteratorTest7() {
-        Iterator<Iterator<Integer>> it = Arrays.asList(
+        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
                 Collections.singletonList(1).iterator(),
                 Collections.singletonList(2).iterator(),
                 Collections.singletonList(3).iterator()
         ).iterator();
-        Iterator<Integer> convert = new ConvertIterator().convert(it);
+        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
         convert.next();
         int result = convert.next();
         assertThat(result, is(3));
@@ -184,7 +184,7 @@ public class ConvertIteratorTest {
 
     @Test
     public void iteratorTest8() {
-        Iterator<Iterator<Integer>> it = Arrays.asList(
+        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
                 Collections.singletonList(1).iterator(),
                 Collections.singletonList(2).iterator(),
                 Collections.singletonList(3).iterator(),
@@ -204,7 +204,7 @@ public class ConvertIteratorTest {
                 Collections.singletonList(17).iterator(),
                 Collections.singletonList(18).iterator()
         ).iterator();
-        Iterator<Integer> convert = new ConvertIterator().convert(it);
+        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
         convert.next();
         int result = convert.next();
         assertThat(result, is(18));

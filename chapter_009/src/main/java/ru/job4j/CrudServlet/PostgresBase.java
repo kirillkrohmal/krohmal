@@ -1,16 +1,15 @@
-package ru.job4j.FilterSql;
+package ru.job4j.CrudServlet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import java.sql.*;
 
 /**
- * Created by Comp on 31.10.2017.
+ * Created by Comp on 06.11.2017.
  */
-public class FilterSql {
-    private static final Logger log = LoggerFactory.getLogger(FilterSql.class);
+public class PostgresBase {
+    private static final Logger log = LoggerFactory.getLogger(PostgresBase.class);
 
     public static void main(String[] args) throws SQLException,
             ClassNotFoundException {
@@ -27,7 +26,8 @@ public class FilterSql {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 System.out.println(String.format("%s %s %s %s", rs.getString("login"), rs.getString("password"), rs.getTimestamp("create_date")));
-            } rs.close();
+            }
+            rs.close();
             ps.close();
         } catch (SQLException e) {
             //log.error(e.getMessage(), e);

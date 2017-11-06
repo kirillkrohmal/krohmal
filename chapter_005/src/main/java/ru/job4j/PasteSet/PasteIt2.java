@@ -13,4 +13,7 @@ public class PasteIt2<E> {
     public void add (int value) {
         set.addAll(Arrays.asList(4, 6, 1));
     }
+    public void paste (int value) {
+        set.addAll(Arrays.asList(4, 6, 1));
+    }
 }
