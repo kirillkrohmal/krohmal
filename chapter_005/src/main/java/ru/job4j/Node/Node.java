@@ -8,8 +8,6 @@ import java.util.LinkedList;
 public class Node<T> {
     T value;
     Node<T> next;
-    Node head;
-    LinkedList linkedList = new LinkedList();
 
     Node first;
     Node two;
@@ -28,18 +26,25 @@ public class Node<T> {
     }
 
     public boolean hasCycle(Node first) {
-        if (next == null) {
+        if (first == null) {
             return false;
         }
 
-        boolean hasCycle = value == first.next && first == two.next && two == third.next && third == four.first;
+        Node head = first;
+        Node tail = first;
 
-        while (first.two.third != null)
-        if (hasCycle == true) {
-            return hasCycle;
-        } else {
-            hasCycle = false;
+        while (head == null && tail == null) {
+            head = head.next;
+            tail = tail.next.next;
+
+            if (head == null && tail == null) {
+                return false;
+            }
+
+            if (head == tail) {
+                return false;
+            }
         }
-        return hasCycle;
+        return false;
     }
 }

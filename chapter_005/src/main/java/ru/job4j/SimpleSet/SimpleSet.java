@@ -54,7 +54,7 @@ public class SimpleSet<E> implements Iterator<E> {
         if (hasNext() == true) {
             for (int i = 0; i < size; i++) {
                 if (value[i].equals(value.length)) {
-                    value[size++] = elem;
+                    value[size++] = value[i];
                 }
             }
         } else throw new NoSuchElementException();

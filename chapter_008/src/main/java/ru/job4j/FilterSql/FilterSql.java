@@ -23,7 +23,7 @@ public class FilterSql {
 
         try {
             c = DriverManager.getConnection(dbUrl, user, password);
-            PreparedStatement ps = c.prepareStatement("SELECT * FROM students");
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM items AS i WHERE i.description LIKE '%DIT%'");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 System.out.println(String.format("%s %s %s %s", rs.getString("login"), rs.getString("password"), rs.getTimestamp("create_date")));
