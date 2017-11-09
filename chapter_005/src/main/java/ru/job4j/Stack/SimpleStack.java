@@ -19,9 +19,11 @@ public class SimpleStack<T> {
      * the same effect as: addElement(item)
      */
     public T push() {
+
         T obj = head.value;
         top = size - 1;
         if (top != 0) {
+            ts.addElement(obj);
             head.setNextElement(node);
         }
         size++;
