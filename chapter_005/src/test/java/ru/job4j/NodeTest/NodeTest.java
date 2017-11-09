@@ -11,23 +11,21 @@ import static org.junit.Assert.assertThat;
  */
 public class NodeTest {
     Node node;
+    private final int three = 3;
+    private final int four = 4;
 
     @Test
-    public void iteratorTest() {
-        node = new Node(1);
-        Node first = new Node(1);
-        Node two = new Node(2);
-        Node third = new Node(3);
-        Node four = new Node(4);
+    public void iteratorTest3() {
+        Node<Integer> first = new Node<>(1);
+        Node<Integer> two = new Node<>(2);
+        Node<Integer> third = new Node<>(three);
+        Node<Integer> forth  = new Node<>(four);
 
-        boolean result = node.hasCycle(first);
-        assertThat(result, is(true));
-    }
+        first.setNext(two);
+        two.setNext(third);
+        third.setNext(forth);
+        forth .setNext(first);
 
-    @Test
-    public void iteratorTest2() {
-        node = new Node(2);
-        Node first = new Node(2);
         boolean result = node.hasCycle(first);
         assertThat(result, is(true));
     }
