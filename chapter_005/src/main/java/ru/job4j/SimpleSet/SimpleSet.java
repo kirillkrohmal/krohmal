@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
 public class SimpleSet<E> implements Iterator<E> {
     Object[] value;
     int size = 0;
+    int counter = 0;
     E e = null;
 
     public SimpleSet() {
@@ -40,7 +41,7 @@ public class SimpleSet<E> implements Iterator<E> {
     public boolean hasNext() {
         boolean isPresent = false;
 
-        if (value.length > size) {
+        if (value.length != counter && size >= 0) {
             isPresent = true;
         }
         return isPresent;
@@ -49,15 +50,15 @@ public class SimpleSet<E> implements Iterator<E> {
 
     @Override
     public E next() {
-        Object[] elem = (E[]) value[size];
-        if (hasNext() == true) {
+        E[] elem = (E[]) value[size];
+        if (hasNext()) {
             for (int i = 0; i < size; i++) {
                 if (value[i].equals(value.length)) {
-                    value[size++] = value[i];
+                    value[counter++] = value[i];
                 }
             }
         } else throw new NoSuchElementException();
-        return (E) value[size];
+        return (E) elem;
     }
 
     @Override

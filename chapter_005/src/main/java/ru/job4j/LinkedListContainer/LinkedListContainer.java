@@ -34,6 +34,10 @@ public class LinkedListContainer<E> implements Iterable<E> {
         this.size++;
     }
 
+    public int size () {
+        return this.size;
+    }
+
     public E get(int index) {
         if (index < 0) {
             return null;
@@ -48,9 +52,16 @@ public class LinkedListContainer<E> implements Iterable<E> {
         return tmp.value;
     }
 
-    public E remove () {
+    public void remove (int index) {
+        if (index < 0) {
+            return;
+        }
 
-        return null;
+        Node<E> tmp = head;
+
+        for (int i = 0; i < index; i++) {
+            tmp = null;
+        }
     }
 
     @Override

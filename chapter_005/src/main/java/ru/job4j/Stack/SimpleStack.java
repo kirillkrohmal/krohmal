@@ -8,7 +8,7 @@ import java.util.Stack;
 /**
  * Created by Comp on 24.09.2017.
  */
-public class SimpleStack<T> extends LinkedListContainer {
+public class SimpleStack<T> extends LinkedListContainer<T> {
     Node<T> head;
     Node<T> tail;
     int size = 0;
@@ -30,7 +30,12 @@ public class SimpleStack<T> extends LinkedListContainer {
      * @throws  EmptyStackException  if this stack is empty.
      */
     public T pop() {
-        T result = (T) get(size - 1);
+        T result = (T) get(size() - 1);
+        remove(size() - 1);
         return result;
+    }
+
+    public T peek() {
+        return get(size() - 1);
     }
 }
