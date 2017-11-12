@@ -21,7 +21,6 @@ public class SimpleSet<E> implements Iterator<E> {
         this.size = size;
     }
 
-
     public void add(E e) {
         boolean isPresent = false;
 

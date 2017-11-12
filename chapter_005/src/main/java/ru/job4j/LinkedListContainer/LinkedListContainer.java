@@ -48,6 +48,11 @@ public class LinkedListContainer<E> implements Iterable<E> {
         return tmp.value;
     }
 
+    public E remove () {
+
+        return null;
+    }
+
     @Override
     public Iterator<E> iterator() {
         return new ArrIterator();
