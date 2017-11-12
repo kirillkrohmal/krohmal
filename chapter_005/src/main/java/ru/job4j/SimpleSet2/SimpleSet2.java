@@ -1,5 +1,7 @@
 package ru.job4j.SimpleSet2;
 
+import ru.job4j.LinkedListContainer.LinkedListContainer;
+
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.NoSuchElementException;
@@ -14,6 +16,7 @@ public class SimpleSet2<E> implements Iterator<E> {
     Node<E> tail;
     int size = 0;
     Node<E> e = head;
+    LinkedListContainer list;
 
     /*
      * Реализовать коллекцию SimpleSet.
@@ -22,16 +25,9 @@ public class SimpleSet2<E> implements Iterator<E> {
      * Set - внутри для хранения данных использует связный список.
      */
     public void add(E e) {
-        final Node<E> node = new Node<E>(e);
-        if (this.head == e && head.nextElement != head.prevElement) {
-            this.head = node;
-            value.add(head.value);
-        } else if (this.head != e) {
-            while (node.nextElement != null) {
-                this.head = node.getNextElement();
-            }
+        if (!isDuplicate()) {
+            list.add(e);
         }
-        this.size++;
     }
 
     @Override
@@ -39,6 +35,11 @@ public class SimpleSet2<E> implements Iterator<E> {
         if (e != null) {
             return true;
         }
+        return false;
+    }
+
+    public boolean isDuplicate () {
+
         return false;
     }
 

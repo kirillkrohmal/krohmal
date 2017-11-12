@@ -17,6 +17,8 @@ import static org.junit.Assert.assertThat;
 public class StackTest {
     SimpleQueue simpleQueue;
     SimpleStack simpleStack;
+    private Object result;
+    private Object expected;
 
     @Test
     public void iteratorTest2() {
@@ -27,12 +29,20 @@ public class StackTest {
 
     @Test
     public void iteratorTest3() {
+        simpleStack = new SimpleStack();
         assertThat(simpleStack.peek(), is(2));
     }
 
     @Test
     public void iteratorTest4() {
-        assertThat(simpleStack.pop(), is(0));
+        simpleStack = new SimpleStack();
+        simpleStack.push(1);
+        simpleStack.push(2);
+        simpleStack.pop();
+        simpleStack.pop();
+        result = simpleStack.pop();
+        expected = null;
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -44,6 +54,7 @@ public class StackTest {
 
     @Test
     public void iteratorTest6() {
+
         assertThat(simpleQueue.poll(), is(2));
     }
 }
