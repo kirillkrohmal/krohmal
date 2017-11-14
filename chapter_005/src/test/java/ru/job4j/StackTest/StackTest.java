@@ -54,7 +54,6 @@ public class StackTest {
 
     @Test
     public void iteratorTest6() {
-
         assertThat(simpleQueue.poll(), is(2));
     }
 }

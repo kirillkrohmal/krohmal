@@ -23,38 +23,47 @@ public class SimpleSet<E> implements Iterator<E> {
     }
 
     public void add(E e) {
-        boolean isPresent = false;
-
-        for (int i = 0; i < size; i++) {
-            if (value[i].equals(e)) {
-                isPresent = true;
-            }
-        }
-        if (!isPresent) {
+        if (!isDuplicate()) {
             if (size < value.length) {
                 value[size++] = e;
             }
         }
+
+        if (value.length <= size) {
+            Arrays.copyOf(value, value.length*2);
+        }
+    }
+
+    public boolean isDuplicate() {
+        boolean duplicate=false;
+        for (int i = 0; i < size; i++) {
+            if (value[i].equals(e)) {
+                duplicate = true;
+            }
+        }
+
+        return duplicate;
     }
 
     @Override
     public boolean hasNext() {
         boolean isPresent = false;
 
-        if (value.length != counter && size >= 0) {
-            isPresent = true;
+        if (!isDuplicate()) {
+            if (size >= 0 && e != null) {
+                isPresent = true;
+            }
         }
         return isPresent;
     }
 
-
     @Override
     public E next() {
-        E[] elem = (E[]) value[size];
+        E[] elem = (E[]) value[counter];
         if (hasNext()) {
             for (int i = 0; i < size; i++) {
-                if (value[i].equals(value.length)) {
-                    value[counter++] = value[i];
+                if (value[i] != null) {
+                    value[counter++] = i;
                 }
             }
         } else throw new NoSuchElementException();
