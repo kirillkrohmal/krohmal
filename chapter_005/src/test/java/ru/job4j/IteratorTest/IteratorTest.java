@@ -1,4 +1,4 @@
-package ru.job4j.CrudServlet;
+package ru.job4j.IteratorTest;
 
 import org.junit.Test;
 import ru.job4j.Iterator.ArrIterator;

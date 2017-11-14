@@ -34,7 +34,6 @@ public class SimpleSet2<E> implements Iterator<E> {
         return false;
     }
 
-
     @Override
     public E next() {
         E element;
@@ -43,5 +42,27 @@ public class SimpleSet2<E> implements Iterator<E> {
         } else throw new NoSuchElementException();
 
         return element;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SimpleSet2<?> that = (SimpleSet2<?>) o;
+
+        if (size != that.size) return false;
+        if (list != null ? !list.equals(that.list) : that.list != null) return false;
+        if (iterator != null ? !iterator.equals(that.iterator) : that.iterator != null) return false;
+        return simpleSet != null ? simpleSet.equals(that.simpleSet) : that.simpleSet == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = list != null ? list.hashCode() : 0;
+        result = 31 * result + (iterator != null ? iterator.hashCode() : 0);
+        result = 31 * result + (simpleSet != null ? simpleSet.hashCode() : 0);
+        result = 31 * result + size;
+        return result;
     }
 }

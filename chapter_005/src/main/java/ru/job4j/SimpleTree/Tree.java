@@ -6,10 +6,11 @@ import java.util.*;
  * Created by Comp on 03.10.2017.
  */
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
-    Node<E> node;
-    List<Node<E>> childen;
-    List<Node<E>> parent;
-    Tree<String> tree;
+    private Node<E> node;
+
+    public Tree(Node<E> parent) {
+    }
+    // TreeSet treeSet;
 
     /*
      * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
@@ -17,54 +18,38 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
      * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
      */
     @Override
-    public boolean add(E parent, E child) {
-        E pointer = child;
-        if (pointer.equals(child)) {
-            childen.add((Node<E>) child);
+    public boolean add(Node<E> parent, Node<E> child) {
+        if (compare(parent, node) == 0) {
+            node.childen.add(child);
         }
 
         return false;
     }
 
-    /*
-     * Добавить метод boolean isBinary().
-     * Метод должен проверять количество дочерних элементов в дереве. Если их <= 2 - то дерево бинарное.
-     * метод должен циклически пройти по всем элементам дерева.
-     */
-    public boolean isBinary() {
-        List<Node<E>> r = childen;
-
-        for (int i = 0; i < childen.size(); i++) {
-            if (i <= 2) {
-                return true;
-            }
-        }
-        return false;
+    private int compare(Node<E> first, Node<E> second) {
+        return compare(first, second);
     }
 
-    class ArrIterator implements Iterator<E> {
-        List<Node<E>> e = childen;
+    @Override
+    public Iterator<Node<E>> iterator() {
+        return new ArrIterator();
+    }
+
+    class ArrIterator implements Iterator<Node<E>> {
+
+        Iterator<Node<E>> iterator = node.childen.iterator();
+
 
         @Override
         public boolean hasNext() {
-            if (e != null) {
-                return true;
-            }
             return false;
         }
 
         @Override
-        public E next() {
-            Node<E> element = null;
-            if (hasNext() == true) {
-                element = node.child;
-            }
-            return (E) element;
+        public Node<E> next() {
+            return null;
         }
     }
 
-    @Override
-    public Iterator<E> iterator() {
-        return new ArrIterator();
-    }
+
 }

@@ -1,4 +1,4 @@
-package ru.job4j.SimpleTree;
+package ru.job4j.SimpleTreeBinary;
 
 import java.util.LinkedList;
 
@@ -7,17 +7,13 @@ import java.util.LinkedList;
  */
 public class Node<E> {
     E value;
-    public LinkedList<Node<E>> childen;
-    public boolean result;
+    LinkedList<Node<E>> childen;
+    boolean result;
 
     public Node(E value, LinkedList<Node<E>> childen, boolean result) {
         this.value = value;
         this.childen = childen;
         this.result = result;
-    }
-
-    public Node(E value) {
-        this.value = value;
     }
 
     public E getValue() {
