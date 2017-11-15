@@ -46,20 +46,22 @@ public class Node<T> {
             return false;
         }
 
-        Node head = first;
-        Node tail = first;
+        Node fast = first.next.next;
+        /*Node fast2 = two.next.next.next;
+        Node fast3 = third.next.next;
+        Node fast4 = four.next;*/
+        Node slow = first;
 
-        while (head == null && tail == null) {
-            head = head.next;
-            tail = tail.next.next;
-
-            if (head == null && tail == null) {
-                return false;
+        while (fast != null && fast.next != null && slow != null) {
+            if (fast == slow) {
+                return true;
             }
 
-            if (head == tail) {
-                return false;
-            }
+            fast = fast.next.next;
+            //fast2 = fast.next;
+            //fast3 = fast;
+
+            slow = slow.next;
         }
         return false;
     }

@@ -49,7 +49,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
         return tmp.value;
     }
 
-    public void remove (int index) {
+    protected void remove (int index) {
         if (index < 0) {
             return;
         }
@@ -81,8 +81,8 @@ public class LinkedListContainer<E> implements Iterable<E> {
 
         @Override
         public E next() {
-            E element = null;
-            if (hasNext() == true) {
+            E element;
+            if (hasNext()) {
                 element = e.value;
                 e = e.nextElement;
             } else throw new NoSuchElementException();

@@ -1,17 +1,37 @@
 package ru.job4j.PasteSet;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Comp on 14.10.2017.
  */
-public class PasteIt1 {
-   // Set<Integer> set = new HashTable(2);
+public class PasteIt1<E> {
+    Map<String, String> map = new HashMap<String, String>();
 
+    int size = 0;
 
-    /*public void add (int value) {
-        set.addAll(Arrays.asList(4, 6, 1));
-    }*/
+    boolean add(E e) {
+
+        for (String s : map.keySet()) {
+            for (String s1 : map.values()) {
+
+            }
+        }
+
+        //map.put(e)
+
+        return false;
+    }
+
+    boolean contains(E e) {
+
+        return false;
+    }
+
+    boolean remove(E e) {
+
+        //map.remove()
+
+        return false;
+    }
 }
