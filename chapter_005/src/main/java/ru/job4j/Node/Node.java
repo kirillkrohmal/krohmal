@@ -1,7 +1,5 @@
 package ru.job4j.Node;
 
-import java.util.LinkedList;
-
 /**
  * Created by Comp on 24.09.2017.
  */
@@ -46,10 +44,7 @@ public class Node<T> {
             return false;
         }
 
-        Node fast = first.next.next;
-        /*Node fast2 = two.next.next.next;
-        Node fast3 = third.next.next;
-        Node fast4 = four.next;*/
+        Node fast = first.next;
         Node slow = first;
 
         while (fast != null && fast.next != null && slow != null) {
@@ -58,9 +53,6 @@ public class Node<T> {
             }
 
             fast = fast.next.next;
-            //fast2 = fast.next;
-            //fast3 = fast;
-
             slow = slow.next;
         }
         return false;

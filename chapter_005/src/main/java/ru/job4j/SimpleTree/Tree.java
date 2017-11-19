@@ -30,6 +30,17 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return compare(first, second);
     }
 
+    public boolean isDuplicate(E first) {
+        boolean duplicate = false;
+        /*for (int i = 0; i < node.setValue(); i++) {
+            if (node.equals(node.childen)) {
+                duplicate = true;
+            }
+        }
+*/
+        return duplicate;
+    }
+
     @Override
     public Iterator<Node<E>> iterator() {
         return new ArrIterator();

@@ -25,6 +25,7 @@ public class NodeTest {
         two.setNext(third);
         third.setNext(forth);
         forth.setNext(first);
+        first.setNext(third);
 
         boolean result = node.hasCycle(first);
         assertThat(result, is(true));

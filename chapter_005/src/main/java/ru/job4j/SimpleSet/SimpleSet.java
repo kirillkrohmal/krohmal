@@ -35,7 +35,7 @@ public class SimpleSet<E> implements Iterator<E> {
     }
 
     public boolean isDuplicate() {
-        boolean duplicate=false;
+        boolean duplicate = false;
         for (int i = 0; i < size; i++) {
             if (value[i].equals(e)) {
                 duplicate = true;

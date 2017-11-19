@@ -1,6 +1,5 @@
 package ru.job4j.SimpleSet2;
 
-import ru.job4j.LinkedListContainer.LinkedListContainer;
 import ru.job4j.SimpleSet.SimpleSet;
 
 import java.util.*;
