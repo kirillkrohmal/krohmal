@@ -53,7 +53,7 @@ public class Node<T> {
             }
 
             fast = fast.next.next;
-            slow = slow.next;
+            slow = fast.next;
         }
         return false;
     }
