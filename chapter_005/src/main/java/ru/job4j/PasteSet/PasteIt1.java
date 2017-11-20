@@ -6,17 +6,16 @@ import java.util.*;
  * Created by Comp on 14.10.2017.
  */
 public class PasteIt1<E> {
-    Map<String, String> map = new HashMap<String, String>();
+    Hashtable hashtable = new Hashtable();
 
     int size = 0;
 
     boolean add(E e) {
-
-        for (String s : map.keySet()) {
-            for (String s1 : map.values()) {
-
-            }
+        for (int i = 0; i < hashtable.size(); i++) {
+            //hashtable.put();
         }
+
+
 
         //map.put(e)
 

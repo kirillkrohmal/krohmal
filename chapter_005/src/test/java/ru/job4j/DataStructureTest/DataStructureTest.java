@@ -1,6 +1,7 @@
 package ru.job4j.DataStructureTest;
 
 import org.junit.Test;
+import org.testng.annotations.Optional;
 import ru.job4j.DataStructure.DataStructure;
 import ru.job4j.DynamicList.DynamicList;
 
@@ -12,9 +13,8 @@ import static org.junit.Assert.assertThat;
 public class DataStructureTest<K, V> {
     DataStructure dataStructure;
     K key;
-    V value;
-    private Class<? extends Object> expected;
-
+    Class<?> value;
+    private Class<?> expected;
 
     @Test
     public void iteratorTest() {
@@ -22,5 +22,21 @@ public class DataStructureTest<K, V> {
         dataStructure.get(value);
         expected = null;
         //assertThat(value, is());
+    }
+
+    @Test
+    public void iteratorTest2() {
+        dataStructure = new DataStructure();
+        dataStructure.insert(key, value);
+        expected = value;
+        assertThat(value, is(java.util.Optional.ofNullable(expected)));
+    }
+
+    @Test
+    public void iteratorTest3() {
+        dataStructure = new DataStructure();
+        dataStructure.delete(key);
+        expected = value;
+        assertThat(value, is(java.util.Optional.ofNullable(expected)));
     }
 }

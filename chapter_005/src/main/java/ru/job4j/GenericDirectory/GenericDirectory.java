@@ -1,5 +1,6 @@
 package ru.job4j.GenericDirectory;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -35,5 +36,24 @@ public class GenericDirectory<T, V> implements Iterator {
     @Override
     public T next() {
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GenericDirectory<?, ?> that = (GenericDirectory<?, ?>) o;
+
+        if (size != that.size) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(ts, that.ts);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.hashCode(ts);
+        result = 31 * result + size;
+        return result;
     }
 }
