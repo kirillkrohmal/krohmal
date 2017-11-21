@@ -10,11 +10,11 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SimpleSetTest<E> {
-    SimpleSet simpleSet;
+    SimpleSet<Integer> simpleSet;
 
     @Test
     public void iteratorTest() {
-        simpleSet = new SimpleSet();
+        simpleSet = new SimpleSet<Integer>();
         Integer value = new Integer(4);
         E expected = (E) value;
         simpleSet.add(value);
@@ -23,7 +23,7 @@ public class SimpleSetTest<E> {
 
     @Before
     public void iteratorTest3() {
-        simpleSet = new SimpleSet();
+        simpleSet = new SimpleSet<Integer>();
 
         simpleSet.add(1);
         simpleSet.add(2);
@@ -38,6 +38,8 @@ public class SimpleSetTest<E> {
     @Test
     public void iteratorTest4() {
         Iterator<Integer> iterator = simpleSet;
+        //simpleSet = new SimpleSet<Integer>();
+
         assertThat(iterator.hasNext(), is(true));
         assertThat(iterator.next(), is(1));
         assertThat(iterator.hasNext(), is(true));

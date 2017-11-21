@@ -11,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SimpleSetTest2<E> {
-    SimpleSet simpleSet2;
+    SimpleSet<Integer> simpleSet2;
 
     @Test
     public void iteratorTest() {
@@ -26,7 +26,7 @@ public class SimpleSetTest2<E> {
 
     @Before
     public void iteratorTest2() {
-        simpleSet2 = new SimpleSet();
+        simpleSet2 = new SimpleSet<Integer>();
 
         simpleSet2.add(1);
         simpleSet2.add(2);

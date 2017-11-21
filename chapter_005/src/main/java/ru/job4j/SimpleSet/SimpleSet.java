@@ -17,28 +17,41 @@ public class SimpleSet<E> implements Iterator<E> {
         this.value = new Object[1000];
     }
 
-    public SimpleSet(Object[] value, int size) {
-        this.value = value;
-        this.size = size;
-    }
-
     public void add(E e) {
-        if (!isDuplicate()) {
+        if (!isDuplicate(e)) {
             if (size < value.length) {
                 value[size++] = e;
             }
         }
 
         if (value.length <= size) {
-            Arrays.copyOf(value, value.length*2);
+            value = Arrays.copyOf(value, value.length*2);
         }
     }
+    /**
+     * Returns <tt>true</tt> if this set contains the specified element.
+     * More formally, returns <tt>true</tt> if and only if this set
+     * contains an element <tt>e</tt> such that
+     * <tt>(o==null&nbsp;?&nbsp;e==null&nbsp;:&nbsp;o.equals(e))</tt>.
+     * element whose presence in this set is to be tested
+    */
+    public boolean contains(E e) {
+        boolean isContains = false;
+        for (int i = 0; i < value.length; i++) {
+            if (e != null && e.equals(value[i])) {
+                isContains = true;
+            }
+        }
 
-    public boolean isDuplicate() {
+        return isContains;
+    }
+
+    public boolean isDuplicate(E e) {
         boolean duplicate = false;
         for (int i = 0; i < size; i++) {
             if (value[i].equals(e)) {
                 duplicate = true;
+                break;
             }
         }
 
@@ -49,11 +62,10 @@ public class SimpleSet<E> implements Iterator<E> {
     public boolean hasNext() {
         boolean isPresent = false;
 
-        if (!isDuplicate()) {
-            if (size >= 0 && e != null) {
-                isPresent = true;
-            }
+        if (contains(e)) {
+            isPresent = true;
         }
+
         return isPresent;
     }
 

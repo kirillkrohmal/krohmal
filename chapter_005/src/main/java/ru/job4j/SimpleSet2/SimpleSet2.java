@@ -11,6 +11,7 @@ public class SimpleSet2<E> implements Iterator<E> {
     LinkedList<E> list;
     Iterator<E> iterator;
     SimpleSet simpleSet;
+    Set set = new HashSet<>();
     int size = 0;
 
     /*
@@ -20,7 +21,7 @@ public class SimpleSet2<E> implements Iterator<E> {
      * Set - внутри для хранения данных использует связный список.
      */
     public void add(E e) {
-        if (!simpleSet.isDuplicate()) {
+        if (!simpleSet.isDuplicate(e)) {
             list.add(e);
         }
     }

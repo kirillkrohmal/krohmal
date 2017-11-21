@@ -3,8 +3,7 @@ package ru.job4j.LinkedListContainer;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import ru.job4j.LinkedListContainer.LinkedListContainer;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -14,31 +13,23 @@ import static org.junit.Assert.assertThat;
  */
 
 public class LinkedListContainerTest<E> {
-    LinkedListContainer<String> container;
+    LinkedListContainer<Integer> container;
 
     @Test
     public void iteratorTest() {
-        container = new LinkedListContainer();
-        Integer value = new Integer(4);
+        container = new LinkedListContainer<Integer>();
         int index = 1;
+        Integer value = index;
+
         Object expected = container;
-        //container.add(value);
+        container.add(value);
 
         assertThat(container.get(index), is(expected));
     }
 
-    @Test
-    public void iteratorTest2() {
-        container = new LinkedListContainer<>();
-        String expected = "Hello";
-        container.add(expected);
-        String actual = container.get(0);
-        assertThat(actual, is(expected));
-    }
-/*
     @Before
     public void iteratorTest5() {
-        container = new LinkedListContainer();
+        container = new LinkedListContainer<Integer>();
 
         container.add(1);
         container.add(2);
@@ -50,19 +41,20 @@ public class LinkedListContainerTest<E> {
 
     @Test
     public void iteratorTest6() {
-        CrudServlet<Integer> iterator = container.iterator();
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(1) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(2) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(3) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(4) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(5) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(6) );
-        assertThat(iterator.hasNext(), is( false) );*/
+        container = new LinkedListContainer<Integer>();
+        assertThat(container.iterator().hasNext(), is(true));
+        assertThat(container.iterator().next(), is(1));
+        assertThat(container.iterator().hasNext(), is(true));
+        assertThat(container.iterator().next(), is(2));
+        assertThat(container.iterator().hasNext(), is(true));
+        assertThat(container.iterator().next(), is(3));
+        assertThat(container.iterator().hasNext(), is(true));
+        assertThat(container.iterator().next(), is(4));
+        assertThat(container.iterator().hasNext(), is(true));
+        assertThat(container.iterator().next(), is(5));
+        assertThat(container.iterator().hasNext(), is(true));
+        assertThat(container.iterator().next(), is(6));
+        assertThat(container.iterator().hasNext(), is(false));
+    }
 }
 
