@@ -10,7 +10,6 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 23.10.2017.
  */
 public class NodeTest {
-
     private final int three = 3;
     private final int four = 4;
 
