@@ -1,7 +1,6 @@
 package ru.job4j.Stack;
 
 import ru.job4j.LinkedListContainer.LinkedListContainer;
-
 import java.util.EmptyStackException;
 
 /**

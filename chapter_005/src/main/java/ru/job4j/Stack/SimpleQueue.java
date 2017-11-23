@@ -1,7 +1,5 @@
 package ru.job4j.Stack;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
 
 /**
  * Created by Comp on 24.09.2017.
