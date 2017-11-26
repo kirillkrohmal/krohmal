@@ -47,6 +47,10 @@ public class SimpleSet<E> implements Iterator<E> {
         return isContains;
     }
 
+    public int size () {
+        return this.size;
+    }
+
     public boolean isDuplicate(E e) {
         boolean duplicate = false;
         for (int i = 0; i < size; i++) {
@@ -61,13 +65,8 @@ public class SimpleSet<E> implements Iterator<E> {
 
     @Override
     public boolean hasNext() {
-        boolean isPresent = false;
-
-        if (value.length != 0) {
-            isPresent = true;
-        }
-
-        return isPresent;
+        boolean isPresent;
+        return isPresent = size() != counter;
     }
 
     @Override
