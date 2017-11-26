@@ -63,7 +63,7 @@ public class SimpleSet<E> implements Iterator<E> {
     public boolean hasNext() {
         boolean isPresent = false;
 
-        if (e != null) {
+        if (value.length != 0) {
             isPresent = true;
         }
 
@@ -80,7 +80,7 @@ public class SimpleSet<E> implements Iterator<E> {
                 }
             }
         } else throw new NoSuchElementException();
-        return elem;
+        return (E) value[counter++];
     }
 
     @Override
