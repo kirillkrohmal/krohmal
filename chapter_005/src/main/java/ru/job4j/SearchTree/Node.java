@@ -1,10 +1,14 @@
 package ru.job4j.SearchTree;
 
+
 /**
  * Created by Comp on 29.09.2017.
  */
 public class Node<E> {
     Node<E> nextElement;
+    Node<E> left;
+    Node<E> right;
+
     E value;
 
     public Node(Node<E> nextElement, E value) {

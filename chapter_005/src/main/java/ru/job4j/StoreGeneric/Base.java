@@ -1,9 +1,9 @@
 package ru.job4j.StoreGeneric;
 
 public abstract class Base {
-    String id;
+    private String id;
 
-    public String getId() {
+    String getId() {
         return id;
     }
 

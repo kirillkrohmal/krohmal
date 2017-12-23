@@ -3,8 +3,6 @@ package ru.job4j.LinkedListContainer;
 import org.junit.Before;
 import org.junit.Test;
 
-import ru.job4j.LinkedListContainer.LinkedListContainer;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -18,11 +16,9 @@ public class LinkedListContainerTest<E> {
     @Test
     public void iteratorTest() {
         container = new LinkedListContainer<Integer>();
-        int index = 1;
-        Integer value = index;
-
-        Object expected = container;
-        container.add(value);
+        int index = 0;
+        Integer expected = 4;
+        container.add(4);
 
         assertThat(container.get(index), is(expected));
     }
@@ -31,17 +27,20 @@ public class LinkedListContainerTest<E> {
     public void iteratorTest5() {
         container = new LinkedListContainer<Integer>();
 
+
+    }
+
+    @Test
+    public void iteratorTest6() {
+        container = new LinkedListContainer<Integer>();
+
         container.add(1);
         container.add(2);
         container.add(3);
         container.add(4);
         container.add(5);
         container.add(6);
-    }
 
-    @Test
-    public void iteratorTest6() {
-        container = new LinkedListContainer<Integer>();
         assertThat(container.iterator().hasNext(), is(true));
         assertThat(container.iterator().next(), is(1));
         assertThat(container.iterator().hasNext(), is(true));

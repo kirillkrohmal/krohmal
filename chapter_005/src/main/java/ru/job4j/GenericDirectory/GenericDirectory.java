@@ -71,7 +71,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
                 value = (V) entry1.getValue();
             }
         }
-        return null;
+        return value;
     }
 
     /**
@@ -82,16 +82,23 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      */
     public boolean delete(K key) {
         boolean isDelete = false;
-
-        for (int i = 0; i < size(); i++) {
-
+		V value = null;
+		
+        for (Entry entry1 : entry) {
+			if (entry1.getKey().equals(key)) {
+				//entry[value] = null;
+			}
         }
 
         return false;
     }
 
     public boolean contains(K key) {
-
+		for (Entry entry1 : entry) {
+            if (entry1.getKey().equals(key)) {
+				return true;	
+			}
+		}
 
         return false;
     }
@@ -108,12 +115,20 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private class Iterat implements Iterator {
         @Override
         public boolean hasNext() {
-            return false;
+            /*if () {
+				return true;
+			}*/
+			
+			return false;
         }
 
         @Override
         public Object next() {
-            return null;
+            
+			if (hasNext()) {
+				//iterator.next();
+			}
+			return null;
         }
     }
 }

@@ -7,38 +7,72 @@ import java.util.*;
  */
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
-
-    public Tree(Node<E> parent) {
-    }
-    // TreeSet treeSet;
+    private int i;
 
     /*
      * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
-     * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
-     * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
-     */
+	 * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
+	 * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
+	 */
     @Override
-    public boolean add(Node<E> parent, Node<E> child) {
-        if (compare(parent, node) == 0) {
-            node.childen.add(child);
+    public boolean add(E parent, E child) {
+        boolean isPresent = false;
+        if (parent == null && child == null) {
+            return false;
         }
 
-        return false;
+        if (compare(parent, child) == 0) {
+
+            //node.childen.add(child);
+            isPresent = true;
+        }
+
+        return isPresent;
     }
 
-    private int compare(Node<E> first, Node<E> second) {
-        return compare(first, second);
+
+    private int compare(E first, E second) {
+
+        List<Node<E>> list = new LinkedList<>();
+        int element = 0;
+        while (node.childen != null) {
+
+            if (list.contains(first)) {
+                element = 1;
+            }
+            if (!list.contains(first)) {
+                element = -1;
+            }
+        }
+
+        return element;
     }
 
-    public boolean isDuplicate(E first) {
+    public boolean isDuplicate(Node<E> first) {
         boolean duplicate = false;
-        /*for (int i = 0; i < node.setValue(); i++) {
-            if (node.equals(node.childen)) {
+        for (Object o : node.childen) {
+            if (o.equals(node.value)) {
                 duplicate = true;
             }
         }
-*/
         return duplicate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tree<?> tree = (Tree<?>) o;
+
+        return i == tree.i && (node != null ? node.equals(tree.node) : tree.node == null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = node != null ? node.hashCode() : 0;
+        result = 31 * result + i;
+        return result;
     }
 
     @Override
@@ -46,21 +80,34 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return new ArrIterator();
     }
 
+    public Optional<Object> findBy(E e) {
+
+        return null;
+    }
+
     class ArrIterator implements Iterator<Node<E>> {
-
-        Iterator<Node<E>> iterator = node.childen.iterator();
-
 
         @Override
         public boolean hasNext() {
-            return false;
+
+            E elem = node.value;
+            int counter = 0;
+
+            boolean isPresent = false;
+            if (elem != null) {
+                isPresent = true;
+            }
+            return isPresent;
         }
 
         @Override
         public Node<E> next() {
-            return null;
+            node = iterator().next();
+            Node<E> element = node;
+
+            if (hasNext()) {
+                return element;
+            } else throw new NullPointerException();
         }
     }
-
-
 }

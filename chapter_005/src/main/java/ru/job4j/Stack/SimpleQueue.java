@@ -5,9 +5,9 @@ package ru.job4j.Stack;
  * Created by Comp on 24.09.2017.
  */
 public class SimpleQueue<T> {
-    Node<T> head;
-    Node<T> tail;
-    int size = 0;
+    private Node<T> head;
+    private Node<T> tail;
+    private int size = 0;
 
     /**
      * Retrieves and removes the head of this queue,

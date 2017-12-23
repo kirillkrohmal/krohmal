@@ -5,8 +5,8 @@ package ru.job4j.StoreGeneric;
  * Created by Comp on 24.09.2017.
  */
 public abstract class AbstractStore<T extends Base> implements Store<T> {
-    Base[] baseT = new Base[100];
-    int index = 0;
+    private Base[] baseT = new Base[100];
+    private int index = 0;
 
     @Override
     public T add(T model) {

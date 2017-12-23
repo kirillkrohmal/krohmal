@@ -38,3 +38,136 @@ node.children.add(child);
 В дереве не могут быть дубликатов.
 
 Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
+
+
+
+Как мы видим. Каждый элемент дерева можем быть сам деревом.
+ 
+1. Вам необходимо реализовать интерфейс 
+ 
+package ru.job4j.tree;
+
+import java.util.Optional;
+
+public interface SimpleTree<E extends Comparable<E>> extends Iterable<E> {
+    /**
+     * Добавить элемент child в parent.
+     * Parent может иметь список child.
+     * @param parent parent.
+     * @param child child.
+     * @return
+     */
+    boolean add(E parent, E child);
+
+    Optional<Node<E>> findBy(E value);
+}
+
+
+2. Элемент дерева может иметь множество дочерних элементов.
+package ru.job4j.tree;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author Petr Arsentev (parsentev@yandex.ru)
+ * @version $Id$
+ * @since 0.1
+ */
+public class Node<E> {
+    private final List<Node<E>> children = new ArrayList<>();
+    private final E value;
+
+    public Node(final E value) {
+        this.value = value;
+    }
+
+    public void add(Node<E> child) {
+        this.children.add(child);
+    }
+
+    public List<Node<E>> leaves() {
+        return this.children;
+    }
+
+    public boolean eqValue(E that) {
+        return this.value.equals(that);
+    }
+}
+
+
+метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять в него дочерний элемент.
+
+node.children.add(child);
+
+В дереве не могут быть дубликатов.
+
+
+Давайте рассмотрим пример реализации метода findBy
+
+В качестве базового алгоритма мы будет использовать алгоритм поиска в ширину.
+
+@Override
+public Optional<Node<E>> findBy(E value) {
+    Optional<Node<E>> rsl = Optional.empty();
+    Queue<Node<E>> data = new LinkedList<>();
+    data.offer(this.root);
+    while (!data.isEmpty()) {
+        Node<E> el = data.poll();
+        if (el.eqValue(value)) {
+            rsl = Optional.of(el);
+            break;
+        }
+        for (Node<E> child : el.leaves()) {
+            data.offer(child);
+        }
+    }
+    return rsl;
+}
+
+Смысл этого алгоритма в следующем.
+Мы берем очередь и добавляем первый элемент дерева - это корень.
+Дальше, если корень не наш элемент мы добавляем все элементы корня.
+И так для каждого элемента.
+
+Давайте напишем тест на наш код.
+
+package ru.job4j.tree;
+
+import org.junit.Test;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.*;
+
+/**
+ * @author Petr Arsentev (parsentev@yandex.ru)
+ * @version $Id$
+ * @since 0.1
+ */
+public class TreeTest {
+    @Test
+    public void when6ElFindLastThen6() {
+        Tree<Integer> tree = new Tree<>(1);
+        tree.add(1, 2);
+        tree.add(1, 3);
+        tree.add(1, 4);
+        tree.add(4, 5);
+        tree.add(5, 6);
+        assertThat(
+                tree.findBy(6).isPresent(),
+                is(true)
+        );
+    }
+
+    @Test
+    public void when6ElFindNotExitThenOptionEmpty() {
+        Tree<Integer> tree = new Tree<>(1);
+        tree.add(1, 2);
+        assertThat(
+                tree.findBy(7).isPresent(),
+                is(false)
+        );
+    }
+}
+
+Вам нужно дореализовать дерево используя этот алгоритм.
+

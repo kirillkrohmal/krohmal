@@ -10,7 +10,7 @@ package ru.job4j.Oracle_Tests.OCPJP1.question10.p2;
  */
 
 import ru.job4j.Oracle_Tests.OCPJP1.question10.p1.A;
-import ru.job4j.Oracle_Tests.question10.p1.*;
+//import ru.job4j.Oracle_Tests.question10.p1.*;
 
 public class B extends A {
     public void process(A a) {

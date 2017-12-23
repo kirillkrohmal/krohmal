@@ -1,8 +1,8 @@
 package ru.job4j.StoreGeneric;
 
 public class User extends Base {
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public User(String name, int age) {
         this.name = name;
@@ -16,8 +16,7 @@ public class User extends Base {
 
         User user = (User) o;
 
-        if (age != user.age) return false;
-        return name != null ? name.equals(user.name) : user.name == null;
+        return age == user.age && (name != null ? name.equals(user.name) : user.name == null);
     }
 
     @Override

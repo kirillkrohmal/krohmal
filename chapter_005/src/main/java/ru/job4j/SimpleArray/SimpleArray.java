@@ -1,8 +1,6 @@
 package ru.job4j.SimpleArray;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Comp on 22.09.2017.

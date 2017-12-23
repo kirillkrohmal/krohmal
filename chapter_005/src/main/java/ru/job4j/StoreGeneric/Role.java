@@ -1,8 +1,8 @@
 package ru.job4j.StoreGeneric;
 
 public class Role extends Base {
-    String work;
-    int hour;
+    private String work;
+    private int hour;
 
     public Role(String work, int hour) {
         this.work = work;

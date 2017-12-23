@@ -13,6 +13,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
     private Node<E> head;
     private int size = 0;
 
+
     public LinkedListContainer() {
         this.size = 0;
     }
@@ -31,7 +32,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
         this.size++;
     }
 
-    public int size () {
+    public int size() {
         return this.size;
     }
 
@@ -49,14 +50,14 @@ public class LinkedListContainer<E> implements Iterable<E> {
         return tmp.value;
     }
 
-    protected void remove (int index) {
+    protected void remove(int index) {
         if (index < 0) {
             return;
         }
         Node<E> tmp = head;
         for (int i = 0; i < index; i++) {
             if (head.getNextElement() != null && tmp != null) {
-                head.getNextElement();
+                head.setNextElement(tmp);
                 tmp = null;
             }
         }
@@ -73,10 +74,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
 
         @Override
         public boolean hasNext() {
-            if (e != null) {
-                return true;
-            }
-            return false;
+            return e != null;
         }
 
         @Override

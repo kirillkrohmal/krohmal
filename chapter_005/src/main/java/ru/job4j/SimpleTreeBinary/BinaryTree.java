@@ -3,10 +3,10 @@ package ru.job4j.SimpleTreeBinary;
 import ru.job4j.SimpleTree.Node;
 import ru.job4j.SimpleTree.SimpleTree;
 
-import java.util.Comparator;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
+
 
 /**
  * Created by Comp on 03.10.2017.
@@ -20,15 +20,15 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
      * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
      */
     @Override
-    public boolean add(Node<E> parent, Node<E> child) {
-        if (compare(parent, node) == 0) {
-            node.childen.add(child);
-        }
+    public boolean add(E parent, E child) {
+        //if (compare(parent, node) == 0) {
+        // node.childen.add();
+
 
         return false;
     }
 
-    int compare(Node<E> o1, Node<E> o2) {
+    private int compare(Node<E> o1, Node<E> o2) {
         return o1.getValue().compareTo(o2.getValue());
     }
 
@@ -38,10 +38,16 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
      * метод должен циклически пройти по всем элементам дерева.
      */
     public boolean isBinary() {
-        List<Node<E>> r;
+        List<Node<E>> r = new LinkedList<>();
+        boolean isBinaryTree = false;
 
+        for (int i = 0; i < r.size(); i++) {
+            if (node.childen.equals(i)) {
+                isBinaryTree = true;
+            }
+        }
 
-        return false;
+        return isBinaryTree;
     }
 
     @Override
@@ -65,6 +71,5 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
             return (E) element;
         }
     }
-
 
 }

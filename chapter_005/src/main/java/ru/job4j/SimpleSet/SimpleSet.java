@@ -51,7 +51,7 @@ public class SimpleSet<E> implements Iterator<E> {
         return this.size;
     }
 
-    public boolean isDuplicate(E e) {
+    private boolean isDuplicate(E e) {
         boolean duplicate = false;
         for (int i = 0; i < size; i++) {
             if (value[i].equals(e)) {
@@ -71,15 +71,9 @@ public class SimpleSet<E> implements Iterator<E> {
 
     @Override
     public E next() {
-        E elem = null;
         if (hasNext()) {
-            for (int i = 0; i < size; i++) {
-                if (value[i] != null && contains(e)) {
-                    value[counter++] = value[i];
-                }
-            }
+            return (E) value[counter++];
         } else throw new NoSuchElementException();
-        return (E) value[counter++];
     }
 
     @Override

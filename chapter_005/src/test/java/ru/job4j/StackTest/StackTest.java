@@ -1,12 +1,9 @@
 package ru.job4j.StackTest;
 
-import org.junit.Before;
+
 import org.junit.Test;
-import ru.job4j.LinkedListContainer.LinkedListContainer;
 import ru.job4j.Stack.SimpleQueue;
 import ru.job4j.Stack.SimpleStack;
-
-import java.util.Iterator;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

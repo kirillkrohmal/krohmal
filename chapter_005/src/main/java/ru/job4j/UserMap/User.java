@@ -4,9 +4,9 @@ package ru.job4j.UserMap;
  * Created by Comp on 29.09.2017.
  */
 public class User {
-    String name;
-    int children;
-    Calendar birthday;
+    private String name;
+    private int children;
+    private Calendar birthday;
 
     public User(String name, int children, Calendar birthday) {
         this.name = name;
@@ -27,11 +27,10 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", children=" + children +
-                ", birthday=" + birthday +
-                '}';
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + children;
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        return result;
     }
 }
