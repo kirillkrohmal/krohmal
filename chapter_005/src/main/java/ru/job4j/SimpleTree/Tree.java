@@ -21,16 +21,36 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return false;
         }
 
-        if (compare(parent, child) == 0) {
+        if (isDuplicate(parent) && compare(parent, child) == 0) {
 
-            //node.childen.add(child);
+
+
+            node.childen.add((Node<E>) node.value);
             isPresent = true;
         }
 
         return isPresent;
     }
 
+   /* @Override
+    public Optional<Node<E>> findBy(E value) {
+        Optional<Node<E>> rsl = Optional.empty();
+        Queue<Node<E>> data = new LinkedList<>();
+        data.offer(this.root);
+        while (!data.isEmpty()) {
+            Node<E> el = data.poll();
+            if (el.eqValue(value)) {
+                rsl = Optional.of(el);
+                break;
+            }
+            for (Node<E> child : el.leaves()) {
+                data.offer(child);
+            }
+        }
+        return rsl;
+    }
 
+*/
     private int compare(E first, E second) {
 
         List<Node<E>> list = new LinkedList<>();
@@ -48,7 +68,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return element;
     }
 
-    public boolean isDuplicate(Node<E> first) {
+    public boolean isDuplicate(E first) {
         boolean duplicate = false;
         for (Object o : node.childen) {
             if (o.equals(node.value)) {
@@ -80,10 +100,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return new ArrIterator();
     }
 
-    public Optional<Object> findBy(E e) {
-
-        return null;
-    }
 
     class ArrIterator implements Iterator<Node<E>> {
 

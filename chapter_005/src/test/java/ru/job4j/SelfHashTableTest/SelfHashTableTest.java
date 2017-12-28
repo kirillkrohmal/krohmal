@@ -14,8 +14,7 @@ public class SelfHashTableTest {
     public void iteratorTest2() {
         SelfHashTable selfHashTable = new SelfHashTable(new Object[1000]);
         selfHashTable.add(5);
-        selfHashTable.remove(5);
-        Object result = selfHashTable.contains(0);
+        Object result = selfHashTable.remove(5);
         assertThat(result, is(true));
     }
     @Test

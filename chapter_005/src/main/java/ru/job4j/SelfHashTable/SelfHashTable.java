@@ -40,16 +40,19 @@ public class SelfHashTable<E> {
 
     /*
      * операцию добавления новой пары
+     * Верно, теперь поправь метод remove. А в методе add надо инкремент key перенести в if блок,
+     * иначе он инкрементируется в любом случае, вне зависимости добавлен элемент или нет.
      */
     public boolean add(E e) {
         if (e == null) {
             return false;
         }
         boolean added = false;
-        key++;
+
         if (contains(e)) {
             objects[indexOf(e)] = e;
             added = true;
+            key++;
         }
 
         return added;
@@ -68,11 +71,10 @@ public class SelfHashTable<E> {
     public boolean remove(E e) {
         boolean isRemove = false;
 
-        for (int i = 0; i < indexOf(e); i++) {
-            if (e != null && objects[getKey()] == e) {
-                e = null;
-                isRemove = true;
-            }
+        if (e != null && getKey() == key) {
+            objects[indexOf(e)] = e;
+            e = null;
+            isRemove = true;
         }
 
         return isRemove;
