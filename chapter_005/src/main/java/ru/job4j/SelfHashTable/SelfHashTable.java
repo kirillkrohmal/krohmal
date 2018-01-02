@@ -4,11 +4,11 @@ package ru.job4j.SelfHashTable;
  * Created by Comp on 14.10.2017.
  */
 public class SelfHashTable<E> {
-    Object[] objects = null;
-    int key;
-    Object value;
+    private Object[] objects = null;
+    private int key;
+    private Object value;
 
-    int size = 0;
+    private int size = 0;
 
     public SelfHashTable(Object[] objects) {
         this.objects = new Object[1000];
@@ -34,7 +34,7 @@ public class SelfHashTable<E> {
         this.value = value;
     }
 
-    public int indexOf(E e) {
+    private int indexOf(E e) {
         return e.hashCode() % objects.length;
     }
 
@@ -71,12 +71,15 @@ public class SelfHashTable<E> {
     public boolean remove(E e) {
         boolean isRemove = false;
 
-        if (e != null && getKey() == key) {
-            objects[indexOf(e)] = e;
-            e = null;
+        if (e != null && key == getKey(e)) {
+            objects[indexOf(e)] = null;
             isRemove = true;
         }
 
         return isRemove;
+    }
+
+    private int getKey(E e) {
+        return getKey();
     }
 }
