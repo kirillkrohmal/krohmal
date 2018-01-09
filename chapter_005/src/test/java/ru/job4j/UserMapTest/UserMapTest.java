@@ -1,10 +1,10 @@
 package ru.job4j.UserMapTest;
 
 import org.junit.Test;
-import ru.job4j.UserMap.Calendar;
 import ru.job4j.UserMap.OverLap;
 import ru.job4j.UserMap.User;
 
+import java.util.Calendar;
 import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
@@ -27,8 +27,8 @@ public class UserMapTest {
     }
     @Test
     public void iteratorTest2() {
-        User user1 = new User("Fedor", 2, new Calendar());
-        User user2 = new User("Fedor", 2, new Calendar());;
+        User user1 = new User("Fedor", 2, Calendar.getInstance());
+        User user2 = new User("Fedor", 2, Calendar.getInstance());;
         OverLap overLap = new OverLap();
         Map<User, Object> result = overLap.map();
         result.put(user1, "first");

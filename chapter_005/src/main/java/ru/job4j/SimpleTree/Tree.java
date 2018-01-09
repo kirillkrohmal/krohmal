@@ -15,10 +15,10 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     /*
-         * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
-         * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
-         * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
-         */
+     * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
+     * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
+     * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
+     */
     @Override
     public boolean add(E parent, E child) {
         boolean isPresent = false;
@@ -63,7 +63,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
                 element = 1;
             }
             if (!list.contains(first)) {
-                element = -1;
+                element = 1;
             }
         }
 

@@ -6,6 +6,7 @@ import ru.job4j.SimpleTree.SimpleTree;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -26,6 +27,11 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
 
 
         return false;
+    }
+
+    @Override
+    public Optional<Node<E>> findBy(E value) {
+        return null;
     }
 
     private int compare(Node<E> o1, Node<E> o2) {
@@ -51,9 +57,10 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     @Override
-    public Iterator<Node<E>> iterator() {
+    public Iterator<E> iterator() {
         return null;
     }
+
 
     class ArrIterator implements Iterator<E> {
 

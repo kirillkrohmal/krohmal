@@ -1,21 +1,11 @@
 package ru.job4j.SearchTreeTest;
 
-import org.junit.Before;
-import org.junit.Test;
-import ru.job4j.SimpleTree.SimpleTree;
-import ru.job4j.SimpleTree.Tree;
-
-import java.util.Iterator;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
 /**
  * Created by Comp on 23.10.2017.
  */
 public class SearchTreeTest {
-	SimpleTree tree = new Tree<>();
-	/*@Test
+	/*SimpleTree tree = new Tree<>();
+	@Test
 	public void when6ElFindLastThen6() {
 		Tree<Integer> tree = new Tree<Integer>(1);
 		tree.add(1, 2);
@@ -37,7 +27,7 @@ public class SearchTreeTest {
 				tree.findBy(2).isPresent(),
 				is(false)
 		);
-	}*/
+	}
 
 	@Before
 	public void iteratorTest2() {
@@ -71,7 +61,7 @@ public class SearchTreeTest {
 		assertThat(tree.iterator().next(), is(6));
 		assertThat(tree.iterator().hasNext(), is(true));
 		
-	}
+	}*/
 
 }
 
