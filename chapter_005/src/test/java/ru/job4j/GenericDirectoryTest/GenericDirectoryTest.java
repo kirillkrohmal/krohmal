@@ -1,11 +1,10 @@
-package ru.job4j.UserMapTest;
+package ru.job4j.GenericDirectoryTest;
 
 import org.junit.Test;
 import ru.job4j.UserMap.OverLap;
 import ru.job4j.UserMap.User;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
@@ -15,7 +14,7 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 21.09.2017.
  */
 
-public class UserMapTest {
+public class GenericDirectoryTest {
     @Test
     public void iteratorTest() {
         OverLap overLap = new OverLap();
@@ -36,21 +35,4 @@ public class UserMapTest {
         result.put(user2, "first");
         System.out.println(user1.equals(user2));
     }
-    @Test
-    public void iteratorTest3() {
-        Calendar date1 = new GregorianCalendar();
-        Calendar date2 = new GregorianCalendar();
-        User user1 = new User("Fedor", 2, date1);
-        User user2 = new User("Fedor", 2, date2);;
-        OverLap overLap = new OverLap();
-        Map<User, Object> result = overLap.map();
-        result.put(user1, "first");
-        result.put(user2, "first");
-        System.out.println(user1.equals(user2));
-    }
 }
-
-/*Объяви две переменные date1, date2 (например вот так Calendar date1 = new GregorianCalendar();)
-  присвой им одинаковые значения дат, и убедись, что они равны по equals.
-  А затем добавь в Map две пары ключ-значение User, Object, т.к. User будут эквивалентны по equals, то в Map'е окажется
-  лишь одна пара.   */
