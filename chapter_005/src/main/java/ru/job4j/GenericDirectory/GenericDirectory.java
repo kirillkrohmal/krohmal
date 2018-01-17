@@ -11,7 +11,6 @@ import java.util.Iterator;
 public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     Entry[] entry;
     Entry store;
-    Object object;
     private int size = 0;
     private static final int ENTRY_SIZE = 100;
 
@@ -83,14 +82,16 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     public boolean delete(K key) {
         boolean isDelete = false;
 		V value = null;
-		
+
+        int index = getHashCodeKey(key);
         for (Entry entry1 : entry) {
 			if (entry1.getKey().equals(key)) {
-				//entry[value] = null;
+				entry[index] = null;
+				isDelete = true;
 			}
         }
 
-        return false;
+        return isDelete;
     }
 
     public boolean contains(K key) {
@@ -115,18 +116,17 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private class Iterat implements Iterator {
         @Override
         public boolean hasNext() {
-            /*if () {
+            if (store.getValue() != null) {
 				return true;
-			}*/
+			}
 			
 			return false;
         }
 
         @Override
         public Object next() {
-            
 			if (hasNext()) {
-				//iterator.next();
+                iterator().next();
 			}
 			return null;
         }

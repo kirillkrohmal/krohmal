@@ -1,5 +1,6 @@
 package ru.job4j.UserMap;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,8 +8,8 @@ import java.util.Map;
  * Created by Comp on 29.09.2017.
  */
 public class OverLap {
-    private User user1 = new User("Fedor", 2, new Calendar());
-    private User user2 = new User("Fedor", 2, new Calendar());;
+    private User user1 = new User("Fedor", 2, Calendar.getInstance());
+    private User user2 = new User("Fedor", 2, Calendar.getInstance());;
     private HashMap<User, Object> userObjectMap = new HashMap<>();
 
     public Map<User, Object> map() {

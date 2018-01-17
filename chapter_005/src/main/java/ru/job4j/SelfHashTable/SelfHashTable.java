@@ -7,16 +7,47 @@ import java.util.Arrays;
  */
 public class SelfHashTable<E> {
     private Object[] objects = null;
+
     private int key;
+    private int value;
+
+    private int hash;
+
     private int size = 0;
 
     public SelfHashTable(Object[] objects) {
         objects = new Object[1000];
     }
 
-  /*  public SelfHashTable(int size) {
-        this.objects = new BasicElement[size];
-    }*/
+    public SelfHashTable(int key, int value, int hash) {
+        this.key = key;
+        this.value = value;
+        this.hash = hash;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getHash() {
+        return hash;
+    }
+
+    public void setHash(int hash) {
+        this.hash = hash;
+    }
 
     public int size() {
         return size;
@@ -63,10 +94,7 @@ public class SelfHashTable<E> {
     public boolean remove(E e) {
         boolean isRemove = false;
 
-        int i = e.hashCode();
-        BasicElement element = (BasicElement) objects[i];
-
-        if (e != null && e.equals(element.getKey())) {
+        if (objects[indexOf(e)] != null) {
             objects[indexOf(e)] = null;
             isRemove = true;
         }

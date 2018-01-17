@@ -15,10 +15,10 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     /*
-         * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
-         * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
-         * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
-         */
+     * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
+     * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
+     * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
+     */
     @Override
     public boolean add(E parent, E child) {
         boolean isPresent = false;
@@ -54,7 +54,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     private int compare(E first, E second) {
-
         List<Node<E>> list = new LinkedList<>();
         int element = 0;
         while (node.childen != null) {
@@ -62,8 +61,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             if (list.contains(first)) {
                 element = 1;
             }
-            if (!list.contains(first)) {
-                element = -1;
+            if (!list.contains(second)) {
+                element = 1;
             }
         }
 
@@ -73,7 +72,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     public boolean isDuplicate(E first) {
         boolean duplicate = false;
         for (Object o : node.childen) {
-            if (o.equals(node.value)) {
+            if (o.equals(first)) {
                 duplicate = true;
             }
         }
@@ -120,10 +119,11 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         @Override
         public E next() {
 
-            Node<E> element = node;
+            Node<E> element = null;
 
             if (hasNext()) {
-                return null;
+                //node = element.setChilden(element.childen);
+                return node.getValue();
             } else throw new NullPointerException();
         }
     }
