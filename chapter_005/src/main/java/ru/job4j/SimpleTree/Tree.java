@@ -14,6 +14,13 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         this.node = node;
     }
 
+    public Tree(E i) {
+
+    }
+
+    public Tree(int i) {
+    }
+
     /*
      * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
      * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
@@ -27,7 +34,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         }
 
         if (isDuplicate(parent) && compare(parent, child) == 0) {
-
             node.childen.add((Node<E>) node.value);
             isPresent = true;
         }
@@ -57,7 +63,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         List<Node<E>> list = new LinkedList<>();
         int element = 0;
         while (node.childen != null) {
-
             if (list.contains(first)) {
                 element = 1;
             }
@@ -71,12 +76,42 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
     public boolean isDuplicate(E first) {
         boolean duplicate = false;
-        for (Object o : node.childen) {
-            if (o.equals(first)) {
-                duplicate = true;
-            }
+
+        if (findBy(first) != null) {
+            duplicate = true;
+
         }
         return duplicate;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new ArrIterator();
+    }
+
+    class ArrIterator implements Iterator<E> {
+
+        @Override
+        public boolean hasNext() {
+            E elem = node.value;
+
+            boolean isPresent = false;
+            if (elem != null) {
+                isPresent = true;
+            }
+            return isPresent;
+        }
+
+        @Override
+        public E next() {
+            List<E> element = null;
+
+            if (hasNext()) {
+                element.add(node.value);
+
+            } else throw new NullPointerException();
+            return (E) element;
+        }
     }
 
     @Override
@@ -94,37 +129,5 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         int result = node != null ? node.hashCode() : 0;
         result = 31 * result + i;
         return result;
-    }
-
-    @Override
-    public Iterator<E> iterator() {
-        return new ArrIterator();
-    }
-
-    class ArrIterator implements Iterator<E> {
-
-        @Override
-        public boolean hasNext() {
-
-            E elem = node.value;
-            int counter = 0;
-
-            boolean isPresent = false;
-            if (elem != null) {
-                isPresent = true;
-            }
-            return isPresent;
-        }
-
-        @Override
-        public E next() {
-
-            Node<E> element = null;
-
-            if (hasNext()) {
-                //node = element.setChilden(element.childen);
-                return node.getValue();
-            } else throw new NullPointerException();
-        }
     }
 }

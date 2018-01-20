@@ -2,9 +2,7 @@ package ru.job4j.SimpleTreeTest;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.SimpleTree.Node;
 import ru.job4j.SimpleTree.Tree;
-
 
 import java.util.Iterator;
 
@@ -12,27 +10,28 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SimpleTreeTest<E> {
-   /* Node<String> parent = new Node<>("A");
+    String parent = "A";
     Tree<String> underTest = new Tree<>(parent);
-    Node<String> childOne = new Node<>("B");
-    Node<String> childTwo = new Node<>("C");
-    Node<String> childThree = new Node<>("D");
+    String childOne = "B";
+    String childTwo = "C";
+    String childThree = "D";
+
     @Test
     public void iteratorTest() {
         underTest.add(parent, childOne);
         underTest.add(parent, childTwo);
         underTest.add(parent, childThree);
 
-        underTest.add(childOne, new Node<>("E"));
-        underTest.add(childOne, new Node<>("F"));
-        underTest.add(childTwo, new Node<>("G"));
-        underTest.add(childThree, new Node<>("H"));
+        underTest.add(childOne, "E");
+        underTest.add(childOne, "F");
+        underTest.add(childTwo, "G");
+        underTest.add(childThree, "H");
 
-        Iterator<Node<String>> iter = underTest.iterator ();
+        Iterator<String> iter = underTest.iterator ();
 
         String result = "";
         while (iter.hasNext()) {
-            result = result + iter.next().getValue();
+            result = result + iter.next();
         }
         assertThat(result, is("EFBGCHDA"));
     }
@@ -42,13 +41,7 @@ public class SimpleTreeTest<E> {
         underTest.add(parent, childOne);
         underTest.add(parent, childTwo);
         underTest.add(parent, childThree);
-      *//*  underTest.add();
-        underTest.add();
-        underTest.add();
-        underTest.add();
-        underTest.add();
-        underTest.add();
-        underTest.add();*//*
+
     }
 
     @Test
@@ -71,5 +64,5 @@ public class SimpleTreeTest<E> {
         assertThat(iterator.hasNext(), is(true));
         assertThat(iterator.next(), is(8));
         assertThat(iterator.hasNext(), is(false));
-    }*/
+    }
 }

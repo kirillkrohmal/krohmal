@@ -13,7 +13,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
     private Node<E> head;
     private int size = 0;
 
-
     public LinkedListContainer() {
         this.size = 0;
     }

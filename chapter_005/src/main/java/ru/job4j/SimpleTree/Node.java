@@ -53,4 +53,5 @@ public class Node<E> {
 	public boolean eqValue(E that) {
         return this.value.equals(that);
     }
-}
+
+   }
