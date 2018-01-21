@@ -11,10 +11,6 @@ public class SelfHashTable<E> {
     private int key;
     private int value;
 
-    private int hash;
-
-    private int size = 0;
-
     public SelfHashTable(Object[] objects) {
         objects = new Object[1000];
     }
@@ -22,7 +18,6 @@ public class SelfHashTable<E> {
     public SelfHashTable(int key, int value, int hash) {
         this.key = key;
         this.value = value;
-        this.hash = hash;
     }
 
     public int getKey() {
@@ -39,18 +34,6 @@ public class SelfHashTable<E> {
 
     public void setValue(int value) {
         this.value = value;
-    }
-
-    public int getHash() {
-        return hash;
-    }
-
-    public void setHash(int hash) {
-        this.hash = hash;
-    }
-
-    public int size() {
-        return size;
     }
 
     private int indexOf(E e) {
@@ -110,8 +93,7 @@ public class SelfHashTable<E> {
         SelfHashTable<?> that = (SelfHashTable<?>) o;
 
         if (key != that.key) return false;
-        if (size != that.size) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+         // Probably incorrect - comparing Object[] arrays with Arrays.equals
         return Arrays.equals(objects, that.objects);
     }
 
