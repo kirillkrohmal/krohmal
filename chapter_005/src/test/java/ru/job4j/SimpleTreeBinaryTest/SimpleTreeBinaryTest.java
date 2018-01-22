@@ -2,7 +2,7 @@ package ru.job4j.SimpleTreeBinaryTest;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.SimpleTree.Tree;
+import ru.job4j.SimpleTreeBinary.BinaryTree;
 
 import java.util.Iterator;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 
 public class SimpleTreeBinaryTest<E> {
     String parent = "A";
-    Tree<String> underTest = new Tree<>(parent);
+    BinaryTree<String> underTest = new BinaryTree<>(parent);
     String childOne = "B";
     String childTwo = "C";
     String childThree = "D";

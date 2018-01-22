@@ -19,11 +19,11 @@ public class DynamicList<E> implements Iterable<E> {
     }
 
     public E get(int index) {
-        E s = (E) new Object();
+        E element = (E) new Object();
         if (index >= 0 && index < size) {
-            s = container[index];
+            element = container[index];
         }
-        return s;
+        return element;
     }
 
     class ArrayIterator implements Iterator<E> {

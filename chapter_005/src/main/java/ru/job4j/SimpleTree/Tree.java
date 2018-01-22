@@ -8,6 +8,7 @@ import java.util.*;
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
     private int i;
+    private int size;
 
 
     public Tree(Node<E> node) {
@@ -19,6 +20,10 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     public Tree(int i) {
+    }
+
+    private int size() {
+        return size;
     }
 
     /*
@@ -33,9 +38,10 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return false;
         }
 
-        if (isDuplicate(parent) && compare(parent, child) == 0) {
-            node.childen.add((Node<E>) node.value);
+        if (compare(parent, child) == 0) {
+            node.childen.add(node);
             isPresent = true;
+            size++;
         }
 
         return isPresent;
@@ -60,15 +66,15 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     private int compare(E first, E second) {
-        List<Node<E>> list = new LinkedList<>();
+        int len1 = first.toString().length();
+        int len2 = second.toString().length();
         int element = 0;
-        while (node.childen != null) {
-            if (list.contains(first)) {
-                element = 1;
-            }
-            if (!list.contains(second)) {
-                element = 1;
-            }
+
+        if (len1 > len2) {
+            element = 1;
+        }
+        if (len1 < len2) {
+            element = -1;
         }
 
         return element;

@@ -12,7 +12,7 @@ public class Node<E> {
     public List<Node<E>> childen = new ArrayList<>();
     public boolean result;
 
-    public Node(E value, LinkedList<Node<E>>childen, boolean result) {
+    public Node(E value, LinkedList<Node<E>> childen, boolean result) {
         this.value = value;
         this.childen = childen;
         this.result = result;
@@ -50,8 +50,8 @@ public class Node<E> {
         this.result = result;
     }
 
-	public boolean eqValue(E that) {
+    public boolean eqValue(E that) {
         return this.value.equals(that);
     }
 
-   }
+}

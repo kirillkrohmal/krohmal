@@ -28,7 +28,7 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
 
     public Node<E> add(E e, Node<E> node) {
         if (node == null) {
-            if (left == null) {
+            if (node.left == null) {
                 left = new Node<E>(node.value);
             } else if (right == null) {
                 right = new Node<E>(node.value);
@@ -56,13 +56,22 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return false;
+        Node<E> elem = node;
+
+        boolean isPresent = false;
+        if (elem != null) {
+            isPresent = true;
+        }
+        return isPresent;
     }
 
     @Override
-    public Object next() {
-        int result = 0;
+    public E next() {
+        Node<E> element;
 
-        return null;
+        if (hasNext()) {
+            element = node.getNextElement();
+        } else throw new NullPointerException();
+        return (E) element;
     }
 }
