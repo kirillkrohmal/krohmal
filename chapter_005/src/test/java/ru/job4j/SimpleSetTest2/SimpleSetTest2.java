@@ -12,17 +12,6 @@ import static org.junit.Assert.assertThat;
 public class SimpleSetTest2<E> {
     SimpleSet2<Integer> simpleSet2;
 
-   /* @Test
-    public void iteratorTest() {
-        SimpleSet2 simpleSet = new SimpleSet2();
-        Object e = null;
-        simpleSet.next();
-        simpleSet.next();
-        boolean result = simpleSet.hasNext();
-        Object expected = null;
-        assertThat(result, is(true));
-    }
-*/
     @Before
     public void iteratorTest2() {
         simpleSet2 = new SimpleSet2<Integer>();

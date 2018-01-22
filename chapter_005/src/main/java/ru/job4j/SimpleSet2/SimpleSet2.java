@@ -10,7 +10,6 @@ import java.util.Iterator;
 public class SimpleSet2<E> implements Iterator<E> {
     private LinkedListContainer<E> list = new LinkedListContainer<>();
     private int size = 0;
-    private int counter = 0;
     private Iterator<E> inIterator;
 
     /*
@@ -18,7 +17,6 @@ public class SimpleSet2<E> implements Iterator<E> {
      * Коллекция должна обеспечивать void add(E e) и реализовывать Iterator<E>.
      * Коллекция не должна хранить дубликаты.
      * Set - внутри для хранения данных использует связный список.
-     *
      */
     public void add(E e) {
         if (!isDuplicate(e)) {
