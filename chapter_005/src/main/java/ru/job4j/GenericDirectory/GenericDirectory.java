@@ -25,7 +25,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         this.entry = new Entry[size];
     }
 
-    private int getHashCodeKey(V value) {
+    private int indexOf(V value) {
         return value.hashCode() % entry.length;
     }
 
@@ -52,10 +52,12 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isInsert = false;
         }
 
-        int index = getHashCodeKey(value);
-        if ((contains(value) && entry[size] != null)) {
+        int index = indexOf(value);
+        if (entry[index] == null) {
             entry[index] = new Entry<K, V>(key, value);
             isInsert = true;
+        } else {
+            isInsert = false;
         }
 
         return isInsert;
@@ -92,7 +94,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isDelete = false;
         }
 
-        int index = getHashCodeKey(value);
+        int index = indexOf(value);
 
         if (isKey(key)) {
             entry[index] = null;
@@ -103,7 +105,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     }
 
     public boolean contains(V value) {
-        return entry[getHashCodeKey(value)] == null;
+        return entry[indexOf(value)] == null;
     }
 
     @Override

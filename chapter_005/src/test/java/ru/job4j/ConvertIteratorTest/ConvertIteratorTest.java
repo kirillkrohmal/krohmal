@@ -30,7 +30,8 @@ public class ConvertIteratorTest {
         }
 
         assertThat(actual, is(expected));
-    }@Test
+    }
+    @Test
     public void iteratorTest4() {
         final List<Iterator<Integer>> list = new ArrayList<>();
         list.add(Arrays.asList(new Integer[]{349, 350, 351}).iterator());
@@ -47,7 +48,8 @@ public class ConvertIteratorTest {
         }
 
         assertThat(actual, is(expected));
-    }@Test
+    }
+    @Test
     public void iteratorTest5() {
         final List<Iterator<Integer>> list = new ArrayList<>();
         list.add(Arrays.asList(new Integer[]{1, 190, 3, 192, 193, 194}).iterator());
@@ -84,7 +86,6 @@ public class ConvertIteratorTest {
 
         assertThat(actual, is(expected));
     }
-
     @Test
     public void iteratorTest7() {
         final List<Iterator<Integer>> list = new ArrayList<>();
@@ -104,7 +105,6 @@ public class ConvertIteratorTest {
 
         assertThat(actual, is(expected));
     }
-
     @Test
     public void iteratorTest8() {
         final List<Iterator<Integer>> list = new ArrayList<>();
@@ -124,89 +124,4 @@ public class ConvertIteratorTest {
 
         assertThat(actual, is(expected));
     }
-/*
-    @Test
-    public void iteratorTest() {
-        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
-                Collections.singletonList(1).iterator(),
-                Collections.singletonList(2).iterator()
-        ).iterator();
-        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
-        convert.next();
-        int result = convert.next();
-        assertThat(result, is(2));
-    }
-
-    @Test
-    public void iteratorTest2() {
-        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
-                Collections.singletonList(1).iterator(),
-                Collections.singletonList(2).iterator(),
-                Collections.singletonList(3).iterator(),
-                Collections.singletonList(4).iterator(),
-                Collections.singletonList(5).iterator(),
-                Collections.singletonList(6).iterator(),
-                Collections.singletonList(7).iterator(),
-                Collections.singletonList(8).iterator()
-        ).iterator();
-        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
-        convert.next();
-        int result = convert.next();
-        assertThat(result, is(8));
-    }
-
-    @Test
-    public void iteratorTest6() {
-        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
-                Collections.singletonList(1).iterator(),
-                Collections.singletonList(2).iterator(),
-                Collections.singletonList(3).iterator(),
-                Collections.singletonList(4).iterator()
-        ).iterator();
-        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
-        convert.next();
-        int result = convert.next();
-        assertThat(result, is(4));
-    }
-
-    @Test
-    public void iteratorTest7() {
-        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
-                Collections.singletonList(1).iterator(),
-                Collections.singletonList(2).iterator(),
-                Collections.singletonList(3).iterator()
-        ).iterator();
-        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
-        convert.next();
-        int result = convert.next();
-        assertThat(result, is(3));
-    }
-
-    @Test
-    public void iteratorTest8() {
-        CrudServlet<CrudServlet<Integer>> it = Arrays.asList(
-                Collections.singletonList(1).iterator(),
-                Collections.singletonList(2).iterator(),
-                Collections.singletonList(3).iterator(),
-                Collections.singletonList(4).iterator(),
-                Collections.singletonList(5).iterator(),
-                Collections.singletonList(6).iterator(),
-                Collections.singletonList(7).iterator(),
-                Collections.singletonList(8).iterator(),
-                Collections.singletonList(9).iterator(),
-                Collections.singletonList(10).iterator(),
-                Collections.singletonList(11).iterator(),
-                Collections.singletonList(12).iterator(),
-                Collections.singletonList(13).iterator(),
-                Collections.singletonList(14).iterator(),
-                Collections.singletonList(15).iterator(),
-                Collections.singletonList(16).iterator(),
-                Collections.singletonList(17).iterator(),
-                Collections.singletonList(18).iterator()
-        ).iterator();
-        CrudServlet<Integer> convert = new ConvertIterator().convert(it);
-        convert.next();
-        int result = convert.next();
-        assertThat(result, is(18));
-    }*/
 }

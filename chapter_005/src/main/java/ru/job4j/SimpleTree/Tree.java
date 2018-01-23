@@ -38,12 +38,16 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return false;
         }
 
-        if (compare(parent, child) == 0) {
-            node.childen.add(node);
-            isPresent = true;
-            size++;
-        }
+        if (findBy(parent) != null) {
+            if (compare(node.value, parent) == 0) {
+                for (Node<E> eNode : node.childen) {
+                    node.childen.add(eNode);
+                }
 
+                isPresent = true;
+                size++;
+            }
+        }
         return isPresent;
     }
 
@@ -80,16 +84,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return element;
     }
 
-    public boolean isDuplicate(E first) {
-        boolean duplicate = false;
-
-        if (findBy(first) != null) {
-            duplicate = true;
-
-        }
-        return duplicate;
-    }
-
     @Override
     public Iterator<E> iterator() {
         return new ArrIterator();
@@ -113,7 +107,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             List<E> element = null;
 
             if (hasNext()) {
-                element.add(node.value);
+                element = (List<E>) element.iterator().next();
 
             } else throw new NullPointerException();
             return (E) element;

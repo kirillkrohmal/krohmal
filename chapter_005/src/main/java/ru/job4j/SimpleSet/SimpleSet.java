@@ -11,7 +11,6 @@ public class SimpleSet<E> implements Iterator<E> {
     private Object[] value;
     private int size = 0;
     private int counter = 0;
-    private E e = null;
 
     public SimpleSet() {
         this.value = new Object[1000];
@@ -29,25 +28,7 @@ public class SimpleSet<E> implements Iterator<E> {
         }
     }
 
-    /**
-     * Returns <tt>true</tt> if this set contains the specified element.
-     * More formally, returns <tt>true</tt> if and only if this set
-     * contains an element <tt>e</tt> such that
-     * <tt>(o==null&nbsp;?&nbsp;e==null&nbsp;:&nbsp;o.equals(e))</tt>.
-     * element whose presence in this set is to be tested
-     */
-    public boolean contains(E e) {
-        boolean isContains = false;
-        for (Object aValue : value) {
-            if (e != null && e.equals(aValue)) {
-                isContains = true;
-            }
-        }
-
-        return isContains;
-    }
-
-    public int size () {
+    public int size() {
         return this.size;
     }
 

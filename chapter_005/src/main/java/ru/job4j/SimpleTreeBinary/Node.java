@@ -6,9 +6,9 @@ import java.util.LinkedList;
  * Created by Comp on 08.10.2017.
  */
 public class Node<E> {
-    E value;
-    LinkedList<Node<E>> childen;
-    boolean result;
+    private E value;
+    private LinkedList<Node<E>> childen;
+    private boolean result;
 
     public Node(E value, LinkedList<Node<E>> childen, boolean result) {
         this.value = value;

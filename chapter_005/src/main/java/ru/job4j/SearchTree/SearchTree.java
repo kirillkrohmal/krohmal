@@ -7,31 +7,45 @@ import java.util.Iterator;
  * Created by Comp on 23.10.2017.
  */
 public class SearchTree<E extends Comparable<E>> implements Iterator {
-    private Node left;
-    private Node right;
+    private Node line;
 
     private Node node;
     private int size = 0;
 
-    public SearchTree(Node<E> left, Node<E> right) {
-        this.left = left;
-        this.right = right;
+    public SearchTree(Node<E> line) {
+        this.line = line;
+
     }
 
     public int size() {
         return size;
     }
 
-    public void add(E e) {
-        node = add(e, node);
+    public Node<E> add(E e) {
+        if (e == null) {
+            return null;
+        } else if (line.left != null) {
+            Node<E> p = line.right;
+            while (p.left != null)
+                p = p.left;
+            return p;
+        } else {
+            Node<E> p = line.parent;
+            Node<E> ch = line;
+            while (p != null && ch == p.right) {
+                ch = p;
+                p = p.parent;
+            }
+            return p;
+        }
     }
 
     public Node<E> add(E e, Node<E> node) {
         if (node == null) {
             if (node.left == null) {
-                left = new Node<E>(node.value);
-            } else if (right == null) {
-                right = new Node<E>(node.value);
+                line.left = new Node<E>(node.value);
+            } else if (line.right == null) {
+                line.right = new Node<E>(node.value);
             }
         }
         if (node != null) {

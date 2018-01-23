@@ -40,10 +40,6 @@ public class SelfHashTable<E> {
         return e.hashCode() % objects.length;
     }
 
-    private int getKey(E e) {
-        return key;
-    }
-
     /*
      * операция добавления новой пары
      * А в методе add надо инкремент key перенести в if блок,
@@ -97,8 +93,11 @@ public class SelfHashTable<E> {
         return Arrays.equals(objects, that.objects);
     }
 
-    private static int hash(Object key) {
-        int h;
-        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    @Override
+    public int hashCode() {
+        int result = Arrays.hashCode(objects);
+        result = 31 * result + key;
+        result = 31 * result + value;
+        return result;
     }
 }

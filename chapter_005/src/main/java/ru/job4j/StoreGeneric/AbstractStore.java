@@ -16,7 +16,6 @@ public abstract class AbstractStore<T extends Base> implements Store<T> {
 
     @Override
     public T update(T model) {
-        T base = null;
         //получить идентфик объекта который сохраняю если он совпадает на его место записать
         for (int i = 0; i < baseT.length; i++) {
             if (baseT[i].getId().equals(model.getId())) {
@@ -29,8 +28,6 @@ public abstract class AbstractStore<T extends Base> implements Store<T> {
 
     @Override
     public boolean delete(String id) {
-        T base = null;
-
         for (int i = 0; i < baseT.length; i++) {
             if (baseT[i].getId().equals(id)) {
                 baseT[index] = null;

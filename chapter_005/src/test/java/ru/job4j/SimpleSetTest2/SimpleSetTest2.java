@@ -14,7 +14,7 @@ public class SimpleSetTest2<E> {
 
     @Before
     public void iteratorTest2() {
-        simpleSet2 = new SimpleSet2<Integer>();
+        simpleSet2 = new SimpleSet2<>();
 
         simpleSet2.add(1);
         simpleSet2.add(2);
