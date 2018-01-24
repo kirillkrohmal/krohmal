@@ -7,7 +7,6 @@ import java.util.Iterator;
  */
 public class IteratorNum2 implements Iterator {
     private int count = 0;
-    private int index = 1;
     private int[] value;
 
     public IteratorNum2(final int[] value) {
@@ -17,6 +16,7 @@ public class IteratorNum2 implements Iterator {
     @Override
     public boolean hasNext() {
         boolean isPresent = false;
+        int index = 1;
         if (index < 2) {
             isPresent = false;
         }
@@ -33,7 +33,7 @@ public class IteratorNum2 implements Iterator {
     @Override
     public Object next() {
         Object o = new Object();
-        if (hasNext() == true) {
+        if (hasNext()) {
             o = value[count++];
         }
         return o;

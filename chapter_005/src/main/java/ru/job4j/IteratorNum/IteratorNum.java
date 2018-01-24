@@ -29,7 +29,7 @@ public class IteratorNum implements Iterator {
     @Override
     public Object next() {
         Object o = null;
-        if (hasNext() == true) {
+        if (hasNext()) {
             o = value[index++];
         }
         return o;

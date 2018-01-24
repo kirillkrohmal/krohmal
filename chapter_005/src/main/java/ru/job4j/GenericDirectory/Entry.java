@@ -6,8 +6,8 @@ import java.util.Map;
  * Created by Comp on 21.11.2017.
  */
 public class Entry<K, V> implements Map.Entry<K, V> {
-    public K key;
-    public V value;
+    private K key;
+    private V value;
 
     Entry(K key, V value) {
         this.key = key;

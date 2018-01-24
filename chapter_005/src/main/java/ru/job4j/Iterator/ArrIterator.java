@@ -43,7 +43,7 @@ public class ArrIterator implements Iterator {
     @Override
     public Object next() {
         int nextValue = 0;
-        if (hasNext() == true) {
+        if (hasNext()) {
             if (column < value[row].length) {
                 nextValue = value[row][column++];
             }
@@ -56,7 +56,7 @@ public class ArrIterator implements Iterator {
         return nextValue;
     }
 
-    void switchElement () {
+    private void switchElement() {
         row++;
         column = 0;
     }

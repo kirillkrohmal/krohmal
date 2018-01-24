@@ -7,8 +7,8 @@ import java.util.Iterator;
  * Created by Comp on 03.10.2017.
  */
 public class DynamicList<E> implements Iterable<E> {
-    E[] container = (E[]) new Object[1000];
-    int size = 0;
+    private E[] container = (E[]) new Object[1000];
+    private int size = 0;
 
     public void add(E value) {
         if (container.length > size) {
@@ -42,7 +42,7 @@ public class DynamicList<E> implements Iterable<E> {
         @Override
         public E next() {
             Object index = null;
-            if (hasNext() == true) {
+            if (hasNext()) {
                 index = container[count++];
             }
             return (E) index;

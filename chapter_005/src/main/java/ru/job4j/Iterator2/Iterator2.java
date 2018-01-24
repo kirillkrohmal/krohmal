@@ -6,7 +6,7 @@ import java.util.Iterator;
  * Created by Comp on 25.09.2017.
  */
 public class Iterator2 implements Iterator {
-    int count;
+    private int count;
     private int[] value;
 
     public Iterator2(int[] value) {
