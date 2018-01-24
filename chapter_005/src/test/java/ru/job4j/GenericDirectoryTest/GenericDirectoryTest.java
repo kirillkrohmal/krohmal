@@ -19,7 +19,7 @@ public class GenericDirectoryTest {
         directory.insert(2, "Петя");
         directory.insert(3, "Женя");
         directory.insert(4, "Иван");
-        Object result = directory.get(1);
+        Object result = directory.get(0);
         assertThat(result, is(true));
     }
     @Test

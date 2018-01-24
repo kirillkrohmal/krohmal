@@ -41,14 +41,14 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      * @return true if pair was added, otherwise false.
      */
     public boolean insert(K key, V value) {
-        boolean isInsert = false;
+        boolean isInsert;
 
         if (value == null) {
             isInsert = false;
         }
 
         int index = indexOf(value);
-        if (entry[index] == null && contains(value)) {
+        if (contains(value)) {
             entry[index] = new Entry<K, V>(key, value);
             isInsert = true;
         } else {
@@ -66,14 +66,14 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      */
     public V get(K key) {
         V value = null;
+        Entry entry = new Entry<K, V>(key, value);
 
-        for (Entry entry1 : entry) {
-            if (isKey(key)) {
-                value = (V) entry1.getValue();
-            }
+        if (isKey(key)) {
+            value = (V) entry.getValue();
         }
         return value;
     }
+
 
     /**
      * Check that given key exist dictionary.
@@ -83,7 +83,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      */
     public boolean delete(K key) {
         boolean isDelete = false;
-		V value = null;
+        V value = null;
 
         if (value == null) {
             isDelete = false;
@@ -99,7 +99,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         return isDelete;
     }
 
-    public boolean contains(V value) {
+    private boolean contains(V value) {
         return entry[indexOf(value)] == null;
     }
 
@@ -142,9 +142,9 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
         @Override
         public Object next() {
-			if (hasNext()) {
+            if (hasNext()) {
                 return entry[counter++];
-			} else throw  new NoSuchElementException();
+            } else throw new NoSuchElementException();
         }
     }
 }

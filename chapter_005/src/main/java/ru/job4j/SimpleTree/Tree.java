@@ -38,8 +38,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return false;
         }
 
-        if (findBy(parent) != null) {
-            if (compare(node.value, parent) == 0) {
+        if (findBy(parent) == null) {
+            if (findBy(child) == null) {
                 for (Node<E> eNode : node.childen) {
                     node.childen.add(eNode);
                 }
@@ -70,18 +70,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     private int compare(E first, E second) {
-        int len1 = first.toString().length();
-        int len2 = second.toString().length();
-        int element = 0;
-
-        if (len1 > len2) {
-            element = 1;
-        }
-        if (len1 < len2) {
-            element = -1;
-        }
-
-        return element;
+        return first.compareTo(second);
     }
 
     @Override
