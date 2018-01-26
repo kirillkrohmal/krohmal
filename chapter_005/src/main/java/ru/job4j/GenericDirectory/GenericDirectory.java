@@ -66,9 +66,9 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      */
     public V get(K key) {
         V value = null;
-        Entry entry = new Entry<K, V>(key, value);
 
         if (isKey(key)) {
+            Entry entry = new Entry<K, V>(key, value);
             value = (V) entry.getValue();
         }
         return value;
