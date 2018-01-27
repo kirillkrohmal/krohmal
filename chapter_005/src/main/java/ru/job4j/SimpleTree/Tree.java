@@ -71,21 +71,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return rsl;
     }
 
-    private int compare(E first, E second) {
-        int len1 = node.getChilden().indexOf(first);
-        int len2 = node.childen.indexOf(second);
-        int element = 0;
-
-        if (len1 > len2) {
-            element = 1;
-        }
-        if (len1 < len2) {
-            element = -1;
-        }
-
-        return element;
-    }
-
     @Override
     public Iterator<E> iterator() {
         return new ArrIterator();
