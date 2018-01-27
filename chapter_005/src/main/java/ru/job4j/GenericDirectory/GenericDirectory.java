@@ -24,6 +24,10 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         return value.hashCode() % entry.length;
     }
 
+    private int indexOfKey(K key) {
+        return key.hashCode() % entry.length;
+    }
+
     private boolean isKey(K key) {
         boolean result = false;
         if (store.getKey() == key) {
@@ -48,7 +52,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         }
 
         int index = indexOf(value);
-        if (contains(value)) {
+        if (contains(key)) {
             entry[index] = new Entry<K, V>(key, value);
             isInsert = true;
         } else {
@@ -65,13 +69,15 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      * @return if is find at the dictionary return object from dictionary, otherwise false.
      */
     public V get(K key) {
-        V value = null;
+        int index = indexOfKey(key);
+        V value = (V) store.getValue();
 
-        if (isKey(key)) {
-            Entry entry = new Entry<K, V>(key, value);
-            value = (V) entry.getValue();
+        if (contains(key) ) {
+            return value;
+        } else {
+            return null;
         }
-        return value;
+
     }
 
 
@@ -83,15 +89,15 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      */
     public boolean delete(K key) {
         boolean isDelete = false;
-        V value = null;
+        V value = (V) store.getValue();
 
         if (value == null) {
             isDelete = false;
         }
 
-        int index = indexOf(value);
+        int index = indexOfKey(key);
 
-        if (isKey(key)) {
+        if (contains(key)) {
             entry[index] = null;
             isDelete = true;
         }
@@ -99,8 +105,8 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         return isDelete;
     }
 
-    private boolean contains(V value) {
-        return entry[indexOf(value)] == null;
+    private boolean contains(K key) {
+        return entry[indexOfKey(key)] == null;
     }
 
     @Override

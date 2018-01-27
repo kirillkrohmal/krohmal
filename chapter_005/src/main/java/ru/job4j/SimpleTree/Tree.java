@@ -11,6 +11,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
     private int i;
     private int size;
+    private boolean element;
 
 
     public Tree(Node<E> node) {
