@@ -20,21 +20,8 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         this.entry = new Entry[ENTRY_SIZE];
     }
 
-    private int indexOf(V value) {
-        return value.hashCode() % entry.length;
-    }
-
-    private int indexOfKey(K key) {
+    private int indexOf(K key) {
         return key.hashCode() % entry.length;
-    }
-
-    private boolean isKey(K key) {
-        boolean result = false;
-        if (store.getKey() == key) {
-            result = true;
-        }
-
-        return result;
     }
 
     /**
@@ -51,7 +38,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isInsert = false;
         }
 
-        int index = indexOf(value);
+        int index = indexOf(key);
         if (contains(key)) {
             entry[index] = new Entry<K, V>(key, value);
             isInsert = true;
@@ -69,11 +56,11 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      * @return if is find at the dictionary return object from dictionary, otherwise false.
      */
     public V get(K key) {
-        int index = indexOfKey(key);
-        V value = (V) store.getValue();
+        int index = indexOf(key);
 
         if (contains(key) ) {
-            return value;
+            return (V) entry[index];
+
         } else {
             return null;
         }
@@ -95,7 +82,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isDelete = false;
         }
 
-        int index = indexOfKey(key);
+        int index = indexOf(key);
 
         if (contains(key)) {
             entry[index] = null;
@@ -106,7 +93,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     }
 
     private boolean contains(K key) {
-        return entry[indexOfKey(key)] == null;
+        return entry[indexOf(key)] != null;
     }
 
     @Override
