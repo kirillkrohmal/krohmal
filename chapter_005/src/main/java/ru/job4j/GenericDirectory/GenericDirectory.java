@@ -1,7 +1,6 @@
 package ru.job4j.GenericDirectory;
 
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -11,7 +10,6 @@ import java.util.NoSuchElementException;
 
 public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private Entry[] entry;
-    private Entry store;
     private int size = 0;
     private int counter = 0;
     private static final int ENTRY_SIZE = 100;
@@ -45,6 +43,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         } else {
             isInsert = false;
         }
+        size++;
 
         return isInsert;
     }
@@ -60,13 +59,10 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
         if (contains(key) ) {
             return (V) entry[index];
-
         } else {
             return null;
         }
-
     }
-
 
     /**
      * Check that given key exist dictionary and delete element.
@@ -83,33 +79,12 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             entry[index] = null;
             isDelete = true;
         }
-
+        size--;
         return isDelete;
     }
 
     private boolean contains(K key) {
         return entry[indexOf(key)] != null;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        GenericDirectory<?, ?> directory = (GenericDirectory<?, ?>) o;
-
-        if (size != directory.size) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(entry, directory.entry)) return false;
-        return store != null ? store.equals(directory.store) : directory.store == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Arrays.hashCode(entry);
-        result = 31 * result + (store != null ? store.hashCode() : 0);
-        result = 31 * result + size;
-        return result;
     }
 
     public int size() {
