@@ -39,7 +39,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         }
 
         int index = indexOf(key);
-        if (contains(key)) {
+        if (!contains(key)) {
             entry[index] = new Entry<K, V>(key, value);
             isInsert = true;
         } else {
@@ -69,18 +69,13 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
 
     /**
-     * Check that given key exist dictionary.
+     * Check that given key exist dictionary and delete element.
      *
      * @param key object for checking.
-     * @return true if object exist at the set.
+     * @return true if object delete at the set.
      */
     public boolean delete(K key) {
         boolean isDelete = false;
-        V value = (V) store.getValue();
-
-        if (value == null) {
-            isDelete = false;
-        }
 
         int index = indexOf(key);
 

@@ -42,7 +42,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         }
 
         if (!findBy(parent).isPresent()) {
-            if (!findBy(child).isPresent()) {
+            if (findBy(child).isPresent()) {
                 for (Node<E> eNode : node.childen) {
                     node.childen.add(eNode);
                 }
