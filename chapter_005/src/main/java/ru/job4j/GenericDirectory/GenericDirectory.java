@@ -13,6 +13,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private int size = 0;
     private int counter = 0;
     private static final int ENTRY_SIZE = 100;
+    K key;
 
     public GenericDirectory() {
         this.entry = new Entry[ENTRY_SIZE];
@@ -20,6 +21,10 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
     private int indexOf(K key) {
         return key.hashCode() % entry.length;
+    }
+
+    public int size() {
+        return this.size;
     }
 
     /**
@@ -57,7 +62,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     public V get(K key) {
         int index = indexOf(key);
 
-        if (contains(key) ) {
+        if (contains(key)) {
             return (V) entry[index];
         } else {
             return null;
@@ -80,6 +85,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isDelete = true;
         }
         size--;
+
         return isDelete;
     }
 
@@ -87,20 +93,22 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         return entry[indexOf(key)] != null;
     }
 
-    public int size() {
-        return this.size;
-    }
-
     @Override
     public Iterator iterator() {
-        return new Iterat();
+        return new GenericIteratator();
     }
 
-    private class Iterat implements Iterator {
+    private class GenericIteratator implements Iterator {
         @Override
         public boolean hasNext() {
-            boolean isPresent;
-            return isPresent = size() != counter;
+            boolean isPresent = false;
+            int index = indexOf(key);
+
+            if (entry[index] != null) {
+                isPresent = true;
+            }
+
+            return isPresent;
         }
 
         @Override

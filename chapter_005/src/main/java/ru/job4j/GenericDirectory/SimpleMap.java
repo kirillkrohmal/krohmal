@@ -5,7 +5,9 @@ package ru.job4j.GenericDirectory;
  */
 public interface SimpleMap<K, V> extends Iterable {
     boolean insert(K key, V value);
+
     V get(K key);
+
     boolean delete(K key);
 }
 

@@ -9,7 +9,8 @@ import java.util.Map;
  */
 public class OverLap {
     private User user1 = new User("Fedor", 2, Calendar.getInstance());
-    private User user2 = new User("Fedor", 2, Calendar.getInstance());;
+    private User user2 = new User("Fedor", 2, Calendar.getInstance());
+
     private HashMap<User, Object> userObjectMap = new HashMap<>();
 
     public Map<User, Object> map() {

@@ -21,7 +21,7 @@ public class IteratorNum2 implements Iterator {
             isPresent = false;
         }
 
-        while(count < value.length) {
+        while (count < value.length) {
             if (count % index == 0) {
                 isPresent = true;
                 break;
