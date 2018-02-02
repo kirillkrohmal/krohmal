@@ -10,11 +10,9 @@ import java.util.NoSuchElementException;
 
 public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private Entry[] entry;
-    private Entry stock;
     private int size = 0;
     private int counter = 0;
     private static final int ENTRY_SIZE = 100;
-
 
     public GenericDirectory() {
         this.entry = new Entry[ENTRY_SIZE];
@@ -43,6 +41,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         }
 
         int index = indexOf(key);
+
         if (!contains(key)) {
             entry[index] = new Entry<K, V>(key, value);
             isInsert = true;
@@ -102,10 +101,10 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private class GenericIteratator implements Iterator {
         @Override
         public boolean hasNext() {
-            K key = (K) stock.getKey();
+
             boolean isPresent = false;
 
-            if (entry[indexOf(key)] != null) {
+            if (entry[size] != null) {
                 isPresent = true;
             }
 
