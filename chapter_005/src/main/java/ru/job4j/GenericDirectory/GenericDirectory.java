@@ -104,7 +104,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
             boolean isPresent = false;
 
-            if (entry[size] != null) {
+            if (entry[ENTRY_SIZE - size] != null) {
                 isPresent = true;
             }
 
