@@ -47,6 +47,7 @@ public class GenericDirectoryTest {
         directory.insert(3, "Женя");
         directory.insert(4, "Иван");
 
+
         assertThat(directory.iterator().hasNext(), is(true));
         assertThat(directory.iterator().next(), is(1));
         assertThat(directory.iterator().hasNext(), is(true));

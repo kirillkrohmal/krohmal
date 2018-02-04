@@ -18,6 +18,10 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         this.entry = new Entry[ENTRY_SIZE];
     }
 
+    public GenericDirectory(Entry[] entry) {
+        this.entry = entry;
+    }
+
     private int indexOf(K key) {
         return key.hashCode() % entry.length;
     }
@@ -104,7 +108,8 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
             boolean isPresent = false;
 
-            if (entry[ENTRY_SIZE - size] != null) {
+
+            if (entry[size] != null) {
                 isPresent = true;
             }
 
