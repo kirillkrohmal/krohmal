@@ -44,7 +44,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         if (findBy(parent).isPresent()) {
             if (!findBy(child).isPresent()) {
                 findBy(parent).get();
-
+                Node<E> node = new Node(child);
+                findBy(parent).get().childen.add((Node<E>) child);
             }
             isPresent = true;
             size++;
