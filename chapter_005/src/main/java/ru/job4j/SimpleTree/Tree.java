@@ -14,16 +14,10 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private boolean element;
 
 
-    public Tree(Node<E> node) {
-        this.node = node;
+    public Tree(E e) {
+        node.value = e;
     }
 
-    public Tree(E i) {
-
-    }
-
-    public Tree(int i) {
-    }
 
     private int size() {
         return size;
@@ -43,15 +37,16 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
         if (findBy(parent).isPresent()) {
             if (!findBy(child).isPresent()) {
+                Node<E> node = new Node<E>(child);
+                node.childen.add(children);
                 findBy(parent).get();
-                Node<E> node = new Node(child);
-                findBy(parent).get().childen.add((Node<E>) child);
+
             }
             isPresent = true;
             size++;
 
         } else {
-            throw new NullPointerException();
+            isPresent = false;
         }
         return isPresent;
     }
