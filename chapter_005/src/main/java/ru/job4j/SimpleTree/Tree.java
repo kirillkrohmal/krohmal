@@ -7,17 +7,11 @@ import java.util.*;
  */
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
-    private Node<E> children;
-
-    private int i;
     private int size;
-    private boolean element;
-
 
     public Tree(E e) {
         node.value = e;
     }
-
 
     private int size() {
         return size;
@@ -38,7 +32,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         if (findBy(parent).isPresent()) {
             if (!findBy(child).isPresent()) {
                 Node<E> node = new Node<E>(child);
-                node.childen.add(children);
+
                 findBy(parent).get();
 
             }
@@ -106,13 +100,14 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
         Tree<?> tree = (Tree<?>) o;
 
-        return i == tree.i && (node != null ? node.equals(tree.node) : tree.node == null);
+        if (size != tree.size) return false;
+        return node != null ? node.equals(tree.node) : tree.node == null;
     }
 
     @Override
     public int hashCode() {
         int result = node != null ? node.hashCode() : 0;
-        result = 31 * result + i;
+        result = 31 * result + size;
         return result;
     }
 }
