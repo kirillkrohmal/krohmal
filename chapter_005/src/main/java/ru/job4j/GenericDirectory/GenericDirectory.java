@@ -110,17 +110,14 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
             boolean isPresent = false;
 
-            for (int i = 0; i < entry.length; i++) {
+            for (int i = counter; i < entry.length; i++) {
                 if (entry[i] != null) {
-                    entry[counter] = entry[i];
+                    counter = i;
                     isPresent = true;
+                    break;
                 } else {
                     isPresent = false;
                 }
-            }
-
-            if (entry[size] != null) {
-                isPresent = true;
             }
 
             return isPresent;
