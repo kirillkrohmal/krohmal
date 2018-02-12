@@ -1,5 +1,6 @@
 package ru.job4j.GenericDirectoryTest;
 
+import org.junit.Before;
 import org.junit.Test;
 import ru.job4j.GenericDirectory.GenericDirectory;
 
@@ -11,51 +12,46 @@ import static org.junit.Assert.assertThat;
  */
 
 public class GenericDirectoryTest {
+    GenericDirectory<Integer, String> directory;
+
     @Test
     public void iteratorTest() {
-        GenericDirectory directory = new GenericDirectory();
-        //Map<User, Object> result = directory.map();
+        GenericDirectory<Integer, String> directory = new GenericDirectory();
         directory.insert(1, "Вася");
         directory.insert(2, "Петя");
         directory.insert(3, "Женя");
         directory.insert(4, "Иван");
-        Object result = directory.get(0);
-        assertThat(result, is(true));
+        Object result = directory.get(1);
+        assertThat(result, is("Вася"));
     }
     @Test
     public void iteratorTest2() {
-        GenericDirectory directory = new GenericDirectory();
-        //Map<User, Object> result = directory.map();
+        GenericDirectory<Integer, String> directory = new GenericDirectory();
         directory.insert(1, "Вася");
-        directory.insert(2, "Петя");
-        directory.insert(3, "Женя");
-        directory.insert(4, "Иван");
-        directory.delete(1);
-        directory.delete(2);
-        directory.delete(3);
-        directory.delete(4);
-        Object result = directory.get(1);
+        boolean result = directory.delete(1);
         assertThat(result, is(true));
     }
 
-    @Test
+    @Before
     public void iteratorTest3() {
-        GenericDirectory directory = new GenericDirectory();
-        //Map<User, Object> result = directory.map();
+        directory = new GenericDirectory();
+
         directory.insert(1, "Вася");
         directory.insert(2, "Петя");
         directory.insert(3, "Женя");
         directory.insert(4, "Иван");
+    }
 
-
+    @Test
+    public void iteratorTest4() {
         assertThat(directory.iterator().hasNext(), is(true));
-        assertThat(directory.iterator().next(), is(1));
+        assertThat(directory.iterator().next(), is("Вася"));
         assertThat(directory.iterator().hasNext(), is(true));
-        assertThat(directory.iterator().next(), is(2));
+        assertThat(directory.iterator().next(), is("Петя"));
         assertThat(directory.iterator().hasNext(), is(true));
-        assertThat(directory.iterator().next(), is(3));
+        assertThat(directory.iterator().next(), is("Женя"));
         assertThat(directory.iterator().hasNext(), is(true));
-        assertThat(directory.iterator().next(), is(4));
-        assertThat(directory.iterator().hasNext(), is(true));
+        assertThat(directory.iterator().next(), is("Иван"));
+        assertThat(directory.iterator().hasNext(), is(false));
     }
 }

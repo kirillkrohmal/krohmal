@@ -67,7 +67,7 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         int index = indexOf(key);
 
         if (contains(key)) {
-            return (V) entry[index];
+            return (V) entry[index].getValue();
         } else {
             return null;
         }
