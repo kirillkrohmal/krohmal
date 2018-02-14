@@ -31,12 +31,11 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
         if (findBy(parent).isPresent()) {
             if (!findBy(child).isPresent()) {
-                Node<E> node = new Node<E>(parent);
-                node.getChilden();
+                Node<E> node = new Node<E>(child);
+                findBy(parent).get().childen.add(node);
             }
             isPresent = true;
             size++;
-
         } else {
             isPresent = false;
         }
