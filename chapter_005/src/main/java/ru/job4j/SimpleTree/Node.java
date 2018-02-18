@@ -11,7 +11,6 @@ public class Node<E> {
     public E value;
     public List<Node<E>> childen = new ArrayList<>();
     public boolean result;
-    public Tree children;
 
     public Node(E value, LinkedList<Node<E>> childen, boolean result) {
         this.value = value;

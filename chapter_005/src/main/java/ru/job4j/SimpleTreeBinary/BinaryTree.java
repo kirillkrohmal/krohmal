@@ -11,32 +11,14 @@ import java.util.*;
  */
 public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
-    private int i;
+    private int size;
 
-    public BinaryTree(Node<E> node) {
-        this.node = node;
+    public BinaryTree(E e) {
+        node = new Node<E>(node.value);
     }
 
-    public BinaryTree(E i) {
-    }
-
-    @Override
-    public boolean add(E parent, E child) {
-        boolean isPresent = false;
-        List<Node<E>> list = null;
-        if (parent == null && child == null) {
-            return false;
-        }
-
-        if (isDuplicate(parent) && compare(parent, child) == 0) {
-            for (int j = 0; j < node.getChilden().size(); j++) {
-
-
-            }
-            isPresent = true;
-        }
-
-        return isPresent;
+    private int size() {
+        return size;
     }
 
     public boolean isBinary() {
@@ -50,6 +32,31 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
         }
 
         return isBinaryTree;
+    }
+
+    /*
+     * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
+     * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
+     * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
+     */
+    @Override
+    public boolean add(E parent, E child) {
+        boolean isPresent = false;
+        if (parent == null && child == null) {
+            return false;
+        }
+
+        if (findBy(parent).isPresent()) {
+            if (!findBy(child).isPresent()) {
+                Node<E> node = new Node<E>(child);
+                findBy(parent).get().childen.add(node);
+            }
+            isPresent = true;
+            size++;
+        } else {
+            isPresent = false;
+        }
+        return isPresent;
     }
 
     @Override
@@ -70,58 +77,32 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
         return rsl;
     }
 
-    private int compare(E first, E second) {
-        int len1 = first.toString().length();
-        int len2 = second.toString().length();
-        int element = 0;
-
-        if (len1 > len2) {
-            element = 1;
-        }
-        if (len1 < len2) {
-            element = -1;
-        }
-
-        return element;
-    }
-
-    public boolean isDuplicate(E first) {
-        boolean duplicate = false;
-
-        if (findBy(first) != null) {
-            duplicate = true;
-
-        }
-        return duplicate;
-    }
-
     @Override
     public Iterator<E> iterator() {
         return new ArrIterator();
     }
 
     class ArrIterator implements Iterator<E> {
-
+        E elem = node.value;
         @Override
         public boolean hasNext() {
-            E elem = node.value;
+
 
             boolean isPresent = false;
             if (elem != null) {
-                isPresent = true;
+                isPresent = findBy(elem).isPresent();
             }
+
             return isPresent;
         }
 
         @Override
         public E next() {
-            List<E> element = null;
-
             if (hasNext()) {
-
+                findBy(elem).get().getChilden().iterator();
 
             } else throw new NullPointerException();
-            return (E) element;
+            return elem;
         }
     }
 
@@ -132,14 +113,14 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
 
         BinaryTree<?> that = (BinaryTree<?>) o;
 
-        if (i != that.i) return false;
+        if (size != that.size) return false;
         return node != null ? node.equals(that.node) : that.node == null;
     }
 
     @Override
     public int hashCode() {
         int result = node != null ? node.hashCode() : 0;
-        result = 31 * result + i;
+        result = 31 * result + size;
         return result;
     }
 }

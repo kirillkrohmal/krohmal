@@ -10,7 +10,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private int size;
 
     public Tree(E e) {
-       findBy(e).get().childen.add(node);
+       node = new Node<E>(node.value);
     }
 
     private int size() {
