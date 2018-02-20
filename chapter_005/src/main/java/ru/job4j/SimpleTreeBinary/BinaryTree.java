@@ -12,26 +12,15 @@ import java.util.*;
 public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
     private int size;
+    private Node left;
+    private Node right;
 
     public BinaryTree(E e) {
-        node = new Node<E>(node.value);
+        node = new Node<E>(e);
     }
 
     private int size() {
         return size;
-    }
-
-    public boolean isBinary() {
-        List<Node<E>> r = new LinkedList<>();
-        boolean isBinaryTree = false;
-
-        for (int i = 0; i < r.size(); i++) {
-            if (node.childen.equals(i)) {
-                isBinaryTree = true;
-            }
-        }
-
-        return isBinaryTree;
     }
 
     /*
@@ -84,13 +73,16 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
 
     class ArrIterator implements Iterator<E> {
         E elem = node.value;
+        Queue<Node<E>> data = new LinkedList<>();
+        Optional<Node<E>> rsl = Optional.empty();
+
         @Override
         public boolean hasNext() {
-
+            Node<E> el = data.poll();
 
             boolean isPresent = false;
-            if (elem != null) {
-                isPresent = findBy(elem).isPresent();
+            if (el != null) {
+                rsl = Optional.of(el);
             }
 
             return isPresent;
@@ -104,6 +96,21 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
             } else throw new NullPointerException();
             return elem;
         }
+    }
+
+    public boolean isBinary(Node<E> node) {
+        boolean isBinaryTree = false;
+
+        List<Node> child = left.getChilden();
+
+
+        for (int i = 0; i < 10; i++) {
+            if (node.childen.equals(i)) {
+                isBinaryTree = true;
+            }
+        }
+
+        return isBinaryTree;
     }
 
     @Override
