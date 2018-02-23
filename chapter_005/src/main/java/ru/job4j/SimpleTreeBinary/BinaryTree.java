@@ -103,7 +103,6 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
 
         List<Node> child = left.getChilden();
 
-
         for (int i = 0; i < 10; i++) {
             if (node.childen.equals(i)) {
                 isBinaryTree = true;

@@ -10,7 +10,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private int size;
 
     public Tree(E e) {
-       node = new Node<E>(e);
+        node = new Node<E>(e);
     }
 
     private int size() {
@@ -68,15 +68,15 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     class ArrIterator implements Iterator<E> {
         E elem = node.value;
         Queue<Node<E>> data = new LinkedList<>();
-        Optional<Node<E>> rsl = Optional.empty();
+        Node<E> el = data.poll();
 
         @Override
         public boolean hasNext() {
-            Node<E> el = data.poll();
+
 
             boolean isPresent = false;
             if (el != null) {
-                rsl = Optional.of(el);
+                isPresent = true;
             }
 
             return isPresent;
@@ -85,10 +85,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         @Override
         public E next() {
             if (hasNext()) {
-                findBy(elem).get().getChilden().iterator();
-
+                return (E) el.getChilden().iterator();
             } else throw new NullPointerException();
-            return elem;
         }
     }
 
