@@ -24,14 +24,14 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
      */
     @Override
     public boolean add(E parent, E child) {
-        boolean isPresent = false;
+        boolean isPresent;
         if (parent == null && child == null) {
             return false;
         }
 
         if (findBy(parent).isPresent()) {
             if (!findBy(child).isPresent()) {
-                Node<E> node = new Node<E>(child);
+                Node<E> node = new Node<>(child);
                 findBy(parent).get().childen.add(node);
             }
             isPresent = true;
@@ -66,14 +66,12 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     class ArrIterator implements Iterator<E> {
-        E elem = node.value;
-        Queue<Node<E>> data = new LinkedList<>();
+        Queue<Node<E>> data = new LinkedList<>(node.childen);
         Node<E> el = data.poll();
+        E elem = el.value;
 
         @Override
         public boolean hasNext() {
-
-
             boolean isPresent = false;
             if (el != null) {
                 isPresent = true;
@@ -85,8 +83,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         @Override
         public E next() {
             if (hasNext()) {
-                return (E) el.getChilden().iterator();
-            } else throw new NullPointerException();
+                return elem;
+            } else throw new NoSuchElementException();
         }
     }
 
