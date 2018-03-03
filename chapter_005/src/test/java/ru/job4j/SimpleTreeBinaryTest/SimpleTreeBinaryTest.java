@@ -1,7 +1,7 @@
 package ru.job4j.SimpleTreeBinaryTest;
 
 import org.junit.Test;
-import ru.job4j.SimpleTree.Tree;
+import ru.job4j.SimpleTreeBinary.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ public class SimpleTreeBinaryTest<E> {
         List<Integer> expected = Arrays.asList(50, 60, 70, 10, 5, 80, 100, 150);
         List<Integer> result = new ArrayList<>();
 
-        Tree<Integer> tree = new Tree<>(50);
+        BinaryTree<Integer> tree = new BinaryTree<>(50);
 
         tree.add(50, 60);
         tree.add(50, 70);
