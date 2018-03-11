@@ -1,37 +1,48 @@
 package ru.job4j.SimpleTreeBinaryTest;
 
-import org.junit.Test;
-import ru.job4j.SimpleTreeBinary.BinaryTree;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.junit.Assert.assertThat;
-
 public class SimpleTreeBinaryTest<E> {
-    @Test
-    public void iteratorTest() {
-        List<Integer> expected = Arrays.asList(50, 60, 70, 10, 5, 80, 100, 150);
-        List<Integer> result = new ArrayList<>();
 
-        BinaryTree<Integer> tree = new BinaryTree<>(50);
+    private final int sixteen = 16;
+    private final int ten = 10;
 
-        tree.add(50, 60);
-        tree.add(50, 70);
-        tree.add(60, 10);
-        tree.add(60, 5);
-        tree.add(60, 70);
-        tree.add(70, 80);
-        tree.add(70, 100);
-        tree.add(100, 150);
-        tree.add(100, 10);
-        tree.add(50, 150);
-        tree.add(100, 10);
+/*    @Test
+    public void whenCheckForBinaryTreeThenReturnResult() {
+        BinaryTree<Integer> underTest = new BinaryTree<>(new Node<>(sixteen));
+        for (int i = 0; i < sixteen * 2; i++) {
+            underTest.add(i);
+        }
 
-        tree.forEach(result::add);
+        Node<Integer> result = underTest.searchByValue(ten);
+        assertThat(result.getValue(), is(ten));
 
-        assertThat(result, containsInAnyOrder(expected.toArray()));
     }
+
+    private final int three = 3;
+    private final int four = 4;
+    private final int five = 5;
+    private final int six = 6;
+    private final int seven = 7;
+
+    *//**
+     * Test for DFS method.
+     *//*
+    @Test
+    public void whenInvertTreeDfsThenReturnResult() {
+        SearchBinaryTree<Integer> underTest = new SearchBinaryTree<>(new BinaryNode<>(four));
+        underTest.add(2);
+        underTest.add(six);
+        underTest.add(1);
+        underTest.add(three);
+        underTest.add(five);
+        underTest.add(seven);
+
+        TreeInverter<Integer> treeInverter = new TreeInverter<>(underTest);
+        treeInverter.invertTreeDfs(underTest.getRoot());
+
+        int[] results = {underTest.getRoot().getLeftChild().getValue(), underTest.getRoot().getRightChild().getValue()};
+        int[] expected = {six, 2};
+        assertThat(results, is(expected));
+
+    }*/
+
 }

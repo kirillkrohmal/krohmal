@@ -12,22 +12,35 @@ import java.util.*;
 public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
     private int size;
-    private Node left;
+    private Node child;
     private Node right;
+    private Object root;
+
+    public BinaryTree() {
+
+    }
 
     public BinaryTree(E e) {
         node = new Node<E>(e);
+    }
+
+    public BinaryTree(String root, Comparator<Node<String>> comparator) {
     }
 
     private int size() {
         return size;
     }
 
+
+    public Node getChildOf() {
+        return child;
+    }
+
     /*
-     * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
-     * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
-     * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
-     */
+         * метод add - Должен находить элемент parent в дереве по условию compare(node, parent) == 0 и добавлять
+         * в него дочерний элемент. node.children.add(child); В дереве не могут быть дубликатов.
+         * Итератор должен собрать все элементы в List и возвращать данные из скопированной коллекции.
+         */
     @Override
     public boolean add(E parent, E child) {
         boolean isPresent = false;
@@ -71,6 +84,14 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
         return new ArrIterator();
     }
 
+    public Object getRoot() {
+        return root;
+    }
+
+    public List<ru.job4j.SimpleTreeBinary.Node<String>> getChildOf(Object root) {
+        return null;
+    }
+
     class ArrIterator implements Iterator<E> {
         E elem = node.value;
         Queue<Node<E>> data = new LinkedList<>();
@@ -101,10 +122,10 @@ public class BinaryTree<E extends Comparable<E>> implements SimpleTree<E> {
     public boolean isBinary(Node<E> node) {
         boolean isBinaryTree = false;
 
-        List<Node> child = left.getChilden();
+        List<Node> child = getChildOf().getChilden();
 
-        for (int i = 0; i < 10; i++) {
-            if (node.childen.equals(i)) {
+        for (Node node1 : child) {
+            if (node1.getChilden().size() > 2) {
                 isBinaryTree = true;
             }
         }
