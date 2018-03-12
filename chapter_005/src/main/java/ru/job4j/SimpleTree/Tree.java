@@ -8,9 +8,15 @@ import java.util.*;
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private Node<E> node;
     private int size;
+    private Node child;
 
     public Tree(E e) {
         node = new Node<E>(e);
+    }
+
+
+    public Node getChildOf() {
+        return child;
     }
 
     /*
@@ -82,6 +88,21 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return el.value;
         }
     }
+
+    public boolean isBinary(Node<E> node) {
+        boolean isBinaryTree = false;
+
+        List<Node> child = getChildOf().getChilden();
+
+        for (Node node1 : child) {
+            if (node1.getChilden().size() > 2) {
+                isBinaryTree = true;
+            }
+        }
+
+        return isBinaryTree;
+    }
+
 
     @Override
     public boolean equals(Object o) {
