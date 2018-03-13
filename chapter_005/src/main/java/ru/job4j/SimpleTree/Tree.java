@@ -10,6 +10,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     private int size;
     private Node child;
 
+
     public Tree(E e) {
         node = new Node<E>(e);
     }
@@ -68,6 +69,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     class ArrIterator implements Iterator<E> {
+
         Queue<Node<E>> data = new LinkedList<>();
         {
             data.add(node);
@@ -92,9 +94,8 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     public boolean isBinary(Node<E> node) {
         boolean isBinaryTree = false;
 
-        List<Node> child = getChildOf().getChilden();
 
-        for (Node node1 : child) {
+        for (Node node1 : node.getChilden()) {
             if (node1.getChilden().size() > 2) {
                 isBinaryTree = true;
             }

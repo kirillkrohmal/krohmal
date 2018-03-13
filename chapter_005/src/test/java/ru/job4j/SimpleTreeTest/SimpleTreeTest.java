@@ -11,6 +11,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertThat;
 
 public class SimpleTreeTest {
+
     @Test
     public void iteratorTest() {
         List<Integer> expected = Arrays.asList(50, 60, 70, 10, 5, 80, 100, 150);
@@ -34,4 +35,7 @@ public class SimpleTreeTest {
 
         assertThat(result, containsInAnyOrder(expected.toArray()));
     }
+
+
+
 }
