@@ -36,6 +36,9 @@ public class SimpleTreeTest {
         assertThat(result, containsInAnyOrder(expected.toArray()));
     }
 
+    @Test
+    public void iteratorTest2() {
 
 
+    }
 }
