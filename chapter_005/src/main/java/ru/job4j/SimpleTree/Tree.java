@@ -64,6 +64,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     class ArrIterator implements Iterator<E> {
 
         Queue<Node<E>> data = new LinkedList<>();
+
         {
             data.add(node);
         }
@@ -86,42 +87,35 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
     public boolean isBinary() {
         boolean isBinaryTree = false;
+        size++;
 
-        Queue<Node<E>> data = new LinkedList<>();
-        {
-            data.add(node);
-        }
-
-        for (Node<E> root : data) {
-            if (root.childen.size() <= 2) {
-                for (Node node1 : node.getChilden()) {
-                    if (node1.childen.size() > 2) {
-                        isBinaryTree = true;
-                    }
-                }
+        for (Node node1 : node.getChilden()) {
+            if (node1.getChilden().size() < 2) {
+                isBinaryTree = true;
             } else {
                 isBinaryTree = false;
             }
         }
 
-        return isBinaryTree;
+
+            return isBinaryTree;
+        }
+
+        @Override
+        public boolean equals (Object o){
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            Tree<?> tree = (Tree<?>) o;
+
+            if (size != tree.size) return false;
+            return node != null ? node.equals(tree.node) : tree.node == null;
+        }
+
+        @Override
+        public int hashCode () {
+            int result = node != null ? node.hashCode() : 0;
+            result = 31 * result + size;
+            return result;
+        }
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Tree<?> tree = (Tree<?>) o;
-
-        if (size != tree.size) return false;
-        return node != null ? node.equals(tree.node) : tree.node == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = node != null ? node.hashCode() : 0;
-        result = 31 * result + size;
-        return result;
-    }
-}
