@@ -1,5 +1,6 @@
 package ru.job4j.SimpleTreeTest;
 
+import org.junit.Before;
 import org.junit.Test;
 import ru.job4j.SimpleTree.Tree;
 
@@ -12,33 +13,36 @@ import static org.junit.Assert.assertThat;
 
 public class SimpleTreeTest {
 
+    Tree<Integer> tree = new Tree<>(50);
+
     @Test
     public void iteratorTest() {
         List<Integer> expected = Arrays.asList(50, 60, 70, 10, 5, 80, 100, 150);
         List<Integer> result = new ArrayList<>();
 
-        Tree<Integer> binaryTree = new Tree<>(50);
+        tree.add(50, 60);
+        tree.add(50, 70);
+        tree.add(60, 10);
+        tree.add(60, 5);
+        tree.add(60, 70);
+        tree.add(70, 80);
+        tree.add(70, 100);
+        tree.add(100, 150);
+        tree.add(100, 10);
+        tree.add(50, 150);
+        tree.add(100, 10);
 
-        binaryTree.add(50, 60);
-        binaryTree.add(50, 70);
-        binaryTree.add(60, 10);
-        binaryTree.add(60, 5);
-        binaryTree.add(60, 70);
-        binaryTree.add(70, 80);
-        binaryTree.add(70, 100);
-        binaryTree.add(100, 150);
-        binaryTree.add(100, 10);
-        binaryTree.add(50, 150);
-        binaryTree.add(100, 10);
-
-        binaryTree.forEach(result::add);
+        tree.forEach(result::add);
 
         assertThat(result, containsInAnyOrder(expected.toArray()));
     }
 
-    @Test
-    public void iteratorTest2() {
-
-
+    @Before
+    public void prepareTree() {
+        tree = new Tree(0);
+        tree.add(0,1);
+        tree.add(1,2);
+        tree.add(2,3);
+        tree.add(3, 4);
     }
 }

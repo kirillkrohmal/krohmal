@@ -14,7 +14,6 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
 
     public SearchTree(Node<E> line) {
         this.line = line;
-
     }
 
     public int size() {

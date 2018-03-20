@@ -21,7 +21,6 @@ public class SimpleArray<T> {
         if (value.equals(object)) {
             object[index] = null;
         }
-
         return (T) object;
     }
 

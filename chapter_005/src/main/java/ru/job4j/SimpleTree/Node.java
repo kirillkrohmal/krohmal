@@ -55,7 +55,6 @@ public class Node<E> {
     }
 
     public Node<E> getChilden(Node<E> root) {
-
         return root;
     }
 }

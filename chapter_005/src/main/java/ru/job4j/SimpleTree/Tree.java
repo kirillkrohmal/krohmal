@@ -74,6 +74,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return !data.isEmpty();
         }
 
+
         @Override
         public E next() {
             if (!hasNext()) {
@@ -87,35 +88,37 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
     public boolean isBinary() {
         boolean isBinaryTree = false;
-        size++;
 
-        for (Node node1 : node.getChilden()) {
-            if (node1.getChilden().size() < 2) {
-                isBinaryTree = true;
-            } else {
+        Queue<Node<E>> data = new LinkedList<>();
+        data.offer(this.node);
+
+        for (Node node : data) {
+
+            if (node.getChilden().size() <= 1) {
                 isBinaryTree = false;
+            } else if (node.getChilden().size() <= 2) {
+                isBinaryTree = true;
             }
         }
 
-
-            return isBinaryTree;
-        }
-
-        @Override
-        public boolean equals (Object o){
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Tree<?> tree = (Tree<?>) o;
-
-            if (size != tree.size) return false;
-            return node != null ? node.equals(tree.node) : tree.node == null;
-        }
-
-        @Override
-        public int hashCode () {
-            int result = node != null ? node.hashCode() : 0;
-            result = 31 * result + size;
-            return result;
-        }
+        return isBinaryTree;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tree<?> tree = (Tree<?>) o;
+
+        if (size != tree.size) return false;
+        return node != null ? node.equals(tree.node) : tree.node == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = node != null ? node.hashCode() : 0;
+        result = 31 * result + size;
+        return result;
+    }
+}

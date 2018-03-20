@@ -7,7 +7,6 @@ import java.util.Arrays;
  */
 public class SelfHashTable<E> {
     private Object[] objects = null;
-
     private int key;
     private int value;
 
@@ -56,7 +55,6 @@ public class SelfHashTable<E> {
             added = true;
             key++;
         }
-
         return added;
     }
 
@@ -77,7 +75,6 @@ public class SelfHashTable<E> {
             objects[indexOf(e)] = null;
             isRemove = true;
         }
-
         return isRemove;
     }
 

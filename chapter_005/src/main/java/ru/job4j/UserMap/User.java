@@ -31,7 +31,6 @@ public class User {
     @Override
     public int hashCode() {
         int result = 31;
-
         return result;
     }
 }
