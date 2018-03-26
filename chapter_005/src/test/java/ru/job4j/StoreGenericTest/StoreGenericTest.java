@@ -1,11 +1,8 @@
 package ru.job4j.StoreGenericTest;
 
 import org.junit.Test;
-import ru.job4j.SimpleArray.SimpleArray;
 import ru.job4j.StoreGeneric.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -19,6 +16,7 @@ public class StoreGenericTest {
         Base expected = base;
         assertThat(result, is(expected));
     }
+
     @Test
     public void iteratorTest2() {
         AbstractStore abstractStore = new RoleStore();
@@ -30,6 +28,7 @@ public class StoreGenericTest {
         Base expected = base2;
         assertThat(result, is(expected));
     }
+
     @Test
     public void iteratorTest3() {
         AbstractStore abstractStore = new RoleStore();
@@ -50,6 +49,7 @@ public class StoreGenericTest {
         Base expected = base;
         assertThat(result, is(expected));
     }
+
     @Test
     public void iteratorTest5() {
         AbstractStore<Base> abstractStore = new UserStore();
@@ -61,6 +61,7 @@ public class StoreGenericTest {
         Base expected = base2;
         assertThat(result, is(expected));
     }
+
     @Test
     public void iteratorTest6() {
         AbstractStore<Base> abstractStore = new UserStore();
