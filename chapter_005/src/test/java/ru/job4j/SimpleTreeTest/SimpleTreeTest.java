@@ -38,8 +38,8 @@ public class SimpleTreeTest {
         assertThat(result, containsInAnyOrder(expected.toArray()));
     }
 
-    @Test
-    public void iteratorTest2() {
+    @Before
+    public void prepareTree() {
         tree.add(50, 60);
         tree.add(50, 70);
         tree.add(60, 10);
@@ -51,19 +51,11 @@ public class SimpleTreeTest {
         tree.add(100, 10);
         tree.add(50, 150);
         tree.add(100, 10);
-
-        boolean expected = tree.isBinary();
-
-        assertThat(expected, is(false));
-
     }
 
-    @Before
-    public void prepareTree() {
-        tree = new Tree(0);
-        tree.add(0,1);
-        tree.add(1,2);
-        tree.add(2,3);
-        tree.add(3, 4);
+    @Test
+    public void iteratorTest2() {
+        boolean expected = tree.isBinary();
+        assertThat(expected, is(true));
     }
 }
