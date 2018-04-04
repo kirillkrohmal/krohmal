@@ -95,13 +95,14 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         while (data.size() != 0) {
             Node<E> elem = data.poll();
 
-            data.poll();
+
             if (elem.getChilden().size() > 2) {
                 isBinaryTree = false;
                 break;
             } else if (elem.getChilden().size() <= 2) {
                 data.addAll(elem.childen);
-                //isBinaryTree = true;
+                data.poll();
+                isBinaryTree = true;
             }
         }
 

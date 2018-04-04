@@ -81,6 +81,21 @@ public class SimpleTreeTest {
     @Test
     public void iteratorTest2() {
         boolean expected = tree.isBinary();
-        assertThat(expected, is(false));
+        assertThat(expected, is(true));
+    }
+
+    @Test
+    public void shouldReturnTrue () {
+        Tree<Integer> tree = new Tree<>(50);
+        tree.add(50, 70);
+        tree.add(50, 80);
+        tree.add(70, 90);
+        tree.add(70, 100);
+        tree.add(90, 110);
+        tree.add(90, 120);
+        tree.add(120, 200);
+        tree.add(200, 250);
+        tree.add(200, 270);
+        assertThat(tree.isBinary(), is(true));
     }
 }
