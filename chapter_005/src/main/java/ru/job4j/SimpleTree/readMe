@@ -306,4 +306,3 @@ else if (node.getChilden().size() <= 2) {
     data.poll();
     data.addAll(elem.childen);
 }
-
