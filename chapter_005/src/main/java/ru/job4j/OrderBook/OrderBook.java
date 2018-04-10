@@ -15,5 +15,14 @@ import java.util.List;
  */
 public class OrderBook {
 
+/**
+ * action - bid/ask - заявка имеет два действия. Заявка на покупка ценной бумаги или на продажу.
+ */
+    public void bit () {
 
+    }
+
+    public void ask () {
+
+    }
 }

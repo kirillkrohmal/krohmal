@@ -1,33 +1,58 @@
 package ru.job4j.OrderBook;
 
+import java.util.Objects;
+
 /**
  * Created by Comp on 12.11.2017.
  */
 public class Orders {
+
+    private int id;
+    private Book book;
+    private Type type;
+    private OrderBook action;
+    private float price;
+    private int volume;
+
     public enum Type {
         SELL, BUY;
     }
 
-    private String book;
-    private Type type;
-    private float price;
-    private int volume;
-    private int orderId;
-
-    public Orders(String book, Type type, float price, int volume, int orderId) {
-        this.book = book;
-        this.type = type;
-        this.price = price;
-        this.volume = volume;
-        this.orderId = orderId;
+    public Orders() {
     }
 
-    public String getBook() {
+    public Orders(int id, Book book, Type type, OrderBook action, float price, int volume) {
+        this.id = id;
+        this.book = book;
+        this.type = type;
+        this.action = action;
+        this.price = price;
+        this.volume = volume;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Book getBook() {
         return book;
     }
 
-    public void setBook(String book) {
+    public void setBook(Book book) {
         this.book = book;
+    }
+
+    public OrderBook getAction() {
+        return action;
+    }
+
+    public void setAction(OrderBook action) {
+        this.action = action;
     }
 
     public Type getType() {
@@ -54,46 +79,34 @@ public class Orders {
         this.volume = volume;
     }
 
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Orders orders = (Orders) o;
-
-        if (Float.compare(orders.price, price) != 0) return false;
-        if (volume != orders.volume) return false;
-        if (orderId != orders.orderId) return false;
-        if (book != null ? !book.equals(orders.book) : orders.book != null) return false;
-        return type == orders.type;
+        return id == orders.id &&
+                Float.compare(orders.price, price) == 0 &&
+                volume == orders.volume &&
+                Objects.equals(book, orders.book) &&
+                type == orders.type &&
+                Objects.equals(action, orders.action);
     }
 
     @Override
     public int hashCode() {
-        int result = book != null ? book.hashCode() : 0;
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
-        result = 31 * result + volume;
-        result = 31 * result + orderId;
-        return result;
+
+        return Objects.hash(id, book, type, action, price, volume);
     }
 
     @Override
     public String toString() {
         return "Orders{" +
-                "book='" + book + '\'' +
+                "id=" + id +
+                ", book=" + book +
                 ", type=" + type +
+                ", action=" + action +
                 ", price=" + price +
                 ", volume=" + volume +
-                ", orderId=" + orderId +
                 '}';
     }
 }
