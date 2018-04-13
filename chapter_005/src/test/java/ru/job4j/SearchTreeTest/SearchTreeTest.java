@@ -11,7 +11,6 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 23.10.2017.
  */
 public class SearchTreeTest {
-
 	SimpleTree tree = new Tree<>(1);
 
 	@Test
@@ -40,13 +39,11 @@ public class SearchTreeTest {
 
 	@Before
 	public void iteratorTest2() {
-
 		tree = new Tree<Integer>(1);
 	}
 
 	@Test
 	public void iteratorTest3() {
-
 		tree = new Tree<Integer>(1);
 
 		tree.add(1, 2);
@@ -71,6 +68,5 @@ public class SearchTreeTest {
 		assertThat(tree.iterator().hasNext(), is(true));
 		
 	}
-
 }
 

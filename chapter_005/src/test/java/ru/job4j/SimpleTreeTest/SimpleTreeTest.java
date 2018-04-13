@@ -1,6 +1,5 @@
 package ru.job4j.SimpleTreeTest;
 
-import org.junit.Before;
 import org.junit.Test;
 import ru.job4j.SimpleTree.Tree;
 
@@ -13,7 +12,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SimpleTreeTest {
-
     Tree<Integer> tree = new Tree<>(50);
 
     @Test
@@ -38,7 +36,7 @@ public class SimpleTreeTest {
         assertThat(result, containsInAnyOrder(expected.toArray()));
     }
 
-    @Before
+    @Test
     public void prepareTree() {
         tree.add(50, 60);
         tree.add(50, 70);
@@ -51,15 +49,11 @@ public class SimpleTreeTest {
         tree.add(100, 10);
         tree.add(50, 150);
         tree.add(100, 10);
+
+        assertThat(tree.isBinary(), is(true));
     }
 
     @Test
-    public void iteratorTest2() {
-        boolean expected = tree.isBinary();
-        assertThat(expected, is(true));
-    }
-
-    @Before
     public void prepareTree2() {
         Tree<Integer> tree = new Tree<>(50);
         tree.add(50, 70);
@@ -76,12 +70,8 @@ public class SimpleTreeTest {
         tree.add(190, 211);
         tree.add(190, 215);
         tree.add(190, 217);
-    }
 
-    @Test
-    public void iteratorTest3() {
-        boolean expected = tree.isBinary();
-        assertThat(expected, is(false));
+        assertThat(tree.isBinary(), is(false));
     }
 
     @Test
@@ -96,6 +86,7 @@ public class SimpleTreeTest {
         tree.add(120, 200);
         tree.add(200, 250);
         tree.add(200, 270);
+
         assertThat(tree.isBinary(), is(true));
     }
 }
