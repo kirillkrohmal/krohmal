@@ -1,6 +1,5 @@
 package ru.job4j.SearchTree;
 
-
 import java.util.Iterator;
 
 /**
@@ -8,61 +7,112 @@ import java.util.Iterator;
  */
 public class SearchTree<E extends Comparable<E>> implements Iterator {
     private Node node;
-    private E key;
-
-    private Node<E> left;
-    private Node<E> right;
-    private Node<E> parent;
+    private Node<E> root;
 
     private int size = 0;
 
-    public SearchTree(Node node, Node<E> left, Node<E> right) {
-        this.node = node;
-        this.left = left;
-        this.right = right;
-    }
     public int size() {
         return size;
     }
 
-    public Node<E> add(E e) {
-        if (e == null) {
-            return null;
-        } else if (left != null) {
-            Node<E> p = right;
-            while (p.left != null)
-                p = p.left;
-            return p;
-        } else {
-            Node<E> p = parent;
-            Node<E> ch = node;
-            while (p != null && ch == p.right) {
-                ch = p;
-                p = p.parent;
+    public void add(E key, E value) {
+        Node<E> x = root, y = null;
+
+        while (x != null) {
+            int cmp = key.compareTo(x.key);
+
+            if (cmp == 0) {
+                node.value = value;
+                return;
+            } else {
+                y = x;
+                if (cmp < 0) {
+                    x = x.left;
+                } else {
+                    x = x.right;
+                }
             }
-            return p;
+        }
+
+        Node<E> newNode = new Node<E>(key, value);
+        if (y == null) {
+            root = newNode;
+        } else {
+            if (key.compareTo(y.key) < 0) {
+                y.left = newNode;
+            } else {
+                y.right = newNode;
+            }
         }
     }
 
-    public Node<E> remove(E e) {
+    public void remove(E key) {
+        Node<E> x = root, y = null;
 
-        return null;
-    }
+        while (key != null) {
+            int cmp = key.compareTo(x.key);
 
-    public Node<E> get(E e) {
-
-        return null;
-    }
-
-    private boolean searcNode(E e, Node data) {
-        if (node == null) {
-            return false;
+            if (cmp == 0) {
+                break;
+            } else {
+                y = x;
+                if (cmp < 0) {
+                    x = x.left;
+                } else {
+                    x = x.right;
+                }
+            }
         }
-        return false;
+
+        if (x == null) {
+            return;
+        }
+
+        if (x.right == null) {
+            if (y == null) {
+                root = x.left;
+            } else {
+                if (x == y.left) {
+                    y.left = x.left;
+                } else {
+                    y.right = x.left;
+                }
+            }
+        } else {
+            Node<E> leftMost = x.right;
+
+            y = null;
+
+            while (leftMost.left != null) {
+                y = leftMost;
+                leftMost = leftMost.left;
+            }
+
+            if (y != null) {
+                y.left = leftMost.right;
+            } else {
+                x.right = leftMost.right;
+            }
+            x.key = leftMost.key;
+            x.value = leftMost.value;
+        }
     }
 
-    public boolean contains(E e) {
-        return node == null || searcNode(e, node);
+    public E containsKey(E key) {
+        Node<E> node = root;
+        while (key != null) {
+            int cmp = key.compareTo(node.key);
+
+            if (cmp == 0) {
+                return node.value;
+            }
+            if (cmp < 0) {
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -81,8 +131,8 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
         Node<E> element;
 
         if (hasNext()) {
-            element = node.getNextElement();
+
         } else throw new NullPointerException();
-        return (E) element;
+        return null;
     }
 }

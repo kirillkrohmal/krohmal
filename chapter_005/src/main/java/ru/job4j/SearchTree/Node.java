@@ -5,41 +5,20 @@ package ru.job4j.SearchTree;
  * Created by Comp on 29.09.2017.
  */
 public class Node<E> {
-    Node<E> parent;
-    Node<E> left;
-    Node<E> right;
+    E value, key;
+    Node<E> left, right;
 
-    E value;
-
-    public Node(Node<E> parent, E value) {
-        this.value = value;
-        this.parent = parent;
+    public Node() {
     }
 
-    public Node(Node<E> parent, Node<E> left, Node<E> right) {
-        this.parent = parent;
+    public Node(Node<E> left, Node<E> right) {
         this.left = left;
         this.right = right;
     }
 
-    public Node<E> getNextElement() {
-        return parent;
-    }
-
-    public void setNextElement(Node<E> parent) {
-        this.parent = parent;
-    }
-
-    public Node(E value) {
-        this(null, value);
-    }
-
-    public Node<E> getParent() {
-        return parent;
-    }
-
-    public void setParent(Node<E> parent) {
-        this.parent = parent;
+    public Node(E value, E key) {
+        this.value = value;
+        this.key = key;
     }
 
     public Node<E> getLeft() {
@@ -64,5 +43,35 @@ public class Node<E> {
 
     public void setValue(E value) {
         this.value = value;
+    }
+
+    public E getKey() {
+        return key;
+    }
+
+    public void setKey(E key) {
+        this.key = key;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Node<?> node = (Node<?>) o;
+
+        if (value != null ? !value.equals(node.value) : node.value != null) return false;
+        if (key != null ? !key.equals(node.key) : node.key != null) return false;
+        if (left != null ? !left.equals(node.left) : node.left != null) return false;
+        return right != null ? right.equals(node.right) : node.right == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = value != null ? value.hashCode() : 0;
+        result = 31 * result + (key != null ? key.hashCode() : 0);
+        result = 31 * result + (left != null ? left.hashCode() : 0);
+        result = 31 * result + (right != null ? right.hashCode() : 0);
+        return result;
     }
 }

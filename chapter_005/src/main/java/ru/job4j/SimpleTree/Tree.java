@@ -74,7 +74,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
             return !data.isEmpty();
         }
 
-
         @Override
         public E next() {
             if (!hasNext()) {
