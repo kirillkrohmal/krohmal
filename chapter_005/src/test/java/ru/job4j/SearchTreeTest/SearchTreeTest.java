@@ -19,11 +19,11 @@ public class SearchTreeTest<E extends Comparable<E>> {
 	public void whenElFindLastThen() {
 		SearchTree tree = new SearchTree<E>();
 
-		tree.add(1, 2);
-		tree.add(1, 3);
-		tree.add(1, 4);
-		tree.add(4, 5);
-		tree.add(5, 6);
+		tree.add(1);
+		tree.add(1);
+		tree.add(1);
+		tree.add(4);
+		tree.add(5);
 
 		assertThat(
 				tree.containsKey(6),
@@ -35,7 +35,7 @@ public class SearchTreeTest<E extends Comparable<E>> {
 	public void whenElFindNotExitThenOptionEmpty() {
 		SearchTree tree = new SearchTree<E>();
 
-		tree.add(1, 2);
+		tree.add(1);
 
 		assertThat(
 				tree.hasNext(),
@@ -47,35 +47,35 @@ public class SearchTreeTest<E extends Comparable<E>> {
 	public void iteratorTest2() {
 		tree = new SearchTree<E>();
 
-		tree.add(1, 5);
-		tree.add(2, 2);
-		tree.add(3, 8);
-		tree.add(4, 9);
-		tree.add(5, 3);
-		tree.add(6, 6);
-		tree.add(7, 2);
-		tree.add(8, 6);
+		tree.add(1);
+		tree.add(2);
+		tree.add(3);
+		tree.add(4);
+		tree.add(5);
+		tree.add(6);
+		tree.add(7);
+		tree.add(8);
 	}
 
 	@Test
 	public void iteratorTest3() {
 		Iterator<Integer> iterator = tree;
 		assertThat(iterator.hasNext(), is(true));
-		assertThat(iterator.next(), is(5));
+		assertThat(iterator.next(), is(1));
 		assertThat(iterator.hasNext(), is(true));
 		assertThat(iterator.next(), is(2));
-		assertThat(iterator.hasNext(), is(true));
-		assertThat(iterator.next(), is(8));
-		assertThat(iterator.hasNext(), is(true));
-		assertThat(iterator.next(), is(9));
 		assertThat(iterator.hasNext(), is(true));
 		assertThat(iterator.next(), is(3));
 		assertThat(iterator.hasNext(), is(true));
+		assertThat(iterator.next(), is(4));
+		assertThat(iterator.hasNext(), is(true));
+		assertThat(iterator.next(), is(5));
+		assertThat(iterator.hasNext(), is(true));
 		assertThat(iterator.next(), is(6));
 		assertThat(iterator.hasNext(), is(true));
-		assertThat(iterator.next(), is(2));
+		assertThat(iterator.next(), is(7));
 		assertThat(iterator.hasNext(), is(true));
-		assertThat(iterator.next(), is(6));
+		assertThat(iterator.next(), is(8));
 		assertThat(iterator.hasNext(), is(false));
 	}
 }

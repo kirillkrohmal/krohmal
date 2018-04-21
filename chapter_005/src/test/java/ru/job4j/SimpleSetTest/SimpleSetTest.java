@@ -38,7 +38,6 @@ public class SimpleSetTest<E> {
     @Test
     public void iteratorTest4() {
         Iterator<Integer> iterator = simpleSet;
-        //simpleSet = new SimpleSet<Integer>();
 
         assertThat(iterator.hasNext(), is(true));
         assertThat(iterator.next(), is(1));
