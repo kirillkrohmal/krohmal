@@ -15,12 +15,10 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
         return size;
     }
 
-
     public void add(E key) {
         Node<E> x = root, y = null;
 
         while (x != null) {
-
             int cmp = key.compareTo(x.key);
 
             if (cmp == 0) {
@@ -96,7 +94,6 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
                 x.right = leftMost.right;
             }
             x.key = leftMost.key;
-
         }
     }
 
