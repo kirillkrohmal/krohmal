@@ -127,11 +127,11 @@ public class SearchTree<E extends Comparable<E>> implements Iterator {
 
     @Override
     public E next() {
-        Node<E> element;
+        Object element;
 
         if (hasNext()) {
-
+            element = node.getKey();
         } else throw new NullPointerException();
-        return null;
+        return (E) element;
     }
 }
