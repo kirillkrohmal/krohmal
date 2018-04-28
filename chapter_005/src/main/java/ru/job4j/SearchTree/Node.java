@@ -5,7 +5,7 @@ package ru.job4j.SearchTree;
  * Created by Comp on 29.09.2017.
  */
 public class Node<E> {
-    E key = (E) new Object[1000];
+    E key;
     Node<E> left, right;
 
     public Node(Node<E> left, Node<E> right) {
