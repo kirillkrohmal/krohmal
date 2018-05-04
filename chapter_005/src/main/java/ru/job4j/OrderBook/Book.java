@@ -13,7 +13,7 @@ public class Book {
         this.orders = orders;
     }
 
-    Comparator<Float> doubleComparator {
+    Comparator<Float> doubleComparator = new Comparator<Float>() {
         @Override
         public int compare(Float o1, Float o2) {
             return o1.compareTo(o2);

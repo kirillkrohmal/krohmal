@@ -1,9 +1,6 @@
 package ru.job4j.SearchTree;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by Comp on 23.10.2017.
@@ -118,37 +115,25 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
     }
 
     class TreeIterator implements Iterator<E> {
-        Node<E> elem = root;
+        Queue<Node<E>> nodes = new LinkedList<Node<E>>(Arrays.asList(root));
 
         @Override
         public boolean hasNext() {
-            boolean isPresent = false;
-            if (elem != null) {
-                isPresent = true;
-            }
-            return isPresent;
+            return !nodes.isEmpty();
         }
 
         @Override
         public E next() {
-            Queue<E> element = new LinkedList<E>();
-            element.add(root.key);
-
+            Node<E> element = nodes.poll();
             if (hasNext()) {
-                element.poll();
-                if(node.left != null) {
-                    elem = root.left;
-                    element.poll();
+                if (element.left != null) {
+                    nodes.offer(element.left);
                 }
-                if(node.right != null) {
-                    elem = root.right;
-                    element.poll();
+                if (element.right != null) {
+                    nodes.offer(element.right);
                 }
             }
-
-            else throw new NullPointerException();
-
-            return elem.key;
+            return element.getKey();
         }
     }
 
