@@ -11,6 +11,10 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
 
     private int size = 0;
 
+    public SearchTree(Node node) {
+        this.node = node;
+    }
+
     public int size() {
         return size;
     }
@@ -124,14 +128,17 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
 
         @Override
         public E next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+
             Node<E> element = nodes.poll();
-            if (hasNext()) {
-                if (element.left != null) {
-                    nodes.offer(element.left);
-                }
-                if (element.right != null) {
-                    nodes.offer(element.right);
-                }
+
+            if (element.left != null) {
+                nodes.offer(element.left);
+            }
+            if (element.right != null) {
+                nodes.offer(element.right);
             }
             return element.getKey();
         }
