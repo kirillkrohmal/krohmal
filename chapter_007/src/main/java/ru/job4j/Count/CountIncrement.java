@@ -20,15 +20,14 @@ public class CountIncrement implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(count.counting());
-        System.out.println(count2.counting());
+        System.out.println(count.get());
+        System.out.println(count2.get());
     }
 
     public static void main(String[] args) {
         Count count = new Count();
         Count2 count2 = new Count2();
         new Thread(new CountIncrement(count, count2)).start();
-
         new Thread(new CountIncrement(count, count2)).start();
     }
 }

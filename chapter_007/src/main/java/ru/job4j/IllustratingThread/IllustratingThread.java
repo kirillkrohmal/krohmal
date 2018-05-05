@@ -6,10 +6,10 @@ package ru.job4j.IllustratingThread;
  */
 
 public class IllustratingThread implements Runnable {
-    Count count;
-    Count2 count2;
+    private Count count;
+    private Count2 count2;
 
-    public IllustratingThread(Count count, Count2 count2) {
+    private IllustratingThread(Count count, Count2 count2) {
         this.count = count;
         this.count2 = count2;
     }
