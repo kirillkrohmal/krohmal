@@ -13,7 +13,7 @@ public class CountIncrement implements Runnable {
 
     private Object lock = new Object();
 
-    public CountIncrement(Count count, Count2 count2) {
+    private CountIncrement(Count count, Count2 count2) {
         this.count = count;
         this.count2 = count2;
     }
