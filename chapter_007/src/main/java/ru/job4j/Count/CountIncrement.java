@@ -8,12 +8,12 @@ import net.jcip.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class CountIncrement implements Runnable {
-    @GuardedBy("this") private Count count = new Count();
-    @GuardedBy("this") private Count2 count2 = new Count2();
+    @GuardedBy("this") private static Count count = new Count();
+    @GuardedBy("this") private static Count count2 = new Count();
 
     private Object lock = new Object();
 
-    private CountIncrement(Count count, Count2 count2) {
+    private CountIncrement(Count count, Count count2) {
         this.count = count;
         this.count2 = count2;
     }
@@ -22,12 +22,12 @@ public class CountIncrement implements Runnable {
     public void run() {
         System.out.println(count.get());
         System.out.println(count2.get());
+
     }
 
     public static void main(String[] args) {
         Count count = new Count();
-        Count2 count2 = new Count2();
-        new Thread(new CountIncrement(count, count2)).start();
+        Count count2 = new Count();
         new Thread(new CountIncrement(count, count2)).start();
     }
 }
