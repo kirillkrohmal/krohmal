@@ -6,7 +6,6 @@ import java.util.Objects;
  * Created by Comp on 12.11.2017.
  */
 public class Orders {
-
     private int id;
     private Book book;
     private Type type;
@@ -29,7 +28,6 @@ public class Orders {
         this.price = price;
         this.volume = volume;
     }
-
 
     public int getId() {
         return id;
