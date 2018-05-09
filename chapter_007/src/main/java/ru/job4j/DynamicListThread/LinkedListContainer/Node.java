@@ -7,20 +7,20 @@ public class Node<E> {
     Node<E> nextElement;
     E value;
 
-    public Node(Node<E> nextElement, E value) {
+    private Node(Node<E> nextElement, E value) {
         this.value = value;
         this.nextElement = nextElement;
     }
 
-    public Node<E> getNextElement() {
+    Node<E> getNextElement() {
         return nextElement;
     }
 
-    public void setNextElement(Node<E> nextElement) {
+    void setNextElement(Node<E> nextElement) {
         this.nextElement = nextElement;
     }
 
-    public Node(E value) {
+    Node(E value) {
         this(null, value);
     }
 }

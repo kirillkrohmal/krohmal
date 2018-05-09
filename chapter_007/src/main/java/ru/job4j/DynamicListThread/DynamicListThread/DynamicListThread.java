@@ -1,5 +1,6 @@
 package ru.job4j.DynamicListThread.DynamicListThread;
 
+import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
 import java.util.Arrays;
@@ -9,11 +10,13 @@ import java.util.Iterator;
  * Created by Comp on 03.10.2017.
  */
 @ThreadSafe
-public class DynamicListThread<E> implements Runnable {
+public class DynamicListThread<E> implements Iterable<E> {
+    @GuardedBy("this")
     E[] container = (E[]) new Object[1000];
+    @GuardedBy("this")
     int size = 0;
 
-    public  void add(E value) {
+    public synchronized void add(E value) {
         if (container.length > size) {
             container[size++] = value;
         } else if (container.length == size) {
@@ -21,7 +24,7 @@ public class DynamicListThread<E> implements Runnable {
         }
     }
 
-    public E get(int index) {
+    public synchronized E get(int index) {
         E s = (E) new Object();
         if (index >= 0 && index < size) {
             s = container[index];
@@ -30,15 +33,15 @@ public class DynamicListThread<E> implements Runnable {
     }
 
     @Override
-    public void run() {
-
+    public Iterator<E> iterator() {
+        return new ArrayIterator();
     }
 
     class ArrayIterator implements Iterator<E> {
         int count = 0;
 
         @Override
-        public boolean hasNext() {
+        public synchronized boolean hasNext() {
             boolean isPresent = false;
 
             if (count < size) {
@@ -48,7 +51,7 @@ public class DynamicListThread<E> implements Runnable {
         }
 
         @Override
-        public E next() {
+        public synchronized E next() {
             Object index = null;
             if (hasNext() == true) {
                 index = container[count++];
