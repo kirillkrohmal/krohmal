@@ -7,7 +7,7 @@ import java.util.Comparator;
  * Created by Comp on 12.11.2017.
  */
 public class Book {
-    Collection<Orders> orders;
+    private Collection<Orders> orders;
 
     public Book(Collection<Orders> orders) {
         this.orders = orders;
@@ -19,4 +19,6 @@ public class Book {
             return o1.compareTo(o2);
         }
     };
+
+
 }
