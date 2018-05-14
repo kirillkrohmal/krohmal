@@ -4,11 +4,9 @@ package ru.job4j.LinkedListContainer;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
 /**
  * Created by Comp on 24.09.2017.
  */
-
 public class LinkedListContainer<E> implements Iterable<E> {
     private Node<E> head;
     private int size = 0;
@@ -41,7 +39,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
         }
 
         Node<E> tmp = head;
-
         for (int i = 0; i < index; i++) {
             tmp = tmp.getNextElement();
         }

@@ -4,10 +4,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProducerTask implements Runnable {
     private TransferObject transferObject;
-    protected volatile boolean stopped;
+    private volatile boolean stopped;
     static volatile AtomicInteger i = new AtomicInteger(0);
 
-    public ProducerTask(TransferObject transferObject) {
+    ProducerTask(TransferObject transferObject) {
         this.transferObject = transferObject;
         new Thread(this, "ProducerTask").start();
     }
@@ -25,7 +25,7 @@ public class ProducerTask implements Runnable {
         }
     }
 
-    public void stop() {
+    void stop() {
         stopped = true;
     }
 }

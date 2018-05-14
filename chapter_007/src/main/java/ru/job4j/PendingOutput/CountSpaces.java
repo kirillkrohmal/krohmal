@@ -4,10 +4,10 @@ package ru.job4j.PendingOutput;
  * Created by Comp on 25.10.2017.
  */
 class CountSpaces implements Runnable {
-    String text = null;
-    int countSpaces;
+    private String text;
+    private int countSpaces;
 
-    public CountSpaces(String text) {
+    CountSpaces(String text) {
         this.text = text;
     }
 
@@ -25,7 +25,6 @@ class CountSpaces implements Runnable {
                     e.printStackTrace();
                 }
             }
-
         }
     }
 }

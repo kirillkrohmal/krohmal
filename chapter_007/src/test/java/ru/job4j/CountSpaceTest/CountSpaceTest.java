@@ -40,6 +40,5 @@ public class CountSpaceTest {
         second.join();
         //Проверяем результат.
         assertThat(count.get(), is(2));
-
     }
 }

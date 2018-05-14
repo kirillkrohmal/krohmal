@@ -92,7 +92,6 @@ public class Orders {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id, book, type, action, price, volume);
     }
 

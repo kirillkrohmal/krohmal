@@ -11,7 +11,7 @@ public class ConvertIterator {
         return new Iterator<Integer>() {
             private Iterator<Integer> iterator = it.next();
 
-            public void moveIterator() {
+            void moveIterator() {
                 if (iterator != null && it.hasNext()) {
                     iterator = it.next() ;
                 }

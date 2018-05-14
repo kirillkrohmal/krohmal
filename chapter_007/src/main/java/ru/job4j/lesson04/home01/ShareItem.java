@@ -2,8 +2,8 @@ package ru.job4j.lesson04.home01;
 
 //this class shows how to call other constructors using 'this'
 public class ShareItem {
-    public String description;
-    public int itemId;
+    private String description;
+    private int itemId;
 
     public ShareItem() {
         this("Test Item", 0);

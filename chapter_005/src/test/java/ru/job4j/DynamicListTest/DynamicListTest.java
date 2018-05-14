@@ -14,7 +14,8 @@ import static org.junit.Assert.assertThat;
  */
 
 public class DynamicListTest<E> {
-    DynamicList dynamicList;
+    private DynamicList dynamicList;
+
     @Test
     public void iteratorTest() {
         dynamicList = new DynamicList();

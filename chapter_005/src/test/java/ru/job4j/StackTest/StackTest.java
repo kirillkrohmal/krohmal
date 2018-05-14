@@ -12,8 +12,9 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 23.10.2017.
  */
 public class StackTest {
-    SimpleQueue simpleQueue;
-    SimpleStack simpleStack;
+    private SimpleQueue simpleQueue;
+    private SimpleStack simpleStack;
+
     private Object result;
     private Object expected;
 

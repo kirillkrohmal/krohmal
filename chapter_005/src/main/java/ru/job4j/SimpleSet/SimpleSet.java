@@ -40,7 +40,6 @@ public class SimpleSet<E> implements Iterator<E> {
                 break;
             }
         }
-
         return duplicate;
     }
 

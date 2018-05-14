@@ -4,10 +4,10 @@ package ru.job4j.CountSpace;
  * Created by Comp on 25.10.2017.
  */
 class CountWords implements Runnable {
-    String text = null;
-    int countWords = 0;
+    private String text;
+    private int countWords;
 
-    public CountWords(String text) {
+    CountWords(String text) {
         this.text = text;
     }
 

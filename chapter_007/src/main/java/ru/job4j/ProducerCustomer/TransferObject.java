@@ -4,7 +4,6 @@ package ru.job4j.ProducerCustomer;
  * Created by Comp on 26.11.2017.
  */
 public class TransferObject {
-
     private volatile boolean blockCustomer;
     private final Object lock = new Object();
 

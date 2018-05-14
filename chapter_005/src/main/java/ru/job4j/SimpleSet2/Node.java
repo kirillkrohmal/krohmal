@@ -6,7 +6,7 @@ package ru.job4j.SimpleSet2;
 public class Node<E> {
     private Node<E> nextElement;
     private Node<E> prevElement;
-    E value;
+    private E value;
 
     public Node(Node<E> nextElement, Node<E> prevElement) {
         this.nextElement = nextElement;

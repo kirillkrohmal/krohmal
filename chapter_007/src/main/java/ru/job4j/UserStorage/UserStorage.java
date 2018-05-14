@@ -7,14 +7,13 @@ import net.jcip.annotations.ThreadSafe;
  */
 @ThreadSafe
 public class UserStorage {
-    public static final int STORAGE = 1000;
-    User[] storage = new User[STORAGE];
-    Integer[] sum = new Integer[]{};
-    User user;
+    private static final int STORAGE = 1000;
+    private User[] storage = new User[STORAGE];
+    private Integer[] sum = new Integer[]{};
 
-    public int size = 0;
+    private int size = 0;
 
-    final Object lock = new Object();
+    private final Object lock = new Object();
 
     public  void add(User user) {
         synchronized(this.lock) {

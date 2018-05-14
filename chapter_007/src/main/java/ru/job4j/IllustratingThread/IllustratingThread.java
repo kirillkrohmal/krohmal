@@ -19,7 +19,6 @@ public class IllustratingThread implements Runnable {
         Count2 count2 = new Count2();
 
         new Thread(new IllustratingThread(count, count2)).start();
-
         new Thread(new IllustratingThread(count, count2)).start();
     }
 

@@ -6,11 +6,11 @@ package ru.job4j.CountSpace;
  * Created by Comp on 25.10.2017.
  */
 class CountSpaces implements Runnable {
-    String text = null;
-    int countSpaces = 0;
-    Thread thread = new Thread();
+    private String text;
+    private int countSpaces = 0;
+    private Thread thread = new Thread();
 
-    public CountSpaces(String text) {
+    CountSpaces(String text) {
         this.text = text;
     }
 

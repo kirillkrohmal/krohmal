@@ -10,12 +10,12 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SimpleSetTest<E> {
-    SimpleSet<Integer> simpleSet;
+    private SimpleSet<Integer> simpleSet;
 
     @Test
     public void iteratorTest() {
         simpleSet = new SimpleSet<Integer>();
-        Integer value = new Integer(4);
+        Integer value = 4;
         E expected = (E) value;
         simpleSet.add(value);
         assertThat(value, is(expected));

@@ -8,7 +8,7 @@ import java.util.Set;
  * Created by Comp on 14.10.2017.
  */
 public class PasteIt2<E> {
-    Set<Integer> set = new HashSet();
+    private Set<Integer> set;
 
     public void add (int value) {
         set.addAll(Arrays.asList(4, 6, 1));

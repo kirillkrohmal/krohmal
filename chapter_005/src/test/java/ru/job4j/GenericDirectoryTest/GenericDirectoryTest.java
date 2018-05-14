@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class GenericDirectoryTest {
-    GenericDirectory<Integer, String> directory;
+    private GenericDirectory<Integer, String> directory;
 
     @Test
     public void iteratorTest() {

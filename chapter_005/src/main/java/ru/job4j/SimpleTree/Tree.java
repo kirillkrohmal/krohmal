@@ -62,9 +62,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     class ArrIterator implements Iterator<E> {
-
         Queue<Node<E>> data = new LinkedList<>();
-
         {
             data.add(node);
         }
@@ -102,7 +100,6 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
                 isBinaryTree = true;
             }
         }
-
         return isBinaryTree;
     }
 

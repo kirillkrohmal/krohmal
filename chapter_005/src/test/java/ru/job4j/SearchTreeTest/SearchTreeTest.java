@@ -13,11 +13,11 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 23.10.2017.
  */
 public class SearchTreeTest<E extends Comparable<E>> {
-	SearchTree tree = new SearchTree<E>();
+	private SearchTree tree;
 
 	@Test
 	public void whenElFindLastThen() {
-		SearchTree tree = new SearchTree<E>();
+		tree = new SearchTree<E>();
 
 		tree.add(1);
 		tree.add(1);

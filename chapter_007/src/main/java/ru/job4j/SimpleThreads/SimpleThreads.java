@@ -4,7 +4,7 @@ package ru.job4j.SimpleThreads;
  * Created by Comp on 25.10.2017.
  */
 public class SimpleThreads {
-    static void threadMessage(String message) {
+    private static void threadMessage(String message) {
         String threadName =
                 Thread.currentThread().getName();
         System.out.format("%s: %s%n",

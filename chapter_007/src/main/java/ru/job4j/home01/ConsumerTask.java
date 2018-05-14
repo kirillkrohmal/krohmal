@@ -2,9 +2,9 @@ package ru.job4j.home01;
 
 public class ConsumerTask implements Runnable {
     private TransferObject transferObject;
-    protected volatile boolean stopped;
+    private volatile boolean stopped;
 
-    public ConsumerTask(TransferObject transferObject) {
+    ConsumerTask(TransferObject transferObject) {
         this.transferObject = transferObject;
         new Thread(this, "ConsumerTask").start();
     }
@@ -22,7 +22,7 @@ public class ConsumerTask implements Runnable {
         }
     }
 
-    public void stop() {
+    void stop() {
         stopped = true;
     }
 }

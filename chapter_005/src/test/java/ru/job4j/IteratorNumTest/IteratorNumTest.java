@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class IteratorNumTest {
-    IteratorNum iteratorNum;
+    private IteratorNum iteratorNum;
 
     @Test
     public void iteratoTest1 () {

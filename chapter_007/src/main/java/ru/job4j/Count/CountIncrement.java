@@ -14,8 +14,8 @@ public class CountIncrement implements Runnable {
     private Object lock = new Object();
 
     private CountIncrement(Count count, Count count2) {
-        this.count = count;
-        this.count2 = count2;
+        CountIncrement.count = count;
+        CountIncrement.count2 = count2;
     }
 
     @Override

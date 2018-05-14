@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class LinkedListContainerTest<E> {
-    LinkedListContainer<Integer> container;
+    private LinkedListContainer<Integer> container;
 
     @Test
     public void iteratorTest() {

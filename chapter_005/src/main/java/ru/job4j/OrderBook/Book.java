@@ -13,6 +13,13 @@ public class Book {
         this.orders = orders;
     }
 
+    Comparator<Float> singleComparator = new Comparator<Float>() {
+        @Override
+        public int compare(Float o1, Float o2) {
+            return o1.compareTo(o2);
+        }
+    };
+
     Comparator<Float> doubleComparator = new Comparator<Float>() {
         @Override
         public int compare(Float o1, Float o2) {
@@ -20,5 +27,14 @@ public class Book {
         }
     };
 
+    Comparator<Float> treeComparator = new Comparator<Float>() {
+        @Override
+        public int compare(Float o1, Float o2) {
+            return o1.compareTo(o2);
+        }
+    };
 
+    public void add() {
+
+    }
 }

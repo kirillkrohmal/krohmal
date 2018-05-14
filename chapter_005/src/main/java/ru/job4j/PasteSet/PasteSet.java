@@ -4,9 +4,9 @@ package ru.job4j.PasteSet;
  * Created by Comp on 25.09.2017.
  */
 public class PasteSet {
-    Object[] value= null;
-    int size = 0;
-    int id;
+    private Object[] value= null;
+    private int size = 0;
+    private int id;
 
     public PasteSet() {
         this.value = new Object[1000];

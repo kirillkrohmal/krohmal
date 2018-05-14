@@ -14,7 +14,7 @@ public class StaxLoader {
         long start = System.currentTimeMillis();
 
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-        InputStream inputStream = new FileInputStream("C:/Users/Comp/YandexDisk/Загрузки/orders.xml");
+        InputStream inputStream = new FileInputStream("C:/Users/krokhmal/Downloads/krohmal-master/krohmal-master/chapter_005/src/main/java/ru/job4j/OrderBook/orders.xml");
         XMLEventReader evRd = inputFactory.createXMLEventReader(inputStream);
 
         while (evRd.hasNext()) {
@@ -24,7 +24,8 @@ public class StaxLoader {
                 startElement.getName().getLocalPart();
             }
         }
-        System.out.println(String.format("Время работы: %s s",(System.currentTimeMillis()-start)));
+
+        System.out.println(String.format("Время работы: %s s", (System.currentTimeMillis() - start)));
     }
 }
 

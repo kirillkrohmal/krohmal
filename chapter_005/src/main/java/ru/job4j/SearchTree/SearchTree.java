@@ -9,7 +9,7 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
     private Node node;
     private Node<E> root;
 
-    private int size = 0;
+    private int size;
 
     public SearchTree(Node node) {
         this.node = node;

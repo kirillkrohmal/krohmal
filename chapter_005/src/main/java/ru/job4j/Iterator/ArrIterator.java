@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
  * метод next должен при каждом вызове последовательно возвращать по одному значению за раз, не более, т.е. 1,2,3 и т.д.
  */
 public class ArrIterator implements Iterator {
-    private int[][] value = new int[3][3];
+    private int[][] value;
     private int row = 0, column = 0;
 
     public ArrIterator(int[][] value) {

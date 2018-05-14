@@ -6,7 +6,7 @@ import java.util.*;
  * Created by Comp on 14.10.2017.
  */
 public class PasteIt1<E> {
-    Hashtable hashtable = new Hashtable();
+    private Hashtable hashtable;
 
     int size = 0;
 

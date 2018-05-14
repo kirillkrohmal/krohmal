@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class LinkedListContainerTest<E> {
-    LinkedListContainer<Integer> container;
+    private LinkedListContainer<Integer> container;
 
     @Test
     public void iteratorTest() {
@@ -21,13 +21,6 @@ public class LinkedListContainerTest<E> {
         container.add(4);
 
         assertThat(container.get(index), is(expected));
-    }
-
-    @Before
-    public void iteratorTest5() {
-        container = new LinkedListContainer<Integer>();
-
-
     }
 
     @Test

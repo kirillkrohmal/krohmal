@@ -4,8 +4,8 @@ package ru.job4j.ThreadStop;
  * Created by Comp on 06.10.2017.
  */
 public class CountChar implements Runnable {
-    int countChar = 0;
-    String ch;
+    private int countChar = 0;
+    private String ch;
 
     public CountChar(String ch) {
         this.ch = ch;

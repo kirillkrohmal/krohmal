@@ -56,7 +56,6 @@ public class Node<T> {
             if (fast == slow) {
                 return true;
             }
-
             fast = fast.next.next;
             slow = fast.next;
         }
