@@ -18,9 +18,9 @@ public class RectangleMove implements Runnable {
         while (true) {
             this.rect.setX(this.rect.getX() + 1);
             t.interrupt();
+
             try {
                 Thread.sleep(50);
-
 
             } catch (InterruptedException e) {
                 e.printStackTrace();

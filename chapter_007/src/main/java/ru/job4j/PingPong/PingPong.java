@@ -17,10 +17,14 @@ public class PingPong extends Application {
         int limitX = 300;
         int limitY = 300;
         Group group = new Group();
+
         Rectangle rect = new Rectangle(50, 100, 10, 10);
+        Rectangle rect2 = new Rectangle(1000, 100, 10, 10);
 
         group.getChildren().add(rect);
         new Thread(new RectangleMove(rect)).start();
+
+        new Thread(new RectangleMove(rect2)).start();
 
         stage.setScene(new Scene(group, limitX, limitY));
         //stage.setScene(new Scene(group, limitX, limitY));
