@@ -6,27 +6,26 @@ import java.util.Objects;
  * Created by Comp on 12.11.2017.
  */
 public class Orders {
-    private int id;
-    private Book book;
-    private Type type;
-    private OrderBook action;
-    private float price;
-    private int volume;
+    private final OrderBook orderBook;
+    OrderBook volume;
+    private Type action;
+    float price;
+    int book;
+    int id;
+    Type type;
+
 
     public enum Type {
         SELL, BUY;
     }
 
-    public Orders() {
-    }
-
-    public Orders(int id, Book book, Type type, OrderBook action, float price, int volume) {
-        this.id = id;
-        this.book = book;
-        this.type = type;
-        this.action = action;
-        this.price = price;
+    Orders(int book, Type type, float price, OrderBook volume, OrderBook orderBook, int id) {
         this.volume = volume;
+        this.orderBook = orderBook;
+        this.price = price;
+        this.book = book;
+        this.id = id;
+        this.type = type;
     }
 
     public int getId() {
@@ -37,19 +36,23 @@ public class Orders {
         this.id = id;
     }
 
-    public Book getBook() {
+    public int getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(int book) {
         this.book = book;
     }
 
-    public OrderBook getAction() {
+    public void setVolume(OrderBook volume) {
+        this.volume = volume;
+    }
+
+    public Type getAction() {
         return action;
     }
 
-    public void setAction(OrderBook action) {
+    public void setAction(Type action) {
         this.action = action;
     }
 
@@ -69,12 +72,12 @@ public class Orders {
         this.price = price;
     }
 
-    public int getVolume() {
+    public OrderBook getVolume() {
         return volume;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
+    public OrderBook getOrderBook() {
+        return orderBook;
     }
 
     @Override

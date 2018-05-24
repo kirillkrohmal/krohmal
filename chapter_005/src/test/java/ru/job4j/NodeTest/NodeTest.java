@@ -27,6 +27,7 @@ public class NodeTest {
         first.setNext(third);
         Node node = new Node(first);
         boolean result = node.hasCycle(first);
+
         assertThat(result, is(true));
     }
 
@@ -43,6 +44,7 @@ public class NodeTest {
         forth.setNext(first);
         Node node = new Node(first, two, third, forth);
         boolean result = node.hasCycle(first);
+
         assertThat(result, is(true));
     }
 }

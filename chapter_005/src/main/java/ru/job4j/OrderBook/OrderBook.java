@@ -24,7 +24,7 @@ public class OrderBook {
     /**
      * action - bid/ask - заявка имеет два действия. Заявка на покупка ценной бумаги или на продажу.
      */
-    public void matching() throws InterruptedException, RuntimeException{
+    public void matching() throws RuntimeException{
         List<Future> books = new ArrayList<>();
         for (final HashMap<Integer, Orders> hashMap: list.values()) {
             books.add(EXECUTOR.submit(new Callable<Book>() {

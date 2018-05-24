@@ -18,6 +18,7 @@ public class Iterator2Test {
         iterator2.next();
         iterator2.hasNext();
         boolean result = iterator2.hasNext();;
+
         assertThat(result, is(true));
     }
 }

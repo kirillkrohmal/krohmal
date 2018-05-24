@@ -12,4 +12,12 @@ public class HashTable {
         this.size = size;
         table = new PasteSet[size];
     }
+
+    public PasteSet[] getTable() {
+        return table;
+    }
+
+    public void setTable(PasteSet[] table) {
+        this.table = table;
+    }
 }

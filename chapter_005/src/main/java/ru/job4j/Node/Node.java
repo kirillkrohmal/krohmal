@@ -5,6 +5,7 @@ package ru.job4j.Node;
  */
 public class Node<T> {
     private T value;
+
     private Node<T> next;
 
     private Node first;
@@ -60,5 +61,37 @@ public class Node<T> {
             slow = fast.next;
         }
         return false;
+    }
+
+    public Node getFirst() {
+        return first;
+    }
+
+    public void setFirst(Node first) {
+        this.first = first;
+    }
+
+    public Node getTwo() {
+        return two;
+    }
+
+    public void setTwo(Node two) {
+        this.two = two;
+    }
+
+    public Node getThird() {
+        return third;
+    }
+
+    public void setThird(Node third) {
+        this.third = third;
+    }
+
+    public Node getFour() {
+        return four;
+    }
+
+    public void setFour(Node four) {
+        this.four = four;
     }
 }

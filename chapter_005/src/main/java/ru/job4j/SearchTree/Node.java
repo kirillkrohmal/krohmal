@@ -33,7 +33,7 @@ public class Node<E> {
         this.right = right;
     }
 
-    public E getKey() {
+    E getKey() {
         return key;
     }
 

@@ -15,6 +15,12 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 21.09.2017.
  */
 
+
+/*Объявим две переменные date1, date2 (например вот так Calendar date1 = new GregorianCalendar();)
+  присвойм им одинаковые значения дат, и убедимся, что они равны по equals.
+  А затем добавим в Map две пары ключ-значение User, Object, т.к. User будут эквивалентны по equals, то в Map'е окажется
+  лишь одна пара.*/
+
 public class UserMapTest {
     @Test
     public void iteratorTest() {
@@ -50,7 +56,3 @@ public class UserMapTest {
     }
 }
 
-/*Объяви две переменные date1, date2 (например вот так Calendar date1 = new GregorianCalendar();)
-  присвой им одинаковые значения дат, и убедись, что они равны по equals.
-  А затем добавь в Map две пары ключ-значение User, Object, т.к. User будут эквивалентны по equals, то в Map'е окажется
-  лишь одна пара.   */

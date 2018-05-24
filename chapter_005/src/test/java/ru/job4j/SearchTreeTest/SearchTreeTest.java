@@ -31,18 +31,6 @@ public class SearchTreeTest<E extends Comparable<E>> {
 		);
 	}
 
-/*	@Test
-	public void whenElFindNotExitThenOptionEmpty() {
-		SearchTree tree = new SearchTree<E>();
-
-		tree.add(1);
-
-		assertThat(
-				tree.hasNext(),
-				is(true)
-		);
-	}*/
-
 	@Before
 	public void iteratorTest2() {
 		tree = new SearchTree<E>();

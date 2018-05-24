@@ -10,31 +10,32 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Comp on 21.09.2017.
  */
-
 public class GenericDirectoryTest {
     private GenericDirectory<Integer, String> directory;
 
     @Test
     public void iteratorTest() {
-        GenericDirectory<Integer, String> directory = new GenericDirectory();
+        directory = new GenericDirectory<Integer, String>();
         directory.insert(1, "Вася");
         directory.insert(2, "Петя");
         directory.insert(3, "Женя");
         directory.insert(4, "Иван");
         Object result = directory.get(1);
+
         assertThat(result, is("Вася"));
     }
     @Test
     public void iteratorTest2() {
-        GenericDirectory<Integer, String> directory = new GenericDirectory();
+        directory = new GenericDirectory<Integer, String>();
         directory.insert(1, "Вася");
         boolean result = directory.delete(1);
+
         assertThat(result, is(true));
     }
 
     @Before
     public void iteratorTest3() {
-        directory = new GenericDirectory();
+        directory = new GenericDirectory<Integer, String>();
 
         directory.insert(1, "Вася");
         directory.insert(2, "Петя");

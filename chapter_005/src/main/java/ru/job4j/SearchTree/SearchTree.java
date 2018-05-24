@@ -8,7 +8,6 @@ import java.util.*;
 public class SearchTree<E extends Comparable<E>> implements Iterable {
     private Node node;
     private Node<E> root;
-
     private int size;
 
     public SearchTree(Node node) {
@@ -121,8 +120,12 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
         return null;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     class TreeIterator implements Iterator<E> {
-        Queue<Node<E>> nodes = new LinkedList<Node<E>>(Arrays.asList(root));
+        Queue<Node<E>> nodes = new LinkedList<>(Arrays.asList(root));
 
         @Override
         public boolean hasNext() {
@@ -137,13 +140,13 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
 
             Node<E> element = nodes.poll();
 
-            if (element.left != null) {
+            if (element != null && element.left != null) {
                 nodes.offer(element.left);
             }
-            if (element.right != null) {
+            if (element != null && element.right != null) {
                 nodes.offer(element.right);
             }
-            return element.getKey();
+            return element != null ? element.getKey() : null;
         }
     }
 

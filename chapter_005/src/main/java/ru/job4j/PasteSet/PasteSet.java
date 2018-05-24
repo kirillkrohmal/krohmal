@@ -3,9 +3,10 @@ package ru.job4j.PasteSet;
 /**
  * Created by Comp on 25.09.2017.
  */
+
 public class PasteSet {
-    private Object[] value= null;
-    private int size = 0;
+    private Object[] value;
+    private int size;
     private int id;
 
     public PasteSet() {

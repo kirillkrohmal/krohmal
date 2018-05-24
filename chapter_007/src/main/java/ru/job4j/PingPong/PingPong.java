@@ -23,7 +23,6 @@ public class PingPong extends Application {
 
         group.getChildren().add(rect);
         new Thread(new RectangleMove(rect)).start();
-
         new Thread(new RectangleMove(rect2)).start();
 
         stage.setScene(new Scene(group, limitX, limitY));

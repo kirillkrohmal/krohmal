@@ -12,7 +12,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class SimpleTreeTest {
-    Tree<Integer> tree = new Tree<>(50);
+    private Tree<Integer> tree = new Tree<>(50);
 
     @Test
     public void iteratorTest() {
@@ -56,6 +56,7 @@ public class SimpleTreeTest {
     @Test
     public void prepareTree2() {
         Tree<Integer> tree = new Tree<>(50);
+
         tree.add(50, 70);
         tree.add(50, 80);
         tree.add(70, 90);
@@ -77,6 +78,7 @@ public class SimpleTreeTest {
     @Test
     public void shouldReturnTrue() {
         Tree<Integer> tree = new Tree<>(50);
+
         tree.add(50, 70);
         tree.add(50, 80);
         tree.add(70, 90);

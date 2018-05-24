@@ -1,13 +1,11 @@
 package ru.job4j.GenericDirectory;
 
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
  * Created by Comp on 04.11.2017.
  */
-
 public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private Entry[] entry;
     private int size = 0;

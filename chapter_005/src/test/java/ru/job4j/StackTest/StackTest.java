@@ -40,6 +40,7 @@ public class StackTest {
         simpleStack.pop();
         result = simpleStack.pop();
         expected = null;
+
         assertThat(result, is(expected));
     }
 

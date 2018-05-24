@@ -8,7 +8,15 @@ import java.util.*;
 public class PasteIt1<E> {
     private Hashtable hashtable;
 
-    int size = 0;
+    int size;
+
+    public PasteIt1(Hashtable hashtable) {
+        this.hashtable = hashtable;
+    }
+
+    public void setHashtable(Hashtable hashtable) {
+        this.hashtable = hashtable;
+    }
 
     boolean add(E e) {
         for (int i = 0; i < hashtable.size(); i++) {
@@ -33,4 +41,6 @@ public class PasteIt1<E> {
 
         return false;
     }
+
+
 }

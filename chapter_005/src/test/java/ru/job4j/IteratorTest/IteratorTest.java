@@ -24,6 +24,7 @@ public class IteratorTest {
         arrIterator.next();
         arrIterator.hasNext();
         Object result = arrIterator.next();
+
         assertThat(result, is(expected));
     }
 
@@ -38,6 +39,7 @@ public class IteratorTest {
 
         ArrIterator arrIterator = new ArrIterator(value);
         Object result = arrIterator.next();
+
         assertThat(result, is(expected));
     }
 
@@ -54,6 +56,7 @@ public class IteratorTest {
         arrIterator.next();
         arrIterator.next();
         Object result = arrIterator.next();
+
         assertThat(result, is(expected));
     }
 
@@ -63,6 +66,7 @@ public class IteratorTest {
                 {1, 2},
                 {3, 4}
         });
+
         assertThat(arrIterator.hasNext(), is(true));
         assertThat(arrIterator.next(), is(1));
         assertThat(arrIterator.hasNext(), is(true));

@@ -10,7 +10,7 @@ public class SelfHashTable<E> {
     private int key;
     private int value;
 
-    public SelfHashTable(Object[] objects) {
+    public SelfHashTable() {
         objects = new Object[1000];
     }
 
