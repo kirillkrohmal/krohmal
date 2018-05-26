@@ -23,6 +23,7 @@ public class UserStorage {
             storage[size++] = user;
         }
     }
+
     public User update(User user) {
         synchronized(this.lock) {
             for (int i = 0; i < storage.length; i++) {
@@ -43,7 +44,6 @@ public class UserStorage {
                 }
             }
         }
-
     }
 
     public boolean transfer(int fromId, int toId, int amount) {

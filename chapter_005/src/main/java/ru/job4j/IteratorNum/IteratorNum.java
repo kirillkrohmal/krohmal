@@ -6,7 +6,7 @@ import java.util.Iterator;
  * Создать итератор четные числа
  */
 public class IteratorNum implements Iterator {
-    private int index = 0;
+    private int index;
     private int[] value;
 
     public IteratorNum(final int[] value) {
