@@ -12,9 +12,9 @@ import java.util.Iterator;
 @ThreadSafe
 public class DynamicListThread<E> implements Iterable<E> {
     @GuardedBy("this")
-    E[] container = (E[]) new Object[1000];
+    private  E[] container = (E[]) new Object[1000];
     @GuardedBy("this")
-    int size = 0;
+    private  int size;
 
     public synchronized void add(E value) {
         if (container.length > size) {
