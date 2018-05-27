@@ -1,7 +1,6 @@
 package ru.job4j.CountSpace;
 
 
-
 /**
  * Created by Comp on 25.10.2017.
  */
