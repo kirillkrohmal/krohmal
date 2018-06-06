@@ -6,7 +6,6 @@ import net.jcip.annotations.ThreadSafe;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
 /**
  * Created by Comp on 24.09.2017.
  */

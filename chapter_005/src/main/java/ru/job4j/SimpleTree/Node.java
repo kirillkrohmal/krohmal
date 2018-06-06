@@ -30,7 +30,7 @@ public class Node<E> {
         this.value = value;
     }
 
-    public List<Node<E>> getChilden() {
+    List<Node<E>> getChilden() {
         return childen;
     }
 
@@ -50,7 +50,7 @@ public class Node<E> {
         this.result = result;
     }
 
-    public boolean eqValue(E that) {
+    boolean eqValue(E that) {
         return this.value.equals(that);
     }
 

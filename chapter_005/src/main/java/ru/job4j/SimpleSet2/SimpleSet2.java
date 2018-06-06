@@ -1,16 +1,48 @@
 package ru.job4j.SimpleSet2;
 
 import ru.job4j.LinkedListContainer.LinkedListContainer;
-
 import java.util.Iterator;
 
 /**
  * Created by Comp on 25.09.2017.
  */
 public class SimpleSet2<E> implements Iterator<E> {
-    private LinkedListContainer<E> list = new LinkedListContainer<>();
-    private int size = 0;
+    private LinkedListContainer<E> list;
+    private int size;
     private Iterator<E> inIterator;
+
+    public SimpleSet2() {
+    }
+
+    public SimpleSet2(LinkedListContainer<E> list, int size, Iterator<E> inIterator) {
+        this.list = list;
+        this.size = size;
+        this.inIterator = inIterator;
+    }
+
+    public LinkedListContainer<E> getList() {
+        return list;
+    }
+
+    public void setList(LinkedListContainer<E> list) {
+        this.list = list;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public Iterator<E> getInIterator() {
+        return inIterator;
+    }
+
+    public void setInIterator(Iterator<E> inIterator) {
+        this.inIterator = inIterator;
+    }
 
     /*
      * Реализовать коллекцию SimpleSet.

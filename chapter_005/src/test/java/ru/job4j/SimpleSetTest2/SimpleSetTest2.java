@@ -12,10 +12,12 @@ import static org.junit.Assert.assertThat;
 public class SimpleSetTest2<E> {
     private SimpleSet2<Integer> simpleSet2;
 
-    @Before
-    public void iteratorTest2() {
-        simpleSet2 = new SimpleSet2<>();
+    public SimpleSetTest2(SimpleSet2<Integer> simpleSet2) {
+        this.simpleSet2 = simpleSet2;
+    }
 
+    @Before
+    public void iteratorTest() {
         simpleSet2.add(1);
         simpleSet2.add(2);
         simpleSet2.add(3);
@@ -27,7 +29,7 @@ public class SimpleSetTest2<E> {
     }
 
     @Test
-    public void iteratorTest3() {
+    public void iteratorTest2() {
         Iterator<Integer> iterator = simpleSet2;
 
         assertThat(iterator.hasNext(), is(true));

@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  */
 public class LinkedListContainer<E> implements Iterable<E> {
     private Node<E> head;
-    private int size = 0;
+    private int size;
 
     public LinkedListContainer() {
         this.size = 0;
@@ -18,7 +18,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
         final Node<E> node = new Node<E>(value);
         if (this.head == null) {
             this.head = node;
-        } else if (this.head != null) {
+        } else {
             Node<E> pointer = head;
             while (pointer.getNextElement() != null) {
                 pointer = pointer.nextElement;
@@ -41,7 +41,6 @@ public class LinkedListContainer<E> implements Iterable<E> {
         for (int i = 0; i < index; i++) {
             tmp = tmp.getNextElement();
         }
-
         return tmp.value;
     }
 

@@ -16,6 +16,7 @@ public class SimpleArrayTest {
     @Test
     public void iteratorTest() {
         SimpleArray simpleArray = new SimpleArray();
+
         List<Object> expected = new ArrayList<>();
         expected.add(5);
         Object result = simpleArray.add(expected);
@@ -26,6 +27,7 @@ public class SimpleArrayTest {
     @Test
     public void iteratorTest2() {
         SimpleArray simpleArray = new SimpleArray();
+
         List<Object> value = new ArrayList<>();
         List<Object> expected = new ArrayList<>();
         simpleArray.add(value);
@@ -37,6 +39,7 @@ public class SimpleArrayTest {
     @Test
     public void iteratorTest3() {
         SimpleArray simpleArray = new SimpleArray();
+
         List<Object> value = new ArrayList<>();
         value.add(5);
         Object result = simpleArray.delete(value);
@@ -48,6 +51,7 @@ public class SimpleArrayTest {
     @Test
     public void iteratorTest4() {
         SimpleArray simpleArray = new SimpleArray();
+
         Object[] expected = {10};
         int index = 0;
         Object result = simpleArray.get(index);

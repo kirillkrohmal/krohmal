@@ -11,11 +11,13 @@ import java.util.concurrent.*;
  */
 public class OrderBook {
     private static final ExecutorService EXECUTOR = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
-    private final Map<String, HashMap<Integer, Orders>> list;
+    private Map<String, HashMap<Integer, Orders>> list;
 
     public OrderBook(Map<String, HashMap<Integer, Orders>> list) {
         this.list = list;
+    }
+
+    public OrderBook() {
     }
 
     /**
@@ -23,11 +25,11 @@ public class OrderBook {
      */
     public void matching() throws ExecutionException, InterruptedException {
         List<Future<Book>> books = new ArrayList<>(list.size());
-        for (final HashMap<Integer, Orders> hashMap: list.values()) {
+        for (final HashMap<Integer, Orders> hashMap : list.values()) {
             books.add(EXECUTOR.submit(new Callable<Book>() {
                 @Override
-                public Book call() throws Exception {
-                    Book book = new Book (hashMap.values());
+                public Book call() {
+                    Book book = new Book(hashMap.values());
                     book.sum();
 
                     return book;

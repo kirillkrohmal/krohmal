@@ -12,23 +12,25 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Comp on 21.09.2017.
  */
-
 public class DynamicListTest<E> {
     private DynamicList dynamicList;
 
+    public DynamicListTest(DynamicList dynamicList) {
+        this.dynamicList = dynamicList;
+    }
+
     @Test
     public void iteratorTest() {
-        dynamicList = new DynamicList();
         Integer value = 7;
         Integer index = 7;
         Object expected = index;
         dynamicList.add(value);
+
         assertThat(value, is(expected));
     }
 
     @Before
-    public void iteratorTest5() {
-        dynamicList = new DynamicList();
+    public void iteratorTest2() {
         dynamicList.add(1);
         dynamicList.add(2);
         dynamicList.add(3);
@@ -40,6 +42,7 @@ public class DynamicListTest<E> {
     @Test
     public void iteratorTest3() {
         Iterator<Integer> iterator = dynamicList.iterator();
+
         assertThat(iterator.hasNext(), is(true) );
         assertThat(iterator.next(), is(1) );
         assertThat(iterator.hasNext(), is(true) );

@@ -10,13 +10,13 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Comp on 21.09.2017.
  */
-
 public class LinkedListContainerTest<E> {
     private LinkedListContainer<Integer> container;
 
     @Test
     public void iteratorTest() {
         container = new LinkedListContainer<Integer>();
+
         int index = 0;
         Integer expected = 4;
         container.add(4);

@@ -1,6 +1,5 @@
 package ru.job4j.StoreGeneric;
 
-
 /**
  * Created by Comp on 24.09.2017.
  */
@@ -34,7 +33,6 @@ public abstract class AbstractStore<T extends Base> implements Store<T> {
                 return true;
             }
         }
-
         return false;
     }
 }

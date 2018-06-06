@@ -35,7 +35,7 @@ public class ConvertIterator {
 
             @Override
             public Integer next() {
-                Integer elem = null;
+                Integer elem;
                 if (it != null && iterator.hasNext()) {
                     elem = iterator.next();
                 } else throw new NoSuchElementException();

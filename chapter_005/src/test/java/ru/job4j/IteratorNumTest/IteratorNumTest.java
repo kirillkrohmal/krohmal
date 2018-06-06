@@ -13,7 +13,7 @@ public class IteratorNumTest {
     private IteratorNum iteratorNum;
 
     @Test
-    public void iteratoTest1 () {
+    public void iteratoTest1() {
         iteratorNum = new IteratorNum(new int[]{2, 1, 2, 3, 1});
 
         assertThat(iteratorNum.hasNext(), is(true));
@@ -23,12 +23,12 @@ public class IteratorNumTest {
     }
 
     @Test
-    public void iteratoTest2 () {
+    public void iteratoTest2() {
         iteratorNum = new IteratorNum(new int[]{1, 1, 1, 1, 1});
     }
 
     @Test
-    public void iteratoTest3 () {
+    public void iteratoTest3() {
         iteratorNum = new IteratorNum(new int[]{2, 4, 6, 8, 10});
 
         assertThat(iteratorNum.hasNext(), is(true));

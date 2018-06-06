@@ -1,6 +1,5 @@
 package ru.job4j.Stack;
 
-
 /**
  * Created by Comp on 24.09.2017.
  */
@@ -37,6 +36,7 @@ public class SimpleQueue<T> {
      */
     public void push(T value) {
         Node<T> node = new Node<T>(value);
+
         if (node.value == null) {
             head = node;
         } else {

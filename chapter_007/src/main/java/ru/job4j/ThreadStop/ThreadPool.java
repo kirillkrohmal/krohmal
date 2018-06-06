@@ -1,6 +1,5 @@
 package ru.job4j.ThreadStop;
 
-
 /**
  * Created by Comp on 27.10.2017.
  */

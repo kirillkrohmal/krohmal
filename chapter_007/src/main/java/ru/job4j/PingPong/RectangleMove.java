@@ -7,7 +7,6 @@ import javafx.scene.shape.Rectangle;
  */
 public class RectangleMove implements Runnable {
     private final Rectangle rect;
-    Thread t = new Thread();
 
     RectangleMove(Rectangle rect) {
         this.rect = rect;
@@ -17,12 +16,15 @@ public class RectangleMove implements Runnable {
     public void run() {
         while (true) {
             this.rect.setX(this.rect.getX() + 1);
-            t.interrupt();
 
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+
+            if (rect.intersects(50, 50, 4, 7)) {
+                this.rect.setX(this.rect.getX() - 1);
             }
         }
     }

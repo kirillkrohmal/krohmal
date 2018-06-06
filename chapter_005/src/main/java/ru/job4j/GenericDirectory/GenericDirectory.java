@@ -9,7 +9,6 @@ import java.util.NoSuchElementException;
 public class GenericDirectory<K, V> implements SimpleMap<K, V> {
     private Entry[] entry;
     private int size = 0;
-
     private static final int ENTRY_SIZE = 100;
 
     public GenericDirectory() {
@@ -18,6 +17,26 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
     public GenericDirectory(Entry[] entry) {
         this.entry = entry;
+    }
+
+    public Entry[] getEntry() {
+        return entry;
+    }
+
+    public void setEntry(Entry[] entry) {
+        this.entry = entry;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public static int getEntrySize() {
+        return ENTRY_SIZE;
     }
 
     private int indexOf(K key) {
@@ -41,7 +60,6 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
         if (value == null) {
             isInsert = false;
         }
-
         int index = indexOf(key);
 
         if (!contains(key)) {
@@ -51,7 +69,6 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isInsert = false;
         }
         size++;
-
         return isInsert;
     }
 
@@ -79,7 +96,6 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
      */
     public boolean delete(K key) {
         boolean isDelete = false;
-
         int index = indexOf(key);
 
         if (contains(key)) {
@@ -87,7 +103,6 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
             isDelete = true;
         }
         size--;
-
         return isDelete;
     }
 
@@ -105,7 +120,6 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
 
         @Override
         public boolean hasNext() {
-
             boolean isPresent = false;
 
             for (int i = counter; i < entry.length; i++) {
@@ -113,11 +127,8 @@ public class GenericDirectory<K, V> implements SimpleMap<K, V> {
                     counter = i;
                     isPresent = true;
                     break;
-                } else {
-                    isPresent = false;
                 }
             }
-
             return isPresent;
         }
 

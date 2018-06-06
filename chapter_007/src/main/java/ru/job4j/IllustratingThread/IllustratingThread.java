@@ -4,7 +4,6 @@ package ru.job4j.IllustratingThread;
 /**
  * Создать пример иллюстрирующий проблемы, которые могут случиться при использовании многопоточности.
  */
-
 public class IllustratingThread implements Runnable {
     private Count count;
     private Count2 count2;

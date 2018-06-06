@@ -5,7 +5,6 @@ package ru.job4j.Node;
  */
 public class Node<T> {
     private T value;
-
     private Node<T> next;
 
     private Node first;
@@ -25,24 +24,8 @@ public class Node<T> {
         this.four = four;
     }
 
-    public T getValue() {
-        return value;
-    }
-
-    public void setValue(T value) {
+    public Node(T value) {
         this.value = value;
-    }
-
-    public Node<T> getNext() {
-        return next;
-    }
-
-    public void setNext(Node<T> next) {
-        this.next = next;
-    }
-
-    public Node(T i) {
-        this.value = i;
     }
 
     public boolean hasCycle(Node first) {
@@ -61,6 +44,21 @@ public class Node<T> {
             slow = fast.next;
         }
         return false;
+    }
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public Node<T> getNext() {
+        return next;
+    }
+
+    public void setNext(Node<T> next) {
+        this.next = next;
     }
 
     public Node getFirst() {

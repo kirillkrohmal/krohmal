@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by Comp on 14.10.2017.
  */
 public class SelfHashTable<E> {
-    private Object[] objects = null;
+    private Object[] objects;
     private int key;
     private int value;
 
@@ -14,24 +14,8 @@ public class SelfHashTable<E> {
         objects = new Object[1000];
     }
 
-    public SelfHashTable(int key, int value, int hash) {
+    public SelfHashTable(int key, int value) {
         this.key = key;
-        this.value = value;
-    }
-
-    public int getKey() {
-        return key;
-    }
-
-    public void setKey(int key) {
-        this.key = key;
-    }
-
-    public Object getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
         this.value = value;
     }
 
@@ -78,6 +62,22 @@ public class SelfHashTable<E> {
         return isRemove;
     }
 
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -86,7 +86,7 @@ public class SelfHashTable<E> {
         SelfHashTable<?> that = (SelfHashTable<?>) o;
 
         if (key != that.key) return false;
-         // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
         return Arrays.equals(objects, that.objects);
     }
 

@@ -9,8 +9,6 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Comp on 21.09.2017.
  */
-
-
 public class CountSpaceTest {
     private class ThreadCount extends Thread {
         private final Count count;
@@ -38,6 +36,7 @@ public class CountSpaceTest {
         //Заставляем главную нить дождаться выполнения наших нитей.
         first.join();
         second.join();
+
         //Проверяем результат.
         assertThat(count.get(), is(2));
     }

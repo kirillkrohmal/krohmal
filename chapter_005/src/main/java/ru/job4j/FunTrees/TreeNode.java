@@ -3,7 +3,6 @@ package ru.job4j.FunTrees;
 /**
  * Created by Comp on 31.03.2018.
  */
-
 public class TreeNode {
     private TreeNode left;
     private TreeNode right;

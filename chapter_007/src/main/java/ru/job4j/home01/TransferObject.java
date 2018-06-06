@@ -1,7 +1,5 @@
 package ru.job4j.home01;
 
-import java.util.concurrent.CountDownLatch;
-
 public class TransferObject {
     private int value;
     private volatile boolean isValuePresent = false; //use this variable

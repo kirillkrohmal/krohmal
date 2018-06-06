@@ -1,7 +1,5 @@
 package ru.job4j.ProducerCustomer;
 
-
-
 /**
  * Created by Comp on 23.11.2017.
  */

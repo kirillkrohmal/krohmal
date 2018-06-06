@@ -5,7 +5,6 @@ package ru.job4j.UserStorage;
  */
 public class Operation implements Runnable{
     public static void main(String[] args) {
-
         UserStorage stoge = new UserStorage();
 
         stoge.add(new User(1, 100));

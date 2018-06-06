@@ -61,7 +61,7 @@ public class IteratorTest {
     }
 
     @Test
-    public void iteratoTest3 () {
+    public void iteratoTest3() {
         ArrIterator arrIterator = new ArrIterator(new int[][]{
                 {1, 2},
                 {3, 4}

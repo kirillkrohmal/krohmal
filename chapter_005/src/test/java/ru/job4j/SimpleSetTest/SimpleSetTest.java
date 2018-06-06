@@ -12,19 +12,21 @@ import static org.junit.Assert.assertThat;
 public class SimpleSetTest<E> {
     private SimpleSet<Integer> simpleSet;
 
+    public SimpleSetTest(SimpleSet<Integer> simpleSet) {
+        this.simpleSet = simpleSet;
+    }
+
     @Test
     public void iteratorTest() {
-        simpleSet = new SimpleSet<Integer>();
         Integer value = 4;
         E expected = (E) value;
         simpleSet.add(value);
+
         assertThat(value, is(expected));
     }
 
     @Before
     public void iteratorTest3() {
-        simpleSet = new SimpleSet<Integer>();
-
         simpleSet.add(1);
         simpleSet.add(2);
         simpleSet.add(3);

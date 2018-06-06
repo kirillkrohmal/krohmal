@@ -16,6 +16,16 @@ public class SimpleSet<E> implements Iterator<E> {
         this.value = new Object[1000];
     }
 
+    public Object[] getValue() {
+        return value;
+    }
+
+    public SimpleSet(Object[] value, int size, int counter) {
+        this.value = value;
+        this.size = size;
+        this.counter = counter;
+    }
+
     public void add(E e) {
         if (!isDuplicate(e)) {
             if (size < value.length) {
@@ -54,6 +64,26 @@ public class SimpleSet<E> implements Iterator<E> {
         if (hasNext()) {
             return (E) value[counter++];
         } else throw new NoSuchElementException();
+    }
+
+    public void setValue(Object[] value) {
+        this.value = value;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 
     @Override

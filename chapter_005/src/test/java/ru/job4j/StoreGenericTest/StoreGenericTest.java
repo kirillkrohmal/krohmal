@@ -10,6 +10,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest() {
         AbstractStore<Base> abstractStore = new RoleStore<>();
+
         Base expected = new Role("врач", 3);
         Base result = abstractStore.add(expected);
 
@@ -19,6 +20,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest2() {
         AbstractStore abstractStore = new RoleStore();
+
         Base base = new Role("врач", 3);
         Base expected = new Role("дантист", 5);
         abstractStore.add(base);
@@ -31,6 +33,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest3() {
         AbstractStore abstractStore = new RoleStore();
+
         Base base = new Role("врач", 3);
         Base expected = new Role("дантист", 5);
         abstractStore.add(base);
@@ -43,6 +46,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest4() {
         AbstractStore<Base> abstractStore = new UserStore();
+
         Base expected = new User("Иван", 30);
         Base result = abstractStore.add(expected);
 
@@ -52,6 +56,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest5() {
         AbstractStore<Base> abstractStore = new UserStore();
+
         Base base = new User("Иван", 30);
         Base expected = new User("Федр", 34);
         abstractStore.add(base);
@@ -64,6 +69,7 @@ public class StoreGenericTest {
     @Test
     public void iteratorTest6() {
         AbstractStore<Base> abstractStore = new UserStore();
+
         Base base = new User("Иван", 30);
         Base base2 = new User("Федр", 34);
         abstractStore.add(base);

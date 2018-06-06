@@ -48,6 +48,7 @@ public class SearchTreeTest<E extends Comparable<E>> {
 	@Test
 	public void iteratorTest3() {
 		Iterator<Integer> iterator = tree.iterator();
+
 		assertThat(iterator.hasNext(), is(true));
 		assertThat(iterator.next(), is(1));
 		assertThat(iterator.hasNext(), is(true));

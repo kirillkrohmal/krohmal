@@ -1,7 +1,5 @@
 package ru.job4j.ThreadStop;
 
-import java.util.Timer;
-
 /**
  * Created by Comp on 06.10.2017.
  */

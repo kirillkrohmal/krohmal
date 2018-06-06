@@ -2,7 +2,15 @@ package ru.job4j.FunTrees;
 
 public class ListNode {
     private int data;
-    public ListNode next;
+    private ListNode next;
+
+    public ListNode getNext() {
+        return next;
+    }
+
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
 
     public ListNode(int data, ListNode next) {
         this.data = data;

@@ -22,7 +22,6 @@ public class CountIncrement implements Runnable {
     public void run() {
         System.out.println(count.get());
         System.out.println(count2.get());
-
     }
 
     public static void main(String[] args) {

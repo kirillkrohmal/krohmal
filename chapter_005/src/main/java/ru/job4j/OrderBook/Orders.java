@@ -6,25 +6,22 @@ import java.util.Objects;
  * Created by Comp on 12.11.2017.
  */
 public class Orders {
-    private final OrderBook orderBook;
+    private OrderBook orderBook;
     OrderBook volume;
     private Type action;
+    private int id;
     float price;
     int book;
-    int id;
     Type type;
-
 
     public enum Type {
         SELL, BUY;
     }
 
-    Orders(int book, Type type, float price, OrderBook volume, OrderBook orderBook, int id) {
+    Orders(int book, Type type, float price, OrderBook volume) {
         this.volume = volume;
-        this.orderBook = orderBook;
         this.price = price;
         this.book = book;
-        this.id = id;
         this.type = type;
     }
 

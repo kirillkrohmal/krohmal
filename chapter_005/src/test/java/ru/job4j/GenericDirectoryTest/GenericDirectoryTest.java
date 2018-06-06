@@ -13,20 +13,24 @@ import static org.junit.Assert.assertThat;
 public class GenericDirectoryTest {
     private GenericDirectory<Integer, String> directory;
 
+    public GenericDirectoryTest(GenericDirectory<Integer, String> directory) {
+        this.directory = directory;
+    }
+
     @Test
     public void iteratorTest() {
-        directory = new GenericDirectory<Integer, String>();
         directory.insert(1, "Вася");
         directory.insert(2, "Петя");
         directory.insert(3, "Женя");
         directory.insert(4, "Иван");
+
         Object result = directory.get(1);
 
         assertThat(result, is("Вася"));
     }
+
     @Test
     public void iteratorTest2() {
-        directory = new GenericDirectory<Integer, String>();
         directory.insert(1, "Вася");
         boolean result = directory.delete(1);
 
@@ -35,8 +39,6 @@ public class GenericDirectoryTest {
 
     @Before
     public void iteratorTest3() {
-        directory = new GenericDirectory<Integer, String>();
-
         directory.insert(1, "Вася");
         directory.insert(2, "Петя");
         directory.insert(3, "Женя");

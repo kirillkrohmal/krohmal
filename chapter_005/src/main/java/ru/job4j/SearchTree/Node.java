@@ -1,6 +1,5 @@
 package ru.job4j.SearchTree;
 
-
 /**
  * Created by Comp on 29.09.2017.
  */

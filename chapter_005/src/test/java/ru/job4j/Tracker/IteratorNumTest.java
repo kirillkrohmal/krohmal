@@ -1,6 +1,5 @@
 package ru.job4j.Tracker;
 
-
 import org.junit.Test;
 import ru.job4j.IteratorNum.IteratorNum;
 
@@ -12,7 +11,7 @@ import static org.junit.Assert.assertThat;
  */
 public class IteratorNumTest {
     @Test
-    public void iteratoTest3 () {
+    public void iteratoTest() {
         IteratorNum iteratorNum = new IteratorNum(new int[]{4, 2, 1, 1});
 
         assertThat(iteratorNum.hasNext(), is(true));

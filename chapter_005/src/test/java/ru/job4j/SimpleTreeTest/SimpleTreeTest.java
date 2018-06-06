@@ -55,8 +55,6 @@ public class SimpleTreeTest {
 
     @Test
     public void prepareTree2() {
-        Tree<Integer> tree = new Tree<>(50);
-
         tree.add(50, 70);
         tree.add(50, 80);
         tree.add(70, 90);
@@ -77,8 +75,6 @@ public class SimpleTreeTest {
 
     @Test
     public void shouldReturnTrue() {
-        Tree<Integer> tree = new Tree<>(50);
-
         tree.add(50, 70);
         tree.add(50, 80);
         tree.add(70, 90);

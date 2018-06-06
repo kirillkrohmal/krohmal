@@ -4,7 +4,7 @@ package ru.job4j.NewThread;
  * Created by Comp on 25.10.2017.
  */
 public class NewThread implements Runnable {
-    String name; // имя потока
+    private String name; // имя потока
     Thread t;
 
     NewThread(String threadname) {
@@ -36,7 +36,7 @@ class DemoJoin {
         System.out.println("Поток Один запущен: " + ob1.t.isAlive());
         System.out.println("Поток Два запущен: " + ob2.t.isAlive());
         System.out.println("Поток Три запущен: " + ob3.t.isAlive());
-// ожидать завершения потоков
+        // ожидать завершения потоков
         try {
             System.out.println("Ожидание завершения потоков.");
             ob1.t.join();

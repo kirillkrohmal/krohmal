@@ -20,6 +20,30 @@ public class ArrIterator implements Iterator {
     private int[][] value;
     private int row = 0, column = 0;
 
+    public int[][] getValue() {
+        return value;
+    }
+
+    public void setValue(int[][] value) {
+        this.value = value;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
     public ArrIterator(int[][] value) {
         this.value = value;
     }

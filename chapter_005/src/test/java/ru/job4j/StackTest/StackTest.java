@@ -1,6 +1,5 @@
 package ru.job4j.StackTest;
 
-
 import org.junit.Test;
 import ru.job4j.Stack.SimpleQueue;
 import ru.job4j.Stack.SimpleStack;
@@ -19,21 +18,23 @@ public class StackTest {
     private Object expected;
 
     @Test
-    public void iteratorTest2() {
+    public void iteratorTest() {
         simpleStack = new SimpleStack();
+
         simpleStack.push(1);
         simpleStack.push(2);
     }
 
     @Test
-    public void iteratorTest3() {
+    public void iteratorTest2() {
         simpleStack = new SimpleStack();
         assertThat(simpleStack.peek(), is(2));
     }
 
     @Test
-    public void iteratorTest4() {
+    public void iteratorTest3() {
         simpleStack = new SimpleStack();
+
         simpleStack.push(1);
         simpleStack.push(2);
         simpleStack.pop();
@@ -45,14 +46,15 @@ public class StackTest {
     }
 
     @Test
-    public void iteratorTest5() {
+    public void iteratorTest4() {
         simpleQueue = new SimpleQueue();
+
         simpleQueue.push(1);
         simpleQueue.push(2);
     }
 
     @Test
-    public void iteratorTest6() {
+    public void iteratorTest5() {
         assertThat(simpleQueue.poll(), is(2));
     }
 }

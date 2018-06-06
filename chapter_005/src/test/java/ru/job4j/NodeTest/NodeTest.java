@@ -14,7 +14,7 @@ public class NodeTest {
     private final int four = 4;
 
     @Test
-    public void iteratorTest2() {
+    public void iteratorTest() {
         Node<Integer> first = new Node<>(1);
         Node<Integer> two = new Node<>(2);
         Node<Integer> third = new Node<>(three);
@@ -25,6 +25,7 @@ public class NodeTest {
         third.setNext(forth);
         forth.setNext(first);
         first.setNext(third);
+
         Node node = new Node(first);
         boolean result = node.hasCycle(first);
 
@@ -32,7 +33,7 @@ public class NodeTest {
     }
 
     @Test
-    public void iteratorTest3() {
+    public void iteratorTest2() {
         Node<Integer> first = new Node<>(1);
         Node<Integer> two = new Node<>(2);
         Node<Integer> third = new Node<>(three);
@@ -42,6 +43,7 @@ public class NodeTest {
         two.setNext(third);
         third.setNext(forth);
         forth.setNext(first);
+
         Node node = new Node(first, two, third, forth);
         boolean result = node.hasCycle(first);
 

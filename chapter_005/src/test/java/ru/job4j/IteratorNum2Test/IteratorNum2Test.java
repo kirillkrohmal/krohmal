@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
  */
 public class IteratorNum2Test {
     @Test
-    public void iteratoTest3 () {
+    public void iteratoTest() {
         IteratorNum2 iteratorNum2 = new IteratorNum2(new int[]{3, 4, 5, 6, 7});
 
         assertThat(iteratorNum2.hasNext(), is(true));

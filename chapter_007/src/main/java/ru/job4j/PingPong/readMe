@@ -22,3 +22,5 @@
 stage.setOnCloseRequest(
         event -> ...// execute interrupt
 );
+
+если граница подошла. то начинать вычитать значение.

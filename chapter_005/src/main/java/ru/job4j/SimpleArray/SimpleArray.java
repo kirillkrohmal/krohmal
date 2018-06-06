@@ -5,7 +5,15 @@ package ru.job4j.SimpleArray;
  */
 public class SimpleArray<T> {
     private Object[] object = {10};
-    private int index = 0;
+    private int index;
+
+    public SimpleArray(Object[] object, int index) {
+        this.object = object;
+        this.index = index;
+    }
+
+    public SimpleArray() {
+    }
 
     public T add(T value) {
         object[index++] = value;
@@ -26,6 +34,22 @@ public class SimpleArray<T> {
 
     public T get(int index) {
         return (T) object[index - 1];
+    }
+
+    public Object[] getObject() {
+        return object;
+    }
+
+    public void setObject(Object[] object) {
+        this.object = object;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 }
 
