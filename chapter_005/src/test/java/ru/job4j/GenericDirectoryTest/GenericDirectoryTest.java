@@ -13,6 +13,7 @@ import static org.junit.Assert.assertThat;
 public class GenericDirectoryTest {
     private GenericDirectory<Integer, String> directory;
 
+
     public GenericDirectoryTest(GenericDirectory<Integer, String> directory) {
         this.directory = directory;
     }

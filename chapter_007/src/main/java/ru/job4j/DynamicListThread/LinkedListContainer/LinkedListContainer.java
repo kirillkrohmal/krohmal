@@ -42,13 +42,11 @@ public class LinkedListContainer<E> implements Iterable<E> {
         if (index < 0) {
             return null;
         }
-
         Node<E> tmp = head;
 
         for (int i = 0; i < index; i++) {
             tmp = tmp.getNextElement();
         }
-
         return tmp.value;
     }
 

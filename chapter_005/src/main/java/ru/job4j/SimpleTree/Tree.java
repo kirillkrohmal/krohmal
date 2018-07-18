@@ -30,6 +30,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
                 Node<E> node = new Node<>(child);
                 findBy(parent).get().childen.add(node);
             }
+
             isPresent = true;
             size++;
         } else {
