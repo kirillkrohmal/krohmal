@@ -14,11 +14,12 @@ public class StaxLoader {
         long start = System.currentTimeMillis();
 
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-        InputStream inputStream = new FileInputStream("C:/Users/krokhmal/Downloads/krohmal-master/krohmal-master/chapter_005/src/main/java/ru/job4j/OrderBook/orders.xml");
+        InputStream inputStream = new FileInputStream("C:/orders.xml");
         XMLEventReader evRd = inputFactory.createXMLEventReader(inputStream);
 
         while (evRd.hasNext()) {
             XMLEvent ev = evRd.nextEvent();
+
             if (ev.isStartElement()) {
                 StartElement startElement = ev.asStartElement();
                 startElement.getName().getLocalPart();

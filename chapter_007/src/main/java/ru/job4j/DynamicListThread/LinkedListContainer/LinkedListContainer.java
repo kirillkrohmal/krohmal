@@ -47,6 +47,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
         for (int i = 0; i < index; i++) {
             tmp = tmp.getNextElement();
         }
+
         return tmp.value;
     }
 
@@ -55,6 +56,7 @@ public class LinkedListContainer<E> implements Iterable<E> {
             return;
         }
         Node<E> tmp = head;
+
         for (int i = 0; i < index; i++) {
             if (head.getNextElement() != null && tmp != null) {
                 head.setNextElement(tmp);
