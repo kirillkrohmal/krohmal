@@ -25,12 +25,12 @@ public class LinkedListContainerTest<E> {
     }
 
     @Before
-    public void iteratorTest5() {
+    public void iteratorTest2() {
         container = new LinkedListContainer<Integer>();
     }
 
     @Test
-    public void iteratorTest6() {
+    public void iteratorTest3() {
         container = new LinkedListContainer<Integer>();
 
         container.add(1);

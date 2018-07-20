@@ -46,7 +46,7 @@ public class UserStorage {
         }
     }
 
-    public boolean transfer(int fromId, int toId, int amount) {
+    boolean transfer(int fromId, int toId, int amount) {
         synchronized(this.lock) {
             sum[fromId] =- amount;
             sum[toId] += amount;

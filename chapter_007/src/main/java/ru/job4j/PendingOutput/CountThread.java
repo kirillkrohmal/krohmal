@@ -19,6 +19,7 @@ public class CountThread extends Thread {
         }.start();
         countWords.run();
         Thread.interrupted();
+
         System.out.println("Это программа завершает работу!");
     }
 }

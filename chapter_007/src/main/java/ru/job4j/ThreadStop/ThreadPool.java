@@ -13,6 +13,7 @@ public class ThreadPool {
                 countChar.run();
             }
         }.start();
+
         Thread.interrupted();
         time.run();
     }

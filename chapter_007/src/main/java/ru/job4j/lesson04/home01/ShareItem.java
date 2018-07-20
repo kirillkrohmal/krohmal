@@ -31,8 +31,7 @@ public class ShareItem {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "ShareItem{" +
                 "description='" + description + '\'' +
                 ", itemId=" + itemId +
@@ -40,8 +39,7 @@ public class ShareItem {
     }
 
     @Override
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -53,8 +51,7 @@ public class ShareItem {
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int result = description != null ? description.hashCode() : 0;
         result = 31 * result + itemId;
         return result;

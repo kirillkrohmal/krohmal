@@ -1,6 +1,5 @@
 package ru.job4j.lesson04.home01;
 
-
 import java.util.concurrent.TransferQueue;
 
 /**

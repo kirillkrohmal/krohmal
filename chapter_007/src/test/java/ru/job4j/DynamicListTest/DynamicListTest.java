@@ -18,16 +18,19 @@ public class DynamicListTest<E> {
     @Test
     public void iteratorTest() {
         dynamicList = new DynamicListThread();
+
         Integer value = 7;
         Integer index = 7;
         Object expected = index;
         dynamicList.add(value);
+
         assertThat(value, is(expected));
     }
 
     @Before
-    public void iteratorTest5() {
+    public void iteratorTest2() {
         dynamicList = new DynamicListThread();
+
         dynamicList.add(1);
         dynamicList.add(2);
         dynamicList.add(3);
@@ -39,6 +42,7 @@ public class DynamicListTest<E> {
     @Test
     public void iteratorTest3() {
         Iterator<Integer> iterator = dynamicList.iterator();
+
         assertThat(iterator.hasNext(), is(true) );
         assertThat(iterator.next(), is(1) );
         assertThat(iterator.hasNext(), is(true) );

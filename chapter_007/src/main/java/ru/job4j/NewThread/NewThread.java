@@ -3,6 +3,7 @@ package ru.job4j.NewThread;
 /**
  * Created by Comp on 25.10.2017.
  */
+
 public class NewThread implements Runnable {
     private String name; // имя потока
     Thread t;
@@ -45,6 +46,7 @@ class DemoJoin {
         } catch (InterruptedException e) {
             System.out.println("Главный поток прерван");
         }
+
         System.out.println("Поток Один запущен: " + ob1.t.isAlive());
         System.out.println("Поток Два запущен: " + ob2.t.isAlive());
         System.out.println("Поток Три запущен: " + ob3.t.isAlive());
