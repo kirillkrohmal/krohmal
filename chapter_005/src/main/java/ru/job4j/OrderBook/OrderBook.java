@@ -36,9 +36,11 @@ public class OrderBook {
                 }
             }));
         }
+
         for (Future<Book> book : books) {
             book.get();
         }
+
         EXECUTOR.shutdown();
     }
 }

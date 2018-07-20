@@ -23,7 +23,7 @@ public class RectangleMove implements Runnable {
                 e.printStackTrace();
             }
 
-            if (rect.contains(150, 150)) {
+            if (rect.intersects(150, 150, 10,10)) {
                 this.rect.setX(this.rect.getX() - 1);
             }
         }

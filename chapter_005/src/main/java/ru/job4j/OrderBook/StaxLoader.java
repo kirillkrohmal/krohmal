@@ -24,9 +24,10 @@ public class StaxLoader {
                 StartElement startElement = ev.asStartElement();
                 startElement.getName().getLocalPart();
             }
+            System.out.println(ev);
         }
 
-        System.out.println(String.format("Время работы: %s s", (System.currentTimeMillis() - start)));
+        //System.out.println(String.format("Время работы: %s s", (System.currentTimeMillis() - start)));
     }
 }
 

@@ -56,6 +56,7 @@ public class Book {
         for (Orders orders : sell.values()) {
             stringBuilder.append(String.format("\\t\\t%5s %7s\\n", orders.price, orders.volume));
         }
+
         for (Orders orders : buy.values()) {
             stringBuilder.append(String.format("%7s %5s\\n", orders.price, orders.volume));
         }

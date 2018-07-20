@@ -14,8 +14,8 @@ public class PingPong extends Application {
 
     @Override
     public void start(Stage stage) {
-        int limitX = 500;
-        int limitY = 500;
+        int limitX = 300;
+        int limitY = 300;
 
         Group group = new Group();
 
