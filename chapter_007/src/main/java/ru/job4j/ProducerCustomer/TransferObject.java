@@ -14,7 +14,6 @@ public class TransferObject {
             }
         }
 
-
         return 0;
     }
 
@@ -22,6 +21,7 @@ public class TransferObject {
         while (this.blockCustomer) {
             lock.notify();
         }
+
         return 0;
     }
 }

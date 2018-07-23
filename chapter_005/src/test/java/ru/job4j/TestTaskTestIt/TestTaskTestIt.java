@@ -16,16 +16,14 @@ public class TestTaskTestIt {
 
     @Test
     public void iteratorTest() {
-        String[] expected = new String[0];
-        String result = testTask.showAlgorithm(new String[]{"xcv"}, new String[]{"sdf"});
-
+        boolean expected = false;
+        boolean result = testTask.showAlgorithm(new String[]{"xcv"}, new String[]{}, new String[]{});
         assertThat(result, is(expected));
     }
     @Test
     public void iteratorTest2() {
-        String[] expected = new String[0];
-        String result  = testTask2.showAlgorithm("xcvw", new String[]{"sdfqew"});
-
+        boolean expected = false;
+        boolean result = testTask2.showAlgorithm(new String[]{"xcv"}, new String[]{"xcv"}, new String[]{"sdf"});
         assertThat(result, is(expected));
     }
 }

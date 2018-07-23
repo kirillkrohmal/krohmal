@@ -1,16 +1,23 @@
 package ru.job4j.ThreadPool;
 
-import com.sun.xml.internal.ws.api.pipe.FiberContextSwitchInterceptor;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Created by Comp on 23.11.2017.
  */
 public class ThreadPool {
-    ExecutorService poolExecutor = Executors.newFixedThreadPool(8);
-    void add(FiberContextSwitchInterceptor.Work work) {
+    private final List<Thread> threads = new LinkedList<>();
+    private final Queue<Runnable> tasks = new LinkedBlockingQueue<>();
+
+    public void work(Runnable job) {
+
+    }
+
+    public void shutdown() {
 
     }
 }

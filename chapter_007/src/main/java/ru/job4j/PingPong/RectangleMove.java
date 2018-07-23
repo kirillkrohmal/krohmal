@@ -5,28 +5,48 @@ import javafx.scene.shape.Rectangle;
 /**
  * Created by Comp on 04.05.2018.
  */
-public class RectangleMove implements Runnable {
+public class RectangleMove {
     private final Rectangle rect;
 
     RectangleMove(Rectangle rect) {
         this.rect = rect;
     }
 
-    @Override
-    public void run() {
-        while (true) {
-            this.rect.setX(this.rect.getX() + 1);
+    Thread search = new Thread() {
+        Rectangle rect;
 
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        @Override
+        public void run() {
+            while (true) {
+                this.rect.setX(this.rect.getX() + 1);
 
-            if (rect.intersects(50, 100, 10,10)) {
-                this.rect.setX(this.rect.getX() - 1);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
         }
-    }
+    };
+
+    Thread read = new Thread() {
+        Rectangle rect;
+
+        @Override
+        public void run() {
+            while (true) {
+                this.rect.setX(this.rect.getX() - 1);
+
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    };
+
+
 }
 
