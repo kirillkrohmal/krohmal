@@ -15,6 +15,7 @@ public class SimpleBlockingQueue<T> {
     private Queue<T> queue = new LinkedList<>();
 
     public void offer(T value) {
+
     }
 
     public T poll() {

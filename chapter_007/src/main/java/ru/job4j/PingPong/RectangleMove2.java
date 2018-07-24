@@ -5,18 +5,18 @@ import javafx.scene.shape.Rectangle;
 /**
  * Created by Comp on 04.05.2018.
  */
-public class RectangleMove implements Runnable {
+public class RectangleMove2 implements Runnable {
     private final Rectangle rect;
 
-    RectangleMove(Rectangle rect) {
+    RectangleMove2(Rectangle rect) {
         this.rect = rect;
     }
 
     @Override
     public void run() {
         while (true) {
-            this.rect.setX(this.rect.getX() + 1);
-            //this.rect.setX(this.rect.getX() - 1);
+
+            this.rect.setX(this.rect.getX() - 1);
 
             try {
                 Thread.sleep(50);

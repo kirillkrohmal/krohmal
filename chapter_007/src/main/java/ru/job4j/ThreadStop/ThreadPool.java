@@ -7,6 +7,7 @@ public class ThreadPool {
     public static void main(String[] args) {
         CountChar countChar = new CountChar("Это что означает");
         Time time = new Time();
+
         new Thread () {
             @Override
             public void run() {

@@ -111,12 +111,14 @@ public class SearchTree<E extends Comparable<E>> implements Iterable {
             if (cmp == 0) {
                 return node.key;
             }
+
             if (cmp < 0) {
                 node = node.left;
             } else {
                 node = node.right;
             }
         }
+
         return null;
     }
 
