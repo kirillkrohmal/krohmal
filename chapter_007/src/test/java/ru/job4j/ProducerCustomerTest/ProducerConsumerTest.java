@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Comp on 20.07.2018.
  */
-public class ProducerCustomerTest {
+public class ProducerConsumerTest {
     SimpleBlockingQueue simpleBlockingQueue;
 
     @Test

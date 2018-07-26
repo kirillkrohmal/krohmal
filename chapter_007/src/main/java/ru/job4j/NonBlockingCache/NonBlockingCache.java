@@ -5,15 +5,15 @@ package ru.job4j.NonBlockingCache;
  */
 public class NonBlockingCache {
 
-    void add () {
+    void add (Base model) {
 
     }
 
-    void update () {
+    void update (Base model) {
 
     }
 
-    void delete () {
+    void delete (Base model) {
 
     }
 }
