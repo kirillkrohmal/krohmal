@@ -1,4 +1,4 @@
-package ru.job4j.ProducerCustomer;
+package ru.job4j.ProducerConsumer;
 
 /**
  * Created by Comp on 26.11.2017.

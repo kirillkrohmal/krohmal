@@ -2,7 +2,7 @@ package ru.job4j.ProducerCustomerTest;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.ProducerCustomer.SimpleBlockingQueue;
+import ru.job4j.ProducerConsumer.SimpleBlockingQueue;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
