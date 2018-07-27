@@ -35,7 +35,6 @@ public class PingPong extends Application {
 
                     }
                 });
-
     }
 }
 
