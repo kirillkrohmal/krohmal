@@ -6,23 +6,21 @@ import java.util.Objects;
  * Created by Comp on 12.11.2017.
  */
 public class Orders {
-    private OrderBook orderBook;
     OrderBook volume;
-    private Type action;
+    Type action;
     private int id;
     float price;
-    int book;
+    Book book;
     Type type;
 
     public enum Type {
         SELL, BUY;
     }
 
-    Orders(int book, Type type, float price, OrderBook volume) {
+    public Orders(Book book, float price, OrderBook volume) {
         this.volume = volume;
         this.price = price;
         this.book = book;
-        this.type = type;
     }
 
     public int getId() {
@@ -33,11 +31,11 @@ public class Orders {
         this.id = id;
     }
 
-    public int getBook() {
+    public Book getBook() {
         return book;
     }
 
-    public void setBook(int book) {
+    public void setBook(Book book) {
         this.book = book;
     }
 
@@ -73,9 +71,6 @@ public class Orders {
         return volume;
     }
 
-    public OrderBook getOrderBook() {
-        return orderBook;
-    }
 
     @Override
     public boolean equals(Object o) {

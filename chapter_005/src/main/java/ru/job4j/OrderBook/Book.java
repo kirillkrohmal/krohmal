@@ -1,9 +1,6 @@
 package ru.job4j.OrderBook;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by Comp on 12.11.2017.
@@ -16,6 +13,7 @@ public class Book {
     Общий принцип: цена покупки >= цена продажи. И наоборот: цена продажи <= цена покупки. */
 
     private Collection<Orders> orders;
+    private static Map<Integer, List<Orders>> map;
 
     public Book(Collection<Orders> orders) {
         this.orders = orders;
@@ -66,7 +64,7 @@ public class Book {
     public void add(Map<Float, Orders> sellerMap, Orders order) {
         Orders find = sellerMap.get(order.price);
         if (find != null) {
-            final Orders put = sellerMap.put(find.price, new Orders(find.book, find.type, find.price, find.volume));
+            final Orders put = sellerMap.put(find.price, new Orders(find.book, find.price, find.volume));
         } else {
             sellerMap.put(order.price, order);
         }
@@ -74,5 +72,9 @@ public class Book {
 
     public void remove(Map<Float, Orders> sell, Map<Float, Orders> buy) {
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(map);
     }
 }

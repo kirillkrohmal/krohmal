@@ -39,12 +39,12 @@ public class OrderBookTest {
         OrderBook orderBook = new OrderBook();
         Book book = new Book();
 
-        Orders order = null;
-
         Map<Float, Orders> sell = new HashMap<>();
         Map<Float, Orders> buy = new HashMap<>();
 
-        orderBook.matching();
+        Orders order = new Orders(book,143, orderBook);
+
+        //orderBook.matching();
 
         book.add(sell, order);
         Orders result = book.show(sell, buy);

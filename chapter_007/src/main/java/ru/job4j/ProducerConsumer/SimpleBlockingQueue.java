@@ -9,7 +9,6 @@ import java.util.Queue;
 /**
  * Created by Comp on 26.05.2018.
  */
-
 @ThreadSafe
 public class SimpleBlockingQueue<T> {
     @GuardedBy("this")
