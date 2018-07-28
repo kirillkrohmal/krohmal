@@ -32,7 +32,6 @@ public class PingPong extends Application {
                     if (Thread.interrupted()) {
                         stage.close();
                         // We've been interrupted: no more crunching.
-
                     }
                 });
     }

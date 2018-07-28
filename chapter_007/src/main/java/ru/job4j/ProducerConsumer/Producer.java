@@ -20,6 +20,7 @@ public class Producer implements Runnable {
             System.out.println("lock");
             if (this.blockIt) {
                 try {
+                    blockingQueue.poll();
                     lock.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

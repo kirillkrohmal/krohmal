@@ -10,9 +10,7 @@ public class UserStorage {
     private static final int STORAGE = 1000;
     private User[] storage = new User[STORAGE];
     private Integer[] sum = new Integer[]{};
-
     private int size = 0;
-
     private final Object lock = new Object();
 
     public  void add(User user) {
