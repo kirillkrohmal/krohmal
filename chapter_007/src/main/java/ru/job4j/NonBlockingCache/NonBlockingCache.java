@@ -7,12 +7,15 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class NonBlockingCache extends OptimisticException {
     ConcurrentHashMap<Integer, Base> concurrentHashMap;
+    Base base = new Base();
 
     public NonBlockingCache(String msg) {
         super(msg);
     }
 
     public void add (Base model) throws OptimisticException {
+        //concurrentHashMap.computeIfPresent();
+
 
     }
 

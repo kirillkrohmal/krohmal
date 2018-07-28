@@ -12,6 +12,10 @@ public class Base {
         this.version = version;
     }
 
+    public Base() {
+
+    }
+
     public int getId() {
         return id;
     }

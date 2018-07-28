@@ -49,7 +49,8 @@ public class SimpleBlockingQueue<T> {
 
 
         size--;
-        return obj;
+
+        return null;
     }
 }
 
