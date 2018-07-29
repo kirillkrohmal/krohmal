@@ -14,7 +14,7 @@ public class PingPong extends Application {
 
     @Override
     public void start(Stage stage) throws InterruptedException {
-        int limitX = 1300;
+        int limitX = 300;
         int limitY = 300;
         Group group = new Group();
         Rectangle rect = new Rectangle(50, 100, 10, 10);
@@ -26,7 +26,7 @@ public class PingPong extends Application {
         stage.setResizable(false);
         stage.show();
 
-        Runnable anonym = new Runnable() {
+        Thread anonym = new Thread() {
             public void run() {
                 if (Thread.interrupted()) {
                     //stage.setOnCloseRequest();
@@ -34,7 +34,7 @@ public class PingPong extends Application {
                 }
             }
         };
-        anonym.run();
+        anonym.start();
 
        /* stage.setOnCloseRequest(
                 event ->
