@@ -7,14 +7,15 @@ public class Base {
     private int id;
     private int version;
 
+    public Base() {
+
+    }
+
     public Base(int id, int version) {
         this.id = id;
         this.version = version;
     }
 
-    public Base() {
-
-    }
 
     public int getId() {
         return id;

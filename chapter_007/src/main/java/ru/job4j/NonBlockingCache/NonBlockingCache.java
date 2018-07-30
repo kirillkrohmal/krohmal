@@ -20,10 +20,9 @@ public class NonBlockingCache extends OptimisticException {
     }
 
     public void update (Base model) {
-
     }
 
     public void delete (Base model) {
-
+        //concurrentHashMap.remove();
     }
 }
