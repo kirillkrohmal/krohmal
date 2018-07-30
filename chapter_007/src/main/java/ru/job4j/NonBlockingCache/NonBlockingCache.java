@@ -13,17 +13,17 @@ public class NonBlockingCache extends OptimisticException {
         super(msg);
     }
 
-    public void add (Base model) throws OptimisticException {
+    public void add (Base model) {
         //concurrentHashMap.computeIfPresent();
 
 
     }
 
-    public void update (Base model) throws OptimisticException {
+    public void update (Base model) {
 
     }
 
-    public void delete (Base model) throws OptimisticException {
+    public void delete (Base model) {
 
     }
 }

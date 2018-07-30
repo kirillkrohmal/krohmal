@@ -13,11 +13,12 @@ import java.util.Queue;
 public class SimpleBlockingQueue<T> {
     @GuardedBy("this")
     private Queue<T> queue = new LinkedList<>();
-    /*
-        private Node<T> head;
-        private Node<T> tail;
-    */
-    private int size;
+    private int limit = 10;
+
+    public SimpleBlockingQueue(int limit) {
+        this.limit = limit;
+    }
+
     /*
         добавляет элемент value в конец очереди. Если элемент удачно добавлен, возвращает true, иначе - false
 
@@ -26,15 +27,13 @@ public class SimpleBlockingQueue<T> {
         быть не в состоянии вставить элемент только выдавая исключение.
     */
     boolean offer(T value) {
-        //Node<T> node = new Node<T>(value);
-
         if (value == null) {
 
         } else {
 
         }
 
-        size++;
+        limit++;
         return false;
     }
 
@@ -43,12 +42,12 @@ public class SimpleBlockingQueue<T> {
         Важный момент, когда нить переводить в состояние ожидания. то она отпускает объект монитор и другая нить тоже может выполнить этот метод.
     */
     T poll() {
-        if (size == 0) {
+        if (limit == 0) {
             return null;
         }
 
 
-        size--;
+        limit--;
 
         return null;
     }
