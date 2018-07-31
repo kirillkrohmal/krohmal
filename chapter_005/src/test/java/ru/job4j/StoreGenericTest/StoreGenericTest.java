@@ -23,9 +23,10 @@ public class StoreGenericTest {
 
         Base base = new Role("врач", 3);
         Base expected = new Role("дантист", 5);
+        Base result = abstractStore.update(expected);
+
         abstractStore.add(base);
         abstractStore.add(expected);
-        Base result = abstractStore.update(expected);
 
         assertThat(result, is(expected));
     }
@@ -36,8 +37,10 @@ public class StoreGenericTest {
 
         Base base = new Role("врач", 3);
         Base expected = new Role("дантист", 5);
+
         abstractStore.add(base);
         abstractStore.add(expected);
+
         boolean result = abstractStore.delete("1");
 
         assertThat(result, is(expected));
