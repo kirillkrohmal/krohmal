@@ -34,6 +34,7 @@ class DemoJoin {
         NewThread ob1 = new NewThread("Одни");
         NewThread ob2 = new NewThread("Два");
         NewThread ob3 = new NewThread("Три");
+
         System.out.println("Поток Один запущен: " + ob1.t.isAlive());
         System.out.println("Поток Два запущен: " + ob2.t.isAlive());
         System.out.println("Поток Три запущен: " + ob3.t.isAlive());

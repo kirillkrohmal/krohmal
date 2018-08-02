@@ -8,7 +8,6 @@ public class Base {
     private int version;
 
     public Base() {
-
     }
 
     public Base(int id, int version) {
