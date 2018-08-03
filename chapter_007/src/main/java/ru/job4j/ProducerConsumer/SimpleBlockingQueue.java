@@ -26,30 +26,33 @@ public class SimpleBlockingQueue<T> {
         При использовании ограниченной емкостью очереди этот метод обычно предпочтителен для add(E), который может
         быть не в состоянии вставить элемент только выдавая исключение.
     */
-    boolean offer(T value) {
-        if (value == null) {
+    boolean offer(T value) throws InterruptedException {
+        while (this.queue.size() == this.limit) {
+            wait();
+        }
 
-        } else {
+        if (this.queue.size() == 0) {
+            notifyAll();
 
         }
 
-        limit++;
-        return false;
+        return this.queue.add(value);
     }
 
     /*
         Метод poll  - должен вернуть объект из внутренней коллекции. Если в коллекции объектов нет. то нужно перевести текущую нить в состояние ожидания.
         Важный момент, когда нить переводить в состояние ожидания. то она отпускает объект монитор и другая нить тоже может выполнить этот метод.
     */
-    T poll() {
-        if (limit == 0) {
-            return null;
+    boolean poll() throws InterruptedException {
+        while(this.queue.size() == 0) {
+            wait();
         }
 
+        if(this.queue.size() == this.limit){
+            notifyAll();
+        }
 
-        limit--;
-
-        return null;
+        return this.queue.remove(0);
     }
 }
 
