@@ -12,7 +12,11 @@ public class Consumer implements Runnable {
     @Override
     public void run() {
         synchronized (lock) {
-            blockingQueue.offer(lock);
+            try {
+                blockingQueue.offer(lock);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("unlock");
             if (this.blockIt) {
                 lock.notify();

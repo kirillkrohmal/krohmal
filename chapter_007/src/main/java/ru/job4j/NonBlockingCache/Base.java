@@ -15,7 +15,6 @@ public class Base {
         this.version = version;
     }
 
-
     public int getId() {
         return id;
     }
