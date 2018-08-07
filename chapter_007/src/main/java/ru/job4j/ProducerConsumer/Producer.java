@@ -2,11 +2,34 @@ package ru.job4j.ProducerConsumer;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Comp on 23.11.2017.
  */
 public class Producer implements Runnable {
+    private TransferObject transferObject;
+    protected volatile boolean stopped;
+    static volatile AtomicInteger i = new AtomicInteger(0);
+    SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>(10);
+
+    public Producer(TransferObject transferObject) {
+        this.transferObject = transferObject;
+        new Thread(this, "ProducerTask").start();
+    }
+
+    public void run() {
+        while (!stopped) {
+            try {
+                blockingQueue.poll();
+                transferObject.put(i.incrementAndGet());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+/*
     private final Object lock = new Object();
     private boolean blockIt = true;
     private int limit = 10;
@@ -14,16 +37,12 @@ public class Producer implements Runnable {
     SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>(10);
     private List<Object> queue = new LinkedList<>();
 
-    public static void main(String[] args) {
-
-    }
-
     @Override
     public void run() {
         synchronized (lock) {
             while (this.queue.size() == this.limit) {
                 try {
-                    wait();
+                    transferObject.put(i.incrementAndGet());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -38,6 +57,6 @@ public class Producer implements Runnable {
                 }
             }
             System.out.println("usefull work");
-        }
-    }
-}
+}*/
+
+

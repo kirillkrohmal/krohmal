@@ -4,24 +4,26 @@ package ru.job4j.ProducerConsumer;
  * Created by Comp on 26.11.2017.
  */
 public class TransferObject {
-    private volatile boolean blockCustomer;
-    private final Object lock = new Object();
+    private volatile boolean blockCustomer = false;
+    private int value;
 
-    public int put() throws InterruptedException {
-        synchronized (this.lock) {
-            while (this.blockCustomer) {
-                Thread.sleep(1000);
-            }
+
+    public synchronized void put(int value) throws InterruptedException {
+        if (!blockCustomer) {
+            wait();
         }
-
-        return 0;
+        this.value = value;
+        blockCustomer = true;
+        this.notify();
     }
 
-    public int get() {
-        while (this.blockCustomer) {
-            lock.notify();
-        }
 
-        return 0;
+    public synchronized int get() throws InterruptedException {
+        if (!blockCustomer) {
+            wait();
+        }
+        blockCustomer = true;
+        this.notify();
+        return value;
     }
 }

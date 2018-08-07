@@ -15,7 +15,7 @@ public class ThreadPool implements Runnable {
     private final List<Thread> threads = new LinkedList<>();
     private final Queue<Runnable> tasks = new LinkedBlockingQueue<>();
 
-    int size = Runtime.getRuntime().availableProcessors();
+    private int size = Runtime.getRuntime().availableProcessors();
 
     public ThreadPool(String tasks1) {
     }
