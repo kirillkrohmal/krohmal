@@ -7,6 +7,7 @@ import ru.job4j.ThreadPool.ThreadPool;
 import java.util.concurrent.Executors;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+
 /**
  * Created by Comp on 30.07.2018.
  */

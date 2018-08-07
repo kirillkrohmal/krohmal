@@ -3,6 +3,7 @@ package ru.job4j.ThreadPool;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +26,11 @@ public class ThreadPool implements Runnable {
             threads.wait();
         }
 
-        tasks.add(job);
+        if (task1 != null) {
+            tasks.add(job);
+        }
+
+        Executors.newFixedThreadPool(3);
     }
 
     public void shutdown() {
