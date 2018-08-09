@@ -2,7 +2,9 @@ package ru.job4j.ProducerConsumerTest;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.job4j.ProducerConsumer.Producer;
 import ru.job4j.ProducerConsumer.SimpleBlockingQueue;
+import ru.job4j.ProducerConsumer.TransferObject;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -12,7 +14,7 @@ import static org.junit.Assert.assertThat;
  */
 public class ProducerConsumerTest {
     SimpleBlockingQueue simpleBlockingQueue;
-
+    TransferObject transferObject = new TransferObject();
     @Test
     public void iteratorTest() {
 

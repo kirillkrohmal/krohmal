@@ -15,6 +15,10 @@ public class Base {
         this.version = version;
     }
 
+    public void updateVersion() {
+        this.version++;
+    }
+
     public int getId() {
         return id;
     }

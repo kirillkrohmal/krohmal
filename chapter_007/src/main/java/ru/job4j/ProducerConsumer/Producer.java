@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Producer implements Runnable {
     private TransferObject transferObject;
-    protected volatile boolean stopped;
+    private volatile boolean stopped;
     static volatile AtomicInteger i = new AtomicInteger(0);
     SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>(10);
 
