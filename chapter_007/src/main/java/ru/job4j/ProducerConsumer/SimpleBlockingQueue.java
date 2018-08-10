@@ -25,8 +25,6 @@ public class SimpleBlockingQueue<T> {
         this.limit = limit;
     }
 
-
-
     /*
         добавляет элемент value в конец очереди. Если элемент удачно добавлен, возвращает true, иначе - false
 

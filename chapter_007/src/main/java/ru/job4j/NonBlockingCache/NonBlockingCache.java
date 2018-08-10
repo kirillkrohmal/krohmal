@@ -13,12 +13,15 @@ public class NonBlockingCache<T extends Base> {
 
     private ConcurrentMap<Long, T> cache;
 
+    public NonBlockingCache(ConcurrentMap<Long, T> cache) {
+        this.cache = cache;
+    }
 
     public NonBlockingCache(ConcurrentHashMap<Integer, Base> concurrentHashMap) {
         this.concurrentHashMap = new ConcurrentHashMap<>();
     }
 
-    public void add (Base model) throws OptimisticException {
+    public void add(Base model) throws OptimisticException {
         concurrentHashMap.put(model.getId(), model);
     }
 
@@ -38,5 +41,9 @@ public class NonBlockingCache<T extends Base> {
 
     public void delete (Base model) throws OptimisticException {
         concurrentHashMap.remove(model.getId(), model);
+    }
+
+    public void get (T key) throws OptimisticException {
+        cache.getOrDefault(key, null);
     }
 }

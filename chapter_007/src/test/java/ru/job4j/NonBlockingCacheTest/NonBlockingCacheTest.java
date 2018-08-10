@@ -1,30 +1,27 @@
 package ru.job4j.NonBlockingCacheTest;
 
-import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.ProducerConsumer.TransferObject;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import ru.job4j.NonBlockingCache.Base;
+import ru.job4j.NonBlockingCache.NonBlockingCache;
 
 /**
  * Created by Comp on 09.08.2018.
  */
 public class NonBlockingCacheTest {
-    TransferObject transferObject = new TransferObject();
+    NonBlockingCache nonBlockingCache;
+    Base base;
+
     @Test
     public void iteratorTest() {
-        //assertThat(simpleBlockingQueue, is("test name1"));
-    }
-
-    @Before
-    public void iteratorTest2() {
-
-        //assertThat(simpleBlockingQueue, is("test name2"));
+        nonBlockingCache.add(base);
+        //assertNull(nonBlockingCache.get(base));
     }
 
     @Test
     public void iteratorTest3() {
+        nonBlockingCache.add(base);
+        nonBlockingCache.delete(base);
+
 
         //assertThat(simpleBlockingQueue, is("test name3"));
     }
