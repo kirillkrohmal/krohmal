@@ -11,14 +11,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Comp on 23.11.2017.
  */
-public class ThreadPool implements Runnable {
-    private final List<Thread> threads = new LinkedList<>();
+public class ThreadPool {
     private final Queue<Runnable> tasks = new LinkedBlockingQueue<>();
 
     private int size = Runtime.getRuntime().availableProcessors();
+    private Thread[] threads = new Thread[size];
 
-    public ThreadPool(String tasks1) {
-    }
 
     /*Создать метод work(Runnable job) - этот метод должен добавлять задачи в блокирующую очередь tasks.*/
     public void work(Runnable job) throws InterruptedException {
@@ -26,15 +24,14 @@ public class ThreadPool implements Runnable {
             threads.wait();
         }
 
-        if (task1 != null) {
-            tasks.add(job);
-        }
-
         Executors.newFixedThreadPool(3);
     }
 
-    public void shutdown() {
-
+    public ThreadPool() {
+        for (int index = 0; index < size; index++) {
+            threads[index] = new Worker();
+            threads[index].start();
+        }
     }
 
     Runnable task1 = () -> {
@@ -64,8 +61,13 @@ public class ThreadPool implements Runnable {
         }
     };
 
-    @Override
-    public void run() {
-
+    public static void main(String[] args) {
+        ThreadPool pool = new ThreadPool();
+        Runnable timer = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(System.currentTimeMillis());
+            }
+        };
     }
 }
