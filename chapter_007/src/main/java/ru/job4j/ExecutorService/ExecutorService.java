@@ -18,6 +18,7 @@ public class ExecutorService {
                 System.out.println("Execute " + Thread.currentThread().getName());
             }
         });
+
         pool.submit(new Runnable() {
             @Override
             public void run() {
@@ -33,6 +34,7 @@ public class ExecutorService {
                 e.printStackTrace();
             }
         }
+
         System.out.println("Execute " + Thread.currentThread().getName());
     }
 
