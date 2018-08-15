@@ -41,7 +41,7 @@ public class Book {
         Map<Float, Orders> buy = new TreeMap<>(up);
 
         for (Orders order : orders) {
-            this.add(order.type == Orders.Type.BUY ? buy : sell, order);
+            this.addOrder(order.type == Orders.Type.BUY ? buy : sell, order);
         }
 
         this.show(sell, buy);
@@ -61,7 +61,7 @@ public class Book {
         return null;
     }
 
-    public void add(Map<Float, Orders> sellerMap, Orders order) {
+    public void addOrder(Map<Float, Orders> sellerMap, Orders order) {
         Orders find = sellerMap.get(order.price);
         if (find != null) {
             final Orders put = sellerMap.put(find.price, new Orders(find.book, find.price, find.volume));

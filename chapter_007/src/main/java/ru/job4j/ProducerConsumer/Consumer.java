@@ -29,6 +29,7 @@ public class Consumer implements Runnable {
         stopped = true;
     }
 }
+
 /*
 
     private final Object lock = new Object();

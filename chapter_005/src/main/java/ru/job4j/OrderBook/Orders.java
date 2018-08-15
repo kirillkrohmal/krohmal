@@ -71,7 +71,6 @@ public class Orders {
         return volume;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

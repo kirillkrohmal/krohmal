@@ -7,7 +7,6 @@ public class TransferObject {
     private volatile boolean blockCustomer = false;
     private int value;
 
-
     public synchronized void put(int value) throws InterruptedException {
         if (!blockCustomer) {
             wait();
@@ -16,7 +15,6 @@ public class TransferObject {
         blockCustomer = true;
         this.notify();
     }
-
 
     public synchronized int get() throws InterruptedException {
         if (!blockCustomer) {
