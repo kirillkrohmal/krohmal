@@ -1,6 +1,5 @@
 package ru.job4j.ThreadPool;
 
-import java.util.concurrent.BlockingQueue;
 
 /**
  * Created by Comp on 13.08.2018.
@@ -16,8 +15,8 @@ public class PoolThread extends Thread {
     public void run() {
         while (!isStopped()) {
             try {
-                //Runnable runnable = (Runnable) taskQueue.dequeue();
-                //runnable.run();
+                Runnable runnable = (Runnable) taskQueue.dequeue();
+                runnable.run();
             } catch (Exception e) {
                 //log or otherwise report exception,
                 //but keep pool thread alive.
