@@ -12,20 +12,6 @@ public class ExecutorService {
                 Runtime.getRuntime().availableProcessors()
         );
 
-        pool.submit(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Execute " + Thread.currentThread().getName());
-            }
-        });
-
-        pool.submit(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Execute " + Thread.currentThread().getName());
-            }
-        });
-
         pool.shutdown();
         while (!pool.isTerminated()) {
             try {

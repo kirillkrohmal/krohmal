@@ -46,7 +46,7 @@ public class OrderBookTest {
 
         //orderBook.matching();
 
-        book.add(sell, order);
+        book.addOrder(sell, order);
         Orders result = book.show(sell, buy);
 
         assertThat(result, is(true));

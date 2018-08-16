@@ -16,22 +16,6 @@ public class ThreadPoolTest {
 
     @Test
     public void iteratorTest() throws InterruptedException {
-        Runnable r1 = new ThreadPool("tasks1");
-        Runnable r2 = new ThreadPool("tasks2");
-        Runnable r3 = new ThreadPool("tasks3");
-        Runnable r4 = new ThreadPool("tasks1");
-        Runnable r5 = new ThreadPool("tasks2");
-        // creates a thread pool with MAX_T no. of
-        // threads as the fixed pool size(Step 2)
-        ThreadPool pool = (ThreadPool) Executors.newFixedThreadPool(MAX_T);
-        // passes the Task objects to the pool to execute (Step 3)
-        pool.work(r1);
-        pool.work(r2);
-        pool.work(r3);
-        pool.work(r4);
-        pool.work(r5);
-        // pool shutdown ( Step 4)
-        pool.shutdown();
 
         assertThat(true, is("test name1"));
 

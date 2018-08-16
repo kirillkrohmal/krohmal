@@ -1,6 +1,5 @@
 package ru.job4j.ExecutorService;
 
-import ru.job4j.ExecutorService.User;
 
 /**
  * Created by Comp on 27.07.2018.
@@ -31,7 +30,7 @@ public class EmailNotification {
         body = user.getUsername();
     }
 
-    public void send(String suject, String body, String email) {
+    public void send(String subject, String body, String email) {
 
     }
 }
