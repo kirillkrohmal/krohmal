@@ -27,17 +27,12 @@ public class ParalerSearch2 {
                     for (int index = 0; index != 3; index++) {
                         try {
                             queue.offer(index);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        try {
                             Thread.sleep(500);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                 }
-
         ).start();
     }
 }
