@@ -17,11 +17,8 @@ public class SimpleBlockingQueue<T> {
     @GuardedBy("this")
     private Queue<T> queue = new LinkedList<>();
     int limit = 10;
-    private ReentrantLock lock;
-    private Thread leader = null;
-    private final Condition available = lock.newCondition();
 
-    public SimpleBlockingQueue(int limit) {
+    public SimpleBlockingQueue() {
         this.limit = limit;
     }
 
@@ -32,36 +29,32 @@ public class SimpleBlockingQueue<T> {
         При использовании ограниченной емкостью очереди этот метод обычно предпочтителен для add(E), который может
         быть не в состоянии вставить элемент только выдавая исключение.
     */
-    boolean offer(T value) throws InterruptedException {
-        final ReentrantLock lock = this.lock;
-        lock.lock();
-        try {
-            if (queue.peek() == value) {
-                leader = null;
-                available.signal();
-            }
-            return true;
-        } finally {
-            lock.unlock();
+    public void offer(T value) throws InterruptedException {
+        synchronized (this.queue) {
+            queue.add(value);
+            queue.notifyAll();
         }
     }
-
-    /*
+/*
         Метод poll  - должен вернуть объект из внутренней коллекции. Если в коллекции объектов нет. то нужно перевести текущую нить в состояние ожидания.
         Важный момент, когда нить переводить в состояние ожидания. то она отпускает объект монитор и другая нить тоже может выполнить этот метод.
     */
-    T poll() throws InterruptedException {
-        final ReentrantLock lock = this.lock;
-        lock.lock();
-        try {
-            Object first = queue.peek();
-            if (first == null)
-                return null;
-            else
-                return queue.poll();
-        } finally {
-            lock.unlock();
+    public T poll() throws InterruptedException {
+        synchronized (this.queue) {
+            while (this.queue.isEmpty()) {
+                this.queue.wait();
+            }
+
         }
+
+        return null;
+    }
+
+    boolean isEmpty( ) {
+        synchronized (this.queue) {
+            this.queue.isEmpty();
+        }
+        return false;
     }
 }
 

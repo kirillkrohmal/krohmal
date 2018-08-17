@@ -6,7 +6,7 @@ package ru.job4j.ProducerConsumer;
 public class Consumer implements Runnable {
     private TransferObject transferObject;
     protected volatile boolean stopped;
-    SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>(10);
+    SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>();
     private final Object lock = new Object();
 
     public Consumer(TransferObject transferObject) {

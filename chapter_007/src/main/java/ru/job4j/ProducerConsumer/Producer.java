@@ -1,7 +1,5 @@
 package ru.job4j.ProducerConsumer;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -11,7 +9,7 @@ public class Producer implements Runnable {
     private TransferObject transferObject;
     private volatile boolean stopped;
     static volatile AtomicInteger i = new AtomicInteger(0);
-    SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>(10);
+    SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>();
 
     public Producer(TransferObject transferObject) {
         this.transferObject = transferObject;
