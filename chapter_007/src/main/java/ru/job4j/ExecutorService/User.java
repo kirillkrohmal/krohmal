@@ -15,7 +15,7 @@ public class User {
     public void send(String suject, String body, String email) {
     }
 
-    public String getUsername() {
+    String getUsername() {
         return username;
     }
 
