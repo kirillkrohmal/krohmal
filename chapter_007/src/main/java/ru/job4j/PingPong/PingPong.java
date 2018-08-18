@@ -35,15 +35,6 @@ public class PingPong extends Application {
             }
         };
         anonym.start();
-
-       /* stage.setOnCloseRequest(
-                event ->
-                {
-                    if (Thread.interrupted()) {
-                        stage.close();
-                        // We've been interrupted: no more crunching.
-                    }
-                });*/
     }
 }
 

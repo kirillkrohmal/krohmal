@@ -25,7 +25,7 @@ public class EmailNotification {
     }
 
     void emailTo(User user) {
-        subject =
+        subject = user.getEmail() + " " + user.getUsername();
 
         body = user.getUsername();
     }
