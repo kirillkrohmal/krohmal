@@ -30,7 +30,6 @@ public class TestTask {
             } else if (count2 < 1) {
                 isChoice = false;
             }
-
         }
         return isChoice;
     }

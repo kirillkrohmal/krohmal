@@ -6,7 +6,7 @@ import ru.job4j.ProducerConsumer.SimpleBlockingQueue;
 /**
  * Created by Comp on 17.08.2018.
  */
-public class ParalerSearch2 {
+public class ParallerSearch2 {
     public static void main(String[] args) {
         SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue<Integer>();
         final Thread consumer = new Thread(

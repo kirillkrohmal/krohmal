@@ -11,11 +11,8 @@ import java.util.concurrent.LinkedBlockingQueue;
  * Created by Comp on 23.11.2017.
  */
 public class ThreadPool {
-    private final Queue<Runnable> tasks = new LinkedBlockingQueue<>();
-
     private int size = Runtime.getRuntime().availableProcessors();
     private Thread[] threads = new Thread[size];
-
     private BlockingQueue taskQueue = null;
     private List<PoolThread> threads2 = new ArrayList<PoolThread>();
     private boolean isStopped = false;
