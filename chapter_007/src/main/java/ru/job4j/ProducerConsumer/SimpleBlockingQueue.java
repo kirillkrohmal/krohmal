@@ -4,6 +4,7 @@ import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -12,46 +13,39 @@ import java.util.Queue;
 
 @ThreadSafe
 public class SimpleBlockingQueue<T> {
-    @GuardedBy("this")
-    private Queue<T> queue = new LinkedList<>();
-    int limit = 10;
 
-    public SimpleBlockingQueue() {
+    private List queue = new LinkedList();
+    private int  limit = 10;
+
+    public SimpleBlockingQueue(int limit){
         this.limit = limit;
     }
 
-    /*
-        добавляет элемент value в конец очереди. Если элемент удачно добавлен, возвращает true, иначе - false
 
-        Вставляет указанный элемент в эту очередь, если возможно сделать так сразу, не нарушая ограничения емкости.
-        При использовании ограниченной емкостью очереди этот метод обычно предпочтителен для add(E), который может
-        быть не в состоянии вставить элемент только выдавая исключение.
-    */
-    public void offer(T value) throws InterruptedException {
-        synchronized (this.queue) {
-            queue.add(value);
-            queue.notifyAll();
+    public synchronized void enqueue(Object item)
+            throws InterruptedException  {
+        while(this.queue.size() == this.limit) {
+            wait();
         }
-    }
-    /*
-        Метод poll  - должен вернуть объект из внутренней коллекции. Если в коллекции объектов нет. то нужно перевести текущую нить в состояние ожидания.
-        Важный момент, когда нить переводить в состояние ожидания. то она отпускает объект монитор и другая нить тоже может выполнить этот метод.
-    */
-    public T poll() throws InterruptedException {
-        synchronized (this.queue) {
-            while (this.queue.isEmpty()) {
-                this.queue.wait();
-            }
+        if(this.queue.size() == 0) {
+            notifyAll();
         }
-        return this.queue.poll();
+        this.queue.add(item);
     }
 
-    boolean isEmpty( ) {
-        synchronized (this.queue) {
-            this.queue.isEmpty();
+
+    public synchronized Object dequeue()
+            throws InterruptedException{
+        while(this.queue.size() == 0){
+            wait();
         }
-        return false;
+        if(this.queue.size() == this.limit){
+            notifyAll();
+        }
+
+        return this.queue.remove(0);
     }
 }
+
 
 
