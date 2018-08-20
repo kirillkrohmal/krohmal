@@ -8,8 +8,8 @@ import java.util.concurrent.ConcurrentMap;
  * Created by Comp on 23.11.2017.
  */
 public class NonBlockingCache<T extends Base> {
-    ConcurrentHashMap<Integer, Base> concurrentHashMap;
-    Base base = new Base();
+    private ConcurrentHashMap<Integer, Base> concurrentHashMap;
+    private Base base = new Base();
 
     private ConcurrentMap<Long, T> cache;
 
