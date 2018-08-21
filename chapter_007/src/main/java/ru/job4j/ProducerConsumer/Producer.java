@@ -8,8 +8,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Producer implements Runnable {
     private TransferObject transferObject;
     private volatile boolean stopped;
-    static volatile AtomicInteger i = new AtomicInteger(0);
-    SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>();
+    private static volatile AtomicInteger i = new AtomicInteger(0);
+    private SimpleBlockingQueue blockingQueue = new SimpleBlockingQueue<Integer>();
 
     public Producer(TransferObject transferObject) {
         this.transferObject = transferObject;

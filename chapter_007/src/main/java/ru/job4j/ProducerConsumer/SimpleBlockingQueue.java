@@ -11,7 +11,6 @@ import java.util.List;
 
 @ThreadSafe
 public class SimpleBlockingQueue<T> {
-
     private List queue = new LinkedList();
     private int  limit = 10;
 
@@ -23,7 +22,6 @@ public class SimpleBlockingQueue<T> {
 
     }
 
-
     public synchronized void enqueue(Object item)
             throws InterruptedException  {
         while(this.queue.size() == this.limit) {
@@ -34,7 +32,6 @@ public class SimpleBlockingQueue<T> {
         }
         this.queue.add(item);
     }
-
 
     public synchronized Object dequeue()
             throws InterruptedException{
