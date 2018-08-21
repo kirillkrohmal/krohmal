@@ -8,12 +8,12 @@ import ru.job4j.ProducerConsumer.SimpleBlockingQueue;
  */
 public class ParallerSearch2 {
     public static void main(String[] args) {
-        SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue<Integer>();
+        SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue<>();
         final Thread consumer = new Thread(
                 () -> {
                     while (true) {
                         try {
-                            System.out.println(queue.poll());
+                            System.out.println(queue.dequeue());
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                             Thread.currentThread().interrupt();
@@ -26,7 +26,7 @@ public class ParallerSearch2 {
                 () -> {
                     for (int index = 0; index != 3; index++) {
                         try {
-                            queue.offer(index);
+                            queue.enqueue(index);
                             Thread.sleep(500);
                         } catch (InterruptedException e) {
                             e.printStackTrace();

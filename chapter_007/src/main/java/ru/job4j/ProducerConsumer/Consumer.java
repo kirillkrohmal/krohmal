@@ -17,7 +17,7 @@ public class Consumer implements Runnable {
     public void run() {
         while (!stopped) {
             try {
-                blockingQueue.offer(lock);
+                blockingQueue.enqueue(lock);
                 transferObject.get();
             } catch (InterruptedException e) {
                 e.printStackTrace();

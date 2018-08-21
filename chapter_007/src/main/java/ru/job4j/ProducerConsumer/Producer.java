@@ -19,7 +19,7 @@ public class Producer implements Runnable {
     public void run() {
         while (!stopped) {
             try {
-                blockingQueue.poll();
+                blockingQueue.dequeue();
                 transferObject.put(i.incrementAndGet());
             } catch (InterruptedException e) {
                 e.printStackTrace();

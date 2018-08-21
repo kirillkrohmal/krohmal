@@ -1,11 +1,9 @@
 package ru.job4j.ProducerConsumer;
 
-import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * Created by Comp on 26.05.2018.
@@ -19,6 +17,10 @@ public class SimpleBlockingQueue<T> {
 
     public SimpleBlockingQueue(int limit){
         this.limit = limit;
+    }
+
+    public SimpleBlockingQueue() {
+
     }
 
 
