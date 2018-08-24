@@ -7,8 +7,7 @@ public class TestTask {
     public boolean showAlgorithm(String[] word, String[] word1, String[] word2) {
 
 /*
-            String[] left = leftHalf(word1);
-            String[] right = rightHalf(word2);
+            работать за время О(n)
 */
         boolean isChoice = false;
         int uniq = word.length;

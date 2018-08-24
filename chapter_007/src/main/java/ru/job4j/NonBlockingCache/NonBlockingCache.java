@@ -8,42 +8,35 @@ import java.util.concurrent.ConcurrentMap;
  * Created by Comp on 23.11.2017.
  */
 public class NonBlockingCache<T extends Base> {
-    private ConcurrentHashMap<Integer, Base> concurrentHashMap;
-    private Base base = new Base();
-
-    private ConcurrentMap<Long, T> cache;
+    private final ConcurrentMap<Long, T> cache;
 
     public NonBlockingCache(ConcurrentMap<Long, T> cache) {
-        this.cache = cache;
+        this.cache = new ConcurrentHashMap<>();
     }
 
-    public NonBlockingCache(ConcurrentHashMap<Integer, Base> concurrentHashMap) {
-        this.concurrentHashMap = new ConcurrentHashMap<>();
+    public void add(T model) throws OptimisticException {
+        this.cache.put(model.getId(), model);
     }
 
-    public void add(Base model) throws OptimisticException {
-        concurrentHashMap.put(model.getId(), model);
-    }
-
-    public void update (Base model) throws OptimisticException {
-        cache.computeIfPresent ((long) model.getId(), new BiFunction<Long, T, T>() {
+    public void update (T model) throws OptimisticException {
+        this.cache.computeIfPresent ((long) model.getId(), new BiFunction<Long, T, T>() {
             @Override
             public T apply(Long aLong, T oldModel) {
-                if (base.getVersion() == oldModel.getVersion()) {
+                if (model.getVersion() == oldModel.getVersion()) {
                     model.updateVersion();
                     return (T) model;
                 } else {
                     throw new OptimisticException("Error");
-                }
+            }
             }
         });
     }
 
-    public void delete (Base model) throws OptimisticException {
-        concurrentHashMap.remove(model.getId(), model);
+    public void delete (T model) throws OptimisticException {
+        this.cache.remove(model.getId(), model);
     }
 
-    public void get (T key) throws OptimisticException {
-        cache.getOrDefault(key, null);
+    public void get (long key) throws OptimisticException {
+        this.cache.getOrDefault(key, null);
     }
 }

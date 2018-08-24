@@ -19,7 +19,7 @@ public class Base {
         this.version++;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
