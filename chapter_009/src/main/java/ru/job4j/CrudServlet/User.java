@@ -9,7 +9,6 @@ public class User {
     private String email;
     private String createDate;
 
-
     public User(String name, String login, String email, String createDate) {
         this.name = name;
         this.login = login;

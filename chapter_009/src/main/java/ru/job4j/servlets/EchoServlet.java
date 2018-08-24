@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  * Created by Comp on 06.11.2017.
  */
 public class EchoServlet extends HttpServlet {
-    //private static final Logger log = LoggerFactory.getLogger(EchoServlet.class);
+    private static final Logger log = LoggerFactory.getLogger(EchoServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,5 +25,4 @@ public class EchoServlet extends HttpServlet {
         printWriter.append("Hello World " + login);
         printWriter.flush();
     }
-
 }

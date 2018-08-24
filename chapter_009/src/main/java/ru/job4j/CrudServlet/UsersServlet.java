@@ -18,10 +18,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class UsersServlet extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(UsersServlet.class);
-
-
     private List<String> user = new CopyOnWriteArrayList<>();
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,6 +44,5 @@ public class UsersServlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-
     }
 }
