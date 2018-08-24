@@ -6,7 +6,6 @@ package ru.job4j.PendingOutput;
 class CountWords implements Runnable {
     private String text;
     private int countWords;
-    Thread current = Thread.currentThread();
 
     CountWords(String text) {
         this.text = text;

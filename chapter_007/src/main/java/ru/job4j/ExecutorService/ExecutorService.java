@@ -2,7 +2,6 @@ package ru.job4j.ExecutorService;
 
 import java.util.concurrent.Executors;
 
-
 /**
  * Created by Comp on 27.07.2018.
  */

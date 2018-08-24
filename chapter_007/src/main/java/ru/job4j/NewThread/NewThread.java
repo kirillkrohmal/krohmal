@@ -31,7 +31,7 @@ public class NewThread implements Runnable {
 
 class DemoJoin {
     public static void main(String args[]) {
-        NewThread ob1 = new NewThread("Одни");
+        NewThread ob1 = new NewThread("Один");
         NewThread ob2 = new NewThread("Два");
         NewThread ob3 = new NewThread("Три");
 

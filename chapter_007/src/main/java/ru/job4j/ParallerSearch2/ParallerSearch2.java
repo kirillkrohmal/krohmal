@@ -1,6 +1,5 @@
 package ru.job4j.ParallerSearch2;
 
-
 import ru.job4j.ProducerConsumer.SimpleBlockingQueue;
 
 /**
@@ -22,6 +21,7 @@ public class ParallerSearch2 {
                 }
         );
         consumer.start();
+
         new Thread(
                 () -> {
                     for (int index = 0; index != 3; index++) {

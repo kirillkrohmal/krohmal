@@ -7,17 +7,16 @@ import java.util.Random;
  */
 public class Tracker {
     private final int STORAGE_SIZE = 100;
-    Item[] items = new Item[STORAGE_SIZE];
+    private Item[] items = new Item[STORAGE_SIZE];
     private int size = 0;
     private static final Random random = new Random();
 
-    public Item add(Item item) {
+    public void add(Item item) {
         if (size == STORAGE_SIZE - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
         item.setId(this.generateId());
         items[size++] = item;
-        return item;
     }
 
     String generateId() {
@@ -31,7 +30,6 @@ public class Tracker {
         for (int i = 0; i < items.length; i++) {
             if (items[i] != null && items[i].getId().equals(id)) {
                 //System.arraycopy(items[size], 0, items[size - 1], i - 1, items.length);
-                //
                 items[i] = null;
                 items[i] = items[size - 1];
                 items[size - 1] = null;
@@ -41,11 +39,11 @@ public class Tracker {
         }
     }
 
-    public void exit() {
+    void exit() {
         System.exit(0);
     }
 
-    public void update(Item freshItem) {
+    void update(Item freshItem) {
         for (int i = 0; i < items.length; i++) {
             if (items[i] != null && items[i].getId().equals(freshItem.getId())) {
                 items[i] = freshItem;
@@ -54,7 +52,7 @@ public class Tracker {
         }
     }
 
-    public Item[] findAll() {
+    Item[] findAll() {
         Item[] result = new Item[size];
 
         for (int i = 0; i < size; i++) {
@@ -63,7 +61,7 @@ public class Tracker {
         return result;
     }
 
-    public Item findByName(String name) {
+    void findByName(String name) {
         Item result = null;
 
         for (Item item : items) {
@@ -72,10 +70,9 @@ public class Tracker {
                 break;
             }
         }
-        return result;
     }
 
-    public Item findById(String id) {
+    Item findById(String id) {
         Item result = null;
         for (Item item : items) {
             if (item.getId().equals(id) && items != null) {
