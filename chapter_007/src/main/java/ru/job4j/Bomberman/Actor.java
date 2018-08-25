@@ -8,12 +8,12 @@ public class Actor {
     private int y;
     private Board board;
 
-    public Actor(int x, int y) {
+    Actor(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public Actor(Board board) {
+    Actor(Board board) {
         this.board = board;
     }
 
@@ -32,6 +32,4 @@ public class Actor {
     public void setY(int y) {
         this.y = y;
     }
-
-
 }

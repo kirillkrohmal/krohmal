@@ -7,10 +7,10 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Board {
 
-    int width;
-    int height;
+    private int width;
+    private int height;
 
-    Board board;
+    private Board board;
 
 
     public int getWidth() {
