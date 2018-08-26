@@ -41,7 +41,4 @@ public class Board {
 
         return new ReentrantLock[0][];
     }
-
-
-
 }

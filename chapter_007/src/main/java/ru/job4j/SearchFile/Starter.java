@@ -9,10 +9,6 @@ public class Starter {
         new Starter().start(args);
     }
 
-    /**
-     * Start main loop of program.
-     * @param args text for search.
-     */
     public void start(String[] args) {
         final StringBuffer buffer = new StringBuffer();
         for (String arg : args) {
