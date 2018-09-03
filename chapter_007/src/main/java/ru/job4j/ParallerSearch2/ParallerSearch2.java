@@ -21,6 +21,7 @@ public class ParallerSearch2 {
                 }
         );
         consumer.start();
+
         new Thread(
                 () -> {
                     while (true)
