@@ -10,12 +10,12 @@ public class BlockingQueue {
     private List queue = new LinkedList();
     private int limit = 10;
 
-    public BlockingQueue(int limit) {
+    BlockingQueue(int limit) {
         this.limit = limit;
     }
 
 
-    public synchronized void enqueue(Object item)
+    synchronized void enqueue(Object item)
             throws InterruptedException {
         while (this.queue.size() == this.limit) {
             wait();
@@ -27,7 +27,7 @@ public class BlockingQueue {
     }
 
 
-    public synchronized Object dequeue()
+    synchronized Object dequeue()
             throws InterruptedException {
         while (this.queue.size() == 0) {
             wait();

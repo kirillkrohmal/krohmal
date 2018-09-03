@@ -15,7 +15,9 @@ public class ThreadPool {
     private List<PoolThread> threads2 = new ArrayList<PoolThread>();
     private boolean isStopped = false;
 
-    /*Создать метод work(Runnable job) - этот метод должен добавлять задачи в блокирующую очередь tasks.*/
+    /*
+        Создать метод work(Runnable job) - этот метод должен добавлять задачи в блокирующую очередь tasks.
+    */
     public void work(Runnable job) throws InterruptedException {
         if (size == 0) {
             threads.wait();

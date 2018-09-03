@@ -23,16 +23,16 @@ public class ParallerSearch2 {
         consumer.start();
         new Thread(
                 () -> {
-                    for (int index = 0; index != 3; index++) {
-                        try {
-                            queue.enqueue(index);
-                            Thread.currentThread().interrupt();
-
-                            //Thread.sleep(500);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                    while (true)
+                        for (int index = 0; index != 3; index++) {
+                            try {
+                                queue.enqueue(index);
+                                Thread.sleep(500);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                                Thread.currentThread().interrupt();
+                            }
                         }
-                    }
                 }
         ).start();
     }

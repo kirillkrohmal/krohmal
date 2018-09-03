@@ -12,13 +12,8 @@ public class ExecutorService {
         );
 
         pool.shutdown();
-        while (!pool.isTerminated()) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+
+
 
         System.out.println("Execute " + Thread.currentThread().getName());
     }
