@@ -12,9 +12,6 @@ public class ExecutorService {
         );
 
         pool.shutdown();
-
-
-
         System.out.println("Execute " + Thread.currentThread().getName());
     }
 }

@@ -1,0 +1,122 @@
+Давайте теперь разберемся, как нам написать полноценный тест на блокирующую очередь.
+
+В тесте должны быть две нити. Надо обеспечить, что бы главный потом ждал выполнение этих нитей.
+
+Дополнительно нам нужно обеспечивать параллельное выполнение потребителя и производителя.
+
+Так же сложность возникает в блокировки потребителя или производителя, если очередь пустая или переполненная.
+
+если она пустая нужно произвести остановку нити и проверить результат.
+
+Если очередь переполненная нужно приостановить потребителя и дать возможность просчитать потребителю.
+
+Давайте составим начало нашего теста.
+
+final CopyOnWriteArrayList<Integer> buffer = new CopyOnWriteArrayList<>();
+final SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue<>();
+Thread producer = new Thread(
+        () -> {
+            IntStream.range(0, 5).forEach(
+                    queue::offer
+            );
+        }
+);
+producer.start();
+Thread consumer = new Thread(
+        () -> {
+            while (!queue.isEmpty() || !Thread.currentThread().isInterrupted()) {
+                try {
+                    buffer.add(queue.poll());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
+                }
+            }
+        }
+);
+consumer.start();
+
+buffer - нужен, чтобы собрать все данные в список и проверить в конце выполнения теста.
+
+while (!queue.isEmpty() || !Thread.currentThread().isInterrupted()) {
+
+Здесь мы проверяем, что очередь пустая или нить выключили.
+Зачем нужна двойная проверка.
+Если производитель закончил свою работу и сразу подаст сигнал об отключении потребителя, то мы не сможет прочитать все данные.
+С другой стороны, если мы успели прочитать все данные и находимся в режиме wait пришедший сигнал запустит нить и
+проверит состояние очереди и завершит цикл. Потребитель закончит свою работу.
+
+Давайте добавим проверку и запустим наш тест.
+
+assertThat(buffer, is(Arrays.asList(0, 1, 2, 3, 4)));
+
+Если мы запустим наш тест несколько раз, то мы увидим. что наш тест иногда работает, а иногда нет.
+
+java.lang.AssertionError:
+Expected: is <[0, 1, 2, 3, 4]>
+ but: was <[]>
+
+Это связано с тем. что главная нить не дожидается выполнения потребителя и производителя.
+
+Давайте добавим ожидание.
+producer.join();
+consumer.interrupt();
+consumer.join();
+
+Сначала дожидаемся завершения работы производителя.
+Далее посылаем сигнал, что потребителю можно остановиться.
+Ждем пока потребитель прочитает все данные и завершит свою работу.
+
+Полный код можно найти ниже.
+
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.IntStream;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.*;
+
+public class SimpleBlockingQueueTest {
+    @Test
+    public void whenFetchAllThenGetIt() throws InterruptedException {
+        final CopyOnWriteArrayList<Integer> buffer = new CopyOnWriteArrayList<>();
+        final SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue<>();
+        Thread producer = new Thread(
+                () -> {
+                    IntStream.range(0, 5).forEach(
+                            queue::offer
+                    );
+                }
+        );
+        producer.start();
+        Thread consumer = new Thread(
+                () -> {
+                    while (!queue.isEmpty() || !Thread.currentThread().isInterrupted()) {
+                        try {
+                            buffer.add(queue.poll());
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            Thread.currentThread().interrupt();
+                        }
+                    }
+                }
+        );
+        consumer.start();
+        producer.join();
+        consumer.interrupt();
+        consumer.join();
+        assertThat(buffer, is(Arrays.asList(0, 1, 2, 3, 4)));
+    }
+}
+
+Задание.
+
+
+1. Создайте аналогичный тест.
+2. Залей код.
+3. Создайте задачу и укажите отвественного Арсентьева Петра.
+
+
+
