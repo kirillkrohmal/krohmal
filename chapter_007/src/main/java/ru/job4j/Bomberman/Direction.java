@@ -3,35 +3,71 @@ package ru.job4j.Bomberman;
 /**
  * Created by Comp on 11.08.2018.
  */
-public class Direction {
-    private int x;
-    private int y;
-    private Board board;
+public enum Direction {
+    UP {
+        public int[] get() {
+            return new int[]{0, 1};
+        }
 
-    Direction(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+        /**
+         * Change direction to another.
+         * @return new direction.
+         */
 
-    Direction(Board board) {
-        this.board = board;
-    }
+        @Override
+        public Direction changeDir() {
+            return RIGHT;
+        }
+    },
 
-    public int getX() {
-        return x;
-    }
+    DOWN {
+        public int[] get() {
+            return new int[]{0, -1};
+        }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+        /**
+         * Change direction to another.
+         * @return new direction.
+         */
+        @Override
+        public Direction changeDir() {
+            return LEFT;
+        }
+    },
 
-    public int getY() {
-        return y;
-    }
+    RIGHT {
+        public int[] get() {
+            return new int[]{1, 0};
+        }
 
-    public void setY(int y) {
-        this.y = y;
-    }
+        /**
+         * Change direction to another.
+         * @return new direction.
+         */
+        @Override
+        public Direction changeDir() {
+            return DOWN;
+        }
+    },
+
+    LEFT {
+        public int[] get() {
+            return new int[]{-1, 0};
+        }
+
+        /**
+         * Change direction to another.
+         * @return new direction.
+         */
+        @Override
+        public Direction changeDir() {
+            return UP;
+        }
+    };
+
+    public abstract int[] get();
+
+    public abstract Direction changeDir();
 }
 
 
