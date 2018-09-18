@@ -24,8 +24,7 @@ public class ParallerSearch2 {
 
         new Thread(
                 () -> {
-                   consumer.isInterrupted();
-                        while (true)
+                    while (consumer.isInterrupted())
                             for (int index = 0; index != 3; index++) {
                                 try {
                                     queue.enqueue(index);
