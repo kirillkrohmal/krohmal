@@ -14,10 +14,7 @@ public class ThreadSafe<E> extends DynamicListThread {
     @Override
     public synchronized Iterator<E> iterator() {
         return copy(this.array).iterator();
-
     }
-
-
 
     void copy () {
         
