@@ -9,7 +9,11 @@ import java.util.Iterator;
  */
 public class ThreadSafe<E> extends DynamicListThread {
 
-    private Object array;
+    private DynamicListThread array;
+
+    public ThreadSafe(DynamicListThread array) {
+        this.array = array;
+    }
 
     @Override
     public synchronized Iterator<E> iterator() {
