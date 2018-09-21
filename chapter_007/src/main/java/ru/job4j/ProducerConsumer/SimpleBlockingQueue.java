@@ -44,6 +44,9 @@ public class SimpleBlockingQueue<T> {
 
         return this.queue.remove(0);
     }
+
+    public void offer(int i) {
+    }
 }
 
 
