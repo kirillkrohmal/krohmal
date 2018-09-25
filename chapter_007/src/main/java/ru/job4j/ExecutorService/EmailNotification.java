@@ -32,6 +32,7 @@ public class EmailNotification<E> {
     }
 
     void emailTo(User user) {
+        service.setPool();
 
         body = user.getUsername();
     }
