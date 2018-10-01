@@ -1,7 +1,6 @@
 package ru.job4j.ThreadSafe;
 
 import ru.job4j.DynamicListThread.DynamicListThread.DynamicListThread;
-import ru.job4j.DynamicListThread.LinkedListContainer.LinkedListContainer;
 
 import java.util.Iterator;
 import java.util.LinkedList;

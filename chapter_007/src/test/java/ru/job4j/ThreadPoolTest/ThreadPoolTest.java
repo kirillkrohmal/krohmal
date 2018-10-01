@@ -3,8 +3,6 @@ package ru.job4j.ThreadPoolTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import ru.job4j.ThreadPool.ThreadPool;
-import java.util.concurrent.Executors;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 

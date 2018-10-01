@@ -11,7 +11,7 @@ public class EmailNotification<E> {
     private Object body;
     private Object subject;
 
-    ExecutorService service = (ExecutorService) Executors.newFixedThreadPool(3);
+    //EmailService service =  new EmailService();
 
     private Node<E> head;
 
@@ -32,9 +32,7 @@ public class EmailNotification<E> {
     }
 
     void emailTo(User user) {
-        service.setPool();
 
-        body = user.getUsername();
     }
 
     public void send(String subject, String body, String email) {
