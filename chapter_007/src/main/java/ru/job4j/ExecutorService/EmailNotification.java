@@ -1,19 +1,11 @@
 package ru.job4j.ExecutorService;
 
-import ru.job4j.DynamicListThread.LinkedListContainer.Node;
-
-import java.util.concurrent.Executors;
-
 /**
  * Created by Comp on 27.07.2018.
  */
 public class EmailNotification<E> {
     private Object body;
     private Object subject;
-
-    //EmailService service =  new EmailService();
-
-    private Node<E> head;
 
     public Object getBody() {
         return body;
@@ -31,11 +23,12 @@ public class EmailNotification<E> {
         this.subject = subject;
     }
 
-    void emailTo(User user) {
+    public void send(String subject, String body, String email) {
 
     }
-
-    public void send(String subject, String body, String email) {
+    public static void main(String[] args) {
+        EmailNotification emailNotification = new EmailNotification();
+        emailNotification.send("мое", "письмо", "десь");
 
     }
 }
