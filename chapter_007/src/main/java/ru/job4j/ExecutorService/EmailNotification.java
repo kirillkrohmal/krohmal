@@ -28,7 +28,7 @@ public class EmailNotification<E> {
     }
     public static void main(String[] args) {
         EmailNotification emailNotification = new EmailNotification();
-        emailNotification.send("мое", "письмо", "десь");
+        emailNotification.send("мое", "письмо", "день");
 
     }
 }
