@@ -12,9 +12,6 @@ public class User {
         this.email = email;
     }
 
-    public void send(String subject, String body, String email) {
-    }
-
     String getUsername() {
         return username;
     }
