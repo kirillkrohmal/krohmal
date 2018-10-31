@@ -15,8 +15,8 @@ public interface Store {
 
    List<User> findAll();
 
-   User findById();
+   User findById(int id);
 
-   User findByLogin();
+   User findByLogin(String login);
 
 }

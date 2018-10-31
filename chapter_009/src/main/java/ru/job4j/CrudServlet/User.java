@@ -1,5 +1,7 @@
 package ru.job4j.CrudServlet;
 
+import java.util.Date;
+
 /**
  * Created by Comp on 06.11.2017.
  */
@@ -10,12 +12,10 @@ public class User {
     private String email;
     private String createDate;
 
-    public User(String name, String id, String login, String email, String createDate) {
+    public User(String name, String login, String email) {
         this.name = name;
-        this.id = id;
         this.login = login;
-        this.email = email;
-        this.createDate = createDate;
+        createDate = new Date().toString();
     }
 
     public String getName() {
@@ -24,6 +24,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLogin() {
@@ -50,14 +58,6 @@ public class User {
         this.createDate = createDate;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,6 +66,7 @@ public class User {
         User user = (User) o;
 
         if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (id != null ? !id.equals(user.id) : user.id != null) return false;
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
         if (email != null ? !email.equals(user.email) : user.email != null) return false;
         return createDate != null ? createDate.equals(user.createDate) : user.createDate == null;
@@ -74,19 +75,10 @@ public class User {
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (id != null ? id.hashCode() : 0);
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", login='" + login + '\'' +
-                ", email='" + email + '\'' +
-                ", createDate='" + createDate + '\'' +
-                '}';
     }
 }

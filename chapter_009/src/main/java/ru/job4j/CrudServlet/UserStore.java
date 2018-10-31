@@ -40,12 +40,12 @@ class MemoryStore implements Store {
     }
 
     @Override
-    public User findById() {
+    public User findById(int id) {
         return null;
     }
 
     @Override
-    public User findByLogin() {
+    public User findByLogin(String login) {
         return null;
     }
 }
