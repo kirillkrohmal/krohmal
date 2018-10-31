@@ -7,10 +7,9 @@ import java.util.List;
  */
 
 public interface Store {
-
    void add(User user);
 
-   void update(User user);
+   void update(int id, User user);
 
    void delete(User user);
 

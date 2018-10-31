@@ -12,8 +12,6 @@ public class EmailNotification<E> {
     public void send(String subject, String body, String email) {
 
     }
-
-
     public void emailTo(User user) {
         pool.submit(()
                 -> {
@@ -26,5 +24,6 @@ public class EmailNotification<E> {
 
             send(user.getUsername(), stringBuilder, user.getEmail());
                 });
+
     }
 }

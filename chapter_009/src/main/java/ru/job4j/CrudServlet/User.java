@@ -5,12 +5,14 @@ package ru.job4j.CrudServlet;
  */
 public class User {
     private String name;
+    private String id;
     private String login;
     private String email;
     private String createDate;
 
-    public User(String name, String login, String email, String createDate) {
+    public User(String name, String id, String login, String email, String createDate) {
         this.name = name;
+        this.id = id;
         this.login = login;
         this.email = email;
         this.createDate = createDate;
@@ -48,6 +50,14 @@ public class User {
         this.createDate = createDate;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,5 +89,4 @@ public class User {
                 ", createDate='" + createDate + '\'' +
                 '}';
     }
-
 }
