@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 
 public class ExecutorService {
     void setPool() {
+
         java.util.concurrent.ExecutorService pool = Executors.newFixedThreadPool(
                 Runtime.getRuntime().availableProcessors()
         );
@@ -34,10 +35,15 @@ public class ExecutorService {
                 e.printStackTrace();
             }
         }
-        System.out.println("Execute " + Thread.currentThread().getName());
+
+    void addWork(Runnable run) {
+
     }
 
-
 }
+
+        /*System.out.println("Execute "+Thread.currentThread().getName());
+                }*/
+
 
 
