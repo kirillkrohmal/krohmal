@@ -1,5 +1,7 @@
 package ru.job4j.Bomberman;
 
+import javafx.scene.control.Cell;
+
 /**
  * Created by Comp on 18.09.2018.
  */
@@ -15,22 +17,20 @@ public abstract class Figure {
         this.field = field;
     }
 
-    public boolean isRight(Direction direction) {
-        boolean result = false;
-
-        int wright = this.x + direction.get()[0];
-        int left = this.y + direction.get()[1];
-
-        if (wright >= field.length || left >= field.length || wright < 0 || left < 0) {
+    public boolean makeStep(Direction dir) {
+        boolean result;
+        final int destX = this.x + dir.get()[0];
+        final int destY = this.y + dir.get()[1];
+        if (destX >= field.length || destY >= field.length || destX < 0 || destY < 0) {
             result = false;
         } else {
-            synchronized (field[left][wright]) {
-                if (field[wright][left].getFigure() == null) {
-                    field[wright][left].setFigure(this);
-                    System.out.println(String.format("%s %s:%s", Thread.currentThread().getName(), x, y));
+            synchronized (field[destX][destY]) {
+                if (field[destX][destY].getFigure() == null) {
+                    field[destX][destY].setFigure(this);
+                    System.out.println(String.format("%s %s:%s", Thread.currentThread().getName(), destX, destY));
                     field[x][y].setFigure(null);
-                    this.x = wright;
-                    this.y = left;
+                    this.x = destX;
+                    this.y = destY;
                     result = true;
                 } else {
                     result = false;

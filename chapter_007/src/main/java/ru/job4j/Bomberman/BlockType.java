@@ -1,17 +1,14 @@
 package ru.job4j.Bomberman;
 
+import javafx.scene.control.Cell;
+
 /**
  * Created by Comp on 11.08.2018.
  */
-public class BlockType extends Figure implements Runnable {
+public enum BlockType {
 
+    EMPTY,
 
-    public BlockType(Cell[][] field, int x, int y) {
-        super(field, x, y);
-    }
+    FILL
 
-    @Override
-    public void run() {
-
-    }
 }

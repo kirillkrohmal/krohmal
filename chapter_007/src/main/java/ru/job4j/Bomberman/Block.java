@@ -1,14 +1,32 @@
 package ru.job4j.Bomberman;
 
+import javafx.scene.control.Cell;
+
 /**
  * Created by Comp on 11.08.2018.
  */
-public class Block extends Figure {
-    public Block(Cell[][] field, int x, int y) {
-        super(field, x, y);
+public class Block {
+    private final BlockType type;
+
+    private Actor actor;
+
+    public Block(final BlockType type) {
+        this.type = type;
     }
 
-    public boolean makeStep() {
-        return false;
+    public synchronized void attachActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public synchronized void detachActor() {
+        this.actor = null;
+    }
+
+    public synchronized Actor getActor() {
+        return this.actor;
+    }
+
+    public BlockType getType() {
+        return type;
     }
 }
