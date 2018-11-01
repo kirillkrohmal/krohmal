@@ -6,7 +6,6 @@ import java.util.concurrent.locks.ReentrantLock;
  * Created by Comp on 11.08.2018.
  */
 public class Board {
-
     private int width;
     private int height;
 

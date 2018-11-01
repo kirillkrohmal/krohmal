@@ -7,12 +7,12 @@ public abstract class Figure {
     private int x;
     private int y;
 
-    Cell[][] boards;
+    Cell[][] field;
 
-    public Figure(int x, int y, Cell[][] boards) {
+    public Figure(Cell[][] field, int x, int y) {
         this.x = x;
         this.y = y;
-        this.boards = boards;
+        this.field = field;
     }
 
     public boolean isRight(Direction direction) {
@@ -21,17 +21,22 @@ public abstract class Figure {
         int wright = this.x + direction.get()[0];
         int left = this.y + direction.get()[1];
 
-        if (wright >= boards.length || left >= boards.length || wright < 0 || left < 0) {
+        if (wright >= field.length || left >= field.length || wright < 0 || left < 0) {
             result = false;
         } else {
-            if (boards[wright][left].getFigure() == null) {
-
-            } else {
-                result = false;
+            synchronized (field[left][wright]) {
+                if (field[wright][left].getFigure() == null) {
+                    field[wright][left].setFigure(this);
+                    System.out.println(String.format("%s %s:%s", Thread.currentThread().getName(), x, y));
+                    field[x][y].setFigure(null);
+                    this.x = wright;
+                    this.y = left;
+                    result = true;
+                } else {
+                    result = false;
+                }
             }
-
         }
         return result;
     }
 }
-
