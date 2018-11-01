@@ -21,7 +21,7 @@ public class ValidateService {
         return null;
     }
 
-    public boolean add() {
+    public boolean add(String name, String login, String email) {
         boolean result = false;
         if (STORE.findByLogin(login) == null) {
             if (validateEmail(email)) {
@@ -45,7 +45,7 @@ public class ValidateService {
         return result;
     }
 
-    public boolean delete(int id, String name, String login, String email) {
+    public boolean delete(int id) {
 
         boolean result =  false;
 
@@ -64,8 +64,7 @@ public class ValidateService {
         return match.matches();
     }
 
-    public boolean delete(int id) {
-    }
+
 }
 
 

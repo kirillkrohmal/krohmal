@@ -11,12 +11,13 @@ public interface Store {
 
    void update(int id, User user);
 
-   void delete(User user);
+   void delete(int id);
 
    List<User> findAll();
 
    User findById(int id);
 
    User findByLogin(String login);
+
 
 }

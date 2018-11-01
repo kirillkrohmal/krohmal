@@ -10,7 +10,6 @@ public class Player extends Actor {
         super(board, x, y);
     }
 
-    @Override
     void performMoving(Direction direction) {
         if (isValidMoving(direction)) {
             int currentX = getX();
@@ -26,6 +25,10 @@ public class Player extends Actor {
     }
 
     public int getX() {
+        return x;
+    }
+
+    public int getY() {
         return x;
     }
 }

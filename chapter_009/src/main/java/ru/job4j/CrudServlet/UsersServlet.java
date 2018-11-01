@@ -68,7 +68,7 @@ public class UsersServlet extends HttpServlet {
             String name = param.getParameter("name");
             String login = param.getParameter("login");
             String email = param.getParameter("email");
-            return logic.add();
+            return logic.add(name, login, email);
         };
     }
 
