@@ -10,15 +10,22 @@ import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * Created by Comp on 23.09.2018.
+ * Created by Comp on 01.11.2018.
  */
-public class UsersServlet {
+public class UserUpdateServlet {
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = new PrintWriter(resp.getOutputStream());
 
 
 
+        printWriter.flush();
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        PrintWriter printWriter = new PrintWriter(resp.getOutputStream());
         printWriter.flush();
     }
 }
