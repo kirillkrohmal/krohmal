@@ -2,35 +2,76 @@ package ru.job4j.Bomberman;
 
 import javafx.scene.control.Cell;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * Created by Comp on 11.08.2018.
  */
-public class Monster extends Figure implements Runnable {
+public class Monster extends Actor implements Runnable {
+    private final Lock stepOperation = new ReentrantLock(true);
 
-    Direction direction = Direction.UP;
+    /**
+     * Time which wait monster for moving.
+     */
+    private static final int WAIT_TIME = 5000;
 
-    public Monster(Cell[][] field, int x, int y) {
-        super(field, x, y);
+
+    /**
+     * Create a new monster.
+     * @param board for moving.
+     * @param x position at the board.
+     * @param y position at the board.
+     */
+    public Monster(Board board, int x, int y) {
+        super(board, x, y);
     }
 
+    /**
+     * Moving monster at the board.
+     * @param direction for moving.
+     */
     @Override
-    public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-            if (!makeStep(direction)) {
-                this.direction = direction.changeDir();
-                System.out.println(String.format("Monster change direction: %s", direction));
+    void performMoving(Direction direction) {
+        boolean makeStep = false;
+
+        while (!makeStep) {
+            if (stepOperation.tryLock()) {
                 try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    if (isValidMoving(direction)) {
+                        int prevX = getX();
+                        int prevY = getY();
+                        updateCoordinates(direction);
+                        board.getBlock(getX(), getY()).attachActor(this);
+                        board.getBlock(prevX, prevY).detachActor();
+                        makeStep = true;
+                    }
+                } finally {
+                    stepOperation.unlock();
                 }
-            } else {
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            }
+            try {
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
+
+    /**
+     * Async task.
+     */
+    @Override
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            performMoving(Direction.getRandomDirection());
+        }
+    }
 }
+
+
