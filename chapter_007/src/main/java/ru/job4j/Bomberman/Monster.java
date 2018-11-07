@@ -27,10 +27,6 @@ public class Monster extends Actor implements Runnable {
         super(board, x, y);
     }
 
-    /**
-     * Moving monster at the board.
-     * @param direction for moving.
-     */
     @Override
     void performMoving(Direction direction) {
         boolean makeStep = false;
@@ -58,9 +54,6 @@ public class Monster extends Actor implements Runnable {
         }
     }
 
-    /**
-     * Async task.
-     */
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
