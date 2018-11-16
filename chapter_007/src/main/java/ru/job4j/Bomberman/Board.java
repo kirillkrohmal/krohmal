@@ -9,7 +9,7 @@ public class Board {
     /**
      * Instance of blocks.
      */
-    private Block[][] blocks;
+    ReentrantLock[][] blocks;
 
     /**
      * Width of the board.
