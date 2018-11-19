@@ -29,6 +29,6 @@ public class Player extends Actor {
     }
 
     public int getY() {
-        return x;
+        return y;
     }
 }

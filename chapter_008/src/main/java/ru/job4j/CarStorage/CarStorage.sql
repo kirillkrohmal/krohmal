@@ -22,3 +22,6 @@ id serial primary key,
 name varchar(200),
 Машина_id int references Машина(id)
 );
+
+
+select * from Машина

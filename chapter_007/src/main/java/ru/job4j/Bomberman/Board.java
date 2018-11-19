@@ -21,6 +21,7 @@ public class Board {
      */
     private final int height;
 
+
     /**
      * Create a new board with given size.
      * @param width of board.
@@ -36,10 +37,10 @@ public class Board {
      * init all block empty.
      */
     private void initBlocks() {
-        this.blocks = new Block[this.width][this.height];
+        this.blocks = new ReentrantLock[this.width][this.height];
         for (int x = 0; x < this.width; x++) {
             for (int y = 0; y < this.height; y++) {
-                this.blocks[x][y] = new Block(BlockType.EMPTY);
+                this.blocks[x][y] = new ReentrantLock();
             }
         }
     }
@@ -53,7 +54,7 @@ public class Board {
     public synchronized Block getBlock(int x, int y) {
         Block block = null;
         if (validate(x, y)) {
-            block = this.blocks[x][y];
+            this.blocks[x][y] = new ReentrantLock();
         }
         return block;
     }
