@@ -88,4 +88,6 @@ public class Board {
         }
         return valid;
     }
+
+    //Board.move(Cell source, Cell dist) : boolean
 }

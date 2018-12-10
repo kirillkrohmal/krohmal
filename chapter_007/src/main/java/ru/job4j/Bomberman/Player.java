@@ -5,7 +5,7 @@ import javafx.scene.control.Cell;
 /**
  * Created by Comp on 01.11.2018.
  */
-public class Player extends Actor {
+public class Player extends Actor implements Runnable {
     public Player(Board board, int x, int y) {
         super(board, x, y);
     }
@@ -30,5 +30,10 @@ public class Player extends Actor {
 
     public int getY() {
         return y;
+    }
+
+    @Override
+    public void run() {
+
     }
 }

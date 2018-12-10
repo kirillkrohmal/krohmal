@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by Comp on 20.11.2018.
  */
-public class Game implements Runnable {
+public class Game  {
     private static final Random RN = new Random();
 
     private Board board;
@@ -23,12 +23,7 @@ public class Game implements Runnable {
         thread.start();
     }
 
-    @Override
-    public void run() {
-        for (Thread thread : this.enemies) {
-            thread.start();
-        }
-    }
+
 
     private void initMonster() {
         for (Thread thread : this.enemies) {
