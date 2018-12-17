@@ -1,6 +1,7 @@
 package ru.job4j.CrudServlet;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -22,27 +23,22 @@ public class MemoryStore implements Store{
     }
 
     @Override
-    public void update(int id, User user) {
+    public void update(User user) {
 
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(User user) {
 
     }
 
     @Override
-    public List<User> findAll() {
+    public User findById(User user) {
         return null;
     }
 
     @Override
-    public User findById(int id) {
-        return null;
-    }
-
-    @Override
-    public User findByLogin(String login) {
+    public Map findByAll() {
         return null;
     }
 }
