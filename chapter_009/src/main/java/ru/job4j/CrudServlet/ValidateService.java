@@ -21,27 +21,20 @@ public class ValidateService {
         return null;
     }
 
-    public boolean add(String name, String login, String email) {
+    public boolean add(String email) {
         boolean result = false;
-        if (STORE.findByLogin(login) == null) {
             if (validateEmail(email)) {
-                STORE.add(new User(name, login, email));
                 result = true;
             }
-        }
+
         return result;
     }
 
-    public boolean update(int id, String name, String login, String email) {
+    public boolean update(String email) {
         boolean result = false;
-        if (STORE.findById(id) != null) {
-            if (STORE.findByLogin(login) == null || login == null) {
                 if (validateEmail(email) || email == null) {
-                    STORE.update(id, new User(name, login, email));
                     result = true;
                 }
-            }
-        }
         return result;
     }
 
@@ -49,8 +42,8 @@ public class ValidateService {
 
         boolean result =  false;
 
-        if (STORE.findById(id) != null) {
-            STORE.delete(id);
+        if (STORE.findById() != null) {
+            STORE.delete();
             return true;
         }
 

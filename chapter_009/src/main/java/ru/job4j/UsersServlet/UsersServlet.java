@@ -16,9 +16,10 @@ public class UsersServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter printWriter = new PrintWriter(resp.getOutputStream());
-
+        printWriter.append(<>)
 
 
         printWriter.flush();
+
     }
 }

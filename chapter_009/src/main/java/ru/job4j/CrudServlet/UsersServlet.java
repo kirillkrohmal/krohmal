@@ -41,8 +41,8 @@ public class UsersServlet extends HttpServlet {
         List<User> users = logic.findAll();
 
         for (User user : users) {
-            printWriter.append(String.format("Name = %s, Login = %s, e-mail = %s, id = %d, date = %s<br>",
-                    user.getName(), user.getLogin(), user.getEmail(), user.getId(), user.getCreateDate()));
+            printWriter.append(String.format("Name = %s, Login = %s, e-mail = %s, id = %d, date = %s<br>",user.getName(), user.getLogin(), user.getEmail(), user.getId(), user.getCreateDate()));
+
         }
 
         printWriter.flush();
@@ -90,7 +90,6 @@ public class UsersServlet extends HttpServlet {
     }
 
         public Function<HttpServletRequest, Boolean> delete () {
-
             return param -> {
                 boolean result = false;
                 int id = -1;
