@@ -22,7 +22,27 @@ public class EchoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html");
         PrintWriter writer = new PrintWriter(res.getOutputStream());
-        writer.append("kirill");
+        writer.append("<table>\n" +
+                "  <colgroup>\n" +
+                "    <col span=\"2\" style=\"background:Khaki\"><!-- С помощью этой конструкции задаем цвет фона для первых двух столбцов таблицы-->\n" +
+                "    <col style=\"background-color:LightCyan\"><!-- Задаем цвет фона для следующего (одного) столбца таблицы-->\n" +
+                "  </colgroup>\n" +
+                "  <tr>\n" +
+                "    <th>№ п/п</th>\n" +
+                "    <th>Наименование</th>\n" +
+                "    <th>Цена, руб.</th>\n" +
+                "  </tr>\n" +
+                "  <tr>\n" +
+                "    <td>1</td>\n" +
+                "    <td>Карандаш цветной</td>\n" +
+                "    <td>20,00</td>\n" +
+                "  </tr>\n" +
+                "  <tr>\n" +
+                "    <td>2</td>\n" +
+                "    <td>Линейка 20 см</td>\n" +
+                "    <td>30,00</td>\n" +
+                "  </tr>\n" +
+                "</table>");
         writer.flush();
     }
 }
