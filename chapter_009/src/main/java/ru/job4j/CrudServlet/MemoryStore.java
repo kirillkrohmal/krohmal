@@ -1,5 +1,7 @@
 package ru.job4j.CrudServlet;
 
+import sun.font.FontRunIterator;
+
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -19,7 +21,9 @@ public class MemoryStore implements Store{
 
     @Override
     public void add(User user) {
-
+        for (User user1 : users) {
+            //user.
+        }
     }
 
     @Override

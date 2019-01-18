@@ -17,6 +17,4 @@ public interface Store {
    User findById(User user);
 
    Map findByAll();
-
-
 }

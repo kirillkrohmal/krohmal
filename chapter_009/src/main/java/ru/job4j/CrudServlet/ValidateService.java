@@ -41,11 +41,11 @@ public class ValidateService {
     public boolean delete(int id) {
 
         boolean result =  false;
-
+/*
         if (STORE.findById() != null) {
             STORE.delete();
             return true;
-        }
+        }*/
 
 
         return result;

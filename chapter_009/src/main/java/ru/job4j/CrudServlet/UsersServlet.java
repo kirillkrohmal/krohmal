@@ -64,12 +64,13 @@ public class UsersServlet extends HttpServlet {
 
 
     public Function<HttpServletRequest, Boolean> add() {
-        return param -> {
+        /*return param -> {
             String name = param.getParameter("name");
             String login = param.getParameter("login");
             String email = param.getParameter("email");
-            return logic.add(name, login, email);
-        };
+            //return logic.add(name, login, email);
+        };*/
+        return null;
     }
 
     public Function<HttpServletRequest, Boolean> update() {
@@ -81,7 +82,7 @@ public class UsersServlet extends HttpServlet {
                 String name = param.getParameter("name");
                 String login = param.getParameter("login");
                 String email = param.getParameter("email");
-                result = logic.update(id, name, login, email);
+                //result = logic.update(id, name, login, email);
             } catch (NumberFormatException nfe) {
                 LOGGER.error(nfe.getMessage(), nfe);
             }
