@@ -24,16 +24,16 @@ public class EchoServlet extends HttpServlet {
         writer.write("<html>\n" +
                 " <head>\n" +
                 "  <meta charset=\"utf-8\">\n" +
-                "  <title>Таблица размеров обуви</title>\n" +
+                "  <title>Table</title>\n" +
                 " </head>\n" +
                 " <body>\n" +
                 "  <table border=\"1\">\n" +
-                "   <caption>Таблица размеров обуви</caption>\n" +
+                "   <caption>Table</caption>\n" +
                 "   <tr>\n" +
-                "    <th>Россия</th>\n" +
-                "    <th>Великобритания</th>\n" +
-                "    <th>Европа</th>\n" +
-                "    <th>Длина ступни, см</th>\n" +
+                "    <th>Russia</th>\n" +
+                "    <th>UK</th>\n" +
+                "    <th>Europe</th>\n" +
+                "    <th>Foot length, cm</th>\n" +
                 "   </tr>\n" +
                 "   <tr><td>34,5</td><td>3,5</td><td>36</td><td>23</td></tr>\n" +
                 "   <tr><td>35,5</td><td>4</td><td>36⅔</td><td>23–23,5</td></tr>\n" +
@@ -58,7 +58,17 @@ public class EchoServlet extends HttpServlet {
                 "   <tr><td>48</td><td>13,5</td><td>49⅓</td><td>31,5</td></tr>\n" +
                 "  </table>\n" +
                 " </body>\n" +
-                "</html>");
+                "</head>\n" +
+                " \n" +
+                "<body>\n" +
+                "<h2>User Input Form</h2>\n" +
+                "<form method=\"get\" action=\"echo\">\n" +
+                "  <fieldset>\n" +
+                "    <legend>Your Name</legend>\n" +
+                "    Name: <input type=\"text\" name=\"username\" /><br /><br />\n" +
+                "</form>\n" +
+                "</html>"
+        );
         writer.flush();
     }
 }
