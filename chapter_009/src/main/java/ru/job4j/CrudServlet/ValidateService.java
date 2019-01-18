@@ -11,6 +11,7 @@ public class ValidateService {
     private static final ValidateService SINGLETON_INSTANCE = new ValidateService();
     private static final MemoryStore STORE = MemoryStore.getInstance();
     private String login;
+    private User user;
 
 
     public static ValidateService getInstance() {
@@ -21,9 +22,9 @@ public class ValidateService {
         return null;
     }
 
-    public boolean add(String email) {
+    public boolean add(User user) {
         boolean result = false;
-            if (validateEmail(email)) {
+            if (validateEmail(user)) {
                 result = true;
             }
 
@@ -32,7 +33,7 @@ public class ValidateService {
 
     public boolean update(String email) {
         boolean result = false;
-                if (validateEmail(email) || email == null) {
+                if (validateEmail(user) || email == null) {
                     result = true;
                 }
         return result;
@@ -51,10 +52,11 @@ public class ValidateService {
         return result;
     }
 
-    private boolean validateEmail(String email) {
+    private boolean validateEmail(User email) {
         Pattern pattern = Pattern.compile("\\A[^@]+@([^@\\.]+\\.)+[^@\\.]+\\z");
-        Matcher match = pattern.matcher(email);
-        return match.matches();
+        //Matcher match = pattern.matcher(email);
+        //return match.matches();
+        return false;
     }
 
 
