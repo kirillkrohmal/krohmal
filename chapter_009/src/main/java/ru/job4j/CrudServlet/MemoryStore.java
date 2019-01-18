@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class MemoryStore implements Store{
     private static final MemoryStore SINGLETON_INSTANCE = new MemoryStore();
     private final ValidateService logic = ValidateService.getInstance();
-    public final Map<id, User> users;
+    //public final Map<id, User> users;
 
     public static MemoryStore getInstance() {
         return SINGLETON_INSTANCE;
@@ -21,10 +21,10 @@ public class MemoryStore implements Store{
 
     @Override
     public void add(User user) {
-        for (User user1 : users) {
+       // for (User user1 : users) {
             //user.
         }
-    }
+
 
     @Override
     public void update(User user) {
