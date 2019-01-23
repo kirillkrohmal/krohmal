@@ -33,9 +33,9 @@ public class ValidateService {
 
     public boolean update(String email) {
         boolean result = false;
-                if (validateEmail(user) || email == null) {
-                    result = true;
-                }
+            if (validateEmail(user) || email == null) {
+                result = true;
+            }
         return result;
     }
 
