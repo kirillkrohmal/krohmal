@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action = "<%=request.getContextPath()%>echo/" action = "post">
+<form action = "<%=request.getContextPath()%>echo/" method = "post">
     Login : <input type = "text" name = "login"><br/>
     Email : <input type = "text" name = "email"><br/>
     <input type = "submit">

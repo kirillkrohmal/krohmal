@@ -25,28 +25,11 @@ public class EchoServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter writer = resp.getWriter();
-        writer.write("<html>\n" +
-                " <head>\n" +
-                "  <meta charset=\"utf-8\">\n" +
-                "  <title>Table</title>\n" +
-                "<body>\n" +
-                "<h2>User Input Form</h2>\n" +
-                "<form method=\"get\" action=\"echo\">\n" +
-                "  <fieldset>\n" +
-                "    <legend>Your Name</legend>\n" +
-                "    Name: <input type=\"text\" name=\"username\" /><br /><br />\n" +
-                "</form>\n" +
-                "</html>"
-        );
-        writer.flush();
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        UserStorage.getInstance().add(new User(req.getParameter("login"), req.getParameter("email")));
+        final User user = new User(req.getParameter("login"), req.getParameter("email"));
+        System.out.println(user);
+        UserStorage.getInstance().add(user);
         resp.sendRedirect(String.format("%s/index.jsp", req.getContextPath()));
     }
 }
