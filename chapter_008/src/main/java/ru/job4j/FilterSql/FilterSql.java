@@ -1,7 +1,6 @@
-package ru.job4j.FilterSql;
+package FilterSql;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 
 import java.sql.*;
@@ -10,7 +9,7 @@ import java.sql.*;
  * Created by Comp on 31.10.2017.
  */
 public class FilterSql {
-    private static final Logger log = LoggerFactory.getLogger(FilterSql.class);
+     //private static final Logger log = LoggerFactory.getLogger(FilterSql.class);
 
     public static void main(String[] args) throws SQLException,
             ClassNotFoundException {

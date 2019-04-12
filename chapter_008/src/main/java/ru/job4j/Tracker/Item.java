@@ -1,6 +1,5 @@
 package Tracker;
 
-import java.util.Arrays;
 
 /**
  * Created by Comp on 12.06.2017.
@@ -12,8 +11,6 @@ public class Item {
     private long creat;
     private String desc;
 
-    public Item() {
-    }
 
     public Item(String key, String id, String name, long created, String desc) {
         this.key = key;
@@ -21,6 +18,14 @@ public class Item {
         this.name = name;
         this.creat = created;
         this.desc = desc;
+    }
+
+    public Item(String key, String s, String id, String name, long creat) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Item(String id, String name) {
     }
 
     public String getKey() {
