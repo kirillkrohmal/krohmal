@@ -65,7 +65,7 @@ select * FROM product where MAX(price);
 select * FROM product where name = хлеб AND expired_date = '2018-15-11 12:13:14';
 select * FROM product where name = СЫР AND name = МОЛОКО;
 select * FROM product where type_id < 10;
-select * FROM product ;
+select * FROM product AND type_id;
 
 
 

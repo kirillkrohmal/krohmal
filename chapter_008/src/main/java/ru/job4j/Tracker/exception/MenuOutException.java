@@ -1,4 +1,4 @@
-package ru.job4j.Tracker.exception;
+package Tracker.exception;
 
 /**
  * Created by Comp on 28.06.2017.
