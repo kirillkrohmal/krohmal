@@ -10,7 +10,11 @@ public class JDBCConnect {
     private static final Logger LOG = LogManager.getLogger(JDBCConnect.class.getName());
 
     public static void main(String[] args) {
-
+        LOG.trace("trace message");
+        LOG.debug("debug message");
+        LOG.info("info message");
+        LOG.warn("warn message");
+        LOG.error("error message");
 
     }
 }
