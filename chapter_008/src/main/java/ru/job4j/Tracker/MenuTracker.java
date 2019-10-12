@@ -14,11 +14,11 @@ import java.util.List;
 
 public class MenuTracker {
     private Input input;
-    private Tracker tracker;
+    private TrackerSQL tracker;
     private List<UserAction> userActionList = new ArrayList<>();
     private int position = 1;
 
-    public MenuTracker(Input input, Tracker tracker) {
+    public MenuTracker(Input input, TrackerSQL tracker) {
         this.input = input;
         this.tracker = tracker;
     }
@@ -47,7 +47,7 @@ public class MenuTracker {
     }
 
     public class AddItem extends BasedAction {
-        public AddItem(Input input, Tracker tracker) {
+        public AddItem(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -57,7 +57,7 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             String name = input.ask("Please enter task's name: ");
             String id = input.ask("Please enter task's id: ");
             String desc = input.ask("Please enter task's desc: ");
@@ -75,7 +75,7 @@ public class MenuTracker {
     }
 
     private class FindItemByName extends BasedAction {
-        public FindItemByName(Input input, Tracker tracker) {
+        public FindItemByName(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -85,7 +85,7 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             String id = input.ask("Please enter task's id: ");
             String name = input.ask("Please enter task's name: ");
             Task task = new Task(id, name);
@@ -100,7 +100,7 @@ public class MenuTracker {
     }
 
     private class FindItemById extends BasedAction {
-        public FindItemById(Input input, Tracker tracker) {
+        public FindItemById(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -115,7 +115,7 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             String id = input.ask("Please enter task's id: ");
             Task task = new Task(id, id);
             tracker.findById(task.getId());
@@ -124,7 +124,7 @@ public class MenuTracker {
     }
 
     private class EditItem extends BasedAction {
-        public EditItem(Input input, Tracker tracker) {
+        public EditItem(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -139,7 +139,7 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             String id = input.ask("Please enter task's id: ");
             String desc = input.ask("Please enter task's desc: ");
             String key = input.ask("Please enter task's key: ");
@@ -152,7 +152,7 @@ public class MenuTracker {
     }
 
     private class DeleteItem extends BasedAction {
-        DeleteItem(Input input, Tracker tracker) {
+        DeleteItem(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -167,14 +167,14 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             String id = input.ask("Please enter task's id: ");
             tracker.delete(id);
         }
     }
 
     private class Exit extends BasedAction {
-        public Exit(Input input, Tracker tracker) {
+        public Exit(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -189,13 +189,13 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             tracker.exit();
         }
     }
 
     private class ShowItem extends BasedAction {
-        public ShowItem(Input input, Tracker tracker) {
+        public ShowItem(Input input, TrackerSQL tracker) {
             super(input, tracker);
         }
 
@@ -210,7 +210,7 @@ public class MenuTracker {
         }
 
         @Override
-        public void execute(Input input, Tracker tracker) {
+        public void execute(Input input, TrackerSQL tracker) {
             for (Item item : tracker.findAll()) {
                 System.out.println(
                         String.format("%s. %s. %s. %s. %s", item.getId(), item.getName(), item.getKey(), item.getDesc(), item.getCreated())

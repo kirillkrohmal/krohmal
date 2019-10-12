@@ -1,6 +1,6 @@
 package Tracker.actions;
 
-import Tracker.Tracker;
+import Tracker.TrackerSQL;
 import Tracker.input.Input;
 
 
@@ -12,6 +12,6 @@ public interface UserAction {
 
     String info();
 
-    void execute (Input input, Tracker tracker);
+    void execute (Input input, TrackerSQL tracker);
 
 }

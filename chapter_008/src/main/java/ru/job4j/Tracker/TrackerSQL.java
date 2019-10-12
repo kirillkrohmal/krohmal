@@ -1,13 +1,17 @@
 package Tracker;
 
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
 /**
  * Created by Comp on 12.06.2017.
  */
-public class Tracker {
+public class TrackerSQL implements ITracker, AutoCloseable {
     private final int STORAGE_SIZE = 200;
     private List<Item> userActionList = new ArrayList<>(STORAGE_SIZE);
     private int size = 0;
@@ -83,4 +87,29 @@ public class Tracker {
     public void exit () {
         System.exit(0);
     }
+
+
+    @Override
+    public void close() throws Exception {
+
+    }
+
+    private Connection connection;
+
+    public boolean init() {
+        try (InputStream in = TrackerSQL.class.getClassLoader().getResourceAsStream("app.properties")) {
+            Properties config = new Properties();
+            config.load(in);
+            Class.forName(config.getProperty("com.postgresql.jdbc.Driver"));
+            this.connection = DriverManager.getConnection(
+                    config.getProperty("jdbc:postgresql://localhost:5432/postgres"),
+                    config.getProperty("postgres"),
+                    config.getProperty("root")
+            );
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
+        return this.connection != null;
+    }
+
 }

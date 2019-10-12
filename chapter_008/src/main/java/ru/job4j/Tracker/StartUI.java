@@ -9,15 +9,15 @@ import Tracker.input.StubInput;
 public class StartUI {
     private Input input;
     private int position = 1;
-    private Tracker tracker;
+    private TrackerSQL tracker;
     private static int num;
 
 
-    public StartUI(Input input, Tracker tracker) {
+    public StartUI(Input input, TrackerSQL tracker) {
     }
 
     public static void main(String[] args) {
-        Tracker tracker = new Tracker();
+        TrackerSQL tracker = new TrackerSQL();
         Input input = new StubInput(new String[]{});
         new StartUI(input, tracker).init();
     }
@@ -27,7 +27,7 @@ public class StartUI {
     };
 
     public void init() {
-        Tracker tracker = new Tracker();
+        TrackerSQL tracker = new TrackerSQL();
         MenuTracker menuTracker = new MenuTracker(this.input, tracker);
         menuTracker.fillAction();
         do {

@@ -1,13 +1,13 @@
 package Tracker.actions;
 
-import Tracker.Tracker;
+import Tracker.TrackerSQL;
 import Tracker.input.Input;
 
 /**
  * Created by Comp on 12.04.2019.
  */
 public abstract class BasedAction implements UserAction {
-    public BasedAction(Input input, Tracker tracker) {
+    public BasedAction(Input input, TrackerSQL tracker) {
     }
 
     public abstract int key();
@@ -19,7 +19,7 @@ public abstract class BasedAction implements UserAction {
     }
 
     @Override
-    public void execute(Input input, Tracker tracker) {
+    public void execute(Input input, TrackerSQL tracker) {
 
     }
 
