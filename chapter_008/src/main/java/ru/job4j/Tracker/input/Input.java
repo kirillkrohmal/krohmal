@@ -1,4 +1,4 @@
-package Tracker.input;
+package ru.job4j.Tracker.input;
 
 
 

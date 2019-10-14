@@ -1,4 +1,4 @@
-package Tracker;
+package ru.job4j.Tracker;
 
 /**
  * Created by Comp on 12.04.2019.

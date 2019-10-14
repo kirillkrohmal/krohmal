@@ -1,7 +1,7 @@
-package Tracker;
+package ru.job4j.Tracker;
 
-import Tracker.input.Input;
-import Tracker.input.StubInput;
+import ru.job4j.Tracker.input.Input;
+import ru.job4j.Tracker.input.StubInput;
 
 /**
  * Created by Comp on 12.06.2017.

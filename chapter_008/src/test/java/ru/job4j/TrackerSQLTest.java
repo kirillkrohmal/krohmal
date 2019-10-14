@@ -1,7 +1,7 @@
 package ru.job4j;
 
-import Tracker.TrackerSQL;
 import org.junit.Test;
+import ru.job4j.Tracker.TrackerSQL;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

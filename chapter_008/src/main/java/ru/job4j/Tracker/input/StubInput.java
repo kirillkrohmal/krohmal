@@ -1,4 +1,4 @@
-package Tracker.input;
+package ru.job4j.Tracker.input;
 
 /**
  * Created by Comp on 12.04.2019.

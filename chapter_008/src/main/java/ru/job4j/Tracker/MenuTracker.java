@@ -1,8 +1,10 @@
-package Tracker;
+package ru.job4j.Tracker;
 
-import Tracker.actions.BasedAction;
-import Tracker.actions.UserAction;
-import Tracker.input.Input;
+
+
+import ru.job4j.Tracker.actions.BasedAction;
+import ru.job4j.Tracker.actions.UserAction;
+import ru.job4j.Tracker.input.Input;
 
 import java.util.ArrayList;
 import java.util.List;

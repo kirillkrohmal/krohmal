@@ -1,4 +1,4 @@
-package Tracker;
+package ru.job4j.Tracker;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -112,4 +112,9 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         return this.connection != null;
     }
 
+    public static void main(String[] args) {
+        TrackerSQL sql = new TrackerSQL();
+        boolean init = sql.init();
+        System.out.println(init);
+    }
 }

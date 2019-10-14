@@ -1,4 +1,4 @@
-package ru.job4j.JdbcOptim;
+package JdbcOptim;
 
 /**
  * Created by Comp on 29.10.2017.
