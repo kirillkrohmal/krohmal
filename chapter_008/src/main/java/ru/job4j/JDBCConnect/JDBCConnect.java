@@ -1,4 +1,4 @@
-package JDBCConnect;
+package ru.job4j.JDBCConnect;
 
 import java.util.logging.LogManager;
 import java.util.logging.Logger;

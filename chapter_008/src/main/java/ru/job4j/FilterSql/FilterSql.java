@@ -1,4 +1,4 @@
-package FilterSql;
+package ru.job4j.FilterSql;
 
 
 
