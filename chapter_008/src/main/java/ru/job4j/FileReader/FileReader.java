@@ -1,19 +1,23 @@
 package ru.job4j.FileReader;
 
-import java.io.File;
-import java.io.IOException;
+import ru.job4j.Tracker.TrackerSQL;
+
+
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class FileReader {
     public static void main(String[] args) {
 
         try {
-            Scanner reader = new Scanner(new File("/projects/krohmal/chapter_008/src/main/resources/app.properties"));
+            InputStream in = FileReader.class.getClassLoader().getResourceAsStream("app.properties");
+            Scanner reader = new Scanner(in);
+
             while (reader.hasNextLine()) {
                 System.out.println(reader.nextLine());
             }
             reader.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
