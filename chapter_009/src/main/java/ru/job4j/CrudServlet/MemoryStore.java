@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Created by Comp on 01.11.2018.
  */
-public class MemoryStore implements Store{
+public class MemoryStore implements Store {
     private static final MemoryStore SINGLETON_INSTANCE = new MemoryStore();
     private final ValidateService logic = ValidateService.getInstance();
     //public final Map<id, User> users;
@@ -21,9 +21,9 @@ public class MemoryStore implements Store{
 
     @Override
     public void add(User user) {
-       // for (User user1 : users) {
-            //user.
-        }
+        // for (User user1 : users) {
+        //user.
+    }
 
 
     @Override
