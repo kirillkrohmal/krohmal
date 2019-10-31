@@ -1,4 +1,4 @@
-package ru.job4j.Tracker.inputs;
+package ru.job4j.TrackerSQL.inputs;
 
 public interface Input {
      String ask(String question);

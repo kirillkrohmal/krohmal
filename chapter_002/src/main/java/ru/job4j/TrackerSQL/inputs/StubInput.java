@@ -1,11 +1,11 @@
-package ru.job4j.Tracker.input;
+package ru.job4j.TrackerSQL.inputs;
 
 /**
- * Created by Comp on 12.04.2019.
+ * Created by Comp on 18.06.2017.
  */
-public class StubInput implements Input{
+public class StubInput implements Input {
     private String[] answers;
-    private int position = 1;
+    private int position = 0;
 
     public StubInput(String[] answers) {
         this.answers = answers;
@@ -16,7 +16,7 @@ public class StubInput implements Input{
         return answers[position++];
     }
 
-    @Override
+   @Override
     public int ask(String question, int[] range) {
         throw new UnsupportedOperationException("UnsupportedException");
     }

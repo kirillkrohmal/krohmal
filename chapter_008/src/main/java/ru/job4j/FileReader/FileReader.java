@@ -11,31 +11,18 @@ import java.util.Scanner;
 
 public class FileReader {
     public static void main(String[] args) {
-        try{
+        try {
             DriverManager.registerDriver(new org.postgresql.Driver());
-            try (Connection conn = getConnection()){
-                System.out.println("Connection to Postgres SQL succesfull!");
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        catch(Exception ex){
+        try (Connection conn = getConnection()) {
+            System.out.println("Connection to Postgres SQL succesfull!");
+        } catch (Exception ex) {
             System.out.println("Connection failed...");
 
             System.out.println(ex);
         }
-
-      /*  try {
-            InputStream in = FileReader.class.getClassLoader().getResourceAsStream("app.properties");
-            Scanner reader = new Scanner(in);
-
-            while (reader.hasNextLine()) {
-                System.out.println(reader.nextLine());
-            }
-            reader.close();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
     }
 
     private static Connection getConnection() throws SQLException, IOException {

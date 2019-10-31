@@ -1,10 +1,6 @@
-package ru.job4j.Tracker;
+package ru.job4j.TrackerSQL;
 
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Created by Comp on 12.06.2017.
