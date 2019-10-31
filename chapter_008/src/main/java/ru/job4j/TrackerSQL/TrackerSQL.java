@@ -106,7 +106,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public Item[] findAll() {
-        Item[] items = null;
+        Item[] items = new Item[]{};
 
         try (Connection connection = init()) {
             String s = "SELECT id, key, name, creat, description  FROM trackersql";
