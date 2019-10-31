@@ -1,10 +1,7 @@
 package ru.job4j.TrackerSQL;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 /**
@@ -106,21 +103,27 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     @Override
     public Item[] findAll() {
         Item[] items = new Item[0];
-        Long nextId = null;
 
         try (Connection connection = init()) {
-            if (nextId != null) {
-                String s = "SELECT * FROM trackersql";
-                PreparedStatement statement = connection.prepareStatement(s);
+            String s = "SELECT id, key, name, creat, description  FROM trackersql";
+            Statement statement = connection.prepareStatement(s);
 
-                statement.executeUpdate();
+            ResultSet resultSet = statement.executeQuery(s);
 
-                return items;
-            } else {
-                return null;
+            while (resultSet.next()) {
+                Item item = new Item();
+                item.setId(resultSet.getString("id"));
+                item.setKey(resultSet.getString("key"));
+                item.setName(resultSet.getString("name"));
+                item.setCreat(resultSet.getLong("creat"));
+                item.setDescription(resultSet.getString("description"));
+
+                for (int i = 0; i < items.length; i++) {
+                    items[i] = item;
+                }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         return items;
     }

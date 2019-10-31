@@ -21,6 +21,10 @@ public class Item {
         this.description = description;
     }
 
+    public Item() {
+
+    }
+
     public String getKey() {
         return key;
     }
@@ -85,4 +89,5 @@ public class Item {
     public int hashCode() {
         return Objects.hash(id, key, name, creat, description);
     }
-}
+
+    }
