@@ -1,8 +1,8 @@
-package ru.job4j.TrackerSQL.validator;
+package ru.job4j.Tracker.validator;
 
 
-import ru.job4j.TrackerSQL.exception.MenuOutException;
-import ru.job4j.TrackerSQL.inputs.ConsoleInput;
+import ru.job4j.Tracker.exception.MenuOutException;
+import ru.job4j.Tracker.inputs.ConsoleInput;
 
 /**
  * Created by Comp on 28.06.2017.

@@ -1,8 +1,11 @@
 package ru.job4j.TrackerSQL;
 
+import ru.job4j.TrackerSQL.Item;
+
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
+import java.util.zip.DataFormatException;
 
 /**
  * Created by Comp on 12.06.2017.
@@ -19,7 +22,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
                 statement.setLong(1, nextId);
                 statement.setString(2, item.getKey());
                 statement.setString(3, item.getName());
-                statement.setLong(4, item.getCreat());
+                statement.setLong(4, item.getCreated());
                 statement.setString(5, item.getDescription());
 
                 statement.executeUpdate();
@@ -30,8 +33,9 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         return item;
     }
 
+
     @Override
-    public void replace(String id, Item item) {
+    public void replace(String id, ru.job4j.Tracker.Item item) {
 
     }
 
@@ -102,7 +106,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public Item[] findAll() {
-        Item[] items = new Item[0];
+        Item[] items = null;
 
         try (Connection connection = init()) {
             String s = "SELECT id, key, name, creat, description  FROM trackersql";

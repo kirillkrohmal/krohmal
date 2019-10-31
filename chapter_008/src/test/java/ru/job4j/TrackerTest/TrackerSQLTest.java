@@ -2,7 +2,6 @@ package ru.job4j.TrackerTest;
 
 import org.junit.Test;
 import ru.job4j.TrackerSQL.Item;
-import ru.job4j.TrackerSQL.Tracker;
 import ru.job4j.TrackerSQL.TrackerSQL;
 
 import java.sql.SQLException;

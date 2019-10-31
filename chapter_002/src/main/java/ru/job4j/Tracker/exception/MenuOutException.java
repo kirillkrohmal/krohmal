@@ -1,4 +1,4 @@
-package ru.job4j.TrackerSQL.exception;
+package ru.job4j.Tracker.exception;
 
 /**
  * Created by Comp on 28.06.2017.

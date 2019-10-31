@@ -1,4 +1,4 @@
-package ru.job4j.TrackerSQL;
+package ru.job4j.Tracker;
 
 import java.util.Random;
 

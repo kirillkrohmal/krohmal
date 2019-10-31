@@ -1,9 +1,9 @@
-package ru.job4j.TrackerSQL;
+package ru.job4j.Tracker;
 
-import ru.job4j.TrackerSQL.action.UserAction;
-import ru.job4j.TrackerSQL.inputs.ConsoleInput;
-import ru.job4j.TrackerSQL.inputs.Input;
-import ru.job4j.TrackerSQL.validator.ValidateInput;
+import ru.job4j.Tracker.validator.ValidateInput;
+import ru.job4j.Tracker.action.UserAction;
+import ru.job4j.Tracker.inputs.ConsoleInput;
+import ru.job4j.Tracker.inputs.Input;
 
 /**
  * Created by Comp on 12.06.2017.

@@ -1,4 +1,4 @@
-package ru.job4j.TrackerSQL.inputs;
+package ru.job4j.Tracker.inputs;
 
 /**
  * Created by Comp on 18.06.2017.

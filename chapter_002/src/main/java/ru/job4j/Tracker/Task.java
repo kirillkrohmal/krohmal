@@ -1,4 +1,4 @@
-package ru.job4j.TrackerSQL;
+package ru.job4j.Tracker;
 
 /**
  * Created by Comp on 14.06.2017.
