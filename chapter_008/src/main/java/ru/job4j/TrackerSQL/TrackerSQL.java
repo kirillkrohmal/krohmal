@@ -13,9 +13,10 @@ import java.util.Properties;
 public class TrackerSQL implements ITracker, AutoCloseable {
     @Override
     public Item add(Item item) throws SQLException {
-        int nextId = 100;
+        Long nextId = null;
+
         try (Connection connection = init()) {
-            if (nextId != 0) {
+            if (nextId != null) {
                 String s = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?)";
                 PreparedStatement statement = connection.prepareStatement(s);
                 statement.setLong(1, nextId);
