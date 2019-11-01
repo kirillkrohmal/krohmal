@@ -13,12 +13,20 @@ import java.util.zip.DataFormatException;
 public class TrackerSQL implements ITracker, AutoCloseable {
     @Override
     public Item add(Item item) throws SQLException {
-        Long nextId = null;
-
         try (Connection connection = init()) {
+            String id = "SELECT nextval('trackersql') AS item_id";
+            Statement s = connection.prepareStatement(id);
+            ResultSet resultSet = s.executeQuery(id);
+
+            Long nextId = null;
+            if (resultSet.next()) {
+                nextId = resultSet.getLong("item_id");
+            }
+
             if (nextId != null) {
-                String s = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?)";
-                PreparedStatement statement = connection.prepareStatement(s);
+                String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?)";
+                PreparedStatement statement = connection.prepareStatement(s1);
+
                 statement.setLong(1, nextId);
                 statement.setString(2, item.getKey());
                 statement.setString(3, item.getName());
@@ -109,7 +117,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item[] items = new Item[]{};
 
         try (Connection connection = init()) {
-            String s = "SELECT id, key, name, creat, description  FROM trackersql";
+            String s = "SELECT id, key, name, creat, description FROM trackersql";
             Statement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery(s);
