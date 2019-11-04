@@ -1,18 +1,17 @@
 package ru.job4j.TrackerSQL;
 
-import ru.job4j.TrackerSQL.Item;
-
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
-import java.util.zip.DataFormatException;
 
 /**
  * Created by Comp on 12.06.2017.
  */
 public class TrackerSQL implements ITracker, AutoCloseable {
+    private int size = 0;
+
     @Override
-    public Item add(Item item) throws SQLException {
+    public Item add(Item item) {
         try (Connection connection = init()) {
             String id = "SELECT nextval('trackersql') AS item_id";
             Statement s = connection.prepareStatement(id);
@@ -26,6 +25,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
             if (nextId != null) {
                 String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?)";
                 PreparedStatement statement = connection.prepareStatement(s1);
+                statement.executeUpdate();
 
                 statement.setLong(1, nextId);
                 statement.setString(2, item.getKey());
@@ -41,9 +41,8 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         return item;
     }
 
-
     @Override
-    public void replace(String id, ru.job4j.Tracker.Item item) {
+    public void replace(String id, Item item) {
 
     }
 
@@ -104,6 +103,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
             String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(s);
             statement.setString(1, id);
+
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -114,7 +114,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public Item[] findAll() {
-        Item[] items = new Item[]{};
+        Item[] items = new Item[size];
 
         try (Connection connection = init()) {
             String s = "SELECT id, key, name, creat, description FROM trackersql";
@@ -130,7 +130,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
                 item.setCreat(resultSet.getLong("creat"));
                 item.setDescription(resultSet.getString("description"));
 
-                for (int i = 0; i < items.length; i++) {
+                for (int i = 0; i < size; i++) {
                     items[i] = item;
                 }
             }

@@ -13,10 +13,10 @@ public class FilterSql {
 
     public static void main(String[] args) throws SQLException,
             ClassNotFoundException {
-        String dbUrl = "jdbc:postgresql://localhost:5432/java_a_from_z";
+        String dbUrl = "jdbc:postgresql://127.0.0.1:5432/java_a_from_z";
         String user = "postgres";
-        String password = "";
-        Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+        String password = "root";
+        DriverManager.registerDriver(new org.postgresql.Driver());
         // Загружаем драйвер (регистрирует себя)
         Connection c = null;
 
@@ -29,13 +29,13 @@ public class FilterSql {
             } rs.close();
             ps.close();
         } catch (SQLException e) {
-            //log.error(e.getMessage(), e);
+            e.getMessage();
         } finally {
             if (c != null) {
                 try {
                     c.close();
                 } catch (SQLException e) {
-                    //log.error(e.getMessage(), e);
+                    e.getMessage();
                 }
             }
         }

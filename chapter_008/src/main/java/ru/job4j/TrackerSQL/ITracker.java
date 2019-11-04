@@ -1,7 +1,5 @@
 package ru.job4j.TrackerSQL;
 
-import ru.job4j.TrackerSQL.Item;
-
 import java.sql.SQLException;
 import java.util.zip.DataFormatException;
 
@@ -11,7 +9,7 @@ import java.util.zip.DataFormatException;
 interface ITracker {
     Item add(Item item) throws DataFormatException, SQLException;
 
-    void replace(String id, ru.job4j.Tracker.Item item);
+    void replace(String id, Item item);
 
     void delete(String id);
 

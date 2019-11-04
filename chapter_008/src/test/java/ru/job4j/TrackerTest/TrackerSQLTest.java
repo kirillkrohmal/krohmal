@@ -18,7 +18,7 @@ public class TrackerSQLTest {
         TrackerSQL tracker = new TrackerSQL();
         Item item = new Item("1", "1", "test1", 1, "test1");
         tracker.add(item);
-        assertThat(tracker.findAll()[0], is(item));
+        assertThat(tracker.findAll(), is(item));
     }
 
     @Test
@@ -35,9 +35,10 @@ public class TrackerSQLTest {
         TrackerSQL tracker = new TrackerSQL();
         Item item = new Item("1", "1", "test1", 1, "test1");
         Item[] item2 = {item};
+        String name = "test1";
         tracker.add(item);
-        //Item result = tracker.findByName(item2);
-        //assertThat(result, is(item));
+        item2 = tracker.findByName(name);
+        assertThat(item2, is(item));
     }
 
     @Test
