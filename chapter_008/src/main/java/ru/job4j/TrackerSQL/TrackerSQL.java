@@ -43,7 +43,23 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public void replace(String id, Item item) {
+        try(Connection connection = init()) {
+            if (id != null) {
+                String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?) WHERE id=?";
+                PreparedStatement statement = connection.prepareStatement(s1);
+                statement.executeUpdate();
+                statement.setString(1, id);
+                statement.setString(2, item.getKey());
+                statement.setString(3, item.getName());
+                statement.setLong(4, item.getCreated());
+                statement.setString(5, item.getDescription());
 
+                statement.executeUpdate();
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -140,10 +156,6 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         return items;
     }
 
-    public void exit() {
-        System.exit(0);
-    }
-
     public static Connection init() throws SQLException {
         Properties config = new Properties();
 
@@ -180,6 +192,6 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public void close() throws Exception {
-
+        System.exit(0);
     }
 }
