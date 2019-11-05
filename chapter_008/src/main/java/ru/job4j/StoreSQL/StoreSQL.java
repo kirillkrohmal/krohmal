@@ -45,4 +45,8 @@ public class StoreSQL implements AutoCloseable {
             connect.close();
         }
     }
+
+    public static void main(String[] args) {
+        createNewDatabase("test.db");
+    }
 }
