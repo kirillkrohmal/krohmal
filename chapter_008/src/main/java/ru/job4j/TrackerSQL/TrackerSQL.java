@@ -14,8 +14,8 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     public Item add(Item item) {
         try (Connection connection = init()) {
             String id = "SELECT nextval('trackersql') AS item_id";
-            Statement s = connection.prepareStatement(id);
-            ResultSet resultSet = s.executeQuery(id);
+            PreparedStatement s = connection.prepareStatement(id);
+            ResultSet resultSet = s.executeQuery();
 
             Long nextId = null;
             if (resultSet.next()) {
@@ -134,7 +134,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
         try (Connection connection = init()) {
             String s = "SELECT id, key, name, creat, description FROM trackersql";
-            Statement statement = connection.prepareStatement(s);
+            PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery(s);
 
