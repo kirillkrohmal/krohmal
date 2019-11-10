@@ -1,17 +1,14 @@
 package ru.job4j.TrackerTest;
 
 import org.jetbrains.annotations.NotNull;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import ru.job4j.TrackerSQL.Item;
 import ru.job4j.TrackerSQL.TrackerSQL;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -22,84 +19,103 @@ public class TrackerSQLTest {
     private Connection connection;
     TrackerSQL tracker = new TrackerSQL();
 
-    @Before
-    public void before() {
-        try {
-            String url = "jdbc:postgresql://127.0.0.1:5432/java_a_from_z";
-            String username = "postgres";
-            String password = "root";
-            DriverManager.registerDriver(new org.postgresql.Driver());
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
+    @Test
+    public void whenAddNewItemThenTrackerHasSameItem() throws Exception {
+        Item add = null;
+
+        try(TrackerSQL tracker = new TrackerSQL()) {
+            assertNotNull(tracker.init());
+            Item item = new Item("1", "test1", 1, "test1");
+            add = tracker.add(item);
+            assertThat(tracker.findAll(), is(item));
         }
+        assertNotNull(add);
     }
 
-    @After
-    public void after() {
-        try {
-           connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    @Test
+    public void whenFindByIdNewItemThenTrackerHasSameItem() throws Exception {
+        Item add = null;
+
+        try(TrackerSQL tracker = new TrackerSQL()) {
+            assertNotNull(tracker.init());
+            Item item = new Item("1", "1", "test1", 1, "test1");
+            add = tracker.add(item);
+            assertThat(tracker.findById(item.getId()), is(item));
         }
+        assertNotNull(add);
     }
 
     @Test
-    public void whenAddNewItemThenTrackerHasSameItem() throws SQLException {
-        Item item = new Item("1", "1", "test1", 1, "test1");
-        tracker.add(item);
-        assertThat(tracker.findAll(), is(item));
+    public void whenFindByNameNewItemThenTrackerHasSameItem() throws Exception {
+        Item add = null;
+
+        try(TrackerSQL tracker = new TrackerSQL()) {
+            assertNotNull(tracker.init());
+            Item item = new Item("1", "1", "test1", 1, "test1");
+            add = tracker.add(item);
+            assertThat(tracker.findByName(item.getId()), is(item));
+            String name = "test1";
+            Item[] item2 = {item};
+            item2 = tracker.findByName(name);
+            assertThat(item2, is(item));
+        }
+        assertNotNull(add);
+
     }
 
     @Test
-    public void whenFindByIdNewItemThenTrackerHasSameItem() throws SQLException {
-        Item item = new Item("1", "1", "test1", 1, "test1");
-        tracker.add(item);
-        Item result = tracker.findById(item.getId());
-        assertThat(result, is(item));
+    public void whenUpdateNewItemThenTrackerHasOtherItem() throws Exception {
+        Item add = null;
+
+        try(TrackerSQL tracker = new TrackerSQL()) {
+            assertNotNull(tracker.init());
+            Item item = new Item("1", "1", "test1", 1, "test1");
+            add = tracker.add(item);
+            Item item1 = new Item("2", "2", "test2", 2, "test2");
+            item1.setId(item.getId());
+
+            tracker.update(item1);
+            assertThat(tracker.findAll(), is(item1));
+        }
+        assertNotNull(add);
     }
 
     @Test
-    public void whenFindByNameNewItemThenTrackerHasSameItem() throws SQLException {
-        Item item = new Item("1", "1", "test1", 1, "test1");
-        Item[] item2 = {item};
-        String name = "test1";
-        tracker.add(item);
-        item2 = tracker.findByName(name);
-        assertThat(item2, is(item));
+    public void whenReplaceNewItemThenTrackerHasOtherItem() throws Exception {
+        Item add = null;
+        Item add1 = null;
+
+        try(TrackerSQL tracker = new TrackerSQL()) {
+            assertNotNull(tracker.init());
+            Item item = new Item("1", "1", "test1", 1, "test1");
+            Item item1 = new Item("2", "2", "test2", 2, "test2");
+            add1 = tracker.add(item);
+            add = tracker.add(item1);
+
+            tracker.replace("1", item1);
+            assertThat(tracker.findAll(), is(item1));
+        }
+        assertNotNull(add);
+        assertNotNull(add1);
     }
 
     @Test
-    public void whenUpdateNewItemThenTrackerHasOtherItem() throws SQLException {
-        Item item = new Item("1", "1", "test1", 1, "test1");
-        Item item1 = new Item("1", "1", "test1", 1, "test1");
-        tracker.add(item);
-        item1.setId(item.getId());
+    public void whenDeleteNewItemThenTrackerHasNullItem() throws Exception {
+        Item add = null;
+        Item add1 = null;
 
-        tracker.update(item1);
-        assertThat(tracker.findAll(), is(item1));
-    }
+        try(TrackerSQL tracker = new TrackerSQL()) {
+            assertNotNull(tracker.init());
+            Item item = new Item("1", "1", "test1", 1, "test1");
+            Item item1 = new Item("2", "2", "test2", 2, "test2");
+            Item[] test = {item1};
+            add1 = tracker.add(item);
+            add = tracker.add(item1);
 
-    @Test
-    public void whenReplaceNewItemThenTrackerHasOtherItem() throws SQLException {
-        Item item = new Item("1", "1", "test1", 1, "test1");
-        Item item1 = new Item("1", "1", "test1", 1, "test1");
-        tracker.add(item);
-        item.setId(item.getId());
-
-        tracker.replace("1", item1);
-        assertThat(tracker.findAll(), is(item1));
-    }
-
-    @Test
-    public void whenDeleteNewItemThenTrackerHasNullItem() throws SQLException {
-        Item item = new Item("1", "1", "test1", 1, "test1");
-        Item item1 = new Item("1", "1", "test1", 1, "test1");
-        Item[] test = {item};
-
-        tracker.add(item);
-        tracker.add(item1);
-        tracker.delete(item1.getId());
-        assertThat(tracker.findAll(), is(test));
+            tracker.delete(item.getId());
+            assertThat(tracker.findAll(), is(test));
+        }
+        assertNotNull(add);
+        assertNotNull(add1);
     }
 }

@@ -15,7 +15,7 @@ interface ITracker {
 
     Item[] findAll();
 
-    Item[] findByName(String key);
+    Item[] findByName(String key) throws SQLException;
 
     Item findById(String id);
 }

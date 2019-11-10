@@ -9,32 +9,19 @@ import java.util.Properties;
  */
 public class TrackerSQL implements ITracker, AutoCloseable {
     private int size = 0;
+    private Connection connection;
 
     @Override
     public Item add(Item item) {
-        try (Connection connection = init()) {
-            String id = "SELECT nextval('trackersql') AS item_id";
-            PreparedStatement s = connection.prepareStatement(id);
-            ResultSet resultSet = s.executeQuery();
+        String s1 = "INSERT INTO trackersql(key, name, creat, description) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(s1);) {
+            statement.setString(1, item.getKey());
+            statement.setString(2, item.getName());
+            statement.setLong(3, item.getCreated());
+            statement.setString(4, item.getDescription());
 
-            Long nextId = null;
-            if (resultSet.next()) {
-                nextId = resultSet.getLong("item_id");
-            }
+            statement.executeUpdate();
 
-            if (nextId != null) {
-                String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?)";
-                PreparedStatement statement = connection.prepareStatement(s1);
-                statement.executeUpdate();
-
-                statement.setLong(1, nextId);
-                statement.setString(2, item.getKey());
-                statement.setString(3, item.getName());
-                statement.setLong(4, item.getCreated());
-                statement.setString(5, item.getDescription());
-
-                statement.executeUpdate();
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,7 +30,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public void replace(String id, Item item) {
-        try(Connection connection = init()) {
+        try (Connection connection = init()) {
             if (id != null) {
                 String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?) WHERE id=?";
                 PreparedStatement statement = connection.prepareStatement(s1);
@@ -56,8 +43,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
                 statement.executeUpdate();
             }
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -96,18 +82,25 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     }
 
     @Override
-    public Item[] findByName(String name) {
+    public Item[] findByName(String name) throws SQLException {
         Item[] result = null;
+        ResultSet resultSet;
 
         try (Connection connection = init()) {
-            String s = "SELECT name FROM trackersql WHERE name = ?";
+            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE name = ?";
             PreparedStatement statement = connection.prepareStatement(s);
-            statement.setString(1, name);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
+            resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                Item item = new Item();
+
+                item.setName(resultSet.getString("name"));
+                for (int i = 0; i < size; i++) {
+                    result[i] = item;
+                }
+            }
+        }
         return result;
     }
 
@@ -116,9 +109,11 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item result = null;
 
         try (Connection connection = init()) {
-            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
+            String s = "SELECT id FROM trackersql WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(s);
-            statement.setString(1, id);
+
+            ResultSet resultSet = statement.executeQuery();
+            result.setId(resultSet.getString("id"));
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -136,7 +131,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
             String s = "SELECT id, key, name, creat, description FROM trackersql";
             PreparedStatement statement = connection.prepareStatement(s);
 
-            ResultSet resultSet = statement.executeQuery(s);
+            ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Item item = new Item();
@@ -156,7 +151,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         return items;
     }
 
-    public static Connection init() throws SQLException {
+    public Connection init() throws SQLException {
         Properties config = new Properties();
 
         try (InputStream in = TrackerSQL.class.getClassLoader().getResourceAsStream("app.properties")) {
@@ -170,7 +165,9 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         String username = config.getProperty("username");
         String password = config.getProperty("password");
 
-        return DriverManager.getConnection(url, username, password);
+        this.connection = DriverManager.getConnection(url, username, password);
+
+        return connection;
     }
 
     public static void main(String[] args) {
@@ -179,15 +176,14 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        try (Connection conn = init()) {
+        /*try (Connection conn = init()) {
             System.out.println("Connection to Postgres SQL succesfull!");
         } catch (Exception ex) {
             System.out.println("Connection failed...");
 
             System.out.println(ex);
         }
-
-        TrackerSQL sql = new TrackerSQL();
+*/
     }
 
     @Override

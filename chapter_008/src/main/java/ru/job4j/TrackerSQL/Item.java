@@ -25,6 +25,13 @@ public class Item {
 
     }
 
+    public Item(String key, String name, long created, String description) {
+        this.key = key;
+        this.name = name;
+        this.creat = created;
+        this.description = description;
+    }
+
     public String getKey() {
         return key;
     }
