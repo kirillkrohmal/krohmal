@@ -34,14 +34,12 @@ public class TrackerSQL implements ITracker, AutoCloseable {
             if (id != null) {
                 String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?) WHERE id=?";
                 PreparedStatement statement = connection.prepareStatement(s1);
-                statement.executeUpdate();
+
                 statement.setString(1, id);
                 statement.setString(2, item.getKey());
                 statement.setString(3, item.getName());
                 statement.setLong(4, item.getCreated());
                 statement.setString(5, item.getDescription());
-
-                statement.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -176,14 +174,6 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        /*try (Connection conn = init()) {
-            System.out.println("Connection to Postgres SQL succesfull!");
-        } catch (Exception ex) {
-            System.out.println("Connection failed...");
-
-            System.out.println(ex);
-        }
-*/
     }
 
     @Override

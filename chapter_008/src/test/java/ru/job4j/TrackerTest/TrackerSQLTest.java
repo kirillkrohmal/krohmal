@@ -1,11 +1,9 @@
 package ru.job4j.TrackerTest;
 
-import org.jetbrains.annotations.NotNull;
+
 import org.junit.Test;
 import ru.job4j.TrackerSQL.Item;
 import ru.job4j.TrackerSQL.TrackerSQL;
-
-import java.sql.Connection;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
@@ -15,10 +13,6 @@ import static org.junit.Assert.assertThat;
  * Created by Comp on 09.11.2017.
  */
 public class TrackerSQLTest {
-    @NotNull
-    private Connection connection;
-    TrackerSQL tracker = new TrackerSQL();
-
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() throws Exception {
         Item add = null;
