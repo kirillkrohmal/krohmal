@@ -53,7 +53,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         try (Connection connection = init()) {
             String s = "DELETE FROM trackersql WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(s);
-            statement.setString(1, id);
+            statement.setInt(1, Integer.valueOf(id));
 
             statement.executeUpdate();
         } catch (SQLException e) {

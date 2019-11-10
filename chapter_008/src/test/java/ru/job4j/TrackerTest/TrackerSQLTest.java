@@ -92,7 +92,7 @@ public class TrackerSQLTest {
             add1 = tracker.add(item);
             add = tracker.add(item1);
 
-            tracker.replace("1", item1);
+            tracker.replace("2", item1);
             assertThat(tracker.findAll(), is(item1));
         }
         assertNotNull(add);
