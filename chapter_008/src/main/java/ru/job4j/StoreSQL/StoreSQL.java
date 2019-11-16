@@ -1,9 +1,6 @@
 package ru.job4j.StoreSQL;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,7 +13,18 @@ public class StoreSQL implements AutoCloseable {
     }
 
     public void generate(int size) {
+        for (int i = 0; i < size; i++) {
+            String s1 = "INSERT INTO test(i) VALUES (?)";
 
+            try (PreparedStatement statement = connect.prepareStatement(s1);) {
+                statement.setString(1, s1);
+
+                statement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void createNewDatabase(String fileName) {
