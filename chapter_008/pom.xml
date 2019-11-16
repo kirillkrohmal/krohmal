@@ -23,8 +23,30 @@
             </properties>
         </profile>
     </profiles>
-
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>3.6.2</version>
+                <configuration>
+                    <changeLogFile>${basedir}/IntegrationTests/master.xml</changeLogFile>
+                    <url>${IntegrationTests.url}</url>
+                    <driver>${IntegrationTests.driver}</driver>
+                    <username>${IntegrationTests.username}</username>
+                    <password>${IntegrationTests.password}</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
