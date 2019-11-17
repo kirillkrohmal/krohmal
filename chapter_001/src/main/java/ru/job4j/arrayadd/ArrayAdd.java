@@ -1,4 +1,4 @@
-package ru.job4j.arrayAdd;
+package ru.job4j.arrayadd;
 
 /**
  * Class ArrayAdd.
@@ -30,18 +30,18 @@ public class ArrayAdd {
         while (y1 + y2 < result.length) {
             //если первое число в массиве меньше второго числа в массиве. проверить условие на перепополнение массива
             if (array1.length > y1 && array2.length > y2 && array1[y1] < array2[y2]) {
-                result[y1 + y2] = array1[y1];//записываем это число в массив как минимальное из двух выбранных
-                y1++;//увеличиваем указатель y1 слева
+                result[y1 + y2] = array1[y1];
+                y1++;
             } else if (array1.length > y1 && array2.length > y2 && array1[y1] >= array2[y2]) {
-                result[y1 + y2] = array2[y2];//записываем это число в массив как минимальное из двух выбранных
-                y2++;//увеличиваем указатель y2 справа
+                result[y1 + y2] = array2[y2];
+                y2++;
                 // если в первом массиве остались значение то берем если нет то берем из второго массива
             } else if (array1.length > y1) {
-                result[y1 + y2] = array1[y1];//записываем это число в массив как минимальное из двух выбранных
-                y1++;//увеличиваем указатель y1 слева
+                result[y1 + y2] = array1[y1];
+                y1++;
             } else {
-                result[y1 + y2] = array2[y2];//записываем это число в массив как минимальное из двух выбранных
-                y2++;//увеличиваем указатель y2 справа
+                result[y1 + y2] = array2[y2];
+                y2++;
             }
         }
         return result;

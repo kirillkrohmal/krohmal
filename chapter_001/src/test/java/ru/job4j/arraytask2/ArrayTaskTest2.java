@@ -1,15 +1,21 @@
-package ru.job4j.arrayTask2;
+package ru.job4j.arraytask2;
 
 import org.junit.Test;
-import ru.job4j.arrayTask.Task;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+
 /**
- * Created by Comp on 30.06.2017.
+ * Class TaskTest
+ *
+ * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+ * @since 30.06.2017
  */
 public class ArrayTaskTest2 {
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo() {
         ArrayTask2 task = new ArrayTask2();
@@ -17,7 +23,9 @@ public class ArrayTaskTest2 {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo2() {
         ArrayTask2 task = new ArrayTask2();
@@ -25,7 +33,9 @@ public class ArrayTaskTest2 {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo3() {
         ArrayTask2 task = new ArrayTask2();
@@ -33,7 +43,9 @@ public class ArrayTaskTest2 {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo4() {
         ArrayTask2 task = new ArrayTask2();
@@ -41,7 +53,9 @@ public class ArrayTaskTest2 {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo5() {
         ArrayTask2 task = new ArrayTask2();
@@ -49,7 +63,9 @@ public class ArrayTaskTest2 {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo6() {
         ArrayTask2 task = new ArrayTask2();
@@ -57,7 +73,9 @@ public class ArrayTaskTest2 {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo7() {
         ArrayTask2 task = new ArrayTask2();
@@ -65,7 +83,9 @@ public class ArrayTaskTest2 {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test whenTwo.
+     */
     @Test
     public void whenTwo8() {
         ArrayTask2 task = new ArrayTask2();

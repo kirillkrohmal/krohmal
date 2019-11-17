@@ -1,16 +1,24 @@
 package ru.job4j.array;
 
-
+/**
+ * Class BubbleSort.
+ *
+ * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+ * @since 17.11.2019
+ */
 public class BubbleSort {
+    /**
+     * @return array возвращает результат
+     * @since 17.11.2019
+     * Метод sort дл¤ класса BubbleSort сортирует числовой массив
+     */
     public int[] sort(int[] array) {
-
         for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < array.length - i; j++) {//от 1 до  элемента в массиве i-го элемента идет сокращение элементов которые перебраны
-                if (array[j - 1] > array[j])//пока последний элемент больше первого элемента
-                {
-                    int temp = array[j - 1];//записываем в переменную temp последний элемент массива
-                    array[j - 1] = array[j];//меняем местами последний элемент массива с первым элементом массива
-                    array[j] = temp;//записываем из переменной temp в первый элемент массива поочередно
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1] > array[j]) {
+                    int temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
                 }
             }
         }

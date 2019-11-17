@@ -14,9 +14,10 @@ public class Board {
 	String paint(int width, int height) {
 			StringBuilder builder = new StringBuilder();
 			String line = System.getProperty("line.separator");
-			for(int i = 0; i < height; i++) {
-				for(int j = 0; j < width; j++) {
-					if ((i+j)%2==0){ //нужно проверять не отдельно а вместе
+
+			for (int i = 0; i < height; i++) {
+				for (int j = 0; j < width; j++) {
+					if ((i + j) % 2 == 0) { //нужно проверять не отдельно а вместе
 						builder.append("x");
 					} else {
 						builder.append(" ");

@@ -9,6 +9,11 @@ package ru.job4j.loop;
  */
 
 public class Paint {
+    /**
+     * @return builder
+     * @since 20.05.2017
+     * Метод piramid дл¤ класса Paint рисует равносторонний треугольник
+     */
     public String piramid(int h) {
         StringBuilder builder = new StringBuilder();
         String line = System.getProperty("line.separator");

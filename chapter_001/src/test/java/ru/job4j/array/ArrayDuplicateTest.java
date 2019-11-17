@@ -2,11 +2,17 @@ package ru.job4j.array;
 
 import org.junit.Test;
 
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.collection.IsArrayContainingInAnyOrder.arrayContainingInAnyOrder;
-
+/**
+ * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+ * @since 17.11.2019
+ * Class ArrayDuplicateTest
+ */
 public class ArrayDuplicateTest {
+    /**
+     * Test remove.
+     */
     @Test
     public void whenRemoveDuplicatesThenArrayWithoutDuplicate() {
         ArrayDuplicate arrayDuplicate = new ArrayDuplicate();

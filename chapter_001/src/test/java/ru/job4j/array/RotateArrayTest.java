@@ -5,8 +5,15 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+ * @since 17.11.2019
+ * Class RotateArrayTest
+ */
 public class RotateArrayTest {
-
+    /**
+     * Test rotate.
+     */
     @Test
     public void whenRotateTwoRowTwoColArrayThenRotatedArray() {
         RotateArray rotateArray = new RotateArray();

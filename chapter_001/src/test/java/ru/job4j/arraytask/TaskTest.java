@@ -1,12 +1,20 @@
-package ru.job4j.arrayTask;
+package ru.job4j.arraytask;
 
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-
+/**
+ * Class TaskTest
+ *
+ * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
+ * @since 07.06.2017
+ */
 public class TaskTest {
+    /**
+     * Test equals.
+     */
     @Test
     public void whenSubIsEqualsOrigin() {
         Task task = new Task();
@@ -16,7 +24,9 @@ public class TaskTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test equals.
+     */
     @Test
     public void whenSubIsEqualsOrigin1() {
         Task task = new Task();
@@ -26,7 +36,9 @@ public class TaskTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test equals.
+     */
     @Test
     public void whenSubIsEqualsOrigin2() {
         Task task = new Task();
@@ -36,7 +48,9 @@ public class TaskTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test equals.
+     */
     @Test
     public void whenSubIsEqualsOrigin3() {
         Task task = new Task();
@@ -46,7 +60,9 @@ public class TaskTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test equals.
+     */
     @Test
     public void whenSubIsEqualsOrigin4() {
         Task task = new Task();
@@ -56,7 +72,9 @@ public class TaskTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test equals.
+     */
     @Test
     public void whenSubIsEqualsOrigin5() {
         Task task = new Task();

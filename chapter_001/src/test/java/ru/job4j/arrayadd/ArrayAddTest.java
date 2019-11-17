@@ -1,4 +1,4 @@
-package ru.job4j.arrayAdd;
+package ru.job4j.arrayadd;
 
 import org.junit.Test;
 
@@ -11,8 +11,10 @@ import static org.junit.Assert.assertThat;
  * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
  * @since 07.06.2017
  */
-
 public class ArrayAddTest {
+    /**
+     * Test plus.
+     */
     @Test
     public void whenArrayPlusAnotherArray() {
         //assign
@@ -25,7 +27,9 @@ public class ArrayAddTest {
         //assert
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test plus.
+     */
     @Test
     public void whenArrayPlusAnotherArray2() {
         //assign
@@ -38,7 +42,9 @@ public class ArrayAddTest {
         //assert
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test plus.
+     */
     @Test
     public void whenArrayPlusAnotherArray3() {
         //assign
@@ -51,7 +57,9 @@ public class ArrayAddTest {
         //assert
         assertThat(result, is(expected));
     }
-
+    /**
+     * Test plus.
+     */
     @Test
     public void whenArrayPlusAnotherArray4() {
         //assign

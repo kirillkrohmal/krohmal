@@ -12,9 +12,13 @@
                 <version>3.6.2</version>
                 <configuration>
                     <changeLogFile>${basedir}/db/master.xml</changeLogFile>
+                    <!--suppress UnresolvedMavenProperty -->
                     <url>${db.url}</url>
+                    <!--suppress UnresolvedMavenProperty -->
                     <driver>${db.driver}</driver>
+                    <!--suppress UnresolvedMavenProperty -->
                     <username>${db.username}</username>
+                    <!--suppress UnresolvedMavenProperty -->
                     <password>${db.password}</password>
                 </configuration>
                 <executions>
