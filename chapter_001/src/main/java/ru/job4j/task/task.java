@@ -1,12 +1,12 @@
-package ru.job4j.arraytask;
+package ru.job4j.task;
 
 /**
- * Class ArrayDuplicate.
+ * Class Task.
  *
  * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
  * @since 17.11.2019
  */
-public class Task {
+public class task {
     /**
      * @return result возвращает результат
      * @since 17.11.2019

@@ -1,11 +1,12 @@
 /**
-* TaskTest.
+* task.
 */
-package ru.job4j.arraytask;
+package ru.job4j.task;
 
 /**
-* package-info for TaskTest Class
+* package-info for Class task
 * @author Kirill Krohmal (mailto:krohmal_kirill@mail.ru)
 * @since 17.11.2019
 */
+
 
