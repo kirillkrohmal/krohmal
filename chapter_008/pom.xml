@@ -3,26 +3,7 @@
     <artifactId>chapter_008</artifactId>
     <version>2.0</version>
 
-    <profiles>
-        <profile>
-            <id>test</id>
-            <properties>
-                <db.url>jdbc:postgresql://127.0.0.1:5432/java_a_from_z</db.url>
-                <db.username>postgres</db.username>
-                <db.password>root</db.password>
-                <db.driver>org.postgresql.Driver</db.driver>
-            </properties>
-        </profile>
-        <profile>
-            <id>production</id>
-            <properties>
-                <db.url>jdbc:postgresql://127.0.0.1:5432/java_a_from_z</db.url>
-                <db.username>postgres</db.username>
-                <db.password>root</db.password>
-                <db.driver>org.postgresql.Driver</db.driver>
-            </properties>
-        </profile>
-    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -30,11 +11,11 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.6.2</version>
                 <configuration>
-                    <changeLogFile>${basedir}/IntegrationTests/master.xml</changeLogFile>
-                    <url>${IntegrationTests.url}</url>
-                    <driver>${IntegrationTests.driver}</driver>
-                    <username>${IntegrationTests.username}</username>
-                    <password>${IntegrationTests.password}</password>
+                    <changeLogFile>${basedir}/db/master.xml</changeLogFile>
+                    <url>${db.url}</url>
+                    <driver>${db.driver}</driver>
+                    <username>${db.username}</username>
+                    <password>${db.password}</password>
                 </configuration>
                 <executions>
                     <execution>
