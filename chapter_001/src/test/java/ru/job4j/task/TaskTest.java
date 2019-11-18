@@ -1,4 +1,4 @@
-package ru.job4j.task;
+package ru.job4j.Task;
 
 import org.junit.Test;
 
@@ -17,7 +17,7 @@ public class TaskTest {
      */
     @Test
     public void whenSubIsEqualsOrigin() {
-        task task = new task();
+        Task task = new Task();
         String sub = "стиховедческий";
         String origin = "стих";
         boolean result = task.contains(sub, origin);
@@ -29,7 +29,7 @@ public class TaskTest {
      */
     @Test
     public void whenSubIsEqualsOrigin1() {
-        task task = new task();
+        Task task = new Task();
         String sub = "стиховедческий";
         String origin = "иховед";
         boolean result = task.contains(sub, origin);
@@ -41,7 +41,7 @@ public class TaskTest {
      */
     @Test
     public void whenSubIsEqualsOrigin2() {
-        task task = new task();
+        Task task = new Task();
         String sub = "стиховедческий";
         String origin = "стишок";
         boolean result = task.contains(sub, origin);
@@ -53,7 +53,7 @@ public class TaskTest {
      */
     @Test
     public void whenSubIsEqualsOrigin3() {
-        task task = new task();
+        Task task = new Task();
         String sub = "стиховедческий";
         String origin = "хо";
         boolean result = task.contains(sub, origin);
@@ -65,7 +65,7 @@ public class TaskTest {
      */
     @Test
     public void whenSubIsEqualsOrigin4() {
-        task task = new task();
+        Task task = new Task();
         String sub = "стиховедческий";
         String origin = "горец";
         boolean result = task.contains(sub, origin);
@@ -77,7 +77,7 @@ public class TaskTest {
      */
     @Test
     public void whenSubIsEqualsOrigin5() {
-        task task = new task();
+        Task task = new Task();
         String sub = "стиховедческий";
         String origin = "и";
         boolean result = task.contains(sub, origin);

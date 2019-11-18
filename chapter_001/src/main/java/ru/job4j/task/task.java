@@ -1,4 +1,4 @@
-package ru.job4j.task;
+package ru.job4j.Task;
 
 /**
  * Class Task.
@@ -6,7 +6,7 @@ package ru.job4j.task;
  * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
  * @since 17.11.2019
  */
-public class task {
+public class Task {
     /**
      * @return result возвращает результат
      * @since 17.11.2019
