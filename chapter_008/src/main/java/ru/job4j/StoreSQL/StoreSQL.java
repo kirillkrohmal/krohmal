@@ -18,28 +18,26 @@ public class StoreSQL implements AutoCloseable {
 
             try (PreparedStatement statement = connect.prepareStatement(s1);) {
                 statement.setString(1, s1);
-
                 statement.executeUpdate();
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void findAll(int size) {
-        for (int i = 0; i < size; i++) {
-            String s1 = "INSERT INTO test(i) VALUES (?)";
+    public String findAll() {
+        String s1 = "SELECT size FROM test";
 
-            try (PreparedStatement statement = connect.prepareStatement(s1);) {
-                statement.setString(1, s1);
+        try (PreparedStatement statement = connect.prepareStatement(s1);) {
+            statement.setString(1, s1);
 
-                statement.executeUpdate();
+            statement.executeUpdate();
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        return s1;
     }
 
     public static void createNewDatabase(String fileName) {

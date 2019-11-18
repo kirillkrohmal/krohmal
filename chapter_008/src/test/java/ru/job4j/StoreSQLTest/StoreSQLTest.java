@@ -12,9 +12,11 @@ public class StoreSQLTest {
     @Test
     public void generateN() throws Exception {
         Config config = new Config();
-        StoreSQL storeSQL = new StoreSQL(config.init());
-        storeSQL.generate(1000000000);
-        assertThat(storeSQL.generate(1000000000), is(1));
-
+        try (StoreSQL storeSQL = new StoreSQL(config)) {
+            config.init();
+            int size = 138341;
+            storeSQL.generate(size);
+            assertThat(storeSQL.findAll(), is(size));
+        }
     }
 }
