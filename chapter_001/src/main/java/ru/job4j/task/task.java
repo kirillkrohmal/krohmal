@@ -33,7 +33,6 @@ public class Task {
                     result = true;
                     break;
                 }
-
                 if (originString[i] != subString[i + j]) {
                     result = false;
                     break;
