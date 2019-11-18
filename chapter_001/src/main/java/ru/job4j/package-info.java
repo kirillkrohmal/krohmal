@@ -1,5 +1,5 @@
 /**
-* Calculator.
+* Calculate.
 */
 package ru.job4j;
 
