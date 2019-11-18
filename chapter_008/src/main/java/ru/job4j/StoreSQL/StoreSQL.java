@@ -27,6 +27,21 @@ public class StoreSQL implements AutoCloseable {
         }
     }
 
+    public void findAll(int size) {
+        for (int i = 0; i < size; i++) {
+            String s1 = "INSERT INTO test(i) VALUES (?)";
+
+            try (PreparedStatement statement = connect.prepareStatement(s1);) {
+                statement.setString(1, s1);
+
+                statement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static void createNewDatabase(String fileName) {
 
         String url = "jdbc:sqlite:C:/sqlite/db/" + fileName;
