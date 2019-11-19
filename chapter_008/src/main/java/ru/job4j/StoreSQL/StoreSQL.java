@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class StoreSQL implements AutoCloseable {
-    private final Config config;
-    private Connection connect;
+    private Config config;
+    private Connection connect = config.init();
 
     public StoreSQL(Config config) {
         this.config = config;

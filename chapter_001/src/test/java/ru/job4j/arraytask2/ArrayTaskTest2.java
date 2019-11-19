@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 
 
 /**
- * Class TaskTest
+ * Class ArrayTaskTest2
  *
  * @author Krohmal Kirill (mailto:krohmal_kirill@mail.ru)
  * @since 30.06.2017
