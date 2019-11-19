@@ -1,7 +1,7 @@
 /**
 * TaskTest.
 */
-package ru.job4j.Task;
+package ru.job4j.task;
 
 /**
 * package-info for TaskTest Class

@@ -1,4 +1,4 @@
-package ru.job4j.Task;
+package ru.job4j.task;
 
 /**
  * Class Task.
