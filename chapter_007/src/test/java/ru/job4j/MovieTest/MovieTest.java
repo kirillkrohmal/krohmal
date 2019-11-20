@@ -12,6 +12,7 @@ public class MovieTest {
     private static void testing(long actual, long expected) {
         assertEquals(expected, actual);
     }
+
     @Test
     public void test1() {
         System.out.println("Fixed Tests: movie");

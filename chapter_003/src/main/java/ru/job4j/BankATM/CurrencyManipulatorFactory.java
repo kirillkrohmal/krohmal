@@ -10,13 +10,14 @@ import java.util.Map;
 public class CurrencyManipulatorFactory {
     private static Map<String, CurrencyManipulator> manipulatorMap = new HashMap<>();
     private static CurrencyManipulatorFactory currencyManipulator = new CurrencyManipulatorFactory();
+
     /**
      * В этом методе будем создавать нужный манипулятор, если он еще не существует, либо возвращать ранее созданный.
      * Подумайте, где лучше хранить все манипуляторы.
      * Сделайте так, чтобы невозможно было создавать объекты CurrencyManipulatorFactory класса
      */
     public static void getManipulatorByCurrencyCode(String currencyCode) {
-        for (Map.Entry<String, CurrencyManipulator> manipulatorEntry: manipulatorMap.entrySet()) {
+        for (Map.Entry<String, CurrencyManipulator> manipulatorEntry : manipulatorMap.entrySet()) {
             if (manipulatorEntry.getValue().equals(currencyCode)) {
                 manipulatorMap.put(currencyCode, manipulatorEntry.getValue());
             }

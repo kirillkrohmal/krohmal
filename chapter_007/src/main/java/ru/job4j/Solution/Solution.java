@@ -1,4 +1,3 @@
-
 package ru.job4j.Solution;
 
 /**
@@ -6,7 +5,7 @@ package ru.job4j.Solution;
  */
 
 public class Solution {
-    public static String toCamelCase(String s){
+    public static String toCamelCase(String s) {
         return "";
     }
 

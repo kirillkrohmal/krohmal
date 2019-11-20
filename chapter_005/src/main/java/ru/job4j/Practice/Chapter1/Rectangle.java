@@ -3,7 +3,7 @@ package ru.job4j.Practice.Chapter1;
 /**
  * Created by Comp on 20.10.2017.
  */
-public class Rectangle extends Point{
+public class Rectangle extends Point {
     private int w;
     private int r;
 

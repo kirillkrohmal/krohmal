@@ -3,7 +3,10 @@ package ru.job4j.ConvertIteratorTest;
 import org.junit.Test;
 import ru.job4j.ConvertIterator.ConvertIterator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

@@ -1,14 +1,8 @@
 package ru.job4j.Restaurant.eu;
 
-import ru.job4j.Restaurant.exception.NoVideoAvailableException;
-import ru.job4j.Restaurant.kitchen.Dish;
 import ru.job4j.Restaurant.kitchen.Order;
 
-import java.io.IOException;
-import java.util.EmptyStackException;
-import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -28,11 +22,11 @@ public class Tablet {
     public void createOrder() {
         Order order = null;
         //try {
-            order = new Order(this);
-            if (!order.isEmpty()) {
+        order = new Order(this);
+        if (!order.isEmpty()) {
 
-            } else {
-            }
+        } else {
+        }
         /*} catch (IOException e) {
             log.log(Level.SEVERE, "Console is unavailable.");
         } catch (NoVideoAvailableException e) {

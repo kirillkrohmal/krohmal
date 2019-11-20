@@ -72,7 +72,6 @@ public enum Direction {
     public static final Random RN = new Random();
 
 
-
     public static Direction getRandomDirection() {
         int position = RN.nextInt(values().length);
         return values()[position];

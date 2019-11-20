@@ -1,5 +1,8 @@
 package ru.job4j.SearchFile;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,8 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 
 /**
  * Created by Comp on 21.08.2018.

@@ -4,13 +4,11 @@ import ru.job4j.BankATM.commands.CommandExecutor;
 import ru.job4j.BankATM.exception.InterruptOperationException;
 import ru.job4j.BankATM.exception.NotEnoughMoneyException;
 
-import java.util.Locale;
-
 public class CashMachine {
     public static final String RESOURCE_PATH = "com.javarush.test.level26.lesson15.big01.resources.";
     //currencyManipulator.getTotalAmount()
 
-    void printExitMessage () {
+    void printExitMessage() {
         ConsoleHelper.writeMessage("Exit!GoodBye");
     }
 
@@ -24,8 +22,7 @@ public class CashMachine {
                 CommandExecutor.execute(currentOperation);
             }
             while (currentOperation != Operation.EXIT);
-        }
-        catch (InterruptOperationException e) {
+        } catch (InterruptOperationException e) {
             ConsoleHelper.writeMessage("Goodbye!");
         }
     }

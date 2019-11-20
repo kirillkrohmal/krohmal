@@ -18,12 +18,10 @@ public class ArraysTesting {
             for (int j = 0; j < length; j++) {
                 if (array[i] == array[array.length - j - 1]) {
                     sequence = true;
-                }
-                else if (array[i + j] == array[j + 1]) {
+                } else if (array[i + j] == array[j + 1]) {
                     sequence = true;
                     break;
-                }
-                else if (array[i + j] != array[j + 1]) {
+                } else if (array[i + j] != array[j + 1]) {
                     sequence = false;
                     break;
                 }

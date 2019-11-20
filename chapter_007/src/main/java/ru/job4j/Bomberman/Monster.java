@@ -1,7 +1,5 @@
 package ru.job4j.Bomberman;
 
-import javafx.scene.control.Cell;
-
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -19,9 +17,10 @@ public class Monster extends Actor implements Runnable {
 
     /**
      * Create a new monster.
+     *
      * @param board for moving.
-     * @param x position at the board.
-     * @param y position at the board.
+     * @param x     position at the board.
+     * @param y     position at the board.
      */
     public Monster(Board board, int x, int y) {
         super(board, x, y);

@@ -22,7 +22,7 @@ public class Triangle {
         this.third = third;
     }
 
-    public double mathSqrt (Point a, Point b) {
+    public double mathSqrt(Point a, Point b) {
         return Math.sqrt((Math.pow(this.second.getX() - this.first.getX(), 2)) + (Math.pow(this.second.getY() - this.first.getY(), 2)));
     }
 

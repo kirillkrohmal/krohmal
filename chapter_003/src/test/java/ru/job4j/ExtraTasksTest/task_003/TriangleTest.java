@@ -4,7 +4,6 @@ import org.junit.Test;
 import ru.job4j.ExtraTasks.task_002.Point;
 import ru.job4j.ExtraTasks.task_003.Triangle;
 
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
 

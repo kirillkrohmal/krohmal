@@ -1,19 +1,19 @@
 package ru.job4j.Oracle_Tests.OCPJP1.question2;
 
 /**
- Что будет выведено в результате выполнения данного куска кода:
-
-    1. false false false
-    2. false true false
-    3. true true false
-    4. false true true
-    5. true true true
+ * Что будет выведено в результате выполнения данного куска кода:
+ * <p>
+ * 1. false false false
+ * 2. false true false
+ * 3. true true false
+ * 4. false true true
+ * 5. true true true
  */
 public class Tester {
     public static void main(String... args) {
         Float f1 = new Float(Float.NaN);
         Float f2 = new Float(Float.NaN);
-        System.out.println( ""+ (f1 == f2)+" "+ f1.equals(f2)+ " "+(Float.NaN == Float.NaN) );
+        System.out.println("" + (f1 == f2) + " " + f1.equals(f2) + " " + (Float.NaN == Float.NaN));
     }
 }
 

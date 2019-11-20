@@ -10,7 +10,7 @@ public class CountThread extends Thread {
 
         System.out.println("Это программа начинает работать!");
         Thread.interrupted();
-        new Thread () {
+        new Thread() {
             @Override
             public void run() {
 

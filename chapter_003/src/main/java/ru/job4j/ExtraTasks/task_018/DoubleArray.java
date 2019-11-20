@@ -26,7 +26,7 @@ public class DoubleArray {
         }
         if (count1 > count2) {
             return new int[][]{};
-        } else if(count1 < count2) {
+        } else if (count1 < count2) {
             return new int[][]{};
         }
 

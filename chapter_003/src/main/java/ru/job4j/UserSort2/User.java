@@ -51,6 +51,7 @@ public class User {
                 ", age=" + age +
                 '}';
     }
+
     public int length() {
         return name.length();
     }

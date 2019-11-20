@@ -1,7 +1,6 @@
 package ru.job4j.Practice.Chapter1;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,22 +14,22 @@ class Chapter1<T> {
         }
     }
 
-    public Integer withdraw () {
+    public Integer withdraw() {
 
         return null;
     }
-    public Integer deposit () {
+
+    public Integer deposit() {
 
         return null;
     }
 
     private Card[] cards = new Card[]{
-        Card.ACE_CASE, Card.ACE_BASE, Card.ACE_GHANGE, Card.DUMP_CASE,
+            Card.ACE_CASE, Card.ACE_BASE, Card.ACE_GHANGE, Card.DUMP_CASE,
     };
 
 
     public List<Card> deck;
-
 
 
     public Chapter1() {
@@ -42,7 +41,7 @@ class Chapter1<T> {
         //Collections.sort(deck);
     }
 
-    public Integer operand () {
+    public Integer operand() {
 
         int s1 = 1;
         int s2 = 2;
@@ -61,7 +60,7 @@ class Chapter1<T> {
         int s3 = 12;
         //s3 = s1 & s2;
         s3 |= s1;
-        s1 = ~ s2;
+        s1 = ~s2;
 
         System.out.println("a & b = " + s3);
         System.out.println("a ~ b = " + s1);

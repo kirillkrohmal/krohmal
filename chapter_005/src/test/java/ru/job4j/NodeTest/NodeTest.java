@@ -18,7 +18,7 @@ public class NodeTest {
         Node<Integer> first = new Node<>(1);
         Node<Integer> two = new Node<>(2);
         Node<Integer> third = new Node<>(three);
-        Node<Integer> forth  = new Node<>(four);
+        Node<Integer> forth = new Node<>(four);
 
         first.setNext(two);
         two.setNext(third);

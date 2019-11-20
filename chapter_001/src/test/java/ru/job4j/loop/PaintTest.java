@@ -10,17 +10,17 @@ public class PaintTest {
     public void whenPiramidWithHeightTwoThenStringWithTwoRows() {
         Paint paint = new Paint();
         String result = paint.piramid(2);
-		final String line = System.getProperty("line.separator");
+        final String line = System.getProperty("line.separator");
         String expected = String.format(" ^ %s^^^%s", line, line);
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenPiramidWithHeightThreeThenStringWithThreeRows() {
-		Paint paint = new Paint();
-		String result = paint.piramid(3);
-		final String line = System.getProperty("line.separator");
-		String expected = String.format("  ^  %s ^^^ %s^^^^^%s", line, line, line);
-		assertThat(result, is(expected));
+        Paint paint = new Paint();
+        String result = paint.piramid(3);
+        final String line = System.getProperty("line.separator");
+        String expected = String.format("  ^  %s ^^^ %s^^^^^%s", line, line, line);
+        assertThat(result, is(expected));
     }
 }	

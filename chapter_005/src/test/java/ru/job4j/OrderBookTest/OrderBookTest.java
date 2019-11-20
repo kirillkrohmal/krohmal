@@ -33,7 +33,7 @@ public class OrderBookTest {
 
         assertThat(result, is(true));
     }
-    
+
     @Test
     public void iteratorTest2() throws ExecutionException, InterruptedException {
         OrderBook orderBook = new OrderBook();
@@ -42,7 +42,7 @@ public class OrderBookTest {
         Map<Float, Orders> sell = new HashMap<>();
         Map<Float, Orders> buy = new HashMap<>();
 
-        Orders order = new Orders(book,143, orderBook);
+        Orders order = new Orders(book, 143, orderBook);
 
         //orderBook.matching();
 

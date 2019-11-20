@@ -6,7 +6,6 @@ import ru.job4j.TestTask2.TestTask2;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -72,6 +71,7 @@ public class TestTask2Testing {
         expected.add(new FirmsCode("K3", "K3\\SK1", "K3\\SK1\\SSK2"));
         assertThat(result, is(expected));
     }
+
     @Test
     public void whenGetFirmsCodeAndSortingIt6() {
         TestTask2 testTask2 = new TestTask2();

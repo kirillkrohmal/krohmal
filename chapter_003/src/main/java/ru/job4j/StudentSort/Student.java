@@ -1,8 +1,5 @@
 package ru.job4j.StudentSort;
 
-import java.util.Comparator;
-import java.util.List;
-
 /**
  * Created by Comp on 05.08.2017.
  */

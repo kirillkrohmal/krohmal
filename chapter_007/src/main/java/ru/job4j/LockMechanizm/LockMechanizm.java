@@ -30,7 +30,7 @@ public class LockMechanizm {
     public static void main(String[] args) {
         LockMechanizm lockMechanizm = new LockMechanizm();
 
-        new Thread () {
+        new Thread() {
             @Override
             public void run() {
                 try {
@@ -41,7 +41,7 @@ public class LockMechanizm {
             }
         }.start();
 
-        new Thread () {
+        new Thread() {
             @Override
             public void run() {
                 lockMechanizm.unlock(true);

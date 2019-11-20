@@ -1,12 +1,12 @@
 /**
-* Calculate.
-*/
+ * Calculate.
+ */
 package ru.job4j;
 
 /**
-* package-info for Class Calculate
-* @author Kirill Krohmal (mailto:krohmal_kirill@mail.ru)
-* @since 17.05.2017
-*/
+ * package-info for Class Calculate
+ * @author Kirill Krohmal (mailto:krohmal_kirill@mail.ru)
+ * @since 17.05.2017
+ */
 
 

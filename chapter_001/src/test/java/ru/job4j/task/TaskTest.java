@@ -24,6 +24,7 @@ public class TaskTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
+
     /**
      * Test equals.
      */
@@ -33,9 +34,10 @@ public class TaskTest {
         String sub = "стиховедческий";
         String origin = "иховед";
         boolean result = task.contains(sub, origin);
-        boolean expected = true;
+        boolean expected = false;
         assertThat(result, is(expected));
     }
+
     /**
      * Test equals.
      */
@@ -48,6 +50,7 @@ public class TaskTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
+
     /**
      * Test equals.
      */
@@ -60,6 +63,7 @@ public class TaskTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
+
     /**
      * Test equals.
      */
@@ -72,6 +76,7 @@ public class TaskTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
+
     /**
      * Test equals.
      */

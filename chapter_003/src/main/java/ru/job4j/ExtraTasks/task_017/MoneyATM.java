@@ -1,9 +1,7 @@
 package ru.job4j.ExtraTasks.task_017;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Реализован банкомат размена денег. Автомат принимает бумажную купюру и обменивает на монеты.
@@ -29,7 +27,7 @@ public class MoneyATM {
         this.values = values;
     }
 
-    public void changers (int a, int b, int c, int d) {
+    public void changers(int a, int b, int c, int d) {
 
         int[] source = values;
 
@@ -37,7 +35,7 @@ public class MoneyATM {
             for (int j = 0; j < source[NUMBER_OF_FIVE]; j++) {
                 for (int k = 0; k < source[NUMBER_OF_TWO]; k++) {
                     for (int l = 0; l < source[NUMBER_OF_ONE]; l++) {
-                        sum = i/10 + j/5 + k/2 + d/1;
+                        sum = i / 10 + j / 5 + k / 2 + d / 1;
                     }
                 }
             }

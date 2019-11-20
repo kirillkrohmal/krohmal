@@ -1,7 +1,7 @@
 package ru.job4j.ExecutorService;
 
-import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Comp on 27.07.2018.
@@ -12,6 +12,7 @@ public class EmailNotification<E> {
     public void send(String subject, String body, String email) {
 
     }
+
     public void emailTo(User user) {
         pool.submit(()
                 -> {
@@ -23,7 +24,7 @@ public class EmailNotification<E> {
                     user.getUsername();
 
             send(user.getUsername(), stringBuilder, user.getEmail());
-                });
+        });
 
     }
 }

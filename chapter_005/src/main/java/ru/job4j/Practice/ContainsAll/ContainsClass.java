@@ -10,10 +10,9 @@ import java.util.List;
 public class ContainsClass {
     private List result;
 
-    public List list1 () {
+    public List list1() {
         List list1 = new ArrayList<>(Arrays.asList(1, 4));
         List list2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 6, 6));
-
 
 
         return result;
@@ -25,7 +24,7 @@ public class ContainsClass {
         List list3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
 
         for (int i = 0; i < list3.size(); i++) {
-            if(!list3.get(i).equals(list1)) {
+            if (!list3.get(i).equals(list1)) {
                 list1 = list3;
             }
         }

@@ -18,6 +18,7 @@ public class ConsoleHelper {
     public static void writeMessage(String message) {
 
     }
+
     /**
      * для чтения строки с консоли
      */
@@ -25,6 +26,7 @@ public class ConsoleHelper {
 
         return null;
     }
+
     /**
      * просит ползователя выбрать блюдо и добавляет его в список. Введенное 'exit' означает завершение заказа.
      * исключения пробрасывайте выше, на этом уровне не понятно, что с ними делать.

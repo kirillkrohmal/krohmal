@@ -1,8 +1,6 @@
 package ru.job4j.ExecutorServiceTest;
 
-import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.DynamicListThread.LinkedListContainer.LinkedListContainer;
 import ru.job4j.ExecutorService.EmailNotification;
 
 import static org.hamcrest.core.Is.is;

@@ -1,12 +1,10 @@
 package ru.job4j.Practice.Example_3;
 
-import org.jcp.xml.dsig.internal.dom.Utils;
+import ru.CryptoPro.JCP.JCP;
+import ru.CryptoPro.JCP.tools;
 
 import java.io.PrintWriter;
-import java.io.StringReader;
 import java.io.StringWriter;
-import java.net.URL;
-import java.net.URLStreamHandler;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.cert.Certificate;
@@ -17,41 +15,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ru.CryptoPro.JCP.tools;
-
-import ru.CryptoPro.JCP.JCP;
-import ru.CryptoPro.JCP.params.OID;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.CMSVersion;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.CertificateChoices;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.CertificateSet;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.ContentInfo;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.DigestAlgorithmIdentifier;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.DigestAlgorithmIdentifiers;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.EncapsulatedContentInfo;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.IssuerAndSerialNumber;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.SignatureAlgorithmIdentifier;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.SignatureValue;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.SignedData;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.SignerIdentifier;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.SignerInfo;
-import ru.CryptoPro.JCP.ASN.CryptographicMessageSyntax.SignerInfos;
-import ru.CryptoPro.JCP.ASN.PKIX1Explicit88.Attribute;
-import ru.CryptoPro.JCP.ASN.PKIX1Explicit88.CertificateSerialNumber;
-import ru.CryptoPro.JCP.ASN.PKIX1Explicit88.Name;
-import ru.CryptoPro.JCP.tools.Array;
-
-import com.objsys.asn1j.runtime.Asn1Type;
-import com.objsys.asn1j.runtime.Asn1BerDecodeBuffer;
-import com.objsys.asn1j.runtime.Asn1BerEncodeBuffer;
-import com.objsys.asn1j.runtime.Asn1Null;
-import com.objsys.asn1j.runtime.Asn1ObjectIdentifier;
-import com.objsys.asn1j.runtime.Asn1OctetString;
-import com.objsys.asn1j.runtime.Asn1Exception;
-import java.security.UnrecoverableKeyException;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
-import static javax.naming.ldap.ManageReferralControl.OID;
 
 class CASoap {
     private static final Logger LOGGER = Logger.getLogger(CASoap.class.getName());

@@ -1,13 +1,13 @@
 package ru.job4j.Oracle_Tests.OCPJP1.question5.testPackage;
 
 /*
-* Прошлый вопрос уже когда-то поднимался на хабре, поэтому этот вопрос для тех, кому был не интересен предыдущий:
-* В результате мы получим:
-*  1. false true true false true
-*  2. false false true false true
-*  3. true true true true true
-*  4. true true true false true
-*  5. Все ответы неверны
+ * Прошлый вопрос уже когда-то поднимался на хабре, поэтому этот вопрос для тех, кому был не интересен предыдущий:
+ * В результате мы получим:
+ *  1. false true true false true
+ *  2. false false true false true
+ *  3. true true true true true
+ *  4. true true true false true
+ *  5. Все ответы неверны
  */
 
 class Test {

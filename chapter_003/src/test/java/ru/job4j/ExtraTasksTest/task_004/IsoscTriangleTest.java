@@ -1,8 +1,8 @@
 package ru.job4j.ExtraTasksTest.task_004;
 
 import org.junit.Test;
-import ru.job4j.ExtraTasks.task_004.IsoscelesTriangle;
 import ru.job4j.ExtraTasks.task_002.Point;
+import ru.job4j.ExtraTasks.task_004.IsoscelesTriangle;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

@@ -21,7 +21,6 @@ public enum Operation {
             return Operation.WITHDRAW;
         } else if (i == 4) {
             return Operation.EXIT;
-        }
-        else throw new IllegalArgumentException();
+        } else throw new IllegalArgumentException();
     }
 }

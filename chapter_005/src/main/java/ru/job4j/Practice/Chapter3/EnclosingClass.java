@@ -5,6 +5,7 @@ package ru.job4j.Practice.Chapter3;
  */
 public class EnclosingClass {
     private int i;
+
     private void m1() {
         System.out.println(i);
     }

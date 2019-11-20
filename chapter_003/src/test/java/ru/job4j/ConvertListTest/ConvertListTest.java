@@ -4,7 +4,8 @@ package ru.job4j.ConvertListTest;
 import org.junit.Test;
 import ru.job4j.ConvertList.ConvertList;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

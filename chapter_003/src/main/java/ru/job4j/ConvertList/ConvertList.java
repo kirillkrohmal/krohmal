@@ -1,7 +1,6 @@
 package ru.job4j.ConvertList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,7 +27,8 @@ public class ConvertList {
         int[][] array = {
                 {2, 1, 23},
                 {212, 123, 0}
-        };;
+        };
+        ;
 
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size(); j++) {

@@ -31,7 +31,7 @@ public class GoodPract {
 
     public static void main(String[] args) {
         GoodPract goodPract = new GoodPract();
-       // goodPract.SomeChoice(a, b);
+        // goodPract.SomeChoice(a, b);
         goodPract.SomeChoice(e);
 
     }

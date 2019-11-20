@@ -1,16 +1,11 @@
 package ru.job4j.CrudServlet;
 
 
-import ru.job4j.servlets.EchoServlet;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 
 /**
@@ -24,13 +19,11 @@ public class UsersServlet extends HttpServlet {
         resp.setContentType("text/html");
 
 
-
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-
 
 
     }

@@ -22,6 +22,7 @@ public class CommandExecutor {
     public void setCommandMap(Map<Operation, Command> commandMap) {
         this.commandMap = commandMap;
     }
+
     /**
      * Метод который будет дергать метод execute у нужной команды. Реализуйте эту логику.
      * Расставьте правильно модификаторы доступа учитывая, что единственная точка входа - это метод execute.

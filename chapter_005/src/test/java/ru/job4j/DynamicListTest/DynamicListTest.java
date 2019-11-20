@@ -43,18 +43,18 @@ public class DynamicListTest<E> {
     public void iteratorTest3() {
         Iterator<Integer> iterator = dynamicList.iterator();
 
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(1) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(2) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(3) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(4) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(5) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(6) );
-        assertThat(iterator.hasNext(), is( false) );
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(1));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(2));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(3));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(4));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(5));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(6));
+        assertThat(iterator.hasNext(), is(false));
     }
 }

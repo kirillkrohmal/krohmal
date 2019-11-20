@@ -12,10 +12,11 @@ public class PoolString {
     private static String it;
     private List<Object> in;
 
-    public String pooly (String String) {
+    public String pooly(String String) {
         int i = 10;
 
-        i: for (int j = 0; j < 100; j++) {
+        i:
+        for (int j = 0; j < 100; j++) {
             System.out.println();
         }
 
@@ -23,18 +24,15 @@ public class PoolString {
         return String;
     }
 
-    public void putIt () {
+    public void putIt() {
         String a = "string a";
         String b = new String("string a");
         String c = b.intern();
 
 
-
-
     }
 
     public <E extends ClassName> List some(List<? super List<ClassName>> in) {
-
 
 
         return null;
@@ -61,20 +59,18 @@ public class PoolString {
         System.out.println(n.equals(n2));
         System.out.println(Float.NaN == Float.NaN);
         System.out.println(n == n2);
-        System.out.println(hello.equals(hello2 + lo.intern()) );
+        System.out.println(hello.equals(hello2 + lo.intern()));
         System.out.println(hello.equals(hello2 + lo));
         System.out.println(hello.equals(lo));
-
 
 
         String s1 = "Cat";
         String s2 = "Cat";
         String s3 = new String("Cat");
 
-        System.out.println("s1 == s2 :"+(s1==s2));
-        System.out.println("s1 == s3 :"+(s1==s3));
+        System.out.println("s1 == s2 :" + (s1 == s2));
+        System.out.println("s1 == s3 :" + (s1 == s3));
     }
-
 
 
 }

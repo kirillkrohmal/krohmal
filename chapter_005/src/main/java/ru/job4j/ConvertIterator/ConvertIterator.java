@@ -13,7 +13,7 @@ public class ConvertIterator {
 
             void moveIterator() {
                 if (iterator != null && it.hasNext()) {
-                    iterator = it.next() ;
+                    iterator = it.next();
                 }
             }
 

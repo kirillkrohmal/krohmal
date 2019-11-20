@@ -22,7 +22,7 @@ public class Square {
         this.fourth = fourth;
     }
 
-    public double S (Point first, Point b) {
+    public double S(Point first, Point b) {
         return ((Math.pow(this.second.getX() - this.first.getX(), 2)) + (Math.pow(this.second.getY() - this.first.getY(), 2)));
     }
 
@@ -33,7 +33,7 @@ public class Square {
         double da = S(fourth, first);
         if ((ab == bc || bc == cd || cd == da || da == ab)) {
             return false;
-        }  else{
+        } else {
             return true;
         }
     }

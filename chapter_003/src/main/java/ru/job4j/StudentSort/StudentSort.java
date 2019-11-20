@@ -1,9 +1,5 @@
 package ru.job4j.StudentSort;
 
-import ru.job4j.StudentSort.Student;
-
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**

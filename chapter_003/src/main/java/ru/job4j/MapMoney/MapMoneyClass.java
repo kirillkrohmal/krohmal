@@ -1,7 +1,7 @@
 package ru.job4j.MapMoney;
 
-import ru.job4j.TestTask.Account;
-import ru.job4j.TestTask.User;
+import ru.job4j.testtask.Account;
+import ru.job4j.testtask.User;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +16,7 @@ public class MapMoneyClass {
     public static void main(String[] args) {
         Map<User, List<Account>> mapMoney = new HashMap<>();
 
-        for (Map.Entry<User, List<Account>> listEntry: mapMoney.entrySet()) {
+        for (Map.Entry<User, List<Account>> listEntry : mapMoney.entrySet()) {
             User id = listEntry.getKey();
             List<Account> account = listEntry.getValue();
             System.out.println("Id= " + id + "Account= " + account);

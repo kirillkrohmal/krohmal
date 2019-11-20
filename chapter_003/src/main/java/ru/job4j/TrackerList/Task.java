@@ -1,7 +1,5 @@
 package ru.job4j.TrackerList;
 
-import java.util.ArrayList;
-
 /**
  * Created by Comp on 14.06.2017.
  */

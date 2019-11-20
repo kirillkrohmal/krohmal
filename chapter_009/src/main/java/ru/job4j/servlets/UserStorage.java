@@ -18,7 +18,7 @@ public class UserStorage {
         return instance;
     }
 
-    public void add (User user) {
+    public void add(User user) {
         this.users.add(user);
     }
 
@@ -26,7 +26,6 @@ public class UserStorage {
     public List<User> getUsers() {
         return this.users;
     }
-
 
 
 }

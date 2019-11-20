@@ -40,7 +40,7 @@ public class CounterOfSpace {
                 for (char c : text.toCharArray()) {
                     if (c == ' ') {
                         counterOfSpaces++;
-                        System.out.println("counterOfSpaces "+counterOfSpaces);
+                        System.out.println("counterOfSpaces " + counterOfSpaces);
                     }
                 }
             }
@@ -56,7 +56,7 @@ public class CounterOfSpace {
                 for (String word : words) {
                     if (!word.equals(" ")) {
                         counterOfWords++;
-                        System.out.println("counterOfWords "+counterOfWords);
+                        System.out.println("counterOfWords " + counterOfWords);
                     }
                 }
             }

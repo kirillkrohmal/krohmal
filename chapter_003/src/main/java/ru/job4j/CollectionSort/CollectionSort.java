@@ -1,6 +1,6 @@
 package ru.job4j.CollectionSort;
 
-import java.util.*;
+import java.util.Collection;
 
 /**
  * Написать программу, которая замеряет время вставки в коллекцию большого количества случайных

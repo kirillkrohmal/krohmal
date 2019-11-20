@@ -1,6 +1,8 @@
 package ru.job4j.UserSort;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by Comp on 08.08.2017.

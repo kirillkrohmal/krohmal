@@ -1,7 +1,6 @@
 package ru.job4j.CrudServlet;
 
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -24,24 +23,24 @@ public class ValidateService {
 
     public boolean add(User user) {
         boolean result = false;
-            if (validateEmail(user)) {
-                result = true;
-            }
+        if (validateEmail(user)) {
+            result = true;
+        }
 
         return result;
     }
 
     public boolean update(String email) {
         boolean result = false;
-            if (validateEmail(user) || email == null) {
-                result = true;
-            }
+        if (validateEmail(user) || email == null) {
+            result = true;
+        }
         return result;
     }
 
     public boolean delete(int id) {
 
-        boolean result =  false;
+        boolean result = false;
 /*
         if (STORE.findById() != null) {
             STORE.delete();

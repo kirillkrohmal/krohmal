@@ -5,6 +5,7 @@ package ru.job4j.IllustratingThread;
  */
 class Count {
     private int value;
+
     int illustratingThread() {
         return ++this.value;
     }

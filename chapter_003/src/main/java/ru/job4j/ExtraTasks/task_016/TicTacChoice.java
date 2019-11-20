@@ -13,19 +13,19 @@ public class TicTacChoice {
             for (int j = 0; j < board.length; j++) {
                 if (board[i][0] == board[i][j]) {
                     count++;
-                    if (count == 3){
+                    if (count == 3) {
                         break;
                     }
                 }
                 if (board[i] == board[j]) {
                     count++;
-                    if (count == 3){
+                    if (count == 3) {
                         break;
                     }
                 }
                 if (board[j][i] == board[0][i]) {
                     count++;
-                    if (count == 3){
+                    if (count == 3) {
                         break;
                     }
                 }

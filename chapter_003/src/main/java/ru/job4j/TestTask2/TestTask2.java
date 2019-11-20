@@ -3,7 +3,8 @@ package ru.job4j.TestTask2;
 import ru.job4j.TestTask2.comparators.PrimaryCodeComparator;
 import ru.job4j.TestTask2.comparators.SolutionCodeComparator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Comp on 30.08.2017.

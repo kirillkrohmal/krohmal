@@ -1,11 +1,9 @@
 package ru.job4j.Bomberman;
 
-import javafx.scene.control.Cell;
-
 /**
  * Created by Comp on 11.08.2018.
  */
-public class Actor  {
+public class Actor {
     protected final Board board;
 
     /**
@@ -20,13 +18,15 @@ public class Actor  {
 
     /**
      * Create a new actor.
+     *
      * @param board instance of board class.
-     * @param x position at the board.
-     * @param y position at the board.
+     * @param x     position at the board.
+     * @param y     position at the board.
      */
     public Actor(Board board, int x, int y) {
         this.board = board;
     }
+
     protected boolean isValidMoving(Direction direction) {
         boolean valid = false;
         if (direction == Direction.DOWN) {
@@ -43,6 +43,7 @@ public class Actor  {
 
     /**
      * Update coordinates of this actor.
+     *
      * @param direction for moving.
      */
     public void updateCoordinates(Direction direction) {
@@ -68,6 +69,7 @@ public class Actor  {
 
     /**
      * Return x axis position of actor.
+     *
      * @return x axis position.
      */
     public int getX() {
@@ -76,6 +78,7 @@ public class Actor  {
 
     /**
      * Return y axis position of actor.
+     *
      * @return y axis position of actor.
      */
     public int getY() {

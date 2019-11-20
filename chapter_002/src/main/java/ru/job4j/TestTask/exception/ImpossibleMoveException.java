@@ -1,4 +1,4 @@
-package ru.job4j.TestTask.Exception;
+package ru.job4j.testtask.exception;
 
 /**
  * Created by Comp on 03.07.2017.

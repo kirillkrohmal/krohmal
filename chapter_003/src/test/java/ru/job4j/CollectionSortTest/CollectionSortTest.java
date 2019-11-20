@@ -2,6 +2,7 @@ package ru.job4j.CollectionSortTest;
 
 import org.junit.Test;
 import ru.job4j.CollectionSort.CollectionSort;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;

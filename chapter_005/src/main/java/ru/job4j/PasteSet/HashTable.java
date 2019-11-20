@@ -8,7 +8,7 @@ public class HashTable {
     private PasteSet[] table;
     private int size;
 
-    public HashTable (int size) {
+    public HashTable(int size) {
         this.size = size;
         table = new PasteSet[size];
     }

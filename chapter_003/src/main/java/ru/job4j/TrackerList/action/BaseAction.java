@@ -12,12 +12,14 @@ public abstract class BaseAction implements UserAction {
     }
 
     public abstract int key();
+
     public abstract String name();
 
     public void BaseAction() {
         this.key();
         this.name();
     }
+
     @Override
     public String info() {
         return String.format("%s. %s", this.key(), this.name());

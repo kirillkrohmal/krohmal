@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class PointerTest {
     @Test
     public void whenAddOnePointAndTwoPointAndHasResult() {
-        Point pointer = new Point(1,1);
+        Point pointer = new Point(1, 1);
         double result = pointer.distanceTo(new Point(3, 5));
         double expected = 4.47D;
         assertThat(result, closeTo(expected, 0.1D));
@@ -20,7 +20,7 @@ public class PointerTest {
 
     @Test
     public void whenAddOnePointAndTwoPointAndHasResult2() {
-        Point pointer = new Point(1,1);
+        Point pointer = new Point(1, 1);
         double result = pointer.distanceTo(new Point(3, 5));
         double expected = 80.91D;
         assertThat(result, closeTo(expected, 0.1D));
@@ -28,7 +28,7 @@ public class PointerTest {
 
     @Test
     public void whenAddOnePointAndTwoPointAndHasResult3() {
-        Point pointer = new Point(1,1);
+        Point pointer = new Point(1, 1);
         double result = pointer.distanceTo(new Point(3, 5));
         double expected = 35.51D;
         assertThat(result, closeTo(expected, 0.1D));
@@ -36,7 +36,7 @@ public class PointerTest {
 
     @Test
     public void whenAddOnePointAndTwoPointAndHasResult4() {
-        Point pointer = new Point(1,1);
+        Point pointer = new Point(1, 1);
         double result = pointer.distanceTo(new Point(3, 5));
         double expected = 38.58D;
         assertThat(result, closeTo(expected, 0.1D));

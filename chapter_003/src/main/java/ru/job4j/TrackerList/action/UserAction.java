@@ -9,6 +9,7 @@ import ru.job4j.TrackerList.inputs.Input;
 public interface UserAction {
 
     int key();
+
     String info();
 
     void execute(Input input, Tracker tracker);

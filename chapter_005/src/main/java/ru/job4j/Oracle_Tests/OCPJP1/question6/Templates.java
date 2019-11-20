@@ -4,11 +4,11 @@ import java.util.List;
 
 /**
  * Какого типа должны быть result и in?
- *  1. ArrayList<String> in; List<CharSequence> result;
- *  2. List<String> in; List<Object> result;
- *  3. ArrayList<String> in; List result;
- *  4. List<CharSequence> in; List<CharSequence> result;
- *  5. ArrayList<Object> in; List<CharSequence> result;
+ * 1. ArrayList<String> in; List<CharSequence> result;
+ * 2. List<String> in; List<Object> result;
+ * 3. ArrayList<String> in; List result;
+ * 4. List<CharSequence> in; List<CharSequence> result;
+ * 5. ArrayList<Object> in; List<CharSequence> result;
  */
 public class Templates {
 

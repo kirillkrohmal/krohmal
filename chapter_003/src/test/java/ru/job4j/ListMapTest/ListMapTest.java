@@ -4,7 +4,9 @@ import org.junit.Test;
 import ru.job4j.ListMap.User;
 import ru.job4j.ListMap.UserConvert;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

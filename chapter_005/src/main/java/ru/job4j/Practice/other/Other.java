@@ -5,7 +5,7 @@ package ru.job4j.Practice.other;
  */
 public class Other {
 
-    public String hello3 () {
+    public String hello3() {
         String hello3 = "Hello";
         return hello3;
     }

@@ -8,7 +8,7 @@ public class ThreadPool {
         CountChar countChar = new CountChar("Это что означает");
         Time time = new Time();
 
-        new Thread () {
+        new Thread() {
             @Override
             public void run() {
                 countChar.run();

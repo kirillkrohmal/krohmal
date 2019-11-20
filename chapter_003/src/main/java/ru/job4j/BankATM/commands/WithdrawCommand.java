@@ -2,7 +2,6 @@ package ru.job4j.BankATM.commands;
 
 import ru.job4j.BankATM.CashMachine;
 import ru.job4j.BankATM.ConsoleHelper;
-import ru.job4j.BankATM.Operation;
 import ru.job4j.BankATM.exception.NotEnoughMoneyException;
 
 import java.util.ResourceBundle;
@@ -36,7 +35,7 @@ public class WithdrawCommand implements Command {
      */
 
     @Override
-    public void execute() throws NotEnoughMoneyException{
+    public void execute() throws NotEnoughMoneyException {
         ConsoleHelper.writeMessage(resourceBundle.getString("before"));
         /*try {
             if () {

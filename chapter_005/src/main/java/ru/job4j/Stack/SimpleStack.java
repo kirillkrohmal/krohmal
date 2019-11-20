@@ -1,6 +1,7 @@
 package ru.job4j.Stack;
 
 import ru.job4j.LinkedListContainer.LinkedListContainer;
+
 import java.util.EmptyStackException;
 
 /**
@@ -14,13 +15,14 @@ public class SimpleStack<T> extends LinkedListContainer<T> {
     public void push(T value) {
         add(value);
     }
+
     /**
      * Removes the object at the top of this stack and returns that
      * object as the value of this function.
      *
-     * @return  The object at the top of this stack (the last item
-     *          of the <tt>Vector</tt> object).
-     * @throws  EmptyStackException  if this stack is empty.
+     * @return The object at the top of this stack (the last item
+     * of the <tt>Vector</tt> object).
+     * @throws EmptyStackException if this stack is empty.
      */
     public T pop() {
         T result = (T) get(size() - 1);

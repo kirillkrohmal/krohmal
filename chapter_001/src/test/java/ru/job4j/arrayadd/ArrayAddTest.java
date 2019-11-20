@@ -27,6 +27,7 @@ public class ArrayAddTest {
         //assert
         assertThat(result, is(expected));
     }
+
     /**
      * Test plus.
      */
@@ -42,6 +43,7 @@ public class ArrayAddTest {
         //assert
         assertThat(result, is(expected));
     }
+
     /**
      * Test plus.
      */
@@ -57,6 +59,7 @@ public class ArrayAddTest {
         //assert
         assertThat(result, is(expected));
     }
+
     /**
      * Test plus.
      */

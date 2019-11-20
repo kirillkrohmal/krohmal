@@ -3,9 +3,6 @@ package ru.job4j.ExtraTasksTest.task_008;
 import org.junit.Test;
 import ru.job4j.ExtraTasks.task_008.ComputN;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
 /**
  * Created by Comp on 17.08.2017.
  */

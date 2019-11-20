@@ -45,6 +45,7 @@ public class Node<T> {
         }
         return false;
     }
+
     public T getValue() {
         return value;
     }

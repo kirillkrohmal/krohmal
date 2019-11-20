@@ -1,9 +1,7 @@
 package ru.job4j.TrackerList;
 
 import ru.job4j.TrackerList.action.UserAction;
-import ru.job4j.TrackerList.inputs.ConsoleInput;
 import ru.job4j.TrackerList.inputs.Input;
-import ru.job4j.TrackerList.inputs.StubInput;
 import ru.job4j.TrackerList.validator.ValidateInput;
 
 import java.util.ArrayList;

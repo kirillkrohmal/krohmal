@@ -24,7 +24,8 @@ public class Board {
 
     /**
      * Create a new board with given size.
-     * @param width of board.
+     *
+     * @param width  of board.
      * @param height of board.
      */
     public Board(final int width, final int height) {
@@ -47,6 +48,7 @@ public class Board {
 
     /**
      * return block from board.
+     *
      * @param x position at x axis.
      * @param y position at y axis.
      * @return block if valid axis value, otherwise false.
@@ -61,6 +63,7 @@ public class Board {
 
     /**
      * Return width of the board.
+     *
      * @return width.
      */
     public int getWidth() {
@@ -69,6 +72,7 @@ public class Board {
 
     /**
      * Return height of the board.
+     *
      * @return height of board.
      */
     public int getHeight() {
@@ -77,6 +81,7 @@ public class Board {
 
     /**
      * Validate that given number are acceptable for access to block.
+     *
      * @param x position of block.
      * @param y position of block.
      * @return true if all ok, otherwise false.

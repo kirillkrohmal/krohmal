@@ -2,8 +2,8 @@ package ru.job4j.TrackerTest;
 
 
 import org.junit.Test;
-import ru.job4j.TrackerSQL.Item;
-import ru.job4j.TrackerSQL.TrackerSQL;
+import ru.job4j.trackersql.Item;
+import ru.job4j.trackersql.TrackerSQL;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +17,7 @@ public class TrackerSQLTest {
     public void whenAddNewItemThenTrackerHasSameItem() throws Exception {
         Item add = null;
 
-        try(TrackerSQL tracker = new TrackerSQL()) {
+        try (TrackerSQL tracker = new TrackerSQL()) {
             assertNotNull(tracker.init());
             Item item = new Item("1", "test1", 1, "test1");
             add = tracker.add(item);
@@ -30,7 +30,7 @@ public class TrackerSQLTest {
     public void whenFindByIdNewItemThenTrackerHasSameItem() throws Exception {
         Item add = null;
 
-        try(TrackerSQL tracker = new TrackerSQL()) {
+        try (TrackerSQL tracker = new TrackerSQL()) {
             assertNotNull(tracker.init());
             Item item = new Item("1", "1", "test1", 1, "test1");
             add = tracker.add(item);
@@ -43,7 +43,7 @@ public class TrackerSQLTest {
     public void whenFindByNameNewItemThenTrackerHasSameItem() throws Exception {
         Item add = null;
 
-        try(TrackerSQL tracker = new TrackerSQL()) {
+        try (TrackerSQL tracker = new TrackerSQL()) {
             assertNotNull(tracker.init());
             Item item = new Item("1", "1", "test1", 1, "test1");
             add = tracker.add(item);
@@ -61,7 +61,7 @@ public class TrackerSQLTest {
     public void whenUpdateNewItemThenTrackerHasOtherItem() throws Exception {
         Item add = null;
 
-        try(TrackerSQL tracker = new TrackerSQL()) {
+        try (TrackerSQL tracker = new TrackerSQL()) {
             assertNotNull(tracker.init());
             Item item = new Item("1", "1", "test1", 1, "test1");
             add = tracker.add(item);
@@ -79,7 +79,7 @@ public class TrackerSQLTest {
         Item add = null;
         Item add1 = null;
 
-        try(TrackerSQL tracker = new TrackerSQL()) {
+        try (TrackerSQL tracker = new TrackerSQL()) {
             assertNotNull(tracker.init());
             Item item = new Item("1", "1", "test1", 1, "test1");
             Item item1 = new Item("2", "2", "test2", 2, "test2");
@@ -98,7 +98,7 @@ public class TrackerSQLTest {
         Item add = null;
         Item add1 = null;
 
-        try(TrackerSQL tracker = new TrackerSQL()) {
+        try (TrackerSQL tracker = new TrackerSQL()) {
             assertNotNull(tracker.init());
             Item item = new Item("1", "1", "test1", 1, "test1");
             Item item1 = new Item("2", "2", "test2", 2, "test2");

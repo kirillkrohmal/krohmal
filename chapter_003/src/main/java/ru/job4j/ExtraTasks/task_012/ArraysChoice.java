@@ -1,14 +1,12 @@
 package ru.job4j.ExtraTasks.task_012;
 
-import java.util.ArrayList;
-
 /**
  * Задан массив чисел со значениями 0 и 1. Нужно проверить, что в
  * массиве есть последовательности из трех и больше единиц. Например, [0, 1, 1] - false, [1, 1, 1] - true,
  * тоже перемудрил. ЗАводим локальную переменную-счетчик. Бежим по массиву и сравниваем числа с 1.
  * Если счетчик = 3 return true. Если счетчик ниразу не достиг значения 3 то false.
  */
-public class  ArraysChoice {
+public class ArraysChoice {
     private final int[] values;
 
     public ArraysChoice(final int[] values) {

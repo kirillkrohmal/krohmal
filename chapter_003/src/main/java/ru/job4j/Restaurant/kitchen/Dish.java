@@ -1,7 +1,5 @@
 package ru.job4j.Restaurant.kitchen;
 
-import java.util.List;
-
 /**
  * Created by Comp on 10.09.2017.
  */

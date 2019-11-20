@@ -1,7 +1,5 @@
 package ru.job4j.Bomberman;
 
-import javafx.scene.control.Cell;
-
 /**
  * Created by Comp on 01.11.2018.
  */

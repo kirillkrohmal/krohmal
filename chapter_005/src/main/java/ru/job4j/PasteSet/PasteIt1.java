@@ -1,6 +1,6 @@
 package ru.job4j.PasteSet;
 
-import java.util.*;
+import java.util.Hashtable;
 
 /**
  * Created by Comp on 14.10.2017.
@@ -22,7 +22,6 @@ public class PasteIt1<E> {
         for (int i = 0; i < hashtable.size(); i++) {
             //hashtable.put();
         }
-
 
 
         //map.put(e)

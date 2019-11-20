@@ -13,8 +13,6 @@ public class BombermanTest {
     public void whenExecute2ThreadThen2() throws InterruptedException {
 
 
-
-
         assertThat(null, is(2));
     }
 }

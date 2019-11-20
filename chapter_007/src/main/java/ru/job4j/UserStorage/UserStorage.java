@@ -13,8 +13,8 @@ public class UserStorage {
     private int size = 0;
     private final Object lock = new Object();
 
-    public  void add(User user) {
-        synchronized(this.lock) {
+    public void add(User user) {
+        synchronized (this.lock) {
             if (size == STORAGE - 1) {
                 System.out.println(String.format("Недостаточно места"));
             }
@@ -23,7 +23,7 @@ public class UserStorage {
     }
 
     public User update(User user) {
-        synchronized(this.lock) {
+        synchronized (this.lock) {
             for (int i = 0; i < storage.length; i++) {
                 if (storage[i] != null) {
 
@@ -35,7 +35,7 @@ public class UserStorage {
     }
 
     public void delete(int id) {
-        synchronized(this.lock) {
+        synchronized (this.lock) {
             for (int i = 0; i < storage.length; i++) {
                 if (storage[i] != null && storage[i].getId() == id) {
                     storage[i] = null;
@@ -45,8 +45,8 @@ public class UserStorage {
     }
 
     boolean transfer(int fromId, int toId, int amount) {
-        synchronized(this.lock) {
-            sum[fromId] =- amount;
+        synchronized (this.lock) {
+            sum[fromId] = -amount;
             sum[toId] += amount;
         }
         return false;

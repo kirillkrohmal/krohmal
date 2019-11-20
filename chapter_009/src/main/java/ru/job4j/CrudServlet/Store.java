@@ -1,6 +1,5 @@
 package ru.job4j.CrudServlet;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -8,13 +7,13 @@ import java.util.Map;
  */
 
 public interface Store {
-   void add(User user);
+    void add(User user);
 
-   void update(User user);
+    void update(User user);
 
-   void delete(User user);
+    void delete(User user);
 
-   User findById(User user);
+    User findById(User user);
 
-   Map findByAll();
+    Map findByAll();
 }

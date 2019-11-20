@@ -66,7 +66,7 @@ public class StubInputTest {
         tracker.add(item6);
         Item item7 = new Item("key009", "9", "test name9", "desc9", 2017);
         tracker.add(item7);
-        Item[] items = {item, item2, item3, item7, item5, item6 };
+        Item[] items = {item, item2, item3, item7, item5, item6};
         Input input = new StubInput(new String[]{
                 "3", "key006", item4.getId(), "test name6", "desc6", "6"
         });
@@ -91,7 +91,7 @@ public class StubInputTest {
         assertThat(tracker.findAll(), is(items));
     }
 
-     @Test
+    @Test
     public void whenUserDeleteItemThenTrackerHasItems3() {
         Tracker tracker = new Tracker();//key, id, name, desc, creat
         Item item = new Item("key003", "3", "test name3", "desc3", 2017);

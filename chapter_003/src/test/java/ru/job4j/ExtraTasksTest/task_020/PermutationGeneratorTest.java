@@ -3,15 +3,11 @@ package ru.job4j.ExtraTasksTest.task_020;
 import org.junit.Test;
 import ru.job4j.ExtraTasks.task_020.PermutationGenerator;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.core.Is.is;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by Comp on 20.08.2017.
@@ -19,7 +15,7 @@ import static org.junit.Assert.*;
 public class PermutationGeneratorTest {
     @Test
     public void simple() {
-        PermutationGenerator combine = new PermutationGenerator(new int[] {1, 2});
+        PermutationGenerator combine = new PermutationGenerator(new int[]{1, 2});
         List<List<Integer>> result = combine.generate();
         assertThat(result, is(
                 asList(
@@ -32,7 +28,7 @@ public class PermutationGeneratorTest {
 
     @Test
     public void three() {
-        PermutationGenerator combine = new PermutationGenerator(new int[] {1, 2, 3});
+        PermutationGenerator combine = new PermutationGenerator(new int[]{1, 2, 3});
         List<List<Integer>> result = combine.generate();
         assertThat(result, is(
                 asList(

@@ -1,9 +1,11 @@
 package ru.job4j.BankATM.commands;
 
-import ru.job4j.BankATM.*;
+import ru.job4j.BankATM.CashMachine;
+import ru.job4j.BankATM.ConsoleHelper;
+import ru.job4j.BankATM.CurrencyManipulator;
+import ru.job4j.BankATM.CurrencyManipulatorFactory;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -12,6 +14,7 @@ import java.util.ResourceBundle;
 public class InfoCommand implements Command {
     ResourceBundle resourceBundle = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + "info_en");
     //CurrencyManipulator currencyManipulator = new CurrencyManipulator();
+
     /**
      * В InfoCommand в цикле выведите [код валюты - общая сумма денег для выбранной валюты]
      * Запустим прогу и пополним счет на EUR 100 2 и USD 20 6, и посмотрим на INFO.

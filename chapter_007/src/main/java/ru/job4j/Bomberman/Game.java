@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by Comp on 20.11.2018.
  */
-public class Game  {
+public class Game {
     private static final Random RN = new Random();
 
     private Board board;
@@ -22,7 +22,6 @@ public class Game  {
         Thread thread = new Thread(String.valueOf(new Player(board, 14, 5)));
         thread.start();
     }
-
 
 
     private void initMonster() {

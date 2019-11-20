@@ -11,11 +11,11 @@ public class TemplateClass {
 }
 
 class X {
-  <X> X(X x) {
-    System.out.println(x);
-  }
+    <X> X(X x) {
+        System.out.println(x);
+    }
 }
 
 /**
  * Это тоже рабочий код, который печатает любой объект, который указать в конструкторе класса X.
-*/
+ */

@@ -10,10 +10,9 @@ import java.util.Comparator;
 public class PrimaryCodeComparator implements Comparator<FirmsCode> {
     @Override
     public int compare(FirmsCode o1, FirmsCode o2) {
-        if(o1.primaryKey.hashCode() > o2.primaryKey.hashCode()) {
+        if (o1.primaryKey.hashCode() > o2.primaryKey.hashCode()) {
             return 1;
-        }
-        else if(o1.primaryKey.hashCode() < o2.primaryKey.hashCode()) {
+        } else if (o1.primaryKey.hashCode() < o2.primaryKey.hashCode()) {
             return -1;
         }
         return 0;

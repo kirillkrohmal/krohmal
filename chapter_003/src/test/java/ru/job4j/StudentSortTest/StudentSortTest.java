@@ -1,15 +1,14 @@
 package ru.job4j.StudentSortTest;
 
 
-import java.util.List;
-import java.util.ArrayList;
-
 import org.junit.Test;
-
-import static junit.framework.Assert.assertEquals;
-
 import ru.job4j.StudentSort.Student;
 import ru.job4j.StudentSort.StudentSort;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by Comp on 05.08.2017.

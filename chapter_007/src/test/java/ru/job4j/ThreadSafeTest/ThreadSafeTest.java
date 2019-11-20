@@ -2,7 +2,6 @@ package ru.job4j.ThreadSafeTest;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.DynamicListThread.DynamicListThread.DynamicListThread;
 import ru.job4j.ThreadSafe.ThreadSafe;
 
 import java.util.Iterator;
@@ -44,18 +43,18 @@ public class ThreadSafeTest {
     public void iteratorTest3() {
         Iterator<Integer> iterator = threadSafe.iterator();
 
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(1) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(2) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(3) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(4) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(5) );
-        assertThat(iterator.hasNext(), is(true) );
-        assertThat(iterator.next(), is(6) );
-        assertThat(iterator.hasNext(), is( false) );
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(1));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(2));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(3));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(4));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(5));
+        assertThat(iterator.hasNext(), is(true));
+        assertThat(iterator.next(), is(6));
+        assertThat(iterator.hasNext(), is(false));
     }
 }
