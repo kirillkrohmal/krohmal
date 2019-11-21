@@ -1,7 +1,6 @@
 package ru.job4j.game;
 
 
-
 /**
  * Class Board.
  *
@@ -9,16 +8,19 @@ package ru.job4j.game;
  * @since 08.07.2017
  */
 public class Board {
-    /** @since 07.07.2017
+    /**
      * @param cells задает значение.
+     * @since 07.07.2017
      */
     private static Cell[][] cells;
-    /** @since 07.07.2017
+    /**
      * @param hight задает значение.
+     * @since 07.07.2017
      */
     public int hight;
-    /** @since 07.07.2017
+    /**
      * @param width задает значение.
+     * @since 07.07.2017
      */
     public int width;
 
@@ -27,6 +29,7 @@ public class Board {
         this.hight = hight;
         this.width = width;
     }
+
     /**
      * @since 07.07.2017
      * Метод field дл¤ класса Board проходит по массиву клеток

@@ -115,11 +115,7 @@ public class Operation {
                 for (List<Account> list2 : mapMoney.values()) {
                     for (Account account1 : list2) {
                         double keeper = value + account1.getValue();
-                        if (keeper > 0) {
-                            return true;
-                        } else {
-                            return false;
-                        }
+                        return keeper > 0;
                     }
                 }
             }

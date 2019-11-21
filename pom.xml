@@ -57,7 +57,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <shutdown>kill</shutdown> <!-- Use it if required-->
+                    <shutdown>kill</shutdown>
                 </configuration>
             </plugin>
             <plugin>

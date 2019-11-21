@@ -66,7 +66,7 @@ public class StartUI {
         int n = s.nextInt();
         amount = 10000;
 
-        if (hasMoney() == false) {
+        if (!hasMoney()) {
             System.out.println("Недостаточно денег");
         }
 
@@ -100,7 +100,10 @@ public class StartUI {
 
             case 4:
                 System.exit(0);
+
+            default:
         }
+
     }
 
     public static void main(String[] args) {

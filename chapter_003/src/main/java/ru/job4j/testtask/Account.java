@@ -30,20 +30,26 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "value=" + value +
-                ", requisites='" + requisites + '\'' +
-                '}';
+        return "Account{"
+                + "value=" + value
+                + ", requisites='" + requisites + '\''
+                + '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Account account = (Account) o;
 
-        if (value != account.value) return false;
+        if (value != account.value) {
+            return false;
+        }
         return requisites != null ? requisites.equals(account.requisites) : account.requisites == null;
     }
 

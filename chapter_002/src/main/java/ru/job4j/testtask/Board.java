@@ -47,18 +47,7 @@ public class Board {
 
         boolean check = false;
 
-        for (int i = 0; i < cells.length; i++) {
-            for (int j = 0; j < cells.length; j++) {
-                if (cells[i].equals(source)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            if (check) {
-                System.out.println(String.format("Фигура есть? : %s", check));
-            }
-        }
+
         return check;
     }
 

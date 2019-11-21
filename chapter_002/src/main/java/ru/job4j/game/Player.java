@@ -10,38 +10,44 @@ import java.util.Random;
  * @since 07.07.2017.
  */
 public class Player {
-    /** @since 07.07.2017
+    /**
      * @param x задает значение.
+     * @since 07.07.2017
      */
     int x;
-    /** @since 07.07.2017
+    /**
      * @param y задает значение.
+     * @since 07.07.2017
      */
     int y;
-    /** @since 07.07.2017
+    /**
      * @param game задает значение.
+     * @since 07.07.2017
      */
     public Board game;
-    /** @since 07.07.2017
+    /**
      * @param player задает значение.
+     * @since 07.07.2017
      */
     Player player;
-    /** @since 07.07.2017
+    /**
      * @param random задает значение.
+     * @since 07.07.2017
      */
-    private static final Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public Player(int x, int y, char[] cell) {
         this.x = x;
         this.y = y;
     }
+
     /**
      * @return random возвращает результат
      * @since 07.07.2017
      * Метод getRandomCell дл¤ класса Player создает значение рандомно
      */
     int getRandomCell() {
-        return random.nextInt();
+        return RANDOM.nextInt();
     }
 
     public int getX() {

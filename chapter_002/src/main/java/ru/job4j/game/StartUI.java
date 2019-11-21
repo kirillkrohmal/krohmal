@@ -7,28 +7,34 @@ package ru.job4j.game;
  * @since 15.07.2017.
  */
 public class StartUI {
-    /** @since 15.07.2017.
+    /**
      * @param player задает значение.
+     * @since 15.07.2017.
      */
     private static Player player;
-    /** @since 15.07.2017.
+    /**
      * @param index задает значение.
+     * @since 15.07.2017.
      */
     private static int index;
-    /** @since 15.07.2017.
+    /**
      * @param board задает значение.
+     * @since 15.07.2017.
      */
     Board board;
-    /** @since 15.07.2017.
+    /**
      * @param game задает значение.
+     * @since 15.07.2017.
      */
     StartUI game;
-    /** @since 15.07.2017.
+    /**
      * @param cells задает значение.
+     * @since 15.07.2017.
      */
     private static Cell cells;
-    /** @since 15.07.2017.
+    /**
      * @param position задает значение.
+     * @since 15.07.2017.
      */
     int position = 0;
 

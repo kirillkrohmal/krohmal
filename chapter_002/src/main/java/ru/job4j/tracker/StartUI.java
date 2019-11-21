@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.action.UserAction;
-import ru.job4j.tracker.inputs.ConsoleInput;
 import ru.job4j.tracker.inputs.Input;
+import ru.job4j.tracker.inputs.StubInput;
 import ru.job4j.tracker.validator.ValidateInput;
 
 /**
@@ -33,7 +33,7 @@ public class StartUI {
 
         }
         while (!"y".equals(this.input.ask("Exit? y")));
- /*
+/*
         System.out.println("0. Add new Item;");
         System.out.println("1. Show all items;");
         System.out.println("2. Edit item;");
@@ -71,13 +71,14 @@ public class StartUI {
                 tracker.findByName(name);
                 break;
             case 6:
-                break;*/
+                break;
+        }*/
     }
 
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        Input input = new ConsoleInput();
-        //Input input = new StubInput(new String[]{});
+        //Input input = new ConsoleInput();
+        Input input = new StubInput(new String[]{});
         new StartUI(input, tracker).init();
     }
 }

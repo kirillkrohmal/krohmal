@@ -6,13 +6,13 @@ import java.util.Random;
  * Created by Comp on 12.06.2017.
  */
 public class Tracker {
-    private final int STORAGE_SIZE = 100;
-    Item[] items = new Item[STORAGE_SIZE];
+    private final int storagesize = 100;
+    Item[] items = new Item[storagesize];
     private int size = 0;
-    private static final Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public Item add(Item item) {
-        if (size == STORAGE_SIZE - 1) {
+        if (size == storagesize - 1) {
             System.out.println(("Вводить заявки больше нельзя! Объем полон"));
         }
         item.setId(this.generateId());
@@ -22,7 +22,7 @@ public class Tracker {
 
     String generateId() {
         //return String.valueOf(new Random().nextInt(items.length) + 1);
-        return String.valueOf(System.currentTimeMillis() + random.nextInt());
+        return String.valueOf(System.currentTimeMillis() + RANDOM.nextInt());
     }
 
     public void delete(String id) {

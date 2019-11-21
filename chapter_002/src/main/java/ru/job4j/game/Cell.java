@@ -7,8 +7,9 @@ package ru.job4j.game;
  * @since 07.07.2017
  */
 public class Cell {
-    /** @since 07.07.2017
+    /**
      * @param cells задает значение.
+     * @since 07.07.2017
      */
     char[][] cells = new char[][]{};
 }
