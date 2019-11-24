@@ -6,6 +6,7 @@ import ru.job4j.iteratornum.IteratorNum;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+
 /**
  * Created by Comp on 21.09.2017.
  */

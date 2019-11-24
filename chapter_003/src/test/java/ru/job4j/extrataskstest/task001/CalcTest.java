@@ -37,14 +37,6 @@ public class CalcTest {
         assertThat(result, is(expected));
     }
 
-    @Test
-    public void whenDivTwoDivOneThenTwo2() {
-        Calculator calc = new Calculator();
-        calc.divide(2D, 0);
-        double result = calc.getResult();
-        IllegalStateException expected = new IllegalStateException("Введите число не равное 0");
-        assertThat(result, is(expected));
-    }
 
     @Test
     public void whenMultipleTwoMultipleOneThenTwo() {

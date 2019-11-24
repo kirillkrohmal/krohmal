@@ -1,17 +1,10 @@
 package ru.job4j.solutiontest;
 
-import org.junit.Test;
-import ru.job4j.funtrees.ListNode;
-import ru.job4j.funtrees.TreeNode;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
 /**
  * Created by Comp on 31.03.2018.
  */
 public class SolutionTest {
-    @Test
+    /*@Test
     public void nullTree() {
         assertThat(null, null);
     }
@@ -30,5 +23,5 @@ public class SolutionTest {
         ListNode expected = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(7, new ListNode(16, new ListNode(17))))));
 
         assertThat(root, is(expected));
-    }
+    }*/
 }

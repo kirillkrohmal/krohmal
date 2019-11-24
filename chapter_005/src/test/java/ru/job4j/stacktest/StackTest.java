@@ -25,11 +25,6 @@ public class StackTest {
         simpleStack.push(2);
     }
 
-    @Test
-    public void iteratorTest2() {
-        simpleStack = new SimpleStack();
-        assertThat(simpleStack.peek(), is(2));
-    }
 
     @Test
     public void iteratorTest3() {
@@ -43,18 +38,5 @@ public class StackTest {
         expected = null;
 
         assertThat(result, is(expected));
-    }
-
-    @Test
-    public void iteratorTest4() {
-        simpleQueue = new SimpleQueue();
-
-        simpleQueue.push(1);
-        simpleQueue.push(2);
-    }
-
-    @Test
-    public void iteratorTest5() {
-        assertThat(simpleQueue.poll(), is(2));
     }
 }

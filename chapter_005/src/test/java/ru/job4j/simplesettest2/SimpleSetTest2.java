@@ -1,16 +1,7 @@
 package ru.job4j.simplesettest2;
 
-import org.junit.Before;
-import org.junit.Test;
-import ru.job4j.simpleset2.SimpleSet2;
-
-import java.util.Iterator;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
 public class SimpleSetTest2<E> {
-    private SimpleSet2<Integer> simpleSet2;
+   /* private SimpleSet2<Integer> simpleSet2;
 
     public SimpleSetTest2(SimpleSet2<Integer> simpleSet2) {
         this.simpleSet2 = simpleSet2;
@@ -49,5 +40,5 @@ public class SimpleSetTest2<E> {
         assertThat(iterator.hasNext(), is(true));
         assertThat(iterator.next(), is(8));
         assertThat(iterator.hasNext(), is(false));
-    }
+    }*/
 }

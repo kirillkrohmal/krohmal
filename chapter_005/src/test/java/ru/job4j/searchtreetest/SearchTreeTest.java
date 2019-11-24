@@ -15,22 +15,6 @@ import static org.junit.Assert.assertThat;
 public class SearchTreeTest<E extends Comparable<E>> {
     private SearchTree tree;
 
-    @Test
-    public void whenElFindLastThen() {
-        tree = new SearchTree<E>();
-
-        tree.add(1);
-        tree.add(1);
-        tree.add(1);
-        tree.add(4);
-        tree.add(5);
-
-        assertThat(
-                tree.containsKey(6),
-                is(true)
-        );
-    }
-
     @Before
     public void iteratorTest2() {
         tree = new SearchTree<E>();

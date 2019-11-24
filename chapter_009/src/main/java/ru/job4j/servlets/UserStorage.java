@@ -7,7 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Created by Comp on 23.01.2019.
  */
 public class UserStorage {
-    private static final UserStorage instance = new UserStorage();
+    private static final UserStorage INSTANCE = new UserStorage();
     private List<User> users = new CopyOnWriteArrayList<User>();
 
     private UserStorage() {
@@ -15,7 +15,7 @@ public class UserStorage {
     }
 
     public static UserStorage getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public void add(User user) {

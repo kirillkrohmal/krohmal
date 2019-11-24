@@ -18,7 +18,7 @@ PS: всегда старайтесь использовать любой concur
 Однако понимать основные методы необходимо
 */
 public class Solution {
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         TransferObject transferObject = new TransferObject();
         ProducerTask producerTask = new ProducerTask(transferObject);
         ConsumerTask consumerTask = new ConsumerTask(transferObject);

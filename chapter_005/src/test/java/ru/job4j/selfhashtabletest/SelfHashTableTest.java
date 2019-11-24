@@ -6,6 +6,7 @@ import ru.job4j.selfhashtable.SelfHashTable;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+
 /**
  * Created by user on 15.12.2017.
  */

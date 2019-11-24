@@ -42,13 +42,23 @@ public class Node<E> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Node<?> node = (Node<?>) o;
 
-        if (key != null ? !key.equals(node.key) : node.key != null) return false;
-        if (left != null ? !left.equals(node.left) : node.left != null) return false;
+        if (key != null ? !key.equals(node.key) : node.key != null) {
+            return false;
+        }
+
+        if (left != null ? !left.equals(node.left) : node.left != null) {
+            return false;
+        }
+
         return right != null ? right.equals(node.right) : node.right == null;
     }
 

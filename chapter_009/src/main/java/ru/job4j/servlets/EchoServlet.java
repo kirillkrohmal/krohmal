@@ -17,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class EchoServlet extends HttpServlet {
 
-    private static final Logger log = LoggerFactory.getLogger(EchoServlet.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EchoServlet.class);
 
 
     private List<String> users = new CopyOnWriteArrayList<>();

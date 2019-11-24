@@ -5,6 +5,7 @@ import ru.job4j.extratasks.task011.ArraysNumb;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+
 /**
  * Created by Comp on 20.08.2017.
  */

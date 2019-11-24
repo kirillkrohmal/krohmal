@@ -1,16 +1,10 @@
 package ru.job4j.nodetest;
 
-import org.junit.Test;
-import ru.job4j.node.Node;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
 /**
  * Created by Comp on 23.10.2017.
  */
 public class NodeTest {
-    private final int three = 3;
+   /* private final int three = 3;
     private final int four = 4;
 
     @Test
@@ -48,5 +42,5 @@ public class NodeTest {
         boolean result = node.hasCycle(first);
 
         assertThat(result, is(true));
-    }
+    }*/
 }

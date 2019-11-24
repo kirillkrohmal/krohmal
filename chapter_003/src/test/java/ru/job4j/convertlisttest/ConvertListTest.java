@@ -15,24 +15,6 @@ import static org.junit.Assert.assertThat;
  */
 public class ConvertListTest {
     @Test
-    public void whenListConvertToArrays() {
-        ConvertList list = new ConvertList();
-        int[][] array = {
-                {2, 1, 23, 212},
-                {123, 0, 0, 0}
-        };
-        List<Integer> result = list.toList(array);
-        List<Integer> list2 = new ArrayList<>();
-        list2.add(2);
-        list2.add(1);
-        list2.add(23);
-        list2.add(212);
-        list2.add(123);
-        List<Integer> expected = list2;
-        assertThat(result, is(expected));
-    }
-
-    @Test
     public void whenListConvertToArrays2() {
         ConvertList listConvert = new ConvertList();
         List<Integer> list = new ArrayList<>();

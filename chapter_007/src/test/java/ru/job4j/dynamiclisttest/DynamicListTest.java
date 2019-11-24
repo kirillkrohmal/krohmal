@@ -2,7 +2,7 @@ package ru.job4j.dynamiclisttest;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.DynamicListThread.DynamicListThread.DynamicListThread;
+import ru.job4j.dynamiclistthread.dynamiclistthread.DynamicListThread;
 
 import java.util.Iterator;
 
