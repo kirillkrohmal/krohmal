@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class ConnectionRollback {
     public static Connection create(Connection connection) throws SQLException {
         connection.setAutoCommit(false);
+
         return (Connection) Proxy.newProxyInstance(
                 ConnectionRollback.class.getClassLoader(),
                 new Class[]{Connection.class},
