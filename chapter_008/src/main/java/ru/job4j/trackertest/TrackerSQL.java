@@ -178,6 +178,6 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     @Override
     public void close() throws Exception {
-        System.exit(0);
+        connection.close();
     }
 }

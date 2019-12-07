@@ -3,7 +3,7 @@ package ru.job4j.integrationtrackersqltest;
 import org.junit.Test;
 import ru.job4j.integrationtests.ConnectionRollback;
 import ru.job4j.integrationtests.Item;
-import ru.job4j.integrationtests.TrackerSQL;
+import ru.job4j.integrationtests.IntegrationSQL;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -14,9 +14,9 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 
-public class TrackerSQLTest {
+public class IntegrationSQLTest {
     public Connection init() {
-        try (InputStream in = TrackerSQL.class.getClassLoader().getResourceAsStream("app.properties")) {
+        try (InputStream in = IntegrationSQL.class.getClassLoader().getResourceAsStream("app.properties")) {
             Properties config = new Properties();
             config.load(in);
             Class.forName(config.getProperty("driver-class-name"));
@@ -33,7 +33,7 @@ public class TrackerSQLTest {
 
     @Test
     public void createItem() throws Exception {
-        try (TrackerSQL tracker = new TrackerSQL(ConnectionRollback.create(this.init()))) {
+        try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
             tracker.add(new Item("name", "desc"));
             assertThat(tracker.findByName("name").length, is(1));
         }
