@@ -1,4 +1,4 @@
-package ru.job4j.integrationSQL;
+package ru.job4j.trackersql;
 
 
 import java.util.Objects;
@@ -29,11 +29,6 @@ public class Item {
         this.key = key;
         this.name = name;
         this.creat = created;
-        this.description = description;
-    }
-
-    public Item(String name, String description) {
-        this.name = name;
         this.description = description;
     }
 

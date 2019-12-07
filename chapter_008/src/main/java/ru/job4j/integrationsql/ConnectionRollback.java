@@ -1,4 +1,4 @@
-package ru.job4j.integrationSQL;
+package ru.job4j.integrationsql;
 
 import java.lang.reflect.Proxy;
 import java.sql.Connection;

@@ -1,9 +1,9 @@
 package ru.job4j.integrationsqltest;
 
 import org.junit.Test;
-import ru.job4j.integrationSQL.ConnectionRollback;
-import ru.job4j.integrationSQL.Item;
-import ru.job4j.integrationSQL.IntegrationSQL;
+import ru.job4j.integrationsql.ConnectionRollback;
+import ru.job4j.integrationsql.Item;
+import ru.job4j.integrationsql.IntegrationSQL;
 
 import java.io.InputStream;
 import java.sql.Connection;

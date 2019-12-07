@@ -1,4 +1,4 @@
-package ru.job4j.trackerSQL;
+package ru.job4j.integrationsql;
 
 import java.sql.SQLException;
 import java.util.zip.DataFormatException;
