@@ -2,6 +2,8 @@ package ru.job4j.trackertest;
 
 
 import org.junit.Test;
+import ru.job4j.trackerSQL.Item;
+import ru.job4j.trackerSQL.TrackerSQL;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;

@@ -1,4 +1,4 @@
-package ru.job4j.integrationtests;
+package ru.job4j.integrationSQL;
 
 import java.sql.SQLException;
 import java.util.zip.DataFormatException;

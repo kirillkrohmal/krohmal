@@ -1,30 +1,24 @@
-package ru.job4j.integrationtests;
+package ru.job4j.trackerSQL;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 /**
  * Created by Comp on 12.06.2017.
  */
-public class IntegrationSQL implements ITracker, AutoCloseable {
+public class TrackerSQL implements ITracker, AutoCloseable {
     private int size = 0;
     private Connection connection;
 
-
-    public IntegrationSQL(Connection connection) {
-        this.connection = connection;
-    }
-
-
     @Override
     public Item add(Item item) {
-        String s1 = "INSERT INTO trackersql(name, description) VALUES (?, ?)";
+        String s1 = "INSERT INTO trackersql(key, name, creat, description) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(s1);) {
-            statement.setString(1, item.getName());
-            statement.setString(2, item.getDescription());
+            statement.setString(1, item.getKey());
+            statement.setString(2, item.getName());
+            statement.setLong(3, item.getCreated());
+            statement.setString(4, item.getDescription());
 
             statement.executeUpdate();
 
@@ -87,11 +81,11 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
 
     @Override
     public Item[] findByName(String name) throws SQLException {
-        List<Item> items = new ArrayList<>();
+        Item[] result = null;
         ResultSet resultSet;
 
         try (Connection connection = init()) {
-            String s = "SELECT id, name, description FROM trackersql WHERE name = ?";
+            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE name = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
             resultSet = statement.executeQuery();
@@ -99,13 +93,13 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
             while (resultSet.next()) {
                 Item item = new Item();
 
-                item.setName(String.valueOf(resultSet.getInt("id")));
                 item.setName(resultSet.getString("name"));
-                item.setName(resultSet.getString("description"));
-
+                for (int i = 0; i < size; i++) {
+                    result[i] = item;
+                }
             }
         }
-        return items.toArray(new Item[0]);
+        return result;
     }
 
     @Override
@@ -158,7 +152,7 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
     public Connection init() throws SQLException {
         Properties config = new Properties();
 
-        try (InputStream in = IntegrationSQL.class.getClassLoader().getResourceAsStream("app.properties")) {
+        try (InputStream in = TrackerSQL.class.getClassLoader().getResourceAsStream("app.properties")) {
             config.load(in);
             DriverManager.registerDriver(new org.postgresql.Driver());
         } catch (Exception e) {
