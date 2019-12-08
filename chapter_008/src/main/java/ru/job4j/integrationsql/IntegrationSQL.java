@@ -94,6 +94,7 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
             String s = "SELECT id, name, description FROM trackersql WHERE name = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
+            statement.setString(1, "name");
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {

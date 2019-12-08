@@ -35,9 +35,9 @@ public class IntegrationSQLTest {
     public void createItem() throws Exception {
         try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
             tracker.add(new Item("name", "desc"));
-            Item item = new Item( "name", "desc");
+            //Item item = new Item( "name", "desc");
 
-            assertThat(tracker.findByName("name").length, is(item));
+            assertThat(tracker.findByName("name").length, is(1));
         }
     }
 }
