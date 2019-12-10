@@ -1,9 +1,9 @@
 package ru.job4j.integrationsqltest;
 
-import org.junit.Test;
+import org.junit.Ignore;
 import ru.job4j.integrationsql.ConnectionRollback;
-import ru.job4j.integrationsql.Item;
 import ru.job4j.integrationsql.IntegrationSQL;
+import ru.job4j.integrationsql.Item;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -31,7 +31,8 @@ public class IntegrationSQLTest {
         }
     }
 
-    @Test
+
+    @Ignore
     public void createItem() throws Exception {
         try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
             tracker.add(new Item("name", "desc"));

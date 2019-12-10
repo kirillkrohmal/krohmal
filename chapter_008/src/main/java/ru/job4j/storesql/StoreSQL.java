@@ -6,10 +6,11 @@ import java.util.List;
 
 public class StoreSQL implements AutoCloseable {
     private Config config;
-    private Connection connect = config.init();
+    private Connection connect;
 
     public StoreSQL(Config config) {
         this.config = config;
+        connect = config.init();
     }
 
     public void generate(int size) {
