@@ -41,7 +41,7 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
                 String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?) WHERE id=?";
                 PreparedStatement statement = connection.prepareStatement(s1);
 
-                statement.setString(1, id);
+                statement.setString(1, item.getId());
                 statement.setString(2, item.getKey());
                 statement.setString(3, item.getName());
                 statement.setLong(4, item.getCreated());
@@ -103,7 +103,6 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
                 item.setName(String.valueOf(resultSet.getInt("id")));
                 item.setName(resultSet.getString("name"));
                 item.setName(resultSet.getString("description"));
-
             }
         }
         return items.toArray(new Item[0]);
@@ -111,26 +110,30 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
 
     @Override
     public Item findById(String id) {
-        Item result = null;
+        Item item = new Item();
 
         try (Connection connection = init()) {
-            String s = "SELECT id FROM trackersql WHERE id = ?";
+            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery();
-            result.setId(resultSet.getString("id"));
 
-            statement.executeUpdate();
+            while (resultSet.next()) {
+                item.setId(resultSet.getString("id"));
+                item.setKey(resultSet.getString("key"));
+                item.setName(resultSet.getString("name"));
+                item.setCreat(resultSet.getLong("creat"));
+                item.setDescription(resultSet.getString("description"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return result;
+        return item;
     }
 
     @Override
     public Item[] findAll() {
-        Item[] items = new Item[size];
+        List<Item> items = new ArrayList<>();
 
         try (Connection connection = init()) {
             String s = "SELECT id, key, name, creat, description FROM trackersql";
@@ -145,15 +148,11 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
                 item.setName(resultSet.getString("name"));
                 item.setCreat(resultSet.getLong("creat"));
                 item.setDescription(resultSet.getString("description"));
-
-                for (int i = 0; i < size; i++) {
-                    items[i] = item;
-                }
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return items;
+        return items.toArray(new Item[0]);
     }
 
     public Connection init() throws SQLException {
