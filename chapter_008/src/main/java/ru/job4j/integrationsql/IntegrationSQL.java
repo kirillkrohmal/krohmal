@@ -36,16 +36,13 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
 
     @Override
     public void replace(String id, Item item) {
-        try (Connection connection = init()) {
+        String s1 = "INSERT INTO trackersql(id, name, description) VALUES (?, ?, ?) WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(s1)) {
             if (id != null) {
-                String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?) WHERE id=?";
-                PreparedStatement statement = connection.prepareStatement(s1);
 
                 statement.setString(1, item.getId());
-                statement.setString(2, item.getKey());
-                statement.setString(3, item.getName());
-                statement.setLong(4, item.getCreated());
-                statement.setString(5, item.getDescription());
+                statement.setString(2, item.getName());
+                statement.setString(3, item.getDescription());
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,11 +51,9 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
 
     @Override
     public void delete(String id) {
-        try (Connection connection = init()) {
-            String s = "DELETE FROM trackersql WHERE id = ?";
-            PreparedStatement statement = connection.prepareStatement(s);
+        String s = "DELETE FROM trackersql WHERE trackersql.id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
             statement.setInt(1, Integer.valueOf(id));
-
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,16 +62,14 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
 
     public void update(Item newItem) {
         Long nextId = null;
+        String s = "UPDATE trackersql SET id = ?, name = ?, description = ?)";
 
-        try (Connection connection = init()) {
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
             if (nextId != null) {
-                String s = "UPDATE trackersql SET key = ?, name = ?, creat = ?, description = ?) WHERE id = ?";
-                PreparedStatement statement = connection.prepareStatement(s);
+
                 statement.setLong(1, nextId);
-                statement.setString(2, newItem.getKey());
-                statement.setString(3, newItem.getName());
-                statement.setLong(4, newItem.getCreat());
-                statement.setString(5, newItem.getDescription());
+                statement.setString(2, newItem.getName());
+                statement.setString(3, newItem.getDescription());
 
                 statement.executeUpdate();
             }
@@ -89,20 +82,19 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
     public Item[] findByName(String name) throws SQLException {
         List<Item> items = new ArrayList<>();
         ResultSet resultSet;
+        String s = "SELECT * FROM trackersql WHERE trackersql.name = ?";
 
-        try (Connection connection = init()) {
-            String s = "SELECT id, name, description FROM trackersql WHERE name = ?";
-            PreparedStatement statement = connection.prepareStatement(s);
-
-            statement.setString(1, "name");
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
+            statement.setString(1, name);
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Item item = new Item();
 
-                item.setName(String.valueOf(resultSet.getInt("id")));
+                item.setId(resultSet.getString("id"));
                 item.setName(resultSet.getString("name"));
-                item.setName(resultSet.getString("description"));
+                item.setDescription(resultSet.getString("description"));
+                items.add(item);
             }
         }
         return items.toArray(new Item[0]);
@@ -111,18 +103,15 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
     @Override
     public Item findById(String id) {
         Item item = new Item();
+        String s = "SELECT * FROM trackersql WHERE id = ?";
 
-        try (Connection connection = init()) {
-            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
-            PreparedStatement statement = connection.prepareStatement(s);
-
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
+            statement.setInt(1, Integer.parseInt(id));
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 item.setId(resultSet.getString("id"));
-                item.setKey(resultSet.getString("key"));
                 item.setName(resultSet.getString("name"));
-                item.setCreat(resultSet.getLong("creat"));
                 item.setDescription(resultSet.getString("description"));
             }
         } catch (SQLException e) {
@@ -135,19 +124,17 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
     public Item[] findAll() {
         List<Item> items = new ArrayList<>();
 
-        try (Connection connection = init()) {
-            String s = "SELECT id, key, name, creat, description FROM trackersql";
-            PreparedStatement statement = connection.prepareStatement(s);
+        String s = "SELECT * FROM trackersql";
 
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Item item = new Item();
                 item.setId(resultSet.getString("id"));
-                item.setKey(resultSet.getString("key"));
                 item.setName(resultSet.getString("name"));
-                item.setCreat(resultSet.getLong("creat"));
                 item.setDescription(resultSet.getString("description"));
+                items.add(item);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

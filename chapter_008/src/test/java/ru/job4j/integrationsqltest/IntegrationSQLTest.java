@@ -50,7 +50,7 @@ public class IntegrationSQLTest {
             tracker.replace(add.getId(), new Item("name", "desc"));
             Item item = new Item("name", "desc");
 
-            assertThat(tracker.findById(add.getId()), is(item));
+            assertThat(tracker.findAll(), is(item));
         }
     }
 
@@ -58,11 +58,12 @@ public class IntegrationSQLTest {
     public void deleteItem() throws Exception {
         try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
             Item add = tracker.add(new Item("name", "desc"));
-            tracker.delete("1");
+            Item add1 = tracker.add(new Item("name1", "desc1"));
+            tracker.add(add);
+            tracker.add(add1);
+            tracker.delete(add.getId());
 
-            Item item = null;
-
-            assertThat(tracker.findById(add.getId()), is(item));
+            assertThat(tracker.findAll(), is(add1));
         }
     }
 
@@ -70,10 +71,11 @@ public class IntegrationSQLTest {
     public void updateItem() throws Exception {
         try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
             Item add = tracker.add(new Item("name", "desc"));
-            tracker.update(new Item("test2", "test2"));
+            tracker.add(add);
             Item item = new Item("test2", "test2");
+            tracker.update(item);
 
-            assertThat(tracker.findByName(add.getName()), is(item));
+            assertThat(tracker.findAll(), is(item));
         }
     }
 
@@ -84,6 +86,26 @@ public class IntegrationSQLTest {
             Item item = new Item("name", "desc");
 
             assertThat(tracker.findAll(), is(item));
+        }
+    }
+
+    @Test
+    public void findById() throws Exception {
+        try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
+            tracker.add(new Item("name", "desc"));
+            Item item = new Item("name", "desc");
+
+            assertThat(tracker.findById(item.getId()), is(item));
+        }
+    }
+
+    @Test
+    public void findByName() throws Exception {
+        try (IntegrationSQL tracker = new IntegrationSQL(ConnectionRollback.create(this.init()))) {
+            tracker.add(new Item("name", "desc"));
+            Item item = new Item("name", "desc");
+
+            assertThat(tracker.findByName(item.getName()), is(item));
         }
     }
 }
