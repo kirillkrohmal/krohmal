@@ -27,7 +27,7 @@ public class StoreSQL implements AutoCloseable {
     }
 
     public String findAll() {
-        String s1 = "SELECT size FROM entry";
+        String s1 = "SELECT field FROM items";
 
         try (PreparedStatement statement = connect.prepareStatement(s1);) {
             statement.setString(1, s1);
@@ -49,7 +49,7 @@ public class StoreSQL implements AutoCloseable {
         Statement statement = conn.createStatement();
 
         try {
-            String sql = "CREATE TABLE entry " + "(field INTEGER not NULL)";
+            String sql = "CREATE TABLE items " + "(field INTEGER not NULL)";
 
             statement.executeUpdate(sql);
             System.out.println("Table successfully created...");

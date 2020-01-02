@@ -14,7 +14,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     @Override
     public Item add(Item item) {
         String s1 = "INSERT INTO trackersql(key, name, creat, description) VALUES (?, ?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(s1);) {
+        try (PreparedStatement statement = connection.prepareStatement(s1)) {
             statement.setString(1, item.getKey());
             statement.setString(2, item.getName());
             statement.setLong(3, item.getCreated());
@@ -85,7 +85,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         ResultSet resultSet;
 
         try (Connection connection = init()) {
-            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE name = ?";
+            String s = "SELECT * FROM trackersql WHERE name = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
             resultSet = statement.executeQuery();
@@ -107,7 +107,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item result = null;
 
         try (Connection connection = init()) {
-            String s = "SELECT id FROM trackersql WHERE id = ?";
+            String s = "SELECT * FROM trackersql WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery();
@@ -126,7 +126,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item[] items = new Item[size];
 
         try (Connection connection = init()) {
-            String s = "SELECT id, key, name, creat, description FROM trackersql";
+            String s = "SELECT * FROM trackersql";
             PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery();
