@@ -1,7 +1,7 @@
-package ru.job4j.crudservlet;
+package ru.job4j.servlet;
 
 
-import ru.job4j.servlets.UserStorage;
+import ru.job4j.ValidateService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +13,8 @@ import java.io.IOException;
 /**
  * Created by Comp on 06.11.2017.
  */
-public class UserUpdateServlet extends HttpServlet {
-
+public class UserServlet extends HttpServlet {
+    private final ValidateService logic = ValidateService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,11 +26,25 @@ public class UserUpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        final ru.job4j.servlets.User user = new ru.job4j.servlets.User(req.getParameter("login"), req.getParameter("email"));
-        System.out.println(user);
-        UserStorage.getInstance().add(user);
-        resp.sendRedirect(String.format("%s/index.jsp", req.getContextPath()));
+
+
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+
+
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+
+
+    }
+
+
 }
 
 

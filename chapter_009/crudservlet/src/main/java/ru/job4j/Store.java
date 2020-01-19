@@ -1,4 +1,6 @@
-package ru.job4j.crudservlet;
+package ru.job4j;
+
+import ru.job4j.model.User;
 
 import java.util.Map;
 

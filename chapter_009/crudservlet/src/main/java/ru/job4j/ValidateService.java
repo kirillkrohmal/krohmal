@@ -1,4 +1,6 @@
-package ru.job4j.crudservlet;
+package ru.job4j;
+
+import ru.job4j.model.User;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -8,8 +10,7 @@ import java.util.regex.Pattern;
  */
 public class ValidateService {
     private static final ValidateService SINGLETON_INSTANCE = new ValidateService();
-    private static final MemoryStore STORE = MemoryStore.getInstance();
-    private String login;
+    private final Store logic = MemoryStore.getInstance();    private String login;
     private User user;
 
 

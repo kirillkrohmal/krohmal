@@ -4,12 +4,13 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
+
     <servlet>
-        <servlet-name>EchoServlet</servlet-name>
-        <servlet-class>ru.job4j.servlets.EchoServlet</servlet-class>
+        <servlet-name>EchoServlet2</servlet-name>
+        <servlet-class>ru.job4j.servlets2.EchoServlet2</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>EchoServlet</servlet-name>
+        <servlet-name>EchoServlet2</servlet-name>
         <url-pattern>/echo</url-pattern>
     </servlet-mapping>
 </web-app>

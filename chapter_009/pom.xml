@@ -1,7 +1,16 @@
-<project>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>junior</artifactId>
+        <groupId>ru.job4j</groupId>
+        <version>2.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
+
     <artifactId>chapter_009</artifactId>
-    <version>2.0</version>
+    <packaging>pom</packaging>
     <modules>
         <module>crudservlet</module>
         <module>filters</module>
@@ -9,12 +18,7 @@
         <module>servlets2</module>
         <module>userservlet</module>
     </modules>
-    <packaging>pom</packaging>
-    <parent>
-        <groupId>ru.job4j</groupId>
-        <artifactId>junior</artifactId>
-        <version>2.0</version>
-    </parent>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
@@ -43,4 +47,5 @@
         </dependency>
 
     </dependencies>
+
 </project>
