@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>CrudServlet</servlet-name>
-        <servlet-class>ru.job4j.crudservlet.UsersServlet</servlet-class>
+        <servlet-class>UsersServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
