@@ -1,5 +1,7 @@
-package ru.job4j;
+package ru.job4j.validate;
 
+import ru.job4j.repository.MemoryStore;
+import ru.job4j.repository.Store;
 import ru.job4j.model.User;
 
 import java.util.List;

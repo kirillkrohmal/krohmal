@@ -8,19 +8,19 @@
 <body>
 
 <form action="<%=request.getContextPath()%>/echo" method="post">
-    Login : <input type="text" name="login"><br/>
-    Email : <input type="text" name="email"><br/>
+    Login : <label>
+    <input type="text" name="login">
+</label><br/>
+    Email : <label>
+    <input type="text" name="email">
+</label><br/>
     <input type="submit">
 </form>
 <br/>
 
 <table>
-
-    <th>
     <td>login</td>
     <td>email</td>
-    </th>
-
     <% for (User user : UserStorage.getInstance().getUsers()) {%>
     <tr>
         <td><%=user.getLogin()%>></td>
@@ -29,7 +29,6 @@
     <% } %>
 
 </table>
-
 
 </body>
 </html>

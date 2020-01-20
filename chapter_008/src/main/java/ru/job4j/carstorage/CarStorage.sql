@@ -25,53 +25,54 @@ name varchar(200),
 
 
 
-insert into Машина(id, name) values (1, 'СЫР', 3, '2018-11-12 06:08:07', 654 )
+insert into Машина(id, name) values (1, 'Mersedes');
 
-insert into Кузов(id, name) values (2, 'конфеты', 455, '2018-15-11 12:13:14', 67 )
+insert into Кузов(id, name, Машина_id) values (1, 'универсал', 1);
 
-insert into Двигатель(id, name) values (3, 'печенье', 7, '2018-15-11 12:13:14', 6 )
+insert into Двигатель(id, name, Машина_id) values (1, 'b-26', 1);
 
-insert into Коробка_передач(id, name) values (4, 'капуста', 5, '2018-11-12 06:08:07', 654 )
+insert into Коробка_передач(id, name, Машина_id) values (1, 'ZF', 1);
 
-insert into Кузов(id, name) values (5, 'яблоки', 2, '2018-15-11 12:13:14', 67 )
+insert into Машина(id, name) values (2, 'BMW');
 
-insert into Коробка_передач(id, name) values (6, 'мед', 29, '2018-15-11 12:13:14', 6 )
+insert into Кузов(id, name, Машина_id) values (2, 'купе', 2);
 
-insert into Двигатель(id, name) values (7, 'редиска', 55, '2018-11-12 06:08:07', 654 )
+insert into Двигатель(id, name, Машина_id) values (2, 'm252', 2);
 
-insert into Машина(id, name) values (8, 'мороженое', 27, '2018-15-11 12:13:14', 67 )
+insert into Коробка_передач(id, name, Машина_id) values (2, 'ZF', 2);
 
-insert into Коробка_передач(id, name) values (9, 'МОЛОКО', 25, '2018-15-11 12:13:14', 6 )
+insert into Машина(id, name) values (3, 'Opel');
 
-insert into Кузов(id, name) values (10, 'абрикосы', 45, '2018-11-12 06:08:07', 654 )
+insert into Кузов(id, name, Машина_id) values (3, 'универсал', 3);
 
-insert into Машина(id, name) values (11, 'груши', 74, '2018-15-11 12:13:14', 67 )
+insert into Двигатель(id, name, Машина_id) values (3, 'D53', 3);
 
-insert into Двигатель(id, name) values (12, 'ягоды', 36, '2018-15-11 12:13:14', 6 )
+insert into Коробка_передач(id, name, Машина_id) values (3, 'F17', 3);
 
-insert into Коробка_передач(id, name) values (13, 'картофель', 27, '2018-11-12 06:08:07', 654 )
+insert into Машина(id, name) values (4, 'Chevrolet');
 
-insert into Машина(id, name) values (14, 'газировка', 2, '2018-15-11 12:13:14', 67 )
+insert into Кузов(id, name, Машина_id) values (4, 'седан', 4);
 
-insert into Коробка_передач(id, name) values (15, 'рыба', 6, '2018-15-11 12:13:14', 6 )
+insert into Двигатель(id, name, Машина_id) values (4, 'G54', 4);
 
-insert into Двигатель(id, name) values (16, 'апельсины', 4, '2018-11-12 06:08:07', 654 )
+insert into Коробка_передач(id, name, Машина_id) values (4, 'F14D3', 4);
 
-insert into Кузов(id, name) values (17, 'арбуз', 5, '2018-15-11 12:13:14', 67 )
+insert into Машина(id, name) values (5, 'Audi');
 
-insert into Коробка_передач(id, name) values (18, 'дыня', 25, '2018-15-11 12:13:14', 6 )
+insert into Кузов(id, name, Машина_id) values (5, 'купе', 5);
 
-insert into Двигатель(id, name) values (19, 'мясо', 95, '2018-11-12 06:08:07', 654 )
+insert into Двигатель(id, name, Машина_id) values (5, 'b-26', 5);
 
-insert into Кузов(id, name) values (20, 'пирожные', 85, '2018-15-11 12:13:14', 67 )
+insert into Коробка_передач(id, name, Машина_id) values (5, 'ZF', 5);
 
-insert into Коробка_передач(id, name) values (21, 'хлеб', 555, '2018-15-11 12:13:14', 6 )
+insert into Машина(id, name) values (6, 'Lada');
 
-insert into Машина(id, name) values (22, 'лук', 34, '2018-11-12 06:08:07', 654 )
+insert into Кузов(id, name, Машина_id) values (6, 'седан', 6);
 
-insert into product(id, name) values (23, 'чеснок', 5, '2018-15-11 12:13:14', 67 )
+insert into Двигатель(id, name, Машина_id) values (6, 'Mt424', 6);
 
-insert into product(id, name) values (24, 'кефир', 45, '2018-15-11 12:13:14', 6 )
+insert into Коробка_передач(id, name, Машина_id) values (6, 'АМТ', 6);
+
 
 
 select * from Машина

@@ -1,7 +1,8 @@
-package ru.job4j;
+package ru.job4j.repository;
 
 
 import ru.job4j.model.User;
+import ru.job4j.validate.ValidateService;
 
 import java.util.List;
 import java.util.Map;
