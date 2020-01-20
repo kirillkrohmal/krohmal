@@ -61,6 +61,7 @@ insert into product(id, name, type_id, expired_date, price) values (24, 'кеф�
 
 
 
+
 insert into type(id, name) values (1, 'СЫР');
 
 insert into type(id, name) values (2, 'конфеты');
@@ -119,7 +120,6 @@ select COUNT(type.name) as product_name, type.name as type_name from product inn
 select * FROM type where name = 'СЫР' union all select name FROM type where name = 'МОЛОКО';
 select type.name FROM type group by type.name having COUNT(type.name) < 10;
 select product.id, product.name as product_name, type.name as type_name from product inner join type on product.type_id = type.id order by id, type.name;
-
 
 
 
