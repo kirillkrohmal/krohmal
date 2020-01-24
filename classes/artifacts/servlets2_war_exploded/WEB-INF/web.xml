@@ -11,6 +11,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>EchoServlet2</servlet-name>
-        <url-pattern>/echo</url-pattern>
+        <url-pattern>/echo2</url-pattern>
     </servlet-mapping>
 </web-app>

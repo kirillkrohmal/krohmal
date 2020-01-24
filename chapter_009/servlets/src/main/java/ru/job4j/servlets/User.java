@@ -4,10 +4,10 @@ package ru.job4j.servlets;
  * Created by Comp on 23.01.2019.
  */
 public class User {
-    String login;
-    String email;
+    private String login;
+    private String email;
 
-    public User(String login, String email) {
+    User(String login, String email) {
         this.login = login;
         this.email = email;
     }
