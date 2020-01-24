@@ -30,7 +30,7 @@
 </table>
 
 <ul>
-    <li><a href="<%=request.getContextPath()%>/views/CreateUser.jsp">Добавить пользователя</a></li>
+    <li><a href="<%=request.getContextPath()%>/create">Добавить пользователя</a></li>
 </ul>
 
 

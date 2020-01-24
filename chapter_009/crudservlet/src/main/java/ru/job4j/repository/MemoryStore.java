@@ -40,7 +40,6 @@ public class MemoryStore implements Store {
 
     @Override
     public void update(User user) {
-
     }
 
     @Override
@@ -49,12 +48,13 @@ public class MemoryStore implements Store {
     }
 
     @Override
-    public User findById(User user) {
-        return null;
+    public User findById(int id) {
+        return users.get(id);
     }
 
     @Override
     public Map findByAll() {
+
         return null;
     }
 }

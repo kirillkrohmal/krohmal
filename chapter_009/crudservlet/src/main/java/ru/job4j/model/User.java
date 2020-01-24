@@ -6,7 +6,7 @@ import java.sql.Timestamp;
  * Created by Comp on 06.11.2017.
  */
 public class User {
-    private String id;
+    private int id;
     private String name;
     private String login;
     private String email;
@@ -19,20 +19,20 @@ public class User {
         this.createDate = createDate;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getLogin() {

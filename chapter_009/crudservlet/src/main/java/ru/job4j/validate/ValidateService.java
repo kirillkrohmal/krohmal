@@ -1,10 +1,10 @@
 package ru.job4j.validate;
 
-import ru.job4j.repository.MemoryStore;
-import ru.job4j.repository.Store;
 import ru.job4j.model.User;
+import ru.job4j.repository.MemoryStore;
 
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -12,9 +12,10 @@ import java.util.regex.Pattern;
  */
 public class ValidateService {
     private static final ValidateService SINGLETON_INSTANCE = new ValidateService();
-    private final Store logic = MemoryStore.getInstance();    private String login;
-    private User user;
+    private MemoryStore STORE = MemoryStore.getInstance();
 
+    public ValidateService() {
+    }
 
     public static ValidateService getInstance() {
         return SINGLETON_INSTANCE;
@@ -24,43 +25,54 @@ public class ValidateService {
         return null;
     }
 
-    public boolean add(User user) {
+
+    public List<User> findById() {
+
+        return null;
+    }
+
+    public boolean add(int id, String email) {
         boolean result = false;
-        if (validateEmail(user)) {
-            result = true;
+
+        if (STORE.findById(id) == null) {
+            if (validateEmail(email) || email == null) {
+                result = true;
+            }
         }
 
         return result;
     }
 
-    public boolean update(String email) {
+    public boolean update(int id, String name, String email, String login) {
         boolean result = false;
-        if (validateEmail(user) || email == null) {
-            result = true;
+
+        if (STORE.findById(id) == null) {
+            if (validateEmail(email) || email == null) {
+                result = true;
+            }
         }
         return result;
     }
 
-    public boolean delete(int id) {
+    public boolean delete(int id, String name, String email, String login) {
 
         boolean result = false;
-/*
-        if (STORE.findById() != null) {
-            STORE.delete();
-            return true;
-        }*/
+
+        if (STORE.findById(id) != null) {
+            if (validateEmail(email) || email == null) {
+                result = true;
+            }
+        }
 
 
         return result;
     }
 
-    private boolean validateEmail(User email) {
+    private boolean validateEmail(String email) {
         Pattern pattern = Pattern.compile("\\A[^@]+@([^@\\.]+\\.)+[^@\\.]+\\z");
-        //Matcher match = pattern.matcher(email);
-        //return match.matches();
-        return false;
+        Matcher match = pattern.matcher(email);
+        return match.matches();
     }
-
 
 }
 

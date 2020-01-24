@@ -15,7 +15,7 @@ public interface Store {
 
     void delete(User user);
 
-    User findById(User user);
+    User findById(int id);
 
     Map findByAll();
 }
