@@ -19,7 +19,6 @@ public class UserCreateServlet extends HttpServlet {
     private final UserStorage cache = UserStorage.getInstance();
     private AtomicInteger atomicInteger = new AtomicInteger();
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/views/CreateUser.jsp");
@@ -28,19 +27,6 @@ public class UserCreateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*int id = 1;
-
-        User user = new User(id, login, password);
-        UserStorage stor = UserStorage.getInstance();
-        stor.add(user);
-
-        String login = "login";
-        String password = "email";
-
-        req.setAttribute("userLogin", login);
-        doGet(req, resp);*/
-
-
         cache.add(new User(atomicInteger.incrementAndGet(), req.getParameter("login"), req.getParameter("email")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/list"));
     }
