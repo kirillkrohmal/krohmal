@@ -7,10 +7,10 @@
 </head>
 <body>
 <h2>Создание пользователя: </h2>
-<form action="${pageContext.servletContext.contextPath}/create" method="post">
+<form action="<%=request.getContextPath()%>/create" method="post">
     <table>
         <tr>
-            <td align="right">Login:</td>
+            <td>Login:</td>
             <td>
                 <label>
                     <input type="text" name="login">
@@ -18,7 +18,7 @@
             </td>
         </tr>
         <tr>
-            <td align="right">Email:</td>
+            <td>Email:</td>
             <td>
                 <label>
                     <input type="text" name="email">
