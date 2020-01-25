@@ -22,7 +22,7 @@ public class IntegrationSQL implements ITracker, AutoCloseable {
     @Override
     public Item add(Item item) {
         String s1 = "INSERT INTO trackersql(name, description) VALUES (?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(s1);) {
+        try (PreparedStatement statement = connection.prepareStatement(s1)) {
             statement.setString(1, item.getName());
             statement.setString(2, item.getDescription());
 
