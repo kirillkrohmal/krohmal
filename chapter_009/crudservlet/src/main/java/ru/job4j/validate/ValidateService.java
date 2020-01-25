@@ -2,6 +2,7 @@ package ru.job4j.validate;
 
 import ru.job4j.model.User;
 import ru.job4j.repository.MemoryStore;
+import ru.job4j.repository.Store;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -12,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class ValidateService {
     private static final ValidateService SINGLETON_INSTANCE = new ValidateService();
-    private MemoryStore STORE = MemoryStore.getInstance();
+    private final Store logic = MemoryStore.getInstance();
 
     public ValidateService() {
     }
@@ -34,7 +35,7 @@ public class ValidateService {
     public boolean add(int id, String email) {
         boolean result = false;
 
-        if (STORE.findById(id) == null) {
+        if (logic.findById(id) == null) {
             if (validateEmail(email) || email == null) {
                 result = true;
             }
@@ -46,7 +47,7 @@ public class ValidateService {
     public boolean update(int id, String name, String email, String login) {
         boolean result = false;
 
-        if (STORE.findById(id) == null) {
+        if (logic.findById(id) == null) {
             if (validateEmail(email) || email == null) {
                 result = true;
             }
@@ -58,7 +59,7 @@ public class ValidateService {
 
         boolean result = false;
 
-        if (STORE.findById(id) != null) {
+        if (logic.findById(id) != null) {
             if (validateEmail(email) || email == null) {
                 result = true;
             }

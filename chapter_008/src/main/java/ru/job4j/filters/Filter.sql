@@ -112,7 +112,7 @@ insert into type(id, name) values (24, 'кефир');
 
 
 
-select * FROM product where name = 'СЫР';
+select product.id, product.name as product_name, type.name as type_name from product inner join type on product.type_id = type.id where type.name='СЫР';
 select * FROM product where name = 'мороженое';
 select * FROM product where expired_date = '2020-02-19';
 select name, price FROM product where price = (select MAX(price) from product);
