@@ -13,10 +13,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>crudservlet</module>
-        <module>filters</module>
         <module>servlets</module>
         <module>servlets2</module>
         <module>userservlet</module>
+        <module>fileservlet</module>
+        <module>securityfilter</module>
     </modules>
 
     <dependencies>

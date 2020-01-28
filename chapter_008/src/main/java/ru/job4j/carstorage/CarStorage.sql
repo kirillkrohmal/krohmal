@@ -79,5 +79,8 @@ left join Двигатель on Машина.id = Двигатель.id
 left join Коробка_передач on Машина.id = Коробка_передач.id;
 
 
-Вывести отдельно детали, которые не используются в машине, кузова, двигатели, коробки передач.
+select Машина.name as Машина_name, Кузов.name as кузов_name, Двигатель.name as двигатель_name, Коробка_передач.name as коробка_передач_name from Машина
+left join Кузов on Машина.id = Кузов.id and not exists (select * from Машина)
+left join Двигатель on Машина.id = Двигатель.id and not exists (select * from Машина)
+left join Коробка_передач on Машина.id = Коробка_передач.id and not exists (select * from Машина)
 
