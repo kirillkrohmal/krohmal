@@ -32,7 +32,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     public void replace(String id, Item item) {
         try (Connection connection = init()) {
             if (id != null) {
-                String s1 = "INSERT INTO trackersql(id, key, name, creat, description) VALUES (?, ?, ?, ?, ?) WHERE id=?";
+                String s1 = "INSERT INTO trackersql(key, name, creat, description) VALUES (?, ?, ?, ?) WHERE id=?";
                 PreparedStatement statement = connection.prepareStatement(s1);
 
                 statement.setString(1, id);

@@ -2,7 +2,6 @@ package ru.job4j.trackersql2;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.util.Arrays;
 import java.util.Properties;
 import java.util.zip.DataFormatException;
 
@@ -49,7 +48,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
         try (Connection connection = init()) {
             if (nextId != null) {
-                String s = "UPDATE trackersql SET key = ?, name = ?, creat = ?, description = ?) WHERE id = ?";
+                String s = "UPDATE trackersql SET id = ?, key = ?, name = ?, creat = ?, description = ?) WHERE id = ?";
                 PreparedStatement statement = connection.prepareStatement(s);
                 statement.setLong(1, nextId);
                 statement.setString(2, newItem.getKey());
@@ -68,17 +67,20 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     public Item[] findByName(String name) throws SQLException {
         Item[] result = null;
         ResultSet resultSet;
+        String s = "SELECT id, key, name, creat, description FROM trackersql WHERE name = ?";
 
-        try (Connection connection = init()) {
-            String s = "SELECT * FROM trackersql WHERE name = ?";
-            PreparedStatement statement = connection.prepareStatement(s);
-
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Item item = new Item();
 
+                item.setId(resultSet.getString("id"));
+                item.setKey(resultSet.getString("key"));
                 item.setName(resultSet.getString("name"));
+                item.setCreat(resultSet.getLong("creat"));
+                item.setDescription(resultSet.getString("description"));
+
                 for (int i = 0; i < size; i++) {
                     result[i] = item;
                 }
@@ -91,12 +93,16 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     public Item findById(String id) {
         Item result = null;
 
-        try (Connection connection = init()) {
-            String s = "SELECT * FROM trackersql WHERE id = ?";
-            PreparedStatement statement = connection.prepareStatement(s);
+        String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(s)) {
 
             ResultSet resultSet = statement.executeQuery();
             result.setId(resultSet.getString("id"));
+            result.setKey(resultSet.getString("key"));
+            result.setName(resultSet.getString("name"));
+            result.setCreat(resultSet.getLong("creat"));
+            result.setDescription(resultSet.getString("description"));
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -111,7 +117,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item[] items = new Item[size];
 
         try (Connection connection = init()) {
-            String s = "SELECT * FROM trackersql";
+            String s = "SELECT id, key, name, creat, description FROM trackersql";
             PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery();
@@ -167,13 +173,13 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         trackerSQL.init();
         String name = "test1";
 
-        trackerSQL.add(item1);
-        trackerSQL.update(item2);
-        trackerSQL.replace(item1.getId(), item3);
-        trackerSQL.delete(item1.getId());
-        System.out.println(trackerSQL.findById("1"));
-        System.out.println(Arrays.toString(trackerSQL.findByName(name)));
-        System.out.println(Arrays.toString(trackerSQL.findAll()));
+        //trackerSQL.add(item1);
+        //trackerSQL.update(item2);
+        //trackerSQL.replace(item1.getId(), item3);
+        //trackerSQL.delete(item1.getId());
+        //System.out.println(trackerSQL.findById("1"));
+        //System.out.println(Arrays.toString(trackerSQL.findByName("test1")));
+        System.out.println(trackerSQL.findAll());
     }
 
     public Item add(Item item) {
