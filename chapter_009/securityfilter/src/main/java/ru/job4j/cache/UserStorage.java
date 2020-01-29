@@ -8,9 +8,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class UserStorage {
     private static final UserStorage INSTANCE = new UserStorage();
     private List<User> users = new CopyOnWriteArrayList<>();
-
-    /*private UserStorage() {
-        users.add(new User("login", "password"));
+/*
+    private void add(User user) {
+        users.add(new User(user.getId(), "login", "password", user.getRole()) );
     }*/
 
     public static UserStorage getInstance() {
@@ -18,10 +18,23 @@ public class UserStorage {
     }
 
     public void add (User user) {
-        users.add(user);
+        users.add(new User(user.getId(), user.getLogin(), user.getPassword(), "role")) ;
     }
 
     public List<User> getUsers() {
         return users;
+    }
+
+
+    public boolean isLogin(String login, String password) {
+        boolean exists = false;
+
+        for (User user : users) {
+            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+                exists = true;
+                break;
+            }
+        }
+        return exists;
     }
 }

@@ -1,27 +1,24 @@
 package ru.job4j.model;
 
 public class Role {
-    private String USER;
-    private String ADMIN;
+    private String desc;
 
-    public Role(String USER, String ADMIN) {
-        this.USER = USER;
-        this.ADMIN = ADMIN;
+    public Role(String desc) {
+        this.desc = desc;
     }
 
-    public String getUSER() {
-        return USER;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setUSER(String USER) {
-        this.USER = USER;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public String getADMIN() {
-        return ADMIN;
-    }
-
-    public void setADMIN(String ADMIN) {
-        this.ADMIN = ADMIN;
+    @Override
+    public String toString() {
+        return "Role{" +
+                "desc='" + desc + '\'' +
+                '}';
     }
 }

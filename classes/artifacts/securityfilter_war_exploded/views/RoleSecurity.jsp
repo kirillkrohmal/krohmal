@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация и аутентификации пользователя</title>
+    <title>Выбор роли</title>
 </head>
 <body>
 <h2>Выбор роли:</h2>

@@ -27,7 +27,18 @@
                 </label>
             </td>
         </tr>
+        <h2>Выбор роли:</h2>
 
+        <tr>
+            <td>
+                <select name="user">
+                    <option value="volvo">Admin</option>
+                    <option value="saab">User</option>
+                </select>
+                <br><br>
+            </td>
+        </tr>
+        
         <tr>
             <td><input type="submit" align="center" value="Submit"></td>
         </tr>

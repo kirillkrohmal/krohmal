@@ -2,6 +2,7 @@ package ru.job4j.trackersql2;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.zip.DataFormatException;
 
@@ -173,12 +174,12 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         trackerSQL.init();
         String name = "test1";
 
-        //trackerSQL.add(item1);
-        //trackerSQL.update(item2);
-        //trackerSQL.replace(item1.getId(), item3);
-        //trackerSQL.delete(item1.getId());
-        //System.out.println(trackerSQL.findById("1"));
-        //System.out.println(Arrays.toString(trackerSQL.findByName("test1")));
+        trackerSQL.add(item1);
+        trackerSQL.update(item2);
+        trackerSQL.replace(item1.getId(), item3);
+        trackerSQL.delete(item1.getId());
+        System.out.println(trackerSQL.findById("1"));
+        System.out.println(Arrays.toString(trackerSQL.findByName("test1")));
         System.out.println(trackerSQL.findAll());
     }
 

@@ -9,6 +9,34 @@
 <body>
 <h2>Авторизация и аутентификации пользователя: </h2>
 
+<form action="<%=request.getContextPath()%>/loginsecurity" method="post">
+    <table>
+        <tr>
+            <td>Login:</td>
+            <td>
+                <label>
+                    <input type="text" name="login">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>
+                <label>
+                    <input type="password" name="password">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" align="center" value="Submit"></td>
+        </tr>
+    </table>
+
+</form>
+
+
+
 <ul>
     <li><a href="<%=request.getContextPath()%>/rolesecurity">Выбрать роль</a></li>
 </ul>

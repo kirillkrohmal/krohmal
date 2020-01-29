@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class UserViewServlet extends HttpServlet {
@@ -14,9 +15,17 @@ public class UserViewServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("users", cache.getUsers());
+        HttpSession httpSession = req.getSession();
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/UserView.jsp");
-        dispatcher.forward(req, resp);
+        synchronized (httpSession) {
+            if (httpSession == null || httpSession.getAttribute("login") == null) {
+                resp.sendRedirect(String.format("%s/loginsecurity", req.getContextPath()));
+            } else {
+                req.setAttribute("users", cache.getUsers());
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/views/UserView.jsp");
+                dispatcher.forward(req, resp);
+            }
+        }
     }
 }

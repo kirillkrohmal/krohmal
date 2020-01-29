@@ -42,4 +42,13 @@
         <url-pattern>/editsecurity</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>LoginSecurityServlet</servlet-name>
+        <servlet-class>ru.job4j.servlet.LoginSecurityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginSecurityServlet</servlet-name>
+        <url-pattern>/loginsecurity</url-pattern>
+    </servlet-mapping>
+
 </web-app>
