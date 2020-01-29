@@ -9,7 +9,7 @@
 <body>
 <h2>Авторизация и аутентификации пользователя: </h2>
 
-<form action="<%=request.getContextPath()%>/loginsecurity" method="post">
+<%--<form action="<%=request.getContextPath()%>/loginsecurity" method="post">
     <table>
         <tr>
             <td>Login:</td>
@@ -43,7 +43,7 @@
 
 <ul>
     <li><a href="<%=request.getContextPath()%>/security">Создать пользователя</a></li>
-</ul>
+</ul>--%>
 
 
 

@@ -10,7 +10,7 @@
 <h2>Авторизация и аутентификации пользователя: </h2>
 
 
-<c:if test="${error == ''}">
+<c:if test="${error != ''}">
     <div style="background-color: red">
         <c:out value="${error}"/>
     </div>
@@ -42,6 +42,9 @@
 
 </form>
 
+<ul>
+    <li><a href="<%=request.getContextPath()%>/security">Создать пользователя</a></li>
+</ul>
 
 </body>
 </html>
