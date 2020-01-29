@@ -4,48 +4,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация и аутентификации пользователя</title>
+    <title>Все пользователи</title>
 </head>
 <body>
-<h2>Авторизация и аутентификации пользователя: </h2>
-
-<%--<form action="<%=request.getContextPath()%>/loginsecurity" method="post">
-    <table>
-        <tr>
-            <td>Login:</td>
-            <td>
-                <label>
-                    <input type="text" name="login">
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td>
-                <label>
-                    <input type="password" name="password">
-                </label>
-            </td>
-        </tr>
-
-        <tr>
-            <td><input type="submit" align="center" value="Submit"></td>
-        </tr>
-    </table>
-
-</form>
-
-
+<h2>Все пользователи: </h2>
 
 <ul>
-    <li><a href="<%=request.getContextPath()%>/rolesecurity">Выбрать роль</a></li>
+    <li><a href="<%=request.getContextPath()%>/loginsecurity">Войти под новым пользователем</a></li>
 </ul>
-
-<ul>
-    <li><a href="<%=request.getContextPath()%>/security">Создать пользователя</a></li>
-</ul>--%>
-
-
 
 <table style="border: 1px solid black;" cellpadding="1" cellspacing="1" border="1">
     <tr>
@@ -62,7 +28,10 @@
             <th><c:out value="${user.password}"/></th>
             <th><c:out value="${user.role}"/></th>
 
-            <th><a href="<%=request.getContextPath()%>/editsecurity?=${user.id}">Редактировать пользователя</a></th>
+            <th>
+                <a href="<%=request.getContextPath()%>/editsecurity?=${user.id}">Редактировать пользователя</a>
+                <a href="<%=request.getContextPath()%>/security?=${user.id}">Создать пользователя</a>
+            </th>
         </tr>
     </c:forEach>
 </table>
