@@ -19,6 +19,7 @@
         <module>fileservlet</module>
         <module>securityfilter</module>
         <module>htmlbootstrap</module>
+        <module>jsindex</module>
     </modules>
 
     <dependencies>
