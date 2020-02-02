@@ -18,6 +18,7 @@
         <module>userservlet</module>
         <module>fileservlet</module>
         <module>securityfilter</module>
+        <module>htmlbootstrap</module>
     </modules>
 
     <dependencies>
