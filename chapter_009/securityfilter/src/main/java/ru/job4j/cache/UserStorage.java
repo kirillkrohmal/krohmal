@@ -8,10 +8,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class UserStorage {
     private static final UserStorage INSTANCE = new UserStorage();
     private List<User> users = new CopyOnWriteArrayList<>();
-/*
-    private void add(User user) {
-        users.add(new User(user.getId(), "login", "password", user.getRole()) );
-    }*/
 
     public static UserStorage getInstance() {
         return INSTANCE;
