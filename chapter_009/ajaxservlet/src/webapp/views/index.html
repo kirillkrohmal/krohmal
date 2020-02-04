@@ -13,16 +13,18 @@
                 method: 'get',
                 complete: function (data) {
                     var result = "<tbody><tr>"
-                        + "<td>" + el.name + "</td>"
-                        + "<td>" + el.lastName + "</td>"
-                        + "<td>" + el.sex + "</td>"
-                        + "<td>" + el.description + "</td>"
+                        + "<td>id</td>"
+                        + "<td>Name</td>"
+                        + "<td>Lastname</td>"
+                        + "<td>Sex</td>"
+                        + "<td>Description</td>"
                         + "</tbody></tr>";
 
                     var users = JSON.parse(data.responseText)
 
                     for (var i = 0; i = users.length; i++) {
                         "<tbody><tr>"
+                        + "<td>" + users[i].id + "</td>"
                         + "<td>" + users[i].name + "</td>"
                         + "<td>" + users[i].lastName + "</td>"
                         + "<td>" + users[i].sex + "</td>"
@@ -35,11 +37,12 @@
             });
         }
 
+
         function createuser() {
             $.ajax('./post', {
                 methos: 'post',
                 data: {
-                    id:$('#id').val(), name: $('#name').val(), lastName: $('#lastName').val(), sex: $('#sex').val(), description: $('#description').val()
+                    name: $('#name').val(), lastName: $('#lastName').val(), sex: $('#sex').val(), description: $('#description').val()
                 }
             })
         }
