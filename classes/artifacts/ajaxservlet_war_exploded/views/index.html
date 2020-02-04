@@ -8,7 +8,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script>
-
         function viewuser() {
             $.ajax('./json', {
                 method: 'get',
@@ -66,7 +65,7 @@
     <p>Заполните поля: </p>
 </div>
 
-<form action="views/view" method="post">
+<form action="/view" method="post">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name">
@@ -91,14 +90,14 @@
     <div class="checkbox">
         <label><input type="checkbox">Remember me</label>
     </div>
-    <button type="button" class="Ajax" onclick="return createuser()">Submit</button>
+    <button type="button" class="Ajax" onclick='return createuser()'>Submit</button>
 </form>
 
-<form action="views/view" method="post" onsubmit="return viewuser()">
+<form action="/view" method="post" onchange="return viewuser()">
     <div class="container">
         <h2>Ваша Анкета</h2>
         <p>Ваши данные:</p>
-        <table class="table" id="users">
+        <table class="table">
             <thead>
             <tr>
                 <th>id</th>
@@ -108,6 +107,7 @@
                 <th>Description</th>
             </tr>
             </thead>
+            <tbody id="users"></tbody>
         </table>
     </div>
 </form>

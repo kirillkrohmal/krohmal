@@ -10,7 +10,7 @@
 <h2>Все пользователи: </h2>
 
 <ul>
-    <li><a href="<%=request.getContextPath()%>/loginsecurity">Войти под новым пользователем</a></li>
+    <li><a href="<%=request.getContextPath()%>/userview">Войти под новым пользователем</a></li>
 </ul>
 
 <table style="border: 1px solid black;" cellpadding="1" cellspacing="1" border="1">

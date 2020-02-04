@@ -90,14 +90,14 @@
     <div class="checkbox">
         <label><input type="checkbox">Remember me</label>
     </div>
-    <button type="button" class="Ajax" onclick="return createuser()">Submit</button>
+    <button type="button" class="Ajax" onclick='return createuser()'>Submit</button>
 </form>
 
-<form action="/view" method="post" onsubmit="viewuser()">
+<form action="/view" method="post" onchange="return viewuser()">
     <div class="container">
         <h2>Ваша Анкета</h2>
         <p>Ваши данные:</p>
-        <table class="table" id="users">
+        <table class="table">
             <thead>
             <tr>
                 <th>id</th>
@@ -107,6 +107,7 @@
                 <th>Description</th>
             </tr>
             </thead>
+            <tbody id="users"></tbody>
         </table>
     </div>
 </form>
