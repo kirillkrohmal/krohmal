@@ -44,7 +44,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         }
     }
 
-    public void update(Item newItem) {
+    private void update(Item newItem) {
         Long nextId = null;
 
         try (Connection connection = init()) {
