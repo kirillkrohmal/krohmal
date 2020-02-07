@@ -85,7 +85,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         ResultSet resultSet;
 
         try (Connection connection = init()) {
-            String s = "SELECT * FROM trackersql WHERE name = ?";
+            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE name = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
             resultSet = statement.executeQuery();
@@ -93,7 +93,12 @@ public class TrackerSQL implements ITracker, AutoCloseable {
             while (resultSet.next()) {
                 Item item = new Item();
 
+                item.setId(resultSet.getString("id"));
+                item.setKey(resultSet.getString("key"));
                 item.setName(resultSet.getString("name"));
+                item.setCreat(resultSet.getLong("creat"));
+                item.setDescription(resultSet.getString("description"));
+
                 for (int i = 0; i < size; i++) {
                     result[i] = item;
                 }
@@ -107,11 +112,15 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item result = null;
 
         try (Connection connection = init()) {
-            String s = "SELECT * FROM trackersql WHERE id = ?";
+            String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery();
             result.setId(resultSet.getString("id"));
+            result.setKey(resultSet.getString("key"));
+            result.setName(resultSet.getString("name"));
+            result.setCreat(resultSet.getLong("creat"));
+            result.setDescription(resultSet.getString("description"));
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -126,7 +135,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         Item[] items = new Item[size];
 
         try (Connection connection = init()) {
-            String s = "SELECT * FROM trackersql";
+            String s = "SELECT id, key, name, creat, description FROM trackersql";
             PreparedStatement statement = connection.prepareStatement(s);
 
             ResultSet resultSet = statement.executeQuery();

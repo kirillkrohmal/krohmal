@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class UserViewServlet extends HttpServlet {
-    UserStorage userStorage = UserStorage.getInstance();
     private AtomicInteger atomicInteger = new AtomicInteger();
 
     @Override
@@ -22,10 +21,10 @@ public class UserViewServlet extends HttpServlet {
         requestDispatcher.forward(req, resp);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        userStorage.add(new User(atomicInteger.incrementAndGet(), req.getParameter("name"), req.getParameter("lastName"), req.getParameter("sex"), req.getParameter("description")));
+        resp.setContentType("text/html");
+        UserStorage.getInstance().add(new User(atomicInteger.incrementAndGet(), req.getParameter("name"), req.getParameter("lastName"), req.getParameter("sex"), req.getParameter("description")));
         doGet(req, resp);
     }
 }
