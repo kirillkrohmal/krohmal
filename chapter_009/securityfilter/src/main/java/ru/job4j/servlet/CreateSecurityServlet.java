@@ -25,6 +25,6 @@ public class CreateSecurityServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserStorage.getInstance().add(new User(atomicInteger.incrementAndGet(), req.getParameter("login"), req.getParameter("password"), req.getParameter("role")));
         //doGet(req,resp);
-        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/userview"));
+        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/loginsecurity"));
     }
 }

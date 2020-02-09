@@ -15,17 +15,11 @@ public class UserViewServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession httpSession = req.getSession();
+        req.setAttribute("users", cache.getUsers());
 
-        synchronized (httpSession) {
-            if (httpSession == null || httpSession.getAttribute("login") == null) {
-                resp.sendRedirect(String.format("%s/loginsecurity", req.getContextPath()));
-            } else {
-                req.setAttribute("users", cache.getUsers());
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/UserView.jsp");
+        dispatcher.forward(req, resp);
 
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/views/UserView.jsp");
-                dispatcher.forward(req, resp);
-            }
-        }
     }
 }
+

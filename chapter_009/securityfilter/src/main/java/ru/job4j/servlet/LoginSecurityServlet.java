@@ -29,8 +29,9 @@ public class LoginSecurityServlet extends HttpServlet {
 
             synchronized (httpSession) {
                 httpSession.setAttribute("login", login);
+                httpSession.setAttribute("password", password);
             }
-            resp.sendRedirect(String.format("%s/", req.getContextPath()));
+            resp.sendRedirect(String.format("%s%s", req.getContextPath()));
         } else {
             req.setAttribute("error", "Invalid Login");
             doGet(req, resp);
