@@ -15,12 +15,15 @@
         <module>crudservlet</module>
         <module>servlets</module>
         <module>servlets2</module>
+        <module>servlets3</module>
         <module>userservlet</module>
         <module>fileservlet</module>
         <module>securityfilter</module>
         <module>htmlbootstrap</module>
         <module>jsindex</module>
         <module>ajaxservlet</module>
+        <module>cinemaservice</module>
+        <module>jstlservlet</module>
     </modules>
 
     <dependencies>
