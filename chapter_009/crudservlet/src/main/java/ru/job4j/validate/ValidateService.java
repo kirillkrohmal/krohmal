@@ -4,6 +4,7 @@ import ru.job4j.model.User;
 import ru.job4j.repository.MemoryStore;
 import ru.job4j.repository.Store;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,11 +33,12 @@ public class ValidateService {
         return null;
     }
 
-    public boolean add(int id, String email) {
+    public boolean add(String name, String email, String login, Timestamp createDate) {
         boolean result = false;
 
-        if (logic.findById(id) == null) {
+        if (logic.findLogin(login) == null) {
             if (validateEmail(email) || email == null) {
+                logic.add(new User(name, login, email, createDate));
                 result = true;
             }
         }
@@ -44,27 +46,26 @@ public class ValidateService {
         return result;
     }
 
-    public boolean update(int id, String name, String email, String login) {
+    public boolean update(String name, String email, String login, Timestamp createDate) {
         boolean result = false;
 
-        if (logic.findById(id) == null) {
+        if (logic.findLogin(login) == null) {
             if (validateEmail(email) || email == null) {
+                logic.update(new User(name, login, email, createDate));
                 result = true;
             }
         }
         return result;
     }
 
-    public boolean delete(int id, String name, String email, String login) {
+    public boolean delete(int id) {
 
         boolean result = false;
 
         if (logic.findById(id) != null) {
-            if (validateEmail(email) || email == null) {
-                result = true;
-            }
+            logic.delete(id);
+            result = true;
         }
-
 
         return result;
     }
@@ -74,6 +75,7 @@ public class ValidateService {
         Matcher match = pattern.matcher(email);
         return match.matches();
     }
+
 
 }
 

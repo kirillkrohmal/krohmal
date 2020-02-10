@@ -40,16 +40,22 @@ public class MemoryStore implements Store {
 
     @Override
     public void update(User user) {
+
     }
 
     @Override
-    public void delete(User user) {
-        this.users.remove(user);
+    public void delete(int id) {
+        this.users.remove(findById(id));
     }
 
     @Override
     public User findById(int id) {
         return users.get(id);
+    }
+
+    @Override
+    public User findLogin(String login) {
+        return users.get(Integer.parseInt(login));
     }
 
     @Override

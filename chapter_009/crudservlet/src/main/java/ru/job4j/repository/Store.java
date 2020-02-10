@@ -13,9 +13,12 @@ public interface Store {
 
     void update(User user);
 
-    void delete(User user);
+    void delete(int id);
 
     User findById(int id);
 
+    User findLogin(String login);
+
     Map findByAll();
+
 }

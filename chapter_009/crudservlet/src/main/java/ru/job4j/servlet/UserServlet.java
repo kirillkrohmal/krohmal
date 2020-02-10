@@ -1,6 +1,7 @@
 package ru.job4j.servlet;
 
 
+import ru.job4j.model.User;
 import ru.job4j.validate.ValidateService;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -22,8 +25,6 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
-
-        //req.setAttribute("users", new User(req.getParameter("name"), req.getParameter("login"), req.getParameter("email"), req.getParameter()));
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/ViewUsers.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -33,12 +34,36 @@ public class UserServlet extends HttpServlet {
         resp.setContentType("text/html");
 
         PrintWriter printWriter = new PrintWriter(resp.getOutputStream());
-        printWriter.append(makeAction(req) ? "Action done" : "Action error");
+        printWriter.append(makeAction(req) ? "action done" : "action error");
 
         printWriter.flush();
     }
 
     private boolean makeAction(HttpServletRequest req) {
+        String action = req.getParameter("action");
+
+        int id = Integer.parseInt(req.getParameter("id"));
+
+        String name = req.getParameter("name");
+        String login = req.getParameter("login");
+        String email = req.getParameter("email");
+
+        Timestamp createDate = Timestamp.valueOf(req.getParameter("createDate"));
+
+        if ("add".equals(action)) {
+            logic.add(name, email, login, createDate);
+            return true;
+        }
+
+        if ("update".equals(action)) {
+            logic.update(name, email, login, createDate);
+            return true;
+        }
+
+        if ("delete".equals(action)) {
+            logic.delete(id);
+            return true;
+        }
 
         return false;
     }
