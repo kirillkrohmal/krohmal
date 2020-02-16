@@ -2,13 +2,13 @@ package ru.job4j.model;
 
 public class User {
     private int id;
-    private String login;
+    private String name;
     private String email;
     private String photoId;
 
-    public User(int id, String login, String email, String photoId) {
+    public User(int id, String name, String email, String photoId) {
         this.id = id;
-        this.login = login;
+        this.name  = name ;
         this.email = email;
         this.photoId = photoId;
     }
@@ -21,12 +21,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getName() {
+        return name;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
