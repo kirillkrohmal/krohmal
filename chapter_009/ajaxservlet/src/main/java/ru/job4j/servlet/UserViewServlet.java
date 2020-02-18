@@ -2,13 +2,14 @@ package ru.job4j.servlet;
 
 import ru.job4j.model.User;
 import ru.job4j.storage.UserStorage;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class UserViewServlet extends HttpServlet {
@@ -23,6 +24,15 @@ public class UserViewServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      /*  resp.setContentType("text/html");
+        PrintWriter writer = resp.getWriter();
+        ObjectMapper mapper = new ObjectMapper();
+        User user = new User(atomicInteger.incrementAndGet(), req.getParameter("name"), req.getParameter("lastName"), req.getParameter("sex"), req.getParameter("description"));
+        UserStorage.getInstance().add(user);
+        writer.append(mapper.writeValueAsString(user));
+        writer.flush();*/
+
+
         resp.setContentType("text/html");
         UserStorage.getInstance().add(new User(atomicInteger.incrementAndGet(), req.getParameter("name"), req.getParameter("lastName"), req.getParameter("sex"), req.getParameter("description")));
         doGet(req, resp);

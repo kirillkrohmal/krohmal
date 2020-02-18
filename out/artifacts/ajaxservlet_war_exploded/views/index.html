@@ -11,9 +11,8 @@
 
     <script type="text/javascript">
         function createuser() {
-            $.ajax({
+            $.ajax('/view', {
                 type: 'POST',
-                url: 'http://localhost:8080/ajaxservlet_war_exploded/view',
                 data: {
                     name: $('#name').val(),
                     lastName: $('#lastName').val(),
@@ -24,9 +23,8 @@
         }
 
         function viewuser() {
-            $.ajax({
+            $.ajax('/view',{
                 type: 'GET',
-                url: 'http://localhost:8080/ajaxservlet_war_exploded/view',
                 complete: function (data) {
                     var result = "<tbody><tr>"
                         + "<td>id</td>"
@@ -89,7 +87,7 @@
     <div class="checkbox">
         <label><input type="checkbox">Remember me</label>
     </div>
-    <button type="button" class="btn btn-primary" onclick="return createuser()">Submit</button>
+    <button type="button" class="btn btn-primary" onclick="createuser()">Submit</button>
 </div>
 
 

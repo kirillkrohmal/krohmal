@@ -1,7 +1,6 @@
 package ru.job4j.servlet;
 
 import ru.job4j.model.User;
-import ru.job4j.storage.UserStorage;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
