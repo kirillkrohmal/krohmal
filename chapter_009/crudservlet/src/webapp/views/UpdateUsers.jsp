@@ -3,12 +3,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Создание пользователя</title>
+    <title>Редактирование пользователя</title>
 </head>
 <body>
-<h2>Создание пользователя: </h2>
-<form action="<%=request.getContextPath()%>/create" method="post">
+<h2>Редактирование пользователя: </h2>
+<form action="<%=request.getContextPath()%>/view" method="post">
     <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <label>
+                    <input type="text" name="name">
+                </label>
+            </td>
+        </tr>
         <tr>
             <td>Login:</td>
             <td>
@@ -22,6 +30,14 @@
             <td>
                 <label>
                     <input type="text" name="email">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>CreateDate:</td>
+            <td>
+                <label>
+                    <input type="date" name="createDate">
                 </label>
             </td>
         </tr>

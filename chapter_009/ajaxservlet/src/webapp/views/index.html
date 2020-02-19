@@ -11,7 +11,7 @@
 
     <script type="text/javascript">
         function createuser() {
-            $.ajax('/view', {
+            $.ajax({
                 type: 'POST',
                 data: {
                     name: $('#name').val(),
@@ -23,7 +23,7 @@
         }
 
         function viewuser() {
-            $.ajax('/view',{
+            $.ajax({
                 type: 'GET',
                 complete: function (data) {
                     var result = "<tbody><tr>"

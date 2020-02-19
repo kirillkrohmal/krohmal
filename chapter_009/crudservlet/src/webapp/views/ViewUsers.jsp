@@ -13,32 +13,32 @@
 
 <body>
 
-
 <table border="1">
     <td>id: </td>
+    <td>name: </td>
     <td>login: </td>
     <td>email: </td>
+    <td>createDate: </td>
     <td>Выбор действия: </td>
 
     <c:forEach items="${users}" var="user" varStatus="status">
-        <tr>
-            <td>"${user.id}"</td>
-            <td>"${user.login}"</td>
-            <td>"${user.email}"</td>
+    <tr>
+        <td>"${user.id}"</td>
+        <td>"${user.name}"</td>
+        <td>"${user.login}"</td>
+        <td>"${user.email}"</td>
+        <td>"${user.createDate}"</td>
 
-            <td>
-                <a href="<%=request.getContextPath()%>/update?id=${user.id}">Редактировать пользователя</a>
-                <a href="<%=request.getContextPath()%>/delete?id=${user.id}">Удалить пользователя</a>
-            </td>
-        </tr>
+        <td>
+            <a href="<%=request.getContextPath()%>/views/UpdateUsers.jsp?id=${user.id}">Редактировать пользователя</a>
+            <a href="<%=request.getContextPath()%>/delete?id=${user.id}">Удалить пользователя</a>
+        </td>
+    </tr>
     </c:forEach>
 
-</table>
-
 <ul>
-    <li><a href="<%=request.getContextPath()%>/views/CreateUser.jsp">Добавить пользователя</a></li>
+    <li><a href="<%=request.getContextPath()%>/views/CreateUsers.jsp">Добавить пользователя</a></li>
 </ul>
-
 
 </body>
 </html>

@@ -24,6 +24,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
+        req.setAttribute("users", this.logic.values());
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/ViewUsers.jsp");
         requestDispatcher.forward(req, resp);
@@ -56,7 +57,7 @@ public class UserServlet extends HttpServlet {
         }
 
         if ("update".equals(action)) {
-            logic.update(name, email, login, createDate);
+            logic.update(id, name, email, login, createDate);
             return true;
         }
 

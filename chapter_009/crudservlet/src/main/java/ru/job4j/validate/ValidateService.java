@@ -5,7 +5,10 @@ import ru.job4j.repository.MemoryStore;
 import ru.job4j.repository.Store;
 
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,8 +18,14 @@ import java.util.regex.Pattern;
 public class ValidateService {
     private static final ValidateService SINGLETON_INSTANCE = new ValidateService();
     private final Store logic = MemoryStore.getInstance();
+    private ConcurrentHashMap<Integer, User> storage = new ConcurrentHashMap<>();
 
     public ValidateService() {
+
+    }
+
+    public Collection<User> values() {
+        return storage.values();
     }
 
     public static ValidateService getInstance() {
@@ -24,14 +33,9 @@ public class ValidateService {
     }
 
     public List<User> findAll() {
-        return null;
+        return logic.findByAll();
     }
 
-
-    public List<User> findById() {
-
-        return null;
-    }
 
     public boolean add(String name, String email, String login, Timestamp createDate) {
         boolean result = false;
@@ -46,12 +50,12 @@ public class ValidateService {
         return result;
     }
 
-    public boolean update(String name, String email, String login, Timestamp createDate) {
+    public boolean update(int id, String name, String email, String login, Timestamp createDate) {
         boolean result = false;
 
         if (logic.findLogin(login) == null) {
             if (validateEmail(email) || email == null) {
-                logic.update(new User(name, login, email, createDate));
+                logic.update(id, new User(name, login, email, createDate));
                 result = true;
             }
         }

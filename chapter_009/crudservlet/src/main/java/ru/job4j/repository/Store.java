@@ -2,7 +2,7 @@ package ru.job4j.repository;
 
 import ru.job4j.model.User;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * Created by Comp on 19.10.2018.
@@ -11,7 +11,7 @@ import java.util.Map;
 public interface Store {
     void add(User user);
 
-    void update(User user);
+    void update(int id, User user);
 
     void delete(int id);
 
@@ -19,6 +19,5 @@ public interface Store {
 
     User findLogin(String login);
 
-    Map findByAll();
-
+    List<User> findByAll();
 }

@@ -23,24 +23,23 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class MemoryStore implements Store {
     private static final MemoryStore SINGLETON_INSTANCE = new MemoryStore();
-    private final ValidateService logic = ValidateService.getInstance();
+    //private final ValidateService logic = ValidateService.getInstance();
     private final List<User> users = new CopyOnWriteArrayList<>();
-
 
     public static MemoryStore getInstance() {
         return SINGLETON_INSTANCE;
     }
-
 
     @Override
     public void add(User user) {
         this.users.add(user);
     }
 
-
     @Override
-    public void update(User user) {
-
+    public void update(int id, User user) {
+        user.setId(id);
+        this.users.remove(findById(id));
+        this.users.add(user);
     }
 
     @Override
@@ -50,17 +49,34 @@ public class MemoryStore implements Store {
 
     @Override
     public User findById(int id) {
-        return users.get(id);
+        User result = null;
+
+        for (User user : users) {
+            if (user.getId() == id) {
+                result = user;
+                break;
+            }
+        }
+
+        return result;
     }
 
     @Override
     public User findLogin(String login) {
-        return users.get(Integer.parseInt(login));
+        User result = null;
+
+        for (User user : users) {
+            if (user.getLogin().equals(login)) {
+                result = user;
+                break;
+            }
+        }
+
+        return result;
     }
 
     @Override
-    public Map findByAll() {
-
-        return null;
+    public List<User> findByAll() {
+        return users;
     }
 }
