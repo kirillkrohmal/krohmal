@@ -7,13 +7,24 @@
         version="4.0">
 
     <servlet>
+        <servlet-name>ViewServlet</servlet-name>
+        <servlet-class>ru.job4j.controller.ViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewServlet</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>HallServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.HallServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.HallServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HallServlet</servlet-name>
-        <url-pattern>/view</url-pattern>
+        <url-pattern>/payment</url-pattern>
     </servlet-mapping>
+
+
 
 
 

@@ -8,7 +8,7 @@
 
     <servlet>
         <servlet-name>UserViewServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UserViewServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UserViewServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserViewServlet</servlet-name>
@@ -17,7 +17,7 @@
 
     <servlet>
         <servlet-name>CreateSecurityServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.CreateSecurityServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.CreateSecurityServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateSecurityServlet</servlet-name>
@@ -26,7 +26,7 @@
 
     <servlet>
         <servlet-name>RoleSecurityServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.RoleSecurityServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.RoleSecurityServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RoleSecurityServlet</servlet-name>
@@ -47,7 +47,7 @@
 
     <servlet>
         <servlet-name>EditSecurityServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.EditSecurityServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.EditSecurityServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EditSecurityServlet</servlet-name>
@@ -56,7 +56,7 @@
 
     <servlet>
         <servlet-name>LoginSecurityServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.LoginSecurityServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.LoginSecurityServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginSecurityServlet</servlet-name>
