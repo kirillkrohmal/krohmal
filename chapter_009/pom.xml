@@ -24,7 +24,6 @@
         <module>ajaxservlet</module>
         <module>ajaxservlet2</module>
         <module>cinemaservice</module>
-        <module>jstlservlet</module>
     </modules>
 
     <dependencies>
