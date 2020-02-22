@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class CreateSecurityServlet extends HttpServlet {
 
-    AtomicInteger atomicInteger = new AtomicInteger();
+    private AtomicInteger atomicInteger = new AtomicInteger();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

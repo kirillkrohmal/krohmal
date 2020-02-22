@@ -6,7 +6,7 @@
          version="2.4">
     <servlet>
         <servlet-name>UserServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UserServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UserServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

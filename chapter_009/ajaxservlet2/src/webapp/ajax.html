@@ -37,6 +37,7 @@
             dataType: 'text'
         }).done(function (data) {
             $('tablename tr:last').after('<tr><td>' + name + '</td></tr>');
+            alert(data);
         }).fail(function (err) {
             alert(err);
         });
@@ -50,8 +51,6 @@
             <tbody id="name">
             <tr>
                 <th>Name</th>
-            </tr>
-            <tr>
                 <td></td>
             </tr>
             </tbody>
