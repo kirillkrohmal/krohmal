@@ -64,6 +64,7 @@ insert into company(id, name) values (24, 'Mercedes');
 
 
 
+
 insert into person(id, name, company_id) values (1, 'Александр', 1);
 
 insert into person(id, name, company_id) values (2, 'Алексей', 2);
@@ -111,3 +112,68 @@ insert into person(id, name, company_id) values (22, 'Фёдор', 22);
 insert into person(id, name, company_id) values (23, 'Руслан', 23);
 
 insert into person(id, name, company_id) values (24, 'Константин', 24);
+
+insert into person(id, name, company_id) values (25, 'Аврора', 1);
+
+insert into person(id, name, company_id) values (26, 'Рита', 2);
+
+insert into person(id, name, company_id) values (27, 'Русалина', 3);
+
+insert into person(id, name, company_id) values (28, 'Татьяна', 4);
+
+insert into person(id, name, company_id) values (29, 'Светлана', 5);
+
+insert into person(id, name, company_id) values (30, 'Ольга', 6);
+
+insert into person(id, name, company_id) values (31, 'Оксана', 7);
+
+insert into person(id, name, company_id) values (32, 'Калерия', 8);
+
+insert into person(id, name, company_id) values (33, 'Полина', 9);
+
+insert into person(id, name, company_id) values (34, 'Зоя', 10);
+
+insert into person(id, name, company_id) values (35, 'Карина', 11);
+
+insert into person(id, name, company_id) values (36, 'Олеся', 12);
+
+insert into person(id, name, company_id) values (37, 'Лариса', 13);
+
+insert into person(id, name, company_id) values (38, 'Пелагея', 14);
+
+insert into person(id, name, company_id) values (39, 'Евгения', 15);
+
+insert into person(id, name, company_id) values (40, 'Наталья', 16);
+
+insert into person(id, name, company_id) values (41, 'Инга', 17);
+
+insert into person(id, name, company_id) values (42, 'Нелли', 18);
+
+insert into person(id, name, company_id) values (43, 'Надежда', 19);
+
+insert into person(id, name, company_id) values (44, 'Нора', 20);
+
+insert into person(id, name, company_id) values (45, 'Тамила', 21);
+
+insert into person(id, name, company_id) values (46, 'Ника', 22);
+
+insert into person(id, name, company_id) values (47, 'Полина', 23);
+
+insert into person(id, name, company_id) values (48, 'Нелли', 24);
+
+insert into person(id, name, company_id) values (49, 'Злата', 24);
+
+insert into person(id, name, company_id) values (50, 'Лара', 24);
+
+insert into person(id, name, company_id) values (51, 'Сабина', 24);
+
+insert into person(id, name, company_id) values (52, 'Тамара', 24);
+
+
+SELECT p.name as Сотрудник
+FROM person p left join company c on p.company_id = c.id WHERE p.company_id not in(5);
+
+SELECT p.name as Сотрудник, c.name as Компания
+FROM person p left join company c on p.company_id = c.id;
+
+Выберите название компании с максимальным количеством людей + количество людей в этой компании
