@@ -34,7 +34,7 @@ insert into company(id, name) values (9, 'Аьфа-банк');
 
 insert into company(id, name) values (10, 'Радуга');
 
-insert into company(id, name) values (11, 'груши');
+insert into company(id, name) values (11, 'Возрождение');
 
 insert into company(id, name) values (12, 'Гречанка');
 
@@ -61,8 +61,6 @@ insert into company(id, name) values (22, 'Русь');
 insert into company(id, name) values (23, 'BMW');
 
 insert into company(id, name) values (24, 'Mercedes');
-
-
 
 
 insert into person(id, name, company_id) values (1, 'Александр', 1);
@@ -176,4 +174,13 @@ FROM person p left join company c on p.company_id = c.id WHERE p.company_id not 
 SELECT p.name as Сотрудник, c.name as Компания
 FROM person p left join company c on p.company_id = c.id;
 
-Выберите название компании с максимальным количеством людей + количество людей в этой компании
+SELECT c.name as Компания, count(p.name) as Сотрудник
+FROM company c left join person p on p.company_id = c.id
+where exists (select max(p.name) from person p) group by c.name, p.name;
+
+
+SELECT c.name, COUNT(*) AS Сотрудник
+FROM company c left join person p on p.company_id = c.id GROUP BY c.name ORDER BY Сотрудник DESC;
+
+
+

@@ -96,4 +96,15 @@ public class Item {
     public int hashCode() {
         return Objects.hash(id, key, name, creat, description);
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", key='" + key + '\'' +
+                ", name='" + name + '\'' +
+                ", creat=" + creat +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

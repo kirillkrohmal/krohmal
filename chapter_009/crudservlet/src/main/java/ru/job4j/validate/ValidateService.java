@@ -79,8 +79,6 @@ public class ValidateService {
         Matcher match = pattern.matcher(email);
         return match.matches();
     }
-
-
 }
 
 

@@ -67,11 +67,13 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     public Item[] findByName(String name) throws SQLException {
         Item[] result = null;
-        ResultSet resultSet;
-        String s = "SELECT id, key, name, creat, description FROM trackersql WHERE name = ?";
 
-        try (PreparedStatement statement = connection.prepareStatement(s)) {
-            resultSet = statement.executeQuery();
+
+        try (Connection connection = init()) {
+            String s = "SELECT id=?, key=?, name=?, creat=?, description=? FROM trackersql WHERE name = ?";
+            PreparedStatement statement = connection.prepareStatement(s);
+
+            ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 Item item = new Item();
@@ -94,18 +96,13 @@ public class TrackerSQL implements ITracker, AutoCloseable {
     public Item findById(String id) {
         Item result = null;
 
-        String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = ?";
+        String s = "SELECT id, key, name, creat, description FROM trackersql WHERE id = '" + id + "'";
 
         try (PreparedStatement statement = connection.prepareStatement(s)) {
 
-            ResultSet resultSet = statement.executeQuery();
-            result.setId(resultSet.getString("id"));
-            result.setKey(resultSet.getString("key"));
-            result.setName(resultSet.getString("name"));
-            result.setCreat(resultSet.getLong("creat"));
-            result.setDescription(resultSet.getString("description"));
-
+            statement.setString(1, id);
             statement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -174,13 +171,13 @@ public class TrackerSQL implements ITracker, AutoCloseable {
         trackerSQL.init();
         String name = "test1";
 
-        trackerSQL.add(item1);
-        trackerSQL.update(item2);
-        trackerSQL.replace(item1.getId(), item3);
-        trackerSQL.delete(item1.getId());
-        System.out.println(trackerSQL.findById("1"));
-        System.out.println(Arrays.toString(trackerSQL.findByName("test1")));
-        System.out.println(trackerSQL.findAll());
+        //trackerSQL.add(item1);
+        //trackerSQL.update(item2);
+        //trackerSQL.replace(item1.getId(), item3);
+        //trackerSQL.delete(item1.getId());
+        System.out.println(trackerSQL.findById(item1.getId()));
+        //System.out.println(Arrays.toString(trackerSQL.findByName(name)));
+        //System.out.println(trackerSQL.findAll());
     }
 
     public Item add(Item item) {
