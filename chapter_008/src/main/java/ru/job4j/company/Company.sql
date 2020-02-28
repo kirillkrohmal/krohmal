@@ -182,5 +182,9 @@ where exists (select max(p.name) from person p) group by c.name, p.name;
 SELECT c.name, COUNT(*) AS Сотрудник
 FROM company c left join person p on p.company_id = c.id GROUP BY c.name ORDER BY Сотрудник DESC;
 
+SELECT c.name as Компания, count(*) as Сотрудник
+FROM company c left join person p on p.company_id = c.id
+group by c.name ORDER BY Сотрудник DESC;
+
 
 
