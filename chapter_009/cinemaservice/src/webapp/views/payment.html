@@ -17,6 +17,27 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    function payment() {
+        var name = $('#usr').val();
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/cinema/view',
+            data: 'name=' + $('#usr').val(),
+            dataType: 'text'
+        }).done(function (data) {
+            $('tablename tr:last').after('<tr><td>' + name + '</td></tr>');
+        }).fail(function (err) {
+            alert(err);
+        });
+    }
+
+</script>
+
+
 <div class="container">
     <div class="row pt-3">
         <h3>
@@ -33,7 +54,7 @@
                 <label for="phone">Номер телефона</label>
                 <input type="text" class="form-control" id="phone" placeholder="Номер телефона">
             </div>
-            <button type="button" class="btn btn-success">Оплатить</button>
+            <button type="button" class="btn btn-success" onclick="payment">Оплатить</button>
         </form>
     </div>
 </div>

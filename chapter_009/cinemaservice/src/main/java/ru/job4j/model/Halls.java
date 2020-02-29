@@ -16,6 +16,11 @@ public class Halls {
         this.place = place;
     }
 
+    public Halls(String rows, String place) {
+        this.rows = rows;
+        this.place = place;
+    }
+
 
     public int getId() {
         return id;

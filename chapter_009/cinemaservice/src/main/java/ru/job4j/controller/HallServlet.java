@@ -2,6 +2,7 @@ package ru.job4j.controller;
 
 import ru.job4j.model.Halls;
 import ru.job4j.persistence.JdbcStore;
+import ru.job4j.service.ValidateService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,13 +14,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class HallServlet extends HttpServlet {
-
-    private final JdbcStore storage = JdbcStore.getInstance();
-    private AtomicInteger atomicInteger = new AtomicInteger();
+    private final ValidateService logic = ValidateService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
+        req.setAttribute("halls", this.logic.values());
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/index.html");
         requestDispatcher.forward(req, resp);
     }
@@ -27,7 +28,8 @@ public class HallServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        storage.addHolls(new Halls(atomicInteger.incrementAndGet(), req.getParameter("rows"), req.getParameter("place")));
+
+        logic.addHalls(req.getParameter("rows"), req.getParameter("place"));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/payment"));
     }
 }
