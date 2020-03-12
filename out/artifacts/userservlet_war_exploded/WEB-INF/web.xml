@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>UsersServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UsersServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UsersServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>UserCreateServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UserCreateServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UserCreateServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -26,7 +26,7 @@
 
     <servlet>
         <servlet-name>UserDeleteServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UserDeleteServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UserDeleteServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -36,7 +36,7 @@
 
     <servlet>
         <servlet-name>UserUpdateServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UserUpdateServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UserUpdateServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
