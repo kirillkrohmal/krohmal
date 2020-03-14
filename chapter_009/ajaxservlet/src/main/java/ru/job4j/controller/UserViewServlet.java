@@ -17,7 +17,7 @@ public class UserViewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/index.html");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.html");
         requestDispatcher.forward(req, resp);
     }
 
@@ -33,7 +33,7 @@ public class UserViewServlet extends HttpServlet {
 
 
         resp.setContentType("text/html");
-        UserStorage.getInstance().add(new User(atomicInteger.incrementAndGet(), req.getParameter("name"), req.getParameter("lastName"), req.getParameter("sex"), req.getParameter("description")));
+        UserStorage.getInstance().add(new User(atomicInteger.getAndIncrement(), req.getParameter("name"), req.getParameter("lastName"), req.getParameter("sex"), req.getParameter("description")));
         doGet(req, resp);
     }
 }

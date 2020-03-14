@@ -8,7 +8,7 @@
 
     <servlet>
         <servlet-name>UserViewServlet</servlet-name>
-        <servlet-class>ru.job4j.servlet.UserViewServlet</servlet-class>
+        <servlet-class>ru.job4j.controller.UserViewServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -18,7 +18,7 @@
 
     <servlet>
         <servlet-name>JSONController</servlet-name>
-        <servlet-class>ru.job4j.servlet.JSONController</servlet-class>
+        <servlet-class>ru.job4j.controller.JSONController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>JSONController</servlet-name>

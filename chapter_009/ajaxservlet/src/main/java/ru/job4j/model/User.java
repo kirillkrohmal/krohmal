@@ -16,6 +16,13 @@ public class User {
         this.description = description;
     }
 
+    public User(String name, String lastName, String sex, String description) {
+        this.name = name;
+        this.lastName = lastName;
+        this.sex = new Sex(sex);
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }
