@@ -23,7 +23,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class MemoryStore implements Store {
     private static final MemoryStore SINGLETON_INSTANCE = new MemoryStore();
-    //private final ValidateService logic = ValidateService.getInstance();
     private final List<User> users = new CopyOnWriteArrayList<>();
 
     public static MemoryStore getInstance() {

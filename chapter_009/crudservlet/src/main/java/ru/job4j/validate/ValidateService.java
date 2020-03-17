@@ -15,14 +15,10 @@ import java.util.regex.Pattern;
 /**
  * Created by Comp on 27.10.2018.
  */
-public class ValidateService {
+public class ValidateService implements UserService{
     private static final ValidateService SINGLETON_INSTANCE = new ValidateService();
     private final Store logic = MemoryStore.getInstance();
     private ConcurrentHashMap<Integer, User> storage = new ConcurrentHashMap<>();
-
-    public ValidateService() {
-
-    }
 
     public Collection<User> values() {
         return storage.values();
@@ -32,11 +28,12 @@ public class ValidateService {
         return SINGLETON_INSTANCE;
     }
 
+    @Override
     public List<User> findAll() {
         return logic.findByAll();
     }
 
-
+    @Override
     public boolean add(String name, String email, String login, Timestamp createDate) {
         boolean result = false;
 
@@ -50,6 +47,7 @@ public class ValidateService {
         return result;
     }
 
+    @Override
     public boolean update(int id, String name, String email, String login, Timestamp createDate) {
         boolean result = false;
 
@@ -62,8 +60,8 @@ public class ValidateService {
         return result;
     }
 
+    @Override
     public boolean delete(int id) {
-
         boolean result = false;
 
         if (logic.findById(id) != null) {
