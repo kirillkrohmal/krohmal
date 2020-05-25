@@ -24,8 +24,6 @@
                 dataType: 'text'
             }).done(function (data) {
                 $('table tr:last').after('<tr><td>' + name + '</td><td>' + lastname + '</td><td>' + sex + '</td><td>' + description + '</td> </tr>');
-            }).fail(function (err) {
-                alert(err);
             })
         }
 
@@ -62,7 +60,7 @@
     <div class="checkbox">
         <label><input type="checkbox">Remember me</label>
     </div>
-    <button type="button" class="btn btn-primary" onclick="createuser">Submit</button>
+    <button type="button" class="btn btn-primary" onclick="createuser()">Submit</button>
 </div>
 
 

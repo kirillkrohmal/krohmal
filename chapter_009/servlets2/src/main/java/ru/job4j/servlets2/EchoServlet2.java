@@ -20,7 +20,7 @@ public class EchoServlet2 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        //res.setContentType("text/html");
+        res.setContentType("text/html");
         PrintWriter writer = res.getWriter();
         writer.write("<table>\n"
                 + "  <colgroup>\n"
