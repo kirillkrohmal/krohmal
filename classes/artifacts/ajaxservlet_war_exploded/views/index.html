@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <title>Анкета</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        function viewuser() {
+            $.ajax('./json', {
+                method: 'get',
+                complete: function (data) {
+                    var result = "<tbody><tr>"
+                        + "<td>id</td>"
+                        + "<td>Name</td>"
+                        + "<td>Lastname</td>"
+                        + "<td>Sex</td>"
+                        + "<td>Description</td>"
+                        + "</tbody></tr>";
+
+                    var users = JSON.parse(data.responseText)
+
+                    for (var i = 0; i = users.length; i++) {
+                        "<tbody><tr>"
+                        + "<td>" + users[i].id + "</td>"
+                        + "<td>" + users[i].name + "</td>"
+                        + "<td>" + users[i].lastName + "</td>"
+                        + "<td>" + users[i].sex + "</td>"
+                        + "<td>" + users[i].description + "</td>"
+                        + "</tbody></tr>";
+                    }
+                    var table = document.getElementsByName("users")
+                    table.innerHTML = result;
+                }
+            });
+        }
+        
+
+        function createuser() {
+            $.ajax('./post', {
+                methos: 'post',
+                data: {
+                    name: $('#name').val(), lastName: $('#lastName').val(), sex: $('#sex').val(), description: $('#description').val()
+                }
+            })
+        }
+
+
+        /*function jsondo() {
+            $.ajax('/json', {
+                method: "post",
+                url: url,
+                data: {login: document.getElementsByName("name")[0].value},
+            });
+
+        }
+*/
+    </script>
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <h1>Анкета</h1>
+    <p>Заполните поля: </p>
+</div>
+
+<form action="/view" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+        <label for="lastname">Lastname:</label>
+        <input type="text" class="form-control" id="lastname">
+    </div>
+    <div class="form-group">
+        <label for="sex">Sex:</label>
+        <label>
+            <input type="radio" name="sex">
+        </label> Male
+        <label>
+            <input type="radio" name="sex">
+        </label> Female
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description">
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox">Remember me</label>
+    </div>
+    <button type="button" class="Ajax" onclick='return createuser()'>Submit</button>
+</form>
+
+<form action="/view" method="post" onchange="return viewuser()">
+    <div class="container">
+        <h2>Ваша Анкета</h2>
+        <p>Ваши данные:</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Sex</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody id="users"></tbody>
+        </table>
+    </div>
+</form>
+
+</body>
+</html>
