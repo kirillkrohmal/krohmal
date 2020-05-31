@@ -21,6 +21,7 @@
         <module>htmlbootstrap</module>
         <module>jsindex</module>
         <module>ajaxservlet</module>
+        <module>cinemaservice</module>
     </modules>
 
     <dependencies>
