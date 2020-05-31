@@ -11,6 +11,7 @@
 
     <artifactId>cinemaservice</artifactId>
 
+<<<<<<< HEAD
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -81,5 +82,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+=======
+>>>>>>> 566e36def316a79e839ee04bbd3063d0c5114b3d
 
 </project>
