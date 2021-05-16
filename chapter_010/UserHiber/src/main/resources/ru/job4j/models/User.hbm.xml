@@ -1,0 +1,9 @@
+<hibernate-mapping>
+    <class name="ru.job4j.models.User" table="userhiber">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="name" column="name" lazy = "false"/>
+        <property name="expired" column="expired" lazy="false"/>
+    </class>
+</hibernate-mapping>

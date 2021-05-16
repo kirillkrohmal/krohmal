@@ -1,0 +1,8 @@
+<hibernate-mapping>
+    <class name="ru.job4j.models.Car" table="car">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="engine" column="engine_id" lazy = "false"/>
+    </class>
+</hibernate-mapping>

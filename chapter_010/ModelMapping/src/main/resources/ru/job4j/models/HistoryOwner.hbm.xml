@@ -1,0 +1,9 @@
+<hibernate-mapping>
+    <class name="ru.job4j.models.HistoryOwner" table="history_owner">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="driver" column="driver_id" lazy = "false"/>
+        <property name="car" column="car_id" lazy = "false"/>
+    </class>
+</hibernate-mapping>

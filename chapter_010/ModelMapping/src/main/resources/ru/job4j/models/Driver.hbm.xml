@@ -1,0 +1,7 @@
+<hibernate-mapping>
+    <class name="ru.job4j.models.Driver" table="driver">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+    </class>
+</hibernate-mapping>
