@@ -1,0 +1,1 @@
+Заменить использование SessionFactory на CrudRepository

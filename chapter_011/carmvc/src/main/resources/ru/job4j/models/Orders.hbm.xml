@@ -1,0 +1,10 @@
+<hibernate-mapping>
+    <class name="ru.job4j.models.Orders" table="orders">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="description" column="description" lazy="false"/>
+        <property name="price" column="price" lazy="false"/>
+        <property name="sold" column="sold" lazy="false"/>
+    </class>
+</hibernate-mapping>

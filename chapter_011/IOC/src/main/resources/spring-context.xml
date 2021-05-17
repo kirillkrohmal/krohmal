@@ -1,0 +1,68 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--<context:component-scan base-package="ru.job4j" />-->
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/java_a_from_z?useSSL=false"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="root"/>
+
+    </bean>
+
+    <bean id="memory" class="ru.job4j.storages.MemoryStorage"/>
+
+    <!--   <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+           <constructor-arg name="dataSource" ref="dataSource"/>
+       </bean>-->
+
+    <bean id="storage" class="ru.job4j.storages.UserStorage">
+        <constructor-arg name="storage" ref="memory"/>
+    </bean>
+
+    <bean id="jdbcstorage" class="ru.job4j.storages.JdbcStorage">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--<mvc:annotation-driven/>-->
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--  <bean id="messageSource"
+            class="org.springframework.context.support.ResourceBundleMessageSource">
+          <property name="basenames" value="resources/messages" />
+      </bean>-->
+
+    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource"/>
+
+        <property name="packagesToScan" value="ru.job4j.storages.entity"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="myTransactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+-->
+    <!--
+       <mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+
+        <context:annotation-config/>
+        <context:component-scan base-package="ru.job4j"/>
+
+        <tx:annotation-driven/>-->
+
+    <mvc:annotation-driven/>
+</beans>

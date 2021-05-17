@@ -1,0 +1,11 @@
+<hibernate-mapping>
+    <class name="ru.job4j.models.Cars" table="cars">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="enginePower" column="engine_power" lazy="false"/>
+        <property name="year" column="year" lazy="false"/>
+        <property name="color" column="color" lazy="false"/>
+        <property name="milliage" column="milliage" lazy="false"/>
+    </class>
+</hibernate-mapping>

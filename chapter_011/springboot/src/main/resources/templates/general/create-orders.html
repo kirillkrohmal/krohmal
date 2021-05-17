@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Create ad</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{'/css/main.css'}"/>
+    <link layout:fragment="pageStyleLink"/>
+    <style layout:fragment="pageStyle"></style>
+</head>
+<body>
+
+<form action="#" enctype="multipart/form-data" data-th-action="@{/general/saveOrders}" data-th-object="${order}"
+      method="post">
+    <div class="container">
+        <div id="row">
+            <div class="col-md-9">
+                <h2 style="text-align: center">Create ad</h2>
+
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="price" type="table" class="table" >Price:</label>
+                        <label>
+                            <input id="price" name="price" placeholder="Enter price"/>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="bodiesList" type="table" class="table" >Body:</label>
+                        <select th:field="*{body}" id="bodiesList" multiple="multiple" class="selector">
+                            <option th:selected="selected" th:each="b : ${bodies}"
+                                    th:value="${b.id}"
+                                    th:text="${b.name}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="brandList" type="table" class="table" >Brand:</label>
+                        <select th:field="*{brand}" id="brandList" multiple="multiple" class="selector">
+                            <!--/*@thymesVar id="brands" type=""*/-->
+                            <option th:selected="selected" th:each="c : ${brands}"
+                                    th:value="${c.id}"
+                                    th:text="${c.name}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="enginesList" type="table" class="table" >Brand:</label>
+                        <select th:field="*{engine}" id="enginesList" multiple="multiple" class="selector">
+                            <option th:selected="selected" th:each="d : ${engines}"
+                                    th:value="${d.id}"
+                                    th:text="${d.name}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="modelList" type="table" class="table" >Model:</label>
+                        <select th:field="*{model}" id="modelList" multiple="multiple" class="selector">
+                            <option th:selected="selected" th:each="f : ${models}"
+                                    th:value="${f.id}"
+                                    th:text="${f.name}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12" >
+                        <label for="sold_input" type="table" class="table">Sold:</label>
+                        <select name="sold" id="sold_input" class="form-control"
+                                style="width: 10%; padding-bottom: 10px">
+                            <option value="true" th:selected="${order.sold == true}"
+                                    th:text="yes"></option>
+                            <option value="false" th:selected="${order.sold == false}"
+                                    th:text="no"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="description" type="table" class="table">Description:</label>
+                        <input id="description"  name="description" style="height:1000%; width: 100%; padding-bottom: 30px"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="pic">Image</label>
+                        <input id="pic" name="picture" type="file" class="file"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" name="saveOrders">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <a th:href="@{/general/list}" class="btn btn-outline-info btn-lg my-3">Back to the list of ads</a>
+            </p>
+        </div>
+    </div>
+
+</form>
+</body>
+
+</html>
