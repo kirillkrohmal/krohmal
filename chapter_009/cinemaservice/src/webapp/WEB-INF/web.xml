@@ -8,18 +8,17 @@
 
     <servlet>
         <servlet-name>HallServlet</servlet-name>
-<<<<<<< HEAD
+
         <servlet-class>ru.job4j.controller.HallServlet</servlet-class>
-=======
-        <servlet-class>ru.job4j.servlet.HallServlet</servlet-class>
->>>>>>> 566e36def316a79e839ee04bbd3063d0c5114b3d
+
+
     </servlet>
     <servlet-mapping>
         <servlet-name>HallServlet</servlet-name>
         <url-pattern>/view</url-pattern>
     </servlet-mapping>
 
-<<<<<<< HEAD
+
     <servlet>
         <servlet-name>PaymentServlet</servlet-name>
         <servlet-class>ru.job4j.controller.PaymentServlet</servlet-class>
@@ -28,11 +27,5 @@
         <servlet-name>PaymentServlet</servlet-name>
         <url-pattern>/payment</url-pattern>
     </servlet-mapping>
-
-
-
-=======
->>>>>>> 566e36def316a79e839ee04bbd3063d0c5114b3d
-
 
 </web-app>

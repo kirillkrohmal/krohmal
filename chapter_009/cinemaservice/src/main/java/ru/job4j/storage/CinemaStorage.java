@@ -14,7 +14,7 @@ public class CinemaStorage {
     }
 
     public void add(User user) {
-        users.add(new User(user.getId(), user.getName(), user.getLastName(), "sex", user.getDescription()));
+        users.add(new User(user.getId(), user.getUsername(), user.getPhone()));
     }
 
     public List<User> getUser() {
