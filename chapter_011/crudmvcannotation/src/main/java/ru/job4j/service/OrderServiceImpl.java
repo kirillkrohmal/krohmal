@@ -1,6 +1,6 @@
 package ru.job4j.service;
 
-import com.google.common.collect.Lists;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,7 +27,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Orders> getOrders() {
-        return Lists.newArrayList(dao.findAll());
+        //return Lists.newArrayList(dao.findAll());
+        return null;
     }
 
     @Override

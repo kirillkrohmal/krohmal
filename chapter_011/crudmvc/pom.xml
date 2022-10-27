@@ -9,7 +9,6 @@
     <version>2.0</version>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
