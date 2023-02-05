@@ -7,6 +7,18 @@
     <groupId>ru.job4j</groupId>
     <artifactId>crudmvc</artifactId>
     <version>2.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -14,13 +26,13 @@
             <artifactId>spring-tx</artifactId>
             <version>5.2.3.RELEASE</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-servlet-api</artifactId>
             <version>9.0.4</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
         <dependency>
@@ -475,6 +487,24 @@
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.collections</groupId>
+            <artifactId>google-collections</artifactId>
+            <version>5</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
