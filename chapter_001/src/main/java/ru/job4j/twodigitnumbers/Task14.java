@@ -1,17 +1,17 @@
-package ru.job4j.unambiguous;
+package ru.job4j.twodigitnumbers;
 
 import java.util.StringJoiner;
 
-public class Task16 {
-    public static void loop() {
+public class Task14 {
+    public static void loop(int a, int b) {
         StringJoiner sj = new StringJoiner(" ");
         String ls = System.lineSeparator();
-        for (int i = 1; i <= 9; i++) {
-            sj.add(Integer.toString(i));
+        for (int i = a; i < b; i++) {
+            if (i > 0 && i >= 10) {
+                sj.add(Integer.toString(i));
+            }
         }
         System.lineSeparator();
         System.out.println("Старт" + ls + sj + ls +"Финиш");
     }
 }
-
-
