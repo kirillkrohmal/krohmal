@@ -1,13 +1,15 @@
 package ru.job4j.joinerreverse;
 
+import java.util.StringJoiner;
+
 public class Task69 {
     public static void array(int[] arr) {
-        StringBuilder builder = new StringBuilder();
+        StringJoiner sj = new StringJoiner(" ");
         for (int i = 0; i < arr.length; i++) {
-            builder.append(arr[i]).append(" ").reverse();
-        }
+            sj.add(Integer.toString(arr[i]));
 
-        String str = builder.toString();
-        System.out.print(str);
+        }
+        System.lineSeparator();
+        System.out.println(sj);
     }
 }
