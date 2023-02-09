@@ -6,15 +6,13 @@ import java.util.stream.Collectors;
 
 public class Task68 {
     public static void array(int[] arr) {
-        StringBuilder builder = new StringBuilder();
+        StringJoiner sj = new StringJoiner(" ");
+        String ls = System.lineSeparator();
         for (int i = 0; i < arr.length; i++) {
-            builder.append(arr[i]).append(" ");
+            sj.add(Integer.toString(arr[i]));
         }
 
-        String str = builder.toString();
-
-
-        System.out.println(str);
-
+        System.lineSeparator();
+        System.out.print(sj + ls);
     }
 }

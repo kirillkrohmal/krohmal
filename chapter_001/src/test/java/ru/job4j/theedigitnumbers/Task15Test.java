@@ -1,4 +1,4 @@
-package theedigitnumbers;
+package ru.job4j.theedigitnumbers;
 
 import org.junit.Test;
 import ru.job4j.theedigitnumbers.Task15;
