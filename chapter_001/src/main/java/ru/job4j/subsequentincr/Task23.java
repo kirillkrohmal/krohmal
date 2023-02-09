@@ -1,12 +1,12 @@
-package ru.job4j.oddnumbers;
+package ru.job4j.subsequentincr;
 
 import java.util.StringJoiner;
 
-public class Task34 {
+public class Task23 {
     public static void loop(int num) {
         StringJoiner sj = new StringJoiner(" ");
-        for (int i = 7; i < 23; i++) {
-            if (i % 4 == 0) {
+        for (int i = 0; i < num; i++) {
+            if (num % 2 == 0) {
                 sj.add(Integer.toString(i));
             }
         }
