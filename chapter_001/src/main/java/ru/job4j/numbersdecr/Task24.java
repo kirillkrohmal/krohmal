@@ -1,8 +1,8 @@
-package ru.job4j.subsequentincr;
+package ru.job4j.numbersdecr;
 
 import java.util.StringJoiner;
 
-public class Task23 {
+public class Task24 {
     public static void loop(int num) {
         int count = 0;
         StringJoiner sj = new StringJoiner(" ");

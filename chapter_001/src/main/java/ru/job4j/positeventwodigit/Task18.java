@@ -9,10 +9,10 @@ public class Task18 {
         for (int i = 10; i < 19; i++) {
             if (i % 2 == 0) {
                 if (i % 4 == 0) {
-
+                    sj.add(i + "#");
+                } else {
+                    sj.add(Integer.toString(i));
                 }
-                sj.add(Integer.toString(i));
-
             }
         }
         System.lineSeparator();
