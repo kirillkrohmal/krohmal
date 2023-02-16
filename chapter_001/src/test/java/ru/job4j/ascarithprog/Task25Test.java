@@ -1,5 +1,4 @@
-package ru.job4j.ascprogression;
-
+package ru.job4j.ascarithprog;
 
 import org.junit.Test;
 
@@ -8,7 +7,6 @@ import java.io.PrintStream;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-
 
 public class Task25Test {
     public String ln = System.lineSeparator();
@@ -40,5 +38,3 @@ public class Task25Test {
         assertThat(out.toString(), is(expected));
     }
 }
-
-

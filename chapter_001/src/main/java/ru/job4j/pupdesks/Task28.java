@@ -2,9 +2,11 @@ package ru.job4j.pupdesks;
 
 public class Task28 {
     public static void isEnough(int pupils, int desks) {
-        if (pupils == desks || pupils <= desks) {
+        int pup = pupils / 2;
+
+        if (pup == desks || pup <= desks) {
             System.out.println("Да");
-        } else if (pupils != desks || pupils > desks) {
+        } else if (pup != desks || pup > desks) {
             System.out.println("Нет");
         }
     }
