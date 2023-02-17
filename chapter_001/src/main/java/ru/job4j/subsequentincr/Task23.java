@@ -13,7 +13,6 @@ public class Task23 {
             if (count > 4) break;
 
         }
-        System.lineSeparator();
         System.out.println(sj);
     }
 }

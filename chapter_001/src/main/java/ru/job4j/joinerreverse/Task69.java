@@ -9,7 +9,6 @@ public class Task69 {
             sj.add(Integer.toString(arr[i]));
 
         }
-        System.lineSeparator();
         System.out.println(sj);
     }
 }

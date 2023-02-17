@@ -15,7 +15,6 @@ public class Task18 {
                 }
             }
         }
-        System.lineSeparator();
         System.out.println("Начало" + ls + sj + ls +"Конец");
     }
 }

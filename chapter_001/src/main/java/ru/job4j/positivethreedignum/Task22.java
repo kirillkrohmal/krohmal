@@ -10,7 +10,6 @@ public class Task22 {
                 sj.add(Integer.toString(i));
             }
         }
-        System.lineSeparator();
         System.out.println(sj);
     }
 }

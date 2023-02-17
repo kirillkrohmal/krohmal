@@ -11,7 +11,6 @@ public class Task14 {
                 sj.add(Integer.toString(i));
             }
         }
-        System.lineSeparator();
         System.out.println("Старт" + ls + sj + ls +"Финиш");
     }
 }

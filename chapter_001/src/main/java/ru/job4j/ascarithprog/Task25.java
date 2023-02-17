@@ -19,7 +19,6 @@ public class Task25 {
             }
 
         }
-        System.lineSeparator();
         System.out.println(sj);
     }
 }

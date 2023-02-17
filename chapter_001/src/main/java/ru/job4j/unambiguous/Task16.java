@@ -9,7 +9,6 @@ public class Task16 {
         for (int i = 1; i <= 9; i++) {
             sj.add(Integer.toString(i));
         }
-        System.lineSeparator();
         System.out.println("Старт" + ls + sj + ls +"Финиш");
     }
 }

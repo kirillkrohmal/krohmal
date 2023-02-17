@@ -13,7 +13,6 @@ public class Task17 {
             }
         }
 
-        System.lineSeparator();
         System.out.println("Начало" + ls + sj + ls + "Конец");
     }
 }

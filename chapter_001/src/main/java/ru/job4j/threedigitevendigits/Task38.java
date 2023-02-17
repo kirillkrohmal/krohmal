@@ -11,7 +11,6 @@ public class Task38 {
             }
 
         }
-        System.lineSeparator();
         System.out.println(sj);
     }
 }
