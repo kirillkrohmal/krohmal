@@ -6,7 +6,7 @@ public class Task38 {
     public static void loop() {
         StringJoiner sj = new StringJoiner(" ");
         for (int i = 200; i < 223; i++) {
-            if (i % 2 == 0 && i / 2 == 0) {
+            if (i % 2 == 0) {
                 sj.add(Integer.toString(i));
             }
 

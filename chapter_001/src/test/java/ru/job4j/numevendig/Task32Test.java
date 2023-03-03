@@ -1,4 +1,4 @@
-package ru.job4j.permutationfirstalast;
+package ru.job4j.numevendig;
 
 import org.junit.Test;
 
@@ -8,42 +8,51 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class Task35Test {
+public class Task32Test {
     public String ln = System.lineSeparator();
 
     @Test
-    public void when364Then463() {
+    public void when36Then1() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(364);
-        String expected = "463" + ln;
-        assertThat(out.toString(), is(expected));
-    }
-
-    @Test
-    public void when121Then121() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-        Task35.firstLastChange(121);
-        String expected = "121" + ln;
-        assertThat(out.toString(), is(expected));
-    }
-
-    @Test
-    public void when100Then1() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-        Task35.firstLastChange(100);
+        Task32.evenAmount(36);
         String expected = "1" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when650Then56() {
+    public void when64Then2() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(650);
-        String expected = "56" + ln;
+        Task32.evenAmount(64);
+        String expected = "2" + ln;
+        assertThat(out.toString(), is(expected));
+    }
+
+    @Test
+    public void when35Then0() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Task32.evenAmount(35);
+        String expected = "0" + ln;
+        assertThat(out.toString(), is(expected));
+    }
+
+    @Test
+    public void when67Then1() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Task32.evenAmount(67);
+        String expected = "1" + ln;
+        assertThat(out.toString(), is(expected));
+    }
+
+    @Test
+    public void when50Then1() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Task32.evenAmount(50);
+        String expected = "1" + ln;
         assertThat(out.toString(), is(expected));
     }
 }

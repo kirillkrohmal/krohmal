@@ -1,4 +1,4 @@
-package ru.job4j.permutationfirstalast;
+package ru.job4j.namesakes;
 
 import org.junit.Test;
 
@@ -8,42 +8,42 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class Task35Test {
+public class Task83Test {
     public String ln = System.lineSeparator();
 
     @Test
-    public void when364Then463() {
+    public void whenSameNamesAndSurnamesThenNamesake() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(364);
-        String expected = "463" + ln;
+        Task83.isEquals("John", "Smith", "John", "Smith");
+        String expected = "Тезки и однофамильцы" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when121Then121() {
+    public void whenSameNamesThenNamesake() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(121);
-        String expected = "121" + ln;
+        Task83.isEquals("John", "Brown", "John", "Smith");
+        String expected = "Тезки" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when100Then1() {
+    public void whenSameSurnamesThenNamesake() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(100);
-        String expected = "1" + ln;
+        Task83.isEquals("Jim", "Smith", "John", "Smith");
+        String expected = "Однофамильцы" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when650Then56() {
+    public void whenNotSameThenError() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(650);
-        String expected = "56" + ln;
+        Task83.isEquals("Jim", "Smith", "John", "Brown");
+        String expected = "Совпадений нет" + ln;
         assertThat(out.toString(), is(expected));
     }
 }

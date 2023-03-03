@@ -1,4 +1,4 @@
-package ru.job4j.permutationfirstalast;
+package ru.job4j.checksymmetrythreedignum;
 
 import org.junit.Test;
 
@@ -8,42 +8,42 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class Task35Test {
+public class Task39Test {
     public String ln = System.lineSeparator();
 
     @Test
-    public void when364Then463() {
+    public void when323ThenYes() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(364);
-        String expected = "463" + ln;
+        Task39.isSymmetric(323);
+        String expected = "Да" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when121Then121() {
+    public void when505ThenYes() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(121);
-        String expected = "121" + ln;
+        Task39.isSymmetric(505);
+        String expected = "Да" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when100Then1() {
+    public void when550ThenNo() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(100);
-        String expected = "1" + ln;
+        Task39.isSymmetric(550);
+        String expected = "Нет" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when650Then56() {
+    public void when500ThenNo() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(650);
-        String expected = "56" + ln;
+        Task39.isSymmetric(500);
+        String expected = "Нет" + ln;
         assertThat(out.toString(), is(expected));
     }
 }

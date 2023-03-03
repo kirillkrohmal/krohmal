@@ -1,4 +1,4 @@
-package ru.job4j.permutationfirstalast;
+package ru.job4j.numidenticaldig;
 
 import org.junit.Test;
 
@@ -8,42 +8,42 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class Task35Test {
+public class Task76Test {
     public String ln = System.lineSeparator();
 
     @Test
-    public void when364Then463() {
+    public void when123Then0() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(364);
-        String expected = "463" + ln;
+        Task76.sameNumAmount(123);
+        String expected = "0" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when121Then121() {
+    public void when122Then2() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(121);
-        String expected = "121" + ln;
+        Task76.sameNumAmount(122);
+        String expected = "2" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when100Then1() {
+    public void when112Then2() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(100);
-        String expected = "1" + ln;
+        Task76.sameNumAmount(112);
+        String expected = "2" + ln;
         assertThat(out.toString(), is(expected));
     }
 
     @Test
-    public void when650Then56() {
+    public void when333Then3() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task35.firstLastChange(650);
-        String expected = "56" + ln;
+        Task76.sameNumAmount(333);
+        String expected = "3" + ln;
         assertThat(out.toString(), is(expected));
     }
 }
