@@ -4,17 +4,13 @@ import java.util.StringJoiner;
 
 public class Task24 {
     public static void loop(int num) {
-        int count = 0;
         StringJoiner sj = new StringJoiner(" ");
-        for (int i = 0; i <= num; i++) {
-            if (num == 50) {
-                num = num - 10;
-            } else {
-                sj.add(Integer.toString(num));
-                num = num - 6;
-                count++;
-                if (count >= 5) break;
-            }
+        int firstNumber = num - 10;
+        sj.add(Integer.toString(firstNumber));
+        for (int i = 1; i < 5; i++) {
+            int nextNumber = firstNumber - 6;
+            sj.add(Integer.toString(nextNumber));
+            firstNumber = nextNumber;
         }
         System.out.println(sj);
     }

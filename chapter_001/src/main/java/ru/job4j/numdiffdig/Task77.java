@@ -8,11 +8,11 @@ public class Task77 {
         num2 = num / 10 % 10;
         num3 = num % 10;
 
-        if (num1 != num2) {
+        if (num1 != num2 && num2 != num3 && num1 != num3){
+            counter = counter+3;
+        } else if (num1 != num2) {
             counter = counter+2;
-        } if (num2 != num3){
-            counter = counter+2;
-        } else if (num1 != num2 && num2 != num3 && num1 != num3){
+        } else if (num2 != num3){
             counter = counter+2;
         }
         System.out.println(counter);
