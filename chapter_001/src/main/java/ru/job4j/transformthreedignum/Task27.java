@@ -7,10 +7,6 @@ public class Task27 {
         num2 = number / 10 % 10;
         num3 = number % 10;
 
-        System.out.println(num3 + num2 + num1);
-    }
-
-    public static void main(String[] args) {
-        transform(327);
+        System.out.println((num3 * 100 + num2 * 10 + num1) - 20);
     }
 }
