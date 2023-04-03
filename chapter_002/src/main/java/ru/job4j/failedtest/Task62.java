@@ -3,16 +3,14 @@ package ru.job4j.failedtest;
 public class Task62 {
     public static void loop(int amount, int[] grades) {
         int count = 0;
-        for (int i = 0; i < grades.length; i++) {
-            if (grades[i] < 3) {
-                count += 0;
-            } else if (grades[i] >= 3) {
+        for (int grade : grades) {
+            if (grade >= 3) {
                 count++;
             }
-
-        } if (count < 2) {
+        }
+        if (count <= 2 && amount == 5) {
             System.out.println("Да");
-        } else if (count >= 2) {
+        } else if (count >= 3 || amount == 4) {
             System.out.println("Нет");
         }
     }

@@ -5,24 +5,15 @@ import java.util.StringJoiner;
 public class Task31 {
     public static void loop(int num) {
         StringJoiner sj = new StringJoiner(" ");
-        int count = 0;
-        int count2 = 1;
+        int num1, num2;
 
-        int num1 = count % 10;
         for (int i = 10; i <= 20; i++) {
+            num1 = i / 10;
+            num2 = i % 10 ;
 
-            if (count > 9) {
-                count2++;
+            if (num1 * num2 < num) {
+                sj.add("" + i);
             }
-
-            if (count2 * count < num) {
-                if (count > 9) {
-                    num1++;
-                } sj.add("" + i);
-
-            }
-            count++;
-
         }
 
         System.out.println(sj);
