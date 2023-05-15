@@ -12,6 +12,16 @@ public class Task79Test {
     public String ln = System.lineSeparator();
 
     @Test
+    public void when554331542Then5And4And3() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        int[] arr = {5, 5, 4, 3, 3, 1, 5, 4, 2};
+        Task79.array(arr);
+        String expected = "5 4 3" + ln;
+        assertThat(out.toString(), is(expected));
+    }
+
+    @Test
     public void when554331Then5And3() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));

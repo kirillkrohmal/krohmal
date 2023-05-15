@@ -1,12 +1,13 @@
 package ru.job4j.outputnearestroundnum;
 
 public class Task44 {
-    public static void containsZero(int number) {
-        double scale = Math.pow(10, number);
-        
-    }
+    public static void getRoundNumber(int number) {
 
-    public static void main(String[] args) {
-        containsZero(553);
+        int lowerNumber = (number / 10) * 10;
+        int upperNumber = lowerNumber + 10;
+
+        int closestNumber = (number - lowerNumber < upperNumber - number) ? lowerNumber : upperNumber;
+
+        System.out.println(closestNumber);
     }
 }

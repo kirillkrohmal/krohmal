@@ -4,10 +4,8 @@ public class Task57 {
     public static void loop(int[] array) {
         int count = 0;
 
-        for (int i = 0; i < array.length; i++) {
-
-            int s = array[i++];
-            if(array[i] < s) {
+        for (int i = 1; i < array.length; i++) {
+            if(array[i] > array[i - 1]) {
                 count++;
             }
         }

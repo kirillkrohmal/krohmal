@@ -37,7 +37,7 @@ public class Task78Test {
         System.setOut(new PrintStream(out));
         int[] arr = {5, 5, 3, 3};
         Task78.array(arr);
-        String expected = "";
+        String expected = "" + ln;
         assertThat(out.toString(), is(expected));
     }
 
@@ -57,7 +57,7 @@ public class Task78Test {
         System.setOut(new PrintStream(out));
         int[] arr = {};
         Task78.array(arr);
-        String expected = "";
+        String expected = "" + ln;
         assertThat(out.toString(), is(expected));
     }
 }
