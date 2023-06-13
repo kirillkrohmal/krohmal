@@ -1,16 +1,17 @@
 package ru.job4j.executorservice;
 
 import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
 
 
 /**
  * Created by Comp on 27.07.2018.
  */
 
-public class ExecutorService {
+class ExecutorServiceCl {
     void setPool() {
 
-        java.util.concurrent.ExecutorService pool = Executors.newFixedThreadPool(
+        ExecutorService pool = Executors.newFixedThreadPool(
                 Runtime.getRuntime().availableProcessors()
         );
 

@@ -7,7 +7,10 @@ public class Task48 {
         StringJoiner sj = new StringJoiner(" ");
 
         for (int i = 1; i <= num; i++) {
-            sj.add(1 + "+" + i);
+            for (int j = i + 1; j < num; j++) {
+                sj.add(i + "+" + j);
+            }
+
         }
 
         System.out.println(sj);

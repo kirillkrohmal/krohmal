@@ -3,11 +3,17 @@ package ru.job4j.outputnearestroundnum;
 public class Task44 {
     public static void getRoundNumber(int number) {
 
-        int lowerNumber = (number / 10) * 10;
-        int upperNumber = lowerNumber + 10;
+       boolean num = number % 10 == 0;
 
-        int closestNumber = (number - lowerNumber < upperNumber - number) ? lowerNumber : upperNumber;
+       if (num) {
+           System.out.println(number);
+       }
+       if (number % 10 > 0 && number % 10 < 5) {
+           System.out.println(number - (number % 10));
+       }
 
-        System.out.println(closestNumber);
+       if (number % 10 >= 5) {
+           System.out.println(number + (10 - number % 10));
+       }
     }
 }

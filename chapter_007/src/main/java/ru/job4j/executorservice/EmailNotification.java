@@ -14,8 +14,7 @@ public class EmailNotification<E> {
     }
 
     public void emailTo(User user) {
-        pool.submit(()
-                -> {
+        pool.submit(() -> {
             String stringBuilder = "Subject = Notification"
                     + user.getUsername()
                     + " to email "
