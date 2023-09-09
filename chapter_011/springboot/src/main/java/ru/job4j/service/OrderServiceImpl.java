@@ -21,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao dao;
 
     @Autowired
-    private BodyDao bodyDao;
+    private  BodyDao bodyDao;
 
     @Autowired
     private BrandDao brandDao;

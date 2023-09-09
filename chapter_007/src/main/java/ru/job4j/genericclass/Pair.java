@@ -9,8 +9,6 @@ public class Pair<T, V> {
     private T first;
     private V second;
 
-
-
     private Pair(T t, V v) {
         first = t;
         second = v;

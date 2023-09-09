@@ -10,7 +10,9 @@ public class Operation implements Runnable {
         stoge.add(new User(1, 100));
         stoge.add(new User(2, 200));
 
-        stoge.transfer(1, 2, 50);
+        //stoge.transfer(1, 2, 50);
+
+        System.out.println(stoge);
     }
 
     @Override

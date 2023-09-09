@@ -1,10 +1,19 @@
 package ru.job4j.threadsafetest;
 
+import org.junit.Before;
+import org.junit.Test;
+import ru.job4j.threadsafe.ThreadSafe;
+
+import java.util.Iterator;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 /**
  * Created by Comp on 28.09.2018.
  */
 public class ThreadSafeTest {
-   /* private ThreadSafe threadSafe;
+   private ThreadSafe threadSafe;
 
     public ThreadSafeTest(ThreadSafe threadSafe) {
         this.threadSafe = threadSafe;
@@ -47,5 +56,5 @@ public class ThreadSafeTest {
         assertThat(iterator.hasNext(), is(true));
         assertThat(iterator.next(), is(6));
         assertThat(iterator.hasNext(), is(false));
-    }*/
+    }
 }

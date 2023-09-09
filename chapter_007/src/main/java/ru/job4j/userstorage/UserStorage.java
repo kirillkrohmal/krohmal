@@ -22,8 +22,16 @@ public class UserStorage {
         }
     }
 
-    public User update(User user) {
-        return null;
+    public User update(User user, int id) {
+        synchronized (this.lock) {
+            for (int i = 0; i < storage.length; i++) {
+                if (storage[i].getId() == id) {
+                      user = storage[size++];
+                }
+            }
+
+            return user;
+        }
     }
 
     public void delete(int id) {
@@ -36,11 +44,11 @@ public class UserStorage {
         }
     }
 
-    boolean transfer(int fromId, int toId, int amount) {
+    Integer[] transfer(int fromId, int toId, int amount) {
         synchronized (this.lock) {
-            sum[fromId] = -amount;
+            sum[fromId] -= amount;
             sum[toId] += amount;
         }
-        return false;
+        return sum;
     }
 }

@@ -52,4 +52,12 @@ public class User {
         result = 31 * result + amount;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", amount=" + amount +
+                '}';
+    }
 }
